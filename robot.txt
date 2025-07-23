@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fix-my-car-ai.vercel.app/sitemap.xml
