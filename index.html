@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Carithm – AI Car Diagnostics & Repair</title>
+<title>Carithm – AI Car Diagnostics & Repair</title>
 
-  <!-- SEO Meta -->
-  <meta name="description" content="AI-powered car troubleshooting that connects symptoms to real issues using logic, severity levels, and repair estimates." />
-  <meta name="keywords" content="Carithm, car AI, vehicle diagnosis, car troubleshooting, OBD, auto repair AI, fix my car, AI mechanic, car repair tool, engine problem solver, check engine light AI, car symptoms checker, automotive diagnostics, car fault finder, car issue detector, vehicle repair assistant, AI auto diagnostics, car maintenance AI, car problem solver online, free car diagnosis" />
-  <meta name="author" content="Shaunauk Basu" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://aicarfix.com/" />
+<!-- SEO Meta -->
+<meta name="description" content="AI-powered car troubleshooting that connects symptoms to real issues using logic, severity levels, and repair estimates." />
+<meta name="keywords" content="Carithm, car AI, vehicle diagnosis, car troubleshooting, OBD, auto repair AI, fix my car, AI mechanic, car repair tool, engine problem solver, check engine light AI, car symptoms checker, automotive diagnostics, car fault finder, car issue detector, vehicle repair assistant, AI auto diagnostics, car maintenance AI, car problem solver online, free car diagnosis" />
+<meta name="author" content="Shaunauk Basu" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://aicarfix.com/" />
 
-  <!-- Google Verification -->
-  <meta name="google-site-verification" content="FwgoslkSBMbkNewUtM7tPOcwkoz7EQWKFT5BbkfiUBA" />
+<!-- Google Verification -->
+<meta name="google-site-verification" content="FwgoslkSBMbkNewUtM7tPOcwkoz7EQWKFT5BbkfiUBA" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-  <!-- Social Sharing (Open Graph) -->
-  <meta property="og:title" content="Carithm – AI Car Diagnostics & Repair" />
-  <meta property="og:description" content="AI that connects symptoms to real car issues. Free, fast, and constantly improving." />
-  <meta property="og:image" content="https://huggingface.co/spaces/shahau97/car-problem-solver-ai/resolve/main/preview.png" />
-  <meta property="og:url" content="https://aicarfix.com/" />
-  <meta property="og:type" content="website" />
+<!-- Social Sharing -->
+<meta property="og:title" content="Carithm – AI Car Diagnostics & Repair" />
+<meta property="og:description" content="AI that connects symptoms to real car issues. Free, fast, and constantly improving." />
+<meta property="og:image" content="https://huggingface.co/spaces/shahau97/car-problem-solver-ai/resolve/main/preview.png" />
+<meta property="og:url" content="https://aicarfix.com/" />
+<meta property="og:type" content="website" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Carithm – Diagnose Car Problems with AI" />
-  <meta name="twitter:description" content="Diagnose real car problems from symptoms using Carithm’s AI-powered diagnostic tool." />
-  <meta name="twitter:image" content="https://huggingface.co/spaces/shahau97/car-problem-solver-ai/resolve/main/preview.png" />
-  <meta name="twitter:url" content="https://aicarfix.com/" />
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Carithm – Diagnose Car Problems with AI" />
+<meta name="twitter:description" content="Diagnose real car problems from symptoms using Carithm’s AI-powered diagnostic tool." />
+<meta name="twitter:image" content="https://huggingface.co/spaces/shahau97/car-problem-solver-ai/resolve/main/preview.png" />
+<meta name="twitter:url" content="https://aicarfix.com/" />
 
-  <!-- Performance Hints -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- Preconnect for Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Structured Data (FAQ Schema) -->
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- Global Font Style -->
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+</style>
+
+  <!-- Structured Data (FAQ) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -71,42 +81,64 @@
   }
   </script>
 
-  <!-- Google tag (gtag.js) for Carithm -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8WS30TF6F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-F8WS30TF6F');
   </script>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f1117;
-      color: #fff;
+    :root {
+      --bg: #0f1117;
+      --text: #fff;
+      --link: #00c2ff;
+      --font: 'Inter', sans-serif;
+
+    }
+
+    html, body {
       margin: 0;
       padding: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem;
       text-align: center;
     }
 
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 2rem;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
 
-    iframe {
+    p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    iframe,
+    gradio-app {
       width: 100%;
       height: 720px;
       border: none;
       border-radius: 12px;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.25);
+      background: #12141b;
     }
 
     a {
-      color: #00c2ff;
+      color: var(--link);
       text-decoration: none;
+      transition: all 0.3s ease;
     }
 
     a:hover {
@@ -114,23 +146,39 @@
     }
 
     @media (max-width: 768px) {
-      iframe {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      iframe,
+      gradio-app {
         height: 560px;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      main {
+        padding: 1.2rem;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <main>
     <h1>🚗 Carithm – AI Car Diagnostics</h1>
-    <p>An AI-powered car diagnostics tool that translates your car's symptoms into real mechanical issues using structured logic, severity scoring, and repair estimates.</p>
+    <p>An AI-powered tool that translates your car's symptoms into real mechanical issues using structured logic, severity scoring, and repair estimates.</p>
 
-    <!-- EMBED your Hugging Face Space here -->
+    <!-- Embedded Gradio App -->
     <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
     <gradio-app src="https://shahau97-car-problem-solver-ai.hf.space"></gradio-app>
 
-    <p>Built by <a href="https://www.linkedin.com/in/shaunauk-basu-581928248/" target="_blank">Shaunauk Basu</a></p>
-  </div>
+    <p style="margin-top: 2rem;">Built by <a href="https://www.linkedin.com/in/shaunauk-basu-581928248/" target="_blank" rel="noopener">Shaunauk Basu</a></p>
+  </main>
 </body>
 </html>
