@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Carithm – AI Car Diagnostics & Repair </title>
+  <title>Carithm – AI Car Diagnostics & Repair</title>
 
   <!-- SEO Meta -->
   <meta name="description" content="Carithm AI instantly translates your car’s symptoms into real mechanical issues — with repair suggestions, severity scores, and cost estimates. Try it free." />
@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" href="https://huggingface.co/spaces/shahau97/car-problem-solver-ai/resolve/main/preview.png" />
   <link rel="shortcut icon" href="https://huggingface.co/spaces/shahau97/car-problem-solver-ai/resolve/main/preview.png" type="image/png" />
 
-  <!-- Open Graph (Facebook & others) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Carithm – AI Car Diagnostics & Repair" />
   <meta property="og:description" content="AI that connects symptoms to real car issues. Free, fast, and constantly improving." />
   <meta property="og:image" content="https://huggingface.co/spaces/shahau97/car-problem-solver-ai/resolve/main/preview.png" />
@@ -43,14 +43,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Global Font Style -->
   <style>
     body {
       font-family: 'Inter', sans-serif;
     }
   </style>
 
-  <!-- Structured Data (FAQ) -->
+  <!-- Structured Data: FAQ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -91,6 +90,21 @@
     function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-F8WS30TF6F');
+  </script>
+
+  <!-- Structured Data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Carithm",
+    "url": "https://fix-my-car-ai.vercel.app/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://fix-my-car-ai.vercel.app/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
   </script>
 
   <!-- Main Styles -->
@@ -188,26 +202,24 @@
 
     <a href="#gradio-app" class="cta-button">Start Diagnosing</a>
     <noscript>
-    <p>Carithm AI helps you diagnose car issues using AI. If you're seeing this message, JavaScript is disabled or the app couldn't load. Try again on a modern browser.</p>
+      <p>Carithm AI helps you diagnose car issues using AI. If you're seeing this message, JavaScript is disabled or the app couldn't load. Try again on a modern browser.</p>
     </noscript>
 
-    <!-- Embedded Gradio App -->
+    <!-- Gradio App -->
     <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
     <gradio-app id="gradio-app" src="https://shahau97-car-problem-solver-ai.hf.space"></gradio-app>
 
-     <section style="margin-top: 2rem; text-align: left;">
-    <h2>🔧 How Carithm Works</h2>
-    <p>Carithm is an AI-powered tool that diagnoses car problems based on the symptoms you describe. Whether your engine is shaking, your battery won’t start, or your car stalls after starting — Carithm helps pinpoint the cause using smart logic and data-driven insights.</p>
-
-    <p>This free tool supports common car issues and OBD-II codes such as <strong>P0300</strong> (random misfire), <strong>P0171</strong> (lean condition), <strong>P0420</strong> (catalytic converter efficiency), and more. It also explains possible symptoms, causes, fixes, and cost estimates.</p>
-
-    <p>There’s no signup required — just describe the problem and let the AI guide you to a likely diagnosis. Ideal for DIY car owners, students, mechanics, and auto enthusiasts.</p>
-
-    <p><strong>Examples of what you can try:</strong> “Car cranks but won’t start,” “Smoke from exhaust,” “P0301 OBD code,” “Overheating at idle,” and more.</p>
-  </section>
+    <section style="margin-top: 2rem; text-align: left;">
+      <h2>🔧 How Carithm Works</h2>
+      <p>Carithm is an AI-powered tool that diagnoses car problems based on the symptoms you describe. Whether your engine is shaking, your battery won’t start, or your car stalls after starting — Carithm helps pinpoint the cause using smart logic and data-driven insights.</p>
+      <p>This free tool supports common car issues and OBD-II codes such as <strong>P0300</strong> (random misfire), <strong>P0171</strong> (lean condition), <strong>P0420</strong> (catalytic converter efficiency), and more. It also explains possible symptoms, causes, fixes, and cost estimates.</p>
+      <p>There’s no signup required — just describe the problem and let the AI guide you to a likely diagnosis. Ideal for DIY car owners, students, mechanics, and auto enthusiasts.</p>
+      <p><strong>Examples of what you can try:</strong> “Car cranks but won’t start,” “Smoke from exhaust,” “P0301 OBD code,” “Overheating at idle,” and more.</p>
+    </section>
 
     <p style="margin-top: 2rem;">Built by <a href="https://www.linkedin.com/in/shaunauk-basu-581928248/" target="_blank" rel="noopener">Shaunauk Basu</a></p>
   </main>
 </body>
 </html>
+
 
