@@ -1,12 +1,13 @@
-# Allow all bots to crawl everything
+# Allow all bots to crawl the entire site
 User-agent: *
 Allow: /
 
-# Optional: Prevent bots from crawling internal API routes (adjust if needed)
+# Optional: Prevent bots from crawling internal API routes (adjust if your site has these)
 Disallow: /api/
 
-# Optional: Reduce crawl rate if site is lightweight or hosted on limited resources
+# Optional: Crawl delay to reduce server load on lightweight or limited-resource hosting
 Crawl-delay: 5
 
-# Sitemap to guide bots
+# Sitemap location for search engines
 Sitemap: https://fix-my-car-ai.vercel.app/sitemap.xml
+
