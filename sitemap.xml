@@ -13,4 +13,16 @@
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
+
+  <!-- Example additional page -->
+  <url>
+    <loc>https://fix-my-car-ai.vercel.app/about</loc>
+    <lastmod>2025-07-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Add more URLs below as your site grows -->
+
 </urlset>
+
