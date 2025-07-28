@@ -89,6 +89,12 @@
     .social-share button:hover {
       background: #008abf;
     }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
   </style>
 
   <!-- BlogPosting Schema -->
@@ -118,15 +124,13 @@
   </script>
 </head>
 <body>
-
   <a href="/" class="back-link">← Back to Home</a>
 
   <article>
     <h1>Top 10 Most Common Car Problems and How to Fix Them</h1>
-
-    <p>If you own a car, chances are you’ve experienced at least one annoying issue that disrupts your day — whether it’s an engine that shakes, a battery that won’t start, or weird noises coming from under the hood.</p>
+    <p>If you own a car, you’ve probably faced an annoying issue that disrupted your day — from shaking engines to cryptic warning lights.</p>
+    <p><strong>Carithm</strong> helps you troubleshoot problems with AI-powered analysis, based on real automotive data. Before you panic or visit the mechanic, check out the most common issues drivers encounter.</p>
     
-    <p>At <strong>Carithm</strong>, our AI-powered tool helps identify real mechanical issues from symptoms — giving repair suggestions, severity scores, and cost estimates. Before you jump into diagnostics, here are the top 10 car problems every driver should be familiar with.</p>
     
     <h2>1. Engine Misfires</h2>
 <img src="images-engine1.jpg" alt="Engine Misfire" style="max-width: 100%; height: auto; border-radius: 8px; margin: 10px 0;" />
@@ -192,8 +196,8 @@ These issues can arise from worn valve seals, blown gaskets, or fuel system prob
 <p>If your car suddenly feels like a boat on a wavy sea or leans awkwardly during turns, don’t ignore it — get your suspension checked. A smooth, stable ride isn’t just about comfort; it’s also about keeping you in control when it matters most.</p>
 
 
-    <h2>Try Carithm Now — It’s Free!</h2>
-    <p>Visit <a href="https://fix-my-car-ai.vercel.app" target="_blank" rel="noopener noreferrer">Carithm AI</a> and start diagnosing your car symptoms instantly.</p>
+<h2>Try Carithm Now — It’s Free!</h2>
+    <p>Use <a href="https://fix-my-car-ai.vercel.app" target="_blank" rel="noopener noreferrer"><strong>Carithm AI</strong></a> to diagnose your car's symptoms and OBD-II codes. No signup. Just type and fix.</p>
 
     <div class="social-share">
       <button onclick="shareTwitter()">Share on Twitter</button>
@@ -201,8 +205,8 @@ These issues can arise from worn valve seals, blown gaskets, or fuel system prob
     </div>
 
     <section style="margin-top: 2rem;">
-      <h2>Have Questions or Tips?</h2>
-      <p>Leave your questions or share your tips below!</p>
+      <h2>Got Questions or Tips?</h2>
+      <p>Leave your feedback below — we’re building Carithm in public and want your input!</p>
     </section>
   </article>
 
@@ -210,8 +214,8 @@ These issues can arise from worn valve seals, blown gaskets, or fuel system prob
   <div id="disqus_thread" style="margin-top: 3rem;"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = window.location.href;  
-      this.page.identifier = window.location.pathname; 
+      this.page.url = window.location.href;
+      this.page.identifier = window.location.pathname;
     };
     (function() {
       var d = document, s = d.createElement('script');
@@ -222,7 +226,7 @@ These issues can arise from worn valve seals, blown gaskets, or fuel system prob
 
     function shareTwitter() {
       const url = encodeURIComponent(window.location.href);
-      const text = encodeURIComponent('Check out this helpful car problems guide by Carithm AI!');
+      const text = encodeURIComponent('Check out this guide to car problems + fixes by Carithm AI!');
       window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
     }
     function shareFacebook() {
