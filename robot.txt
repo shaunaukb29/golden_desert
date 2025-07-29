@@ -2,12 +2,18 @@
 User-agent: *
 Allow: /
 
-# Optional: Prevent bots from crawling internal API routes (adjust if your site has these)
+# Prevent bots from crawling internal API routes
 Disallow: /api/
 
-# Optional: Crawl delay to reduce server load on lightweight or limited-resource hosting
+# Optional: Add more internal paths if needed
+# Disallow: /admin/
+# Disallow: /test/
+# Disallow: /*?
+
+# Crawl delay to reduce server load
 Crawl-delay: 5
 
 # Sitemap location for search engines
 Sitemap: https://fix-my-car-ai.vercel.app/sitemap.xml
+
 
