@@ -197,11 +197,14 @@
     box-shadow: var(--shadow);
   }
 
-  /* Override center alignment for embedded Gradio */
+  /* Override unintended center alignment in Gradio embeds */
   gradio-app,
   iframe,
   .gradio-container,
-  .gradio-container * {
+  .gradio-container *,
+  .prose,
+  .markdown-output,
+  .gr-markdown {
     text-align: left !important;
   }
 
@@ -353,6 +356,7 @@
     }
   }
 </style>
+
 
  <script type="application/ld+json">
   {
