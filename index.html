@@ -160,10 +160,17 @@
     box-shadow: var(--shadow);
   }
 
-  /* Center only titles */
+  /* Center only top-level titles */
   main > h1,
   main > h2 {
     text-align: center;
+  }
+
+  /* Keep embedded gradio outputs left-aligned */
+  .gradio-container .prose,
+  .gradio-container .markdown-output,
+  .gradio-container .gr-markdown {
+    text-align: left !important;
   }
 
   h1 {
@@ -195,17 +202,6 @@
     margin-top: 2rem;
     background: #1a1d27;
     box-shadow: var(--shadow);
-  }
-
-  /* Override unintended center alignment in Gradio embeds */
-  gradio-app,
-  iframe,
-  .gradio-container,
-  .gradio-container *,
-  .prose,
-  .markdown-output,
-  .gr-markdown {
-    text-align: left !important;
   }
 
   a {
