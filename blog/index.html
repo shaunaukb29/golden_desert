@@ -5,79 +5,116 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carithm Blog</title>
   <meta name="description" content="Explore expert-written blog posts on car problems, repairs, and AI-powered diagnostics by Carithm." />
-  <link rel="icon" href="/preview.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- Your full main CSS -->
   <style>
+    /* Paste your CSS from the previous message here */
     :root {
       --bg: #0f1117;
-      --text: #fff;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --text: #ffffff;
       --link: #00c2ff;
+      --accent: #00c2ff;
       --font: 'Inter', sans-serif;
+      --radius: 20px;
+      --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      --transition: 0.3s ease-in-out;
     }
-    body {
+
+    html, body {
       margin: 0;
-      padding: 2rem;
+      padding: 0;
       font-family: var(--font);
       background-color: var(--bg);
       color: var(--text);
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
     }
-    h1 {
-      color: var(--link);
+
+    main {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2.5rem;
       text-align: center;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
     }
-    .post {
-      border-bottom: 1px solid #333;
-      padding: 1rem 0;
-    }
-    .post a {
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
       color: var(--link);
-      font-size: 1.2rem;
+    }
+
+    .post {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: var(--radius);
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .post:hover {
+      transform: scale(1.02);
+    }
+
+    .post a {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--link);
       text-decoration: none;
     }
+
     .post a:hover {
       text-decoration: underline;
     }
+
     .description {
-      color: #ccc;
-      font-size: 0.95rem;
-      margin-top: 0.4rem;
+      margin-top: 0.5rem;
+      font-size: 1.05rem;
+      color: #d1d5db;
     }
+
     .back-link {
       margin-top: 3rem;
-      display: block;
       text-align: center;
     }
+
     .back-link a {
       color: #888;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>🛠️ Carithm Blog</h1>
+  <main>
+    <h1>📘 Carithm Blog</h1>
 
-  <div class="post">
-    <a href="/blog/how-to-fix-common-car-problems.html">
-      Top 10 Most Common Car Problems and How to Fix Them
-    </a>
-    <div class="description">
-      Engine misfires, battery issues, and more — learn what’s going wrong and how to fix it using Carithm AI diagnostics.
+    <div class="post">
+      <a href="/blog/how-to-fix-common-car-problems.html">
+        Top 10 Most Common Car Problems and How to Fix Them
+      </a>
+      <div class="description">
+        Engine misfires, battery issues, and more — learn what’s going wrong and how to fix it using Carithm AI diagnostics.
+      </div>
     </div>
-  </div>
 
-  <!-- You can add more blog posts like this one below -->
-  <!--
-  <div class="post">
-    <a href="/blog/your-second-post.html">Blog Post Title</a>
-    <div class="description">Short summary of that blog post here...</div>
-  </div>
-  -->
+    <!-- Add more blog posts below as needed -->
 
-  <div class="back-link">
-    <a href="/">← Back to Carithm AI</a>
-  </div>
+    <div class="back-link">
+      <a href="/">← Back to Carithm AI</a>
+    </div>
+  </main>
 </body>
 </html>
 
