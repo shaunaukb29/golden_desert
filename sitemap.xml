@@ -28,5 +28,11 @@
     <priority>0.90</priority>
   </url>
 
-</urlset>
+  <url>
+    <loc>https://fix-my-car-ai.vercel.app/blog/how-to-fix-common-car-problems.html</loc>
+    <lastmod>2025-07-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
 
+</urlset>
