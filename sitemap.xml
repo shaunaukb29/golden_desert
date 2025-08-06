@@ -23,7 +23,7 @@
 
   <url>
     <loc>https://fix-my-car-ai.vercel.app/blog</loc>
-    <lastmod>2025-07-28T00:00:00+00:00</lastmod>
+    <lastmod>2025-08-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -35,4 +35,13 @@
     <priority>0.75</priority>
   </url>
 
+  <url>
+    <loc>https://fix-my-car-ai.vercel.app/blog/things-to-check-before-buying-a-used-car.html</loc>
+    <lastmod>2025-08-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
 </urlset>
+
+
