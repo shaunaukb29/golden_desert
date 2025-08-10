@@ -644,10 +644,24 @@
       <p>Carithm AI helps you diagnose car issues using AI. If you're seeing this message, JavaScript is disabled or the app couldn't load. Try again on a modern browser.</p>
     </noscript>
 
-<!-- Gradio App -->
+<!-- Loading Spinner -->
 <style>
+  #loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #aaa;
+    font-size: 1.1rem;
+    text-align: center;
+    z-index: 9999;
+    background: rgba(15, 17, 23, 0.8);
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+  }
+
   .spinner {
-    margin: 2rem auto 1rem auto;
+    margin: 0 auto 0.8rem auto;
     width: 48px;
     height: 48px;
     border: 5px solid #00c2ff;
@@ -659,27 +673,6 @@
   @keyframes spin {
     to { transform: rotate(360deg); }
   }
-
-  #loading-spinner {
-    text-align: center;
-    color: #aaa;
-    font-size: 1.1rem;
-  }
-
-  /* Initially hide gradio-app but keep it in layout */
-  #gradio-app {
-    visibility: hidden;
-    height: 0;
-    overflow: hidden;
-    transition: visibility 0s linear 0.3s, height 0.3s ease;
-  }
-
-  /* Show gradio-app after loading */
-  #gradio-app.visible {
-    visibility: visible;
-    height: auto;
-    transition-delay: 0s;
-  }
 </style>
 
 <div id="loading-spinner">
@@ -687,29 +680,28 @@
   Loading AI Mechanic...
 </div>
 
+<!-- Gradio App -->
 <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
 <gradio-app id="gradio-app" src="https://CastBison-oblivion-core.hf.space"></gradio-app>
 
 <script>
-  const gradioApp = document.getElementById('gradio-app');
   const spinner = document.getElementById('loading-spinner');
+  const gradioApp = document.getElementById('gradio-app');
 
   const observer = new MutationObserver(() => {
     try {
       const iframe = gradioApp.shadowRoot?.querySelector('iframe');
-      if (iframe) {
+      if (iframe && iframe.contentWindow.document.readyState === 'complete') {
         spinner.style.display = 'none';
-        gradioApp.classList.add('visible');
         observer.disconnect();
       }
-    } catch (e) {
-      // ignore shadowRoot errors
+    } catch(e) {
+      // ignore shadowRoot access errors before ready
     }
   });
 
   observer.observe(gradioApp, { childList: true, subtree: true });
 </script>
-
 
   <section style="margin-top: 2rem; text-align: left;">
     <h2>🔧 How Carithm Works</h2>
@@ -825,6 +817,7 @@
 </body>
 
 </html>
+
 
 
 
