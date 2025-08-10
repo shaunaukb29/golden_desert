@@ -658,10 +658,10 @@
   const gradioApp = document.getElementById('gradio-app');
 
   // Listen for when Gradio finishes loading by watching the iframe inside the shadow DOM
-  gradioApp.addEventListener('load', () => {
-    // Hide spinner when Gradio app iframe is loaded
-    spinner.style.display = 'none';
-  });
+ gradioApp.shadowRoot.querySelector('iframe').addEventListener('load', () => {
+  spinner.style.display = 'none';
+});
+
 </script>
 
   <section style="margin-top: 2rem; text-align: left;">
@@ -778,6 +778,7 @@
 </body>
 
 </html>
+
 
 
 
