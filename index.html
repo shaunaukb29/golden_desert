@@ -685,22 +685,30 @@
 <gradio-app id="gradio-app" src="https://CastBison-oblivion-core.hf.space"></gradio-app>
 
 <script>
-  const spinner = document.getElementById('loading-spinner');
-  const gradioApp = document.getElementById('gradio-app');
+const spinner = document.getElementById('loading-spinner');
+const gradioApp = document.getElementById('gradio-app');
 
-  const observer = new MutationObserver(() => {
-    try {
-      const iframe = gradioApp.shadowRoot?.querySelector('iframe');
-      if (iframe && iframe.contentWindow.document.readyState === 'complete') {
+const observer = new MutationObserver(() => {
+  try {
+    const iframe = gradioApp.shadowRoot?.querySelector('iframe');
+    if (iframe) {
+      // Once iframe is found, listen for its load event
+      iframe.addEventListener('load', () => {
+        spinner.style.display = 'none';
+        observer.disconnect();
+      });
+      // Also hide spinner if iframe is already loaded
+      if (iframe.complete) {
         spinner.style.display = 'none';
         observer.disconnect();
       }
-    } catch(e) {
-      // ignore shadowRoot access errors before ready
     }
-  });
+  } catch(e) {
+    // ignore shadowRoot errors before ready
+  }
+});
 
-  observer.observe(gradioApp, { childList: true, subtree: true });
+observer.observe(gradioApp, { childList: true, subtree: true });
 </script>
 
   <section style="margin-top: 2rem; text-align: left;">
@@ -817,6 +825,7 @@
 </body>
 
 </html>
+
 
 
 
