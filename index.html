@@ -645,6 +645,7 @@
     </noscript>
 
 <!-- Gradio App -->
+<!-- Gradio App -->
 <style>
   .spinner {
     margin: 2rem auto 1rem auto;
@@ -674,6 +675,20 @@
 
 <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
 <gradio-app id="gradio-app" src="https://CastBison-oblivion-core.hf.space" style="display:none;"></gradio-app>
+
+<script>
+  const gradioApp = document.getElementById('gradio-app');
+  const spinner = document.getElementById('loading-spinner');
+
+  // Poll to check if shadowRoot or internal iframe exists
+  const checkLoaded = setInterval(() => {
+    if (gradioApp.shadowRoot && gradioApp.shadowRoot.querySelector('iframe')) {
+      clearInterval(checkLoaded);
+      spinner.style.display = 'none';
+      gradioApp.style.display = 'block';
+    }
+  }, 200);
+</script>
 
 <script>
   const gradioApp = document.getElementById('gradio-app');
@@ -799,6 +814,7 @@
 </body>
 
 </html>
+
 
 
 
