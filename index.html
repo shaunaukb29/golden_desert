@@ -645,28 +645,6 @@
     </noscript>
 
 <!-- Gradio App -->
-<style>
-  .spinner {
-    margin: 2rem auto 1rem auto;
-    width: 48px;
-    height: 48px;
-    border: 5px solid #00c2ff;
-    border-top: 5px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-
-  #loading-spinner {
-    text-align: center;
-    color: #aaa;
-    font-size: 1.1rem;
-  }
-</style>
-
 <div id="loading-spinner">
   <div class="spinner"></div>
   Loading AI Mechanic...
@@ -676,25 +654,16 @@
 <gradio-app id="gradio-app" src="https://CastBison-oblivion-core.hf.space"></gradio-app>
 
 <script>
-  const gradioApp = document.getElementById('gradio-app');
   const spinner = document.getElementById('loading-spinner');
+  const gradioApp = document.getElementById('gradio-app');
 
-  // Use MutationObserver to detect when iframe is added inside gradio-app shadow DOM
-  const observer = new MutationObserver(() => {
-    try {
-      const iframe = gradioApp.shadowRoot?.querySelector('iframe');
-      if (iframe) {
-        spinner.style.display = 'none';
-        gradioApp.style.display = 'block';
-        observer.disconnect();
-      }
-    } catch(e) {
-      // ignore errors if shadowRoot not accessible yet
-    }
+  // Listen for when Gradio finishes loading by watching the iframe inside the shadow DOM
+  gradioApp.addEventListener('load', () => {
+    // Hide spinner when Gradio app iframe is loaded
+    spinner.style.display = 'none';
   });
-
-  observer.observe(gradioApp, { childList: true, subtree: true });
 </script>
+
   <section style="margin-top: 2rem; text-align: left;">
     <h2>🔧 How Carithm Works</h2>
     <p>Carithm is an <strong>AI car mechanic</strong> that identifies car problems using natural language. Describe symptoms like ac not working, my car wont start, or overheating, and get reliable diagnostics.</p>
@@ -809,6 +778,7 @@
 </body>
 
 </html>
+
 
 
 
