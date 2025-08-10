@@ -646,59 +646,9 @@
 
 <!-- Gradio App -->
 <!-- Gradio App -->
-<style>
-  .spinner {
-    margin: 2rem auto 1rem auto;
-    width: 48px;
-    height: 48px;
-    border: 5px solid #00c2ff;
-    border-top: 5px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-
-  #loading-spinner {
-    text-align: center;
-    color: #aaa;
-    font-size: 1.1rem;
-  }
-</style>
-
-<div id="loading-spinner">
-  <div class="spinner"></div>
-  Loading AI Mechanic...
-</div>
-
-<script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
-<gradio-app id="gradio-app" src="https://CastBison-oblivion-core.hf.space" style="display:none;"></gradio-app>
-
-<script>
-  const gradioApp = document.getElementById('gradio-app');
-  const spinner = document.getElementById('loading-spinner');
-
-  // Poll to check if shadowRoot or internal iframe exists
-  const checkLoaded = setInterval(() => {
-    if (gradioApp.shadowRoot && gradioApp.shadowRoot.querySelector('iframe')) {
-      clearInterval(checkLoaded);
-      spinner.style.display = 'none';
-      gradioApp.style.display = 'block';
-    }
-  }, 200);
-</script>
-
-<script>
-  const gradioApp = document.getElementById('gradio-app');
-  const spinner = document.getElementById('loading-spinner');
-
-  gradioApp.addEventListener('load', () => {
-    spinner.style.display = 'none';
-    gradioApp.style.display = 'block';
-  });
-</script>
+<!-- Gradio App -->
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
+  <gradio-app id="gradio-app" src="https://CastBison-oblivion-core.hf.space"></gradio-app>
 
   <section style="margin-top: 2rem; text-align: left;">
     <h2>🔧 How Carithm Works</h2>
@@ -814,6 +764,7 @@
 </body>
 
 </html>
+
 
 
 
