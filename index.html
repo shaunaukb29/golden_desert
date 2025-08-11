@@ -538,24 +538,23 @@
       opacity: 0.7;
     }
 
- .logo-container {
+.logo-container {
   display: flex;
-  justify-content: center; /* centers horizontally */
-  align-items: center;     /* centers vertically within the header */
-  height: 75px;           /* adjust height to your liking */
+  justify-content: center;
+  align-items: center;
+  height: 50px;  /* smaller container height */
 }
 
 .logo_img {
-  max-width: 100px;        /* control how big the logo appears */
-  height: auto;            /* keeps proportions */
+  max-width: 70px;  /* smaller max width */
+  height: auto;     /* keep proportions */
 }
 
 @media (max-width: 768px) {
-  .logo-img {
-    max-width: 80px; /* Slightly smaller on mobile */
+  .logo_img {
+    max-width: 50px;  /* even smaller on mobile */
   }
 }
-
 
 </style>
 
@@ -782,27 +781,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
