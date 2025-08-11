@@ -644,8 +644,6 @@
       <p>Carithm AI helps you diagnose car issues using AI. If you're seeing this message, JavaScript is disabled or the app couldn't load. Try again on a modern browser.</p>
     </noscript>
 
-<!-- Gradio App -->
-<head>
 <style>
   #gradio-app {
     opacity: 0;
@@ -658,18 +656,12 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const gradioApp = document.getElementById("gradio-app");
-    gradioApp.addEventListener("load", function () {
+    setTimeout(() => {
       gradioApp.classList.add("loaded");
-    });
+    }, 800); // fade in after ~0.8 seconds
   });
 </script>
-</head>
 
-<body>
-  <!-- Gradio App -->
-  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
-  <gradio-app id="gradio-app" src="https://CastBison-oblivion-core.hf.space"></gradio-app>
-</body>
 
   <section style="margin-top: 2rem; text-align: left;">
     <h2>🔧 How Carithm Works</h2>
@@ -785,6 +777,7 @@
 </body>
 
 </html>
+
 
 
 
