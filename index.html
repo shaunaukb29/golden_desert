@@ -538,6 +538,25 @@
       opacity: 0.7;
     }
 
+ .logo-container {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center;     /* centers vertically within the header */
+  height: 120px;           /* adjust height to your liking */
+}
+
+.logo_img {
+  max-width: 200px;        /* control how big the logo appears */
+  height: auto;            /* keeps proportions */
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    max-width: 160px; /* Slightly smaller on mobile */
+  }
+}
+
+
 </style>
 
  <script type="application/ld+json">
@@ -627,9 +646,9 @@
     </div>
   </div>
  
- <div class="header">
-  <img src="logo_words.png" alt="Carithm AI Logo" style="height: 50px;" />
-</div>
+ <header class="logo-container">
+  <img src="logo_words.png" alt="Carithm AI Logo" class="logo-img">
+</header>
 
   <main style="animation: fadeIn 0.8s ease;">
     <h1>Diagnose Car Problems with AI</h1>
@@ -763,6 +782,7 @@
 </body>
 
 </html>
+
 
 
 
