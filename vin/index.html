@@ -154,6 +154,22 @@
       from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    .logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px;  /* smaller container height */
+}
+
+.logo-img {
+  max-width: 240px;  /* smaller max width */
+  height: auto;     /* keep proportions */
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    max-width: 180px;  /* even smaller on mobile */
+  }
   </style>
 </head>
 <body>
