@@ -255,26 +255,131 @@ footer { text-align: center; margin-top: 3rem; font-size: 0.9rem; opacity: 0.7; 
     </ul>
   </section>
 
-  <!-- FAQ Section -->
-  <section style="margin: 2rem auto; max-width: 800px; padding: 1rem;">
-    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Frequently Asked Questions</h2>
-    <!-- FAQ details repeated, unchanged -->
-  </section>
+<!-- Optional: Inline FAQ for UX + SEO -->
+<section style="margin: 2rem auto; max-width: 800px; padding: 1rem;">
+  <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Frequently Asked Questions</h2>
 
-  <!-- Blog Link -->
-  <a href="/blog/" class="blog-link">📘 Visit Our Car Blog – Fixes, Tips & More →</a>
-</main>
+  <details style="margin-bottom: 1rem;">
+    <summary style="cursor: pointer;">
+      <strong>Is Carithm really free to use for car repair diagnostics?</strong>
+    </summary>
+    <div style="padding-left: 1rem; margin-top: 0.5rem;">
+      <p>Yes! Carithm is 100% free, with no signup or ads. Just type your car problem and get instant, AI-powered automotive repair guidance.</p>
+    </div>
+  </details>
+
+  <details style="margin-bottom: 1rem;">
+    <summary style="cursor: pointer;">
+      <strong>Can I use Carithm with OBD-II codes like P0420 or P0300?</strong>
+    </summary>
+    <div style="padding-left: 1rem; margin-top: 0.5rem;">
+      <p>Absolutely — input OBD-II diagnostic trouble codes such as P0171, P0420, or P0300 and get detailed explanations, symptoms, and repair recommendations from our AI car code reader.</p>
+    </div>
+  </details>
+
+  <details style="margin-bottom: 1rem;">
+    <summary style="cursor: pointer;">
+      <strong>Is there an app or APK available for Carithm?</strong>
+    </summary>
+    <div style="padding-left: 1rem; margin-top: 0.5rem;">
+      <p>Not yet. Carithm currently works perfectly on mobile and desktop browsers. A downloadable app may be available soon for easier access to your AI mechanic.</p>
+    </div>
+  </details>
+
+  <details style="margin-bottom: 1rem;">
+    <summary style="cursor: pointer;">
+      <strong>Can Carithm help if my car is broken or won’t start?</strong>
+    </summary>
+    <div style="padding-left: 1rem; margin-top: 0.5rem;">
+      <p>Yes. Whether your car won’t turn over, shows a check engine light, or has engine trouble, simply describe the symptoms and Carithm will guide you through possible causes and fixes like a real mechanic.</p>
+    </div>
+  </details>
+
+  <details style="margin-bottom: 1rem;">
+    <summary style="cursor: pointer;">
+      <strong>What if my car AC is not working or not blowing cold air?</strong>
+    </summary>
+    <div style="padding-left: 1rem; margin-top: 0.5rem;">
+      <p>Carithm uses automotive repair AI to diagnose common AC problems such as “car AC not blowing cold air” and suggests potential causes and repairs you can try.</p>
+    </div>
+  </details>
+
+  <details style="margin-bottom: 1rem;">
+    <summary style="cursor: pointer;">
+      <strong>How does Carithm work for engine repairs or blown head gasket issues?</strong>
+    </summary>
+    <div style="padding-left: 1rem; margin-top: 0.5rem;">
+      <p>If your engine has problems like a blown head gasket, bad ignition switch, or timing chain tensioner failure, describe your symptoms and Carithm’s AI mechanic will provide repair advice and diagnostics.</p>
+    </div>
+  </details>
+
+  <details style="margin-bottom: 1rem;">
+    <summary style="cursor: pointer;">
+      <strong>Can Carithm read and interpret check engine light problems?</strong>
+    </summary>
+    <div style="padding-left: 1rem; margin-top: 0.5rem;">
+      <p>Yes! Just tell Carithm your check engine light is on, and it will decode the trouble codes and provide detailed diagnostics without the need for a physical scan tool.</p>
+    </div>
+  </details>
+
+  <details style="margin-bottom: 1rem;">
+    <summary style="cursor: pointer;">
+      <strong>Is Carithm like having a virtual mechanic chat?</strong>
+    </summary>
+    <div style="padding-left: 1rem; margin-top: 0.5rem;">
+      <p>Exactly! It’s a free AI mechanic that understands natural language — say “my car won’t start” or “engine light came on” and get step-by-step guidance.</p>
+    </div>
+  </details>
+
+  <details style="margin-bottom: 1rem;">
+    <summary style="cursor: pointer;">
+      <strong>Does Carithm use machine learning for diagnostics?</strong>
+    </summary>
+    <div style="padding-left: 1rem; margin-top: 0.5rem;">
+      <p>Yes. Powered by machine learning, Carithm is trained on thousands of real vehicle repair cases to deliver fast and accurate automotive troubleshooting.</p>
+    </div>
+  </details>
+
+  <details style="margin-bottom: 1rem;">
+    <summary style="cursor: pointer;">
+      <strong>Can I get detailed car issues and repair cost estimates?</strong>
+    </summary>
+    <div style="padding-left: 1rem; margin-top: 0.5rem;">
+      <p>Definitely. Carithm provides detailed diagnostics, symptoms, and estimated repair costs to help you make informed decisions about car repair.</p>
+    </div>
+  </details>
+
+  <details style="margin-bottom: 1rem;">
+    <summary style="cursor: pointer;">
+      <strong>Does Carithm offer a free vehicle report?</strong>
+    </summary>
+    <div style="padding-left: 1rem; margin-top: 0.5rem;">
+      <p>Yes — just describe your car problem and Carithm generates a free, detailed vehicle report with probable causes and fixes.</p>
+    </div>
+  </details>
+</section>
+
+<!-- Blog Link -->
+<a href="/blog/" class="blog-link">📘 Visit Our Car Blog – Fixes, Tips & More →</a>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
 
 <footer>
-  Built by <a href="https://www.linkedin.com/in/shaunauk-basu-581928248/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Shaunauk Basu</a>
+  Built by
+  <a href="https://www.linkedin.com/in/shaunauk-basu-581928248/" target="_blank" style="color: inherit; text-decoration: underline;">
+    Shaunauk Basu
+  </a>
 </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
