@@ -5,15 +5,10 @@ Allow: /
 # Prevent bots from crawling internal API routes
 Disallow: /api/
 
-# Optional: Add more internal paths if needed
+# Optional: block internal or test pages
 # Disallow: /admin/
 # Disallow: /test/
 # Disallow: /*?
 
-# Crawl delay to reduce server load
-Crawl-delay: 5
-
 # Sitemap location for search engines
 Sitemap: https://fix-my-car-ai.vercel.app/sitemap.xml
-
-
