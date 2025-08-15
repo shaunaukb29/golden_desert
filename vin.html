@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carithm VIN Decoder – US Vehicle Lookup</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Carithm VIN Decoder helps you instantly decode US vehicle VINs and get details like make, model, year, engine, and more. Free and easy-to-use online tool." />
+  <meta name="keywords" content="VIN decoder, US vehicle VIN, car VIN lookup, decode VIN, vehicle information, Carithm VIN tool" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Main Styles -->
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --text: #ffffff;
+      --link: #00c2ff;
+      --accent: #00c2ff;
+      --font: 'Inter', sans-serif;
+      --radius: 20px;
+      --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      --transition: 0.3s ease-in-out;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background-color: var(--bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .header .brand {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .header .nav-links a {
+      margin-left: 1.5rem;
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    .header .nav-links a:hover {
+      color: var(--link);
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 140px;
+    }
+
+    .logo-img {
+      max-width: 240px;
+      height: auto;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
+      animation: fadeIn 0.8s ease;
+    }
+
+    main h1, main h2 {
+      text-align: center;
+    }
+
+    h1 { font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700; }
+    h2 { font-size: 1.75rem; margin-bottom: 1rem; font-weight: 600; }
+    p { line-height: 1.8; font-size: 1.15rem; margin-bottom: 1rem; color: #d1d5db; }
+
+    iframe, gradio-app {
+      width: 100%;
+      height: 60vh;
+      min-height: 400px;
+      max-height: 720px;
+      border: none;
+      border-radius: var(--radius);
+      margin-top: 2rem;
+      background: #1a1d27;
+      box-shadow: var(--shadow);
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .cta-wrapper { display: flex; justify-content: center; margin-top: 2rem; }
+    .cta-button {
+      display: inline-block;
+      padding: 0.7rem 1.4rem;
+      background: var(--accent);
+      color: #000;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 194, 255, 0.4);
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .cta-button:hover { transform: scale(1.05); }
+
+    footer { text-align: center; margin-top: 3rem; font-size: 0.9rem; opacity: 0.7; }
+
+    @media (max-width: 768px) {
+      .header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .header .nav-links a { margin-left: 0; margin-right: 1.5rem; }
+      main { margin: 2rem 1rem; padding: 1.5rem; }
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.4rem; }
+      iframe, gradio-app { height: 50vh; min-height: 320px; max-height: 560px; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <a href="/" class="brand">Carithm</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/vin/">VIN Decoder</a>
+    </div>
+  </div>
+
+  <header class="logo-container">
+    <img src="logo_words.png" alt="Carithm VIN Decoder Logo" class="logo-img" loading="lazy">
+  </header>
+
+  <main>
+    <h1>VIN Decoder for US Vehicles</h1>
+    <h2>Instantly Decode Vehicle VINs & Get Detailed Info</h2>
+
+    <p>Carithm VIN Decoder helps you identify US vehicle information including <strong>make, model, year, engine, and manufacturing details</strong> using the vehicle’s VIN. Free, easy-to-use, and works entirely in your browser.</p>
+
+    <div class="cta-wrapper">
+      <a href="#vin-app" class="cta-button">Decode a VIN</a>
+    </div>
+
+    <noscript>
+      <p>To decode VINs, please enable JavaScript or use a modern browser that supports online apps.</p>
+    </noscript>
+
+    <!-- Gradio VIN Decoder App -->
+    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
+    <gradio-app src="https://huggingface.co/spaces/CastBison/deep_lava"></gradio-app>
+
+    <section style="margin-top: 2rem; text-align: left;">
+      <h2>🔍 How It Works</h2>
+      <p>Enter the <strong>17-character VIN</strong> of your US vehicle. The VIN decoder extracts all key details including year, make, model, engine type, assembly plant, and other info directly from official VIN standards.</p>
+
+      <h3>💡 Example VIN:</h3>
+      <ul>
+        <li>1HGCM82633A004352</li>
+        <li>2FTRX18W1XCA12345</li>
+      </ul>
+
+      <p><strong>Note:</strong> This tool is designed for <strong>US vehicles only</strong>. International VINs may not return full results.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    Built by <a href="https://www.linkedin.com/in/shaunauk-basu-581928248/" target="_blank" style="color: inherit; text-decoration: underline;">Shaunak Basu</a>
+  </footer>
+
+</body>
+</html>
