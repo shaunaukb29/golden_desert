@@ -9,4 +9,4 @@ Disallow: /api/
 # Disallow: /*?  # optional: blocks all URLs with query parameters
 
 # Sitemap location
-Sitemap: https://fix-my-car-ai.vercel.app/sitemap.xml
+Sitemap: https://carithm.vercel.app/sitemap.xml
