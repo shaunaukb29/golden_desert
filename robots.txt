@@ -12,4 +12,4 @@ Disallow: /test/
 # Disallow: /*?ref=*
 
 # Sitemap location
-Sitemap: https://carithmai.vercel.app/sitemap.xml
+Sitemap: https://carithm.vercel.app/sitemap.xml
