@@ -5,19 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carithm Blog</title>
   <meta name="description" content="Explore expert-written blog posts on car problems, repairs, and AI-powered diagnostics by Carithm." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
   <style>
     :root {
       --bg: #0f1117;
       --card-bg: rgba(255, 255, 255, 0.03);
       --text: #ffffff;
       --link: #00c2ff;
-      --accent: #00c2ff;
+      --accent: linear-gradient(90deg,#00c2ff,#00ffd5);
       --font: 'Inter', sans-serif;
       --radius: 20px;
-      --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      --shadow: 0 12px 32px rgba(0,0,0,0.35);
       --transition: 0.3s ease-in-out;
     }
+
+    *, *::before, *::after { box-sizing: border-box; }
 
     html, body {
       margin: 0;
@@ -38,13 +44,16 @@
       border-radius: var(--radius);
       backdrop-filter: blur(20px);
       box-shadow: var(--shadow);
+      animation: fadeIn 0.8s ease;
     }
 
     h1 {
       font-size: 2.5rem;
       margin-bottom: 2rem;
       font-weight: 700;
-      color: var(--link);
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .post {
@@ -52,12 +61,13 @@
       padding: 1.5rem;
       background: rgba(255, 255, 255, 0.02);
       border-radius: var(--radius);
-      transition: var(--transition);
+      transition: transform var(--transition), box-shadow var(--transition);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     .post:hover {
       transform: scale(1.02);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
     }
 
     .post a {
@@ -65,10 +75,12 @@
       font-weight: 600;
       color: var(--link);
       text-decoration: none;
+      transition: color var(--transition);
     }
 
     .post a:hover {
       text-decoration: underline;
+      color: #00ffd5;
     }
 
     .description {
@@ -86,10 +98,29 @@
       color: #888;
       font-size: 1rem;
       text-decoration: none;
+      transition: color var(--transition);
     }
 
     .back-link a:hover {
+      color: var(--link);
       text-decoration: underline;
+    }
+
+    @media(max-width:768px){
+      main { margin:2rem 1rem; padding:2rem; }
+      h1 { font-size:2rem; }
+      .post a { font-size:1.2rem; }
+    }
+
+    @media(max-width:480px){
+      main { backdrop-filter:none; background: rgba(255,255,255,0.05); padding:1.5rem; }
+      h1 { font-size:1.8rem; }
+      .post a { font-size:1.1rem; }
+    }
+
+    @keyframes fadeIn { 
+      from{opacity:0; transform:translateY(12px);} 
+      to{opacity:1; transform:translateY(0);} 
     }
   </style>
 </head>
