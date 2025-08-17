@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carithm AI – Instantly Diagnose & Fix Car Problems Online</title>
+
+  <title>Carithm AI – Instant AI Car Diagnostics & OBD-II Code Fixes</title>
 
   <!-- SEO Meta -->
-  <meta name="description" content="Carithm AI diagnoses car repair and automotive issues, decodes OBD-II trouble codes like P0420, P0171, and P0300 instantly with a car code reader." />
-  <meta name="keywords" content="car repair, automotive, OBD-II codes, AI mechanic, P0420, P0171, P0300, vehicle diagnostics" />
+  <meta name="description" content="Carithm AI is a free virtual car mechanic that instantly diagnoses vehicle issues using OBD-II codes (P0420, P0171, P0300) or symptoms and provides step-by-step repair guidance." />
+  <meta name="keywords" content="car diagnostics, AI mechanic, OBD-II codes, vehicle repair, P0420, P0171, P0300, car troubleshooting, virtual car repair, automotive AI" />
   <meta name="author" content="Shaunak Basu" />
   <link rel="canonical" href="https://carithm.vercel.app" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -15,8 +16,8 @@
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Carithm – AI Car Mechanic That Diagnoses Problems Instantly" />
-  <meta property="og:description" content="Free AI-powered tool that turns car symptoms and OBD-II diagnostic trouble codes into real mechanic-level fixes." />
+  <meta property="og:title" content="Carithm AI – Virtual Mechanic for Instant Car Diagnostics" />
+  <meta property="og:description" content="Diagnose car problems instantly using AI with symptoms or OBD-II codes. Get precise explanations, causes, and fixes for codes like P0300, P0171, P0420." />
   <meta property="og:image" content="https://carithm.vercel.app/preview.png" />
   <meta property="og:url" content="https://carithm.vercel.app" />
   <meta property="og:type" content="website" />
@@ -24,8 +25,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Carithm – AI Tool to Fix Car Problems Instantly" />
-  <meta name="twitter:description" content="Turn car symptoms or OBD-II codes into accurate fixes with AI. Free virtual mechanic." />
+  <meta name="twitter:title" content="Carithm AI – Free Virtual Mechanic for Car Diagnostics" />
+  <meta name="twitter:description" content="Instantly diagnose car issues using AI. Enter OBD-II codes or symptoms to get real mechanic-level fixes online. Free, no signup." />
   <meta name="twitter:image" content="https://carithm.vercel.app/preview.png" />
   <meta name="twitter:site" content="@carithmai" />
 
@@ -132,8 +133,38 @@
 
     @keyframes fadeIn { from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);} }
   </style>
-</head>
 
+  <!-- Structured Data FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Is Carithm free to use?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yes! Carithm AI is completely free, requires no signup, and provides instant virtual car repair guidance."}
+      },
+      {
+        "@type":"Question",
+        "name":"Can I diagnose car issues with OBD-II codes?",
+        "acceptedAnswer":{"@type":"Answer","text":"Absolutely! Carithm supports codes like P0300, P0171, P0420 and gives explanations, causes, and recommended fixes."}
+      },
+      {
+        "@type":"Question",
+        "name":"Do I need mechanical experience?",
+        "acceptedAnswer":{"@type":"Answer","text":"No. Simply input car symptoms or codes and get AI-generated step-by-step guidance."}
+      },
+      {
+        "@type":"Question",
+        "name":"Does it work on mobile?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yes! Carithm works instantly on mobile, tablet, and desktop browsers without any downloads."}
+      }
+    ]
+  }
+  </script>
+
+</head>
 <body>
 
   <header class="header">
@@ -153,18 +184,20 @@
     <h1>Diagnose Car Problems Instantly</h1>
     <h2>Free AI tool using symptoms or OBD-II codes</h2>
 
-    <p>Carithm is a <strong>free AI car mechanic</strong> that helps you diagnose vehicle issues using natural language or OBD-II codes like <strong>P0300</strong>, <strong>P0171</strong>, and <strong>P0420</strong>.</p>
+    <p>Carithm is a <strong>free AI car mechanic</strong> that helps you diagnose vehicle issues using natural language or OBD-II codes like <strong>P0300</strong>, <strong>P0171</strong>, and <strong>P0420</strong>. Get precise causes, repair steps, and recommendations instantly.</p>
 
     <div class="cta-wrapper">
       <a href="#gradio" class="cta-button">Start Diagnosing</a>
     </div>
 
     <gradio-app src="https://castbison-golden-desert.hf.space"></gradio-app>
+    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
+
 
     <section>
       <h2>🔧 How Carithm Works</h2>
-      <p>Describe symptoms like "engine won't start" or input OBD-II codes, and Carithm provides diagnostics, probable causes, and repair recommendations.</p>
-      <p><strong>No login required.</strong> Works instantly on mobile, tablet, and desktop.</p>
+      <p>Enter symptoms like "engine won't start" or input OBD-II codes, and Carithm provides diagnostics, likely causes, and actionable repair guidance.</p>
+      <p><strong>No login required.</strong> Fully functional on mobile, tablet, and desktop.</p>
       <h3>🧪 Try phrases like:</h3>
       <ul>
         <li>"Engine cranks but won’t start"</li>
@@ -175,7 +208,6 @@
 
     <section>
       <h2>FAQ</h2>
-
       <details>
         <summary>Is Carithm free to use?</summary>
         <p>Yes! 100% free, no signup, no ads. Get instant AI car repair guidance.</p>
@@ -194,7 +226,7 @@
       </details>
     </section>
 
-    <a href="/blog/" class="blog-link">📘 Visit Our Car Blog – Fixes, Tips & More →</a>
+    <a href="/blog/" class="blog-link">📘 Visit Our Car Blog – Fixes, Tips & DIY Guides →</a>
   </main>
 
   <footer>
