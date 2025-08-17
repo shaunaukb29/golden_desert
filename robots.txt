@@ -1,12 +1,13 @@
-# Allow all search engines to crawl the site
+# Allow all search engines to crawl the main site
 User-agent: *
 Allow: /
 
 # Block sensitive or unnecessary paths
 Disallow: /api/
-# Disallow: /admin/
-# Disallow: /test/
-# Disallow: /*?  # optional: blocks all URLs with query parameters
+Disallow: /admin/
+Disallow: /test/
+# Disallow URLs with query parameters (optional, prevents duplicate content)
+Disallow: /*?
 
 # Sitemap location
 Sitemap: https://carithm.vercel.app/sitemap.xml
