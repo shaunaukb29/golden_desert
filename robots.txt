@@ -10,4 +10,4 @@ Disallow: /test/
 Disallow: /*?
 
 # Sitemap location
-Sitemap: https://carithm.vercel.app/sitemap.xml
+Sitemap: https://carithm-ai.vercel.app/sitemap.xml
