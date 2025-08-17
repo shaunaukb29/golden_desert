@@ -10,29 +10,26 @@
   <meta name="keywords" content="VIN decoder, US vehicle VIN, car VIN lookup, decode VIN, vehicle information, Carithm VIN tool" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Main Styles -->
+  <!-- Styles -->
   <style>
     :root {
       --bg: #0f1117;
       --card-bg: rgba(255, 255, 255, 0.03);
       --text: #ffffff;
       --link: #00c2ff;
-      --accent: #00c2ff;
+      --accent: linear-gradient(90deg,#00c2ff,#00ffd5);
       --font: 'Inter', sans-serif;
       --radius: 20px;
-      --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      --shadow: 0 12px 32px rgba(0,0,0,0.35);
       --transition: 0.3s ease-in-out;
     }
+
+    *, *::before, *::after { box-sizing: border-box; }
 
     html, body {
       margin: 0;
@@ -44,17 +41,21 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    a { color: var(--link); text-decoration: none; transition: color var(--transition);}
+    a:hover { color: #00ffd5; text-decoration: underline; }
+
     .header {
       position: sticky;
       top: 0;
       z-index: 999;
-      background-color: var(--bg);
+      backdrop-filter: blur(12px);
+      background-color: rgba(15,17,23,0.85);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.3);
     }
 
     .header .brand {
@@ -66,27 +67,14 @@
 
     .header .nav-links a {
       margin-left: 1.5rem;
-      color: #ccc;
-      text-decoration: none;
       font-weight: 500;
       transition: color var(--transition);
     }
 
-    .header .nav-links a:hover {
-      color: var(--link);
-    }
+    .header .nav-links a:hover { color: #00ffd5; }
 
-    .logo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 140px;
-    }
-
-    .logo-img {
-      max-width: 240px;
-      height: auto;
-    }
+    .logo-container { display:flex; justify-content:center; align-items:center; height:140px; margin-top:1rem;}
+    .logo-img { max-width:240px; height:auto; }
 
     main {
       max-width: 900px;
@@ -99,92 +87,92 @@
       animation: fadeIn 0.8s ease;
     }
 
-    main h1, main h2 {
+    main h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
       text-align: center;
-    }
-
-    h1 { font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700; }
-    h2 { font-size: 1.75rem; margin-bottom: 1rem; font-weight: 600; }
-    p { line-height: 1.8; font-size: 1.15rem; margin-bottom: 1rem; color: #d1d5db; }
-
-    iframe, gradio-app {
-      width: 100%;
-      height: 60vh;
-      min-height: 400px;
-      max-height: 720px;
-      border: none;
-      border-radius: var(--radius);
-      margin-top: 2rem;
-      background: #1a1d27;
-      box-shadow: var(--shadow);
-    }
-
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .cta-wrapper { display: flex; justify-content: center; margin-top: 2rem; }
-    .cta-button {
-      display: inline-block;
-      padding: 0.7rem 1.4rem;
       background: var(--accent);
-      color: #000;
-      border-radius: var(--radius);
-      font-weight: 600;
-      font-size: 1rem;
-      box-shadow: 0 8px 20px rgba(0, 194, 255, 0.4);
-      cursor: pointer;
-      text-align: center;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
+    main h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-align: center;
+      color: #d1d5db;
+    }
+
+    p { font-size: 1.15rem; line-height: 1.8; color: #d1d5db; margin-bottom: 1rem; }
+    strong { color: #fff; }
+
+    .cta-wrapper { display:flex; justify-content:center; margin-top:2rem; }
+    .cta-button {
+      display:inline-block;
+      padding:0.8rem 1.6rem;
+      font-weight:600;
+      font-size:1rem;
+      background: var(--link);
+      border-radius:var(--radius);
+      color:#000;
+      box-shadow:0 8px 20px rgba(0,194,255,0.4);
+      transition: transform var(--transition);
+      cursor:pointer;
+    }
     .cta-button:hover { transform: scale(1.05); }
 
-    footer { text-align: center; margin-top: 3rem; font-size: 0.9rem; opacity: 0.7; }
-
-    @media (max-width: 768px) {
-      .header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-      .header .nav-links a { margin-left: 0; margin-right: 1.5rem; }
-      main { margin: 2rem 1rem; padding: 1.5rem; }
-      h1 { font-size: 2rem; }
-      h2 { font-size: 1.4rem; }
-      iframe, gradio-app { height: 50vh; min-height: 320px; max-height: 560px; }
+    iframe, gradio-app {
+      width:100%;
+      min-height:400px;
+      max-height:900px;
+      border:none;
+      border-radius:var(--radius);
+      margin-top:2rem;
+      background:#1a1d27;
+      box-shadow:var(--shadow);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
+    section { margin-top:3rem; padding:2rem; background: var(--card-bg); border-radius:var(--radius); text-align:left; }
+
+    ul { margin-left:1.5rem; margin-bottom:1rem; }
+    li { margin-bottom:0.5rem; }
+
+    footer { text-align:center; margin-top:3rem; font-size:0.9rem; opacity:0.7; }
+
+    @media(max-width:768px){
+      .header { flex-direction: column; align-items:flex-start; gap:0.5rem;}
+      .header .nav-links a { margin-left:0; margin-right:1rem;}
+      main { margin:2rem 1rem; padding:1.5rem; }
+      h1 { font-size:2rem;}
+      h2 { font-size:1.3rem;}
+      iframe, gradio-app { min-height:320px; max-height:720px;}
     }
-    .logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 140px;  /* smaller container height */
-}
 
-.logo-img {
-  max-width: 240px;  /* smaller max width */
-  height: auto;     /* keep proportions */
-}
+    @media(max-width:480px){
+      main { backdrop-filter:none; background: rgba(255,255,255,0.05);}
+      h1 { font-size:1.8rem;}
+      iframe, gradio-app { min-height:300px; max-height:560px;}
+    }
 
-@media (max-width: 768px) {
-  .logo-img {
-    max-width: 180px;  /* even smaller on mobile */
-  }
+    @keyframes fadeIn { from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);} }
   </style>
 </head>
 <body>
 
-  <div class="header">
+  <header class="header">
     <a href="/" class="brand">Carithm</a>
     <div class="nav-links">
       <a href="/">Home</a>
       <a href="/blog/">Blog</a>
       <a href="/vin/">VIN Decoder</a>
     </div>
-  </div>
+  </header>
 
-  <header class="logo-container">
- <img src="logo_words.png" alt="Carithm AI virtual car mechanic logo" class="logo-img" loading="lazy">
-</header>
+  <div class="logo-container">
+    <img src="logo_words.png" alt="Carithm AI virtual car mechanic logo" class="logo-img" loading="lazy">
+  </div>
 
   <main>
     <h1>VIN Decoder for US Vehicles</h1>
@@ -204,11 +192,11 @@
     <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
     <gradio-app src="https://castbison-deep-lava.hf.space"></gradio-app>
 
-    <section style="margin-top: 2rem; text-align: left;">
+    <section>
       <h2>🔍 How It Works</h2>
       <p>Enter the <strong>17-character VIN</strong> of your US vehicle. The VIN decoder extracts all key details including year, make, model, engine type, assembly plant, and other info directly from official VIN standards.</p>
 
-      <h3>💡 Example VIN:</h3>
+      <h3>💡 Example VINs:</h3>
       <ul>
         <li>1HGCM82633A004352</li>
         <li>2FTRX18W1XCA12345</li>
@@ -216,11 +204,10 @@
 
       <p><strong>Note:</strong> This tool is designed for <strong>US vehicles only</strong>. International VINs may not return full results.</p>
     </section>
-
   </main>
 
   <footer>
-    Built by <a href="https://www.linkedin.com/in/shaunauk-basu-581928248/" target="_blank" style="color: inherit; text-decoration: underline;">Shaunak Basu</a>
+    Built by <a href="https://www.linkedin.com/in/shaunauk-basu-581928248/" target="_blank" style="color:inherit; text-decoration:underline;">Shaunak Basu</a>
   </footer>
 
 </body>
