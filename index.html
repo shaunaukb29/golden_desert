@@ -4,170 +4,232 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Carithm – AI Virtual Mechanic for Instant Car Diagnostics</title>
+  <title>Carithm AI – Instant AI Car Diagnostics & OBD-II Code Fixes</title>
 
   <!-- SEO Meta -->
-  <meta name="description" content="Carithm AI virtual mechanic diagnoses car problems, decodes OBD-II codes like P0420, P0171, and P0300, and offers step-by-step solutions instantly online." />
-  <meta name="keywords" content="car diagnostics, AI mechanic, OBD-II codes, P0420, P0171, P0300, automotive repair, car troubleshooting, virtual car repair" />
+  <meta name="description" content="Carithm AI is a free virtual car mechanic that instantly diagnoses vehicle issues using OBD-II codes (P0420, P0171, P0300) or symptoms and provides step-by-step repair guidance." />
+  <meta name="keywords" content="car diagnostics, AI mechanic, OBD-II codes, vehicle repair, P0420, P0171, P0300, car troubleshooting, virtual car repair, automotive AI" />
   <meta name="author" content="Shaunak Basu" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://carithm.vercel.app/" />
+  <link rel="canonical" href="https://carithm.vercel.app" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <meta name="theme-color" content="#0f1117" />
-  <meta name="google-site-verification" content="WgIXkQGW1Y1GPbJcucm0gka4UcL9L8WofiHAV7Ic6fM" />
-
-  <!-- Favicon & Icons -->
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Carithm – AI Virtual Mechanic for Instant Car Diagnostics" />
-  <meta property="og:description" content="Use Carithm AI to quickly diagnose car issues using symptoms or OBD-II codes like P0420, P0171, and P0300. Get detailed fixes and cost estimates instantly." />
+  <meta property="og:title" content="Carithm AI – Virtual Mechanic for Instant Car Diagnostics" />
+  <meta property="og:description" content="Diagnose car problems instantly using AI with symptoms or OBD-II codes. Get precise explanations, causes, and fixes for codes like P0300, P0171, P0420." />
   <meta property="og:image" content="https://carithm.vercel.app/preview.png" />
   <meta property="og:url" content="https://carithm.vercel.app" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Carithm" />
-  <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Carithm – AI Virtual Mechanic for Instant Car Diagnostics" />
-  <meta name="twitter:description" content="Turn car symptoms and OBD-II codes like P0420 or P0300 into actionable repair guidance with Carithm AI – free and fast." />
+  <meta name="twitter:title" content="Carithm AI – Free Virtual Mechanic for Car Diagnostics" />
+  <meta name="twitter:description" content="Instantly diagnose car issues using AI. Enter OBD-II codes or symptoms to get real mechanic-level fixes online. Free, no signup." />
   <meta name="twitter:image" content="https://carithm.vercel.app/preview.png" />
-  <meta name="twitter:url" content="https://carithm.vercel.app" />
   <meta name="twitter:site" content="@carithmai" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Main Styles -->
+  <!-- Styles -->
   <style>
-:root {
-  --bg: #0f1117;
-  --card-bg: rgba(255,255,255,0.03);
-  --text: #ffffff;
-  --link: #00c2ff;
-  --accent: #00c2ff;
-  --font: 'Inter', sans-serif;
-  --radius: 20px;
-  --shadow: 0 12px 32px rgba(0,0,0,0.35);
-  --transition: 0.3s ease-in-out;
-}
-html, body { margin:0; padding:0; font-family:var(--font); background-color:var(--bg); color:var(--text); scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
-.header { position: sticky; top:0; z-index:999; background-color:var(--bg); display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; border-bottom:1px solid rgba(255,255,255,0.05); box-shadow:0 1px 8px rgba(0,0,0,0.3); }
-.header .brand { font-size:1.4rem; font-weight:700; color:var(--link); text-decoration:none; }
-.header .nav-links a { margin-left:1.5rem; color:#ccc; text-decoration:none; font-weight:500; transition:color var(--transition); }
-.header .nav-links a:hover { color:var(--link); }
-main { max-width:1000px; margin:3rem auto; padding:2.5rem; background:var(--card-bg); border-radius:var(--radius); backdrop-filter:blur(20px); box-shadow:var(--shadow); animation:fadeIn 0.8s ease; }
-h1 { font-size:2.5rem; margin-bottom:1rem; font-weight:700; text-align:center; color:var(--link); }
-h2 { font-size:1.75rem; margin-bottom:1rem; font-weight:600; text-align:center; }
-p { line-height:1.8; font-size:1.15rem; margin-bottom:1rem; color:#d1d5db; }
-a { color:var(--link); text-decoration:none; }
-a:hover { text-decoration:underline; }
-.cta-wrapper { display:flex; justify-content:center; margin-top:2rem; }
-.cta-button { padding:0.7rem 1.4rem; background:var(--accent); color:#000; border-radius:var(--radius); font-weight:600; font-size:1rem; box-shadow:0 8px 20px rgba(0,194,255,0.4); cursor:pointer; text-align:center; max-width:320px; width:auto; }
-.cta-button:hover { transform:scale(1.05); }
-section { margin-top:3rem; padding:2rem; background:var(--card-bg); border-radius:var(--radius); text-align:left; }
-details p { margin-left:1.5rem; margin-top:0.5rem; font-size:1rem; color:#d1d5db; }
-.blog-link { display:block; margin-top:3rem; font-size:1.05rem; color:var(--link); text-align:center; }
-iframe, gradio-app { width:100%; height:80vh; min-height:600px; max-height:900px; border:none; border-radius:var(--radius); margin-top:2rem; background:#1a1d27; box-shadow:var(--shadow); }
-footer { text-align:center; margin-top:3rem; font-size:0.9rem; opacity:0.7; }
-.logo-container { display:flex; justify-content:center; align-items:center; height:140px; }
-.logo-img { max-width:240px; height:auto; }
-@keyframes fadeIn { from {opacity:0; transform:translateY(12px);} to {opacity:1; transform:translateY(0);} }
-@media (max-width:768px) {
-  main { margin:4rem 1rem 2rem; padding:1.5rem; padding-top:5rem; }
-  h1 { font-size:2rem; }
-  h2 { font-size:1.4rem; }
-  p { font-size:1rem; }
-  iframe, gradio-app { height:60vh; min-height:400px; max-height:720px; }
-  .cta-button { padding:0.6rem 1.2rem; font-size:0.95rem; }
-  section { padding:1rem; }
-  .header { flex-direction:column; align-items:flex-start; gap:0.5rem; }
-  .header .nav-links a { margin-left:0; margin-right:1.5rem; }
-}
-@media (max-width:480px) {
-  main { backdrop-filter:none; background: rgba(255,255,255,0.05); }
-  iframe, gradio-app { height:50vh; min-height:320px; max-height:560px; }
-  .logo-img { max-width:180px; }
-}
-</style>
+    :root {
+      --bg: #0f1117;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --text: #ffffff;
+      --link: #00c2ff;
+      --accent: linear-gradient(90deg,#00c2ff,#00ffd5);
+      --font: 'Inter', sans-serif;
+      --radius: 20px;
+      --shadow: 0 12px 32px rgba(0,0,0,0.35);
+      --transition: 0.3s ease-in-out;
+    }
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {"@type":"Organization","name":"Carithm","url":"https://carithm.vercel.app","logo":"https://carithm.vercel.app/logo.png","sameAs":["https://www.linkedin.com/in/shaunauk-basu-581928248/"]},
-    {"@type":"WebPage","name":"Carithm AI – Instant Car Diagnostics","url":"https://carithm.vercel.app","dateModified":"2025-08-16","description":"AI virtual mechanic for car issues using OBD-II codes or symptoms. Provides repair fixes and cost estimates instantly.","primaryImageOfPage":{"@type":"ImageObject","url":"https://carithm.vercel.app/preview.png","width":1200,"height":630}},
-    {"@type":"WebSite","name":"Carithm","url":"https://carithm.vercel.app","potentialAction":{"@type":"SearchAction","target":"https://carithm.vercel.app?q={search_term_string}","query-input":"required name=search_term_string"},"inLanguage":"en"},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"What is Carithm?","acceptedAnswer":{"@type":"Answer","text":"Carithm is a free AI-powered virtual car mechanic that diagnoses automotive issues using symptoms or OBD-II codes like P0420, P0171, and P0300."}},
-      {"@type":"Question","name":"Is Carithm free?","acceptedAnswer":{"@type":"Answer","text":"Yes, Carithm is completely free to use. No signup or downloads required."}},
-      {"@type":"Question","name":"Does Carithm support OBD-II codes?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. It explains common codes like P0300, P0171, P0420 and provides possible fixes."}},
-      {"@type":"Question","name":"Can I use Carithm without mechanical knowledge?","acceptedAnswer":{"@type":"Answer","text":"Yes. Simply enter symptoms or codes and receive easy-to-understand guidance."}}
-    ], "inLanguage":"en"}  
-  ]
-}
-</script>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin:0;
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: var(--link); transition: color var(--transition);}
+    a:hover { color: #00ffd5; }
+
+    header.header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(12px);
+      background-color: rgba(15,17,23,0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+    }
+
+    .header .brand { font-weight: 700; font-size:1.3rem; color: var(--link);}
+    .header .nav-links a { margin-left:1.5rem; font-weight:500; }
+    @media(max-width:768px){
+      .header { flex-direction: column; align-items:flex-start; gap:0.5rem;}
+      .header .nav-links a { margin-left:0; margin-right:1rem;}
+    }
+
+    .logo-container { display:flex; justify-content:center; align-items:center; height:140px; margin-top:1rem;}
+    .logo-img { max-width:240px; height:auto; }
+
+    main { max-width:1000px; margin:2rem auto; padding:2rem; background: var(--card-bg); border-radius:var(--radius); backdrop-filter:blur(20px); box-shadow:var(--shadow); animation:fadeIn 0.8s ease;}
+    h1 { font-size:2.8rem; text-align:center; margin-bottom:0.5rem; font-weight:700; background: var(--accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    h2 { font-size:1.6rem; text-align:center; margin-bottom:1rem; font-weight:500; color:#d1d5db; }
+
+    p { font-size:1.15rem; line-height:1.8; color:#d1d5db; margin-bottom:1rem; }
+    strong { color:#fff; }
+
+    .cta-wrapper { display:flex; justify-content:center; margin-top:2rem; }
+    .cta-button {
+      display:inline-block;
+      padding:0.8rem 1.6rem;
+      font-weight:600;
+      font-size:1rem;
+      background: var(--link);
+      border-radius:var(--radius);
+      color:#000;
+      box-shadow:0 8px 20px rgba(0,194,255,0.4);
+      transition: transform var(--transition);
+    }
+    .cta-button:hover { transform: scale(1.05); }
+
+    iframe, gradio-app { width:100%; min-height:600px; max-height:900px; border:none; border-radius:var(--radius); margin-top:2rem; background:#1a1d27; box-shadow:var(--shadow); }
+
+    section { margin-top:3rem; padding:2rem; background: var(--card-bg); border-radius:var(--radius); text-align:left; }
+
+    details { margin-bottom:1rem; cursor:pointer; }
+    summary { font-weight:600; }
+    details p { margin-left:1.5rem; margin-top:0.5rem; font-size:1rem; color:#d1d5db; }
+
+    .blog-link { display:block; text-align:center; margin:3rem 0 1rem; font-size:1.05rem; color: var(--link); }
+
+    footer { text-align:center; margin-top:3rem; font-size:0.9rem; opacity:0.7; }
+
+    @media(max-width:768px){
+      main { margin:2rem 1rem; padding:1.5rem; }
+      h1 { font-size:2rem;}
+      h2 { font-size:1.3rem;}
+      iframe, gradio-app { min-height:400px; max-height:720px;}
+    }
+    @media(max-width:480px){
+      iframe, gradio-app { min-height:320px; max-height:560px;}
+      main { backdrop-filter:none; background: rgba(255,255,255,0.05);}
+    }
+
+    @keyframes fadeIn { from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);} }
+  </style>
+
+  <!-- Structured Data FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Is Carithm free to use?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yes! Carithm AI is completely free, requires no signup, and provides instant virtual car repair guidance."}
+      },
+      {
+        "@type":"Question",
+        "name":"Can I diagnose car issues with OBD-II codes?",
+        "acceptedAnswer":{"@type":"Answer","text":"Absolutely! Carithm supports codes like P0300, P0171, P0420 and gives explanations, causes, and recommended fixes."}
+      },
+      {
+        "@type":"Question",
+        "name":"Do I need mechanical experience?",
+        "acceptedAnswer":{"@type":"Answer","text":"No. Simply input car symptoms or codes and get AI-generated step-by-step guidance."}
+      },
+      {
+        "@type":"Question",
+        "name":"Does it work on mobile?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yes! Carithm works instantly on mobile, tablet, and desktop browsers without any downloads."}
+      }
+    ]
+  }
+  </script>
 
 </head>
 <body>
 
-<div class="header">
-  <a href="/" class="brand">Carithm</a>
-  <div class="nav-links">
-    <a href="/">Home</a>
-    <a href="/blog/">Blog</a>
-    <a href="/vin/">VIN Decoder</a>
-  </div>
-</div>
+  <header class="header">
+    <a href="/" class="brand">Carithm</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/vin/">VIN Decoder</a>
+    </div>
+  </header>
 
-<header class="logo-container">
-  <img src="logo_words.png" alt="Carithm AI virtual car mechanic logo – fix your car online" class="logo-img" loading="lazy">
-</header>
-
-<main>
-  <h1>Instant AI Car Diagnostics</h1>
-  <h2>Virtual mechanic to solve car issues with symptoms or OBD-II codes</h2>
-  <p>Carithm is a <strong>free AI virtual mechanic</strong> that helps identify car problems using symptoms or OBD-II trouble codes. Get instant step-by-step fixes without downloads or signup.</p>
-
-  <div class="cta-wrapper">
-    <a href="#gradio" class="cta-button">Start Diagnosing</a>
+  <div class="logo-container">
+    <img src="logo_words.png" alt="Carithm AI virtual car mechanic logo" class="logo-img" loading="lazy">
   </div>
 
-  <noscript>
-    <p>JavaScript is required to load Carithm AI. Please enable JS or use a modern browser.</p>
-  </noscript>
+  <main>
+    <h1>Diagnose Car Problems Instantly</h1>
+    <h2>Free AI tool using symptoms or OBD-II codes</h2>
 
-  <!-- Gradio App -->
-  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
-  <gradio-app src="https://castbison-golden-desert.hf.space"></gradio-app>
+    <p>Carithm is a <strong>free AI car mechanic</strong> that helps you diagnose vehicle issues using natural language or OBD-II codes like <strong>P0300</strong>, <strong>P0171</strong>, and <strong>P0420</strong>. Get precise causes, repair steps, and recommendations instantly.</p>
 
-  <section>
-    <h2>🔧 How Carithm Works</h2>
-    <p>Describe car symptoms like engine shakes, no-start issues, or overheating. Carithm analyzes them or your OBD-II codes and provides probable causes, diagnostics, and repair guidance instantly.</p>
-    <p>Supports OBD-II codes like <strong>P0300</strong>, <strong>P0171</strong>, and <strong>P0420</strong>, with explanations for symptoms, causes, and fixes.</p>
-  </section>
+    <div class="cta-wrapper">
+      <a href="#gradio" class="cta-button">Start Diagnosing</a>
+    </div>
 
-  <section>
-    <h2>📚 Learn More & Blog</h2>
-    <p>Read articles, DIY guides, and in-depth explanations of car systems on our <a href="/blog/">Carithm Blog</a>.</p>
-    <a href="/blog/" class="blog-link">Go to Carithm Blog →</a>
-  </section>
-</main>
+    <gradio-app src="https://castbison-golden-desert.hf.space"></gradio-app>
 
-<footer>
-  <p>© 2025 Carithm. Built by Shaunak Basu.</p>
-</footer>
+    <section>
+      <h2>🔧 How Carithm Works</h2>
+      <p>Enter symptoms like "engine won't start" or input OBD-II codes, and Carithm provides diagnostics, likely causes, and actionable repair guidance.</p>
+      <p><strong>No login required.</strong> Fully functional on mobile, tablet, and desktop.</p>
+      <h3>🧪 Try phrases like:</h3>
+      <ul>
+        <li>"Engine cranks but won’t start"</li>
+        <li>"OBD-II code P0174"</li>
+        <li>"Car is not accelerating uphill"</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>FAQ</h2>
+      <details>
+        <summary>Is Carithm free to use?</summary>
+        <p>Yes! 100% free, no signup, no ads. Get instant AI car repair guidance.</p>
+      </details>
+      <details>
+        <summary>Can I use Carithm with OBD-II codes?</summary>
+        <p>Yes — supports codes like P0420, P0171, P0300 with explanations, causes, and fixes.</p>
+      </details>
+      <details>
+        <summary>Is there a mobile app or APK?</summary>
+        <p>Currently web-only, works on mobile and desktop browsers.</p>
+      </details>
+      <details>
+        <summary>Does Carithm function as a virtual mechanic chat?</summary>
+        <p>Yes! Describe your car problems in plain language for AI-driven step-by-step guidance.</p>
+      </details>
+    </section>
+
+    <a href="/blog/" class="blog-link">📘 Visit Our Car Blog – Fixes, Tips & DIY Guides →</a>
+  </main>
+
+  <footer>
+    Built by <a href="https://www.linkedin.com/in/shaunauk-basu-581928248/" target="_blank" style="color:inherit; text-decoration:underline;">Shaunak Basu</a>
+  </footer>
 
 </body>
 </html>
