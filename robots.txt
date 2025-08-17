@@ -6,8 +6,10 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 Disallow: /test/
-# Disallow URLs with query parameters (optional, prevents duplicate content)
-Disallow: /*?
+
+# (Optional) Block only common tracking/query params, not all '?'
+# Disallow: /*?utm_*
+# Disallow: /*?ref=*
 
 # Sitemap location
 Sitemap: https://carithm-ai.vercel.app/sitemap.xml
