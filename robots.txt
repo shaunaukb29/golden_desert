@@ -7,7 +7,7 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /test/
 
-# (Optional) Block only common tracking/query params, not all '?'
+# (Optional) Block only tracking parameters instead of all '?'
 # Disallow: /*?utm_*
 # Disallow: /*?ref=*
 
