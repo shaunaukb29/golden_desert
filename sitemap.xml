@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://carithm.vercel.app</loc>
-    <lastmod>2025-08-16</lastmod>
+    <lastmod>2025-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- Blog landing page -->
   <url>
     <loc>https://carithm.vercel.app/blog/</loc>
-    <lastmod>2025-08-16</lastmod>
+    <lastmod>2025-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -27,14 +27,21 @@
 
   <url>
     <loc>https://carithm.vercel.app/blog/how-to-fix-common-car-problems.html</loc>
-    <lastmod>2025-07-28</lastmod>
+    <lastmod>2025-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/blog/things-to-check-before-buying-a-used-car.html</loc>
-    <lastmod>2025-08-06</lastmod>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/blog/diagnosing-car-engine-problems.html</loc>
+    <lastmod>2025-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
