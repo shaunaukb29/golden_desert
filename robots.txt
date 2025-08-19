@@ -7,9 +7,9 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /test/
 
-# (Optional) Block only tracking parameters instead of all '?'
-# Disallow: /*?utm_*
-# Disallow: /*?ref=*
+# Block URLs with tracking parameters to prevent duplicate content
+Disallow: /*?utm_*
+Disallow: /*?ref_*
 
 # Sitemap location
 Sitemap: https://carithm.vercel.app/sitemap.xml
