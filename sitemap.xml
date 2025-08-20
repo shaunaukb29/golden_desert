@@ -1,57 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage (indexed and updated today) -->
+  <!-- Homepage -->
   <url>
-    <loc>https://carithm.vercel.app</loc>
-    <lastmod>2025-08-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <loc>https://carithm.vercel.app/</loc>
+    <lastmod>2025-08-20</lastmod>
   </url>
 
-  <!-- Blog landing page (not indexed yet) -->
+  <!-- Blog landing page -->
   <url>
     <loc>https://carithm.vercel.app/blog/</loc>
-    <lastmod>2025-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-08-20</lastmod>
   </url>
 
-  <!-- Individual blog posts (not indexed yet) -->
+  <!-- Individual blog posts -->
   <url>
     <loc>https://carithm.vercel.app/blog/battery_problems.html</loc>
-    <lastmod>2025-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2025-08-20</lastmod>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/blog/how-to-fix-common-car-problems.html</loc>
-    <lastmod>2025-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2025-08-20</lastmod>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/blog/things-to-check-before-buying-a-used-car.html</loc>
-    <lastmod>2025-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2025-08-20</lastmod>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/blog/diagnosing-car-engine-problems.html</loc>
-    <lastmod>2025-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2025-08-20</lastmod>
   </url>
 
-  <!-- VIN Decoder page (not indexed yet) -->
+  <!-- VIN Decoder page -->
   <url>
     <loc>https://carithm.vercel.app/vin/</loc>
-    <lastmod>2025-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-08-20</lastmod>
   </url>
 
 </urlset>
