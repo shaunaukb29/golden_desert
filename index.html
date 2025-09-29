@@ -410,86 +410,42 @@
   <div class="diagnosis-grid">
     <article class="diagnosis-card">
       <h3>🚗 Car won't start, clicking noise</h3>
-      <p>If your car won’t start and you only hear a clicking noise, the most likely causes include a <strong>dead battery</strong>, <strong>bad starter motor</strong>, or <strong>loose/corroded battery terminals</strong>. Carithm AI recommends checking the battery voltage first and testing the starter and alternator.</p>
+      <p><strong>Causes:</strong> Wear & tear (50%), Moisture ingress (30%), Electrical faults (20%)</p>
+      <p><strong>Diagnostics:</strong> Check ignition timing, scan for fault codes, visual inspection</p>
+      <p><strong>Fixes:</strong> Replace distributor cap/rotor or ignition module, repair wiring</p>
+      <p><strong>Temporary:</strong> Keep components dry, avoid wet conditions</p>
+      <p><strong>Cost:</strong> Distributor/module $150–$400, wiring $60–$150</p>
     </article>
 
     <article class="diagnosis-card">
       <h3>🔥 Check engine light P0420</h3>
-      <p>Code <strong>P0420</strong> usually means <strong>catalyst system efficiency below threshold</strong>. Common causes include a failing catalytic converter, oxygen sensor issues, or exhaust leaks. Carithm AI explains the most probable cause based on your vehicle’s symptoms.</p>
+      <p><strong>Causes:</strong> Failing catalytic converter (60%), Oxygen sensor issues (25%), Exhaust leaks (15%)</p>
+      <p><strong>Diagnostics:</strong> Check O2 sensor readings, inspect exhaust system, monitor fuel trim</p>
+      <p><strong>Fixes:</strong> Replace catalytic converter or faulty O2 sensor, repair exhaust leaks</p>
+      <p><strong>Temporary:</strong> Clear code but it may return, limit long drives until fixed</p>
+      <p><strong>Cost:</strong> Catalytic converter $900–$2,500, O2 sensor $150–$350</p>
     </article>
 
     <article class="diagnosis-card">
       <h3>⚡ OBD-II Code P0300</h3>
-      <p><strong>P0300</strong> indicates random/multiple cylinder misfires. This may be caused by spark plugs, ignition coils, vacuum leaks, or fuel delivery problems. Carithm AI provides step-by-step guidance for diagnosing the misfire.</p>
+      <p><strong>Causes:</strong> Spark plugs (40%), Ignition coils (30%), Vacuum leaks (20%), Fuel delivery issues (10%)</p>
+      <p><strong>Diagnostics:</strong> Scan misfire data, inspect plugs & coils, check fuel pressure, smoke test for leaks</p>
+      <p><strong>Fixes:</strong> Replace spark plugs/coils, repair vacuum leaks, service injectors</p>
+      <p><strong>Temporary:</strong> Avoid high loads, drive gently until repair</p>
+      <p><strong>Cost:</strong> Spark plugs $100–$250, coils $200–$600, vacuum repair $150–$400</p>
     </article>
 
     <article class="diagnosis-card">
       <h3>🔋 EV not charging properly</h3>
-      <p>Electric vehicles may fail to charge due to <strong>faulty charging cables</strong>, <strong>charging port issues</strong>, or <strong>software errors</strong>. Carithm AI helps identify whether the issue is with the vehicle, charger, or power source.</p>
+      <p><strong>Causes:</strong> Faulty charging cable (40%), Charging port issue (35%), Software errors (25%)</p>
+      <p><strong>Diagnostics:</strong> Try alternate charger, inspect port for damage, check for firmware updates</p>
+      <p><strong>Fixes:</strong> Replace cable/charger, service port, update/reset software</p>
+      <p><strong>Temporary:</strong> Use different charging station, charge slowly if possible</p>
+      <p><strong>Cost:</strong> Cable $200–$500, port service $300–$700, software update $100–$200</p>
     </article>
   </div>
 </section>
 
-<style>
-  #example-diagnoses {
-    margin-top: 4rem;
-    padding: 2rem;
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    animation: fadeIn 0.8s ease;
-  }
-
-  #example-diagnoses .section-title {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-weight: 700;
-    background: var(--accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .diagnosis-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .diagnosis-card {
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .diagnosis-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-  }
-
-  .diagnosis-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
-    color: var(--link);
-  }
-
-  .diagnosis-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #d1d5db;
-  }
-
-  @media(max-width: 600px) {
-    #example-diagnoses {
-      padding: 1.5rem;
-    }
-    .diagnosis-card h3 {
-      font-size: 1.15rem;
-    }
-  }
-</style>
 
 
 </section>
@@ -506,6 +462,7 @@
 
 </body>
 </html>
+
 
 
 
