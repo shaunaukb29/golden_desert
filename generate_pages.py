@@ -39,7 +39,9 @@ def build_html(query, answer):
 
 # --- Main ---
 def main():
-    Path("examples").mkdir(exist_ok=True)
+    # make sure the public/examples folder exists
+    Path("public/examples").mkdir(parents=True, exist_ok=True)
+
     with open("queries.txt") as f:
         queries = [line.strip() for line in f if line.strip()]
 
@@ -49,16 +51,8 @@ def main():
         answer = query_model(q)
         html, slug = build_html(q, answer)
 
-        out_file = Path("examples") / f"{slug}.html"
+        # save into public/examples/
+        out_file = Path("public/examples") / f"{slug}.html"
         out_file.write_text(html, encoding="utf-8")
 
-        sitemap_entries.append(f"<url><loc>https://carithm.vercel.app/examples/{slug}.html</loc></url>")
-
-    # update sitemap.xml
-    sitemap = "<?xml version='1.0' encoding='UTF-8'?>\n<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>\n"
-    sitemap += "\n".join(sitemap_entries)
-    sitemap += "\n</urlset>"
-    Path("public/sitemap.xml").write_text(sitemap, encoding="utf-8")
-
-if __name__ == "__main__":
-    main()
+        sitemap_entries.append(f"<url><loc>https://carithm.vercel.app/exam_
