@@ -121,7 +121,18 @@
     }
     .cta-button:hover { transform: scale(1.05); }
 
-    iframe, gradio-app { width:100%; min-height:600px; max-height:900px; border:none; border-radius:var(--radius); margin-top:2rem; background:#1a1d27; box-shadow:var(--shadow); }
+   iframe, gradio-app {
+  display: block;
+  margin: 2rem auto;              /* centers horizontally */
+  width: 100%;
+  max-width: 720px;               /* keep app centered and not too wide */
+  min-height: 600px;
+  max-height: 900px;
+  border: none;
+  border-radius: var(--radius);
+  background: #1a1d27;
+  box-shadow: var(--shadow);
+}
 
     section { margin-top:3rem; padding:2rem; background: var(--card-bg); border-radius:var(--radius); text-align:left; }
 
@@ -541,6 +552,7 @@
 
 </body>
 </html>
+
 
 
 
