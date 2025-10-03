@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Predictive Maintenance AI Demo – Carithm</title>
+  <meta name="description" content="Demo Carithm's Predictive Maintenance AI. Enter car type, mileage, age, service history, and driving conditions to forecast maintenance needs. Full app coming soon." />
+  <meta name="author" content="Shaunauk Basu" />
+  <link rel="canonical" href="https://castbison-red-tree.hf.space/" />
+  <meta name="theme-color" content="#0f1117" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Predictive Maintenance AI Demo – Carithm" />
+  <meta property="og:description" content="Try Carithm's experimental Predictive Maintenance AI. Input car type, mileage, service history, and conditions to forecast failures. Full app soon!" />
+  <meta property="og:image" content="https://carithm.vercel.app/preview.png" />
+  <meta property="og:url" content="https://castbison-red-tree.hf.space" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Predictive Maintenance AI Demo – Carithm" />
+  <meta name="twitter:description" content="Forecast car maintenance issues by inputting car details and driving conditions. Experimental demo. Full app coming soon." />
+  <meta name="twitter:image" content="https://carithm.vercel.app/preview.png" />
+  <meta name="twitter:site" content="@carithmai" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --text: #ffffff;
+      --link: #00c2ff;
+      --accent: linear-gradient(90deg,#00c2ff,#00ffd5);
+      --font: 'Inter', sans-serif;
+      --radius: 20px;
+      --shadow: 0 12px 32px rgba(0,0,0,0.35);
+      --transition: 0.3s ease-in-out;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      text-align: center;
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(15,17,23,0.85);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin: 0;
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      animation: fadeIn 0.8s ease;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      color: #d1d5db;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      text-align: center;
+      color: #d1d5db;
+    }
+
+    ul {
+      max-width: 600px;
+      margin: 1.5rem auto;
+      padding: 0;
+      list-style: none;
+      color: #d1d5db;
+    }
+    ul li {
+      margin: 0.4rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: var(--link);
+    }
+
+    gradio-app, iframe {
+      width: 100%;
+      min-height: 600px;
+      max-height: 900px;
+      border: none;
+      border-radius: var(--radius);
+      margin-top: 2rem;
+      background: #1a1d27;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      text-align: center;
+      margin: 3rem 0 1rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @media(max-width:768px){
+      header h1 { font-size: 1.9rem; }
+      main { margin: 1.5rem; padding: 1.5rem; }
+      gradio-app, iframe { min-height: 480px; }
+    }
+
+    @keyframes fadeIn { from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);} }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🧩 Predictive Maintenance AI</h1>
+  </header>
+
+  <main>
+    <h2>Experimental Demo – Full App Coming Soon 🚀</h2>
+    <p>
+      Carithm's <strong>Predictive Maintenance AI</strong> helps forecast when car parts might fail.  
+      This is a free demo – a full mobile + desktop app will launch soon.
+    </p>
+
+    <p>To use the demo, simply input:</p>
+    <ul>
+      <li>Car type (SUV, Sedan, Hatchback, etc.)</li>
+      <li>Mileage</li>
+      <li>Vehicle age (years)</li>
+      <li>Months since last service</li>
+      <li>Driving environment (hot, cold, dusty, etc.)</li>
+      <li>Driving style (city, highway, spirited)</li>
+      <li>Country of car origin</li>
+    </ul>
+
+    <p>The AI will generate <strong>probable failure timelines and maintenance forecasts</strong>.</p>
+
+    <gradio-app src="https://castbison-red-tree.hf.space"></gradio-app>
+    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
+  </main>
+
+  <footer>
+    <p>Demo built by <a href="https://carithm.vercel.app/" style="color:inherit; text-decoration:underline;">Carithm</a> · Shaunauk Basu © 2025</p>
+  </footer>
+</body>
+</html>
