@@ -208,56 +208,6 @@
     from{opacity:0; transform:translateY(12px);}
     to{opacity:1; transform:translateY(0);}
   }
- /* ==============================
-   Second Gradio App – Larger Display
-============================== */
-.gradio-wrapper-large {
-    display: flex;
-    justify-content: center;
-    margin: 2rem auto;
-    width: 100%;
-    max-width: 1000px;       /* wider on desktop */
-    border-radius: var(--radius);
-    background: #1a1d27;
-    box-shadow: var(--shadow);
-    overflow: hidden;
-}
-
-.gradio-wrapper-large gradio-app {
-    width: 100% !important;
-    min-height: 600px;       /* desktop height */
-    height: auto !important;
-    border: none;
-}
-
-/* Tablet adjustments */
-@media(max-width: 1024px) {
-    .gradio-wrapper-large {
-        max-width: 95%;
-        margin: 1.5rem auto;
-    }
-    .gradio-wrapper-large gradio-app {
-        min-height: 500px;
-    }
-}
-
-/* Mobile adjustments */
-@media(max-width: 768px) {
-    .gradio-wrapper-large {
-        max-width: 100%;
-        margin: 1rem auto;
-    }
-    .gradio-wrapper-large gradio-app {
-        min-height: 400px;
-    }
-}
-
-@media(max-width: 480px) {
-    .gradio-wrapper-large gradio-app {
-        min-height: 320px;
-    }
-}
-
 </style>
 
 
@@ -476,16 +426,9 @@
       </p>
       
       
-     <!-- First Gradio app (keep as is) -->
-<div class="gradio-wrapper">
-  <gradio-app src="https://castbison-golden-desert.hf.space"></gradio-app>
-</div>
-
-<!-- Second Gradio app (wider display) -->
-<div class="gradio-wrapper gradio-wrapper-large">
+     <div class="gradio-wrapper">
   <gradio-app src="https://castbison-red-tree.hf.space"></gradio-app>
 </div>
-
 
 
 
@@ -693,36 +636,4 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
