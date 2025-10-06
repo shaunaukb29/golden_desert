@@ -208,30 +208,48 @@
     from{opacity:0; transform:translateY(12px);}
     to{opacity:1; transform:translateY(0);}
   }
-/* === FIX: PREDICTIVE APP TOO NARROW ON MOBILE === */
+/* === PREDICTIVE MAINTENANCE APP RESPONSIVE STYLING === */
+.predictive-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  width: 100%;
+}
+
+.predictive-wrapper gradio-app {
+  width: 100% !important;
+  max-width: 700px; /* nice compact width for desktop */
+  height: auto !important;
+  min-height: 650px;
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* 📱 MOBILE: smaller, centered, and not tall */
 @media (max-width: 768px) {
   .predictive-wrapper {
-    width: 100vw !important; /* take full viewport width */
-    max-width: none !important;
-    margin-left: -4vw; /* cancel out body padding if any */
-    border-radius: 0; /* edge-to-edge look */
+    width: 100%;
+    padding: 0 1rem;
   }
 
   .predictive-wrapper gradio-app {
-    width: 100% !important;
-    min-height: 1000px;
-    height: auto;
+    width: 95% !important;
+    max-width: 420px; /* not too wide, not too thin */
+    min-height: 550px; /* shorter, fits screen better */
+    margin: 0 auto;
+    display: block;
   }
 }
 
+/* 📱 SMALLER PHONES */
 @media (max-width: 480px) {
-  .predictive-wrapper {
-    width: 100vw !important;
-    margin-left: -5vw;
-  }
-
   .predictive-wrapper gradio-app {
-    min-height: 1100px;
+    width: 92% !important;
+    max-width: 380px;
+    min-height: 500px; /* compact but readable */
   }
 }
 
@@ -662,6 +680,7 @@
 
 </body>
 </html>
+
 
 
 
