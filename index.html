@@ -208,30 +208,37 @@
     from{opacity:0; transform:translateY(12px);}
     to{opacity:1; transform:translateY(0);}
   }
- /* === PREDICTIVE MAINTENANCE APP CUSTOM HEIGHT (FIXED) === */
+ /* === PREDICTIVE MAINTENANCE APP FULL-WIDTH FIX === */
+.predictive-wrapper {
+  width: 100vw; /* take full viewport width */
+  max-width: none; /* remove the 720px or 860px cap */
+  margin: 2rem 0; /* no side margins */
+  border-radius: 0; /* optional — can keep corners squared */
+  background: #1a1d27;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: block;
+}
+
 .predictive-wrapper gradio-app {
-  width: 100% !important;
-  display: block !important;
+  display: block;
+  width: 100% !important; /* stretch horizontally */
+  min-height: 900px; /* safe vertical room */
   border: none;
-  min-height: 800px !important; /* ✅ taller base height */
-  height: 100% !important; /* ✅ allow expansion */
 }
 
-/* Tablet */
+/* Mobile adjustments */
 @media (max-width: 768px) {
+  .predictive-wrapper {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-radius: var(--radius);
+  }
+
   .predictive-wrapper gradio-app {
-    min-height: 900px !important; /* ✅ more room on mid screens */
+    min-height: 1000px;
   }
 }
-
-/* Mobile */
-@media (max-width: 480px) {
-  .predictive-wrapper gradio-app {
-    min-height: 1000px !important; /* ✅ fixes squashed mobile issue */
-    height: auto !important;
-  }
-}
-
 
 </style>
 
@@ -660,6 +667,7 @@
 
 </body>
 </html>
+
 
 
 
