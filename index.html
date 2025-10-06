@@ -208,26 +208,30 @@
     from{opacity:0; transform:translateY(12px);}
     to{opacity:1; transform:translateY(0);}
   }
- /* === PREDICTIVE MAINTENANCE APP CUSTOM HEIGHT === */
+ /* === PREDICTIVE MAINTENANCE APP CUSTOM HEIGHT (FIXED) === */
 .predictive-wrapper gradio-app {
   width: 100% !important;
-  height: fit-content !important;
-  min-height: 650px; /* taller since it usually has more content */
+  display: block !important;
   border: none;
+  min-height: 800px !important; /* ✅ taller base height */
+  height: 100% !important; /* ✅ allow expansion */
 }
 
-@media(max-width:768px){
+/* Tablet */
+@media (max-width: 768px) {
   .predictive-wrapper gradio-app {
-    min-height: 520px;
+    min-height: 900px !important; /* ✅ more room on mid screens */
   }
 }
 
-@media(max-width:480px){
+/* Mobile */
+@media (max-width: 480px) {
   .predictive-wrapper gradio-app {
-    min-height: 580px;
+    min-height: 1000px !important; /* ✅ fixes squashed mobile issue */
     height: auto !important;
   }
 }
+
 
 </style>
 
@@ -656,6 +660,7 @@
 
 </body>
 </html>
+
 
 
 
