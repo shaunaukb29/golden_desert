@@ -208,6 +208,27 @@
     from{opacity:0; transform:translateY(12px);}
     to{opacity:1; transform:translateY(0);}
   }
+ /* === PREDICTIVE MAINTENANCE APP CUSTOM HEIGHT === */
+.predictive-wrapper gradio-app {
+  width: 100% !important;
+  height: fit-content !important;
+  min-height: 650px; /* taller since it usually has more content */
+  border: none;
+}
+
+@media(max-width:768px){
+  .predictive-wrapper gradio-app {
+    min-height: 520px;
+  }
+}
+
+@media(max-width:480px){
+  .predictive-wrapper gradio-app {
+    min-height: 580px;
+    height: auto !important;
+  }
+}
+
 </style>
 
 
@@ -426,9 +447,10 @@
       </p>
       
       
-      <div class="gradio-wrapper">
+      <div class="gradio-wrapper predictive-wrapper">
   <gradio-app src="https://castbison-red-tree.hf.space"></gradio-app>
 </div>
+
 
     </section>
   
@@ -634,6 +656,7 @@
 
 </body>
 </html>
+
 
 
 
