@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://carithm.vercel.app/</loc>
-    <lastmod>2025-10-05</lastmod>
+    <lastmod>2025-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- About page -->
   <url>
     <loc>https://carithm.vercel.app/about/</loc>
-    <lastmod>2025-09-07</lastmod>
+    <lastmod>2025-10-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -20,7 +20,7 @@
   <!-- Blog landing page -->
   <url>
     <loc>https://carithm.vercel.app/blog/</loc>
-    <lastmod>2025-09-07</lastmod>
+    <lastmod>2025-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -28,38 +28,30 @@
   <!-- Individual blog posts -->
   <url>
     <loc>https://carithm.vercel.app/blog/battery_problems.html</loc>
-    <lastmod>2025-09-07</lastmod>
+    <lastmod>2025-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/blog/how-to-fix-common-car-problems.html</loc>
-    <lastmod>2025-09-07</lastmod>
+    <lastmod>2025-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/blog/things-to-check-before-buying-a-used-car.html</loc>
-    <lastmod>2025-09-07</lastmod>
+    <lastmod>2025-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/blog/diagnosing-car-engine-problems.html</loc>
-    <lastmod>2025-09-07</lastmod>
+    <lastmod>2025-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-
-  <!-- VIN Decoder page -->
-  <url>
-    <loc>https://carithm.vercel.app/vin/</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
 
   <!-- Predictive Maintenance AI Demo page (added 2025-10-04) -->
