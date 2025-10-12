@@ -64,4 +64,19 @@
     <priority>0.64</priority>
   </url>
 
+  <!-- External Profiles (Brand Connections) -->
+  <url>
+    <loc>https://www.crunchbase.com/organization/carithm-ai</loc>
+    <lastmod>2025-10-12T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://www.linkedin.com/company/carithm-ai/</loc>
+    <lastmod>2025-10-12T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
 </urlset>
