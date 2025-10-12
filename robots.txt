@@ -1,15 +1,18 @@
-# Allow all search engines to crawl the main site
+# --- GLOBAL RULES ---
 User-agent: *
 Allow: /
-
-# Block sensitive or unnecessary paths
-Disallow: /api/
 Disallow: /admin/
-Disallow: /test/
+Disallow: /api/
+Disallow: /test*
 
-# Block URLs with tracking parameters to prevent duplicate content
+# Prevent indexing of tracking parameters
 Disallow: /*?utm_*
 Disallow: /*?ref_*
+Disallow: /*?sessionid*
 
-# Sitemap location
+# --- GOOGLE SPECIFIC RULES ---
+User-agent: Googlebot
+Allow: /
+
+# --- SITEMAP ---
 Sitemap: https://carithm.vercel.app/sitemap.xml
