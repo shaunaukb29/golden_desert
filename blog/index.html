@@ -3,8 +3,7 @@
 <head>
   <link rel="canonical" href="https://carithm.vercel.app/blog/" />
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -12,16 +11,15 @@
 
   gtag('config', 'G-TCCEJ6DCM1');
 </script>
-  
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Carithm Blog</title>
-  <meta name="description" content="Explore expert-written blog posts on car problems, repairs, and AI-powered diagnostics by Carithm." />
   
-  <!-- Fonts -->
+  <title>DIY Car Repair Guides, OBD-II Code Fixes & AI Diagnostics Blog | Carithm</title>
+  <meta name="description" content="Carithm's official blog for expert DIY car repair guidance, OBD-II code troubleshooting (P0420, P0171, P0300), and AI-powered car maintenance tips. Read our trusted guides to save money." />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Styles -->
   <style>
     :root {
       --bg: #0f1117;
@@ -29,7 +27,7 @@
       --text: #ffffff;
       --link: #00c2ff;
       --accent: linear-gradient(90deg,#00c2ff,#00ffd5);
-      --font: 'Inter', sans-serif;
+      --font: 'Inter', sans-serif';
       --radius: 20px;
       --shadow: 0 12px 32px rgba(0,0,0,0.35);
       --transition: 0.3s ease-in-out;
@@ -37,33 +35,33 @@
 
     *, *::before, *::after { box-sizing: border-box; }
 
-     a { text-decoration: none; color: var(--link); transition: color var(--transition);}
-  a:hover { color: #00ffd5; }
-    
-header.header {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    backdrop-filter: blur(12px);
-    background-color: rgba(15,17,23,0.85);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    box-shadow: 0 1px 8px rgba(0,0,0,0.3);
-  }
-    .header .brand { font-weight: 700; font-size:1.3rem; color: var(--link);}
-  .header .nav-links a { margin-left:1.5rem; font-weight:500; }
-  @media(max-width:768px){
-    .header { flex-direction: column; align-items:flex-start; gap:0.5rem;}
-    .header .nav-links a { margin-left:0; margin-right:1rem;}
-  }
+     a { text-decoration: none; color: var(--link); transition: color var(--transition); }
+     a:hover { color: #00ffd5; }
 
-  .logo-container { display:flex; justify-content:center; align-items:center; height:140px; margin-top:1rem;}
-  .logo-img { max-width:240px; height:auto; } 
+    header.header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(12px);
+      background-color: rgba(15,17,23,0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+    }
+    .header .brand { font-weight: 700; font-size:1.3rem; color: var(--link); }
+    .header .nav-links a { margin-left:1.5rem; font-weight:500; }
+    @media(max-width:768px){
+      .header { flex-direction: column; align-items:flex-start; gap:0.5rem; }
+      .header .nav-links a { margin-left:0; margin-right:1rem; }
+    }
 
-    
+    .logo-container { display:flex; justify-content:center; align-items:center; height:140px; margin-top:1rem; }
+    .logo-img { max-width:240px; height:auto; } 
+
+
     html, body {
       margin: 0;
       padding: 0;
@@ -94,6 +92,22 @@ header.header {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    /* Added for intro text alignment */
+    .blog-intro {
+      max-width: 800px; 
+      margin: 0 auto 3rem; 
+      text-align: left;
+    }
+    .blog-intro p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #d1d5db;
+    }
+    .blog-intro strong {
+        color: #fff;
+    }
+
 
     .post {
       margin-bottom: 2rem;
@@ -163,8 +177,7 @@ header.header {
     }
   </style>
 
-  
-  
+
 </head>
 <body>
 
@@ -177,9 +190,15 @@ header.header {
       <a href="/predictive/">Carithm Predictive</a> 
     </div>
   </header>
-  
+
   <main>
-    <h1>📘 Carithm Blog</h1>
+    <h1>Carithm's AI Car Repair & DIY Maintenance Guides</h1>
+
+    <div class="blog-intro">
+      <p>
+        Welcome to the Carithm AI Blog, your trusted source for **expert DIY car repair and maintenance advice**. Here you'll find detailed, step-by-step guides on diagnosing common vehicle issues—from **engine misfires** and **battery failures** to decoding complex **OBD-II codes** (like P0420 and P0300). Our posts are backed by the same advanced **AI diagnostic data** that powers our free virtual mechanic tool, empowering you to troubleshoot and fix car problems with confidence.
+      </p>
+    </div>
 
     <div class="post">
       <a href="/blog/battery_problems.html">
@@ -231,6 +250,6 @@ header.header {
   </p>
 </footer>
 
-  
+
 </body>
 </html>
