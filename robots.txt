@@ -11,5 +11,5 @@ Disallow: /test/
 Disallow: /*?utm_*
 Disallow: /*?ref_*
 
-# (Temporarily removed sitemap to reset Google cache)
-# Sitemap: https://carithm.vercel.app/sitemap.xml
+# Sitemap location
+Sitemap: https://carithm.vercel.app/sitemap.xml
