@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+how can i get the gradio app to startup the quicket? <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -385,13 +385,24 @@
 
 <main>
   <h1>Free AI Mechanic: Instant Answers for Your Check Engine Light</h1>
-  <h2>Decode Specific Codes (P0420, P0171, P0300) and Diagnose by Symptom</h2>
+<h2>Decode Specific Codes (P0420, P0171, P0300) and Diagnose by Symptom</h2>
 
   <p>
-    Use Carithm's free AI car diagnostic tool and virtual mechanic AI to instantly troubleshoot your vehicle. 
-    Get precise, step-by-step DIY car repair guidance for petrol, diesel, hybrid, and electric vehicles (EVs). 
-    Enter symptoms or OBD-II codes (P0420, P0171, P0300) for immediate, expert recommendations—no signup required.
-  </p>
+Use Carithm's free AI car diagnostic tool and virtual mechanic AI to instantly troubleshoot your vehicle. Get precise, step-by-step DIY car repair guidance for petrol, diesel, hybrid, and electric vehicles (EVs). Enter symptoms or OBD-II codes (P0420, P0171, P0300) for immediate, expert recommendations—no signup required.
+</p>
+
+  <div class="cta-wrapper">
+    <a href="#gradio" class="cta-button">Start AI Car Diagnostic</a>
+  </div>
+
+  <!-- ✅ Embedded AI Diagnostic Tool -->
+  <div id="gradio" class="gradio-wrapper">
+    <gradio-app src="https://castbison-golden-desert.hf.space"></gradio-app>
+  </div>
+  <script
+    type="module"
+    src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"
+  ></script>
 
   <!-- ✅ How It Works Section -->
   <section>
@@ -448,86 +459,105 @@
     </ul>
   </section>
 
-  <!-- ✅ Predictive Maintenance AI Section -->
-  <section id="predictive-ai">
-    <h2>🚀 Unlock Proactive Car Maintenance with Predictive AI</h2>
+   <!-- NEW Predictive Maintenance AI Section -->
+    <section id="predictive-ai">
+  <h2>🚀 Unlock Proactive Car Maintenance with Predictive AI</h2>
+  
+  <p>
+    Test our Experimental Predictive Maintenance AI now. This powerful tool uses personalized inputs 
+    (mileage, driving style, environment) to forecast when specific parts might fail, allowing you 
+    to get ahead of expensive breakdowns. A full, feature-rich mobile and desktop app is coming soon!
+  </p>
+
+  <p>
+    👉 Start Forecasting Maintenance: 
+    <a href="https://carithm.vercel.app/predictive/" target="_blank" rel="noopener noreferrer" class="highlight-link">
+      <strong>Try the Free Predictive Maintenance AI Demo</strong>
+    </a>.
+  </p>
+</section>
+
+<style>
+/* Softer highlight for the link text */
+.highlight-link strong {
+  background: linear-gradient(90deg, #66d9ff 0%, #80ffaa 100%);
+  color: #1a1a1a;
+  padding: 2px 6px;
+  border-radius: 6px;
+  text-shadow: none;
+  transition: all 0.25s ease-in-out;
+}
+
+.highlight-link strong:hover {
+  background: linear-gradient(90deg, #80ffaa 0%, #66d9ff 100%);
+  transform: scale(1.03);
+  color: #000;
+}
+</style>
+
+      
+    <section>
+     <h2>Frequently Asked Questions About Our AI Car Mechanic</h2>
+
+  <details>
+    <summary>Is Carithm a <strong>free AI car diagnostic tool</strong> with no ads or signup?</summary>
     <p>
-      Test our Experimental Predictive Maintenance AI now. This powerful tool uses personalized inputs 
-      (mileage, driving style, environment) to forecast when specific parts might fail, allowing you 
-      to get ahead of expensive breakdowns. A full, feature-rich mobile and desktop app is coming soon!
+      Yes! Carithm offers a <strong>100% free AI car diagnostic check</strong> and engine problem solver. 
+      Get instant, reliable guidance for your vehicle’s issues, just like having a 
+      <strong>virtual mechanic</strong> in your pocket. No sign-up and no intrusive ads.
     </p>
+  </details>
 
+  <details>
+    <summary>Can I use Carithm with <strong>OBD-II codes</strong> like <strong>P0420, P0171, and P0300</strong>?</summary>
     <p>
-      👉 Start Forecasting Maintenance: 
-      <a href="https://carithm.vercel.app/predictive/" target="_blank" rel="noopener noreferrer" class="highlight-link">
-        <strong>Try the Free Predictive Maintenance AI Demo</strong>
-      </a>.
+      Absolutely! Carithm is an expert <strong>OBD-II code decoder</strong>. 
+      It explains the code, identifies likely causes (like catalytic converter or fuel system issues), 
+      and provides <strong>step-by-step DIY fixes</strong> for common engine problems.
     </p>
-  </section>
+  </details>
 
-  <!-- ✅ FAQ Section -->
-  <section>
-    <h2>Frequently Asked Questions About Our AI Car Mechanic</h2>
+  <details>
+    <summary>How does Carithm diagnose specific car problems like <strong>shaking while idling</strong> or <strong>battery drain</strong>?</summary>
+    <p>
+      The AI analyzes your symptoms and cross-references thousands of repair cases. 
+      It can accurately pinpoint the cause of <strong>shaking during idle</strong> (misfires, worn mounts) 
+      or detect <strong>battery drain symptoms</strong> and guide you through effective troubleshooting steps.
+    </p>
+  </details>
 
-    <details>
-      <summary>Is Carithm a <strong>free AI car diagnostic tool</strong> with no ads or signup?</summary>
-      <p>
-        Yes! Carithm offers a <strong>100% free AI car diagnostic check</strong> and engine problem solver. 
-        Get instant, reliable guidance for your vehicle’s issues, just like having a 
-        <strong>virtual mechanic</strong> in your pocket. No sign-up and no intrusive ads.
-      </p>
-    </details>
+  <details>
+    <summary>What is the <strong>Predictive Maintenance AI</strong> feature and how do I try the demo?</summary>
+    <p>
+      The <strong>Predictive Maintenance AI</strong> estimates your car's service and replacement needs 
+      based on personalized data (mileage, age, driving style). 
+      Try the free demo instantly at 
+      <a href="https://carithm.vercel.app/predictive/" target="_blank" rel="noopener">
+        carithm.vercel.app/predictive
+      </a> 
+      to start <strong>proactive car maintenance</strong>.
+    </p>
+  </details>
 
-    <details>
-      <summary>Can I use Carithm with <strong>OBD-II codes</strong> like <strong>P0420, P0171, and P0300</strong>?</summary>
-      <p>
-        Absolutely! Carithm is an expert <strong>OBD-II code decoder</strong>. 
-        It explains the code, identifies likely causes (like catalytic converter or fuel system issues), 
-        and provides <strong>step-by-step DIY fixes</strong> for common engine problems.
-      </p>
-    </details>
+  <details>
+    <summary>Is there a mobile app, or does Carithm act like an <strong>AI car mechanic chat</strong>?</summary>
+    <p>
+      Carithm is a powerful, web-based tool that works perfectly on 
+      <strong>mobile, tablet, and desktop browsers</strong> — no app download needed. 
+      Just describe your car problems in plain language, and the AI provides detailed, 
+      <strong>step-by-step solutions</strong>.
+    </p>
+  </details>
+</section>
 
-    <details>
-      <summary>How does Carithm diagnose specific car problems like <strong>shaking while idling</strong> or <strong>battery drain</strong>?</summary>
-      <p>
-        The AI analyzes your symptoms and cross-references thousands of repair cases. 
-        It can accurately pinpoint the cause of <strong>shaking during idle</strong> (misfires, worn mounts) 
-        or detect <strong>battery drain symptoms</strong> and guide you through effective troubleshooting steps.
-      </p>
-    </details>
+    <a href="/blog/" class="blog-link">📘 Visit Our Car Blog – Fixes, Tips & DIY Guides →</a>
+  </main>
 
-    <details>
-      <summary>What is the <strong>Predictive Maintenance AI</strong> feature and how do I try the demo?</summary>
-      <p>
-        The <strong>Predictive Maintenance AI</strong> estimates your car's service and replacement needs 
-        based on personalized data (mileage, age, driving style). 
-        Try the free demo instantly at 
-        <a href="https://carithm.vercel.app/predictive/" target="_blank" rel="noopener">
-          carithm.vercel.app/predictive
-        </a> 
-        to start <strong>proactive car maintenance</strong>.
-      </p>
-    </details>
+<section id="example-diagnoses">
+  <h2 class="section-title">🔍 Example Carithm AI Diagnoses</h2>
 
-    <details>
-      <summary>Is there a mobile app, or does Carithm act like an <strong>AI car mechanic chat</strong>?</summary>
-      <p>
-        Carithm is a powerful, web-based tool that works perfectly on 
-        <strong>mobile, tablet, and desktop browsers</strong> — no app download needed. 
-        Just describe your car problems in plain language, and the AI provides detailed, 
-        <strong>step-by-step solutions</strong>.
-      </p>
-    </details>
-  </section>
-
-  <a href="/blog/" class="blog-link">📘 Visit Our Car Blog – Fixes, Tips & DIY Guides →</a>
-
-  <!-- ✅ Example Diagnoses (Moved inside main for SEO) -->
-  <section id="example-diagnoses">
-    <h2 class="section-title">🔍 Example Carithm AI Diagnoses</h2>
-
-    <div class="diagnosis-grid">
-     <!-- Card 1 -->
+  <div class="diagnosis-grid">
+    <!-- Card 1 -->
     <article class="diagnosis-card">
       <h3>🚗 Troubleshooting: Car Won't Start, Clicking Noise</h3>
       <ul>
@@ -574,43 +604,91 @@
         <li><strong>Estimated Repair Cost:</strong> Charging cable $200–$500, port repair $300–$800, software updates often free.</li>
       </ul>
     </article>
-    </div>
-  </section>
-
-  <!-- ✅ CTA + Lazy-Loaded Tool (keep last) -->
-  <div class="cta-wrapper">
-    <a href="#gradio" class="cta-button">Start AI Car Diagnostic</a>
   </div>
 
-  <div id="gradio" class="gradio-wrapper">
-    <div id="gradio-loader">⚙️ Loading Carithm AI Mechanic...</div>
-    <iframe
-      src="https://castbison-golden-desert.hf.space"
-      title="Carithm AI Diagnostic Tool"
-      style="width:100%;height:700px;border:none;border-radius:20px;overflow:hidden;"
-      loading="lazy"
-      allow="clipboard-read; clipboard-write; microphone;"
-      onload="document.getElementById('gradio-loader').style.display='none';"
-    ></iframe>
-  </div>
-</main>
+  <style>
+    #example-diagnoses {
+      margin-top: 4rem;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      animation: fadeIn 0.8s ease;
+    }
+
+    #example-diagnoses .section-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .diagnosis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .diagnosis-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .diagnosis-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    }
+
+    .diagnosis-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--link);
+    }
+
+    .diagnosis-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #d1d5db;
+    }
+
+    .diagnosis-card li {
+      margin-bottom: 0.8rem;
+    }
+
+    @media(max-width: 600px) {
+      #example-diagnoses {
+        padding: 1.5rem;
+      }
+      .diagnosis-card h3 {
+        font-size: 1.15rem;
+      }
+    }
+  </style>
+</section>
 
 
+ 
+ <footer style="text-align:center; padding:1rem 0; font-size:0.9rem; color:#555;">
+  <p>
+    © 2025 Carithm. All rights reserved.
+  </p>
+  <p>
+    All content on this website is original, maintained, and copyrighted.
+  </p>
+</footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
