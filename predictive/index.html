@@ -35,7 +35,7 @@
 <style>
 :root {
   --bg: #0f1117;
-  --card-bg: rgba(15,17,23,0.85); /* Darker, visible container */
+  --card-bg: rgba(15,17,23,0.85);
   --text: #ffffff;
   --link: #00c2ff;
   --accent: linear-gradient(90deg,#00c2ff,#00ffd5);
@@ -48,7 +48,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
-  margin:0;
+  margin: 0;
   font-family: var(--font);
   background-color: var(--bg);
   color: var(--text);
@@ -85,14 +85,16 @@ header.header {
 .logo-img { max-width:240px; height:auto; }
 
 main {
-  max-width:1000px;
-  margin:2rem auto;
-  padding:2rem;
+  max-width: 1000px;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 2rem;
   background: var(--card-bg);
-  border-radius:var(--radius);
-  backdrop-filter:blur(10px);
-  box-shadow:var(--shadow);
-  animation:fadeIn 0.8s ease;
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.8s ease;
+  transition: width var(--transition);
 }
 
 h1 {
@@ -130,17 +132,17 @@ strong { color:#fff; }
 }
 .cta-button:hover { transform: scale(1.05); }
 
-/* Gradio embed wrapper */
 .gradio-wrapper {
   display: flex;
   justify-content: center;
   margin: 2rem auto;
   max-width: 720px;
-  width: 100%;
+  width: 90%;
   border-radius: var(--radius);
   background: #1a1d27;
   box-shadow: var(--shadow);
   overflow: hidden;
+  transition: width var(--transition);
 }
 
 .gradio-wrapper gradio-app {
