@@ -441,76 +441,108 @@ section {
 
 
   <style>
-    #example-diagnoses {
-      margin-top: 4rem;
-      padding: 2rem;
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      animation: fadeIn 0.8s ease;
-    }
+#example-diagnoses {
+  margin-top: 4rem;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.8s ease;
+  max-width: 1400px;  /* optional desktop limit */
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    #example-diagnoses .section-title {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-weight: 700;
-      background: var(--accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+#example-diagnoses .section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  background: var(--accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    .diagnosis-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      align-items: stretch;
-    }
+.diagnosis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
 
-    .diagnosis-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
+.diagnosis-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
-    .diagnosis-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-    }
+.diagnosis-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
 
-    .diagnosis-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      color: var(--link);
-    }
+.diagnosis-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--link);
+}
 
-    .diagnosis-card ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #d1d5db;
-    }
+.diagnosis-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d1d5db;
+}
 
-    .diagnosis-card li {
-      margin-bottom: 0.8rem;
-    }
+.diagnosis-card li {
+  margin-bottom: 0.8rem;
+}
 
-    @media(max-width: 600px) {
-      #example-diagnoses {
-        padding: 1.5rem;
-      }
-      .diagnosis-card h3 {
-        font-size: 1.15rem;
-      }
-    }
-  </style>
+/* Responsive tweaks for smaller screens */
+@media(max-width: 1024px){
+  #example-diagnoses {
+    padding: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: var(--radius);
+  }
+}
+
+@media(max-width: 768px){
+  #example-diagnoses {
+    padding: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 0;
+  }
+  .diagnosis-card {
+    padding: 1rem;
+  }
+}
+
+@media(max-width: 480px){
+  #example-diagnoses {
+    padding: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+  .diagnosis-card {
+    padding: 0.8rem;
+  }
+  .diagnosis-card h3 { font-size: 1.1rem; }
+}
+</style>
+
 </section>
 
   <footer>
@@ -519,6 +551,7 @@ section {
   </footer>
 </body>
 </html>
+
 
 
 
