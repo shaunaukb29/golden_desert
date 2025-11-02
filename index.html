@@ -71,11 +71,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a {
-  text-decoration: none;
-  color: var(--link);
-  transition: color var(--transition);
-}
+a { text-decoration: none; color: var(--link); transition: color var(--transition); }
 a:hover { color: #00ffd5; }
 
 header.header {
@@ -104,14 +100,14 @@ header.header {
 .logo-img { max-width:240px; height:auto; }
 
 main {
-  max-width:1000px;
-  margin:2rem auto;
-  padding:2rem;
+  max-width:100%;   /* remove desktop width limit */
+  margin: 2rem auto;
+  padding: 2rem;
   background: var(--card-bg);
-  border-radius:var(--radius);
-  backdrop-filter:blur(20px);
-  box-shadow:var(--shadow);
-  animation:fadeIn 0.8s ease;
+  border-radius: var(--radius);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.8s ease;
 }
 
 h1 {
@@ -123,14 +119,7 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-h2 {
-  font-size:1.6rem;
-  text-align:center;
-  margin-bottom:1rem;
-  font-weight:500;
-  color:#d1d5db;
-}
-
+h2 { font-size:1.6rem; text-align:center; margin-bottom:1rem; font-weight:500; color:#d1d5db; }
 p { font-size:1.15rem; line-height:1.8; color:#d1d5db; margin-bottom:1rem; }
 strong { color:#fff; }
 
@@ -153,8 +142,8 @@ strong { color:#fff; }
   display: flex;
   justify-content: center;
   margin: 2rem auto;
-  max-width: 720px;
   width: 100%;
+  max-width: 1400px; /* optional desktop limit */
   border-radius: var(--radius);
   background: #1a1d27;
   box-shadow: var(--shadow);
@@ -163,7 +152,6 @@ strong { color:#fff; }
 
 .gradio-wrapper gradio-app {
   width: 100% !important;
-  height: auto !important;
   min-height: 600px;
   border: none;
 }
@@ -177,135 +165,22 @@ section {
   text-align:left;
 }
 
-details { margin-bottom:1rem; cursor:pointer; }
-summary { font-weight:600; }
-details p { margin-left:1.5rem; margin-top:0.5rem; font-size:1rem; color:#d1d5db; }
-
-.blog-link {
-  display:block;
-  text-align:center;
-  margin:3rem 0 1rem;
-  font-size:1.05rem;
-  color: var(--link);
-}
-
-footer {
-  text-align:center;
-  margin-top:3rem;
-  font-size:0.9rem;
-  opacity:0.7;
-}
-
-/* Responsive tweaks */
-@media(max-width:1024px){
-  .gradio-wrapper {
-    max-width:100% !important;
-    width:100% !important;
-    margin:1rem auto !important;
-    padding:0 !important;
-    border-radius:0 !important;
-    background:#1a1d27 !important;
-    box-shadow:none !important;
-  }
-
-  .gradio-wrapper gradio-app {
-    width:100% !important;
-    min-width:100% !important;
-  }
-}
-
+/* Responsive adjustments */
 @media(max-width:768px){
-  main { margin:2rem 1rem; padding:1.5rem; }
-  h1 { font-size:2rem; }
-  h2 { font-size:1.3rem; }
-  .gradio-wrapper gradio-app { min-height:400px; }
+  main { margin: 1rem 0; padding: 1rem; border-radius: 0; }
+  .gradio-wrapper { margin: 1rem 0; border-radius: 0; width: 100%; box-shadow: none; }
+  .gradio-wrapper gradio-app { min-height: 400px !important; }
 }
 
 @media(max-width:480px){
-  main { backdrop-filter:none; background: rgba(255,255,255,0.05);}
-  .gradio-wrapper gradio-app { min-height:400px !important; }
+  main { padding: 0; margin: 0; background: transparent; backdrop-filter: none; }
+  .gradio-wrapper { margin: 0; width: 100%; border-radius: 0; background: transparent; box-shadow: none; }
+  .gradio-wrapper gradio-app { min-height: 400px !important; }
 }
 
-@keyframes fadeIn {
-  from{opacity:0; transform:translateY(12px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-/* Highlight links */
-.highlight-link strong {
-  background: linear-gradient(90deg, #66d9ff 0%, #80ffaa 100%);
-  color: #1a1a1a;
-  padding: 2px 6px;
-  border-radius: 6px;
-  text-shadow: none;
-  transition: all 0.25s ease-in-out;
-}
-.highlight-link strong:hover {
-  background: linear-gradient(90deg, #80ffaa 0%, #66d9ff 100%);
-  transform: scale(1.03);
-  color: #000;
-}
-
-/* Example diagnoses section */
-#example-diagnoses {
-  margin-top: 4rem;
-  padding: 2rem;
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  animation: fadeIn 0.8s ease;
-}
-#example-diagnoses .section-title {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-weight: 700;
-  background: var(--accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.diagnosis-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  align-items: stretch;
-}
-
-.diagnosis-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.diagnosis-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-}
-.diagnosis-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: var(--link);
-}
-.diagnosis-card ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #d1d5db;
-}
-.diagnosis-card li { margin-bottom: 0.8rem; }
-
-@media(max-width: 600px) {
-  #example-diagnoses { padding: 1.5rem; }
-  .diagnosis-card h3 { font-size: 1.15rem; }
-}
+@keyframes fadeIn { from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);} }
 </style>
+
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -644,6 +519,7 @@ footer {
   </footer>
 </body>
 </html>
+
 
 
 
