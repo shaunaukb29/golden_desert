@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <!-- Meta -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Car Predictive Maintenance AI: Forecast Failures & Reduce Costs Instantly | Carithm</title>
@@ -10,15 +12,35 @@
   <meta name="theme-color" content="#0f1117" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph / Twitter meta omitted for brevity -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="Car Predictive Maintenance AI: Forecast Failures & Reduce Costs Instantly | Carithm" />
+  <meta property="og:description" content="Try Carithm's Predictive Maintenance AI. Input car type, mileage, service history, and conditions to forecast failures." />
+  <meta property="og:image" content="https://carithm.vercel.app/preview.png" />
+  <meta property="og:url" content="https://castbison-red-tree.hf.space" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Car Predictive Maintenance AI: Forecast Failures & Reduce Costs Instantly | Carithm" />
+  <meta name="twitter:description" content="Forecast car maintenance issues by inputting car details and driving conditions" />
+  <meta name="twitter:image" content="https://carithm.vercel.app/preview.png" />
+  <meta name="twitter:site" content="@carithmai" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Google Analytics omitted -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1D7VF8LR7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-R1D7VF8LR7');
+  </script>
 
+  <!-- Styles -->
   <style>
     :root {
       --bg: #0f1117;
@@ -43,7 +65,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    a { text-decoration: none; color: var(--link); transition: color var(--transition);}
+    a { text-decoration: none; color: var(--link); transition: color var(--transition); }
     a:hover { color: #00ffd5; }
 
     header.header {
@@ -68,6 +90,9 @@
       .header { flex-direction: column; align-items:flex-start; gap:0.5rem;}
       .header .nav-links a { margin-left:0; margin-right:1rem;}
     }
+
+    .logo-container { display:flex; justify-content:center; align-items:center; height:140px; margin-top:1rem;}
+    .logo-img { max-width:240px; height:auto; }
 
     main {
       width: 100%;
@@ -131,23 +156,47 @@
       padding: 2rem;
       background: var(--card-bg);
       border-radius: var(--radius);
+      text-align:left;
     }
 
     details { margin-bottom:1rem; cursor:pointer; }
     summary { font-weight:600; }
     details p { margin-left:1.5rem; margin-top:0.5rem; font-size:1rem; color:#d1d5db; }
 
-    footer {
-      text-align:center;
-      padding:1rem 0;
-      font-size:0.9rem;
-      opacity:0.7;
-      width: 100%;
+    .blog-link { display:block; text-align:center; margin:3rem 0 1rem; font-size:1.05rem; color: var(--link); }
+
+    footer { text-align:center; padding:1rem 0; font-size:0.9rem; opacity:0.7; width: 100%; }
+
+    @media(max-width:768px){
+      main { padding:1.5rem; }
+      h1 { font-size:2rem;}
+      h2 { font-size:1.3rem;}
+      .gradio-wrapper gradio-app { min-height:400px; }
+    }
+
+    @media(max-width:480px){
+      main { backdrop-filter:none; background: rgba(15,17,23,0.85); }
+      .gradio-wrapper gradio-app { min-height:320px; }
     }
 
     @keyframes fadeIn {
       from{opacity:0; transform:translateY(12px);}
       to{opacity:1; transform:translateY(0);}
+    }
+
+    /* Optional: link highlight style */
+    .highlight-link strong {
+      background: linear-gradient(90deg, #66d9ff 0%, #80ffaa 100%);
+      color: #1a1a1a;
+      padding: 2px 6px;
+      border-radius: 6px;
+      text-shadow: none;
+      transition: all 0.25s ease-in-out;
+    }
+    .highlight-link strong:hover {
+      background: linear-gradient(90deg, #80ffaa 0%, #66d9ff 100%);
+      transform: scale(1.03);
+      color: #000;
     }
   </style>
 </head>
@@ -167,33 +216,81 @@
     <h1>⚡ Car Predictive Maintenance Solution: 80% Cost Savings with NO IoT Sensors</h1>
     <h2>The <strong>Zero Cost Implementation</strong> Static Data AI: Comprehensive <strong>Car Failure</strong> Prediction.</h2>
 
-    <p>Carithm's <strong>Car Predictive Maintenance AI</strong> is the only <strong>cost-effective solution</strong> designed to forecast <strong>car failures</strong> using a complete set of <strong>historical data and static inputs</strong>—age, mileage, detailed service history, and real-world operating conditions. <strong>No costly hardware, no complex integration, and zero setup cost</strong> is required.</p>
+    <p>Carithm's <strong>Car Predictive Maintenance AI</strong> is the only <strong>cost-effective solution</strong> designed to forecast <strong>car failures</strong> using a complete set of <strong>historical data and static inputs</strong>—age, mileage, detailed service history, and real-world operating conditions. <strong>No costly hardware, no complex integration, and zero setup cost</strong> is required. This means you can upgrade your maintenance from reactive or preventive to predictive immediately. This is the future of <strong>AI maintenance forecast</strong>.</p>
+
+    <p>To experience the <strong>power of static prediction</strong>, simply input the following data points:</p>
+    <ul>
+      <li>Car type (SUV, Sedan, Hatchback, etc.)</li>
+      <li>Mileage & <strong>Vehicle Age</strong> (years)</li>
+      <li><strong>Months Since Last Service</strong> (Crucial Maintenance History)</li>
+      <li><strong>Driving Environment</strong> (hot, cold, dusty, wet—key wear factors)</li>
+      <li><strong>Driving Style</strong> (city, highway, spirited—reflecting component stress)</li>
+      <li>Country of car origin</li>
+    </ul>
+
+    <p>The AI will instantly generate <strong>probable failure timelines and maintenance forecasts</strong>.</p>
 
     <div class="cta-wrapper">
-      <a href="#prediction-engine" class="cta-button"><strong>Start Predicting Car Failures Now</strong></a>
+      <a href="#prediction-engine" class="cta-button" aria-label="Start Predicting Car Failures with Carithm AI"><strong>Start Predicting Car Failures Now</strong></a>
     </div>
 
     <div class="gradio-wrapper" id="prediction-engine">
-      <gradio-app src="https://castbison-red-tree.hf.space"></gradio-app>
+      <gradio-app src="https://castbison-red-tree.hf.space" style="min-height:600px; border:none;"></gradio-app>
     </div>
 
-    <!-- Add sections and FAQs here, all full width -->
+    <!-- How It Works Section -->
     <section>
       <h2>🔧 How Our Predictive Maintenance AI Works</h2>
-      <p>Simply input your car's key details...</p>
+      <p>Simply input your car's key details—type, mileage, age, last service, driving style, and environment. Carithm's AI analyzes this data to forecast <strong>when parts are likely to fail</strong> and suggests the optimal maintenance schedule. This proactive approach helps prevent costly breakdowns before they happen.</p>
+
+      <p><strong>No IoT hardware or live sensors required.</strong> Carithm is fully functional on mobile, tablet, and desktop. It supports all vehicle types—petrol, diesel, hybrid, and electric—making it perfect for fleet managers, car enthusiasts, and everyday drivers.</p>
+
+      <h3>💡 Example Inputs to Test Our Predictive AI:</h3>
+      <ul>
+        <li>Car type: SUV, Sedan, Hatchback, etc.</li>
+        <li>Mileage and Vehicle Age</li>
+        <li>Months since last service</li>
+        <li>Driving environment: hot, cold, dusty, wet</li>
+        <li>Driving style: city, highway, spirited</li>
+        <li>Country of car origin</li>
+      </ul>
+
+      <h3>About Carithm AI: Your Predictive Maintenance Companion</h3>
+      <p>Carithm is an advanced <strong>Predictive Maintenance AI</strong> trained on billions of historical vehicle data points. It identifies patterns that indicate likely failures and produces highly accurate forecasts for each component. By leveraging static and historical data, Carithm enables you to transition from reactive or preventive maintenance to <strong>predictive maintenance</strong>.</p>
+
+      <p>This AI solution reduces unexpected repair costs, minimizes downtime, and helps you plan maintenance efficiently. It is trusted by <strong>drivers, fleet operators, and automotive professionals</strong> alike. Your data is secure, and all major vehicle types are supported.</p>
+
+      <h3>Key Features of Carithm Predictive Maintenance AI</h3>
+      <ul>
+        <li><strong>Forecast Component Failures:</strong> know which parts are likely to need service and when</li>
+        <li><strong>Static Data-Based Prediction:</strong> no live sensors, IoT devices, or complex setups required</li>
+        <li>Instant, responsive access on <strong>mobile, tablet, and desktop</strong></li>
+        <li>Supports all vehicle types: <strong>petrol, diesel, hybrid, and electric (EV)</strong></li>
+        <li>Integrates seamlessly with our <a href="/blog/"><strong>Car Maintenance Blog</strong></a> for actionable guidance</li>
+      </ul>
     </section>
 
+    <!-- FAQ Section -->
     <section>
       <h3>❓ Frequently Asked Questions (FAQ)</h3>
       <details>
-        <summary>How can you predict failure without a live sensor feed?</summary>
-        <p>Carithm's proprietary ML model...</p>
+        <summary>How can you predict failure without a live sensor feed or new hardware?</summary>
+        <p>Carithm's proprietary machine learning model is trained on <strong>billions of historical vehicle data points</strong> and global failure patterns. This allows our AI to generate a highly accurate prognosis based on known correlation factors (like age, maintenance gaps, and environmental stress), making us a powerful <strong>predictive maintenance solution using only historical and static data</strong>. This provides high-accuracy <strong>car failure prediction without sensors</strong>.</p>
+      </details>
+      <details>
+        <summary>Is Carithm cheaper than Condition-Based Monitoring (CBM)?</summary>
+        <p>Yes, Carithm is a dramatically <strong>cheaper alternative to Condition-Based Monitoring (CBM)</strong>. Since our model uses only data you already possess (age, mileage, service records), you eliminate all hardware costs, installation fees, and the ongoing expense of managing a live telemetry network. This delivers huge <strong>cost savings</strong> and enables <strong>predictive maintenance for legacy systems</strong>.</p>
+      </details>
+      <details>
+        <summary>What is 'static data' predictive maintenance?</summary>
+        <p>Traditional predictive maintenance relies on <strong>live or real-time (dynamic) sensor data</strong>. Our system uses <strong>static data</strong>—information that changes slowly or is recorded historically. This includes the car's age, total mileage, months since last service, and user-inputted driving style/environment, providing prediction <strong>without the need for constant real-time monitoring</strong>. This simplifies the <strong>AI maintenance forecast</strong> process.</p>
       </details>
     </section>
   </main>
 
   <footer>
     <p>© 2025 Carithm. All rights reserved.</p>
+    <p>All content on this website is original, maintained, and copyrighted.</p>
   </footer>
 
   <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
