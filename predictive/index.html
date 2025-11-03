@@ -146,8 +146,8 @@ strong { color:#fff; }
   display: flex;
   justify-content: center;
   margin: 2rem auto;
-  max-width: 720px;
-  width: 90%;
+  max-width: 1400px;  /* wider on desktop */
+  width: 95%;          /* almost full width */
   border-radius: var(--radius);
   background: #1a1d27;
   box-shadow: var(--shadow);
@@ -157,10 +157,19 @@ strong { color:#fff; }
 
 .gradio-wrapper gradio-app {
   width: 100% !important;
-  height: auto !important;
   min-height: 600px;
   border: none;
   background: transparent !important;
+}
+
+/* Responsive tweaks */
+@media(max-width:768px){
+  .gradio-wrapper { width: 100%; margin: 1rem 0; border-radius: 0; box-shadow: none; }
+  .gradio-wrapper gradio-app { min-height: 400px !important; }
+}
+
+@media(max-width:480px){
+  .gradio-wrapper gradio-app { min-height: 320px !important; }
 }
 
 section {
