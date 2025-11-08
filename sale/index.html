@@ -33,6 +33,33 @@
 
   <!-- Styles -->
   <style>
+
+    .image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.image-gallery img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.image-gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 30px rgba(0, 194, 255, 0.4);
+}
+
+@media (min-width: 768px) {
+  .image-gallery img {
+    width: 30%;
+  }
+}
+
     :root {
       --bg: #0f1117;
       --card-bg: rgba(15,17,23,0.85);
@@ -184,7 +211,19 @@
         <li>Fully anonymized and compliant for commercial ML use</li>
       </ul>
     </section>
+    
+<section>
+  <h2>📊 Dataset Preview</h2>
+  <p>Here’s a visual look at the <strong>Carithm Synthetic Maintenance Dataset</strong> — showcasing vehicle data, component health, and the structure that powers Carithm AI’s predictive models.</p>
 
+  <div class="image-gallery">
+    <img src="sale1.jpg" alt="Dataset sample view 1" loading="lazy">
+    <img src="sale2.png" alt="Dataset sample view 2" loading="lazy">
+    <img src="sale3.png" alt="Dataset sample view 3" loading="lazy">
+  </div>
+</section>
+
+    
     <section>
       <h2>🧠 Try the Dataset Live</h2>
       <p>You can <strong>interactively test</strong> how this dataset powers predictive insights by visiting our free demo:</p>
