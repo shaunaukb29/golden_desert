@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Synthetic Car Maintenance Dataset | Carithm AI</title>
+  <meta name="description" content="The official Carithm Synthetic Maintenance Dataset — built for predictive maintenance, anomaly detection, and automotive ML research. 100+ cars, 20 components, realistic driving and environmental conditions." />
+  <meta name="author" content="Shaunak Basu" />
+  <link rel="canonical" href="https://carithm.vercel.app/dataset/" />
+  <meta name="theme-color" content="#0f1117" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Synthetic Car Maintenance Dataset | Carithm AI" />
+  <meta property="og:description" content="A high-fidelity synthetic dataset for car predictive maintenance. Ideal for ML engineers, researchers, and automotive data scientists." />
+  <meta property="og:image" content="https://carithm.vercel.app/dataset-preview.png" />
+  <meta property="og:url" content="https://carithm.vercel.app/dataset/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Synthetic Car Maintenance Dataset | Carithm AI" />
+  <meta name="twitter:description" content="A high-fidelity synthetic dataset for car predictive maintenance and ML training." />
+  <meta name="twitter:image" content="https://carithm.vercel.app/dataset-preview.png" />
+  <meta name="twitter:site" content="@carithmai" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card-bg: rgba(15,17,23,0.85);
+      --text: #ffffff;
+      --link: #00c2ff;
+      --accent: linear-gradient(90deg,#00c2ff,#00ffd5);
+      --font: 'Inter', sans-serif;
+      --radius: 20px;
+      --shadow: 0 12px 32px rgba(0,0,0,0.35);
+      --transition: 0.3s ease-in-out;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: var(--link); transition: color var(--transition); }
+    a:hover { color: #00ffd5; }
+
+    header.header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(12px);
+      background-color: rgba(15,17,23,0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+      width: 100%;
+    }
+
+    .header .brand { font-weight: 700; font-size:1.3rem; color: var(--link);}
+    .header .nav-links a { margin-left:1.5rem; font-weight:500; }
+
+    @media(max-width:768px){
+      .header { flex-direction: column; align-items:flex-start; gap:0.5rem;}
+      .header .nav-links a { margin-left:0; margin-right:1rem;}
+    }
+
+    main {
+      width: 100%;
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 1100px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      animation: fadeIn 0.8s ease;
+    }
+
+    h1 {
+      font-size:2.6rem;
+      text-align:center;
+      margin-bottom:0.5rem;
+      font-weight:700;
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h2 { font-size:1.6rem; text-align:center; margin-bottom:1.2rem; color:#d1d5db; }
+    p, li { font-size:1.1rem; line-height:1.8; color:#d1d5db; }
+
+    .cta-wrapper { text-align:center; margin-top:2rem; }
+    .cta-button {
+      display:inline-block;
+      padding:0.9rem 1.8rem;
+      font-weight:600;
+      font-size:1rem;
+      background: var(--link);
+      border-radius:var(--radius);
+      color:#000;
+      box-shadow:0 8px 20px rgba(0,194,255,0.4);
+      transition: transform var(--transition);
+    }
+    .cta-button:hover { transform: scale(1.05); }
+
+    section {
+      width: 100%;
+      margin: 2rem 0;
+      padding: 2rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top:1rem;
+    }
+    th, td {
+      text-align:left;
+      padding:0.8rem;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+    th { color:#9aa7b2; }
+
+    footer { text-align:center; padding:2rem 0; font-size:0.9rem; opacity:0.7; }
+
+    @keyframes fadeIn {
+      from{opacity:0; transform:translateY(12px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <a href="/" class="brand">Carithm</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/predictive/">Carithm AI</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about/">About</a>
+    </div>
+  </header>
+
+  <main>
+    <h1>🚗 Carithm Synthetic Maintenance Dataset</h1>
+    <h2>High-Fidelity Vehicle Health Data — Built for Predictive Maintenance AI</h2>
+
+    <p>The <strong>Carithm Synthetic Maintenance Dataset</strong> is a high-quality, fully synthetic dataset created to accelerate development in <strong>predictive maintenance, anomaly detection, and automotive machine learning</strong>. It simulates 100+ vehicles, 20 key components, and realistic driving behaviors across diverse environments.</p>
+
+    <p>Our dataset enables developers, researchers, and companies to build, test, and deploy predictive models without collecting sensitive or hardware-based data. Every datapoint is synthetically generated using structured, statistically modeled automotive parameters.</p>
+
+    <div class="cta-wrapper">
+      <a href="https://carithm.gumroad.com/" target="_blank" class="cta-button"><strong>Buy Dataset — $149</strong></a>
+    </div>
+
+    <section>
+      <h2>🔍 Key Features</h2>
+      <ul>
+        <li>100+ virtual vehicles across Sedan, SUV, and Hatchback types</li>
+        <li>20+ monitored components — from engine, transmission, and brakes to sensors</li>
+        <li>Simulated environments: hot, cold, dusty, and moderate climates</li>
+        <li>Driving styles: city, highway, and spirited use patterns</li>
+        <li>Includes failure injection, maintenance actions, and health status logs</li>
+        <li>Available in <strong>CSV</strong> and <strong>Parquet</strong> formats</li>
+        <li>Fully anonymized and compliant for commercial ML use</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📘 Dataset Schema</h2>
+      <table>
+        <thead>
+          <tr><th>Field</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>vehicle_id</td><td>Unique identifier for each car (e.g. car_001)</td></tr>
+          <tr><td>mileage_km</td><td>Odometer reading (integer)</td></tr>
+          <tr><td>years_owned</td><td>Number of years the vehicle has been owned</td></tr>
+          <tr><td>months_since_service</td><td>Months since last service</td></tr>
+          <tr><td>environment</td><td>hot / cold / dusty / mid</td></tr>
+          <tr><td>driving_style</td><td>city / highway / spirited</td></tr>
+          <tr><td>country_origin</td><td>Germany / Britain / Japan / USA / Korea</td></tr>
+          <tr><td>component_name</td><td>Engine, Battery, Brake Pads, etc.</td></tr>
+          <tr><td>component_health</td><td>0 = healthy, 1 = failure</td></tr>
+          <tr><td>maintenance_action</td><td>repair / replace / inspect</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>💡 Use Cases</h2>
+      <ul>
+        <li>Train machine learning models for <strong>predictive maintenance</strong></li>
+        <li>Benchmark fault detection and health prediction algorithms</li>
+        <li>Prototype dashboards and anomaly detection visualizations</li>
+        <li>Academic research on synthetic automotive data</li>
+        <li>Testing digital twin systems and automotive analytics tools</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📦 What You Get</h2>
+      <ul>
+        <li>Dataset files in CSV and Parquet format</li>
+        <li>Detailed README and schema documentation</li>
+        <li>Python notebook examples for loading and analysis</li>
+        <li>Commercial license for ML and product development</li>
+      </ul>
+      <div class="cta-wrapper">
+        <a href="https://carithm.gumroad.com/" target="_blank" class="cta-button"><strong>Get the Dataset</strong></a>
+      </div>
+    </section>
+
+    <section>
+      <h2>❓ FAQ</h2>
+      <details>
+        <summary>Is this data real or synthetic?</summary>
+        <p>This dataset is 100% synthetic, generated from mathematical models and automotive maintenance logic. It contains no real-world or personal data.</p>
+      </details>
+      <details>
+        <summary>Can I use it for commercial projects?</summary>
+        <p>Yes, the dataset comes with a commercial license suitable for research, product development, and AI startup projects.</p>
+      </details>
+      <details>
+        <summary>What format is the data provided in?</summary>
+        <p>Both CSV and Parquet formats are included. Each file is clean, ready-to-use, and includes clear column headers.</p>
+      </details>
+      <details>
+        <summary>Can I request a larger dataset?</summary>
+        <p>Yes, custom variants (e.g., 500 or 1000 vehicles) are available upon request. Contact us at <a href=\"mailto:contact@carithm.ai\">contact@carithm.ai</a>.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Carithm. All rights reserved.</p>
+    <p>Made by Shaunak Basu — for AI-driven automotive innovation.</p>
+  </footer>
+</body>
+</html>
