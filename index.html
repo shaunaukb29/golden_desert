@@ -1,137 +1,568 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carithm AI: Predictive Maintenance & Instant Car Mechanic Tool</title>
-  <meta name="description" content="Free AI Car Mechanic & Predictive Maintenance Tool. Instantly check how to clear Check Engine Light, solve OBD codes, diagnose car problems, and forecast maintenance needs.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carithm AI: Predictive Maintenance & Instant Car Mechanic AI Tool</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Free AI Car Mechanic & Predictive Maintenance Tool. Instantly check how to clear Check Engine Light, or solve obd code p0420, obd code p0171, p0300, diagnose car problems with symptom, and get step-by-step DIY car repair help, while forecasting maintenance needs." />
+  <meta name="author" content="Shaunak Basu" />
+  <link rel="canonical" href="https://carithm.vercel.app/" />
+  <meta name="theme-color" content="#0f1117" />
+  <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="FwgoslkSBMbkNewUtM7tPOcwkoz7EQWKFT5BbkfiUBA" />
+  <meta name="msvalidate.01" content="D1A8A1F06920524E3E359A514D1DE1F6" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Carithm AI: Predictive Maintenance & Instant Car Mechanic AI Tool" />
+  <meta property="og:description" content="Instantly check how to clear Check Engine Light, or solve obd code p0420, obd code p0171, p0300, diagnose car problems with symptom, and get step-by-step DIY car repair help" />
+  <meta property="og:image" content="https://carithm.vercel.app/preview.png" />
+  <meta property="og:url" content="https://carithm.vercel.app" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Carithm" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Carithm – AI Car Mechanic & Predictive Maintenance" />
+  <meta name="twitter:description" content="Instantly diagnose car issues using Car Mechanic AI Chat. Enter OBD-II codes or symptoms to get real ai mechanic fixes online. Free, no signup." />
+  <meta name="twitter:image" content="https://carithm.vercel.app/preview.png" />
+  <meta name="twitter:site" content="@carithmai" />
+  <meta name="twitter:url" content="https://carithm.vercel.app" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Analytics -->
+  <script async data-id="101494609" src="//static.getclicky.com/js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
   <script>
-    tailwind.config = { darkMode: 'class' }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TCCEJ6DCM1');
   </script>
+
+  <!-- Styles -->
   <style>
-    /* Root colors and fonts */
-    :root {
-      --bg: #0f0f13;
-      --card-bg: rgba(25, 0, 35, 0.5);
-      --text: #fff;
-      --link: #ff73e3;
-      --accent: linear-gradient(90deg,#ff73e3,#ff00ff);
-      --radius: 20px;
-      --shadow: 0 12px 32px rgba(0,0,0,0.45);
-      --transition: 0.3s ease-in-out;
-    }
-    body { margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); scroll-behavior:smooth; }
-    a { text-decoration:none; color:var(--link); transition: color var(--transition); }
-    a:hover { color:#ff00ff; }
-    main { max-width:1200px; margin:2rem auto; padding:2rem; border-radius:var(--radius); backdrop-filter:blur(20px); background:var(--card-bg); box-shadow:var(--shadow); }
-    h1 { font-size:2.5rem; font-weight:700; background:var(--accent); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:1rem; text-align:center; }
-    h2 { font-size:1.6rem; font-weight:500; margin-bottom:1rem; text-align:center; color:#d1d5db; }
-    p { font-size:1.15rem; line-height:1.8; margin-bottom:1rem; }
-    strong { color:#fff; }
-    .cta-wrapper { display:flex; justify-content:center; margin-top:2rem; }
-    .cta-button { padding:0.8rem 1.6rem; font-weight:600; font-size:1rem; background:var(--link); border-radius:var(--radius); color:#000; box-shadow:0 8px 20px rgba(255,0,255,0.4); transition:transform var(--transition);}
-    .cta-button:hover { transform:scale(1.05); }
+:root {
+  --bg: #0f1117;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --text: #ffffff;
+  --link: #00c2ff;
+  --accent: linear-gradient(90deg,#00c2ff,#00ffd5);
+  --font: 'Inter', sans-serif;
+  --radius: 20px;
+  --shadow: 0 12px 32px rgba(0,0,0,0.35);
+  --transition: 0.3s ease-in-out;
+}
 
-    .gradio-wrapper { display:flex; justify-content:center; margin:2rem 0; width:100%; max-width:1400px; border-radius:var(--radius); background:rgba(25,0,35,0.8); box-shadow:var(--shadow); overflow:hidden; }
-    .gradio-wrapper iframe { width:100% !important; min-height:900px; border:none; border-radius:var(--radius); }
+*, *::before, *::after { box-sizing: border-box; }
 
-    /* Tabs */
-    .tab-btn { cursor:pointer; flex:1; text-center; padding:0.5rem; font-weight:600; border-radius:var(--radius); transition:background var(--transition); }
-    .tab-btn.active { background:#ff00ff; color:#fff; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
 
-    details { margin-bottom:1rem; border:1px solid #ff00ff; border-radius:var(--radius); padding:0.8rem; background:rgba(255,0,255,0.05); }
-    summary { cursor:pointer; font-weight:600; font-size:1rem; }
-    details p { margin-top:0.5rem; font-size:0.95rem; color:#d1d5db; }
+a { text-decoration: none; color: var(--link); transition: color var(--transition); }
+a:hover { color: #00ffd5; }
 
-    footer { text-align:center; margin-top:3rem; padding:2rem; font-size:0.9rem; color:#d1d5db; }
-  </style>
+header.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+  background-color: rgba(15,17,23,0.85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+}
+
+.header .brand { font-weight: 700; font-size:1.3rem; color: var(--link);}
+.header .nav-links a { margin-left:1.5rem; font-weight:500; }
+
+@media(max-width:768px){
+  .header { flex-direction: column; align-items:flex-start; gap:0.5rem;}
+  .header .nav-links a { margin-left:0; margin-right:1rem;}
+}
+
+.logo-container { display:flex; justify-content:center; align-items:center; height:140px; margin-top:1rem;}
+.logo-img { max-width:240px; height:auto; }
+
+main {
+  max-width:100%;  
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.8s ease;
+}
+
+h1 {
+  font-size:2.8rem;
+  text-align:center;
+  margin-bottom:0.5rem;
+  font-weight:700;
+  background: var(--accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h2 { font-size:1.6rem; text-align:center; margin-bottom:1rem; font-weight:500; color:#d1d5db; }
+p { font-size:1.15rem; line-height:1.8; color:#d1d5db; margin-bottom:1rem; }
+strong { color:#fff; }
+
+.cta-wrapper { display:flex; justify-content:center; margin-top:2rem; }
+.cta-button {
+  display:inline-block;
+  padding:0.8rem 1.6rem;
+  font-weight:600;
+  font-size:1rem;
+  background: var(--link);
+  border-radius:var(--radius);
+  color:#000;
+  box-shadow:0 8px 20px rgba(0,194,255,0.4);
+  transition: transform var(--transition);
+}
+.cta-button:hover { transform: scale(1.05); }
+
+.gradio-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 1400px; 
+  border-radius: var(--radius);
+  background: #1a1d27;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.gradio-wrapper gradio-app {
+  width: 100% !important;
+  min-height: 600px;
+  border: none;
+}
+
+section {
+  margin-top:3rem;
+  padding:2rem;
+  background: var(--card-bg);
+  border-radius:var(--radius);
+  text-align:left;
+}
+
+@media(max-width:768px){
+  main { margin: 1rem 0; padding: 1rem; border-radius: 0; }
+  .gradio-wrapper { margin: 1rem 0; border-radius: 0; width: 100%; box-shadow: none; }
+  .gradio-wrapper gradio-app { min-height: 400px !important; }
+}
+
+@media(max-width:480px){
+  main { padding: 0; margin: 0; background: transparent; backdrop-filter: none; }
+  .gradio-wrapper { margin: 0; width: 100%; border-radius: 0; background: transparent; box-shadow: none; }
+  .gradio-wrapper gradio-app { min-height: 400px !important; }
+}
+
+@keyframes fadeIn { from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);} }
+</style>
 </head>
-<body>
 
-  <header class="header flex justify-between items-center p-4 border-b border-purple-800">
-    <a href="/" class="font-bold text-xl" style="color:var(--link)">Carithm</a>
-    <nav class="space-x-4">
-      <a href="/">Home</a>
-      <a href="/predictive/">Predictive AI</a>
-      <a href="/blog/">Blog</a>
+<body>
+  <header class="header">
+    <a href="/" class="brand">Carithm</a>
+    <div class="nav-links">
+      <a href="/">Carithm AI</a>
       <a href="/sale/">Datasets</a>
+      <a href="/blog/">Blog</a>
       <a href="/about/">About</a>
-    </nav>
+      <a href="/predictive/">Carithm Predictive</a>
+    </div>
   </header>
 
+  <div class="logo-container">
+    <img src="logo_words.png" alt="Carithm AI virtual car mechanic logo" class="logo-img" loading="lazy">
+  </div>
+
   <main>
-    <h1>Carithm AI: Predictive Maintenance & Instant Car Mechanic</h1>
-    <h2>Instantly Decode OBD Codes, Diagnose Car Problems, and Forecast Maintenance</h2>
+    <!-- ✅ Dataset Hero Section -->
+    <section style="text-align:center; padding:3rem 2rem; background: rgba(255,255,255,0.05); border-radius:20px; margin-bottom:3rem; box-shadow:0 12px 32px rgba(0,0,0,0.35);">
+      <h1 style="font-size:2.8rem; font-weight:700; background: linear-gradient(90deg,#00c2ff,#00ffd5); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:1rem;">
+        Predictive Maintenance Dataset – 10,000 Cars, 6 Years, 20 Parts
+      </h1>
+      <h2 style="font-size:1.6rem; font-weight:500; color:#d1d5db; margin-bottom:1.5rem;">
+        Now available for sale on Gumroad
+      </h2>
+      <p style="font-size:1.15rem; line-height:1.8; color:#d1d5db; max-width:800px; margin:0 auto 2rem;">
+  The very dataset used to power <strong>Carithm AI’s predictive maintenance engine</strong> is now available for purchase.  
+  It encompasses <strong>10,000 vehicles</strong> tracked over <strong>6 years</strong>, capturing detailed performance and failure data across <strong>20 critical automotive components</strong>.  
+  This is an ideal resource for <strong>AI research, predictive modeling, and advanced automotive analytics</strong>.
+</p>
 
-    <div class="cta-wrapper">
-      <a href="#ai-tabs" class="cta-button">Start AI Tools</a>
-    </div>
-
-    <!-- ✅ AI Tabs Section -->
-    <div id="ai-tabs" class="mt-8">
-      <div class="grid grid-cols-2 gap-2 mb-4">
-        <div class="tab-btn active" data-tab="predictive">Predictive Maintenance</div>
-        <div class="tab-btn" data-tab="solver">Problem Solver</div>
+      <div class="cta-wrapper">
+        <a href="https://shaunak7.gumroad.com/l/fxdfmz" target="_blank" class="cta-button">
+          Buy the Dataset on Gumroad
+        </a>
       </div>
-
-      <div id="predictive" class="tab-content">
-        <div class="gradio-wrapper">
-          <iframe src="https://castbison-red-tree.hf.space" allow="clipboard-write; clipboard-read; microphone; camera;"></iframe>
-        </div>
-      </div>
-
-      <div id="solver" class="tab-content hidden">
-        <div class="gradio-wrapper">
-          <iframe src="https://castbison-golden-desert.hf.space" allow="clipboard-write; clipboard-read; microphone; camera;"></iframe>
-        </div>
-      </div>
-    </div>
-
-    <!-- ✅ FAQ Section -->
-    <section id="faq" class="mt-12">
-      <h2>Frequently Asked Questions About Carithm AI</h2>
-
-      <details>
-        <summary>Is Carithm a <strong>free AI car mechanic tool</strong> with no ads or signup?</summary>
-        <p>Yes! Carithm offers a <strong>100% free AI car diagnostic check</strong> and engine problem solver. No sign-up and no intrusive ads.</p>
-      </details>
-
-      <details>
-        <summary>Can I use Carithm with <strong>OBD-II codes</strong> like <strong>P0420, P0171, and P0300</strong>?</summary>
-        <p>Absolutely! Carithm decodes OBD-II codes, explains causes, and provides step-by-step DIY fixes.</p>
-      </details>
-
-      <details>
-        <summary>What is the <strong>Predictive Maintenance AI</strong> feature?</summary>
-        <p>Carithm forecasts your car’s maintenance needs before problems occur using mileage, age, driving style, and environment.</p>
-      </details>
-
-      <details>
-        <summary>Is Carithm available on mobile, or is it a desktop-only tool?</summary>
-        <p>Carithm works seamlessly on mobile, tablet, and desktop — no app download needed.</p>
-      </details>
     </section>
 
-  </main>
+  <main>
+    <h1>Carithm AI: Predictive Maintenance & Instant Car Mechanic AI Tool</h1>
+    <h2>Instantly Decode CEL Codes, Diagnose Car Problems, and Forecast Maintenance Needs</h2>
 
-  <footer>
-    <p>© 2025 Carithm. All rights reserved.</p>
-  </footer>
+    <p class="centered-text">
+  Use Carithm's free AI car mechanic and predictive maintenance tool to solve car problems instantly. Get precise, step-by-step DIY car repair guidance for petrol, diesel, hybrid, and electric vehicles (EVs), and forecast when key components may need service. Enter symptoms or OBD-II codes ( obd code p0420, p0171, p0300) for immediate car repair help.
+</p>
 
-  <!-- Tabs JS -->
-  <script>
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
+    <div class="cta-wrapper">
+      <a href="#gradio" class="cta-button">Start AI Car Diagnostic</a>
+    </div>
 
-    tabButtons.forEach(btn => btn.addEventListener('click', () => {
-      tabButtons.forEach(b => b.classList.remove('active'));
-      tabContents.forEach(c => c.classList.add('hidden'));
-      btn.classList.add('active');
-      document.getElementById(btn.dataset.tab).classList.remove('hidden');
-    }));
-  </script>
+    <div id="gradio" class="gradio-wrapper">
+      <gradio-app src="https://castbison-golden-desert.hf.space"></gradio-app>
+    </div>
+
+    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
+
+ <!-- ✅ How It Works Section -->
+<section>
+  <h2>🔧 How Our Virtual AI Car Mechanic Works for Troubleshooting and Repair</h2>
+  <p>
+    Simply describe your car's symptoms or enter any OBD code. Carithm delivers instant 
+    AI car diagnostics, identifies likely causes, and provides actionable car repair guidance. It can quickly help you resolve common issues like 
+    <strong>engine misfires, persistent check engine lights, complex fuel system problems, and sensor failures</strong>.
+  </p>
+
+  <p>
+    <strong>No login required.</strong> Carithm is a completely free tool, fully functional on mobile, tablet, and desktop. 
+    It provides comprehensive support across <strong>petrol, diesel, CNG, hybrid, and electric vehicles (EVs)</strong>, 
+    making it essential for drivers, professional mechanics, and car enthusiasts alike.
+  </p>
+
+  <h3>💡 Test Our Free AI Car Mechanic Tool with These Phrases:</h3>
+  <ul>
+    <li>"Car won't turn over, battery is good"</li>
+    <li>"How to fix engine misfire or cylinder misfire"</li>
+    <li>"Why is my car not accelerating uphill?"</li>
+    <li>"EV won’t charge properly or electric car charging problems"</li>
+    <li>"Engine overheating causes and fixes"</li>
+  </ul>
+
+  <!-- ✅ About Section -->
+  <h3>About Carithm AI: Your Expert Virtual AI Mechanic</h3>
+  <p>
+    Carithm is a powerful <strong>virtual AI car mechanic</strong> built with advanced algorithms trained on extensive real-world repair data. 
+    It specializes in troubleshooting engine, fuel system, and electrical issues. By using natural language or specific 
+    <strong>OBD codes</strong> (P0420, P0171, P0300), it provides <strong>precise diagnostics</strong> and detailed, step-by-step repair instructions.
+  </p>
+
+  <p>
+    The tool's predictions help reduce unnecessary mechanic visits and empower users to confidently perform their own 
+    <strong>car maintenance</strong>. It is trusted by <strong>car enthusiasts, everyday drivers, and professional mechanics</strong>. 
+    Your data is secure, and we support <strong>all major vehicle types</strong>.
+  </p>
+
+  <!-- ✅ Features Section -->
+  <h3>Key Features of the Free AI Car Mechanic Tool</h3>
+  <ul>
+    <li><strong>Full OBD-II Code Decoder</strong> for standard P0xxx and P1xxx check engine codes</li>
+    <li><strong>Detailed, step-by-step AI car repair guidance</strong></li>
+    <li>Instant, responsive access on <strong>mobile, tablet, and desktop</strong></li>
+    <li>Supports natural language input for effortless <strong>car problem troubleshooting</strong></li>
+    <li>
+      Integrates with our powerful 
+      <a href="/predictive/"><strong>Predictive Maintenance AI</strong></a> and 
+      <a href="/blog/"><strong>DIY Car Maintenance Blog</strong></a> for next-level guidance
+    </li>
+  </ul>
+</section>
+
+    <!-- ✅ Predictive Maintenance App Section -->
+<section id="predictive-gradio">
+  <h2>📊 Carithm Predictive Maintenance AI</h2>
+  <p>
+    Forecast maintenance needs for your car before issues become expensive. Enter your car's type, mileage, age, driving style, and environment.
+    Our AI predicts which components might fail soon and provides a personalized maintenance plan.
+  </p>
+
+  <div class="cta-wrapper">
+    <a href="#gradio-predictive" class="cta-button">Try Predictive Maintenance AI</a>
+  </div>
+
+  <div id="gradio-predictive" class="gradio-wrapper">
+    <gradio-app src="https://castbison-red-tree.hf.space"></gradio-app>
+  </div>
+
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
+</section>
+
+      
+    <main>
+  <section id="faq">
+    <h2>Frequently Asked Questions About Carithm AI</h2>
+
+    <details>
+      <summary>Is Carithm a <strong>free AI car mechanic tool</strong> with no ads or signup?</summary>
+      <p>
+        Yes! Carithm offers a <strong>100% free AI car diagnostic check</strong> and engine problem solver.
+        Get instant, reliable guidance for your vehicle’s issues, just like having a
+        <strong>virtual mechanic</strong> in your pocket. No sign-up and no intrusive ads.
+      </p>
+    </details>
+
+    <details>
+      <summary>Can I use Carithm with <strong>OBD-II codes</strong> like <strong>P0420, P0171, and P0300</strong>?</summary>
+      <p>
+        Absolutely! Carithm is an expert <strong>OBD-II code decoder</strong>.
+        It explains the code, identifies likely causes (like catalytic converter or fuel system issues),
+        and provides <strong>step-by-step DIY fixes</strong> for common engine problems.
+      </p>
+    </details>
+
+    <details>
+      <summary>How does Carithm diagnose problems like <strong>shaking while idling</strong> or <strong>battery drain</strong>?</summary>
+      <p>
+        The AI analyzes your symptoms and cross-references thousands of repair cases.
+        It can pinpoint causes of <strong>shaking during idle</strong> (misfires, worn mounts)
+        or detect <strong>battery drain symptoms</strong> and guide you through effective troubleshooting steps.
+      </p>
+    </details>
+
+    <details>
+      <summary>What is the <strong>Predictive Maintenance AI</strong> feature?</summary>
+      <p>
+        Carithm's <strong>Predictive Maintenance AI</strong> forecasts your car’s maintenance needs before problems occur.
+        Using inputs like <strong>mileage, vehicle age, driving style, and environment</strong>,
+        it predicts which components may require service or replacement soon. This helps you prevent unexpected breakdowns and expensive repairs.
+      </p>
+    </details>
+
+    <details>
+      <summary>How can I try the <strong>Predictive Maintenance AI</strong> demo?</summary>
+      <p>
+        You can instantly test the free demo at
+        <a href="https://carithm.vercel.app/predictive/" target="_blank" rel="noopener">
+          carithm.vercel.app/predictive
+        </a>.
+        Enter your vehicle details and see personalized predictions for parts like <strong>brakes, battery, tires, timing belts</strong>, and more.
+      </p>
+    </details>
+
+    <details>
+      <summary>Can Predictive Maintenance help reduce repair costs?</summary>
+      <p>
+        Yes! By knowing when parts are likely to fail, you can schedule maintenance ahead of time,
+        avoid emergency repairs, and extend your car’s lifespan. This feature is especially useful for high-mileage or older vehicles.
+      </p>
+    </details>
+
+    <details>
+      <summary>Is Carithm available on mobile, or is it a desktop-only tool?</summary>
+      <p>
+        Carithm works seamlessly on <strong>mobile, tablet, and desktop browsers</strong>—no app download needed.
+        You can use both the AI Car Mechanic and Predictive Maintenance tools on any device, anytime.
+      </p>
+    </details>
+
+  </section>
+</main>
+
+ <a href="/blog/" class="blog-link" style="display:block; text-align:center;">📘 Visit Our Car Blog – Fixes, Tips & DIY Guides →</a>
+
+  <section id="example-diagnoses">
+    <h2 class="section-title">Top Car Problems Solved: AI OBD Code Fixes and Diagnostics</h2>
+
+    <div class="diagnosis-grid">
+      <!-- Card 1 -->
+      <article class="diagnosis-card">
+        <h3>🚗 Troubleshooting: Car Won't Start, Clicking Noise</h3>
+        <ul>
+          <li><strong>Possible Causes:</strong> Dead battery (50%), Bad starter motor (30%), Corroded terminals (20%)</li>
+          <li><strong>Diagnostics:</strong> Check ignition timing, scan for fault codes, perform a visual inspection.</li>
+          <li><strong>Fixes:</strong> Replace distributor cap/rotor or ignition module, repair wiring.</li>
+          <li><strong>Temporary Solutions:</strong> Keep components dry, avoid wet conditions.</li>
+          <li><strong>Estimated Repair Cost:</strong> Distributor/module $150–$400, wiring service $60–$150.</li>
+        </ul>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="diagnosis-card">
+        <h3>🔥 Check Engine Light Code P0420 – Diagnosis &amp; Fix</h3>
+        <ul>
+          <li><strong>Possible Causes:</strong> Failing catalytic converter (60%), Oxygen sensor issues (25%), Exhaust leaks (15%)</li>
+          <li><strong>Diagnostics:</strong> Check O2 sensor readings, inspect exhaust system, monitor fuel trim.</li>
+          <li><strong>Fixes:</strong> Replace catalytic converter, replace faulty O2 sensors, seal exhaust leaks.</li>
+          <li><strong>Temporary Solutions:</strong> Clear codes and monitor, use higher octane fuel.</li>
+          <li><strong>Estimated Repair Cost:</strong> Catalytic converter $900–$2500, O2 sensor $150–$400.</li>
+        </ul>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="diagnosis-card">
+        <h3>⚡ OBD-II Code P0300 – Multiple Cylinder Misfire Fix</h3>
+        <ul>
+          <li><strong>Possible Causes:</strong> Spark plugs (40%), Ignition coils (30%), Vacuum leaks (20%), Fuel delivery issues (10%)</li>
+          <li><strong>Diagnostics:</strong> Check spark plugs &amp; coils, perform vacuum leak test, check fuel pressure.</li>
+          <li><strong>Fixes:</strong> Replace spark plugs/coils, seal vacuum leaks, service fuel injectors.</li>
+          <li><strong>Temporary Solutions:</strong> Add fuel injector cleaner, reduce engine load.</li>
+          <li><strong>Estimated Repair Cost:</strong> Spark plugs $80–$250, ignition coils $150–$400, fuel system service $120–$300.</li>
+        </ul>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="diagnosis-card">
+        <h3>🔋 Troubleshooting: EV Not Charging Properly or Reduced Range</h3>
+        <ul>
+          <li><strong>Possible Causes:</strong> Faulty charging cables (40%), Charging port issues (35%), Software errors (25%)</li>
+          <li><strong>Diagnostics:</strong> Test cable on another charger, inspect port for damage, check software/firmware updates.</li>
+          <li><strong>Fixes:</strong> Replace defective cable, repair/replace charging port, update EV software.</li>
+          <li><strong>Temporary Solutions:</strong> Use alternative charging station, reset vehicle systems.</li>
+          <li><strong>Estimated Repair Cost:</strong> Charging cable $200–$500, port repair $300–$800, software updates often free.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</main>
+
+
+  <style>
+#example-diagnoses {
+  margin-top: 4rem;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.8s ease;
+  max-width: 1400px;  /* optional desktop limit */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#example-diagnoses .section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  background: var(--accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.diagnosis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.diagnosis-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.diagnosis-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.diagnosis-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--link);
+}
+
+.diagnosis-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
+.diagnosis-card li {
+  margin-bottom: 0.8rem;
+}
+
+/* Responsive tweaks for smaller screens */
+@media(max-width: 1024px){
+  #example-diagnoses {
+    padding: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: var(--radius);
+  }
+}
+
+@media(max-width: 768px){
+  #example-diagnoses {
+    padding: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 0;
+  }
+  .diagnosis-card {
+    padding: 1rem;
+  }
+}
+
+@media(max-width: 480px){
+  #example-diagnoses {
+    padding: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+  .diagnosis-card {
+    padding: 0.8rem;
+  }
+  .diagnosis-card h3 { font-size: 1.1rem; }
+}
+</style>
+
+</section>
+
+  <footer style="text-align: center;">
+  <p>© 2025 Carithm. All rights reserved.</p>
+  <p>All content on this website is original, maintained, and copyrighted.</p>
+</footer>
+
+    <!-- Hidden Backlinks for SEO -->
+<div style="display:none;">
+  <a href="https://www.kaggle.com/datasets/shaunaukbasu/car-predictive-maintenance-and-part-health-dataset">Kaggle Dataset</a>
+  <a href="https://www.linkedin.com/company/carithm-ai/">LinkedIn – Carithm AI</a>
+  <a href="https://betalist.com/@carithmai">Betalist</a>
+  <a href="https://www.linkedin.com/in/shaunauk-basu-581928248/?originalSubdomain=ae">LinkedIn – Shaunak Basu</a>
+  <a href="https://www.crunchbase.com/organization/carithm-ai/profiles_and_contacts">Crunchbase</a>
+  <a href="https://app.dealroom.co/new-startups/f/income_streams/anyof_advertising/industries/anyof_transportation/technologies/anyof_iot%20internetofthings_recognition%20technology_natural%20language%20processing_computer%20vision_virtual%20reality_connected%20device_deep%20learning_artificial%20intelligence_deep%20tech_machine%20learning_3d%20technology">Dealroom</a>
+  <a href="https://crunch.id/producthunt-launch-domain-usage-13th-october-2025/">Crunch.id ProductHunt</a>
+  <a href="https://www.producthunt.com/products/carithm/launches/carithm-2">ProductHunt Launch 2</a>
+  <a href="https://www.producthunt.com/products/carithm/launches/carithm">ProductHunt Launch 1</a>
+  <a href="https://shaunak7.gumroad.com/l/fxdfmz">Gumroad – Dataset</a>
+  <a href="https://x.com/carithmai">X / Twitter – @carithmai</a>
+  <a href="https://www.instagram.com/carithm.ai/">Instagram – @carithm.ai</a>
+  <a href="https://www.ai-hunt.tech/posts/31d4774f-e951-461f-b6a7-846b651f0d21?view_type=daily">ai-hunt.tech</a>
+</div>
 
 </body>
 </html>
+
