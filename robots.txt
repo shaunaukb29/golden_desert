@@ -12,4 +12,4 @@ Disallow: /*?utm_*
 Disallow: /*?ref_*
 
 # Sitemap location
-Sitemap: https://carithm.vercel.app/sitemap.xml
+Sitemap: https://carithm.vercel.app/sitemap_v3.xml
