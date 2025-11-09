@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Next-Generation Vehicle Care</title>
-  <!-- Tailwind CDN -->
+  <title>Next-Generation Vehicle Care | Carithm AI</title>
+  <meta name="description" content="Experience next-gen automotive maintenance with Carithm AI — predictive maintenance and instant car problem-solving powered by dual AI systems.">
+  <meta name="keywords" content="car AI, predictive maintenance, vehicle health, automotive diagnostics, car problem solver, AI mechanic, Carithm AI">
+  
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { darkMode: 'class' }
   </script>
+
   <style>
     /* Animations */
     @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
     .animate-fade-in { animation: fade-in 0.6s ease-out; }
-    @keyframes fade-in-up { from { opacity:0; transform: translateY(20px);} to { opacity:1; transform: translateY(0);} }
-    .animate-fade-in-up { animation: fade-in-up 0.6s ease-out; }
-    .skeleton { background-color: rgba(200,200,200,0.2); animation: pulse 1.5s infinite; }
-    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.6; } }
 
     /* Gradio Wrapper */
     .gradio-wrapper {
@@ -30,10 +30,12 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       overflow: hidden;
     }
+
     .gradio-wrapper iframe {
       width: 100% !important;
-      min-height: 800px;
+      min-height: 900px;
       border: none;
+      border-radius: 1rem;
     }
   </style>
 </head>
@@ -51,59 +53,59 @@
         Next-Generation Vehicle Care
       </h1>
       <p class="text-xl max-w-2xl mx-auto leading-relaxed text-gray-500 dark:text-gray-300">
-        Experience the future of automotive maintenance with our dual AI systems. 
-        Predict issues before they happen and solve problems instantly.
+        Experience the future of automotive maintenance with our dual AI systems — 
+        predict issues before they happen and solve problems instantly.
       </p>
     </div>
   </section>
 
-  <!-- Stats Section -->
+  <!-- Stats -->
   <section class="py-12 px-6">
     <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="text-center border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl hover:scale-105 transition-transform duration-300">
-        <svg class="w-8 h-8 mx-auto mb-3 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M12 8v4l3 3"/></svg>
+      <div class="text-center border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl">
         <p class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-200 mb-1">24/7</p>
         <p class="text-sm text-gray-500 dark:text-gray-400">Active Predictions</p>
       </div>
-      <div class="text-center border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl hover:scale-105 transition-transform duration-300">
-        <svg class="w-8 h-8 mx-auto mb-3 text-green-500 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+      <div class="text-center border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl">
         <p class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-400 dark:from-green-400 dark:to-green-200 mb-1">99.8%</p>
         <p class="text-sm text-gray-500 dark:text-gray-400">Accuracy Rate</p>
       </div>
-      <div class="text-center border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl hover:scale-105 transition-transform duration-300">
-        <svg class="w-8 h-8 mx-auto mb-3 text-yellow-500 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M9 12h6"/></svg>
+      <div class="text-center border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl">
         <p class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-600 to-yellow-400 dark:from-yellow-400 dark:to-yellow-200 mb-1">50K+</p>
         <p class="text-sm text-gray-500 dark:text-gray-400">Issues Solved</p>
       </div>
-      <div class="text-center border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl hover:scale-105 transition-transform duration-300">
-        <svg class="w-8 h-8 mx-auto mb-3 text-pink-500 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M12 4v16"/></svg>
+      <div class="text-center border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl">
         <p class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-pink-400 dark:from-pink-400 dark:to-pink-200 mb-1">2</p>
         <p class="text-sm text-gray-500 dark:text-gray-400">AI Models</p>
       </div>
     </div>
   </section>
 
-  <!-- AI Tools Tabs -->
+  <!-- AI Tools -->
   <section class="py-16 px-6">
     <div class="container mx-auto max-w-7xl">
       <div class="space-y-8">
-        <!-- Tabs Buttons -->
+
+        <!-- Tabs -->
         <div class="grid w-full max-w-md mx-auto grid-cols-2 h-14 bg-gray-200/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden">
           <button class="tab-btn text-base font-medium" data-tab="predictive">Predictive Maintenance</button>
           <button class="tab-btn text-base font-medium" data-tab="solver">Problem Solver</button>
         </div>
 
-        <!-- Tabs Content -->
+        <!-- Predictive -->
         <div id="predictive" class="tab-content animate-fade-in">
           <div class="gradio-wrapper">
-            <iframe src="https://castbison-red-tree.hf.space"></iframe>
+            <iframe src="https://castbison-red-tree.hf.space" allow="clipboard-write; clipboard-read; microphone; camera;"></iframe>
           </div>
         </div>
+
+        <!-- Problem Solver -->
         <div id="solver" class="tab-content hidden animate-fade-in">
           <div class="gradio-wrapper">
-            <iframe src="https://castbison-golden-desert.hf.space"></iframe>
+            <iframe src="https://castbison-golden-desert.hf.space" allow="clipboard-write; clipboard-read; microphone; camera;"></iframe>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -111,7 +113,7 @@
   <!-- Footer -->
   <footer class="border-t border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm py-8 mt-16 text-center text-sm text-gray-500 dark:text-gray-400">
     <p>© 2025 Carithm. All rights reserved.</p>
-    <p>All content on this website is original, maintained, and copyrighted.</p>
+    <p>Built and maintained by Carithm Automotive Intelligence.</p>
   </footer>
 
   <!-- Tabs JS -->
@@ -122,21 +124,12 @@
     function activateTab(tabId) {
       tabButtons.forEach(b => b.classList.remove('bg-white','dark:bg-gray-700'));
       tabContents.forEach(c => c.classList.add('hidden'));
-
       const activeTab = document.getElementById(tabId);
       activeTab.classList.remove('hidden');
       document.querySelector(`.tab-btn[data-tab="${tabId}"]`).classList.add('bg-white','dark:bg-gray-700');
-
-      // Force iframe height after showing
-      const iframe = activeTab.querySelector('iframe');
-      if (iframe) iframe.style.height = '800px';
     }
 
-    tabButtons.forEach(btn => {
-      btn.addEventListener('click', () => activateTab(btn.dataset.tab));
-    });
-
-    // Activate default tab
+    tabButtons.forEach(btn => btn.addEventListener('click', () => activateTab(btn.dataset.tab)));
     activateTab('predictive');
   </script>
 </body>
