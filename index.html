@@ -3,395 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carithm AI: Sensor-Less Preventive Maintenance Reports for Service Centers & Fleets</title>
-
-  <meta name="description" content="Carithm AI delivers sensor-less preventive maintenance reports for fleets and service centers. Forecast vehicle issues early, reduce breakdowns, and plan maintenance proactively with AI-driven insights.">
-  <meta name="author" content="Shaunauk Basu">
-  <link rel="canonical" href="https://carithm.vercel.app/">
-  <meta name="theme-color" content="#0f1117">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Carithm AI: Sensor-Less Preventive Maintenance for Fleets & Service Centers">
-  <meta property="og:description" content="Diagnose car problems and predict future maintenance using AI. Decode OBD-II codes like P0420 and forecast issues before they occur — free, no signup.">
-  <meta property="og:image" content="https://carithm.vercel.app/preview.png">
-  <meta property="og:url" content="https://carithm.vercel.app">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Carithm">
-  <meta name="google-site-verification" content="FwgoslkSBMbkNewUtM7tPOcwkoz7EQWKFT5BbkfiUBA" />
-  <meta name="msvalidate.01" content="D1A8A1F06920524E3E359A514D1DE1F6" />
-
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Carithm AI — Diagnose & Predict Car Problems Instantly">
-  <meta name="twitter:description" content="Use our free AI Car Mechanic to fix issues and Predictive Maintenance to prevent breakdowns. Works on all cars — petrol, diesel, hybrid, and EV.">
-  <meta name="twitter:image" content="https://carithm.vercel.app/preview.png">
-  <meta name="twitter:site" content="@carithmai">
-  <meta name="twitter:url" content="https://carithm.vercel.app">
-
-  <!-- Fonts -->
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://carithm.vercel.app/sitemap_v4.xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <!-- Analytics -->
-  <script async data-id="101494609" src="//static.getclicky.com/js"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+  <title>Automotive AI Intelligence | Predictive Maintenance & Problem Solver</title>
+  <meta name="description" content="Advanced AI-powered automotive tools for predictive maintenance and instant car problem solving.">
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TCCEJ6DCM1');
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: 'hsl(221, 83%, 53%)',
+            accent: 'hsl(262, 83%, 58%)',
+            background: 'hsl(222, 47%, 11%)',
+            foreground: 'hsl(210, 40%, 98%)',
+            card: 'hsl(222, 47%, 14%)',
+            muted: 'hsl(217, 33%, 60%)',
+            border: 'hsl(217, 33%, 25%)',
+          }
+        }
+      }
+    }
   </script>
-  
-  <!-- Styles -->
   <style>
-    :root {
-      --bg: #0f1117;
-      --card-bg: rgba(255, 255, 255, 0.03);
-      --text: #ffffff;
-      --link: #00c2ff;
-      --accent: linear-gradient(90deg,#00c2ff,#00ffd5);
-      --font: 'Inter', sans-serif;
-      --radius: 20px;
-      --shadow: 0 12px 32px rgba(0,0,0,0.35);
-      --transition: 0.3s ease-in-out;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: var(--font);
-      background-color: var(--bg);
-      color: var(--text);
-      scroll-behavior: smooth;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { text-decoration: none; color: var(--link); transition: color var(--transition); }
-    a:hover { color: #00ffd5; }
-
-    header.header {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      backdrop-filter: blur(12px);
-      background-color: rgba(15,17,23,0.85);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      box-shadow: 0 1px 8px rgba(0,0,0,0.3);
-    }
-    .header .brand { font-weight: 700; font-size:1.3rem; color: var(--link);}
-    .header .nav-links a { margin-left:1.5rem; font-weight:500; }
-
-    @media(max-width:768px){
-      .header { flex-direction: column; align-items:flex-start; gap:0.5rem;}
-      .header .nav-links a { margin-left:0; margin-right:1rem;}
-    }
-
-    .logo-container { display:flex; justify-content:center; align-items:center; height:140px; margin-top:1rem;}
-    .logo-img { max-width:240px; height:auto; }
-
-    main {
-      max-width:100%;  
-      margin: 2rem auto;
-      padding: 2rem;
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      backdrop-filter: blur(20px);
-      box-shadow: var(--shadow);
-      animation: fadeIn 0.8s ease;
-    }
-
-    h1 {
-      font-size:2.8rem;
-      text-align:center;
-      margin-bottom:0.5rem;
-      font-weight:700;
-      background: var(--accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    h2 { font-size:1.6rem; text-align:center; margin-bottom:1rem; font-weight:500; color:#d1d5db; }
-    p { font-size:1.15rem; line-height:1.8; color:#d1d5db; margin-bottom:1rem; }
-    strong { color:#fff; }
-
-    .cta-wrapper { display:flex; justify-content:center; margin-top:2rem; }
-    .cta-button {
-      display:inline-block;
-      padding:0.8rem 1.6rem;
-      font-weight:600;
-      font-size:1rem;
-      background: var(--link);
-      border-radius:var(--radius);
-      color:#000;
-      box-shadow:0 8px 20px rgba(0,194,255,0.4);
-      transition: transform var(--transition);
-    }
-    .cta-button:hover { transform: scale(1.05); }
-
-    .tabs { display:flex; justify-content:center; gap:1rem; margin:2rem 0; }
-    .tab-button {
-      padding:0.8rem 1.6rem;
-      border:none;
-      border-radius:var(--radius);
-      cursor:pointer;
-      font-weight:600;
-      background: rgba(255,255,255,0.05);
-      color:#fff;
-      transition: background var(--transition), transform var(--transition);
-    }
-    .tab-button.active { background: var(--link); color:#000; transform: scale(1.05); }
-
-    .gradio-wrapper { display:none; justify-content:center; margin: 2rem auto; width: 100%; max-width: 1400px; border-radius: var(--radius); background: #1a1d27; box-shadow: var(--shadow); overflow: hidden; }
-    .gradio-wrapper.active { display:flex; }
-    .gradio-wrapper gradio-app { width:100% !important; min-height:600px; border:none; }
-
-    /* FAQ Styles */
-    #faq {
-      margin: 3rem 0;
-      padding: 2rem;
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    #faq h2 {
-      text-align:center;
-      margin-bottom:1.5rem;
-      font-size:2rem;
-      font-weight:600;
-      color: var(--link);
-    }
-    #faq details {
-      margin-bottom:1rem;
-      background: rgba(255,255,255,0.05);
-      padding:1rem 1.5rem;
-      border-radius: var(--radius);
-      transition: background 0.3s ease;
-    }
-    #faq details[open] { background: rgba(0,194,255,0.1); }
-    #faq summary {
-      font-weight:600;
-      cursor:pointer;
-      font-size:1.1rem;
-    }
-    #faq p {
-      margin-top:0.5rem;
-      font-size:1rem;
-      color:#d1d5db;
-    }
-
-    @media(max-width:768px){
-      main { margin: 1rem 0; padding: 1rem; border-radius: 0; }
-      .gradio-wrapper { margin: 1rem 0; border-radius: 0; width: 100%; box-shadow: none; }
-      .gradio-wrapper gradio-app { min-height: 400px !important; }
-    }
-    @media(max-width:480px){
-      main, .gradio-wrapper { margin:0; padding:0; border-radius:0; background:transparent; box-shadow:none; }
-      .gradio-wrapper gradio-app { min-height: 400px !important; }
-    }
-
-    @keyframes fadeIn { from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);} }
+    body { background: linear-gradient(to bottom, hsl(222, 47%, 11%), hsl(222, 47%, 9%), hsl(222, 47%, 11%)); }
+    .tab-btn.active { background: hsl(221, 83%, 53%); color: white; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.3s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
-
-<body>
+<body class="min-h-screen text-foreground">
   
-  <header class="header">
-  <a href="/" class="brand">Carithm</a>
-  <nav class="nav-links" aria-label="Main Navigation">
-    <a href="/" title="Carithm AI Home">Carithm AI</a>
-    <a href="/sale/" title="Browse Car Datasets">Datasets For Sale</a>
-    <a href="/blog/" title="Read Carithm Blog">Blog</a>
-    <a href="/about/" title="Learn About Carithm">About</a>
-    <a href="/predictive/" title="Predictive Maintenance AI Tool">Predictive Maintenance AI</a>
-  </nav>
-</header>
-
-  <div class="logo-container">
-    <img src="logo_words.png" alt="Carithm AI virtual car mechanic logo" class="logo-img" loading="lazy">
-  </div>
-
-  <main>
-    <h1>Carithm AI: Sensor-Less Preventive Maintenance for Fleets & Service Centers</h1>
-<h2>Identify potential issues across brakes, batteries, tires, and filters early. Use AI-driven maintenance insights to reduce downtime, plan service proactively, and prevent unexpected breakdowns.</h2>
-
-
-
-   <p style="text-align:center;">
-  <strong>Carithm AI</strong> is a sensor-less preventive maintenance and vehicle intelligence platform built for <strong>service centers and fleet operations</strong>.  
-  <br><br>
-  <strong>The AI experience below is a demonstration version</strong>, designed to showcase Carithm AI’s core predictive maintenance and vehicle health capabilities.  
-  <br><br>
-  The system generates maintenance insights using structured inputs such as vehicle mileage, age, engine variant, historical part replacement intervals, basic vehicle profiles, driving behavior patterns, and regional climatic conditions—<strong>without relying on physical sensors</strong>.  
-  <br><br>
-  Carithm AI combines <strong>machine-learning models trained on real-world component wear patterns</strong> with <strong>rule-based engineering logic</strong> to evaluate vehicle health and maintenance risk. The platform produces preventive maintenance reports covering critical components including brakes, batteries, tires, filters, engine oil, timing systems, and more.  
-  <br><br>
-  The platform supports <strong>engine-specific analysis</strong>, allowing users to select the exact engine variant for each vehicle. Carithm AI currently supports <strong>10 manufacturers and over 100 engines</strong>, using manufacturer-verified technical data to deliver accurate, engine-level maintenance recommendations.  
-  <br><br>
-  <strong>The full commercial version</strong>—including advanced engine coverage, enterprise features, API access, and fleet-scale deployment—is <strong>available upon request</strong>.  
-  <br>
-  📩 For commercial use and partnership inquiries, contact us at  
-  <strong><a href="mailto:carithmai29@gmail.com">carithmai29@gmail.com</a></strong>.  
-  <br><br>
-  Explore our all-in-one <strong><a href="/predictive/">Preventive Maintenance AI</a></strong> platform and experience data-driven, proactive maintenance planning for modern fleet and workshop operations.
-</p>
-
-
-
-  <div class="tabs">
-      <button class="tab-button active" data-target="gradio-predictive">Predictive Maintenance</button>
-      <button class="tab-button" data-target="gradio-diagnose">AI Car Mechanic</button>
+  <!-- Hero Section -->
+  <section class="relative py-20 px-6 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="text-center max-w-4xl mx-auto space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          <span>Advanced AI-Powered Automotive Intelligence</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-blue-400 to-purple-400 bg-clip-text text-transparent leading-tight">
+          Next-Generation Vehicle Care
+        </h1>
+        <p class="text-xl text-muted max-w-2xl mx-auto leading-relaxed">
+          Experience the future of automotive maintenance with our dual AI systems. 
+          Predict issues before they happen and solve problems instantly.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <div id="gradio-predictive" class="gradio-wrapper active">
-      <gradio-app src="https://castbison-red-tree.hf.space"></gradio-app>
+  <!-- Stats Section -->
+  <section class="py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="text-center border border-border/40 bg-card/50 backdrop-blur-sm rounded-xl p-6 hover:bg-card/80 transition-all duration-300 hover:scale-105">
+          <svg class="w-8 h-8 mx-auto mb-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          <p class="text-3xl font-bold text-white mb-1">24/7</p>
+          <p class="text-sm text-muted">Active Predictions</p>
+        </div>
+        <div class="text-center border border-border/40 bg-card/50 backdrop-blur-sm rounded-xl p-6 hover:bg-card/80 transition-all duration-300 hover:scale-105">
+          <svg class="w-8 h-8 mx-auto mb-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          <p class="text-3xl font-bold text-white mb-1">99.8%</p>
+          <p class="text-sm text-muted">Accuracy Rate</p>
+        </div>
+        <div class="text-center border border-border/40 bg-card/50 backdrop-blur-sm rounded-xl p-6 hover:bg-card/80 transition-all duration-300 hover:scale-105">
+          <svg class="w-8 h-8 mx-auto mb-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <p class="text-3xl font-bold text-white mb-1">50K+</p>
+          <p class="text-sm text-muted">Issues Solved</p>
+        </div>
+        <div class="text-center border border-border/40 bg-card/50 backdrop-blur-sm rounded-xl p-6 hover:bg-card/80 transition-all duration-300 hover:scale-105">
+          <svg class="w-8 h-8 mx-auto mb-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          <p class="text-3xl font-bold text-white mb-1">2</p>
+          <p class="text-sm text-muted">AI Models</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div id="gradio-diagnose" class="gradio-wrapper">
-      <gradio-app src="https://castbison-golden-desert.hf.space"></gradio-app>
+  <!-- AI Tools Section -->
+  <section class="py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <!-- Tab Buttons -->
+      <div class="flex justify-center mb-8">
+        <div class="inline-flex bg-card/50 backdrop-blur-sm rounded-xl p-1.5 border border-border/40">
+          <button onclick="switchTab('predictive')" id="tab-predictive" class="tab-btn active flex items-center gap-2 px-6 py-3 rounded-lg text-base font-medium transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Predictive Maintenance
+          </button>
+          <button onclick="switchTab('solver')" id="tab-solver" class="tab-btn flex items-center gap-2 px-6 py-3 rounded-lg text-base font-medium text-muted transition-all hover:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Problem Solver
+          </button>
+        </div>
+      </div>
+
+      <!-- Predictive Maintenance Tab -->
+      <div id="content-predictive" class="tab-content active">
+        <div class="border border-primary/20 bg-gradient-to-br from-card via-card to-primary/5 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden">
+          <div class="p-6 pb-4">
+            <div class="flex items-center gap-3">
+              <div class="p-3 rounded-xl bg-primary/10 border border-primary/20">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold text-white">Predictive Maintenance AI</h2>
+                <p class="text-muted mt-1">Anticipate vehicle issues before they become problems</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <div class="relative w-full rounded-xl overflow-hidden border border-border/40 bg-background/50 backdrop-blur-sm" style="height: 800px;">
+              <iframe
+                src="https://huggingface.co/spaces/CastBison/red_tree"
+                class="w-full h-full border-0"
+                title="Predictive Maintenance AI Tool"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem Solver Tab -->
+      <div id="content-solver" class="tab-content">
+        <div class="border border-purple-500/20 bg-gradient-to-br from-card via-card to-purple-500/5 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden">
+          <div class="p-6 pb-4">
+            <div class="flex items-center gap-3">
+              <div class="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20">
+                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold text-white">Car Problem Solver AI</h2>
+                <p class="text-muted mt-1">Get instant solutions to any vehicle issue</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <div class="relative w-full rounded-xl overflow-hidden border border-border/40 bg-background/50 backdrop-blur-sm" style="height: 800px;">
+              <iframe
+                src="https://huggingface.co/spaces/CastBison/golden_desert"
+                class="w-full h-full border-0"
+                title="Car Problem Solver AI Tool"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.38.0/gradio.js"></script>
-    <script>
-      const tabButtons = document.querySelectorAll('.tab-button');
-      const gradioWrappers = document.querySelectorAll('.gradio-wrapper');
+  <!-- Footer -->
+  <footer class="border-t border-border/40 bg-background/50 backdrop-blur-sm py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm text-muted">
+      <p>© 2025 Automotive AI Intelligence. Powered by advanced machine learning systems.</p>
+    </div>
+  </footer>
 
-      tabButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          tabButtons.forEach(b => b.classList.remove('active'));
-          gradioWrappers.forEach(wrapper => wrapper.classList.remove('active'));
-
-          btn.classList.add('active');
-          document.getElementById(btn.dataset.target).classList.add('active');
-        });
+  <script>
+    function switchTab(tab) {
+      // Update tab buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.classList.add('text-muted');
       });
-    </script>
-
-    <!-- FAQ Section -->
-    <section id="faq">
-  <h2>Frequently Asked Questions About Carithm AI</h2>
-
-  <details>
-    <summary>Is Carithm a <strong>free AI car mechanic tool</strong> with no ads or signup?</summary>
-    <p>
-      Yes! Carithm offers a <strong>100% free AI car diagnostic tool</strong> that helps you solve engine problems instantly.  
-      Get reliable guidance for your vehicle, just like having a <strong>virtual mechanic</strong> in your pocket — no sign-up, no ads.
-    </p>
-  </details>
-
-  <details>
-    <summary>Can I use Carithm to decode <strong>OBD-II codes</strong> like <strong>P0420, P0171, and P0300</strong>?</summary>
-    <p>
-      Absolutely! Carithm is a smart <strong>OBD-II code decoder</strong>.  
-      It explains the code, identifies likely causes (like catalytic converter or fuel system issues), and provides <strong>step-by-step DIY repair guidance</strong> for common engine problems.
-    </p>
-  </details>
-
-  <details>
-    <summary>How does Carithm diagnose issues like <strong>shaking at idle</strong> or <strong>battery drain</strong>?</summary>
-    <p>
-      The AI analyzes your symptoms and cross-references thousands of repair cases.  
-      It can pinpoint causes of <strong>shaking during idle</strong> (misfires, worn mounts) or detect <strong>battery drain</strong> and guide you with effective troubleshooting steps.
-    </p>
-  </details>
-
-  <details>
-    <summary>What is the <strong>Predictive Maintenance AI</strong> feature?</summary>
-    <p>
-      Carithm's <strong>Predictive Maintenance AI</strong> forecasts your car’s maintenance needs before problems occur.  
-      By analyzing <strong>mileage, vehicle age, driving style, and environment</strong>, it predicts which parts may require service or replacement soon — helping you prevent unexpected breakdowns and expensive repairs.
-    </p>
-  </details>
-
-  <details>
-    <summary>How can I try the <strong>Predictive Maintenance AI</strong> demo?</summary>
-    <p>
-      You can instantly test the free demo at 
-      <a href="https://carithm.vercel.app/predictive/" target="_blank" rel="noopener">
-        carithm.vercel.app/predictive
-      </a>.  
-      Enter your vehicle details and get personalized predictions for parts like <strong>brakes, battery, tires, timing belts</strong>, and more.
-    </p>
-  </details>
-
-  <details>
-    <summary>Can Predictive Maintenance help me save money on repairs?</summary>
-    <p>
-      Yes! By knowing when parts are likely to fail, you can schedule maintenance ahead of time, avoid emergency repairs, and extend your car’s lifespan.  
-      This feature is especially useful for high-mileage, older, or imported vehicles.
-    </p>
-  </details>
-
-  <details>
-    <summary>Is Carithm available on mobile, or is it desktop-only?</summary>
-    <p>
-      Carithm works seamlessly on <strong>mobile, tablet, and desktop browsers</strong> — no app download required.  
-      Access both the AI Car Mechanic and Predictive Maintenance tools on any device, anytime.
-    </p>
-  </details>
-</section>
-  </main>
-
-  <footer style="text-align:center; margin-top:2rem; padding:1rem; font-size:0.9rem; color:#d1d5db;">
-  <p>© 2025 Carithm. All rights reserved.</p>
-  <p>
-    Connect with us: 
-    <a href="https://x.com/carithmai" target="_blank" rel="noopener" style="color:#00c2ff; text-decoration:none; margin:0 0.5rem;">X</a> | 
-    <a href="https://www.linkedin.com/company/carithm-ai/" target="_blank" rel="noopener" style="color:#00c2ff; text-decoration:none; margin:0 0.5rem;">LinkedIn</a>
-     write to us: 
-   <a href="mailto:carithmai29@gmail.com" style="color:#00c2ff; text-decoration:none; margin-left:0.5rem;">carithmai29@gmail.com</a>
-</p>
-</footer>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is Carithm a free AI car mechanic tool?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Carithm offers a 100% free AI car diagnostic check and virtual mechanic for instant problem-solving without signup or ads."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is Carithm's Predictive Maintenance AI?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It forecasts upcoming vehicle maintenance needs using mileage, age, driving style, and environment to prevent breakdowns and costly repairs."
-      }
+      document.getElementById('tab-' + tab).classList.add('active');
+      document.getElementById('tab-' + tab).classList.remove('text-muted');
+      
+      // Update tab content
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      document.getElementById('content-' + tab).classList.add('active');
     }
-  ]
-}
-
-</script>
-  
-<footer>
-  <div style="position:absolute; left:-9999px; top:-9999px;">
-    <a href="https://betalist.com/@carithmai">BetaList</a>
-    <a href="https://app.dealroom.co/new-startups/f/income_streams/">Dealroom</a>
-    <a href="https://www.linkedin.com/in/shaunauk-basu-581928248/">Linkedin</a>
-    
-    
-  </div>
-</footer>
-
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
