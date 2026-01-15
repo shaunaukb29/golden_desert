@@ -1,22 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://carithm.vercel.app/sitemap_v4.xml" />
-  
-  <link rel="preload" as="image" href="about1.png">
-  <link rel="preload" as="image" href="about2.png">
-  <link rel="preload" as="image" href="about3.png">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Carithm – AI Car Mechanic & Predictive Maintenance</title>
 
-  <!-- SEO Meta -->
+  <title>About Carithm – AI Car Mechanic & Predictive Maintenance</title>
   <meta name="description" content="Learn about Carithm AI, a free AI car diagnostic tool and predictive maintenance assistant. Diagnose engine issues, decode OBD-II codes, and predict servicing for petrol, diesel, and hybrid vehicles." />
-  <meta name="author" content="Shaunak Basu" />
-  <link rel="canonical" href="https://carithm.vercel.app/about/" />
-  <meta name="theme-color" content="#0f1117" />
-  <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="About Carithm AI – AI Car Diagnostics & Predictive Maintenance" />
@@ -25,165 +14,152 @@
   <meta property="og:url" content="https://carithm.vercel.app/about" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About Carithm AI – AI Car Diagnostics & Predictive Maintenance" />
-  <meta name="twitter:description" content="Learn about Carithm AI, your free AI car mechanic. Diagnose engine problems, decode OBD-II codes, and get predictive maintenance guidance instantly." />
-  <meta name="twitter:image" content="https://carithm.vercel.app/about_preview.png" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <style>
-    :root {
-      --bg: #0f1117;
-      --card-bg: rgba(255,255,255,0.03);
-      --text: #ffffff;
-      --link: #00c2ff;
-      --accent: linear-gradient(90deg,#00c2ff,#00ffd5);
-      --font: 'Inter', sans-serif;
-      --radius: 20px;
-      --shadow: 0 12px 32px rgba(0,0,0,0.35);
-      --transition: 0.3s ease-in-out;
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: 'hsl(221, 83%, 53%)',
+            background: 'hsl(222, 47%, 11%)',
+            card: 'hsl(222, 47%, 14%)',
+            border: 'hsl(217, 33%, 25%)',
+            link: '#00c2ff'
+          }
+        }
+      }
     }
-    *, *::before, *::after { box-sizing: border-box; }
-    body { margin:0; font-family: var(--font); background-color: var(--bg); color: var(--text); scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-    a { text-decoration: none; color: var(--link); transition: color var(--transition); }
+  </script>
+
+  <style>
+    body { background: radial-gradient(circle at top, #111827 0%, #030712 100%); font-family: 'Inter', sans-serif; }
+    a { color: #00c2ff; }
     a:hover { color: #00ffd5; }
-    header.header { position: sticky; top:0; z-index:999; backdrop-filter: blur(12px); background-color: rgba(15,17,23,0.85); display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; border-bottom:1px solid rgba(255,255,255,0.05); box-shadow:0 1px 8px rgba(0,0,0,0.3);}
-    .header .brand { font-weight:700; font-size:1.3rem; color: var(--link);}
-    .header .nav-links a { margin-left:1.5rem; font-weight:500; }
-    @media(max-width:768px){ .header{ flex-direction:column; align-items:flex-start; gap:0.5rem; } .header .nav-links a{ margin-left:0; margin-right:1rem;} }
-    main { max-width:900px; margin:2rem auto; padding:2rem; background: var(--card-bg); border-radius:var(--radius); backdrop-filter:blur(20px); box-shadow:var(--shadow); animation:fadeIn 0.8s ease;}
-    h1 { font-size:2.5rem; text-align:center; margin-bottom:0.5rem; font-weight:700; background: var(--accent); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
-    h2 { font-size:1.6rem; text-align:center; margin-bottom:1rem; font-weight:500; color:#d1d5db; }
-    p { font-size:1.15rem; line-height:1.8; color:#d1d5db; margin-bottom:1rem; }
-    strong { color:#fff; }
-    section { margin-top:2rem; padding:1.5rem; background: var(--card-bg); border-radius:var(--radius); }
-    img { max-width:100%; border-radius:var(--radius); margin:1rem 0; box-shadow:var(--shadow);}
-    details { margin-bottom:1rem; cursor:pointer; }
-    summary { font-weight:600; }
-    details p { margin-left:1.5rem; font-size:1rem; color:#d1d5db; }
-    footer { text-align:center; margin-top:3rem; font-size:0.9rem; opacity:0.7; }
-    @keyframes fadeIn { from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);} }
+    .glass { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1.25rem; padding: 1.5rem; }
+    h1, h2 { background: linear-gradient(90deg,#00c2ff,#00ffd5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    details summary { cursor: pointer; font-weight: 600; }
+    details p { margin-left: 1rem; color: #d1d5db; }
   </style>
 </head>
 
-<body>
+<body class="text-slate-200">
 
-<header class="header">
-    <a href="/" class="brand">Carithm</a>
-    <div class="nav-links">
-      <a href="/">Carithm AI</a>
-      <a href="/sale/">Datasets</a>
-      <a href="/blog/">Blog</a>
-      <a href="/about/">About</a>
-      <a href="/predictive/">Carithm Predictive</a>
-    </div>
+  <!-- Header -->
+  <header class="py-6 px-10 flex justify-between items-center border-b border-white/5 backdrop-blur-md bg-white/5 sticky top-0 z-50">
+    <a href="/" class="text-2xl font-bold text-blue-500">Carithm</a>
+    <nav class="space-x-6 hidden md:flex">
+      <a href="/" class="text-sm font-medium">Carithm AI</a>
+      <a href="/sale/" class="text-sm font-medium">Datasets</a>
+      <a href="/blog/" class="text-sm font-medium">Blog</a>
+      <a href="/about/" class="text-sm font-medium">About</a>
+      <a href="/predictive/" class="text-sm font-medium">Carithm Predictive</a>
+    </nav>
   </header>
 
-<main>
-  <h1>About Carithm AI</h1>
-  <h2>Your Free AI Car Diagnostics & Predictive Maintenance Assistant</h2>
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto p-6 space-y-10">
 
-  <p>Carithm AI is a <strong>free AI car diagnostic tool</strong> that helps drivers and mechanics troubleshoot vehicle issues quickly and accurately. Using natural language input or <strong>OBD-II codes</strong>, Carithm AI delivers precise diagnostics, probable causes, and step-by-step repair guidance for petrol, diesel, and hybrid vehicles.</p>
+    <div class="text-center space-y-2">
+      <h1 class="text-4xl font-extrabold">About Carithm AI</h1>
+      <h2 class="text-xl text-slate-400">Your Free AI Car Diagnostics & Predictive Maintenance Assistant</h2>
+    </div>
 
-  <p style="text-align:center; margin-top:1rem;">
-    🔗 <a href="/" target="_blank" style="font-weight:600; color:#00c2ff;">Try Carithm AI now →</a>
-  </p>
+    <div class="glass">
+      <p>Carithm AI is a <strong>free AI car diagnostic tool</strong> that helps drivers and mechanics troubleshoot vehicle issues quickly and accurately. Using natural language input or <strong>OBD-II codes</strong>, Carithm AI delivers precise diagnostics, probable causes, and step-by-step repair guidance for petrol, diesel, and hybrid vehicles.</p>
+      <p class="text-center mt-4">🔗 <a href="/" class="font-semibold">Try Carithm AI now →</a></p>
+    </div>
 
-  <section>
-    <h2>🔹 What Carithm AI Does</h2>
-    <p>Carithm AI acts as a <strong>virtual AI car mechanic</strong>, analyzing symptoms or OBD-II codes like <strong>P0300</strong>, <strong>P0171</strong>, <strong>P0420</strong>, and many others. It provides:</p>
-    <ul>
-      <li>Probable causes and component-specific failure analysis</li>
-      <li>Step-by-step diagnostic checks</li>
-      <li>Repair guidance and approximate cost estimates</li>
-    </ul>
-    <p>Learn more and use the full AI diagnostics on the <a href="/">Carithm AI main page</a>.</p>
-    <img src="about1.png" alt="Illustration of Carithm AI analyzing a car engine with diagnostic results" />
-  </section>
+    <section class="glass">
+      <h2 class="text-2xl font-bold mb-4">🔹 What Carithm AI Does</h2>
+      <p>Carithm AI acts as a <strong>virtual AI car mechanic</strong>, analyzing symptoms or OBD-II codes like <strong>P0300</strong>, <strong>P0171</strong>, <strong>P0420</strong>, and many others. It provides:</p>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Probable causes and component-specific failure analysis</li>
+        <li>Step-by-step diagnostic checks</li>
+        <li>Repair guidance and approximate cost estimates</li>
+      </ul>
+      <p>Learn more and use the full AI diagnostics on the <a href="/">Carithm AI main page</a>.</p>
+      <img src="about1.png" alt="Illustration of Carithm AI analyzing a car engine with diagnostic results" class="mt-4 shadow-lg rounded-xl" />
+    </section>
 
-  <section>
-    <h2>🔹 How It Works</h2>
-    <p>Simply enter your car’s symptom or OBD-II code, and Carithm AI instantly analyzes it using advanced AI algorithms. All diagnostics are available instantly on <a href="/">desktop, tablet, or mobile</a> without downloads or logins.</p>
-    <img src="about2.png" alt="Diagram showing symptom input, AI analysis, and repair recommendations" />
-  </section>
+    <section class="glass">
+      <h2 class="text-2xl font-bold mb-4">🔹 How It Works</h2>
+      <p>Simply enter your car’s symptom or OBD-II code, and Carithm AI instantly analyzes it using advanced AI algorithms. All diagnostics are available instantly on <a href="/">desktop, tablet, or mobile</a> without downloads or logins.</p>
+      <img src="about2.png" alt="Diagram showing symptom input, AI analysis, and repair recommendations" class="mt-4 shadow-lg rounded-xl" />
+    </section>
 
-  <section>
-    <h2>🔹 Predictive Maintenance AI</h2>
-    <p>Carithm now includes <strong>Predictive Maintenance AI</strong> that predicts when vehicle servicing and parts replacement are required. Using historical data, AI analysis, and your driving patterns, it estimates:</p>
-    <ul>
-      <li>Upcoming servicing schedules</li>
-      <li>Potential wear and component replacement timelines</li>
-      <li>Cost-effective preventive maintenance suggestions</li>
-    </ul>
-    <p>Learn more and try our <a href="/predictive/">Carithm Predictive Maintenance AI</a>.</p>
-  </section>
+    <section class="glass">
+      <h2 class="text-2xl font-bold mb-4">🔹 Predictive Maintenance AI</h2>
+      <p>Carithm now includes <strong>Predictive Maintenance AI</strong> that predicts when vehicle servicing and parts replacement are required. Using historical data, AI analysis, and your driving patterns, it estimates:</p>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Upcoming servicing schedules</li>
+        <li>Potential wear and component replacement timelines</li>
+        <li>Cost-effective preventive maintenance suggestions</li>
+      </ul>
+      <p>Learn more and try our <a href="/predictive/">Carithm Predictive Maintenance AI</a>.</p>
+    </section>
 
-  <section>
-    <h2>🔹 Why Carithm AI Is Trusted & Free</h2>
-    <p>Carithm AI is completely free, requires no signup, and leverages verified repair knowledge, a comprehensive OBD-II database, and cutting-edge AI models. Your data is never sold or stored, and the AI works reliably across <strong>petrol, diesel, and hybrid vehicles</strong>. Use the full AI diagnostics on the <a href="/">main Carithm AI page</a> anytime.</p>
-  </section>
+    <section class="glass">
+      <h2 class="text-2xl font-bold mb-4">🔹 Why Carithm AI Is Trusted & Free</h2>
+      <p>Carithm AI is completely free, requires no signup, and leverages verified repair knowledge, a comprehensive OBD-II database, and cutting-edge AI models. Your data is never sold or stored, and the AI works reliably across <strong>petrol, diesel, and hybrid vehicles</strong>. Use the full AI diagnostics on the <a href="/">main Carithm AI page</a> anytime.</p>
+    </section>
 
-  <section>
-    <h2>🔹 Key Features</h2>
-    <ul>
-      <li>Full <strong>OBD-II code decoding</strong> for all standard P0xxx and P1xxx codes</li>
-      <li>Compatible with <strong>petrol, diesel, and hybrid vehicles</strong></li>
-      <li>Step-by-step AI-guided diagnostics and repair guidance</li>
-      <li>Predictive maintenance insights for upcoming servicing needs</li>
-      <li>Works instantly on desktop, tablet, and mobile with no login</li>
-      <li>Integration with<a href="/blog/">Car Blog</a></li>
-      <li>Supports natural language input for engine troubleshooting</li>
-    </ul>
-    <img src="about3.png" alt="Illustration of Carithm AI features including OBD-II decoding, hybrid vehicle support, predictive maintenance, and step-by-step guidance" />
-  </section>
+    <section class="glass">
+      <h2 class="text-2xl font-bold mb-4">🔹 Key Features</h2>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Full <strong>OBD-II code decoding</strong> for all standard P0xxx and P1xxx codes</li>
+        <li>Compatible with <strong>petrol, diesel, and hybrid vehicles</strong></li>
+        <li>Step-by-step AI-guided diagnostics and repair guidance</li>
+        <li>Predictive maintenance insights for upcoming servicing needs</li>
+        <li>Works instantly on desktop, tablet, and mobile with no login</li>
+        <li>Integration with <a href="/blog/">Car Blog</a></li>
+        <li>Supports natural language input for engine troubleshooting</li>
+      </ul>
+      <img src="about3.png" alt="Illustration of Carithm AI features including OBD-II decoding, hybrid vehicle support, predictive maintenance, and step-by-step guidance" class="mt-4 shadow-lg rounded-xl" />
+    </section>
 
-  <section>
-    <h2>FAQ</h2>
+    <section class="glass">
+      <h2 class="text-2xl font-bold mb-4">FAQ</h2>
 
-    <details>
-      <summary>Is Carithm AI free?</summary>
-      <p>Yes, Carithm AI is fully free, with no signup required, offering instant AI guidance for engine, fuel system, and electrical problems. Access it anytime on the <a href="/">Carithm AI main page</a>.</p>
-    </details>
+      <details class="mb-2">
+        <summary>Is Carithm AI free?</summary>
+        <p>Yes, Carithm AI is fully free, with no signup required, offering instant AI guidance for engine, fuel system, and electrical problems. Access it anytime on the <a href="/">Carithm AI main page</a>.</p>
+      </details>
 
-    <details>
-      <summary>Can I use OBD-II codes?</summary>
-      <p>Absolutely! All standard OBD-II codes including <strong>P0300</strong>, <strong>P0171</strong>, <strong>P0420</strong> are supported. Carithm AI provides detailed explanations, probable causes, and step-by-step repair instructions. Learn more on the <a href="/">main AI page</a>.</p>
-    </details>
+      <details class="mb-2">
+        <summary>Can I use OBD-II codes?</summary>
+        <p>Absolutely! All standard OBD-II codes including <strong>P0300</strong>, <strong>P0171</strong>, <strong>P0420</strong> are supported. Carithm AI provides detailed explanations, probable causes, and step-by-step repair instructions. Learn more on the <a href="/">main AI page</a>.</p>
+      </details>
 
-    <details>
-      <summary>Which vehicle types are supported?</summary>
-      <p>Carithm AI works with petrol, diesel, and hybrid vehicles, providing accurate diagnostics and repair guidance.</p>
-    </details>
+      <details class="mb-2">
+        <summary>Which vehicle types are supported?</summary>
+        <p>Carithm AI works with petrol, diesel, and hybrid vehicles, providing accurate diagnostics and repair guidance.</p>
+      </details>
 
-    <details>
-      <summary>Is my data safe?</summary>
-      <p>Your data is never sold or stored. All diagnostic requests are processed securely and anonymously.</p>
-    </details>
+      <details class="mb-2">
+        <summary>Is my data safe?</summary>
+        <p>Your data is never sold or stored. All diagnostic requests are processed securely and anonymously.</p>
+      </details>
 
-    <details>
-      <summary>Does it work on mobile and desktop?</summary>
-      <p>Yes, Carithm AI works instantly on mobile, tablet, and desktop with no downloads or logins required.</p>
-    </details>
+      <details class="mb-2">
+        <summary>Does it work on mobile and desktop?</summary>
+        <p>Yes, Carithm AI works instantly on mobile, tablet, and desktop with no downloads or logins required.</p>
+      </details>
 
-    <details>
-      <summary>How fast is the AI diagnosis?</summary>
-      <p>Carithm AI delivers results in seconds, giving immediate guidance for troubleshooting and repairs.</p>
-    </details>
+      <details class="mb-2">
+        <summary>How fast is the AI diagnosis?</summary>
+        <p>Carithm AI delivers results in seconds, giving immediate guidance for troubleshooting and repairs.</p>
+      </details>
 
-  </section>
+    </section>
 
-</main>
+  </main>
 
-<footer style="text-align:center; padding:1rem 0; font-size:0.9rem; color:#555;">
-  <p>© 2025 Carithm. All rights reserved.</p>
-  <p>All content on this website is original, maintained, and copyrighted.</p>
-</footer>
+  <!-- Footer -->
+  <footer class="text-center py-6 text-slate-500 text-sm">
+    <p>© 2025 Carithm. All rights reserved.</p>
+    <p>All content on this website is original, maintained, and copyrighted.</p>
+  </footer>
 
 </body>
 </html>
