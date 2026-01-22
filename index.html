@@ -4,25 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Updated title for Google search -->
-  <title>Carithm AI: Sensor-Less Preventive Maintenance Reports for Service Centers & Fleets</title>
+  <title>Carithm AI: Predictive Maintenance Without Sensors | Service Centers & Fleet Intelligence</title>
 
-  <!-- SEO description (improves Google snippet) -->
-  <meta name="description" content="Carithm AI generates predictive Health% and Remaining Useful Life reports for vehicles using AI and metadata — no physical sensors required. Ideal for service centers, fleet operators, and rental companies.">
+  <meta name="description" content="Know what's failing before the breakdown. Carithm AI predicts vehicle component health and remaining useful life using metadata and climate data—no sensors required. Built for service centers and fleet operators worldwide.">
 
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="Carithm AI: Sensor-Less Preventive Maintenance Reports for Service Centers & Fleets">
-  <meta property="og:description" content="Generate Health% and RUL reports based on vehicle metadata and local climate — no sensors required. Ideal for service centers & fleet operators.">
+  <meta property="og:title" content="Carithm AI: Predictive Maintenance Without Sensors">
+  <meta property="og:description" content="Predict component failures before breakdowns. No OBD sensors required. Climate-adjusted for any region.">
   <meta property="og:image" content="https://carithm.vercel.app/preview.png">
   <meta property="og:url" content="https://carithm.vercel.app">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Carithm">
 
-  <!-- Site verification -->
   <meta name="google-site-verification" content="FwgoslkSBMbkNewUtM7tPOcwkoz7EQWKFT5BbkfiUBA" />
   <meta name="msvalidate.01" content="D1A8A1F06920524E3E359A514D1DE1F6" />
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -39,7 +33,6 @@
     }
   </script>
 
-  <!-- Analytics: Clicky + Google Analytics 4 -->
   <script async data-id="101494609" src="//static.getclicky.com/js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
   <script>
@@ -52,130 +45,361 @@
   <style>
     body { background: radial-gradient(circle at top, #111827 0%, #030712 100%); }
     .glass { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .glow-button { 
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+      transition: all 0.3s ease;
+    }
+    .glow-button:hover {
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+      transform: translateY(-2px);
+    }
+    .scrollable-container {
+      max-height: 600px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .scrollable-container::-webkit-scrollbar {
+      width: 8px;
+    }
+    .scrollable-container::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+    }
+    .scrollable-container::-webkit-scrollbar-thumb {
+      background: rgba(59, 130, 246, 0.5);
+      border-radius: 4px;
+    }
+    .scrollable-container::-webkit-scrollbar-thumb:hover {
+      background: rgba(59, 130, 246, 0.7);
+    }
   </style>
 </head>
 <body class="min-h-screen text-slate-200 font-sans">
 
+  <!-- Header -->
   <header class="py-6 px-10 flex justify-between items-center border-b border-white/5">
     <div class="text-2xl font-black tracking-tighter text-blue-500">CARITHM AI</div>
-    <div class="hidden md:block text-xs uppercase tracking-widest text-slate-500 font-bold">Preliminary Report Engine v4.0</div>
+    <a href="mailto:hello@carithm.ai" class="hidden md:block text-sm text-slate-400 hover:text-blue-400 transition">Contact Us</a>
   </header>
 
   <!-- Hero Section -->
-  <section class="pt-16 pb-12 px-6 text-center">
-    <div class="max-w-3xl mx-auto space-y-4">
-      <h1 class="text-4xl md:text-5xl font-extrabold text-white">Sensor-Less Fleet Intelligence</h1>
-      <p class="text-slate-400">Replacing physical sensors with engineering logic. Generate Health% and RUL reports based on vehicle configuration and local climate-based operational cycles.</p>
-      <p class="text-slate-400 text-sm md:text-base">Carithm AI analyzes metadata like engine type, age, mileage, and local climate to provide actionable maintenance insights — no OBD dongle required.</p>
+  <section class="pt-20 pb-16 px-6 text-center">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight">
+        Predict Component Failures<br/>
+        <span class="text-blue-500">Before the Breakdown</span>
+      </h1>
+      <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+        AI-powered predictive maintenance reports for service centers and fleet operators. Climate-adjusted for your region. No sensors required.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+        <a href="#full-system" class="glow-button bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg">
+          See Our Platform
+        </a>
+        <a href="mailto:hello@carithm.ai" class="glass text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-white/10 transition">
+          Book a Demo Call
+        </a>
+      </div>
+      <p class="text-slate-500 text-sm pt-2">
+        <a href="#demo" class="text-blue-400 hover:text-blue-300">Or try our AI diagnostic tool ↓</a>
+      </p>
     </div>
   </section>
 
-  <!-- AI Output & Input Table -->
-  <section class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center pb-20">
+  <!-- Problem Statement -->
+  <section class="max-w-5xl mx-auto px-6 pb-20">
+    <div class="glass rounded-2xl p-8 md:p-12 border-blue-500/20">
+      <h2 class="text-3xl font-bold text-white mb-6">The Preventable Breakdown</h2>
+      <div class="space-y-4 text-slate-300 leading-relaxed">
+        <p>A customer rejects a fuel pump replacement.</p>
+        <p>The advisor shows ECU scan data. Explains the risk.</p>
+        <p class="text-blue-400 font-semibold">"But the car still runs fine."</p>
+        <p>Customer walks out.</p>
+        <p class="text-red-400 font-semibold">Two weeks later: stranded, tow truck, engine damage. Cost: 3-4x the original service.</p>
+        <p class="text-slate-400 text-sm pt-4 border-t border-white/10">This happens every week in service centers worldwide. The data exists—runtime hours, degradation rates, failure probability. But customers don't act on data they can't see as urgent.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full System Overview -->
+  <section id="full-system" class="max-w-6xl mx-auto px-6 pb-20 border-t border-white/5 pt-16">
+    <div class="text-center mb-12">
+      <div class="inline-block bg-green-500/10 border border-green-500/30 rounded-full px-4 py-2 mb-4">
+        <span class="text-green-400 text-xs font-bold uppercase tracking-wider">Our Core Platform</span>
+      </div>
+      <h2 class="text-4xl font-bold text-white mb-4">The Complete Carithm Predictive System</h2>
+      <p class="text-slate-400 max-w-3xl mx-auto mb-4">
+        Our flagship predictive maintenance platform forecasts component failures BEFORE they happen—using vehicle metadata and climate data, no sensors required.
+      </p>
+      <div class="inline-block glass rounded-lg px-6 py-3 border-green-500/20">
+        <p class="text-green-400 font-semibold text-sm">✓ This is what service centers and fleet operators actually use</p>
+      </div>
+    </div>
+
+    <!-- Screenshot Grid - SCROLLABLE -->
+    <div class="grid md:grid-cols-2 gap-8 mb-8">
       
-      <div class="space-y-6">
-        <div class="glass rounded-2xl overflow-hidden border-blue-500/20 shadow-2xl shadow-blue-500/10">
-          <div class="p-4 bg-white/5 border-b border-white/5 flex justify-between items-center">
-            <span class="text-xs font-bold text-blue-400 uppercase">AI Output Preview</span>
-            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-          </div>
-          <div class="aspect-video bg-slate-900 flex items-center justify-center">
-             <img src="your-output-screenshot.png" alt="Carithm Preliminary Health Report Dashboard" class="w-full h-full object-cover">
+      <!-- Screenshot 1: Input Interface - SCROLLABLE -->
+      <div class="glass rounded-2xl overflow-hidden border-blue-500/20">
+        <div class="p-4 bg-white/5 border-b border-white/5">
+          <span class="text-xs font-bold text-blue-400 uppercase">Step 1: Vehicle Input</span>
+        </div>
+        <div class="bg-slate-900">
+          <div class="scrollable-container p-4">
+            <!-- ⚠️ INSERT YOUR IMAGE 1 HERE (Input form screenshot) -->
+            <img src="screenshot-input.png" alt="Carithm Input Interface" class="w-full rounded-lg">
+            <!-- Shows: Total KM, Years Owned, Engine Number, Driving Conditions, Vehicle Profile -->
           </div>
         </div>
-        <p class="text-sm text-slate-500 text-center italic">Calculated Health% for a 1GR-FE engine profile in UAE Highway cycles.</p>
+        <div class="p-4 bg-white/5 text-xs text-slate-400">
+          Engine-specific input with drivetrain selection and driving conditions (city/highway)
+        </div>
       </div>
 
-      <div class="glass rounded-2xl p-1 border-white/10">
-        <table class="w-full text-left text-sm">
-          <thead>
-            <tr class="text-slate-400 border-b border-white/5">
-              <th class="p-4 font-bold uppercase tracking-wider">Input Parameter</th>
-              <th class="p-4 font-bold uppercase tracking-wider">AI Analysis Logic</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-white/5">
-            <tr>
-              <td class="p-4 font-semibold text-white">Engine Code (e.g. 1GR-FE)</td>
-              <td class="p-4 text-slate-400">Applies specific thermal efficiency & timing wear curves.</td>
-            </tr>
-            <tr>
-              <td class="p-4 font-semibold text-white">Km & Vehicle Age</td>
-              <td class="p-4 text-slate-400">Calculates fatigue cycles vs. "Designed Life" limits.</td>
-            </tr>
-            <tr>
-              <td class="p-4 font-semibold text-white">Drivetrain (AWD/FWD)</td>
-              <td class="p-4 text-slate-400">Adjusts brake bias & differential wear coefficients.</td>
-            </tr>
-            <tr>
-              <td class="p-4 font-semibold text-white">Driving Area (City/Hwy)</td>
-              <td class="p-4 text-slate-400">Weight for stop-go heat soak vs. highway cooling.</td>
-            </tr>
-            <tr>
-              <td class="p-4 font-semibold text-white">Replacement History</td>
-              <td class="p-4 text-slate-400">Resets component wear-clocks in the digital twin.</td>
-            </tr>
-            <tr class="bg-blue-500/5">
-              <td class="p-4 font-bold text-blue-400">OUTPUT REPORT</td>
-              <td class="p-4 font-bold text-blue-400">Health% + RUL (Remaining Useful Life)</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Screenshot 2: Health & RUL Output - SCROLLABLE -->
+      <div class="glass rounded-2xl overflow-hidden border-blue-500/20">
+        <div class="p-4 bg-white/5 border-b border-white/5">
+          <span class="text-xs font-bold text-blue-400 uppercase">Step 2: Predictive Analysis</span>
+        </div>
+        <div class="bg-slate-900">
+          <div class="scrollable-container p-4">
+            <!-- ⚠️ INSERT YOUR IMAGE 2 HERE (Output table screenshot) -->
+            <img src="screenshot-output.png" alt="Carithm Health and RUL Output" class="w-full rounded-lg">
+            <!-- Shows: Component health %, RUL predictions, Preventive Service Tips -->
+          </div>
+        </div>
+        <div class="p-4 bg-white/5 text-xs text-slate-400">
+          Component-level Health% and Remaining Useful Life with preventive maintenance recommendations
+        </div>
       </div>
+
+    </div>
+
+    <!-- Coverage Callout -->
+    <div class="glass rounded-xl p-6 border-blue-500/20 mb-12">
+      <p class="text-slate-300 text-sm">
+        <span class="text-blue-400 font-semibold">Adaptive coverage:</span> 
+        10-15+ components analyzed per vehicle. Component list and wear curves customized based on engine type, manufacturer, and your local climate conditions.
+      </p>
+    </div>
+
+    <!-- Feature Highlights -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <div class="glass rounded-xl p-6">
+        <h3 class="text-white font-bold text-lg mb-3">✓ Engine-Specific Analysis</h3>
+        <p class="text-slate-400 text-sm">Precise wear curves for 50+ engine configurations including Toyota 1GR-FE, 2GR-FE, Mercedes M274, Mazda SkyActiv, and more. Not generic estimates.</p>
+      </div>
+      <div class="glass rounded-xl p-6">
+        <h3 class="text-white font-bold text-lg mb-3">✓ Climate-Adjusted for Any Region</h3>
+        <p class="text-slate-400 text-sm">Predictions adapt to local temperature, humidity, dust, and driving patterns. From GCC heat to European winters—accurate anywhere.</p>
+      </div>
+      <div class="glass rounded-xl p-6">
+        <h3 class="text-white font-bold text-lg mb-3">✓ Drivetrain-Aware Logic</h3>
+        <p class="text-slate-400 text-sm">AWD, FWD, RWD brake bias and differential wear coefficients. Accurate predictions per vehicle configuration.</p>
+      </div>
+      <div class="glass rounded-xl p-6">
+        <h3 class="text-white font-bold text-lg mb-3">✓ No Sensor Dependency</h3>
+        <p class="text-slate-400 text-sm">Works with vehicle metadata only. Ideal for remote fleet audits or vehicles without OBD access.</p>
+      </div>
+      <div class="glass rounded-xl p-6">
+        <h3 class="text-white font-bold text-lg mb-3">✓ Global Climate Intelligence</h3>
+        <p class="text-slate-400 text-sm">Operates worldwide. We customize wear algorithms for your region—GCC, Europe, Asia, Americas—accurate predictions globally.</p>
+      </div>
+      <div class="glass rounded-xl p-6">
+        <h3 class="text-white font-bold text-lg mb-3">✓ Comprehensive Component Coverage</h3>
+        <p class="text-slate-400 text-sm">Analyzes major service parts: brake pads, fuel pump, battery, sensors, filters, timing components, and more based on vehicle type.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <a href="mailto:hello@carithm.ai" class="glow-button inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-lg text-lg">
+        Request Full System Demo
+      </a>
+      <p class="text-slate-500 text-sm mt-4">Or download a sample report: <a href="sample-report.pdf" class="text-blue-400 hover:underline">sample-report.pdf</a></p>
+    </div>
   </section>
 
-  <!-- Features -->
-  <section class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8 pb-20 border-t border-white/5 pt-12">
-    <div class="space-y-2">
-      <h3 class="text-white font-bold">Climate-Aware Wear</h3>
-      <p class="text-xs text-slate-500 leading-relaxed">Adjusts predictions based on local temperature, humidity, and driving style to ensure realistic Health% everywhere.</p>
+  <!-- Interactive Demo Section -->
+  <section id="demo" class="max-w-6xl mx-auto px-6 pb-20 border-t border-white/5 pt-16">
+    <div class="text-center mb-12">
+      <div class="inline-block bg-blue-500/10 border border-blue-500/30 rounded-full px-4 py-2 mb-4">
+        <span class="text-blue-400 text-xs font-bold uppercase tracking-wider">Interactive Demo Tool</span>
+      </div>
+      <h2 class="text-4xl font-bold text-white mb-4">Try Our AI Diagnostic Assistant</h2>
+      <p class="text-slate-400 max-w-2xl mx-auto mb-4">
+        Enter a vehicle issue below and get instant AI-powered diagnostic insights. This is a separate tool that showcases our AI capabilities.
+      </p>
+      <div class="glass rounded-lg p-4 max-w-2xl mx-auto border-yellow-500/30">
+        <p class="text-yellow-400 text-sm font-semibold mb-2">⚠️ Note: This is NOT our predictive maintenance system</p>
+        <p class="text-slate-400 text-xs">
+          This diagnostic tool helps identify existing problems. Our Carithm platform (shown above) predicts component failures BEFORE they happen—completely different technology.
+        </p>
+      </div>
     </div>
-    <div class="space-y-2">
-      <h3 class="text-white font-bold">No Sensor Dependency</h3>
-      <p class="text-xs text-slate-500 leading-relaxed">Ideal for remote fleet audits or vehicles without OBD port access.</p>
+
+    <!-- HuggingFace Space Embed - SCROLLABLE -->
+    <div class="glass rounded-2xl p-1 border-blue-500/20 mb-8">
+      <div class="bg-slate-900 rounded-xl overflow-hidden">
+        <div class="p-4 bg-blue-500/5 border-b border-blue-500/20 flex justify-between items-center">
+          <span class="text-sm font-bold text-blue-400">AI Diagnostic Assistant (Demo Tool)</span>
+          <span class="text-xs text-slate-500 italic">Try it out - enter any car problem</span>
+        </div>
+        <div class="scrollable-container">
+          <!-- ⚠️ INSERT YOUR HUGGINGFACE SPACE IFRAME HERE -->
+          <iframe
+            src="https://CastBison-golden_desert.hf.space"
+            frameborder="0"
+            width="100%"
+            height="800"
+            style="min-height: 600px;"
+          ></iframe>
+          <!-- REPLACE "YOUR_HUGGINGFACE_SPACE_URL_HERE" with actual URL -->
+        </div>
+      </div>
     </div>
-    <div class="space-y-2">
-      <h3 class="text-white font-bold">Drivetrain-Aware Brakes</h3>
-      <p class="text-xs text-slate-500 leading-relaxed">Specific bias logic for AWD/FWD/RWD systems ensures accurate pad wear predictions.</p>
+
+    <!-- Clear Separator -->
+    <div class="text-center py-8">
+      <div class="inline-flex items-center gap-4">
+        <div class="h-px w-20 bg-gradient-to-r from-transparent to-blue-500"></div>
+        <p class="text-slate-500 text-sm font-semibold">Impressed? See our predictive maintenance system above</p>
+        <div class="h-px w-20 bg-gradient-to-l from-transparent to-blue-500"></div>
+      </div>
+      <a href="#full-system" class="inline-block mt-4 text-blue-400 hover:text-blue-300 font-semibold text-lg glow-button bg-blue-600/10 px-6 py-3 rounded-lg">
+        ↑ Back to Our Predictive Platform
+      </a>
     </div>
-    <div class="space-y-2">
-      <h3 class="text-white font-bold">Fleet & Service Friendly</h3>
-      <p class="text-xs text-slate-500 leading-relaxed">Built for service centres, fleet operators, rental companies & automotive engineers.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="max-w-6xl mx-auto px-6 pb-20 border-t border-white/5 pt-16">
+    <h2 class="text-3xl font-bold text-white text-center mb-12">How Carithm Works</h2>
+    
+    <div class="glass rounded-2xl p-1 border-white/10">
+      <table class="w-full text-left text-sm">
+        <thead>
+          <tr class="text-slate-400 border-b border-white/5">
+            <th class="p-4 font-bold uppercase tracking-wider">Input Parameter</th>
+            <th class="p-4 font-bold uppercase tracking-wider">What Carithm Analyzes</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-white/5">
+          <tr>
+            <td class="p-4 font-semibold text-white">Engine Number (e.g. P5654321)</td>
+            <td class="p-4 text-slate-400">Matches engine code (e.g. SkyG_1.5) and applies manufacturer-specific wear curves</td>
+          </tr>
+          <tr>
+            <td class="p-4 font-semibold text-white">Total KM & Years Owned</td>
+            <td class="p-4 text-slate-400">Calculates fatigue cycles vs. component designed life limits</td>
+          </tr>
+          <tr>
+            <td class="p-4 font-semibold text-white">Driving Conditions</td>
+            <td class="p-4 text-slate-400">City vs. Highway weighting affects heat soak and cooling patterns</td>
+          </tr>
+          <tr>
+            <td class="p-4 font-semibold text-white">Vehicle Profile</td>
+            <td class="p-4 text-slate-400">FWD/RWD/AWD + Sedan/SUV/Hatchback adjusts brake bias and wear distribution</td>
+          </tr>
+          <tr>
+            <td class="p-4 font-semibold text-white">Transmission Type</td>
+            <td class="p-4 text-slate-400">Automatic vs. Manual affects fluid and component wear calculations</td>
+          </tr>
+          <tr>
+            <td class="p-4 font-semibold text-white">Local Climate Data</td>
+            <td class="p-4 text-slate-400">Regional temperature, humidity, dust, and environmental factors customized per location</td>
+          </tr>
+          <tr class="bg-blue-500/5">
+            <td class="p-4 font-bold text-blue-400">OUTPUT REPORT</td>
+            <td class="p-4 font-bold text-blue-400">10-15+ components with Health% + RUL (km & months)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Who It's For -->
+  <section class="max-w-6xl mx-auto px-6 pb-20 border-t border-white/5 pt-16">
+    <h2 class="text-3xl font-bold text-white text-center mb-12">Built For</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <div class="glass rounded-xl p-8 text-center">
+        <div class="text-4xl mb-4">🔧</div>
+        <h3 class="text-white font-bold text-xl mb-3">Service Centers</h3>
+        <p class="text-slate-400 text-sm">Get vehicle health insights before cars arrive. Faster intake, better workflow planning, higher upsell acceptance.</p>
+      </div>
+
+      <div class="glass rounded-xl p-8 text-center">
+        <div class="text-4xl mb-4">🚗</div>
+        <h3 class="text-white font-bold text-xl mb-3">Fleet Operators</h3>
+        <p class="text-slate-400 text-sm">Predict maintenance needs across 20-200 vehicles. Reduce unexpected breakdowns, optimize service budgets.</p>
+      </div>
+
+      <div class="glass rounded-xl p-8 text-center">
+        <div class="text-4xl mb-4">📊</div>
+        <h3 class="text-white font-bold text-xl mb-3">Rental Companies</h3>
+        <p class="text-slate-400 text-sm">Monitor vehicle health remotely. Schedule proactive maintenance, maximize uptime, minimize emergency repairs.</p>
+      </div>
+
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="max-w-6xl mx-auto px-6 py-12 border-t border-white/5">
-    <h2 class="text-2xl font-bold text-white text-center mb-8">Frequently Asked Questions</h2>
-    <div class="space-y-6 max-w-4xl mx-auto">
-      <div class="bg-card glass p-4 rounded-xl">
-        <h3 class="text-white font-semibold">How does Carithm AI work without sensors?</h3>
-        <p class="text-slate-400 text-sm mt-1">It uses vehicle metadata and local climate to model wear, heat stress & remaining life.</p>
+  <section class="max-w-6xl mx-auto px-6 pb-20 border-t border-white/5 pt-16">
+    <h2 class="text-3xl font-bold text-white text-center mb-12">Frequently Asked Questions</h2>
+    <div class="space-y-4 max-w-4xl mx-auto">
+      
+      <div class="glass p-6 rounded-xl">
+        <h3 class="text-white font-semibold text-lg mb-2">How does Carithm work without physical sensors?</h3>
+        <p class="text-slate-400 text-sm">We use vehicle metadata (engine code, mileage, age, drivetrain) combined with climate data and engineering-based wear curves to model component degradation. No OBD dongle or telematics hardware required.</p>
       </div>
-      <div class="bg-card glass p-4 rounded-xl">
-        <h3 class="text-white font-semibold">Who benefits from these reports?</h3>
-        <p class="text-slate-400 text-sm mt-1">Fleet operators, service centres, rental companies and automotive engineers.</p>
+
+      <div class="glass p-6 rounded-xl">
+        <h3 class="text-white font-semibold text-lg mb-2">What components can Carithm predict?</h3>
+        <p class="text-slate-400 text-sm">Most major service components including Brake Pads, Fuel Pump, Battery, Oxygen Sensor, Bushings, Tires, Water Pump, Air Filter, Timing Chain, Cabin Filter, Spark Plugs, and Brake Fluid. Additional components vary by engine type and manufacturer. All predictions factor in your local climate conditions.</p>
       </div>
-      <div class="bg-card glass p-4 rounded-xl">
-        <h3 class="text-white font-semibold">Does it adjust for climate & driving conditions?</h3>
-        <p class="text-slate-400 text-sm mt-1">Yes — Carithm AI factors in local conditions for more accurate predictions.</p>
+
+      <div class="glass p-6 rounded-xl">
+        <h3 class="text-white font-semibold text-lg mb-2">Does it work in my region?</h3>
+        <p class="text-slate-400 text-sm">Yes. Carithm adjusts predictions based on your local climate—whether it's GCC heat, European cold, tropical humidity, or desert dust. We customize wear calculations for your specific operating environment.</p>
+      </div>
+
+      <div class="glass p-6 rounded-xl">
+        <h3 class="text-white font-semibold text-lg mb-2">How accurate are the predictions?</h3>
+        <p class="text-slate-400 text-sm">Our engine-specific wear curves are based on OEM design life data and real-world degradation patterns. Predictions are probabilistic estimates, not guarantees—advisors still verify during physical inspection.</p>
+      </div>
+
+      <div class="glass p-6 rounded-xl">
+        <h3 class="text-white font-semibold text-lg mb-2">What's the pricing model?</h3>
+        <p class="text-slate-400 text-sm">We offer per-report pricing for service centers and monthly subscriptions for fleet operators. Contact us for a custom quote based on your volume and region.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="text-center py-16 px-6">
+    <div class="max-w-3xl mx-auto space-y-6">
+      <h2 class="text-4xl font-bold text-white">Ready to predict failures before they happen?</h2>
+      <p class="text-slate-400 text-lg">Book a 10-minute demo to see the full Carithm platform in action.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+        <a href="mailto:hello@carithm.ai" class="glow-button bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg">
+          Book a Demo
+        </a>
+        <a href="#full-system" class="glass text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-white/10 transition">
+          See Platform Details
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Contact Prompt -->
-  <section class="text-center py-6">
-    <p class="text-slate-500 text-sm mb-2">Want to learn more or request a demo?</p>
-    <a href="mailto:carithmai29@gmail.com" class="text-blue-500 font-bold text-sm">Write to us at carithmai29@gmail.com</a>
-  </section>
-
   <!-- Footer -->
-  <footer class="py-12 border-t border-white/5 text-center space-y-2">
-    <p class="text-xs text-slate-600">© 2026 Carithm AI | B2B Fleet Intelligence</p>
-    <div class="flex justify-center items-center gap-4 text-xs">
-      <a href="mailto:carithmai29@gmail.com" class="text-blue-500 font-bold">carithmai29@gmail.com</a>
+  <footer class="py-12 border-t border-white/5 text-center space-y-4">
+    <p class="text-xs text-slate-600">© 2026 Carithm AI | Predictive Maintenance Intelligence</p>
+    <div class="flex justify-center items-center gap-4 text-sm">
+      <a href="mailto:hello@carithm.ai" class="text-blue-400 hover:text-blue-300 font-semibold">hello@carithm.ai</a>
       <span class="text-slate-500">|</span>
-      <a href="https://www.linkedin.com/company/carithm-ai/" target="_blank" class="text-blue-500 font-bold">LinkedIn</a>
+      <a href="https://www.linkedin.com/company/carithm-ai/" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold">LinkedIn</a>
     </div>
   </footer>
 
