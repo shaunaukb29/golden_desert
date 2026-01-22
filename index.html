@@ -53,6 +53,7 @@
       box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
       transform: translateY(-2px);
     }
+    /* Scrollable container for screenshots */
     .scrollable-container {
       max-height: 600px;
       overflow-y: auto;
@@ -71,6 +72,28 @@
     }
     .scrollable-container::-webkit-scrollbar-thumb:hover {
       background: rgba(59, 130, 246, 0.7);
+    }
+    
+    /* HuggingFace space container - MUCH MORE HEIGHT */
+    .hf-space-container {
+      max-height: 1200px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background: #0d0d0d;
+    }
+    .hf-space-container::-webkit-scrollbar {
+      width: 10px;
+    }
+    .hf-space-container::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 5px;
+    }
+    .hf-space-container::-webkit-scrollbar-thumb {
+      background: rgba(59, 130, 246, 0.6);
+      border-radius: 5px;
+    }
+    .hf-space-container::-webkit-scrollbar-thumb:hover {
+      background: rgba(59, 130, 246, 0.9);
     }
   </style>
 </head>
@@ -117,6 +140,61 @@
         <p>Customer walks out.</p>
         <p class="text-red-400 font-semibold">Two weeks later: stranded, tow truck, engine damage. Cost: 3-4x the original service.</p>
         <p class="text-slate-400 text-sm pt-4 border-t border-white/10">This happens every week in service centers worldwide. The data exists—runtime hours, degradation rates, failure probability. But customers don't act on data they can't see as urgent.</p>
+      </div>
+
+      <!-- Benefits Grid -->
+      <div class="grid md:grid-cols-2 gap-6 mt-8 pt-6 border-t border-white/10">
+        
+        <!-- Service Centers Benefits -->
+        <div class="space-y-3">
+          <h3 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="text-2xl">🔧</span> For Service Centers
+          </h3>
+          <ul class="space-y-2 text-slate-300 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 mt-1">✓</span>
+              <span><strong class="text-white">Higher upsell acceptance:</strong> Data-backed recommendations customers trust</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 mt-1">✓</span>
+              <span><strong class="text-white">Better customer relations:</strong> Show proof, build loyalty, reduce disputes</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 mt-1">✓</span>
+              <span><strong class="text-white">Improved workshop planning:</strong> Know what to check before cars arrive</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 mt-1">✓</span>
+              <span><strong class="text-white">Faster intake:</strong> Pre-arrival health insights streamline inspections</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Fleet Operators Benefits -->
+        <div class="space-y-3">
+          <h3 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="text-2xl">🚗</span> For Fleet Operators
+          </h3>
+          <ul class="space-y-2 text-slate-300 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 mt-1">✓</span>
+              <span><strong class="text-white">Prevent costly breakdowns:</strong> Schedule maintenance before failures occur</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 mt-1">✓</span>
+              <span><strong class="text-white">Optimize service budgets:</strong> Predict expenses, plan proactively</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 mt-1">✓</span>
+              <span><strong class="text-white">Reduce downtime:</strong> Keep vehicles operational, maximize fleet availability</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 mt-1">✓</span>
+              <span><strong class="text-white">Remote monitoring:</strong> Track vehicle health across 20-200+ vehicles</span>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </section>
@@ -216,7 +294,6 @@
       <a href="mailto:hello@carithm.ai" class="glow-button inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-lg text-lg">
         Request Full System Demo
       </a>
-      <p class="text-slate-500 text-sm mt-4">Or download a sample report: <a href="sample-report.pdf" class="text-blue-400 hover:underline">sample-report.pdf</a></p>
     </div>
   </section>
 
@@ -245,20 +322,20 @@
           <span class="text-sm font-bold text-blue-400">AI Diagnostic Assistant (Demo Tool)</span>
           <span class="text-xs text-slate-500 italic">Try it out - enter any car problem</span>
         </div>
-        <div class="scrollable-container">
+        <div class="hf-space-container">
           <!-- ⚠️ INSERT YOUR HUGGINGFACE SPACE IFRAME HERE -->
           <iframe
-            src="https://CastBison-golden-desert.hf.space"
+            src="https://castbison-golden-desert.hf.space"
             frameborder="0"
             width="100%"
-            height="800"
-            style="min-height: 600px;"
+            height="1200"
+            style="min-height: 900px; border: none;"
           ></iframe>
           <!-- REPLACE "YOUR_HUGGINGFACE_SPACE_URL_HERE" with actual URL -->
         </div>
       </div>
     </div>
-
+    
     <!-- Clear Separator -->
     <div class="text-center py-8">
       <div class="inline-flex items-center gap-4">
@@ -405,5 +482,6 @@
 
 </body>
 </html>
+
 
 
