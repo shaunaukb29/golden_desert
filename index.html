@@ -245,65 +245,53 @@
       margin-top: 3rem;
     }
 
-    /* ── Car image wrapper ── */
+    /* ── 3D Viewer ── */
     .car-wrap {
       position: relative;
       border-radius: 16px;
       overflow: hidden;
-      background: radial-gradient(ellipse at 50% 60%, #0e1e3a 0%, #05080f 100%);
       border: 1px solid var(--border);
-      user-select: none;
+      background: #0a0f1e;
     }
-    .car-wrap img {
+    .car-wrap iframe {
       width: 100%;
+      height: 420px;
       display: block;
-      /* tint the white-bg car image to match our dark theme */
-      filter: brightness(0.92) contrast(1.05) saturate(1.1);
-      mix-blend-mode: luminosity;
-    }
-    /* dark gradient overlay so car sits on dark bg naturally */
-    .car-wrap::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 80%, rgba(5,8,15,0) 40%, rgba(5,8,15,0.7) 100%);
-      pointer-events: none; z-index: 1;
+      border: none;
     }
 
-    /* ── Hotspots ── */
-    .hotspot {
-      position: absolute;
-      width: 34px; height: 34px; border-radius: 50%;
-      border: 2px solid var(--blue);
-      background: rgba(45,124,246,0.25);
-      backdrop-filter: blur(6px);
-      cursor: pointer;
-      transform: translate(-50%, -50%);
-      display: flex; align-items: center; justify-content: center;
-      transition: background .2s, box-shadow .2s;
-      z-index: 10;
+    /* ── Component selector buttons ── */
+    .component-btns {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-top: 1rem;
     }
-    .hotspot::after {
-      content: ''; position: absolute;
-      width: 34px; height: 34px; border-radius: 50%;
-      border: 2px solid var(--blue);
-      animation: pulse-ring 2.4s ease infinite;
+    .comp-btn {
+      display: flex; align-items: center; gap: 0.45rem;
+      padding: 0.45rem 0.9rem; border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text); font-family: var(--body);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.04em; cursor: pointer;
+      transition: border-color .18s, background .18s, box-shadow .18s;
     }
-    .hotspot:hover, .hotspot.active {
-      background: var(--blue);
-      box-shadow: 0 0 22px var(--blue-glow), 0 0 6px rgba(255,255,255,0.3);
+    .comp-btn:hover {
+      border-color: var(--blue);
+      background: var(--blue-dim);
     }
-    .hs-dot { width: 9px; height: 9px; border-radius: 50%; background: #fff; flex-shrink: 0; }
-    .hs-label {
-      position: absolute; bottom: calc(100% + 8px); left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap; font-size: 0.62rem; font-weight: 700;
-      letter-spacing: 0.09em; text-transform: uppercase; color: #fff;
-      background: rgba(5,8,15,0.92); border: 1px solid rgba(45,124,246,0.4);
-      padding: 0.22rem 0.6rem; border-radius: 5px;
-      pointer-events: none; opacity: 0; transition: opacity .18s;
+    .comp-btn.active {
+      border-color: var(--blue);
+      background: var(--blue-dim);
+      box-shadow: 0 0 14px var(--blue-glow);
+      color: #fff;
     }
-    .hotspot:hover .hs-label, .hotspot.active .hs-label { opacity: 1; }
-    @keyframes pulse-ring { 0%{transform:scale(1);opacity:.7} 100%{transform:scale(2.5);opacity:0} }
+    .comp-btn .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--blue); flex-shrink: 0;
+      box-shadow: 0 0 6px var(--blue);
+    }
+    .comp-btn.active .dot { animation: pulse-dot 1.6s ease infinite; }
+    @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.5)} }
 
     .canvas-hint {
       text-align: center; font-size: 0.72rem; color: var(--muted);
@@ -584,30 +572,28 @@
     <div class="explorer-layout">
       <div><!-- left column -->
         <div class="car-wrap" id="car-wrap">
-        <!-- High-quality SUV from Unsplash (free, no attribution required) -->
-        <img
-          src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1200&q=85&auto=format&fit=crop"
-          alt="Vehicle component explorer"
-          id="car-img"
-          draggable="false"
-        />
+          <iframe
+            title="Generic Sedan Car 3D"
+            src="https://sketchfab.com/models/58c33766470d46e7b2aed542650494e5/embed?autostart=1&ui_hint=0&ui_infos=0&ui_inspector=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&camera=0&transparent=0&dnt=1&preload=1&autospin=0.3&ui_theme=dark"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+          ></iframe>
+        </div>
 
-        <!-- Hotspots — positioned as % of image dimensions (1200×800 approx) -->
-        <!-- Engine / Hood -->
-        <div class="hotspot" id="hs-engine"     style="left:38%;top:34%"><div class="hs-dot"></div><div class="hs-label">Engine</div></div>
-        <!-- Battery (front left under hood) -->
-        <div class="hotspot" id="hs-battery"    style="left:22%;top:42%"><div class="hs-dot"></div><div class="hs-label">Battery</div></div>
-        <!-- Fuel system (mid-body) -->
-        <div class="hotspot" id="hs-fuel"       style="left:60%;top:48%"><div class="hs-dot"></div><div class="hs-label">Fuel System</div></div>
-        <!-- Front brakes (front wheel) -->
-        <div class="hotspot" id="hs-brakes-f"   style="left:18%;top:72%"><div class="hs-dot"></div><div class="hs-label">Front Brakes</div></div>
-        <!-- Rear brakes (rear wheel) -->
-        <div class="hotspot" id="hs-brakes-r"   style="left:78%;top:74%"><div class="hs-dot"></div><div class="hs-label">Rear Brakes</div></div>
-        <!-- Suspension (under body centre) -->
-        <div class="hotspot" id="hs-suspension" style="left:50%;top:80%"><div class="hs-dot"></div><div class="hs-label">Suspension</div></div>
-      </div>
-      <p class="canvas-hint" style="margin-top:0.8rem;"><span>Click hotspots</span> to inspect components</p>
-    </div><!-- close left column -->
+        <!-- Component selector buttons -->
+        <div class="component-btns">
+          <button class="comp-btn" data-hs="hs-engine"><span class="dot"></span>Engine</button>
+          <button class="comp-btn" data-hs="hs-battery"><span class="dot"></span>Battery</button>
+          <button class="comp-btn" data-hs="hs-fuel"><span class="dot"></span>Fuel System</button>
+          <button class="comp-btn" data-hs="hs-brakes-f"><span class="dot"></span>Front Brakes</button>
+          <button class="comp-btn" data-hs="hs-brakes-r"><span class="dot"></span>Rear Brakes</button>
+          <button class="comp-btn" data-hs="hs-suspension"><span class="dot"></span>Suspension</button>
+        </div>
+
+        <p class="canvas-hint" style="margin-top:0.7rem;"><span>Drag</span> to rotate &nbsp;·&nbsp; <span>Scroll</span> to zoom &nbsp;·&nbsp; <span>Select</span> a component to inspect</p>
+      </div><!-- close left column -->
 
       <div class="info-panel">
         <div class="panel-card" id="panel-card">
@@ -834,7 +820,7 @@ const components = {
 };
 
 // ─── PANEL RENDER ───
-let activeHs = null;
+
 function renderPanel(id) {
   const d = components[id];
   document.getElementById('panel-empty').style.display = 'none';
@@ -877,14 +863,14 @@ function renderPanel(id) {
   }));
 }
 
-Object.keys(components).forEach(id => {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.addEventListener('click', () => {
-    if (activeHs) activeHs.classList.remove('active');
-    el.classList.add('active');
-    activeHs = el;
-    renderPanel(id);
+// ─── Component buttons → panel ───
+let activeBtn = null;
+document.querySelectorAll('.comp-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (activeBtn) activeBtn.classList.remove('active');
+    btn.classList.add('active');
+    activeBtn = btn;
+    renderPanel(btn.dataset.hs);
   });
 });
 
