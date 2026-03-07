@@ -80,22 +80,28 @@
     }
     .nav .cta-btn:hover { background: #1a6ae0; transform: translateY(-1px); }
 
-    /* ─── HERO ─── */
+
+    /* ─── HERO — full viewport split ─── */
     .hero {
       position: relative;
-      min-height: 92vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center;
-      padding: 5rem 2rem 3rem;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
       overflow: hidden;
+      padding: 0;
     }
     .hero-glow {
-      position: absolute; top: -10%; left: 50%;
-      transform: translateX(-50%);
-      width: 800px; height: 500px;
-      background: radial-gradient(ellipse, rgba(45,124,246,0.13) 0%, transparent 70%);
-      pointer-events: none;
+      position: absolute; top: 20%; left: 20%;
+      width: 600px; height: 600px;
+      background: radial-gradient(ellipse, rgba(45,124,246,0.1) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+    .hero-glow-r {
+      position: absolute; top: 10%; right: -5%;
+      width: 700px; height: 700px;
+      background: radial-gradient(ellipse, rgba(45,124,246,0.07) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
     }
     .hero-grid {
       position: absolute; inset: 0;
@@ -103,52 +109,59 @@
         linear-gradient(rgba(45,124,246,0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(45,124,246,0.04) 1px, transparent 1px);
       background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 100%);
+      mask-image: radial-gradient(ellipse 80% 80% at 30% 50%, black 20%, transparent 100%);
+      z-index: 0;
+    }
+
+    /* Left column — text */
+    .hero-left {
+      position: relative; z-index: 2;
+      padding: 6rem 3rem 6rem 4rem;
+      display: flex; flex-direction: column;
+      align-items: flex-start;
     }
     .hero-pill {
       display: inline-flex; align-items: center; gap: 0.5rem;
       background: var(--blue-dim); border: 1px solid rgba(45,124,246,0.3);
       border-radius: 999px; padding: 0.4rem 1.1rem;
       font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--blue); margin-bottom: 2rem; position: relative;
+      color: var(--blue); margin-bottom: 2rem;
     }
     .hero-pill::before {
       content: ''; width: 6px; height: 6px; border-radius: 50%;
-      background: var(--blue); animation: blink 2s ease infinite;
+      background: var(--blue); animation: blink 2s ease infinite; flex-shrink: 0;
     }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
     .hero h1 {
       font-family: var(--display);
-      font-size: clamp(3.2rem, 8vw, 7rem);
+      font-size: clamp(2.8rem, 4.5vw, 5.5rem);
       line-height: 0.95;
       letter-spacing: 0.02em;
       color: #fff;
       margin-bottom: 1.6rem;
-      position: relative;
+      text-align: left;
     }
-    .hero h1 .accent { color: var(--blue); }
-    .hero h1 .line2 { display: block; font-size: clamp(2.4rem, 6vw, 5.2rem); color: #7faef8; }
+    .hero h1 .line2 { display: block; font-size: clamp(2rem, 3.5vw, 4.2rem); color: #7faef8; }
 
     .hero-sub {
-      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      font-size: clamp(0.9rem, 1.4vw, 1.05rem);
       color: var(--muted);
-      max-width: 560px;
-      line-height: 1.7;
+      max-width: 480px;
+      line-height: 1.75;
       margin-bottom: 2.5rem;
-      position: relative;
+      text-align: left;
     }
     .hero-sub strong { color: var(--text); font-weight: 500; }
 
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; position: relative; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-primary {
       background: var(--blue); color: #fff;
       font-weight: 700; font-size: 0.95rem;
       padding: 0.9rem 2.2rem; border-radius: 8px;
       text-decoration: none;
       box-shadow: 0 0 28px var(--blue-glow);
-      transition: all .25s;
-      letter-spacing: 0.03em;
+      transition: all .25s; letter-spacing: 0.03em;
     }
     .btn-primary:hover { background: #1a6ae0; transform: translateY(-2px); box-shadow: 0 0 40px var(--blue-glow); }
     .btn-ghost {
@@ -161,15 +174,39 @@
     .btn-ghost:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); }
 
     .hero-stats {
-      display: flex; gap: 3rem; margin-top: 4rem;
-      position: relative; flex-wrap: wrap; justify-content: center;
+      display: flex; gap: 2.5rem; margin-top: 3.5rem;
+      flex-wrap: wrap;
     }
-    .hero-stat { text-align: center; }
+    .hero-stat { text-align: left; }
     .hero-stat-n {
-      font-family: var(--display); font-size: 2.4rem;
+      font-family: var(--display); font-size: 2.2rem;
       color: #fff; letter-spacing: 0.04em; line-height: 1;
     }
-    .hero-stat-l { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.3rem; }
+    .hero-stat-l { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.3rem; }
+
+    /* Right column — car + hotspots */
+    .hero-right {
+      position: relative; z-index: 2;
+      height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center;
+      padding: 2rem 3rem 2rem 1rem;
+      border-left: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(13,20,40,0.6) 0%, rgba(5,8,15,0.9) 100%);
+    }
+    .hero-explorer-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 0.6rem;
+    }
+    .hero-explorer-title {
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 2.2vw, 2rem);
+      color: #fff; letter-spacing: 0.02em; line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    .hero-explorer-sub {
+      font-size: 0.78rem; color: var(--muted); margin-bottom: 1.2rem;
+    }
 
     /* ─── SECTION SHARED ─── */
     section { position: relative; z-index: 1; }
@@ -471,51 +508,61 @@
   </nav>
 </header>
 
-<!-- ─── HERO ─── -->
-<section class="hero">
+<!-- ─── HERO + EXPLORER (full viewport split) ─── -->
+<section class="hero" id="explorer">
   <div class="hero-glow"></div>
+  <div class="hero-glow-r"></div>
   <div class="hero-grid"></div>
 
-  <div class="hero-pill">No Sensors. No Hardware. Just History.</div>
+  <!-- LEFT — text -->
+  <div class="hero-left">
+    <div class="hero-pill">No Sensors. No Hardware. Just History.</div>
 
-  <h1>
-    YOUR SERVICE HISTORY,
-    <span class="line2">TURNED INTO PREDICTIONS.</span>
-  </h1>
+    <h1>
+      YOUR SERVICE HISTORY,
+      <span class="line2">TURNED INTO PREDICTIONS.</span>
+    </h1>
 
-  <p class="hero-sub">
-    Input an <strong>engine number</strong> and your vehicle's <strong>past service logs</strong>.
-    Carithm returns a component-by-component health report with
-    <strong>next-interval km predictions</strong>—calibrated to your exact engine spec.
-  </p>
+    <p class="hero-sub">
+      Input an <strong>engine number</strong> and your vehicle's <strong>past service logs</strong>.
+      Carithm returns a component-by-component health report with
+      <strong>next-interval km predictions</strong>—calibrated to your exact engine spec.
+    </p>
 
-  <div class="hero-actions">
-    <a href="/cdn-cgi/l/email-protection#680b091a011c000509015a51280f05090104460b0705" class="btn-primary">Request a Demo →</a>
-    <a href="#how-it-works" class="btn-ghost">See How It Works</a>
+    <div class="hero-actions">
+      <a href="mailto:carithmai29@gmail.com?subject=Demo Request" class="btn-primary">Request a Demo →</a>
+      <a href="#how-it-works" class="btn-ghost">See How It Works</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-n">50+</div>
+        <div class="hero-stat-l">Engine Configs</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">15+</div>
+        <div class="hero-stat-l">Components Per Report</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">0</div>
+        <div class="hero-stat-l">Hardware Required</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">±5%</div>
+        <div class="hero-stat-l">Interval Accuracy</div>
+      </div>
+    </div>
   </div>
 
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <div class="hero-stat-n">50+</div>
-      <div class="hero-stat-l">Engine Configs</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-n">15+</div>
-      <div class="hero-stat-l">Components Per Report</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-n">0</div>
-      <div class="hero-stat-l">Hardware Required</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-n">±5%</div>
-      <div class="hero-stat-l">Interval Accuracy</div>
-    </div>
-  </div>
-</section>
+  <!-- RIGHT — car + hotspots -->
+  <div class="hero-right">
+    <div class="hero-explorer-label">Interactive Component Explorer</div>
+    <div class="hero-explorer-title">CLICK ANY PART TO INSPECT</div>
+    <div class="hero-explorer-sub">Sample — Toyota 2GR-FE · 87,000 km · GCC climate</div>
 
-<!-- ─── HOW IT WORKS ─── -->
-<section id="how-it-works">
+    <div class="explorer-wrap" style="margin-top:0; padding: 0; background: transparent; border: none;">
+      <div class="car-img-wrap" id="car-img-wrap">
+
   <div class="section-inner">
     <div class="section-label">The Process</div>
     <h2 class="section-title">THREE INPUTS.<br/>ONE COMPLETE HEALTH REPORT.</h2>
@@ -654,8 +701,51 @@
         </div>
 
       </div><!-- end car-img-wrap -->
-      <p class="explorer-hint"><b>Click</b> any numbered box to inspect that component</p>
+      <p class="explorer-hint" style="color:var(--muted);"><b style="color:var(--blue);">Click</b> any numbered box to inspect that component</p>
     </div><!-- end explorer-wrap -->
+  </div><!-- end hero-right -->
+</section><!-- end hero -->
+
+<!-- ─── HOW IT WORKS ─── -->
+<section id="how-it-works">
+  <div class="section-inner">
+    <div class="section-label">The Process</div>
+    <h2 class="section-title">THREE INPUTS.<br/>ONE COMPLETE HEALTH REPORT.</h2>
+    <p class="section-sub">No installation. No telematics device. Just data that already exists about your vehicle.</p>
+
+    <div class="how-flow">
+      <div class="how-step">
+        <div class="how-step-num">01</div>
+        <div class="how-step-title">Lock the Engine</div>
+        <div class="how-step-body">Enter the vehicle's engine number. This pins the exact engine variant—not just make/model—unlocking manufacturer-specific wear thresholds and part life intervals.</div>
+        <div class="how-step-inputs">
+          <div class="input-chip">🔩 Engine Number (e.g. 2GR-FE)</div>
+          <div class="input-chip">📍 Region / Climate</div>
+        </div>
+        <div class="how-arrow"></div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">02</div>
+        <div class="how-step-title">Upload Service History</div>
+        <div class="how-step-body">Provide the vehicle's past service and replacement logs—what was replaced and at what mileage. This is the data that drives every prediction.</div>
+        <div class="how-step-inputs">
+          <div class="input-chip">📋 Replacement logs + km</div>
+          <div class="input-chip">📅 Service dates</div>
+          <div class="input-chip">🔧 Parts replaced</div>
+        </div>
+        <div class="how-arrow"></div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">03</div>
+        <div class="how-step-title">Get the Report</div>
+        <div class="how-step-body">Carithm calculates each component's current health % and exact next-service interval in km—based on that engine's spec sheet and what the history shows.</div>
+        <div class="how-step-inputs">
+          <div class="input-chip">✅ Health % per component</div>
+          <div class="input-chip">📏 Next interval in km</div>
+          <div class="input-chip">⚠️ Risk flags</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
