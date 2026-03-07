@@ -1060,6 +1060,10 @@
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 960px) {
+      .mobile-hidden {
+        display: none !important;
+      }
+
       .hero {
         display: flex;
         flex-direction: column;
@@ -1198,14 +1202,14 @@
 
     <!-- RIGHT — car + hotspots -->
     <div class="hero-right">
-      <div class="hero-explorer-label">Interactive Component Explorer</div>
-      <div class="hero-explorer-title">CLICK ANY PART TO INSPECT</div>
-      <div class="hero-explorer-sub">Sample — Mercedes M276 V6 · 87,000 km · GCC climate</div>
+      <div class="hero-explorer-label mobile-hidden">Interactive Component Explorer</div>
+      <div class="hero-explorer-title mobile-hidden">CLICK ANY PART TO INSPECT</div>
+      <div class="hero-explorer-sub mobile-hidden">Sample — Mercedes M276 V6 · 87,000 km · GCC climate</div>
 
       <div class="explorer-wrap" style="margin-top:0; padding: 0; background: transparent; border: none;">
         <div class="car-img-wrap" id="car-img-wrap">
 
-          <div class="section-inner">
+          <div class="section-inner mobile-hidden">
             <div class="section-label">The Process</div>
             <h2 class="section-title">THREE INPUTS.<br />ONE COMPLETE REPORT.</h2>
             <p class="section-sub">No installation. No telematics device. Just data that already exists in your logs.
