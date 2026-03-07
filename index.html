@@ -150,10 +150,13 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url('car_doctor_ai_tool/car2.png') center/cover no-repeat;
-      filter: blur(8px);
-      opacity: 0.4;
-      z-index: 0;
+      /* Double check relative path from Desktop where html lives */
+      background: url('./car_doctor_ai_tool/car2.png') center/cover no-repeat;
+      filter: blur(4px);
+      opacity: 0.8;
+      /* Increased to ensure visibility */
+      z-index: 1;
+      /* Moved in front of body backgrounds */
       pointer-events: none;
     }
 
@@ -165,7 +168,8 @@
       height: 600px;
       background: radial-gradient(ellipse, rgba(45, 124, 246, 0.1) 0%, transparent 70%);
       pointer-events: none;
-      z-index: 0;
+      z-index: 2;
+      /* Glow above background */
     }
 
     .hero-glow-r {
