@@ -235,99 +235,96 @@
       z-index: 2;
     }
 
-    /* ─── 3D CAR EXPLORER ─── */
+    /* ─── COMPONENT EXPLORER ─── */
     #explorer { background: var(--bg2); }
-    .explorer-layout {
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 2.5rem;
-      align-items: start;
-      margin-top: 3rem;
-    }
+    #explorer .section-label { color: var(--blue); }
+    #explorer .section-title { color: #fff; }
+    #explorer .section-sub   { color: var(--muted); }
 
-    /* ── 3D Viewer ── */
-    .car-wrap {
+    .explorer-wrap {
       position: relative;
-      border-radius: 16px;
-      overflow: hidden;
+      margin-top: 2.5rem;
+      border-radius: 20px;
+      overflow: visible;
+      background: #05080f;
+      padding: 2rem 2rem 1.5rem;
       border: 1px solid var(--border);
-      background: #0a0f1e;
     }
-    .car-wrap iframe {
+
+    /* Car image */
+    .car-img-wrap {
+      position: relative;
       width: 100%;
-      height: 420px;
+      user-select: none;
+    }
+    .car-img-wrap img {
+      width: 100%;
       display: block;
-      border: none;
+      border-radius: 12px;
+      /* desaturate slightly so hotcards pop */
+      filter: saturate(0.92) contrast(1.04);
     }
 
-    /* ── Component selector buttons ── */
-    .component-btns {
-      display: flex; flex-wrap: wrap; gap: 0.5rem;
-      margin-top: 1rem;
-    }
-    .comp-btn {
-      display: flex; align-items: center; gap: 0.45rem;
-      padding: 0.45rem 0.9rem; border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text); font-family: var(--body);
-      font-size: 0.75rem; font-weight: 600;
-      letter-spacing: 0.04em; cursor: pointer;
-      transition: border-color .18s, background .18s, box-shadow .18s;
-    }
-    .comp-btn:hover {
-      border-color: var(--blue);
-      background: var(--blue-dim);
-    }
-    .comp-btn.active {
-      border-color: var(--blue);
-      background: var(--blue-dim);
-      box-shadow: 0 0 14px var(--blue-glow);
-      color: #fff;
-    }
-    .comp-btn .dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--blue); flex-shrink: 0;
-      box-shadow: 0 0 6px var(--blue);
-    }
-    .comp-btn.active .dot { animation: pulse-dot 1.6s ease infinite; }
-    @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.5)} }
-
-    .canvas-hint {
-      text-align: center; font-size: 0.72rem; color: var(--muted);
-      margin-top: 0.8rem; letter-spacing: 0.04em;
-    }
-    .canvas-hint span { color: var(--blue); }
-
-    /* info panel */
-    .info-panel { position: sticky; top: 5rem; }
-    .panel-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: 14px; overflow: hidden;
-      min-height: 420px; display: flex; flex-direction: column;
-    }
-    .panel-empty {
-      flex: 1; display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 1rem; padding: 2.5rem; text-align: center;
-    }
-    .panel-empty-icon { font-size: 2.2rem; opacity: 0.3; }
-    .panel-empty-text { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
-    .panel-header {
-      padding: 1.3rem 1.5rem 0.9rem;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 0.8rem;
-    }
-    .panel-icon {
-      width: 40px; height: 40px; border-radius: 9px;
-      background: var(--blue-dim); border: 1px solid rgba(45,124,246,0.2);
+    /* ── Hotspot: numbered green box ── */
+    .hs {
+      position: absolute;
+      width: 52px; height: 52px;
+      border: 2.5px solid #22c55e;
+      border-radius: 6px;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem; flex-shrink: 0;
+      transition: box-shadow .2s, border-color .2s;
+      z-index: 10;
+      background: rgba(34,197,94,0.08);
     }
-    .panel-name { font-family: var(--display); font-size: 1.2rem; color: #fff; letter-spacing: 0.04em; }
-    .panel-cat { font-size: 0.7rem; color: var(--muted); margin-top: 0.1rem; }
-    .panel-body { padding: 1.3rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 1rem; }
+    .hs:hover { box-shadow: 0 0 0 3px rgba(34,197,94,0.25); border-color: #16a34a; }
+    .hs.active { box-shadow: 0 0 0 3px rgba(34,197,94,0.4); background: rgba(34,197,94,0.15); }
+    .hs-num {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: #22c55e; color: #fff;
+      font-size: 0.72rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--body);
+    }
+
+    /* ── Popup card ── */
+    .hs-card {
+      position: absolute;
+      background: #0d1524;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      min-width: 190px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(45,124,246,0.15);
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(6px) scale(0.97);
+      transition: opacity .2s ease, transform .2s ease;
+      z-index: 20;
+    }
+    .hs-card.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    .hs-card-title { font-size: 0.95rem; font-weight: 700; color: #fff; font-family: var(--body); }
+    .hs-card-km { font-size: 0.82rem; color: #8499be; margin: 0.15rem 0 0.55rem; font-family: var(--body); }
+    .hs-card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .tag {
+      padding: 0.22rem 0.6rem; border-radius: 20px;
+      font-size: 0.72rem; font-weight: 600; font-family: var(--body);
+    }
+    .tag-green  { background: rgba(34,197,94,0.15);  color: #4ade80; }
+    .tag-red    { background: rgba(239,68,68,0.15);  color: #f87171; }
+    .tag-amber  { background: rgba(245,158,11,0.15); color: #fbbf24; }
+    .tag-blue   { background: rgba(45,124,246,0.15); color: #60a5fa; }
+
+    .explorer-hint {
+      text-align: center; font-size: 0.75rem; color: var(--muted);
+      margin-top: 1rem; letter-spacing: 0.03em;
+    }
+    .explorer-hint b { color: var(--blue); font-weight: 600; }
     .panel-desc { font-size: 0.82rem; color: #8499be; line-height: 1.65; }
 
     /* health bar */
@@ -562,49 +559,103 @@
   </div>
 </section>
 
-<!-- ─── 3D EXPLORER ─── -->
+<!-- ─── COMPONENT EXPLORER ─── -->
 <section id="explorer">
   <div class="section-inner">
     <div class="section-label">Interactive Component Explorer</div>
-    <h2 class="section-title">CLICK A PART.<br/>SEE WHAT CARITHM REPORTS.</h2>
-    <p class="section-sub">Sample output for a Toyota 2GR-FE, 87,000 km, GCC climate, city-heavy driving. Tap any hotspot.</p>
+    <h2 class="section-title">CLICK ANY PART.<br/>SEE WHAT CARITHM REPORTS.</h2>
+    <p class="section-sub">Sample output — Toyota 2GR-FE, 87,000 km, GCC climate. Click a numbered hotspot.</p>
 
-    <div class="explorer-layout">
-      <div><!-- left column -->
-        <div class="car-wrap" id="car-wrap">
-          <iframe
-            title="Generic Sedan Car 3D"
-            src="https://sketchfab.com/models/58c33766470d46e7b2aed542650494e5/embed?autostart=1&ui_hint=0&ui_infos=0&ui_inspector=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&camera=0&transparent=0&dnt=1&preload=1&autospin=0.3&ui_theme=dark"
-            allow="autoplay; fullscreen; xr-spatial-tracking"
-            allowfullscreen
-            mozallowfullscreen="true"
-            webkitallowfullscreen="true"
-          ></iframe>
-        </div>
+    <div class="explorer-wrap">
+      <div class="car-img-wrap" id="car-img-wrap">
+        <img
+          src="car.png"
+          alt="Vehicle component explorer"
+          draggable="false"
+          id="car-photo"
+        />
 
-        <!-- Component selector buttons -->
-        <div class="component-btns">
-          <button class="comp-btn" data-hs="hs-engine"><span class="dot"></span>Engine</button>
-          <button class="comp-btn" data-hs="hs-battery"><span class="dot"></span>Battery</button>
-          <button class="comp-btn" data-hs="hs-fuel"><span class="dot"></span>Fuel System</button>
-          <button class="comp-btn" data-hs="hs-brakes-f"><span class="dot"></span>Front Brakes</button>
-          <button class="comp-btn" data-hs="hs-brakes-r"><span class="dot"></span>Rear Brakes</button>
-          <button class="comp-btn" data-hs="hs-suspension"><span class="dot"></span>Suspension</button>
-        </div>
-
-        <p class="canvas-hint" style="margin-top:0.7rem;"><span>Drag</span> to rotate &nbsp;·&nbsp; <span>Scroll</span> to zoom &nbsp;·&nbsp; <span>Select</span> a component to inspect</p>
-      </div><!-- close left column -->
-
-      <div class="info-panel">
-        <div class="panel-card" id="panel-card">
-          <div class="panel-empty" id="panel-empty">
-            <div class="panel-empty-icon">🔍</div>
-            <div class="panel-empty-text">Click a glowing hotspot on the vehicle to see a sample Carithm report for that component.</div>
+        <!-- 1 Engine (front hood centre) -->
+        <div class="hs" id="hs1" style="left:34%;top:32%" data-id="hs-engine">
+          <div class="hs-num">1</div>
+          <div class="hs-card" id="card1" style="top:110%;left:50%;transform-origin:top left;margin-left:-10px;">
+            <div class="hs-card-title">Engine</div>
+            <div class="hs-card-km">~14,000 km remaining</div>
+            <div class="hs-card-tags">
+              <span class="tag tag-amber">Oil Due Soon</span>
+              <span class="tag tag-blue">Medium</span>
+            </div>
           </div>
-          <div id="panel-content" style="display:none;flex-direction:column;flex:1;"></div>
         </div>
-      </div>
-    </div>
+
+        <!-- 2 Battery (front-left under hood) -->
+        <div class="hs" id="hs2" style="left:20%;top:40%" data-id="hs-battery">
+          <div class="hs-num">2</div>
+          <div class="hs-card" id="card2" style="top:110%;left:0;transform-origin:top left;">
+            <div class="hs-card-title">Battery</div>
+            <div class="hs-card-km">~31,000 km remaining</div>
+            <div class="hs-card-tags">
+              <span class="tag tag-green">Healthy</span>
+              <span class="tag tag-blue">Low Risk</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Front Brakes (front wheel) -->
+        <div class="hs" id="hs3" style="left:17%;top:68%" data-id="hs-brakes-f">
+          <div class="hs-num">3</div>
+          <div class="hs-card" id="card3" style="bottom:110%;left:0;transform-origin:bottom left;">
+            <div class="hs-card-title">Front Brakes</div>
+            <div class="hs-card-km">~8,000 km remaining</div>
+            <div class="hs-card-tags">
+              <span class="tag tag-red">Replace Soon</span>
+              <span class="tag tag-red">High Risk</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Rear Brakes (rear wheel) -->
+        <div class="hs" id="hs4" style="left:72%;top:70%" data-id="hs-brakes-r">
+          <div class="hs-num">4</div>
+          <div class="hs-card" id="card4" style="bottom:110%;right:0;transform-origin:bottom right;">
+            <div class="hs-card-title">Rear Brakes</div>
+            <div class="hs-card-km">~19,000 km remaining</div>
+            <div class="hs-card-tags">
+              <span class="tag tag-amber">Monitor</span>
+              <span class="tag tag-amber">Medium</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Fuel System (mid rear body) -->
+        <div class="hs" id="hs5" style="left:60%;top:48%" data-id="hs-fuel">
+          <div class="hs-num">5</div>
+          <div class="hs-card" id="card5" style="top:110%;right:0;transform-origin:top right;">
+            <div class="hs-card-title">Fuel System</div>
+            <div class="hs-card-km">~22,000 km remaining</div>
+            <div class="hs-card-tags">
+              <span class="tag tag-green">Good</span>
+              <span class="tag tag-blue">Low Risk</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Suspension (front wheel arch) -->
+        <div class="hs" id="hs6" style="left:25%;top:60%" data-id="hs-suspension">
+          <div class="hs-num">6</div>
+          <div class="hs-card" id="card6" style="bottom:110%;left:0;transform-origin:bottom left;">
+            <div class="hs-card-title">Suspension</div>
+            <div class="hs-card-km">~27,000 km remaining</div>
+            <div class="hs-card-tags">
+              <span class="tag tag-green">Healthy</span>
+              <span class="tag tag-blue">Low Risk</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end car-img-wrap -->
+      <p class="explorer-hint"><b>Click</b> any numbered box to inspect that component</p>
+    </div><!-- end explorer-wrap -->
   </div>
 </section>
 
@@ -819,59 +870,28 @@ const components = {
   }
 };
 
-// ─── PANEL RENDER ───
-
-function renderPanel(id) {
-  const d = components[id];
-  document.getElementById('panel-empty').style.display = 'none';
-  const content = document.getElementById('panel-content');
-  content.style.display = 'flex';
-  content.innerHTML = `
-    <div class="panel-header">
-      <div class="panel-icon">${d.icon}</div>
-      <div>
-        <div class="panel-name">${d.name}</div>
-        <div class="panel-cat">${d.cat}</div>
-      </div>
-    </div>
-    <div class="panel-body">
-      <p class="panel-desc">${d.desc}</p>
-      <div>
-        <div class="health-row">
-          <span class="health-lbl">Component Health</span>
-          <span class="health-val" style="color:${d.healthColor}">${d.health}%</span>
-        </div>
-        <div class="bar-track">
-          <div class="bar-fill" id="hbar" style="width:0%;background:${d.healthColor}"></div>
-        </div>
-      </div>
-      <div class="stats-grid">
-        <div class="stat-box"><div class="stat-lbl">Remaining km</div><div class="stat-val">${d.rul_km}</div></div>
-        <div class="stat-box"><div class="stat-lbl">Estimated Time</div><div class="stat-val">${d.rul_time}</div></div>
-        <div class="stat-box" style="grid-column:span 2"><div class="stat-lbl">Failure Risk</div><div class="stat-val" style="color:${d.riskColor}">${d.risk}</div></div>
-      </div>
-      <div class="driven-by">
-        <div class="driven-title">How This Was Calculated</div>
-        <div class="driven-text">${d.driven}</div>
-      </div>
-    </div>
-    <a href="mailto:carithmai29@gmail.com?subject=Report Request – ${d.name}" class="panel-cta">Get Full Report for This Vehicle →</a>
-  `;
-  requestAnimationFrame(() => requestAnimationFrame(() => {
-    const b = document.getElementById('hbar');
-    if (b) b.style.width = d.health + '%';
-  }));
-}
-
-// ─── Component buttons → panel ───
-let activeBtn = null;
-document.querySelectorAll('.comp-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    if (activeBtn) activeBtn.classList.remove('active');
-    btn.classList.add('active');
-    activeBtn = btn;
-    renderPanel(btn.dataset.hs);
+// ─── Hotspot card toggle ───
+let activeHs = null;
+document.querySelectorAll('.hs').forEach(hs => {
+  hs.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const card = hs.querySelector('.hs-card');
+    if (activeHs && activeHs !== hs) {
+      activeHs.classList.remove('active');
+      activeHs.querySelector('.hs-card').classList.remove('visible');
+    }
+    const isOpen = hs.classList.contains('active');
+    hs.classList.toggle('active', !isOpen);
+    card.classList.toggle('visible', !isOpen);
+    activeHs = isOpen ? null : hs;
   });
+});
+document.addEventListener('click', () => {
+  if (activeHs) {
+    activeHs.classList.remove('active');
+    activeHs.querySelector('.hs-card').classList.remove('visible');
+    activeHs = null;
+  }
 });
 
 // ─── FAQ ───
