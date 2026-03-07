@@ -152,7 +152,7 @@
       inset: 0;
       /* Double check relative path from Desktop where html lives */
       background: url('./car_doctor_ai_tool/car2.png') center/cover no-repeat;
-      filter: blur(4px);
+      filter: blur(12px) brightness(0.6);
       opacity: 0.8;
       /* Increased to ensure visibility */
       z-index: 1;
@@ -1695,6 +1695,7 @@
         style.innerHTML = `
           .hero::before {
             background: url('${explorerImg.src}') center/cover no-repeat !important;
+            filter: blur(12px) brightness(0.6) !important;
           }
         `;
         document.head.appendChild(style);
