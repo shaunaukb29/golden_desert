@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carithm: Predictive Vehicle Maintenance From Service History</title>
-  <meta name="description" content="Carithm turns your vehicle's service history into component health reports and next-interval predictions — engine-specific, no sensors required.">
-  <meta property="og:title" content="Carithm: Your Service History, Turned Into Predictions">
-  <meta property="og:description" content="Input engine number + service logs. Get part health % and next service interval km — calibrated to your exact engine. No OBD. No hardware.">
+ <title>Sensorless Predictive Maintenance for Cars | Carithm</title>
+ <meta name="description" content="Stop guessing vehicle health. Carithm uses exact engine numbers and service logs to predict maintenance for 15+ parts. No sensors, no hardware—precision intervals for UAE fleets.">
+<meta property="og:title" content="Carithm | Precision Vehicle Health via Engine Number">
+<meta property="og:description" content="Turn messy service logs into a precision health %. Calibrated to your exact engine code for the UAE climate. Know what fails before it breaks. 0% hardware burden.">
   <meta property="og:url" content="https://carithm.vercel.app">
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
@@ -525,8 +525,8 @@
 
     <p class="hero-sub">
       Input an <strong>engine number</strong> and your vehicle's <strong>past service logs</strong>.
-      Carithm returns a component-by-component health report with
-      <strong>next-interval km predictions</strong>—calibrated to your exact engine spec.
+      Carithm returns a component by component health report with
+      <strong>next interval km predictions with accordance to official manufacturer standards</strong> calibrated to your exact engine spec.
     </p>
 
     <div class="hero-actions">
@@ -536,8 +536,8 @@
 
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-n">50+</div>
-        <div class="hero-stat-l">Engine Configs</div>
+        <div class="hero-stat-n">500+</div>
+        <div class="hero-stat-l">Brand Engines</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-n">15+</div>
@@ -558,35 +558,33 @@
   <div class="hero-right">
     <div class="hero-explorer-label">Interactive Component Explorer</div>
     <div class="hero-explorer-title">CLICK ANY PART TO INSPECT</div>
-    <div class="hero-explorer-sub">Sample — Toyota 2GR-FE · 87,000 km · GCC climate</div>
+    <div class="hero-explorer-sub">Sample — Mercedes M276 V6 · 87,000 km · GCC climate</div>
 
     <div class="explorer-wrap" style="margin-top:0; padding: 0; background: transparent; border: none;">
       <div class="car-img-wrap" id="car-img-wrap">
 
   <div class="section-inner">
     <div class="section-label">The Process</div>
-    <h2 class="section-title">THREE INPUTS.<br/>ONE COMPLETE HEALTH REPORT.</h2>
-    <p class="section-sub">No installation. No telematics device. Just data that already exists about your vehicle.</p>
+    <h2 class="section-title">THREE INPUTS.<br/>ONE COMPLETE REPORT.</h2>
+    <p class="section-sub">No installation. No telematics device. Just data that already exists in your logs.</p>
 
     <div class="how-flow">
       <div class="how-step">
         <div class="how-step-num">01</div>
         <div class="how-step-title">Lock the Engine</div>
-        <div class="how-step-body">Enter the vehicle's engine number. This pins the exact engine variant—not just make/model—unlocking manufacturer-specific wear thresholds and part life intervals.</div>
+        <div class="how-step-body">Enter the vehicle's engine number. This pins the exact engine variant, not just make/model unlocking manufacturer-specific wear thresholds and part life intervals.</div>
         <div class="how-step-inputs">
-          <div class="input-chip">🔩 Engine Number (e.g. 2GR-FE)</div>
-          <div class="input-chip">📍 Region / Climate</div>
+          <div class="input-chip">🔩 Engine Number (e.g. 2GRFE123456)</div>
         </div>
         <div class="how-arrow"></div>
       </div>
 
       <div class="how-step">
         <div class="how-step-num">02</div>
-        <div class="how-step-title">Upload Service History</div>
-        <div class="how-step-body">Provide the vehicle's past service and replacement logs—what was replaced and at what mileage. This is the data that drives every prediction.</div>
+        <div class="how-step-title">Upload Service Logs</div>
+        <div class="how-step-body">Provide service centre or fleet service history logs. This is the data that drives every prediction.</div>
         <div class="how-step-inputs">
           <div class="input-chip">📋 Replacement logs + km</div>
-          <div class="input-chip">📅 Service dates</div>
           <div class="input-chip">🔧 Parts replaced</div>
         </div>
         <div class="how-arrow"></div>
@@ -595,7 +593,7 @@
       <div class="how-step">
         <div class="how-step-num">03</div>
         <div class="how-step-title">Get the Report</div>
-        <div class="how-step-body">Carithm calculates each component's current health % and exact next-service interval in km—based on that engine's spec sheet and what the history shows.</div>
+        <div class="how-step-body">Carithm calculates each component's current health % and exact next-service interval in km based on that engine's spec sheet and what the history shows.</div>
         <div class="how-step-inputs">
           <div class="input-chip">✅ Health % per component</div>
           <div class="input-chip">📏 Next interval in km</div>
@@ -611,7 +609,7 @@
   <div class="section-inner">
     <div class="section-label">Interactive Component Explorer</div>
     <h2 class="section-title">CLICK ANY PART.<br/>SEE WHAT CARITHM REPORTS.</h2>
-    <p class="section-sub">Sample output — Toyota 2GR-FE, 87,000 km, GCC climate. Click a numbered hotspot.</p>
+    <p class="section-sub">Sample output — Mercedes M276 V6, 87,000 km, GCC climate. Click a numbered hotspot.</p>
 
     <div class="explorer-wrap">
       <div class="car-img-wrap" id="car-img-wrap">
@@ -720,7 +718,7 @@
         <div class="how-step-body">Enter the vehicle's engine number. This pins the exact engine variant—not just make/model—unlocking manufacturer-specific wear thresholds and part life intervals.</div>
         <div class="how-step-inputs">
           <div class="input-chip">🔩 Engine Number (e.g. 2GR-FE)</div>
-          <div class="input-chip">📍 Region / Climate</div>
+          <div class="input-chip">📍 Region / Climate automatically set</div>
         </div>
         <div class="how-arrow"></div>
       </div>
@@ -997,3 +995,4 @@ document.querySelectorAll('.faq-item').forEach(item => {
 </script>
 </body>
 </html>
+
