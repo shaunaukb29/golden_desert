@@ -150,7 +150,6 @@
       content: '';
       position: absolute;
       inset: 0;
-      /* Double check relative path from Desktop where html lives */
       background: url('./car_doctor_ai_tool/car2.png') center/cover no-repeat;
       filter: blur(12px) brightness(0.6);
       opacity: 0.8;
@@ -1691,20 +1690,6 @@
       });
     });
 
-    // ─── Apply background image dynamically from base64 string to avoid local browser limitations ───
-    document.addEventListener('DOMContentLoaded', () => {
-      const explorerImg = document.querySelector('.car-img-wrap img');
-      if (explorerImg) {
-        const style = document.createElement('style');
-        style.innerHTML = `
-          .hero::before {
-            background: url('${explorerImg.src}') center/cover no-repeat !important;
-            filter: blur(12px) brightness(0.6) !important;
-          }
-        `;
-        document.head.appendChild(style);
-      }
-    });
 
     // ─── no Three.js needed — image-based explorer ───
   </script>
