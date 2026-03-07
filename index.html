@@ -18,8 +18,6 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TCCEJ6DCM1');</script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -246,54 +244,72 @@
       align-items: start;
       margin-top: 3rem;
     }
-    .canvas-wrap { position: relative; }
-    #car-canvas {
-      width: 100%; height: 500px;
-      display: block; border-radius: 16px;
+
+    /* ── Car image wrapper ── */
+    .car-wrap {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% 60%, #0e1e3a 0%, #05080f 100%);
       border: 1px solid var(--border);
-      cursor: grab;
+      user-select: none;
     }
-    #car-canvas:active { cursor: grabbing; }
+    .car-wrap img {
+      width: 100%;
+      display: block;
+      /* tint the white-bg car image to match our dark theme */
+      filter: brightness(0.92) contrast(1.05) saturate(1.1);
+      mix-blend-mode: luminosity;
+    }
+    /* dark gradient overlay so car sits on dark bg naturally */
+    .car-wrap::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 80%, rgba(5,8,15,0) 40%, rgba(5,8,15,0.7) 100%);
+      pointer-events: none; z-index: 1;
+    }
+
+    /* ── Hotspots ── */
+    .hotspot {
+      position: absolute;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 2px solid var(--blue);
+      background: rgba(45,124,246,0.25);
+      backdrop-filter: blur(6px);
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s, box-shadow .2s;
+      z-index: 10;
+    }
+    .hotspot::after {
+      content: ''; position: absolute;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 2px solid var(--blue);
+      animation: pulse-ring 2.4s ease infinite;
+    }
+    .hotspot:hover, .hotspot.active {
+      background: var(--blue);
+      box-shadow: 0 0 22px var(--blue-glow), 0 0 6px rgba(255,255,255,0.3);
+    }
+    .hs-dot { width: 9px; height: 9px; border-radius: 50%; background: #fff; flex-shrink: 0; }
+    .hs-label {
+      position: absolute; bottom: calc(100% + 8px); left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap; font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.09em; text-transform: uppercase; color: #fff;
+      background: rgba(5,8,15,0.92); border: 1px solid rgba(45,124,246,0.4);
+      padding: 0.22rem 0.6rem; border-radius: 5px;
+      pointer-events: none; opacity: 0; transition: opacity .18s;
+    }
+    .hotspot:hover .hs-label, .hotspot.active .hs-label { opacity: 1; }
+    @keyframes pulse-ring { 0%{transform:scale(1);opacity:.7} 100%{transform:scale(2.5);opacity:0} }
+
     .canvas-hint {
       text-align: center; font-size: 0.72rem; color: var(--muted);
       margin-top: 0.8rem; letter-spacing: 0.04em;
     }
     .canvas-hint span { color: var(--blue); }
-
-    /* hotspots */
-    .hotspot {
-      position: absolute;
-      width: 32px; height: 32px; border-radius: 50%;
-      border: 2px solid var(--blue);
-      background: rgba(45,124,246,0.2);
-      backdrop-filter: blur(4px);
-      cursor: pointer;
-      transform: translate(-50%, -50%);
-      display: flex; align-items: center; justify-content: center;
-      transition: all .2s; z-index: 10;
-    }
-    .hotspot::after {
-      content: ''; position: absolute;
-      width: 32px; height: 32px; border-radius: 50%;
-      border: 2px solid var(--blue);
-      animation: pulse-ring 2.2s ease infinite;
-    }
-    .hotspot:hover, .hotspot.active {
-      background: var(--blue);
-      box-shadow: 0 0 20px var(--blue-glow);
-    }
-    .hs-dot { width: 8px; height: 8px; border-radius: 50%; background: #fff; }
-    .hs-label {
-      position: absolute; bottom: calc(100% + 7px); left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap; font-size: 0.63rem; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase; color: #fff;
-      background: rgba(0,0,0,0.8); border: 1px solid var(--border);
-      padding: 0.2rem 0.55rem; border-radius: 4px;
-      pointer-events: none; opacity: 0; transition: opacity .2s;
-    }
-    .hotspot:hover .hs-label, .hotspot.active .hs-label { opacity: 1; }
-    @keyframes pulse-ring { 0%{transform:scale(1);opacity:.7} 100%{transform:scale(2.4);opacity:0} }
 
     /* info panel */
     .info-panel { position: sticky; top: 5rem; }
@@ -566,18 +582,32 @@
     <p class="section-sub">Sample output for a Toyota 2GR-FE, 87,000 km, GCC climate, city-heavy driving. Tap any hotspot.</p>
 
     <div class="explorer-layout">
-      <div class="canvas-wrap">
-        <canvas id="car-canvas"></canvas>
+      <div><!-- left column -->
+        <div class="car-wrap" id="car-wrap">
+        <!-- High-quality SUV from Unsplash (free, no attribution required) -->
+        <img
+          src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1200&q=85&auto=format&fit=crop"
+          alt="Vehicle component explorer"
+          id="car-img"
+          draggable="false"
+        />
 
-        <div class="hotspot" id="hs-engine"     style="left:54%;top:36%"><div class="hs-dot"></div><div class="hs-label">Engine</div></div>
-        <div class="hotspot" id="hs-battery"    style="left:41%;top:44%"><div class="hs-dot"></div><div class="hs-label">Battery</div></div>
-        <div class="hotspot" id="hs-brakes-f"   style="left:73%;top:73%"><div class="hs-dot"></div><div class="hs-label">Front Brakes</div></div>
-        <div class="hotspot" id="hs-brakes-r"   style="left:24%;top:73%"><div class="hs-dot"></div><div class="hs-label">Rear Brakes</div></div>
-        <div class="hotspot" id="hs-suspension" style="left:50%;top:78%"><div class="hs-dot"></div><div class="hs-label">Suspension</div></div>
-        <div class="hotspot" id="hs-fuel"       style="left:31%;top:38%"><div class="hs-dot"></div><div class="hs-label">Fuel System</div></div>
-
-        <p class="canvas-hint"><span>Drag</span> to rotate &nbsp;·&nbsp; <span>Scroll</span> to zoom &nbsp;·&nbsp; <span>Click hotspots</span> to inspect</p>
+        <!-- Hotspots — positioned as % of image dimensions (1200×800 approx) -->
+        <!-- Engine / Hood -->
+        <div class="hotspot" id="hs-engine"     style="left:38%;top:34%"><div class="hs-dot"></div><div class="hs-label">Engine</div></div>
+        <!-- Battery (front left under hood) -->
+        <div class="hotspot" id="hs-battery"    style="left:22%;top:42%"><div class="hs-dot"></div><div class="hs-label">Battery</div></div>
+        <!-- Fuel system (mid-body) -->
+        <div class="hotspot" id="hs-fuel"       style="left:60%;top:48%"><div class="hs-dot"></div><div class="hs-label">Fuel System</div></div>
+        <!-- Front brakes (front wheel) -->
+        <div class="hotspot" id="hs-brakes-f"   style="left:18%;top:72%"><div class="hs-dot"></div><div class="hs-label">Front Brakes</div></div>
+        <!-- Rear brakes (rear wheel) -->
+        <div class="hotspot" id="hs-brakes-r"   style="left:78%;top:74%"><div class="hs-dot"></div><div class="hs-label">Rear Brakes</div></div>
+        <!-- Suspension (under body centre) -->
+        <div class="hotspot" id="hs-suspension" style="left:50%;top:80%"><div class="hs-dot"></div><div class="hs-label">Suspension</div></div>
       </div>
+      <p class="canvas-hint" style="margin-top:0.8rem;"><span>Click hotspots</span> to inspect components</p>
+    </div><!-- close left column -->
 
       <div class="info-panel">
         <div class="panel-card" id="panel-card">
@@ -867,176 +897,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
   });
 });
 
-// ─────────────────────────────────────────────
-// THREE.JS REALISTIC CAR (MODEL VERSION)
-// ─────────────────────────────────────────────
-
-const canvas = document.getElementById('car-canvas');
-
-// ─────────────────────────────────────────────
-// RENDERER SETUP
-// ─────────────────────────────────────────────
-const renderer = new THREE.WebGLRenderer({
-  canvas,
-  antialias: true,
-  alpha: true
-});
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-renderer.outputEncoding = THREE.sRGBEncoding;
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.2;
-renderer.physicallyCorrectLights = true;
-
-// ─────────────────────────────────────────────
-// SCENE & CAMERA
-// ─────────────────────────────────────────────
-const scene = new THREE.Scene();
-scene.fog = new THREE.Fog(0x05080f, 18, 35);
-
-const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
-
-function resize() {
-  const w = canvas.clientWidth;
-  const h = canvas.clientHeight;
-
-  renderer.setSize(w, h, false);
-  camera.aspect = w / h;
-  camera.updateProjectionMatrix();
-}
-resize();
-window.addEventListener("resize", resize);
-
-// ─────────────────────────────────────────────
-// LIGHTING
-// ─────────────────────────────────────────────
-scene.add(new THREE.AmbientLight(0x8aadd4, 0.9));
-
-const sunLight = new THREE.DirectionalLight(0xffffff, 3);
-sunLight.position.set(6, 10, 5);
-sunLight.castShadow = true;
-sunLight.shadow.mapSize.set(2048, 2048);
-scene.add(sunLight);
-
-const fillLight = new THREE.DirectionalLight(0x3d6ecf, 1.5);
-fillLight.position.set(-5, 3, -4);
-scene.add(fillLight);
-
-const rimLight = new THREE.DirectionalLight(0xffffff, 1);
-rimLight.position.set(0, 2, -8);
-scene.add(rimLight);
-
-// ─────────────────────────────────────────────
-// FLOOR & GRID
-// ─────────────────────────────────────────────
-const floorGeo = new THREE.PlaneGeometry(30, 30);
-const floorMat = new THREE.MeshStandardMaterial({
-  color: 0x080d18,
-  roughness: 0.35,
-  metalness: 0.05
-});
-const floor = new THREE.Mesh(floorGeo, floorMat);
-floor.rotation.x = -Math.PI / 2;
-floor.position.y = -0.6;
-floor.receiveShadow = true;
-scene.add(floor);
-
-const gridHelper = new THREE.GridHelper(20, 30, 0x0d1f40, 0x0a1628);
-gridHelper.position.y = -0.598;
-scene.add(gridHelper);
-
-// ─────────────────────────────────────────────
-// CAR MODEL
-// ─────────────────────────────────────────────
-const car = new THREE.Group();
-scene.add(car);
-
-const loader = new THREE.GLTFLoader();
-loader.load(
-  "https://threejs.org/examples/models/gltf/ferrari.glb",
-  (gltf) => {
-    const model = gltf.scene;
-    model.scale.set(0.01, 0.01, 0.01);
-    model.position.y = 0;
-
-    // Apply realistic physical material
-    model.traverse((child) => {
-      if (child.isMesh) {
-        child.castShadow = true;
-        child.receiveShadow = true;
-        const oldMat = child.material;
-        child.material = new THREE.MeshPhysicalMaterial({
-          color: oldMat.color || new THREE.Color(0xffffff),
-          metalness: 0.9,
-          roughness: 0.25,
-          clearcoat: 1,
-          clearcoatRoughness: 0.05,
-          envMapIntensity: 1.5
-        });
-      }
-    });
-
-    car.add(model);
-  },
-  undefined,
-  (error) => console.error("Failed to load car model:", error)
-);
-
-car.position.y = 0.62;
-
-// ─────────────────────────────────────────────
-// CUSTOM ORBIT CONTROLS
-// ─────────────────────────────────────────────
-let drag = false;
-let px = 0, py = 0;
-let rotY = 0.55, rotX = 0.08;
-let zoom = 8.5;
-let autoRot = true;
-
-canvas.addEventListener("mousedown", (e) => {
-  drag = true;
-  autoRot = false;
-  px = e.clientX;
-  py = e.clientY;
-});
-window.addEventListener("mouseup", () => drag = false);
-window.addEventListener("mousemove", (e) => {
-  if (!drag) return;
-  rotY += (e.clientX - px) * 0.008;
-  rotX += (e.clientY - py) * 0.005;
-  rotX = Math.max(-0.35, Math.min(0.45, rotX));
-  px = e.clientX;
-  py = e.clientY;
-});
-canvas.addEventListener("wheel", (e) => {
-  zoom = Math.max(5.5, Math.min(14, zoom + e.deltaY * 0.012));
-});
-
-// ─────────────────────────────────────────────
-// ANIMATION LOOP
-// ─────────────────────────────────────────────
-function animate(t) {
-  requestAnimationFrame(animate);
-
-  if (autoRot) rotY += 0.0025;
-
-  car.rotation.y = rotY;
-  car.rotation.x = rotX;
-
-  camera.position.x = 0;
-  camera.position.z = zoom * 0.82;
-  camera.position.y = zoom * 0.26;
-  camera.lookAt(0, 0.72, 0);
-
-  // Floating motion
-  car.position.y = 0.62 + Math.sin(t * 0.0008) * 0.03;
-
-  renderer.render(scene, camera);
-}
-animate(0);
-</script>  
+// ─── no Three.js needed — image-based explorer ───
+</script>
 </body>
 </html>
-
-
