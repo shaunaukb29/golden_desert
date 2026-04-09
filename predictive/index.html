@@ -50,67 +50,84 @@
   </style>
 </head>
 
-<body class="min-h-screen text-slate-200 font-sans">
+<body class="min-h-screen text-slate-200 font-sans flex flex-col">
 
-  <header class="py-6 px-10 flex justify-between items-center border-b border-white/5">
-    <div class="text-2xl font-black tracking-tighter text-blue-500">CARITHM <span class="text-white text-sm font-light tracking-widest ml-2">PREDICTIVE</span></div>
-    <div class="flex gap-6 items-center">
-        <a href="/" class="text-sm text-slate-400 hover:text-white transition">Home</a>
-        <a href="https://wa.me/9715XXXXXXXX" class="hidden md:block text-sm bg-blue-600/20 text-blue-400 px-4 py-2 rounded-full border border-blue-500/30">B2B Sales</a>
-    </div>
+  <!-- Updated Navigation Container -->
+  <!-- Made sticky top-0 with 'glass' class so it matches the main page behavior -->
+  <header class="py-6 px-8 flex flex-wrap gap-4 justify-between items-center border-b border-white/5 sticky top-0 z-50 glass">
+    <a href="https://carithm.vercel.app/" class="text-2xl font-black tracking-tighter text-blue-500 flex items-center">
+        CARITHM <span class="text-white text-xs md:text-sm font-light tracking-widest ml-2 mt-1">PREDICTIVE</span>
+    </a>
+    
+    <nav class="flex gap-4 md:gap-6 items-center text-sm font-medium w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+        <a href="https://carithm.vercel.app/" class="whitespace-nowrap text-slate-400 hover:text-white transition">Home</a>
+        <a href="https://carithm.vercel.app/blog/" class="whitespace-nowrap text-slate-400 hover:text-white transition">Blog</a>
+        <a href="https://carithm.vercel.app/about/" class="whitespace-nowrap text-slate-400 hover:text-white transition">Diagnoser</a>
+        <a href="https://carithm.vercel.app/predictive" class="whitespace-nowrap text-white">UAE Car Valuation</a>
+        
+        <!-- B2B Sales button preserved from your original code -->
+        <a href="https://wa.me/9715XXXXXXXX" class="whitespace-nowrap hidden lg:block text-sm bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 px-4 py-2 rounded-full border border-blue-500/30 transition">B2B Sales</a>
+    </nav>
   </header>
 
-  <section class="pt-16 pb-10 px-6 text-center">
-    <div class="max-w-4xl mx-auto space-y-6">
-      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-tight">
-        The <span class="text-blue-500">Anti-Hype</span> Valuation
-      </h1>
-      <p class="text-lg text-slate-400 max-w-2xl mx-auto">
-        Market prices in the UAE are often inflated by 20%+. Our AI uses engineering depreciation curves to give you the <strong>Mechanical Value</strong> of your vehicle in AED.
-      </p>
-    </div>
-  </section>
+  <main class="flex-grow">
+    <section class="pt-16 pb-10 px-6 text-center">
+      <div class="max-w-4xl mx-auto space-y-6">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-tight">
+          The <span class="text-blue-500">Anti-Hype</span> Valuation
+        </h1>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Market prices in the UAE are often inflated by 20%+. Our AI uses engineering depreciation curves to give you the <strong>Mechanical Value</strong> of your vehicle in AED.
+        </p>
+      </div>
+    </section>
 
-  <section id="valuation-tool" class="max-w-6xl mx-auto px-6 pb-20">
-    <div class="glass rounded-2xl p-1 border-blue-500/20 mb-8 shadow-2xl">
-        <div class="bg-slate-900 rounded-xl overflow-hidden">
-            <iframe
-                src="https://x748873y-ghssy.hf.space"
-                frameborder="0"
-                width="100%"
-                height="1000"
-                style="min-height: 800px; border: none;"
-            ></iframe>
-        </div>
-    </div>
+    <section id="valuation-tool" class="max-w-6xl mx-auto px-6 pb-20">
+      <div class="glass rounded-2xl p-1 border-blue-500/20 mb-8 shadow-2xl">
+          <div class="bg-slate-900 rounded-xl overflow-hidden">
+              <iframe
+                  src="https://x748873y-ghssy.hf.space"
+                  frameborder="0"
+                  width="100%"
+                  height="1000"
+                  style="min-height: 800px; border: none;"
+              ></iframe>
+          </div>
+      </div>
 
-    <div class="glass rounded-2xl p-8 mb-12 border-green-500/20 text-center">
-        <h3 class="text-xl font-bold text-white mb-4">Is your car worth more than the market says?</h3>
-        <p class="text-slate-400 mb-6">Sellers are using Carithm reports to justify higher prices for mechanically sound vehicles.</p>
-        <a href="https://wa.me/?text=Check%20your%20car's%20real%20worth%20using%20Carithm's%20engineering%20valuation:%20https://carithm.vercel.app/predictive" 
-           class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition transform hover:scale-105">
-            <span>Share via WhatsApp</span>
-        </a>
-    </div>
+      <div class="glass rounded-2xl p-8 mb-12 border-green-500/20 text-center">
+          <h3 class="text-xl font-bold text-white mb-4">Is your car worth more than the market says?</h3>
+          <p class="text-slate-400 mb-6">Sellers are using Carithm reports to justify higher prices for mechanically sound vehicles.</p>
+          <a href="https://wa.me/?text=Check%20your%20car's%20real%20worth%20using%20Carithm's%20engineering%20valuation:%20https://carithm.vercel.app/predictive" 
+             class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition transform hover:scale-105">
+              <span>Share via WhatsApp</span>
+          </a>
+      </div>
 
-    <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <div class="space-y-4">
-            <h3 class="text-2xl font-bold text-white">Why Mechanical Value Matters</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-                Standard valuations in the UAE rely on "asking prices" from listing sites. These are influenced by seasonal trends and seller bias. 
-                <br><br>
-                Carithm's AI ignores the noise. We analyze the **MSRP** against specialized depreciation curves for GCC engines like the <strong>Toyota 1GR-FE (Land Cruiser)</strong> and <strong>Nissan VK56 (Patrol)</strong>. We factor in high-heat multipliers and dust-exposure wear that standard calculators miss.
-            </p>
-        </div>
-        <div class="glass rounded-xl p-6 border-white/5">
-            <h4 class="text-blue-400 font-bold mb-4 uppercase text-xs tracking-widest">B2B Fleet Audit</h4>
-            <p class="text-sm text-slate-300 mb-4">Managing more than 10 vehicles? Our enterprise system predicts failure for 15+ parts before they happen.</p>
-            <a href="/" class="text-white text-sm font-bold border-b border-blue-500 pb-1 hover:text-blue-400">Request Fleet Dashboard →</a>
-        </div>
-    </div>
-  </section>
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="space-y-4">
+              <h3 class="text-2xl font-bold text-white">Why Mechanical Value Matters</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                  Standard valuations in the UAE rely on "asking prices" from listing sites. These are influenced by seasonal trends and seller bias. 
+                  <br><br>
+                  Carithm's AI ignores the noise. We analyze the **MSRP** against specialized depreciation curves for GCC engines like the <strong>Toyota 1GR-FE (Land Cruiser)</strong> and <strong>Nissan VK56 (Patrol)</strong>. We factor in high-heat multipliers and dust-exposure wear that standard calculators miss.
+              </p>
+          </div>
+          <div class="glass rounded-xl p-6 border-white/5 flex flex-col justify-between">
+              <div>
+                  <h4 class="text-blue-400 font-bold mb-4 uppercase text-xs tracking-widest">B2B Fleet Audit</h4>
+                  <p class="text-sm text-slate-300 mb-4">Managing more than 10 vehicles? Our enterprise system predicts failure for 15+ parts before they happen.</p>
+              </div>
+              <div class="mt-4">
+                  <!-- Updated link to use absolute URL for consistency -->
+                  <a href="https://carithm.vercel.app/" class="inline-block text-white text-sm font-bold border-b border-blue-500 pb-1 hover:text-blue-400 transition-colors">Request Fleet Dashboard →</a>
+              </div>
+          </div>
+      </div>
+    </section>
+  </main>
 
-  <footer class="py-12 border-t border-white/5 text-center">
+  <footer class="py-12 border-t border-white/5 text-center mt-auto">
     <p class="text-xs text-slate-600 mb-2">© 2026 Carithm AI | Engineered in the UAE</p>
     <p class="text-[10px] text-slate-700 uppercase tracking-tighter">Powered by Predictive Multi-Component Logic</p>
   </footer>
