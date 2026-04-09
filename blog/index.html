@@ -1,24 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="canonical" href="https://carithm.vercel.app/blog/" />
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://carithm.vercel.app/sitemap_v4.xml" />
-
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TCCEJ6DCM1');
-</script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <title>DIY Car Repair Guides, OBD-II Code Fixes Blog</title>
-  <meta name="description" content="Carithm's official blog for expert DIY car repair guidance, OBD-II code troubleshooting (P0420, P0171, P0300), and AI-powered car maintenance tips. Read our trusted guides to save money." />
+  <!-- SEO: Search Engine Directives -->
+  <title>DIY Car Repair Guides & OBD-II Code Fixes | Carithm AI</title>
+  <meta name="description" content="Expert DIY car repair guidance and OBD-II troubleshooting (P0420, P0171). AI-powered maintenance tips for global car models, specialized for UAE heat & GCC specs." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="Carithm AI" />
+  
+  <!-- SEO: Canonical and Hreflang for Global Targeting -->
+  <link rel="canonical" href="https://carithm.vercel.app/blog/" />
+  <link rel="alternate" hreflang="en" href="https://carithm.vercel.app/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://carithm.vercel.app/blog/" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://carithm.vercel.app/sitemap.xml" />
+
+  <!-- SEO: Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://carithm.vercel.app/blog/" />
+  <meta property="og:title" content="Expert DIY Car Repair Guides | Carithm AI Blog" />
+  <meta property="og:description" content="AI-powered maintenance tips and OBD-II troubleshooting. Built for Middle East extremes, applicable to cars worldwide." />
+  <meta property="og:site_name" content="Carithm AI" />
+  <!-- Suggestion: Add an image URL for social media previews -->
+  <!-- <meta property="og:image" content="https://carithm.vercel.app/social-banner.jpg" /> -->
+
+  <!-- SEO: Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Expert DIY Car Repair Guides | Carithm AI Blog" />
+  <meta name="twitter:description" content="AI-powered maintenance tips and OBD-II troubleshooting. Built for Middle East extremes, applicable to cars worldwide." />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TCCEJ6DCM1');
+  </script>
+
+  <!-- SEO: Structured Data (JSON-LD) for Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://carithm.vercel.app/blog/"
+    },
+    "headline": "Expert Car Repair & AI Maintenance Guides",
+    "description": "Expert DIY car repair guidance and OBD-II troubleshooting using advanced AI algorithms.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Carithm AI",
+      "url": "https://carithm.vercel.app/"
+    }
+  }
+  </script>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
@@ -29,16 +67,15 @@
       --text: #ffffff;
       --link: #00c2ff;
       --accent: linear-gradient(90deg,#00c2ff,#00ffd5);
-      --font: 'Inter', sans-serif; /* RESTORED TO ORIGINAL: The font stack is now correct */
+      --font: 'Inter', sans-serif;
       --radius: 20px;
       --shadow: 0 12px 32px rgba(0,0,0,0.35);
       --transition: 0.3s ease-in-out;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-
-     a { text-decoration: none; color: var(--link); transition: color var(--transition); }
-     a:hover { color: #00ffd5; }
+    a { text-decoration: none; color: var(--link); transition: color var(--transition); }
+    a:hover { color: #00ffd5; }
 
     header.header {
       position: sticky;
@@ -51,18 +88,10 @@
       align-items: center;
       padding: 1rem 2rem;
       border-bottom: 1px solid rgba(255,255,255,0.05);
-      box-shadow: 0 1px 8px rgba(0,0,0,0.3);
     }
     .header .brand { font-weight: 700; font-size:1.3rem; color: var(--link); }
-    .header .nav-links a { margin-left:1.5rem; font-weight:500; }
-    @media(max-width:768px){
-      .header { flex-direction: column; align-items:flex-start; gap:0.5rem; }
-      .header .nav-links a { margin-left:0; margin-right:1rem; }
-    }
-
-    .logo-container { display:flex; justify-content:center; align-items:center; height:140px; margin-top:1rem; }
-    .logo-img { max-width:240px; height:auto; } 
-
+    .header .nav-links a { margin-left:1.5rem; font-weight:500; color: #94a3b8; }
+    .header .nav-links a:hover { color: #fff; }
 
     html, body {
       margin: 0;
@@ -71,14 +100,12 @@
       background-color: var(--bg);
       color: var(--text);
       scroll-behavior: smooth;
-      -webkit-font-smoothing: antialiased;
     }
 
     main {
       max-width: 1000px;
       margin: 3rem auto;
       padding: 2.5rem;
-      text-align: center;
       background: var(--card-bg);
       border-radius: var(--radius);
       backdrop-filter: blur(20px);
@@ -90,206 +117,99 @@
       font-size: 2.5rem;
       margin-bottom: 2rem;
       font-weight: 700;
+      text-align: center;
       background: var(--accent);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* Added for intro text alignment */
     .blog-intro {
-      max-width: 800px; 
+      max-width: 850px; 
       margin: 0 auto 3rem; 
       text-align: left;
     }
     .blog-intro p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: #d1d5db;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #94a3b8;
+      margin-bottom: 1.5rem;
     }
-    .blog-intro strong {
-        color: #fff;
-    }
-
+    .blog-intro strong { color: #fff; }
+    .blog-intro a { font-weight: 600; text-decoration: underline; }
 
     .post {
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.02);
+      margin-bottom: 1.5rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid rgba(255,255,255,0.05);
       border-radius: var(--radius);
-      transition: transform var(--transition), box-shadow var(--transition);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-align: left;
+      transition: all var(--transition);
     }
-
     .post:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      background: rgba(255, 255, 255, 0.03);
+      transform: translateY(-4px);
+      border-color: var(--link);
     }
+    .post h2 { margin: 0; font-size: 1.4rem; }
+    .description { margin-top: 0.75rem; color: #64748b; font-size: 0.95rem; }
 
-    .post a {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--link);
-      text-decoration: none;
-      transition: color var(--transition);
-    }
-
-    .post a:hover {
-      text-decoration: underline;
-      color: #00ffd5;
-    }
-
-    .description {
-      margin-top: 0.5rem;
-      font-size: 1.05rem;
-      color: #d1d5db;
-    }
-
-    .back-link {
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .back-link a {
-      color: #888;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: color var(--transition);
-    }
-
-    .back-link a:hover {
-      color: var(--link);
-      text-decoration: underline;
-    }
-
-    @media(max-width:768px){
-      main { margin:2rem 1rem; padding:2rem; }
-      h1 { font-size:2rem; }
-      .post a { font-size:1.2rem; }
-    }
-
-    @media(max-width:480px){
-      main { backdrop-filter:none; background: rgba(255,255,255,0.05); padding:1.5rem; }
-      h1 { font-size:1.8rem; }
-      .post a { font-size:1.1rem; }
-    }
-
-    @keyframes fadeIn { 
-      from{opacity:0; transform:translateY(12px);} 
-      to{opacity:1; transform:translateY(0);} 
-    }
+    .back-link { margin-top: 3rem; text-align: center; }
+    @keyframes fadeIn { from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);} }
   </style>
-
-
 </head>
 <body>
 
   <header class="header">
-    <a href="/" class="brand">Carithm</a>
-    <div class="nav-links">
-      <a href="/">Carithm AI</a>
-      <a href="/sale/">Datasets</a>
+    <a href="/" class="brand">CARITHM</a>
+    <nav class="nav-links">
+      <a href="/">AI Diagnosis</a>
+      <a href="/predictive/">Valuation</a>
       <a href="/blog/">Blog</a>
       <a href="/about/">About</a>
-      <a href="/predictive/">Carithm Predictive</a>
-    </div>
+    </nav>
   </header>
 
   <main>
-    <h1>Carithm's AI Car Repair & DIY Maintenance Guides</h1>
+    <h1>Expert Car Repair & AI Maintenance Guides</h1>
 
-    <div class="blog-intro">
-  <p>
-    Welcome to the Carithm AI Blog, the ultimate resource for DIY car repair, maintenance guidance, and AI-powered vehicle diagnostics. Whether you're a car enthusiast, a daily driver, or a professional looking to save time and money, our blog provides in-depth, step-by-step tutorials to help you take control of your vehicle’s health. Using the same advanced AI algorithms that power the Carithm virtual mechanic, we translate complex automotive data into actionable guidance. You’ll learn how to diagnose engine misfires, battery failures, fuel system issues, braking problems, transmission irregularities, and more. We also provide insights into decoding OBD-II trouble codes, including common codes like <strong>P0420, P0171, and P0300</strong>, explaining their causes, symptoms, and precise DIY repair strategies.
-  </p>
-
-  <p>
-    In addition to solving immediate car problems, our guides focus on preventive maintenance. With the predictive analytics from Carithm AI, you can anticipate part failures before they happen, saving money and avoiding inconvenient breakdowns. We cover every aspect of vehicle care—from understanding warning lights, interpreting error codes, and identifying subtle mechanical signs, to performing routine inspections on brakes, tires, timing belts, batteries, and fluid levels. Each article is designed to empower you with the knowledge and confidence to handle repairs safely, efficiently, and effectively.
-  </p>
-
-  <p>
-    Our blog doesn’t just teach repair techniques; it provides comprehensive guidance for a wide range of vehicles, including petrol, diesel, hybrid, and electric models. We understand that each vehicle type has unique maintenance challenges, and our posts break down these complexities so you can apply the right solutions. Whether you drive a compact city car, a rugged SUV, a hybrid commuter, or a fully electric vehicle, Carithm AI’s insights help you make informed decisions about repairs, replacements, and long-term upkeep.
-  </p>
-
-  <p>
-    Every post is carefully structured to include troubleshooting strategies, preventive care tips, and actionable steps. We explore symptoms such as rough idling, unusual engine noises, overheating, battery drain, fluid leaks, and check-engine light warnings. For instance, if your car shows misfire symptoms or reduced fuel efficiency, our guides explain how to test spark plugs, inspect fuel injectors, and analyze sensor data using both traditional diagnostic tools and AI recommendations. You’ll also find clear explanations of error codes, what they mean for your engine, and how to resolve them effectively.
-  </p>
-
-  <p>
-    Safety is a priority in every guide. We provide clear instructions on how to approach repairs without risking personal injury or causing additional damage to your vehicle. We highlight common pitfalls, safety checks, and proper tools needed for each task. Alongside these safety protocols, we show cost-effective solutions to keep repair budgets manageable, helping you avoid unnecessary mechanic visits for minor issues.
-  </p>
-
-  <p>
-    Carithm AI Blog also dives deep into seasonal maintenance tips. From preparing your car for winter or summer extremes to understanding how driving conditions impact wear and tear, our posts provide strategies to extend your vehicle’s lifespan. You’ll learn about tire care, brake checks, fluid replacement schedules, battery longevity practices, and engine health monitoring, all integrated with predictive insights from our AI system. This predictive approach helps identify potential failures in advance, reducing surprises and unexpected repair costs.
-  </p>
-
-  <p>
-    Our blog is more than just a technical guide. We also address practical ownership tips, such as evaluating used cars, understanding common failure points in high-mileage vehicles, and prioritizing maintenance to maximize resale value. Every article is crafted to give you actionable advice and real-world insights derived from thousands of automotive cases analyzed by Carithm AI. From novice drivers to experienced DIYers, there’s something valuable for everyone seeking smarter, data-driven car maintenance.
-  </p>
-
-  <p>
-    We consistently update the blog with the latest automotive technologies, trends, and innovations. As vehicles become more sophisticated, with hybrid and electric models on the rise, understanding complex systems is essential. Our AI-powered diagnostic tools complement these posts by providing real-time interpretations of vehicle data, helping you bridge the gap between technical complexity and practical action.
-  </p>
-
-  <p>
-    The Carithm AI Blog emphasizes clarity, practicality, and empowerment. Our goal is to make car maintenance and diagnostics approachable, eliminating the guesswork from repairs and reducing dependency on costly professional services. Through detailed illustrations, step-by-step instructions, and AI-assisted troubleshooting, our readers gain confidence in maintaining their vehicles independently. Whether it’s understanding why your check-engine light is on, preventing battery failures, or keeping your brakes in top condition, our blog provides a roadmap to proactive vehicle care.
-  </p>
-
-  <p>
-    In summary, the Carithm AI Blog is your go-to destination for all things related to DIY car repair, preventive maintenance, OBD-II code troubleshooting, and AI-enhanced diagnostic solutions. By combining traditional automotive knowledge with advanced AI insights, we empower you to take control of your car’s health, reduce repair costs, and extend the lifespan of your vehicle. Explore our posts, apply our step-by-step guides, and harness the predictive power of Carithm AI to drive smarter, safer, and more confidently every day.
-  </p>
-</div>
-
+    <article class="blog-intro">
+      <p>
+        Welcome to the Carithm AI Blog, the ultimate resource for <strong>DIY car repair</strong> and AI-powered vehicle diagnostics for all car makes and models worldwide. We use the same <a href="/">advanced AI algorithms</a> that power our virtual mechanic to translate complex automotive data into actionable guidance.
+      </p>
+      <p>
+        Learn how to diagnose <strong>P0420, P0171, and P0300 OBD-II codes</strong> globally, identify suspension faults in SUVs like the <strong>Nissan Patrol</strong>, and optimize AC performance for demanding environments like the <strong>UAE heat</strong>. Our guides combine predictive analytics with practical mechanical steps to save you time and costly garage visits.
+      </p>
+    </article>
 
     <div class="post">
-      <a href="/blog/battery_problems.html">
-        Car Battery Problems: Complete Guide to Diagnosis, Fixes, and Prevention
-      </a>
-      <div class="description">
-        Learn how to recognize, diagnose, and fix common car battery issues. Includes testing tips and preventive maintenance powered by Carithm AI.
-      </div>
+      <h2><a href="/blog/battery_problems.html">Car Battery Problems: Diagnosis & Heat Prevention Guide</a></h2>
+      <p class="description">Recognize, diagnose, and fix battery issues caused by extreme weather and heat. Includes universal testing tips powered by Carithm AI.</p>
     </div>
 
     <div class="post">
-      <a href="/blog/how-to-fix-common-car-problems.html">
-        Top 10 Most Common Car Problems and How to Fix Them
-      </a>
-      <div class="description">
-        Engine misfires, battery issues, and more — learn what’s going wrong and how to fix it using Carithm AI diagnostics.
-      </div>
+      <h2><a href="/blog/how-to-fix-common-car-problems.html">Top 10 Common Car Problems and DIY Fixes</a></h2>
+      <p class="description">From engine misfires to transmission jerks — learn to troubleshoot using our engineering-grade logic, applicable for all vehicle types.</p>
     </div>
 
     <div class="post">
-      <a href="/blog/things-to-check-before-buying-a-used-car.html">
-        Things to Check Before Buying a Used Car
-      </a>
-      <div class="description">
-        A must-read checklist to help you inspect and evaluate a used car before purchase — from engine condition to hidden damage.
-      </div>
+      <h2><a href="/blog/things-to-check-before-buying-a-used-car.html">Used Car Inspection Checklist: The Engineering Approach</a></h2>
+      <p class="description">How to evaluate engine condition and hidden mechanical wear before you buy in the GCC market and beyond.</p>
     </div>
 
     <div class="post">
-      <a href="/blog/diagnosing-car-engine-problems.html">
-        Diagnosing Car Engine Problems: A Smart Approach
-      </a>
-      <div class="description">
-        Learn how to identify and troubleshoot common engine problems using a smart AI-powered diagnostic method — save time and costs.
-      </div>
+      <h2><a href="/blog/diagnosing-car-engine-problems.html">Advanced Engine Diagnostics: A Sensorless Method</a></h2>
+      <p class="description">Identify internal engine problems through sounds and vibrations using our AI-powered diagnostic framework.</p>
     </div>
 
     <div class="back-link">
-      <a href="/">← Back to Carithm AI</a>
+      <a href="/">← Return to AI Diagnosis Tool</a>
     </div>
   </main>
 
- <footer style="text-align:center; padding:1rem 0; font-size:0.9rem; color:#555;">
-  <p>
-    © 2025 Carithm. All rights reserved.
-  </p>
-  <p>
-    All content on this website is original, maintained, and copyrighted.
-  </p>
-</footer>
-
+  <footer style="text-align:center; padding:3rem 0; color:#475569; font-size:0.8rem;">
+    <p>© 2026 Carithm AI. Global Engineering Research Platform.</p>
+  </footer>
 
 </body>
 </html>
