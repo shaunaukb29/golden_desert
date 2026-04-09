@@ -4,28 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <!-- SEO: Search Engine Directives -->
   <title>DIY Car Repair Guides & OBD-II Code Fixes | Carithm AI</title>
   <meta name="description" content="Expert DIY car repair guidance and OBD-II troubleshooting (P0420, P0171). AI-powered maintenance tips for global car models, specialized for UAE heat & GCC specs." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="author" content="Carithm AI" />
   
-  <!-- SEO: Canonical and Hreflang for Global Targeting -->
   <link rel="canonical" href="https://carithm.vercel.app/blog/" />
   <link rel="alternate" hreflang="en" href="https://carithm.vercel.app/blog/" />
   <link rel="alternate" hreflang="x-default" href="https://carithm.vercel.app/blog/" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://carithm.vercel.app/sitemap.xml" />
 
-  <!-- SEO: Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://carithm.vercel.app/blog/" />
   <meta property="og:title" content="Expert DIY Car Repair Guides | Carithm AI Blog" />
   <meta property="og:description" content="AI-powered maintenance tips and OBD-II troubleshooting. Built for Middle East extremes, applicable to cars worldwide." />
   <meta property="og:site_name" content="Carithm AI" />
-  <!-- Suggestion: Add an image URL for social media previews -->
-  <!-- <meta property="og:image" content="https://carithm.vercel.app/social-banner.jpg" /> -->
 
-  <!-- SEO: Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Expert DIY Car Repair Guides | Carithm AI Blog" />
   <meta name="twitter:description" content="AI-powered maintenance tips and OBD-II troubleshooting. Built for Middle East extremes, applicable to cars worldwide." />
@@ -39,7 +32,7 @@
     gtag('config', 'G-TCCEJ6DCM1');
   </script>
 
-  <!-- SEO: Structured Data (JSON-LD) for Rich Results -->
+  <!-- SEO Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -58,157 +51,103 @@
   }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
+  
   <style>
-    :root {
-      --bg: #0f1117;
-      --card-bg: rgba(255, 255, 255, 0.03);
-      --text: #ffffff;
-      --link: #00c2ff;
-      --accent: linear-gradient(90deg,#00c2ff,#00ffd5);
-      --font: 'Inter', sans-serif;
-      --radius: 20px;
-      --shadow: 0 12px 32px rgba(0,0,0,0.35);
-      --transition: 0.3s ease-in-out;
+    body { background: radial-gradient(circle at top, #0f172a 0%, #020617 100%); color: #f1f5f9; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    .accent-glow { color: #3b82f6; text-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+    .seo-text { color: #94a3b8; line-height: 1.8; }
+    
+    /* Elegant hover state for the blog cards */
+    .post-card { transition: all 0.3s ease-in-out; }
+    .post-card:hover { 
+      background: rgba(30, 41, 59, 0.8); 
+      transform: translateY(-4px); 
+      border-color: rgba(59, 130, 246, 0.4); 
+      box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2); 
     }
-
-    *, *::before, *::after { box-sizing: border-box; }
-    a { text-decoration: none; color: var(--link); transition: color var(--transition); }
-    a:hover { color: #00ffd5; }
-
-    header.header {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      backdrop-filter: blur(12px);
-      background-color: rgba(15,17,23,0.85);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .header .brand { font-weight: 700; font-size:1.3rem; color: var(--link); }
-    .header .nav-links a { margin-left:1.5rem; font-weight:500; color: #94a3b8; }
-    .header .nav-links a:hover { color: #fff; }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: var(--font);
-      background-color: var(--bg);
-      color: var(--text);
-      scroll-behavior: smooth;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 2.5rem;
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      backdrop-filter: blur(20px);
-      box-shadow: var(--shadow);
-      animation: fadeIn 0.8s ease;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      font-weight: 700;
-      text-align: center;
-      background: var(--accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .blog-intro {
-      max-width: 850px; 
-      margin: 0 auto 3rem; 
-      text-align: left;
-    }
-    .blog-intro p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #94a3b8;
-      margin-bottom: 1.5rem;
-    }
-    .blog-intro strong { color: #fff; }
-    .blog-intro a { font-weight: 600; text-decoration: underline; }
-
-    .post {
-      margin-bottom: 1.5rem;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.01);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: var(--radius);
-      text-align: left;
-      transition: all var(--transition);
-    }
-    .post:hover {
-      background: rgba(255, 255, 255, 0.03);
-      transform: translateY(-4px);
-      border-color: var(--link);
-    }
-    .post h2 { margin: 0; font-size: 1.4rem; }
-    .description { margin-top: 0.75rem; color: #64748b; font-size: 0.95rem; }
-
-    .back-link { margin-top: 3rem; text-align: center; }
-    @keyframes fadeIn { from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);} }
+    
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fadeIn { animation: fadeIn 0.8s ease forwards; }
   </style>
 </head>
-<body>
 
-  <header class="header">
-    <a href="/" class="brand">CARITHM</a>
-    <nav class="nav-links">
-      <a href="/">AI Diagnosis</a>
-      <a href="/predictive/">Valuation</a>
-      <a href="/blog/">Blog</a>
-      <a href="/about/">About</a>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Cloned UI Header: Active navigation updated to highlight Blog instead of Diagnosis -->
+  <header class="py-6 px-8 flex justify-between items-center border-b border-white/5 sticky top-0 z-50 glass">
+    <a href="/" class="text-2xl font-black tracking-tighter text-blue-500">CARITHM</a>
+    <nav class="flex gap-6 text-sm font-medium">
+        <a href="/" class="text-slate-400 hover:text-white transition">Diagnosis</a>
+        <a href="/predictive/" class="text-slate-400 hover:text-white transition">Valuation</a>
+        <a href="/blog/" class="text-white">Blog</a>
+        <a href="/about/" class="text-slate-400 hover:text-white transition">About</a>
     </nav>
   </header>
 
-  <main>
-    <h1>Expert Car Repair & AI Maintenance Guides</h1>
-
-    <article class="blog-intro">
-      <p>
-        Welcome to the Carithm AI Blog, the ultimate resource for <strong>DIY car repair</strong> and AI-powered vehicle diagnostics for all car makes and models worldwide. We use the same <a href="/">advanced AI algorithms</a> that power our virtual mechanic to translate complex automotive data into actionable guidance.
-      </p>
-      <p>
-        Learn how to diagnose <strong>P0420, P0171, and P0300 OBD-II codes</strong> globally, identify suspension faults in SUVs like the <strong>Nissan Patrol</strong>, and optimize AC performance for demanding environments like the <strong>UAE heat</strong>. Our guides combine predictive analytics with practical mechanical steps to save you time and costly garage visits.
-      </p>
-    </article>
-
-    <div class="post">
-      <h2><a href="/blog/battery_problems.html">Car Battery Problems: Diagnosis & Heat Prevention Guide</a></h2>
-      <p class="description">Recognize, diagnose, and fix battery issues caused by extreme weather and heat. Includes universal testing tips powered by Carithm AI.</p>
+  <main class="flex-grow max-w-4xl mx-auto w-full px-6 py-12 animate-fadeIn">
+    
+    <!-- Hero / Title Area -->
+    <div class="text-center mb-16 space-y-4">
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6">Expert Car Repair & <span class="accent-glow">AI Maintenance</span></h1>
+      
+      <div class="text-lg text-slate-300 max-w-3xl mx-auto space-y-6 text-left md:text-center">
+        <p class="seo-text">
+          Welcome to the Carithm AI Blog, the ultimate resource for <strong class="text-white">DIY car repair</strong> and AI-powered vehicle diagnostics for all car makes and models worldwide. We use the same <a href="/" class="text-blue-400 hover:text-blue-300 transition-colors font-semibold">advanced AI algorithms</a> that power our virtual mechanic to translate complex automotive data into actionable guidance.
+        </p>
+        <p class="seo-text">
+          Learn how to diagnose <strong class="text-white">P0420, P0171, and P0300 OBD-II codes</strong> globally, identify suspension faults, and optimize AC performance for demanding environments like the <strong class="text-white">UAE heat</strong>. Our guides combine predictive analytics with practical mechanical steps to save you time and costly garage visits.
+        </p>
+      </div>
     </div>
 
-    <div class="post">
-      <h2><a href="/blog/how-to-fix-common-car-problems.html">Top 10 Common Car Problems and DIY Fixes</a></h2>
-      <p class="description">From engine misfires to transmission jerks — learn to troubleshoot using our engineering-grade logic, applicable for all vehicle types.</p>
+    <!-- Blog Posts Grid -->
+    <div class="space-y-6">
+      <!-- 
+        NOTE: Upgraded the blog posts to wrap the ENTIRE card in the <a> tag.
+        This provides a much better, clickable UI experience on mobile/desktop. 
+      -->
+      <a href="/blog/battery_problems.html" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
+        <h2 class="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">Car Battery Problems: Diagnosis & Heat Prevention Guide</h2>
+        <p class="text-slate-400 mt-3 text-sm md:text-base leading-relaxed">Recognize, diagnose, and fix battery issues caused by extreme weather and heat. Includes universal testing tips powered by Carithm AI.</p>
+      </a>
+
+      <a href="/blog/how-to-fix-common-car-problems.html" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
+        <h2 class="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">Top 10 Common Car Problems and DIY Fixes</h2>
+        <p class="text-slate-400 mt-3 text-sm md:text-base leading-relaxed">From engine misfires to transmission jerks — learn to troubleshoot using our engineering-grade logic, applicable for all vehicle types.</p>
+      </a>
+
+      <a href="/blog/things-to-check-before-buying-a-used-car.html" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
+        <h2 class="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">Used Car Inspection Checklist: The Engineering Approach</h2>
+        <p class="text-slate-400 mt-3 text-sm md:text-base leading-relaxed">How to evaluate engine condition and hidden mechanical wear before you buy in the GCC market and beyond.</p>
+      </a>
+
+      <a href="/blog/diagnosing-car-engine-problems.html" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
+        <h2 class="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">Advanced Engine Diagnostics: A Sensorless Method</h2>
+        <p class="text-slate-400 mt-3 text-sm md:text-base leading-relaxed">Identify internal engine problems through sounds and vibrations using our AI-powered diagnostic framework.</p>
+      </a>
     </div>
 
-    <div class="post">
-      <h2><a href="/blog/things-to-check-before-buying-a-used-car.html">Used Car Inspection Checklist: The Engineering Approach</a></h2>
-      <p class="description">How to evaluate engine condition and hidden mechanical wear before you buy in the GCC market and beyond.</p>
+    <!-- Return Link Styled as a Pill -->
+    <div class="mt-20 mb-12 text-center">
+      <a href="/" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass border-blue-500/20 text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/40 transition-all text-xs font-bold tracking-widest uppercase">
+        <span>← Return to AI Diagnosis</span>
+      </a>
     </div>
 
-    <div class="post">
-      <h2><a href="/blog/diagnosing-car-engine-problems.html">Advanced Engine Diagnostics: A Sensorless Method</a></h2>
-      <p class="description">Identify internal engine problems through sounds and vibrations using our AI-powered diagnostic framework.</p>
-    </div>
-
-    <div class="back-link">
-      <a href="/">← Return to AI Diagnosis Tool</a>
-    </div>
   </main>
 
-  <footer style="text-align:center; padding:3rem 0; color:#475569; font-size:0.8rem;">
-    <p>© 2026 Carithm AI. Global Engineering Research Platform.</p>
+  <!-- Cloned UI Footer -->
+  <footer class="py-16 border-t border-white/5 text-center mt-auto">
+    <div class="text-xl font-black text-blue-500 mb-4 tracking-tighter uppercase">Carithm AI</div>
+    <p class="text-xs text-slate-600 tracking-widest uppercase mb-4">
+        Global Engineering Research Platform
+    </p>
+    <div class="text-[10px] text-slate-700 max-w-xl mx-auto px-6">
+        © 2026 Carithm AI. All rights reserved.
+    </div>
   </footer>
 
 </body>
