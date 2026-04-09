@@ -1,29 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <title>DIY Car Repair Guides & OBD-II Code Fixes | Carithm AI</title>
-  <meta name="description" content="Expert DIY car repair guidance and OBD-II troubleshooting (P0420, P0171). AI-powered maintenance tips for global car models, specialized for UAE heat & GCC specs." />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  
-  <link rel="canonical" href="https://carithm.vercel.app/blog/" />
-  <link rel="alternate" hreflang="en" href="https://carithm.vercel.app/blog/" />
-  <link rel="alternate" hreflang="x-default" href="https://carithm.vercel.app/blog/" />
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://carithm.vercel.app/sitemap.xml" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://carithm.vercel.app/blog/" />
-  <meta property="og:title" content="Expert DIY Car Repair Guides | Carithm AI Blog" />
-  <meta property="og:description" content="AI-powered maintenance tips and OBD-II troubleshooting. Built for Middle East extremes, applicable to cars worldwide." />
-  <meta property="og:site_name" content="Carithm AI" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Expert DIY Car Repair Guides | Carithm AI Blog" />
-  <meta name="twitter:description" content="AI-powered maintenance tips and OBD-II troubleshooting. Built for Middle East extremes, applicable to cars worldwide." />
-
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -32,121 +9,192 @@
     gtag('config', 'G-TCCEJ6DCM1');
   </script>
 
-  <!-- SEO Schema Markup -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- NEW: SEO Indexing & Canonical Link -->
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://carithm.vercel.app/" />
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" crossorigin="anonymous"></script>
+
+  <title>Free AI Car Diagnostic Tool | Instant Repair Guide & UAE Roadside Fixes</title>
+  <meta name="title" content="Free AI Car Diagnostic Tool | Instant Repair Guide & UAE Roadside Fixes">
+  <meta name="description" content="Identify car problems instantly. Get engineering-grade reports on engine vibrations, brake squeaks, and AC failure. Specialized for UAE heat and GCC specs.">
+  <meta name="keywords" content="car repair guide, AI car diagnostic, engine vibration fix, UAE car maintenance, Nissan Patrol AC fix, Toyota Land Cruiser problems, roadside assistance AI, why is my car shaking, car symptom checker">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://carithm.vercel.app/">
+  <meta property="og:title" content="Stop Guessing Your Car Problems | Free AI Diagnosis Engine">
+  <meta property="og:description" content="Describe the symptom. Get the fix. Instant AI diagnostics and temporary solutions for UAE drivers.">
+  <meta property="og:image" content="https://carithm.vercel.app/preview.png">
+  <meta property="og:locale" content="en_AE">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Stop Guessing Your Car Problems | Free AI Diagnosis Engine">
+  <meta property="twitter:description" content="Instant engineering-grade car diagnostics for sounds, smells, and vibrations.">
+
+  <!-- NEW: JSON-LD Schema Markup for Web Application -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Blog",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://carithm.vercel.app/blog/"
-    },
-    "headline": "Expert Car Repair & AI Maintenance Guides",
-    "description": "Expert DIY car repair guidance and OBD-II troubleshooting using advanced AI algorithms.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Carithm AI",
-      "url": "https://carithm.vercel.app/"
+    "@type": "WebApplication",
+    "name": "Carithm AI Diagnosis Engine",
+    "url": "https://carithm.vercel.app/",
+    "description": "Free AI car diagnostic tool providing engineering-grade reports and temporary roadside solutions, specialized for UAE and GCC vehicles.",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "AED"
     }
   }
   </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
   
   <style>
     body { background: radial-gradient(circle at top, #0f172a 0%, #020617 100%); color: #f1f5f9; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
     .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
     .accent-glow { color: #3b82f6; text-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+    .tool-frame { width: 100%; height: 850px; border-radius: 24px; border: 1px solid rgba(59, 130, 246, 0.2); overflow: hidden; background: #000; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+    iframe { width: 100%; height: 100%; border: none; }
     .seo-text { color: #94a3b8; line-height: 1.8; }
-    
-    /* Elegant hover state for the blog cards */
-    .post-card { transition: all 0.3s ease-in-out; }
-    .post-card:hover { 
-      background: rgba(30, 41, 59, 0.8); 
-      transform: translateY(-4px); 
-      border-color: rgba(59, 130, 246, 0.4); 
-      box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2); 
-    }
-    
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-fadeIn { animation: fadeIn 0.8s ease forwards; }
+    .keyword-pill { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; color: #60a5fa; transition: all 0.3s; }
+    .keyword-pill:hover { background: rgba(59, 130, 246, 0.2); transform: translateY(-2px); }
   </style>
 </head>
 
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen">
 
-  <!-- Cloned UI Header: Active navigation updated to highlight Blog instead of Diagnosis -->
   <header class="py-6 px-8 flex justify-between items-center border-b border-white/5 sticky top-0 z-50 glass">
-    <a href="/" class="text-2xl font-black tracking-tighter text-blue-500">CARITHM</a>
+    <div class="text-2xl font-black tracking-tighter text-blue-500">CARITHM</div>
     <nav class="flex gap-6 text-sm font-medium">
-        <a href="/" class="text-slate-400 hover:text-white transition">Diagnosis</a>
-        <a href="/predictive/" class="text-slate-400 hover:text-white transition">Valuation</a>
-        <a href="/blog/" class="text-white">Blog</a>
-        <a href="/about/" class="text-slate-400 hover:text-white transition">About</a>
+        <a href="/" class="text-white">Diagnosis</a>
+        <a href="/predictive" class="text-slate-400 hover:text-white transition">Valuation</a>
     </nav>
   </header>
 
-  <main class="flex-grow max-w-4xl mx-auto w-full px-6 py-12 animate-fadeIn">
+  <main class="max-w-6xl mx-auto px-6 py-12">
     
-    <!-- Hero / Title Area -->
     <div class="text-center mb-16 space-y-4">
-      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6">Expert Car Repair & <span class="accent-glow">AI Maintenance</span></h1>
-      
-      <div class="text-lg text-slate-300 max-w-3xl mx-auto space-y-6 text-left md:text-center">
+      <!-- SEO FIX: H1 tag now includes the main keywords -->
+      <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight text-white">AI Car <span class="accent-glow">Diagnosis Engine</span></h1>
+      <p class="text-xl text-slate-400 max-w-3xl mx-auto italic">
+        "Is it safe to drive?"
+      </p>
+      <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+        Describe your vehicle's <strong>sounds, smells, or vibrations</strong>. Get an instant engineering report with permanent fixes and temporary roadside solutions.
+      </p>
+    </div>
+
+    <!-- The rest of your content remains identical below... -->
+    <section class="mb-16">
+      <div class="flex flex-wrap gap-4 mb-8 justify-center">
+        <div class="flex items-center gap-2 px-4 py-2 rounded-full glass border-blue-500/20">
+            <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-blue-400">Mechanical AI Active</span>
+        </div>
+        <div class="flex items-center gap-2 px-4 py-2 rounded-full glass border-green-500/20">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-green-400">GCC Spec Optimized</span>
+        </div>
+      </div>
+
+      <div class="tool-frame">
+        <iframe 
+          src="https://huggingface.co/embed/CastBison/golden_desert/+" 
+          title="Carithm AI Car Diagnostic Interface"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <div class="mb-20 text-center">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5227538935323998" data-ad-slot="YOUR_AD_SLOT_1" data-ad-format="auto"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="mb-24 py-12 border-y border-white/5">
+        <!-- SEO FIX: Added keyword to H2 -->
+        <h2 class="text-2xl font-bold text-white mb-8 text-center uppercase tracking-widest">Common Car Symptoms We Diagnose</h2>
+        <div class="flex flex-wrap justify-center gap-3">
+            <span class="keyword-pill">Engine Shaking at Idle</span>
+            <span class="keyword-pill">Squeaking Brakes at Low Speed</span>
+            <span class="keyword-pill">AC Blowing Hot Air</span>
+            <span class="keyword-pill">Clicking Sound When Turning</span>
+            <span class="keyword-pill">Transmission Jerking (1st to 2nd)</span>
+            <span class="keyword-pill">Burning Oil Smell</span>
+            <span class="keyword-pill">Vibration Above 100km/h</span>
+            <span class="keyword-pill">Coolant Leak Detection</span>
+            <span class="keyword-pill">White Smoke from Exhaust</span>
+            <span class="keyword-pill">Hard Gear Shifts</span>
+            <span class="keyword-pill">Nissan Patrol Shutter Fix</span>
+            <span class="keyword-pill">Toyota Land Cruiser AC Logic</span>
+        </div>
+    </section>
+
+    <div class="grid md:grid-cols-2 gap-16 mb-20">
+      <div class="space-y-6">
+        <!-- SEO FIX: Added keyword to H2 -->
+        <h2 class="text-3xl font-bold text-white">How to Use the Diagnostic Engine</h2>
         <p class="seo-text">
-          Welcome to the Carithm AI Blog, the ultimate resource for <strong class="text-white">DIY car repair</strong> and AI-powered vehicle diagnostics for all car makes and models worldwide. We use the same <a href="/" class="text-blue-400 hover:text-blue-300 transition-colors font-semibold">advanced AI algorithms</a> that power our virtual mechanic to translate complex automotive data into actionable guidance.
+            Our AI uses <strong>symptom-to-solution mapping</strong>. Instead of just giving you a generic fault code, it explains the <i>why</i> behind the failure.
         </p>
+        <div class="space-y-6">
+            <div class="flex gap-4">
+                <div class="text-blue-500 font-black text-2xl">01.</div>
+                <div>
+                    <h4 class="text-white font-semibold">Describe Exactly What You Hear</h4>
+                    <p class="text-sm text-slate-500">Ex: "High-pitched whistle when accelerating" or "Metal grinding when I hit a bump."</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <div class="text-blue-500 font-black text-2xl">02.</div>
+                <div>
+                    <h4 class="text-white font-semibold">Identify the Core Failure</h4>
+                    <p class="text-sm text-slate-500">The AI identifies the specific mechanical component (e.g., Turbocharger, Brake Caliper, or Control Arm).</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <div class="text-blue-500 font-black text-2xl">03.</div>
+                <div>
+                    <h4 class="text-white font-semibold">Roadside Temporary Fixes</h4>
+                    <p class="text-sm text-slate-500">Crucial for UAE drivers: Is the car safe to drive to the garage, or should you stop immediately?</p>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="glass p-10 rounded-3xl space-y-6 border-blue-500/10">
+        <h3 class="text-2xl font-bold text-white">Why Sensorless Intelligence?</h3>
         <p class="seo-text">
-          Learn how to diagnose <strong class="text-white">P0420, P0171, and P0300 OBD-II codes</strong> globally, identify suspension faults, and optimize AC performance for demanding environments like the <strong class="text-white">UAE heat</strong>. Our guides combine predictive analytics with practical mechanical steps to save you time and costly garage visits.
+            Carithm leverages vehicle architecture data to provide diagnostics without needing an OBD-II scanner. 
+            <br><br>
+            By accounting for <strong>UAE environmental stressors</strong>—such as sand ingress, 50°C+ ambient temperatures, and high-speed highway cruising—our AI provides regional accuracy that generic models cannot match.
         </p>
+        <div class="pt-6">
+            <a href="mailto:carithmai29@gmail.com" class="text-blue-400 font-bold border-b border-blue-500 pb-1 hover:text-blue-300 transition uppercase text-xs tracking-widest">Contact Engineering Support →</a>
+        </div>
       </div>
     </div>
 
-    <!-- Blog Posts Grid -->
-    <div class="space-y-6">
-      <!-- 
-        NOTE: Upgraded the blog posts to wrap the ENTIRE card in the <a> tag.
-        This provides a much better, clickable UI experience on mobile/desktop. 
-      -->
-      <a href="/blog/battery_problems.html" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
-        <h2 class="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">Car Battery Problems: Diagnosis & Heat Prevention Guide</h2>
-        <p class="text-slate-400 mt-3 text-sm md:text-base leading-relaxed">Recognize, diagnose, and fix battery issues caused by extreme weather and heat. Includes universal testing tips powered by Carithm AI.</p>
-      </a>
-
-      <a href="/blog/how-to-fix-common-car-problems.html" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
-        <h2 class="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">Top 10 Common Car Problems and DIY Fixes</h2>
-        <p class="text-slate-400 mt-3 text-sm md:text-base leading-relaxed">From engine misfires to transmission jerks — learn to troubleshoot using our engineering-grade logic, applicable for all vehicle types.</p>
-      </a>
-
-      <a href="/blog/things-to-check-before-buying-a-used-car.html" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
-        <h2 class="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">Used Car Inspection Checklist: The Engineering Approach</h2>
-        <p class="text-slate-400 mt-3 text-sm md:text-base leading-relaxed">How to evaluate engine condition and hidden mechanical wear before you buy in the GCC market and beyond.</p>
-      </a>
-
-      <a href="/blog/diagnosing-car-engine-problems.html" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
-        <h2 class="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">Advanced Engine Diagnostics: A Sensorless Method</h2>
-        <p class="text-slate-400 mt-3 text-sm md:text-base leading-relaxed">Identify internal engine problems through sounds and vibrations using our AI-powered diagnostic framework.</p>
-      </a>
-    </div>
-
-    <!-- Return Link Styled as a Pill -->
-    <div class="mt-20 mb-12 text-center">
-      <a href="/" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass border-blue-500/20 text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/40 transition-all text-xs font-bold tracking-widest uppercase">
-        <span>← Return to AI Diagnosis</span>
-      </a>
+    <div class="mb-16 text-center">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5227538935323998" data-ad-slot="YOUR_AD_SLOT_2" data-ad-format="auto"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
   </main>
 
-  <!-- Cloned UI Footer -->
-  <footer class="py-16 border-t border-white/5 text-center mt-auto">
+  <footer class="py-16 border-t border-white/5 text-center">
     <div class="text-xl font-black text-blue-500 mb-4 tracking-tighter uppercase">Carithm AI</div>
     <p class="text-xs text-slate-600 tracking-widest uppercase mb-4">
-        Global Engineering Research Platform
+        Sensorless Vehicle Intelligence | UAE Engineering
     </p>
     <div class="text-[10px] text-slate-700 max-w-xl mx-auto px-6">
-        © 2026 Carithm AI. All rights reserved.
+        Disclaimer: This tool provides AI-generated mechanical advice for informational purposes. Always consult a certified technician for critical safety repairs.
     </div>
   </footer>
 
