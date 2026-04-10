@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -47,26 +46,29 @@
     .glow-button { box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); transition: all 0.3s ease; }
     .glow-button:hover { box-shadow: 0 0 30px rgba(59, 130, 246, 0.7); transform: translateY(-2px); }
     iframe { border-radius: 12px; background: #0d0d0d; }
+    .accent-glow { color: #3b82f6; text-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
 
 <body class="min-h-screen text-slate-200 font-sans flex flex-col">
 
-  <!-- Updated Navigation Container -->
-  <!-- Made sticky top-0 with 'glass' class so it matches the main page behavior -->
   <header class="py-6 px-8 flex flex-wrap gap-4 justify-between items-center border-b border-white/5 sticky top-0 z-50 glass">
     <a href="https://carithm.vercel.app/" class="text-2xl font-black tracking-tighter text-blue-500 flex items-center">
         CARITHM <span class="text-white text-xs md:text-sm font-light tracking-widest ml-2 mt-1">VALUATOR</span>
     </a>
     
-    <nav class="flex gap-4 md:gap-6 items-center text-sm font-medium w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+    <nav class="flex gap-4 md:gap-6 items-center text-sm font-medium w-full md:w-auto overflow-x-auto pb-2 md:pb-0 no-scrollbar">
         <a href="https://carithm.vercel.app/" class="whitespace-nowrap text-slate-400 hover:text-white transition">Home</a>
         <a href="https://carithm.vercel.app/blog/" class="whitespace-nowrap text-slate-400 hover:text-white transition">Blog</a>
         <a href="https://carithm.vercel.app/about/" class="whitespace-nowrap text-slate-400 hover:text-white transition">Diagnoser</a>
         <a href="https://carithm.vercel.app/predictive" class="whitespace-nowrap text-white">UAE Car Valuation</a>
         
-        <!-- B2B Sales button preserved from your original code -->
-        <a href="https://wa.me/9715XXXXXXXX" class="whitespace-nowrap hidden lg:block text-sm bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 px-4 py-2 rounded-full border border-blue-500/30 transition">B2B Sales</a>
+        <a href="https://wa.me/9715XXXXXXXX" class="whitespace-nowrap hidden lg:block text-sm bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 px-4 py-2 rounded-full border border-blue-500/30 transition shadow-lg shadow-blue-500/10">
+          <span class="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse mr-2"></span>
+          B2B Sales
+        </a>
     </nav>
   </header>
 
@@ -119,10 +121,43 @@
                   <p class="text-sm text-slate-300 mb-4">Managing more than 10 vehicles? Our enterprise system predicts failure for 15+ parts before they happen.</p>
               </div>
               <div class="mt-4">
-                  <!-- Updated link to use absolute URL for consistency -->
                   <a href="https://carithm.vercel.app/" class="inline-block text-white text-sm font-bold border-b border-blue-500 pb-1 hover:text-blue-400 transition-colors">Request Fleet Dashboard →</a>
               </div>
           </div>
+      </div>
+    </section>
+
+    <section id="research" class="py-20 px-6 border-t border-white/5 relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/5 rounded-full blur-[100px] pointer-events-none" aria-hidden="true"></div>
+      <div class="max-w-6xl mx-auto">
+        <div class="flex items-center gap-4 mb-12">
+          <h2 class="text-3xl font-black text-white tracking-tighter uppercase italic">Engineering Research</h2>
+          <div class="h-px flex-grow bg-gradient-to-r from-blue-500/50 to-transparent"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <a href="/how-carithm-engineers-fleet-health" class="glass group p-8 rounded-[2rem] border border-white/5 hover:border-blue-500/30 transition-all duration-500 flex flex-col justify-between min-h-[320px] relative overflow-hidden">
+            <div class="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/5 transition-colors duration-500"></div>
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-6">
+                <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase tracking-widest rounded-md border border-blue-500/20">Paper 01</span>
+                <span class="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Asset Depletion</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white leading-tight mb-4 group-hover:text-blue-400 transition-colors">Operational Stress & <br><span class="accent-glow">Designed Life</span></h3>
+              <p class="text-slate-400 text-sm leading-relaxed max-w-sm">How we quantify engine asset depletion across 500+ architectures without physical sensors.</p>
+            </div>
+            <div class="relative z-10 mt-8 flex items-center justify-between border-t border-white/5 pt-6">
+              <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest group-hover:text-slate-300 transition-colors">Read Full Research</span>
+              <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </div>
+          </a>
+          <div class="glass p-8 rounded-[2rem] border border-dashed border-white/5 opacity-40 flex flex-col justify-center items-center text-center">
+            <p class="text-slate-600 text-xs font-bold uppercase tracking-widest">Future Research <br>Incoming</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
