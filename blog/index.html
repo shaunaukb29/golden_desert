@@ -4,18 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <title>DIY Car Repair Guides & OBD-II Code Fixes | Carithm AI</title>
+  <title>DIY Car Repair Guides & OBD-II Code Fixes | Carithm AI Blog</title>
   <meta name="description" content="Expert DIY car repair guidance and OBD-II troubleshooting (P0420, P0171). AI-powered maintenance tips for global car models, specialized for UAE heat & GCC specs." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   
-  <link rel="canonical" href="https://carithm.vercel.app/" />
-  <link rel="alternate" hreflang="en" href="https://carithm.vercel.app/" />
-  <link rel="alternate" hreflang="x-default" href="https://carithm.vercel.app/" />
+  <!-- IMPORTANT: If this is your BLOG index page, the canonical MUST include /blog/ -->
+  <link rel="canonical" href="https://carithm.vercel.app/blog/" />
+  <link rel="alternate" hreflang="en" href="https://carithm.vercel.app/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://carithm.vercel.app/blog/" />
 
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://carithm.vercel.app/sitemap_v4.xml" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://carithm.vercel.app/" />
+  <meta property="og:type" content="blog" />
+  <meta property="og:url" content="https://carithm.vercel.app/blog/" />
   <meta property="og:title" content="Expert DIY Car Repair Guides | Carithm AI Blog" />
   <meta property="og:description" content="AI-powered maintenance tips and OBD-II troubleshooting. Built for Middle East extremes, applicable to cars worldwide." />
   <meta property="og:site_name" content="Carithm AI" />
@@ -24,6 +25,7 @@
   <meta name="twitter:title" content="Expert DIY Car Repair Guides | Carithm AI Blog" />
   <meta name="twitter:description" content="AI-powered maintenance tips and OBD-II troubleshooting. Built for Middle East extremes, applicable to cars worldwide." />
 
+  <!-- Google Tag Manager -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -32,21 +34,59 @@
     gtag('config', 'G-TCCEJ6DCM1');
   </script>
 
+  <!-- ADVANCED SEO: Added ItemList & Blog Schema to force Google to crawl the individual articles -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://carithm.vercel.app/"
-    },
-    "headline": "Expert Car Repair & AI Maintenance Guides",
-    "description": "Expert DIY car repair guidance and OBD-II troubleshooting using advanced AI algorithms.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Carithm AI",
-      "url": "https://carithm.vercel.app/"
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://carithm.vercel.app/#website",
+        "url": "https://carithm.vercel.app/",
+        "name": "Carithm AI",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Carithm AI"
+        }
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://carithm.vercel.app/blog/#webpage",
+        "url": "https://carithm.vercel.app/blog/",
+        "name": "Expert Car Repair & AI Maintenance Guides",
+        "description": "Expert DIY car repair guidance and OBD-II troubleshooting using advanced AI algorithms.",
+        "isPartOf": { "@id": "https://carithm.vercel.app/#website" },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "url": "https://carithm.vercel.app/blog/battery_problems.html",
+              "name": "Car Battery Problems: Diagnosis & Heat Prevention Guide"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "url": "https://carithm.vercel.app/blog/how-to-fix-common-car-problems.html",
+              "name": "Top 10 Common Car Problems and DIY Fixes"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "url": "https://carithm.vercel.app/blog/things-to-check-before-buying-a-used-car.html",
+              "name": "Used Car Inspection Checklist: The Engineering Approach"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "url": "https://carithm.vercel.app/blog/diagnosing-car-engine-problems.html",
+              "name": "Advanced Engine Diagnostics: A Sensorless Method"
+            }
+          ]
+        }
+      }
+    ]
   }
   </script>
 
@@ -75,61 +115,61 @@
 <body class="min-h-screen flex flex-col">
 
   <header class="py-6 px-8 flex justify-between items-center border-b border-white/5 sticky top-0 z-50 glass">
-    <a href="https://carithm.vercel.app/" class="text-2xl font-black tracking-tighter text-blue-500">CARITHM</a>
-    <nav class="flex gap-6 text-sm font-medium">
+    <a href="https://carithm.vercel.app/" class="text-2xl font-black tracking-tighter text-blue-500" title="Carithm AI Homepage">CARITHM</a>
+    <nav class="flex gap-6 text-sm font-medium" aria-label="Main Navigation">
         <a href="https://carithm.vercel.app/" class="text-slate-400 hover:text-white transition">Home</a>
-        <a href="https://carithm.vercel.app/blog/" class="text-white">Blog</a>
+        <a href="https://carithm.vercel.app/blog/" class="text-white" aria-current="page">Blog</a>
         <a href="https://carithm.vercel.app/about/" class="text-slate-400 hover:text-white transition">Diagnoser</a>
         <a href="https://carithm.vercel.app/predictive" class="text-slate-400 hover:text-white transition">UAE Car Valuation</a>
     </nav>
   </header>
 
-  <main class="flex-grow max-w-4xl mx-auto w-full px-6 py-12 animate-fadeIn">
+  <main class="flex-grow max-w-4xl mx-auto w-full px-6 py-12 animate-fadeIn" role="main">
     
-    <div class="text-center mb-16 space-y-4">
+    <header class="text-center mb-16 space-y-4">
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6">Expert Car Repair & <span class="accent-glow">AI Maintenance</span></h1>
       
       <div class="text-lg text-slate-300 max-w-3xl mx-auto space-y-6 text-left md:text-center">
         <p class="seo-text">
-          Welcome to the Carithm AI Blog, the ultimate resource for <strong class="text-white">DIY car repair</strong> and AI-powered vehicle diagnostics for all car makes and models worldwide. We use the same <a href="https://carithm.vercel.app/" class="text-blue-400 hover:text-blue-300 transition-colors font-semibold">advanced AI algorithms</a> that power our virtual mechanic to translate complex automotive data into actionable guidance.
+          Welcome to the Carithm AI Blog, the ultimate resource for <strong class="text-white">DIY car repair</strong> and AI-powered vehicle diagnostics for all car makes and models worldwide. We use the same <a href="https://carithm.vercel.app/" class="text-blue-400 hover:text-blue-300 transition-colors font-semibold" title="Carithm AI Virtual Mechanic">advanced AI algorithms</a> that power our virtual mechanic to translate complex automotive data into actionable guidance.
         </p>
         <p class="seo-text">
           Learn how to diagnose <strong class="text-white">P0420, P0171, and P0300 OBD-II codes</strong> globally, identify suspension faults, and optimize AC performance for demanding environments like the <strong class="text-white">UAE heat</strong>. Our guides combine predictive analytics with practical mechanical steps to save you time and costly garage visits.
         </p>
       </div>
-    </div>
+    </header>
 
-    <div class="space-y-6">
-      <a href="https://carithm.vercel.app/blog/battery_problems.html" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
+    <section class="space-y-6" aria-label="Blog Articles List">
+      <a href="https://carithm.vercel.app/blog/battery_problems.html" title="Car Battery Problems: Diagnosis & Heat Prevention Guide" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
         <h2 class="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">Car Battery Problems: Diagnosis & Heat Prevention Guide</h2>
         <p class="text-slate-400 mt-3 text-sm md:text-base leading-relaxed">Recognize, diagnose, and fix battery issues caused by extreme weather and heat. Includes universal testing tips powered by Carithm AI.</p>
       </a>
 
-      <a href="https://carithm.vercel.app/blog/how-to-fix-common-car-problems.html" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
+      <a href="https://carithm.vercel.app/blog/how-to-fix-common-car-problems.html" title="Top 10 Common Car Problems and DIY Fixes" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
         <h2 class="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">Top 10 Common Car Problems and DIY Fixes</h2>
         <p class="text-slate-400 mt-3 text-sm md:text-base leading-relaxed">From engine misfires to transmission jerks — learn to troubleshoot using our engineering-grade logic, applicable for all vehicle types.</p>
       </a>
 
-      <a href="https://carithm.vercel.app/blog/things-to-check-before-buying-a-used-car.html" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
+      <a href="https://carithm.vercel.app/blog/things-to-check-before-buying-a-used-car.html" title="Used Car Inspection Checklist: The Engineering Approach" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
         <h2 class="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">Used Car Inspection Checklist: The Engineering Approach</h2>
         <p class="text-slate-400 mt-3 text-sm md:text-base leading-relaxed">How to evaluate engine condition and hidden mechanical wear before you buy in the GCC market and beyond.</p>
       </a>
 
-      <a href="https://carithm.vercel.app/blog/diagnosing-car-engine-problems.html" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
+      <a href="https://carithm.vercel.app/blog/diagnosing-car-engine-problems.html" title="Advanced Engine Diagnostics: A Sensorless Method" class="block post-card glass p-8 rounded-3xl border-blue-500/10 group">
         <h2 class="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">Advanced Engine Diagnostics: A Sensorless Method</h2>
         <p class="text-slate-400 mt-3 text-sm md:text-base leading-relaxed">Identify internal engine problems through sounds and vibrations using our AI-powered diagnostic framework.</p>
       </a>
-    </div>
+    </section>
 
     <div class="mt-20 mb-12 text-center">
-      <a href="https://carithm.vercel.app/" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass border-blue-500/20 text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/40 transition-all text-xs font-bold tracking-widest uppercase">
+      <a href="https://carithm.vercel.app/" title="Return to AI Diagnosis Tool" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass border-blue-500/20 text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/40 transition-all text-xs font-bold tracking-widest uppercase">
         <span>← Return to AI Diagnosis</span>
       </a>
     </div>
 
   </main>
 
-  <footer class="py-16 border-t border-white/5 text-center mt-auto">
+  <footer class="py-16 border-t border-white/5 text-center mt-auto" role="contentinfo">
     <div class="text-xl font-black text-blue-500 mb-4 tracking-tighter uppercase">Carithm AI</div>
     <p class="text-xs text-slate-600 tracking-widest uppercase mb-4">
         Global Engineering Research Platform
