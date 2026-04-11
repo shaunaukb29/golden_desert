@@ -1161,15 +1161,27 @@
   <!-- Skip to main content (accessibility + SEO) -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<header>
-    <div class="logo">CARITHM<span> AI</span></div>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#how-it-works">How It Works</a>
-      <a href="#explorer">Explorer</a>
-      <a href="#faq">FAQ</a>
-      <a href="mailto:carithmai29@gmail.com" class="cta-btn">Request Full Trial</a>
-    </nav>
-  </header>
+<header class="sticky top-0 z-50 glass border-b border-white/5 py-4 px-6 md:px-8">
+    <div class="max-w-6xl mx-auto flex flex-wrap gap-4 justify-between items-center">
+        <a href="https://carithm.vercel.app/" class="text-2xl font-black tracking-tighter text-blue-500 flex items-center hover:opacity-80 transition">
+            CARITHM <span class="text-white text-[10px] md:text-xs font-light tracking-[0.2em] ml-2 mt-1 opacity-70">AI</span>
+        </a>
+        
+        <nav class="flex gap-4 md:gap-8 items-center text-[13px] font-semibold w-full md:w-auto overflow-x-auto no-scrollbar pb-1 md:pb-0">
+            <a href="#how-it-works" class="whitespace-nowrap text-slate-400 hover:text-white transition">How It Works</a>
+            <a href="#explorer" class="whitespace-nowrap text-slate-400 hover:text-white transition">Explorer</a>
+            <a href="#faq" class="whitespace-nowrap text-slate-400 hover:text-white transition">FAQ</a>
+            <a href="https://carithm.vercel.app/blog/" class="whitespace-nowrap text-slate-400 hover:text-white transition">Blog</a>
+            <a href="https://carithm.vercel.app/about/" class="whitespace-nowrap text-slate-400 hover:text-white transition">Diagnoser</a>
+            <a href="https://carithm.vercel.app/predictive" class="whitespace-nowrap text-slate-400 hover:text-white transition">UAE Car Valuation</a>
+            
+            <a href="mailto:carithmai29@gmail.com" class="whitespace-nowrap flex items-center gap-2 text-xs bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 px-5 py-2 rounded-full border border-blue-500/30 transition shadow-lg shadow-blue-500/10">
+                <span class="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></span>
+                Request Full Trial
+            </a>
+        </nav>
+    </div>
+</header>
 
   <!-- ─── MAIN CONTENT ─── -->
   <main id="main-content">
@@ -1685,6 +1697,106 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
+
+  /* ─── MEGA FOOTER STYLING ─── */
+.site-footer {
+  background: var(--bg2); /* Matches your dark section background */
+  border-top: 1px solid var(--border);
+  padding: 4rem 2.5rem 2rem 2.5rem;
+  margin-top: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr; /* Creates the 4-column layout */
+  gap: 3rem;
+}
+
+.footer-col h4 {
+  font-family: var(--display); /* Uses Bebas Neue */
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.mission-statement {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 1rem 0 1.5rem 0;
+  max-width: 280px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-col ul li a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Subtle hover interaction to make it feel premium */
+.footer-col ul li a:hover {
+  color: var(--blue);
+  transform: translateX(5px);
+}
+
+.footer-contact a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: var(--blue);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.footer-bottom {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+/* Mobile Responsive adjustment */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .footer-col:first-child {
+    grid-column: span 2;
+  }
+}
 </style>
 
 <section id="research" class="research-container">
@@ -1709,15 +1821,55 @@
   </div>
 </section>
 
-  <!-- ─── FOOTER ─── -->
   <footer class="site-footer">
-    <div class="footer-logo">CARITHM AI</div>
-    <div class="footer-links">
-      <a href="mailto:carithmai29@gmail.com">carithmai29@gmail.com</a>
-      <a href="https://www.linkedin.com/company/carithm-ai/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <div class="footer-container">
+    <div class="footer-col">
+      <div class="logo">CARITHM<span>AI</span></div>
+      <p class="mission-statement">
+        Precision vehicle health monitoring via engine architecture analysis. No hardware, total intelligence for GCC fleets.
+      </p>
+      <div class="footer-contact">
+        <a href="mailto:carithmai29@gmail.com">carithmai29@gmail.com</a>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/company/carithm-ai/" target="_blank">Company</a>
+          <span style="color: var(--border); margin: 0 4px;">|</span>
+          <a href="https://www.linkedin.com/in/shaunauk-basu-581928248/" target="_blank">Founder's Log</a>
+        </div>
+      </div>
     </div>
-    <div class="footer-copy">© 2026 Carithm AI. All rights reserved.</div>
-  </footer>
+
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/predictive/">Predictive Hub</a></li>
+        <li><a href="/about/">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Engineering</h4>
+      <ul>
+        <li><a href="/blog/">Research Logs</a></li>
+        <li><a href="/how-carithm-engineers-fleet-health">Fleet Engineering</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Technical Insights</h4>
+      <ul>
+        <li><a href="/blog/diagnosing-car-engine-problems.html">Engine Diagnosis</a></li>
+        <li><a href="/blog/battery_problems.html">Battery Optimization</a></li>
+        <li><a href="/blog/how-to-fix-common-car-problems.html">Fixing Common Issues</a></li>
+        <li><a href="/blog/things-to-check-before-buying-a-used-car.html">Pre-purchase Guide</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Carithm AI. All rights reserved. UAE Edition.</p>
+  </div>
+</footer>
 
   <script>
     // ─── COMPONENT DATA ───
