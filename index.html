@@ -63,7 +63,36 @@
   <!-- ─── ANALYTICS ─── -->
   <script async data-id="101494609" src="//static.getclicky.com/js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-TCCEJ6DCM1');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TCCEJ6DCM1');
+
+    // Visibility-Aware Dwell Metric Fix
+    (function() {
+      let activeSeconds = 0;
+      const interval = 10; // Check every 10 seconds to throttle network overhead
+
+      setInterval(() => {
+        if (!document.hidden) {
+          activeSeconds += interval;
+          
+          if (typeof gtag === 'function') {
+            gtag('event', 'true_dwell_time', {
+              'event_category': 'Engagement',
+              'event_label': activeSeconds + 's_active',
+              'value': activeSeconds
+            });
+          }
+          
+          if (activeSeconds === 30 && typeof clicky === 'object') {
+            clicky.goal('Engaged Reader (30s)');
+          }
+        }
+      }, interval * 1000);
+    })();
+  </script>
 
   <!-- ─── STRUCTURED DATA: SoftwareApplication ─── -->
   <script type="application/ld+json">
@@ -342,6 +371,7 @@
       pointer-events: none;
     }
 
+    /* ─── HERO VISUAL EFFECTS ─── */
     .hero-glow {
       position: absolute;
       top: 20%;
@@ -375,7 +405,7 @@
       z-index: 0;
     }
 
-    /* Left column — text */
+    /* ─── HERO LEFT COLUMN (TEXT & CONTENT) ─── */
     .hero-left {
       position: relative;
       z-index: 2;
@@ -412,8 +442,8 @@
     }
 
     @keyframes blink {
-      0%, 100% { opacity: 1 }
-      50% { opacity: 0.3 }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
 
     .hero h1 {
@@ -515,7 +545,7 @@
       margin-top: 0.3rem;
     }
 
-    /* Right column — car + hotspots */
+    /* ─── HERO RIGHT COLUMN (EXPLORER GRID PANEL) ─── */
     .hero-right {
       position: relative;
       z-index: 2;
@@ -552,7 +582,7 @@
       margin-bottom: 1.2rem;
     }
 
-    /* ─── SECTION SHARED ─── */
+    /* ─── SECTION GLOBAL DESIGN BASES ─── */
     section {
       position: relative;
       z-index: 1;
@@ -595,7 +625,7 @@
       border-top: 1px solid var(--border);
     }
 
-    /* ─── HOW IT WORKS ─── */
+    /* ─── HOW IT WORKS FLOW PIPELINE ─── */
     .how-flow {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -681,7 +711,7 @@
       z-index: 2;
     }
 
-    /* ─── COMPONENT EXPLORER ─── */
+    /* ─── DYNAMIC DESIGN ARCHITECTURE EXPLORER ─── */
     #explorer {
       background: var(--bg2);
     }
@@ -713,7 +743,7 @@
       filter: saturate(0.92) contrast(1.04);
     }
 
-    /* ── Hotspot ── */
+    /* ── INTERACTIVE HOTSPOTS ── */
     .hs {
       position: absolute;
       width: 52px;
@@ -754,7 +784,7 @@
       font-family: var(--body);
     }
 
-    /* ── Popup card ── */
+    /* ── POPUP ANOMALY EXPANSION CARDS ── */
     .hs-card {
       position: absolute;
       background: #0d1524;
@@ -819,6 +849,7 @@
 
     .explorer-hint b { color: var(--blue); font-weight: 600; }
 
+    /* ─── INSIGHT DETAILS & COMPONENT HEALTH TRACKERS ─── */
     .panel-desc { font-size: 0.82rem; color: #8499be; line-height: 1.65; }
 
     .health-row {
@@ -921,7 +952,7 @@
       transform: translateY(-1px);
     }
 
-    /* ─── WHY / 3-COL ─── */
+    /* ─── VALUE PROPOSITION PROFILES (3-COLUMN GRID) ─── */
     .why-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -946,7 +977,7 @@
     .why-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.6rem; }
     .why-body  { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
 
-    /* ─── WHO IT'S FOR ─── */
+    /* ─── TARGET AUDIENCE ARCHITECTURES ─── */
     .for-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -972,13 +1003,11 @@
     }
 
     .for-body  { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; }
-
     .for-list  { display: flex; flex-direction: column; gap: 0.4rem; }
-
     .for-item  { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.78rem; color: #8499be; }
     .for-check { color: var(--green); flex-shrink: 0; }
 
-    /* ─── STORY ─── */
+    /* ─── ANALYTICS NARRATIVE PROFILE ─── */
     .story-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -1003,7 +1032,7 @@
       line-height: 1.6;
     }
 
-    /* ─── FAQ ─── */
+    /* ─── ACCORDION SYSTEM (FAQ) ─── */
     .faq-list {
       display: flex;
       flex-direction: column;
@@ -1053,7 +1082,7 @@
 
     .faq-item.open .faq-a { max-height: 300px; margin-top: 0.9rem; }
 
-    /* ─── FINAL CTA ─── */
+    /* ─── CLOSING INITIATION PANEL (FINAL CTA) ─── */
     .cta-section {
       text-align: center;
       padding: 8rem 2rem;
@@ -1089,7 +1118,7 @@
       position: relative;
     }
 
-    /* ─── FOOTER ─── */
+    /* ─── PLATFORM SITE FOOTER ─── */
     footer {
       border-top: 1px solid var(--border);
       padding: 2rem 2.5rem;
@@ -1101,7 +1130,6 @@
     }
 
     .footer-logo { font-family: var(--display); font-size: 1.2rem; color: var(--blue); letter-spacing: 0.04em; }
-
     .footer-links { display: flex; gap: 1.5rem; }
 
     .footer-links a {
@@ -1112,15 +1140,13 @@
     }
 
     .footer-links a:hover { color: var(--blue); }
-
     .footer-copy { font-size: 0.72rem; color: #2a3452; }
 
-    /* ─── RESPONSIVE ─── */
+    /* ─── ADAPTIVE MEDIA VIEWPORTS (RESPONSIVE GRID SYSTEM) ─── */
     @media (max-width: 960px) {
       .mobile-hidden { display: none !important; }
 
       .hero { display: flex; flex-direction: column; }
-
       .hero-left { padding: 6rem 2rem 3rem 2rem; }
 
       .hero-right {
@@ -1135,7 +1161,6 @@
       .explorer-layout { grid-template-columns: 1fr; }
       .info-panel { position: static; margin-top: 2rem; }
       .why-grid, .for-grid { grid-template-columns: 1fr 1fr; }
-
       .how-flow { grid-template-columns: 1fr; }
 
       .how-step { border-right: none; border-bottom: 1px solid var(--border); }
@@ -1150,7 +1175,7 @@
       header { padding: 1rem 1.2rem; }
       .nav a:not(.cta-btn) { display: none; }
     }
-  </style>
+</style>
 
 </head>
 
@@ -1176,101 +1201,99 @@
   <!-- ─── MAIN CONTENT ─── -->
   <main id="main-content">
 
-    <!-- ─── HERO ─── -->
     <section class="hero" id="hero" aria-label="Hero">
-      <div class="hero-glow"></div>
-      <div class="hero-glow-r"></div>
-      <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow-r"></div>
+    <div class="hero-grid"></div>
 
-      <!-- LEFT — text -->
-      <div class="hero-left">
-        <div class="hero-pill">Asset Optimization Layer</div>
+    <div class="hero-left">
+      <div class="hero-pill">Asset Optimization Layer</div>
 
-        <h1>
-          DESIGNED-LIFE ANALYTICS
-          <span class="line2">FOR AUTOMOTIVE ASSETS.</span>
-        </h1>
+      <h1>
+        DESIGNED-LIFE ANALYTICS
+        <span class="line2">FOR AUTOMOTIVE ASSETS.</span>
+      </h1>
 
-        <p class="hero-sub">
-          <strong>No sensors. No hardware integrations. Turn raw vehicle logs and noisy data into predictable corporate capital planning and empirical service center revenue lines by mapping accurate component safety margins.</strong>
+      <p class="hero-sub">
+        <strong>No sensors. No hardware integrations. Turn raw vehicle logs and noisy data into predictable corporate capital planning and empirical service center revenue lines by mapping accurate component safety margins.</strong>
+      </p>
 
-        <div class="hero-actions">
-          <a href="mailto:carithmai29@gmail.com?subject=Free%20Pilot%20%E2%80%94%20Vehicle%20Report&body=Hi%2C%0A%0AI%27d%20like%20to%20try%20the%20free%20pilot%20report.%0A%0AHere%20are%20my%20vehicle%20details%3A%0A%0A-%20Engine%20number%3A%0A-%20Current%20mileage%20(km)%3A%0A-%20Vehicle%20year%20%2F%20age%3A%0A-%20Region%20%2F%20city%3A%0A-%20Service%20history%20(what%20was%20replaced%20and%20at%20what%20mileage)%3A%0A%0AThanks" class="btn-primary">Challenge Our Engine →</a>
-          <a href="mailto:carithmai29@gmail.com?subject=Let%27s%20Talk%20%E2%80%94%20Carithm&body=Hi%2C%0A%0AI%27d%20like%20to%20learn%20more%20about%20Carithm%20and%20discuss%20how%20it%20could%20work%20for%20us.%0A%0ACompany%20%2F%20fleet%20size%3A%0AWhat%20we%27re%20looking%20for%3A%0ABest%20time%20to%20chat%3A%0A%0AThanks" class="btn-ghost">Talk to Us →</a>
+      <div class="hero-actions">
+        <a href="mailto:carithmai29@gmail.com?subject=Free%20Pilot%20%E2%80%94%20Vehicle%20Report&body=Hi%2C%0A%0AI%27d%20like%20to%20try%20the%20free%20pilot%20report.%0A%0AHere%20are%20my%20vehicle%20details%3A%0A%0A-%20Engine%20number%3A%0A-%20Current%20mileage%20(km)%3A%0A-%20Vehicle%20year%20%2F%20age%3A%0A-%20Region%20%2F%20city%3A%0A-%20Service%20history%20(what%20was%20replaced%20and%20at%20what%20mileage)%3A%0A%0AThanks" class="btn-primary">Challenge Our Engine →</a>
+        <a href="mailto:carithmai29@gmail.com?subject=Let%27s%20Talk%20%E2%80%94%20Carithm&body=Hi%2C%0A%0AI%27d%20like%20to%20learn%20more%20about%20Carithm%20and%20discuss%20how%20it%20could%20work%20for%20us.%0A%0ACompany%20%2F%20fleet%20size%3A%0AWhat%20we%27re%20looking%20for%3A%0ABest%20time%20to%20chat%3A%0A%0AThanks" class="btn-ghost">Talk to Us →</a>
+      </div>
+      <p style="font-size:0.75rem;color:var(--muted);margin-top:1rem;line-height:1.6;">Zero implementation cost. Provide logs for 3 historical vehicle failures—our physics layer will reverse-engineer the breakdown targets, or you block our contact.</p>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-n">500+</div>
+          <div class="hero-stat-l">Brand Engines</div>
         </div>
-        <p style="font-size:0.75rem;color:var(--muted);margin-top:1rem;line-height:1.6;">Zero implementation cost. Provide logs for 3 historical vehicle failures—our physics layer will reverse-engineer the breakdown targets, or you block our contact.</p>
-
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-n">500+</div>
-            <div class="hero-stat-l">Brand Engines</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-n">15+</div>
-            <div class="hero-stat-l">Components Per Report</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-n">0</div>
-            <div class="hero-stat-l">Hardware Required</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-n">2</div>
-            <div class="hero-stat-l">UAE Pilots — Job Cards &amp; Upselling</div>
-          </div>
+        <div class="hero-stat">
+          <div class="hero-stat-n">15+</div>
+          <div class="hero-stat-l">Components Per Report</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-n">0</div>
+          <div class="hero-stat-l">Hardware Required</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-n">2</div>
+          <div class="hero-stat-l">UAE Pilots — Job Cards &amp; Upselling</div>
         </div>
       </div>
+    </div>
 
-      <!-- RIGHT — process steps -->
-      <div class="hero-right">
-        <div class="hero-explorer-label mobile-hidden">Interactive Component Explorer</div>
-        <div class="hero-explorer-title mobile-hidden">CLICK ANY PART TO INSPECT</div>
-        <div class="hero-explorer-sub mobile-hidden">Sample — Mercedes M276 V6 · 87,000 km · GCC climate</div>
+    <div class="hero-right">
+      <div class="hero-explorer-label mobile-hidden">Interactive Component Explorer</div>
+      <div class="hero-explorer-title mobile-hidden">CLICK ANY PART TO INSPECT</div>
+      <div class="hero-explorer-sub mobile-hidden">Sample — Mercedes M276 V6 · 87,000 km · GCC climate</div>
 
-        <div class="explorer-wrap" style="margin-top:0; padding: 0; background: transparent; border: none;">
-          <div class="car-img-wrap" id="car-img-wrap-hero">
-            <div class="section-inner mobile-hidden">
-              <div class="section-label">The Process</div>
-              <h2 class="section-title">THREE INPUTS.<br />ONE COMPLETE REPORT.</h2>
-              <p class="section-sub">No installation. No telematics device. Just data that already exists in your logs.</p>
+      <div class="explorer-wrap" style="margin-top:0; padding: 0; background: transparent; border: none;">
+        <div class="car-img-wrap" id="car-img-wrap-hero">
+          <div class="section-inner mobile-hidden">
+            <div class="section-label">The Process</div>
+            <h2 class="section-title">THREE INPUTS.<br />ONE COMPLETE REPORT.</h2>
+            <p class="section-sub">No installation. No telematics device. Just data that already exists in your logs.</p>
 
-              <div class="how-flow">
-                <div class="how-step">
-                  <div class="how-step-num">01</div>
-                  <div class="how-step-title">Lock the Engine</div>
-                  <div class="how-step-body">Enter the vehicle's engine number. This pins the exact engine variant, not just make/model unlocking manufacturer-specific wear thresholds and part life intervals.</div>
-                  <div class="how-step-inputs">
-                    <div class="input-chip">🔩 Engine Number (e.g. 2GRFE123456)</div>
-                  </div>
-                  <div class="how-arrow"></div>
+            <div class="how-flow">
+              <div class="how-step">
+                <div class="how-step-num">01</div>
+                <div class="how-step-title">Lock the Engine</div>
+                <div class="how-step-body">Enter the vehicle's engine number. This pins the exact engine variant, not just make/model unlocking manufacturer-specific wear thresholds and part life intervals.</div>
+                <div class="how-step-inputs">
+                  <div class="input-chip">🔩 Engine Number (e.g. 2GRFE123456)</div>
                 </div>
+                <div class="how-arrow"></div>
+              </div>
 
-                <div class="how-step">
-                  <div class="how-step-num">02</div>
-                  <div class="how-step-title">Upload Service Logs</div>
-                  <div class="how-step-body">Provide service centre or fleet service history logs. This is the data that drives every prediction.</div>
-                  <div class="how-step-inputs">
-                    <div class="input-chip">📋 Replacement logs + km</div>
-                    <div class="input-chip">🔧 Parts replaced</div>
-                  </div>
-                  <div class="how-arrow"></div>
+              <div class="how-step">
+                <div class="how-step-num">02</div>
+                <div class="how-step-title">Upload Service Logs</div>
+                <div class="how-step-body">Provide service centre or fleet service history logs. This is the data that drives every prediction.</div>
+                <div class="how-step-inputs">
+                  <div class="input-chip">📋 Replacement logs + km</div>
+                  <div class="input-chip">🔧 Parts replaced</div>
                 </div>
+                <div class="how-arrow"></div>
+              </div>
 
-                <div class="how-step">
-                  <div class="how-step-num">03</div>
-                  <div class="how-step-title">Get the Report</div>
-                  <div class="how-step-body">Carithm calculates each component's current health % and exact next-service interval in km based on that engine's spec sheet and what the history shows.</div>
-                  <div class="how-step-inputs">
-                    <div class="input-chip">✅ Health % per component</div>
-                    <div class="input-chip">📏 Next interval in km</div>
-                    <div class="input-chip">⚠️ Risk flags</div>
-                  </div>
+              <div class="how-step">
+                <div class="how-step-num">03</div>
+                <div class="how-step-title">Get the Report</div>
+                <div class="how-step-body">Carithm Diagnoser maps each component's remaining designed-life safety margin and next UAE climate-adjusted service interval based on that engine's blueprint logs.</div>
+                <div class="how-step-inputs">
+                  <div class="input-chip">✅ Designed-Life Health %</div>
+                  <div class="input-chip">📏 Next Interval in KM</div>
+                  <div class="input-chip">⚠️ Empirical Risk Flags</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
 <!-- ─── LIVE DEMO ─── -->
 <section id="live-sample" aria-label="Live Sample">
@@ -2331,6 +2354,92 @@ body.modal-open { overflow: hidden; }
         if (!isOpen) item.classList.add('open');
       });
     });
+
+    // ─── Hero Simulator Interactivity Logic ───
+    const simButtons = document.querySelectorAll('.sim-btn');
+    const statBrake = document.getElementById('stat-brake');
+    const statTCase = document.getElementById('stat-tcase');
+    const simWarning = document.getElementById('sim-warning');
+
+    let simState = { body: 'sedan', drive: 'fwd' };
+
+    simButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const type = btn.getAttribute('data-type');
+        const val = btn.getAttribute('data-val');
+        
+        btn.parentElement.querySelectorAll('.sim-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        simState[type] = val;
+        updateSimulation();
+      });
+    });
+
+    function updateSimulation() {
+      if (simState.body === 'suv' && simState.drive === 'awd') {
+        statBrake.textContent = '1.35x';
+        statBrake.className = 'stat-val alert';
+        statTCase.textContent = 'HIGH STRESS';
+        statTCase.className = 'stat-val alert';
+        simWarning.classList.remove('hidden');
+      } else if (simState.body === 'suv' && simState.drive === 'fwd') {
+        statBrake.textContent = '1.20x';
+        statBrake.className = 'stat-val alert';
+        statTCase.textContent = 'N/A (2WD)';
+        statTCase.className = 'stat-val';
+        statTCase.style.color = 'var(--muted)';
+        simWarning.classList.add('hidden');
+      } else if (simState.body === 'sedan' && simState.drive === 'awd') {
+        statBrake.textContent = '1.10x';
+        statBrake.className = 'stat-val';
+        statTCase.textContent = 'MODERATE';
+        statTCase.className = 'stat-val';
+        statTCase.style.color = 'var(--text)';
+        simWarning.classList.add('hidden');
+      } else {
+        statBrake.textContent = '1.00x';
+        statBrake.className = 'stat-val';
+        statTCase.textContent = 'N/A (2WD)';
+        statTCase.className = 'stat-val';
+        statTCase.style.color = 'var(--muted)';
+        simWarning.classList.add('hidden');
+      }
+    }
+
+    // ─── Scroll-Triggered Hotspot Passive Context Onboarding ───
+    const hotspotGrid = document.querySelector('.hs')?.parentElement;
+    
+    if (hotspotGrid) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Passive tooltip peek placeholder with 1.5s delay
+            setTimeout(() => {
+              const targetHs = document.querySelector('.hs');
+              if (targetHs && !activeHs) {
+                const card = targetHs.querySelector('.hs-card');
+                targetHs.classList.add('active');
+                card.classList.add('visible');
+                activeHs = targetHs;
+
+                // Auto collapse after 3 seconds if reader does not click manually
+                setTimeout(() => {
+                  if (activeHs === targetHs && targetHs.classList.contains('active')) {
+                    targetHs.classList.remove('active');
+                    card.classList.remove('visible');
+                    activeHs = null;
+                  }
+                }, 3000);
+              }
+            }, 1500);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      
+      observer.observe(hotspotGrid);
+    }
   </script>
 
 </body>
