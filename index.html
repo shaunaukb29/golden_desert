@@ -1989,23 +1989,23 @@
   </div>
 
   <div class="research-grid">
-    <div class="res-card" onclick="openResearchModal()" style="cursor:pointer;">
+    <a href="research/fleet-maintenance-failure-gcc.html" class="res-card" style="cursor:pointer;">
       <div>
         <div class="res-badge">Paper 01</div>
         <h3>Operational Stress & <span>Designed Life</span></h3>
         <p>A technical deep-dive on quantifying asset depletion across 500+ architectures for high-utilization UAE fleets.</p>
       </div>
       <div class="res-link">Read Full Research →</div>
-    </div>
+    </a>
 
-    <div class="res-card" onclick="openResearchModal2()" style="cursor:pointer;">
+    <a href="research/service-history-revenue-workflow.html" class="res-card" style="cursor:pointer;">
       <div>
         <div class="res-badge">Paper 02</div>
         <h3>System Architecture & <span>Data Utility</span></h3>
         <p>Standardizing Maintenance Intervals into Actionable Business Data.</p>
       </div>
       <div class="res-link">Read Full Research →</div>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -2043,7 +2043,7 @@
     <div class="footer-col">
       <h4>Engineering</h4>
       <ul>
-        <li><a href="/blog/">Research Logs</a></li>
+        <li><a href="research/index.html">Research Logs</a></li>
         <li><a href="/how-carithm-engineers-fleet-lifecycle">Fleet Engineering</a></li>
       </ul>
     </div>
@@ -2064,173 +2064,7 @@
   </div>
 </footer>
 
-<!-- RESEARCH MODAL -->
-<div id="research-modal" onclick="handleModalBackdropClick(event)" style="
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  background:rgba(2,6,23,0.88);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  overflow-y:auto;
-  padding:2rem 1rem;
-">
-  <div onclick="event.stopPropagation()" style="
-    max-width:860px;
-    margin:0 auto;
-    background:rgba(15,23,42,0.98);
-    border:1px solid rgba(59,130,246,0.15);
-    border-radius:1.5rem;
-    padding:2.5rem;
-    position:relative;
-    box-shadow:0 30px 80px rgba(0,0,0,0.6);
-  ">
 
-    <!-- CLOSE -->
-    <button onclick="closeResearchModal()" aria-label="Close" style="
-      position:absolute;
-      top:1.25rem;
-      right:1.25rem;
-      width:38px;
-      height:38px;
-      border-radius:50%;
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.1);
-      color:#94a3b8;
-      cursor:pointer;
-    ">✕</button>
-
-    <!-- HEADER -->
-    <div style="margin-bottom:2rem;">
-      <div style="display:flex;gap:0.6rem;align-items:center;margin-bottom:1rem;">
-        <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#60a5fa;background:rgba(59,130,246,0.12);padding:0.25rem 0.75rem;border-radius:999px;">
-          Technical Paper 01
-        </span>
-        <span style="font-size:13px;color:#64748b;">Engineering Research</span>
-      </div>
-
-      <h1 style="font-size:2.2rem;font-weight:900;color:#fff;line-height:1.2;">
-        Operational Stress & <span style="color:#3b82f6;">Designed Life</span>
-      </h1>
-
-      <p style="color:#cbd5e1;margin-top:0.75rem;line-height:1.6;">
-        How real-world operating conditions change component wear across 500+ engine architectures.
-      </p>
-    </div>
-
-    <!-- BODY -->
-    <div style="color:#94a3b8;line-height:1.75;font-size:1rem;">
-
-      <h2 style="color:#fff;font-size:1.3rem;margin-top:1.5rem;">Overview</h2>
-      <p>
-        Carithm converts vehicle service history into a structured view of component health and lifecycle position.
-        Instead of relying on fixed mileage schedules or visual inspection alone, we model how components degrade under real operating conditions.
-      </p>
-
-      <p>
-        The goal is simple: replace assumption-based maintenance with context-aware lifecycle intelligence.
-      </p>
-
-      <h2 style="color:#fff;font-size:1.3rem;margin-top:2rem;">Core Modules</h2>
-
-      <h3 style="color:#e2e8f0;margin-top:1rem;">1. Service History Intelligence</h3>
-      <p>
-        We transform raw service logs into a structured lifecycle profile for each vehicle,
-        showing where each component likely sits in its maintenance cycle.
-      </p>
-
-      <h3 style="color:#e2e8f0;margin-top:1rem;">2. Environmental Adjustment Layer</h3>
-      <p>
-        Heat, dust, humidity, and usage intensity all change how components wear.
-        We adjust degradation models based on real operating conditions rather than standard assumptions.
-      </p>
-
-      <h3 style="color:#e2e8f0;margin-top:1rem;">3. Engine Architecture Mapping</h3>
-      <p>
-        Each vehicle is mapped to a library of 500+ engine architectures,
-        ensuring maintenance logic reflects actual mechanical design rather than generic brand-level rules.
-      </p>
-
-      <h2 style="color:#fff;font-size:1.3rem;margin-top:2rem;">Why this matters</h2>
-
-      <p>
-        Most maintenance systems rely on mileage schedules or visual inspection.
-      </p>
-
-      <p>
-        Both miss the same problem: internal wear that is progressing but not yet visible.
-      </p>
-
-      <p>
-        This system is designed to surface that gap earlier using historical and contextual data instead of guesswork.
-      </p>
-
-      <h2 style="color:#fff;font-size:1.3rem;margin-top:2rem;">Practical impact</h2>
-
-      <ul style="padding-left:1.2rem;">
-        <li>Earlier identification of components moving into higher-risk wear stages</li>
-        <li>Clearer justification for preventative maintenance decisions</li>
-        <li>Reduced surprise failures in fleet operations</li>
-      </ul>
-
-      <h2 style="color:#fff;font-size:1.3rem;margin-top:2rem;">Positioning</h2>
-
-      <p>
-        This is not a diagnostic tool and not a hardware system.
-        It is a data layer that improves maintenance decisions using existing service history.
-      </p>
-
-    </div>
-
-    <!-- CTA -->
-    <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.07);text-align:center;">
-      <a href="/predictive/" style="display:inline-block;padding:0.9rem 2.2rem;background:#2563eb;color:#fff;font-weight:700;font-size:0.95rem;border-radius:999px;text-decoration:none;">
-        Launch Intelligence Platform →
-      </a>
-    </div>
-
-  </div>
-</div>
-
-<style>
-@keyframes fadeInBackdrop { from { opacity:0; } to { opacity:1; } }
-@keyframes slideUpModal { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
-body.modal-open { overflow: hidden; }
-</style>
-
-  <script>
-    function openResearchModal() {
-      document.getElementById('research-modal').style.display = 'block';
-      document.body.classList.add('modal-open');
-    }
-    function closeResearchModal() {
-      document.getElementById('research-modal').style.display = 'none';
-      document.body.classList.remove('modal-open');
-    }
-    function handleModalBackdropClick(e) {
-      if (e.target === document.getElementById('research-modal')) closeResearchModal();
-    }
-
-    function openResearchModal2() {
-      document.getElementById('research-modal-2').style.display = 'block';
-      document.body.classList.add('modal-open');
-    }
-    function closeResearchModal2() {
-      document.getElementById('research-modal-2').style.display = 'none';
-      document.body.classList.remove('modal-open');
-    }
-    function handleModalBackdropClick2(e) {
-      if (e.target === document.getElementById('research-modal-2')) closeResearchModal2();
-    }
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeResearchModal();
-        closeResearchModal2();
-      }
-    });
-  </script>
 
   <script>
     // ─── COMPONENT DATA ───
