@@ -7,7 +7,7 @@
 
   <url>
     <loc>https://carithm.vercel.app/</loc>
-    <lastmod>2026-06-4</lastmod>
+    <lastmod>2026-06-5</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -26,24 +26,28 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- BLOG POSTS -->
   <url>
     <loc>https://carithm.vercel.app/blog/how-to-fix-common-car-problems.html</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://carithm.vercel.app/blog/things-to-check-before-buying-a-used-car.html</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://carithm.vercel.app/blog/battery_problems.html</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://carithm.vercel.app/blog/diagnosing-car-engine-problems.html</loc>
     <lastmod>2026-04-10</lastmod>
@@ -51,11 +55,34 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- ABOUT -->
   <url>
     <loc>https://carithm.vercel.app/about/</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+
+  <!-- RESEARCH HUB -->
+  <url>
+    <loc>https://carithm.vercel.app/research/</loc>
+    <lastmod>2026-06-5</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/fleet.html</loc>
+    <lastmod>2026-06-5</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/workflow.html</loc>
+    <lastmod>2026-06-5</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
