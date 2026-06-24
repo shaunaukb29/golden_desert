@@ -609,6 +609,19 @@ function escapeHtml(str) {
     .replace(/>/g, "&gt;");
 }
 
+function tidyLabel(raw) {
+  if (!raw) return raw;
+  // Already spaced (e.g. "Transmission Fluid") — return as-is
+  if (/\s/.test(raw)) return raw;
+  // Insert space before each uppercase letter that follows a lowercase letter
+  // e.g. "FrontLowerArm" → "Front Lower Arm"
+  let s = raw.replace(/([a-z])([A-Z])/g, "$1 $2");
+  // Insert space before digits that follow letters and vice versa
+  s = s.replace(/([a-zA-Z])(\d)/g, "$1 $2").replace(/(\d)([a-zA-Z])/g, "$1 $2");
+  // Title-case the result
+  return s.replace(/\b\w/g, c => c.toUpperCase());
+}
+
 function renderMarkdown(md) {
   if (!md) return "";
 
@@ -934,7 +947,7 @@ function renderHistoryQuestions(services) {
     wrapper.className = "field history-item";
 
     const label = document.createElement("label");
-    label.textContent = `When was the ${svc.part_key ? svc.part_key.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase()) : (svc.display || svc.raw)} last done?`;
+    label.textContent = `When was the ${tidyLabel(svc.display || svc.raw)} last done?`;
 
     // ── "I know / I don't know" toggle ──────────────────────────────────
     // Defaults to "don't know" — select stays disabled and no answer is
