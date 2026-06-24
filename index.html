@@ -645,10 +645,10 @@ async function analyzeQuote() {
 
   // Prepare payload explicitly
   const payload = {
-    quote_text: quoteTextEl ? quoteTextEl.value : "",
-    text_fallback: quoteTextEl ? quoteTextEl.value : "",
-    file_name: (fileInput && fileInput.files.length > 0) ? fileInput.files[0].name : ""
-  };
+  text: quoteTextEl ? quoteTextEl.value : "", // Change 'quote_text' to 'text'
+  text_fallback: quoteTextEl ? quoteTextEl.value : "",
+  file_name: (fileInput && fileInput.files.length > 0) ? fileInput.files[0].name : ""
+};
 
   console.log("Sending to API:", JSON.stringify(payload)); // Check this in Console
 
