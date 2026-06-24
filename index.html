@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Carithm — Workshop Audit</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -177,97 +176,66 @@ textarea { resize: vertical; min-height: 100px; font-size: 13px; line-height: 1.
 <body>
 <div class="shell">
 
-  <!-- HEADER (unchanged) -->
+  <!-- HEADER -->
   <div class="header">
-    <div class="logo">
-      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2">
-        <path d="M9 17H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/>
-        <path d="m15 14 2 2 4-4"/>
-      </svg>
-    </div>
+    <div class="logo"></div>
     <span class="brand">Carithm</span>
-    <span class="brand-tag">Repair Auditor</span>
   </div>
 
   <!-- VEHICLE -->
   <div class="card">
-    <div class="card-head"><div class="step on">1</div><div class="card-title">Your vehicle</div></div>
+    <div class="card-head"><div class="step on">1</div><div class="card-title">Vehicle</div></div>
+
     <div class="card-body">
-
       <div class="row3">
-        <div class="field">
-          <label>Make</label>
-          <select id="make"><option value="">Loading...</option></select>
-        </div>
-
-        <div class="field">
-          <label>Model</label>
-          <select id="model" disabled><option value="">Select model</option></select>
-        </div>
-
-        <div class="field">
-          <label>Year</label>
-          <input type="number" id="year" value="2021">
-        </div>
+        <select id="make"><option>Loading...</option></select>
+        <select id="model" disabled><option>Select model</option></select>
+        <input id="year" type="number" value="2021">
       </div>
 
       <div class="row2">
-        <div class="field">
-          <label>Mileage (km)</label>
-          <input type="number" id="mileage" value="80000">
-        </div>
+        <input id="mileage" type="number" value="80000">
 
-        <div class="field">
-          <label>Drivetrain</label>
-          <select id="drivetrain">
-            <option value="fwd">FWD</option>
-            <option value="rwd">RWD</option>
-            <option value="awd" selected>AWD</option>
-          </select>
-        </div>
+        <select id="drivetrain">
+          <option value="fwd">FWD</option>
+          <option value="rwd">RWD</option>
+          <option value="awd" selected>AWD</option>
+        </select>
       </div>
-
     </div>
   </div>
 
   <!-- DRIVING -->
   <div class="card">
-    <div class="card-head"><div class="step on">2</div><div class="card-title">Driving pattern</div></div>
+    <div class="card-head"><div class="step on">2</div><div class="card-title">Driving</div></div>
+
     <div class="card-body">
-
-      <div class="radios">
-        <label class="radio-pill on">
-          <input type="radio" name="driving" value="mixed" checked>
-          <div class="pill-label">Mixed</div>
-        </label>
-
-        <label class="radio-pill">
-          <input type="radio" name="driving" value="city">
-          <div class="pill-label">City</div>
-        </label>
-
-        <label class="radio-pill">
-          <input type="radio" name="driving" value="highway">
-          <div class="pill-label">Highway</div>
-        </label>
-
-        <label class="radio-pill">
-          <input type="radio" name="driving" value="offroad">
-          <div class="pill-label">Off-road</div>
-        </label>
-      </div>
-
+      <label><input type="radio" name="driving" value="city"> City</label>
+      <label><input type="radio" name="driving" value="highway"> Highway</label>
+      <label><input type="radio" name="driving" value="mixed" checked> Mixed</label>
+      <label><input type="radio" name="driving" value="offroad"> Off-road</label>
     </div>
   </div>
 
   <!-- QUOTE -->
   <div class="card">
-    <div class="card-head"><div class="step on">3</div><div class="card-title">Workshop quote</div></div>
+    <div class="card-head"><div class="step on">3</div><div class="card-title">Quote</div></div>
+
     <div class="card-body">
+
+      <!-- FILE UPLOAD (RESTORED) -->
+      <div class="drop-zone" id="drop-zone">
+        <input type="file" id="file-input" accept=".pdf,.png,.jpg,.jpeg,.txt">
+
+        <div>Drop file here or click</div>
+        <div id="file-name"></div>
+      </div>
+
+      <div style="text-align:center; margin:10px 0;">OR</div>
 
       <textarea id="quote-text" placeholder="Paste quote here..."></textarea>
 
-      <button class="btn btn-primary" id="analyze-btn">Analyze quote</button>
+      <button class="btn btn-primary" id="analyze-btn">Analyze</button>
       <div id="status" class="hidden"></div>
 
     </div>
@@ -275,198 +243,192 @@ textarea { resize: vertical; min-height: 100px; font-size: 13px; line-height: 1.
 
   <!-- HISTORY -->
   <div id="history-review" class="card hidden">
-    <div class="card-head"><div class="step on">4</div><div class="card-title">Clarify details</div></div>
+    <div class="card-head"><div class="step on">4</div><div class="card-title">History</div></div>
     <div class="card-body">
       <div id="questions-list"></div>
-      <button class="btn btn-primary" id="finalize-btn">Get final audit</button>
+      <button class="btn btn-primary" id="finalize-btn">Finalize</button>
     </div>
   </div>
 
   <!-- REPORT -->
-  <div id="report" class="report hidden"></div>
+  <div id="report" class="card hidden"></div>
 
 </div>
 
 <script>
-const API = 'https://x748873y-bcvbc.hf.space';
+const API = "https://x748873y-bcvbc.hf.space";
 
+let file = null;
 let currentServices = [];
 
-/* STATUS */
-function status(msg, type='info'){
-  const el = document.getElementById('status');
-  el.className = `status-bar ${type}`;
-  el.innerHTML = `<div class="s-dot"></div><span>${msg}</span>`;
-  el.classList.remove('hidden');
-}
-function clearStatus(){
-  document.getElementById('status').classList.add('hidden');
-}
+/* ---------------- FILE HANDLING ---------------- */
+const fileInput = document.getElementById("file-input");
 
-/* LOAD MAKES */
-async function loadMakes(){
-  const sel = document.getElementById('make');
-  try{
-    const r = await fetch(`${API}/makes`);
-    const data = await r.json();
+fileInput.addEventListener("change", () => {
+  file = fileInput.files[0];
+  document.getElementById("file-name").textContent = file ? file.name : "";
+});
 
-    const makes = data.makes || [];
+document.getElementById("drop-zone").addEventListener("dragover", e => {
+  e.preventDefault();
+});
 
-    sel.innerHTML = `<option value="">Select brand</option>`;
-    makes.forEach(m=>{
-      const o=document.createElement('option');
-      o.value=m;
-      o.textContent=m;
-      sel.appendChild(o);
-    });
+document.getElementById("drop-zone").addEventListener("drop", e => {
+  e.preventDefault();
+  file = e.dataTransfer.files[0];
+  document.getElementById("file-name").textContent = file.name;
+});
 
-  }catch(e){
-    sel.innerHTML = `<option value="">Failed to load</option>`;
-  }
+/* ---------------- STATUS ---------------- */
+function status(msg){
+  const el = document.getElementById("status");
+  el.classList.remove("hidden");
+  el.innerText = msg;
 }
 
-/* CORE FIX: analyze flow */
+/* ---------------- ANALYZE ---------------- */
 async function analyze(){
 
-  const make = document.getElementById('make').value;
-  const quote = document.getElementById('quote-text').value.trim();
+  const make = document.getElementById("make").value;
+  const quote = document.getElementById("quote-text").value;
 
   if(!make){
-    status('Select vehicle make', 'error');
+    status("Select make");
     return;
   }
 
-  if(!quote){
-    status('Paste a quote first', 'error');
+  if(!file && !quote){
+    status("Upload file or paste quote");
     return;
   }
 
-  const btn = document.getElementById('analyze-btn');
-  btn.disabled = true;
-  btn.textContent = 'Analyzing...';
+  document.getElementById("analyze-btn").disabled = true;
+
+  let res;
 
   try{
 
-    const r = await fetch(`${API}/parse-quote`, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ make, quote })
-    });
+    if(file){
 
-    const data = await r.json();
+      const fd = new FormData();
+      fd.append("file", file);
+      fd.append("make", make);
 
-    /* ✅ FIX #1: ALWAYS force structure safety */
-    currentServices = (data.services || []).map(s => ({
-      ...s,
-      part_key: s.part_key || 'UNMATCHED',
-      needs_history: s.needs_history ?? true   // 🔥 THIS FIXES YOUR BUG
-    }));
-
-    /* ✅ FIX #2: DO NOT SKIP HISTORY STEP */
-    const needsHistory = currentServices.filter(s =>
-      s.part_key !== 'UNMATCHED'
-    );
-
-    status('Checking service history...');
-
-    const questions = await fetchHistoryQuestions(needsHistory);
-
-    if(needsHistory.length && questions.length){
-
-      const container = document.getElementById('questions-list');
-
-      container.innerHTML = questions.map(q => `
-        <div class="history-item">
-          <label>${q.name}</label>
-          <select class="history-answer" data-part="${q.part_key}">
-            ${q.questions.map(o=>`<option value="${o}">${o}</option>`).join('')}
-          </select>
-        </div>
-      `).join('');
-
-      clearStatus();
-      document.getElementById('history-review').classList.remove('hidden');
+      res = await fetch(`${API}/analyze-quote`, {
+        method:"POST",
+        body: fd
+      });
 
     } else {
 
-      await finalizeReport();
+      res = await fetch(`${API}/analyze-quote-text`, {
+        method:"POST",
+        headers:{ "Content-Type":"application/json" },
+        body: JSON.stringify({
+          make,
+          quote_text: quote
+        })
+      });
 
     }
 
-  }catch(e){
-    status('Analysis failed', 'error');
-    console.error(e);
-  }finally{
-    btn.disabled = false;
-    btn.textContent = 'Analyze quote';
+    const data = await res.json();
+
+    currentServices = (data.services || []).map(s => ({
+      ...s,
+      part_key: s.part_key || "UNMATCHED",
+      needs_history: true
+    }));
+
+    await loadHistory();
+
+  } catch(err){
+    console.log(err);
+    status("Analysis failed");
   }
+
+  document.getElementById("analyze-btn").disabled = false;
 }
 
-/* HISTORY */
-async function fetchHistoryQuestions(items){
-  const out = [];
+/* ---------------- HISTORY ---------------- */
+async function loadHistory(){
 
-  for(const svc of items){
+  const items = currentServices.filter(s => s.part_key !== "UNMATCHED");
+
+  const questions = [];
+
+  for(const s of items){
     try{
-      const r = await fetch(`${API}/history-options/${svc.part_key}`);
-      const data = await r.json();
+      const r = await fetch(`${API}/history-options/${s.part_key}`);
+      const d = await r.json();
 
-      const q = data.questions || data || [];
-
-      if(q.length){
-        out.push({
-          part_key: svc.part_key,
-          name: svc.display || svc.part_key,
-          questions: q
+      if(d.questions?.length){
+        questions.push({
+          part_key: s.part_key,
+          name: s.display || s.part_key,
+          questions: d.questions
         });
       }
 
-    }catch(e){}
+    } catch(e){}
   }
 
-  return out;
+  if(questions.length){
+
+    const box = document.getElementById("questions-list");
+
+    box.innerHTML = questions.map(q => `
+      <div>
+        <div>${q.name}</div>
+        <select class="history-answer" data-part="${q.part_key}">
+          ${q.questions.map(o => `<option>${o}</option>`).join("")}
+        </select>
+      </div>
+    `).join("");
+
+    document.getElementById("history-review").classList.remove("hidden");
+
+  } else {
+    finalize();
+  }
 }
 
-/* FINAL */
-async function finalizeReport(){
+/* ---------------- FINAL ---------------- */
+async function finalize(){
 
   const answers = {};
-  document.querySelectorAll('.history-answer').forEach(el=>{
+  document.querySelectorAll(".history-answer").forEach(el => {
     answers[el.dataset.part] = el.value;
   });
 
-  const vehicle = {
-    make: document.getElementById('make').value,
-    model: document.getElementById('model').value,
-    year: document.getElementById('year').value,
-    mileage: document.getElementById('mileage').value,
-    driving: document.querySelector('[name="driving"]:checked')?.value,
-    drivetrain: document.getElementById('drivetrain').value,
+  const payload = {
+    services: currentServices,
+    history_answers: answers,
+    make: document.getElementById("make").value,
+    model: document.getElementById("model").value,
+    year: document.getElementById("year").value,
+    mileage: document.getElementById("mileage").value,
+    driving: document.querySelector("[name=driving]:checked")?.value,
+    drivetrain: document.getElementById("drivetrain").value,
     consent_to_log: false
   };
 
-  const r = await fetch(`${API}/generate-report`,{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({
-      services: currentServices,
-      history_answers: answers,
-      ...vehicle
-    })
+  const r = await fetch(`${API}/generate-report`, {
+    method:"POST",
+    headers:{ "Content-Type":"application/json" },
+    body: JSON.stringify(payload)
   });
 
   const report = await r.json();
 
-  document.getElementById('history-review').classList.add('hidden');
-  document.getElementById('report').classList.remove('hidden');
-  document.getElementById('report').innerHTML =
-    `<pre>${JSON.stringify(report, null, 2)}</pre>`;
+  document.getElementById("report").classList.remove("hidden");
+  document.getElementById("report").innerText = JSON.stringify(report, null, 2);
+
 }
 
-/* INIT */
-loadMakes();
-document.getElementById('analyze-btn').addEventListener('click', analyze);
-document.getElementById('finalize-btn').addEventListener('click', finalizeReport);
+/* ---------------- INIT ---------------- */
+document.getElementById("analyze-btn").addEventListener("click", analyze);
+document.getElementById("finalize-btn").addEventListener("click", finalize);
 </script>
 
 </body>
