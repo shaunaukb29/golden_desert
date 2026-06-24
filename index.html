@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carithm — Workshop Audit</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* KEEP YOUR ORIGINAL CSS HERE (UNCHANGED) */
+</style>
+</head>
+
+<body>
+<div class="shell">
+
+  <div class="header">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2">
+        <path d="M9 17H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/>
+        <path d="m15 14 2 2 4-4"/>
+      </svg>
+    </div>
+    <span class="brand">Carithm</span>
+    <span class="brand-tag">Repair Auditor</span>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">GCC workshop transparency tool</div>
+    <h1>Is your workshop<br>quote fair?</h1>
+    <p>Upload or paste your quote. Get an independent verdict on every line item.</p>
+  </div>
+
+  <!-- VEHICLE -->
+  <div class="card">
+    <div class="card-head"><div class="step on">1</div><div class="card-title">Vehicle</div></div>
+    <div class="card-body">
+
+      <div class="row3">
+        <div class="field">
+          <label>Make</label>
+          <select id="make"><option value="">Loading...</option></select>
+        </div>
+
+        <div class="field">
+          <label>Model</label>
+          <select id="model" disabled><option value="">Select model</option></select>
+        </div>
+
+        <div class="field">
+          <label>Year</label>
+          <input type="number" id="year" value="2021">
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label>Mileage (km)</label>
+          <input type="number" id="mileage" value="80000">
+        </div>
+
+        <div class="field">
+          <label>Drivetrain</label>
+          <select id="drivetrain">
+            <option value="fwd">FWD</option>
+            <option value="rwd">RWD</option>
+            <option value="awd" selected>AWD</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DRIVING -->
+  <div class="card">
+    <div class="card-head"><div class="step on">2</div><div class="card-title">Driving</div></div>
+    <div class="card-body">
+
+      <label class="radio-pill on">
+        <input type="radio" name="driving" value="mixed" checked>
+        <div class="pill-label">Mixed</div>
+      </label>
+
+      <label class="radio-pill">
+        <input type="radio" name="driving" value="city">
+        <div class="pill-label">City</div>
+      </label>
+
+      <label class="radio-pill">
+        <input type="radio" name="driving" value="highway">
+        <div class="pill-label">Highway</div>
+      </label>
+
+      <label class="radio-pill">
+        <input type="radio" name="driving" value="offroad">
+        <div class="pill-label">Off-road</div>
+      </label>
+
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="card">
+    <div class="card-head"><div class="step on">3</div><div class="card-title">Quote</div></div>
+    <div class="card-body">
+
+      <textarea id="quote-text" placeholder="Paste workshop quote..."></textarea>
+
+      <button class="btn btn-primary" id="analyze-btn">Analyze quote</button>
+      <div id="status" class="hidden"></div>
+
+    </div>
+  </div>
+
+  <!-- HISTORY -->
+  <div id="history-review" class="card hidden">
+    <div class="card-head"><div class="step on">4</div><div class="card-title">Clarify</div></div>
+    <div class="card-body">
+      <div id="questions-list"></div>
+      <button class="btn btn-primary" id="finalize-btn">Get final audit</button>
+    </div>
+  </div>
+
+  <div id="report" class="report hidden"></div>
+
+</div>
+
+<script>
+const API = "https://x748873y-bcvbc.hf.space";
+
+let currentServices = [];
+
+/* STATUS */
+function status(msg,type="info"){
+  const el=document.getElementById("status");
+  el.className=`status-bar ${type}`;
+  el.innerHTML=`<div class="s-dot"></div><span>${msg}</span>`;
+  el.classList.remove("hidden");
+}
+function clearStatus(){
+  document.getElementById("status").classList.add("hidden");
+}
+
+/* LOAD MAKES */
+async function loadMakes(){
+  try{
+    const r = await fetch(`${API}/makes`);
+    const data = await r.json();
+    const makes = data.makes || [];
+
+    const sel = document.getElementById("make");
+    sel.innerHTML = `<option value="">Select make</option>`;
+
+    makes.forEach(m=>{
+      const o=document.createElement("option");
+      o.value=o.textContent=m;
+      sel.appendChild(o);
+    });
+  }catch(e){ console.error(e); }
+}
+
+/* ANALYZE */
+async function analyze(){
+
+  const make = document.getElementById("make").value;
+  const quote = document.getElementById("quote-text").value.trim();
+
+  if(!make) return status("Select make","error");
+  if(!quote) return status("Paste quote","error");
+
+  const btn=document.getElementById("analyze-btn");
+  btn.disabled=true;
+  btn.textContent="Analyzing...";
+
+  try{
+
+    const r = await fetch(`${API}/parse-quote`,{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({ make, quote })
+    });
+
+    const data = await r.json();
+    currentServices = data.services || [];
+
+    status("Checking history...");
+
+    const questions = await fetchHistoryQuestions(currentServices);
+
+    if(questions.length){
+
+      document.getElementById("questions-list").innerHTML =
+        questions.map(q=>`
+          <div class="history-item">
+            <label>${q.name}</label>
+            <select class="history-answer" data-part="${q.part_key}">
+              ${q.questions.map(o=>`<option>${o}</option>`).join("")}
+            </select>
+          </div>
+        `).join("");
+
+      clearStatus();
+      document.getElementById("history-review").classList.remove("hidden");
+
+    } else {
+      await finalizeReport();
+    }
+
+  }catch(e){
+    status("Failed","error");
+    console.error(e);
+  }finally{
+    btn.disabled=false;
+    btn.textContent="Analyze quote";
+  }
+}
+
+/* HISTORY */
+async function fetchHistoryQuestions(services){
+  const out=[];
+
+  for(const svc of services){
+    if(!svc.part_key || svc.part_key==="UNMATCHED") continue;
+
+    try{
+      const r=await fetch(`${API}/history-options/${svc.part_key}`);
+      const d=await r.json();
+
+      if(d.questions?.length){
+        out.push({
+          part_key:svc.part_key,
+          name:svc.display || svc.part_key,
+          questions:d.questions
+        });
+      }
+
+    }catch(e){}
+  }
+
+  return out;
+}
+
+/* FINAL REPORT (✅ FIXED FIELD NAMES HERE) */
+async function finalizeReport(){
+
+  const answers={};
+  document.querySelectorAll(".history-answer").forEach(el=>{
+    answers[el.dataset.part]=el.value;
+  });
+
+  const payload = {
+    // ✅ CORRECT BACKEND KEYS
+    make: document.getElementById("make").value,
+    model: document.getElementById("model").value,
+    year: document.getElementById("year").value,
+    mileage: document.getElementById("mileage").value,
+    driving: document.querySelector('[name="driving"]:checked').value,
+    drivetrain: document.getElementById("drivetrain").value,
+    consent_to_log: true,
+
+    // data
+    services: currentServices,
+    history_answers: answers
+  };
+
+  const r = await fetch(`${API}/generate-report`,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body: JSON.stringify(payload)
+  });
+
+  const report = await r.json();
+  renderReport(report);
+}
+
+/* RENDER */
+function renderReport(report){
+  document.getElementById("report").innerHTML =
+    `<pre>${JSON.stringify(report,null,2)}</pre>`;
+  document.getElementById("report").classList.remove("hidden");
+}
+
+/* EVENTS */
+document.getElementById("analyze-btn").addEventListener("click",analyze);
+document.getElementById("finalize-btn").addEventListener("click",finalizeReport);
+
+loadMakes();
+</script>
+
+</body>
+</html>
