@@ -1,29 +1,550 @@
-<script type="module">
-    import { Client } from "https://cdn.jsdelivr.net/npm/@gradio/client@1.8.1/dist/index.js";
+<!DOCTYPE html>
+<html lang="en">
 
-    // Initialize your live Hugging Face Space instance
-    const hfSpaceUrl = "https://x748873y-bcvbc.hf.space";
-    
-    window.addEventListener("DOMContentLoaded", async () => {
-        console.log("Connecting platform front-end to Carithm intelligence backend...");
-        try {
-            window.carithmApp = await Client.connect(hfSpaceUrl);
-            console.log("Connected to Carithm backend engine successfully.");
-        } catch (err) {
-            console.error("Failed to connect to Hugging Face space:", err);
-        }
-    });
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    // Make execution available to your frontend UI button actions
-    window.runLiveAuditPipeline = async function(payloadArray) {
-        if (!window.carithmApp) {
-            alert("Backend connection initializing. Please try again in a moment.");
-            return null;
+  <title>Carithm | Maintenance Scheduling Done Properly</title>
+  <meta name="description" content="Carithm turns service history into engine-specific maintenance intelligence. Know which components are due — and when — using data you already have. No sensors, no hardware, no integrations.">
+  <meta name="keywords" content="asset lifecycle intelligence, fleet visibility, engineering-grade asset platform, service margin index, component degradation models, vehicle lifecycle margin, data-backed asset planning">
+  <meta name="author" content="Carithm">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://carithm.vercel.app">
+  <link rel="alternate" hreflang="en-ae" href="https://carithm.vercel.app">
+  <link rel="alternate" hreflang="en" href="https://carithm.vercel.app">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:site_name" content="Carithm">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://carithm.vercel.app">
+  <meta property="og:title" content="Carithm | Maintenance Scheduling Done Properly">
+  <meta property="og:description" content="Turn service history into engine-specific maintenance intelligence. Know which components are due — and when. No sensors, no hardware required.">
+  <meta property="og:image" content="https://carithm.vercel.app/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Carithm asset intelligence dashboard">
+  <meta property="og:locale" content="en_AE">
+
+  <!-- TWITTER / X CARD -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@carithm">
+  <meta name="twitter:title" content="Carithm | Maintenance Scheduling Done Properly">
+  <meta name="twitter:description" content="Turn service history into engine-specific maintenance intelligence.">
+  <meta name="twitter:image" content="https://carithm.vercel.app/og-image.jpg">
+
+  <meta name="google-site-verification" content="FwgoslkSBMbkNewUtM7tPOcwkoz7EQWKFT5BbkfiUBA">
+  <meta name="msvalidate.01" content="D1A8A1F06920524E3E359A514D1DE1F6">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script async data-id="101494609" src="//static.getclicky.com/js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TCCEJ6DCM1');
+
+    (function() {
+      let activeSeconds = 0;
+      const interval = 10;
+      setInterval(() => {
+        if (!document.hidden) {
+          activeSeconds += interval;
+          if (typeof gtag === 'function') {
+            gtag('event', 'true_dwell_time', {
+              'event_category': 'Engagement',
+              'event_label': activeSeconds + 's_active',
+              'value': activeSeconds
+            });
+          }
         }
+      }, interval * 1000);
+    })();
+  </script>
+
+  <!-- STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Carithm",
+    "url": "https://carithm.vercel.app",
+    "description": "Exposing asset lifecycle reality and service margin.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "featureList": [
+      "Engine-number-specific service margin logic",
+      "15+ component lifecycle visibility per vehicle",
+      "GCC and UAE climate-adjusted intervals",
+      "Zero hardware or OBD sensor required"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "AED",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #05080f;
+      --bg2: #090e1a;
+      --surface: rgba(255, 255, 255, 0.04);
+      --border: rgba(255, 255, 255, 0.07);
+      --blue: #2d7cf6;
+      --blue-dim: rgba(45, 124, 246, 0.18);
+      --blue-glow: rgba(45, 124, 246, 0.35);
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --green: #22c55e;
+      --text: #dde4f0;
+      --muted: #556080;
+      --display: 'Bebas Neue', sans-serif;
+      --body: 'Outfit', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      font-family: var(--body);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1.1rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(5, 8, 15, 0.85);
+      backdrop-filter: blur(18px);
+    }
+
+    .logo {
+      font-family: var(--display);
+      font-size: 1.7rem;
+      letter-spacing: 0.04em;
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .logo span { color: #fff; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color .2s;
+    }
+
+    .nav a:hover { color: #fff; }
+
+    .nav .cta-btn {
+      background: var(--blue);
+      color: #fff;
+      padding: 0.55rem 1.3rem;
+      border-radius: 6px;
+      font-weight: 600;
+      box-shadow: 0 0 18px var(--blue-glow);
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 70px);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 3rem;
+      padding: 2rem 5%;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--blue-dim);
+      border: 1px solid rgba(45, 124, 246, 0.3);
+      color: #93c5fd;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--blue);
+      border-radius: 50%;
+    }
+
+    .hero-title {
+      font-family: var(--display);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      line-height: 0.95;
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title span { color: var(--blue); display: block; }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      opacity: 0.85;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-group { display: flex; gap: 1rem; }
+
+    .primary-btn {
+      background: var(--blue);
+      color: #fff;
+      padding: 0.9rem 2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 0 25px var(--blue-glow);
+    }
+
+    .secondary-btn {
+      color: var(--text);
+      padding: 0.9rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+    }
+
+    /* VISUAL ACCENT CARD */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .preview-card {
+      width: 100%;
+      max-width: 440px;
+      background: #0d1527;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+    }
+
+    .engine-id { font-family: var(--display); font-size: 1.2rem; }
+
+    .status-pill {
+      background: rgba(239, 68, 110, 0.1);
+      border: 1px solid var(--red);
+      color: #fca5a5;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .metric-row { margin-bottom: 1.2rem; }
+
+    .metric-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill { height: 100%; border-radius: 10px; }
+    .fill-amber { background: var(--amber); width: 42%; }
+    .fill-red { background: var(--red); width: 14%; }
+    .fill-green { background: var(--green); width: 78%; }
+
+    /* SECTIONS */
+    section { padding: 6rem 5%; border-top: 1px solid var(--border); }
+
+    .section-title {
+      font-family: var(--display);
+      font-size: 2.7rem;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .section-title span { color: var(--blue); }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      border-radius: 8px;
+    }
+
+    .feature-icon { font-size: 2rem; margin-bottom: 1.2rem; color: var(--blue); }
+
+    .feature-card h3 { margin-bottom: 0.8rem; }
+
+    .feature-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+
+    /* ACCORDION */
+    .faq-container { max-width: 800px; margin: 0 auto; }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .faq-trigger {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 1.3rem 1.5rem;
+      text-align: left;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-icon { color: var(--muted); transition: transform 0.2s; }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
+    .faq-content p { padding: 0 1.5rem 1.5rem 1.5rem; color: var(--text); opacity: 0.8; font-size: 0.92rem; }
+
+    .faq-item.active .faq-icon { transform: rotate(45deg); color: var(--blue); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 5%;
+      background: #020408;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-text { font-size: 0.85rem; color: var(--muted); }
+
+    @media (max-width: 968px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .btn-group { justify-content: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="#" class="logo">Carithm<span>.</span></a>
+    <nav class="nav">
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+      <a href="mailto:carithmai29@gmail.com" class="cta-btn">Contact Sales</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Engineering-Grade Asset Intelligence
+        </div>
+        <h1 class="hero-title">
+          Maintenance Scheduling <span>Done Properly.</span>
+        </h1>
+        <p class="hero-desc">
+          Carithm turns service history into engine-specific maintenance intelligence. Know exactly which components are due — and when — using data you already have. No sensors, no hardware integrations.
+        </p>
+        <div class="btn-group">
+          <a href="mailto:carithmai29@gmail.com" class="primary-btn">Request Platform Demo</a>
+          <a href="#features" class="secondary-btn">Explore Architecture</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="preview-card">
+          <div class="card-header">
+            <span class="engine-id">ENGINE MODEL // V6-3.0L-T</span>
+            <span class="status-pill">Risk Flagged</span>
+          </div>
+          
+          <div class="metric-row">
+            <div class="metric-info">
+              <span>Front Brake Pads (AWD Profile)</span>
+              <strong>14% Life Margin Remaining</strong>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-fill fill-red"></div>
+            </div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-info">
+              <span>Rear Brake Pads (UAE Climate Offset)</span>
+              <strong>42% Life Margin Remaining</strong>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-fill fill-amber"></div>
+            </div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-info">
+              <span>Timing Chain Configuration</span>
+              <strong>78% System Integrity</strong>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-fill fill-green"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2 class="section-title">Designed for <span>Scale Operations</span></h2>
+      <div class="grid-3">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Zero Hardware Requirements</h3>
+          <p>Operates cleanly on ingestion of existing vehicle records without requiring OBD sensors, telematics tracking arrays, or hardline integration steps.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>Climate-Adjusted Physics</h3>
+          <p>Features complete mechanical adjustment profiles calibrated to survive intense GCC heat metrics and dust saturation variables seamlessly.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>15+ Lifecycle Pipelines</h3>
+          <p>Extract precise visibility metrics across key modules including core fuel systems, individual brake biases, timing arrays, and cooling configurations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2 class="section-title">Technical <span>Specifications</span></h2>
+      <div class="faq-container">
         
-        // Executes the transaction against your live backend space
-        // Gradio tracks events by sequential layout index or function index
-        const response = await window.carithmApp.predict(4, payloadArray); 
-        return response.data;
-    };
-</script>
+        <div class="faq-item">
+          <button class="faq-trigger">
+            Why does the system show lower Lifecycle Margins than basic telematics readers?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-content">
+            <p>Our system operates entirely on designed life metrics rather than diagnosing physical parts. It calculates the exact remaining safety buffer engineered into a part based on environmental profiles and duty cycles. Showing the exhaustion of this service margin allows fleets to plan systematically and workshops to upsell safely before an operational failure occurs.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            Is this technology bound to a specific global region?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-content">
+            <p>No. While our engine seamlessly accounts for extreme environmental multipliers (such as hot climate variables and intense idling profiles), the underlying physics models map standard mechanical component limits globally. It integrates effortlessly with any fleet system or workshop record pool anywhere in the world.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            What raw inputs are required to run the models?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-content">
+            <p>We require zero system modifications. The system functions entirely by ingestion of existing vehicle records—such as basic engine log configurations, previous service timelines, and current mileage counts—running them through our data layers to extract clean, actionable service margin indices.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-text">
+      &copy; 2026 Carithm. All rights reserved. Precision Engine Architecture Modeling.
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.parentElement;
+        const content = trigger.nextElementSibling;
+        const isExpanded = item.classList.contains('active');
+        
+        if (isExpanded) {
+          content.style.maxHeight = null;
+          item.classList.remove('active');
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          item.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
