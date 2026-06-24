@@ -263,6 +263,16 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 
 /* ── Report ── */
 .report { margin-top: 28px; animation: rise 0.35s ease; }
+.report h2 { font-size: 15px; font-weight: 600; margin: 22px 0 6px; letter-spacing: -0.02em; }
+.report h3 { font-size: 13px; font-weight: 600; margin: 18px 0 4px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.report h4 { font-size: 13px; font-weight: 600; margin: 14px 0 6px; letter-spacing: -0.01em; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.report p  { font-size: 12px; color: var(--muted); margin: 2px 0; line-height: 1.7; }
+.report hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.report blockquote { background: var(--surface2); border-left: 2px solid var(--border2); border-radius: 0 5px 5px 0; padding: 8px 12px; margin: 4px 0; font-size: 11px; color: var(--muted); line-height: 1.6; }
+.report strong { color: var(--text); }
+.report code { background: var(--surface3); padding: 1px 5px; border-radius: 4px; font-size: 11px; }
+.report ul { margin: 4px 0 4px 16px; }
+.report li { font-size: 12px; color: var(--muted); margin: 2px 0; line-height: 1.6; }
 @keyframes rise { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
 
 .report-top {
@@ -358,42 +368,18 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
   padding: 18px 20px;
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.8;
-  white-space: pre-wrap;
-  word-break: break-word;
 }
 .reset-bar { margin-top: 20px; display: flex; justify-content: center; }
 .hidden { display: none !important; }
 
 /* ── Life interval bar ── */
-.life-bar-wrap {
-  margin: 8px 0 4px;
-}
-.life-bar-label {
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
-  color: var(--muted);
-  margin-bottom: 4px;
-  letter-spacing: 0.03em;
-}
-.life-bar-track {
-  height: 5px;
-  background: var(--surface3);
-  border-radius: 99px;
-  overflow: hidden;
-}
-.life-bar-fill {
-  height: 100%;
-  border-radius: 99px;
-  transition: width 0.6s ease;
-}
-.life-bar-fill.lbf-green  { background: var(--green); }
-.life-bar-fill.lbf-amber  { background: var(--amber); }
-.life-bar-fill.lbf-red    { background: var(--red); }
-.life-bar-fill.lbf-blue   { background: var(--accent); }
+.life-bar-wrap { margin: 6px 0 10px; }
+.life-bar-label { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); margin-bottom: 4px; letter-spacing: 0.03em; }
+.life-bar-track { height: 5px; background: var(--surface3); border-radius: 99px; overflow: hidden; }
+.life-bar-fill { height: 100%; border-radius: 99px; transition: width 0.6s ease; }
+.life-bar-fill.lbf-green { background: var(--green); }
+.life-bar-fill.lbf-amber { background: var(--amber); }
+.life-bar-fill.lbf-red   { background: var(--red); }
 
 @media (max-width: 520px) {
   .row3 { grid-template-columns: 1fr 1fr; }
@@ -625,42 +611,81 @@ function escapeHtml(str) {
 
 function renderMarkdown(md) {
   if (!md) return "";
-  let html = escapeHtml(md);
 
-  html = html.replace(/^### (.*)$/gm, "<h3>$1</h3>");
-  html = html.replace(/^## (.*)$/gm, "<h2>$1</h2>");
-  html = html.replace(/^# (.*)$/gm, "<h1>$1</h1>");
-  html = html.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-  html = html.replace(/^- (.*)$/gm, "<li>$1</li>");
-  html = html.replace(/(<li>.*<\/li>)/gs, "<ul>$1</ul>");
+  function inlineFormat(text) {
+    return text
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*(.*?)\*/g, "<em>$1</em>")
+      .replace(/`([^`]+)`/g, "<code>$1</code>");
+  }
 
-  // Inject designed-life progress bar after any 🧮 line that contains a % figure
-  html = html.replace(
-    /(🧮[^\n]*?~(\d+)%[^\n]*of the interval used[^\n]*)/g,
-    (match, _full, pctStr) => {
-      const pct = Math.min(parseInt(pctStr, 10), 150);
-      const displayPct = parseInt(pctStr, 10);
-      // colour: green <60%, amber 60-99%, red 100%+
-      const cls = pct >= 100 ? "lbf-red" : pct >= 60 ? "lbf-amber" : "lbf-green";
-      const fillW = Math.min(pct, 100);
-      // if overdue, show a red overfill marker instead
-      const overdue = pct >= 100
-        ? `<div style="position:absolute;right:0;top:0;height:100%;width:3px;background:var(--red);border-radius:99px;"></div>`
-        : "";
-      const bar = `<div class="life-bar-wrap">` +
-        `<div class="life-bar-label"><span>Designed life used</span><span>${displayPct}%${pct >= 100 ? " — overdue" : ""}</span></div>` +
-        `<div class="life-bar-track" style="position:relative;">` +
-          `<div class="life-bar-fill ${cls}" style="width:${fillW}%;"></div>` +
-          overdue +
-        `</div>` +
-      `</div>`;
-      return match + bar;
+  function lifeBar(pctRaw) {
+    const pct    = parseInt(pctRaw, 10);
+    const fillW  = Math.min(pct, 100);
+    const cls    = pct >= 100 ? "lbf-red" : pct >= 60 ? "lbf-amber" : "lbf-green";
+    const label  = pct >= 100 ? `${pct}% — overdue` : `${pct}%`;
+    const marker = pct >= 100
+      ? `<div style="position:absolute;right:0;top:0;height:100%;width:3px;background:var(--red);border-radius:99px;"></div>`
+      : "";
+    return `<div class="life-bar-wrap">` +
+      `<div class="life-bar-label"><span>Designed life used</span><span>${label}</span></div>` +
+      `<div class="life-bar-track" style="position:relative;">` +
+        `<div class="life-bar-fill ${cls}" style="width:${fillW}%;"></div>${marker}` +
+      `</div></div>`;
+  }
+
+  const lines  = md.split("\n");
+  const parts  = [];
+  let listBuf  = [];
+
+  function flushList() {
+    if (!listBuf.length) return;
+    parts.push("<ul>" + listBuf.map(t => `<li>${inlineFormat(t)}</li>`).join("") + "</ul>");
+    listBuf = [];
+  }
+
+  for (let i = 0; i < lines.length; i++) {
+    const raw = lines[i];
+
+    // headings
+    if (/^#### /.test(raw))      { flushList(); parts.push(`<h4>${inlineFormat(raw.slice(5))}</h4>`); continue; }
+    if (/^### /.test(raw))       { flushList(); parts.push(`<h3>${inlineFormat(raw.slice(4))}</h3>`); continue; }
+    if (/^## /.test(raw))        { flushList(); parts.push(`<h2>${inlineFormat(raw.slice(3))}</h2>`); continue; }
+    if (/^# /.test(raw))         { flushList(); parts.push(`<h1>${inlineFormat(raw.slice(2))}</h1>`); continue; }
+
+    // hr
+    if (/^---+$/.test(raw.trim())) { flushList(); parts.push("<hr>"); continue; }
+
+    // blockquote — check if it contains the 🧮 bar trigger
+    if (/^> /.test(raw)) {
+      flushList();
+      const inner = raw.slice(2);
+      const bq = `<blockquote>${inlineFormat(inner)}</blockquote>`;
+      const barMatch = inner.match(/~(\d+)%[^%]*of the interval used/);
+      if (barMatch) {
+        parts.push(bq);
+        parts.push(lifeBar(barMatch[1]));
+      } else {
+        parts.push(bq);
+      }
+      continue;
     }
-  );
 
-  html = html.replace(/\n/g, "<br>");
+    // list
+    if (/^- /.test(raw)) { listBuf.push(raw.slice(2)); continue; }
 
-  return html;
+    flushList();
+
+    // blank line → spacer
+    if (!raw.trim()) { parts.push(`<div style="height:4px"></div>`); continue; }
+
+    // plain paragraph
+    parts.push(`<p>${inlineFormat(raw)}</p>`);
+  }
+
+  flushList();
+  return parts.join("\n");
 }
 
 function normalizeNumber(value) {
