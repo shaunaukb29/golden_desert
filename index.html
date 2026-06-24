@@ -97,6 +97,7 @@ select {
   cursor: pointer;
 }
 select option { background: #27272a; }
+select:disabled { opacity: 0.45; cursor: not-allowed; }
 textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.6; }
 
 /* ── Radio pills ── */
@@ -892,9 +893,34 @@ function renderHistoryQuestions(services) {
     const label = document.createElement("label");
     label.textContent = `When was "${svc.display || svc.raw}" last done?`;
 
+    // ── "I know / I don't know" toggle ──────────────────────────────────
+    // Defaults to "don't know" — select stays disabled and no answer is
+    // sent, so the backend falls back to history_answers.get(key, "unknown").
+    const knowRow = document.createElement("label");
+    knowRow.className = "radio-pill";
+    knowRow.style.marginBottom = "6px";
+
+    const knowCheckbox = document.createElement("input");
+    knowCheckbox.type = "checkbox";
+    knowCheckbox.style.display = "none";
+
+    const pip = document.createElement("div");
+    pip.className = "pip";
+    const pipDot = document.createElement("div");
+    pipDot.className = "pip-dot";
+    pip.appendChild(pipDot);
+
+    const knowText = document.createElement("div");
+    knowText.innerHTML = `<div class="pill-label">I know the history</div><div class="pill-sub">Leave unchecked if unsure — we'll assume unknown</div>`;
+
+    knowRow.appendChild(knowCheckbox);
+    knowRow.appendChild(pip);
+    knowRow.appendChild(knowText);
+
     const select = document.createElement("select");
     select.dataset.partKey = svc.part_key;
     select.dataset.index = String(idx);
+    select.disabled = true;
 
     select.appendChild(createOption("", "Select one"));
 
@@ -914,13 +940,30 @@ function renderHistoryQuestions(services) {
       select.appendChild(createOption(optionValue, optionLabel));
     });
 
+    knowRow.addEventListener("click", () => {
+      knowCheckbox.checked = !knowCheckbox.checked;
+      knowRow.classList.toggle("on", knowCheckbox.checked);
+      select.disabled = !knowCheckbox.checked;
+      if (!knowCheckbox.checked) {
+        // Switched back to "don't know" — clear any prior answer and reset
+        // the dropdown so a stale value never gets submitted silently.
+        select.value = "";
+        if (svc.part_key) delete historyAnswers[svc.part_key];
+      }
+    });
+
     select.addEventListener("change", () => {
       if (svc.part_key) {
-        historyAnswers[svc.part_key] = select.value;
+        if (select.value) {
+          historyAnswers[svc.part_key] = select.value;
+        } else {
+          delete historyAnswers[svc.part_key];
+        }
       }
     });
 
     wrapper.appendChild(label);
+    wrapper.appendChild(knowRow);
     wrapper.appendChild(select);
     questionsListEl.appendChild(wrapper);
   });
