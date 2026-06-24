@@ -542,7 +542,7 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 /* ================================
    CONFIG
 ================================ */
-const API_BASE = "https://x748873y-bcvbc.hf.space";
+const API_BASE = "http://127.0.0.1:8000";
 
 // ---------- DOM ----------
 const makeSelect = document.getElementById("make");
@@ -959,16 +959,9 @@ async function submitHistoryAndGenerateReport() {
 
     const vehicle = collectVehicleData();
 
-    const servicesRequiringHistory = analyzedServices.filter(
-      (svc) => Array.isArray(svc.history_options) && svc.history_options.length > 0
-    );
-
-    for (const svc of servicesRequiringHistory) {
-      if (!historyAnswers[svc.part_key]) {
-        throw new Error(`Please answer the history question for "${svc.display || svc.raw}".`);
-      }
-    }
-
+    // History answers are optional — the backend defaults any unanswered
+    // part to "unknown" (see main.py: req.history_answers.get(part_key,
+    // "unknown")). We just send whatever the user actually picked.
     const payload = {
       services: analyzedServices,
       history_answers: historyAnswers,
@@ -984,10 +977,10 @@ async function submitHistoryAndGenerateReport() {
 
     const result = await apiPost("/generate-report", payload);
 
-    // Response schema for /generate-report isn't pinned down beyond "a
-    // Markdown report" — try the likely key names, falling back to raw JSON.
+    // Backend (main.py) returns {"report_markdown": "..."}. Keep the other
+    // key names as fallbacks in case that ever changes.
     const reportMd =
-      result.report ?? result.markdown ?? result.audit_report ??
+      result.report_markdown ?? result.report ?? result.markdown ?? result.audit_report ??
       (typeof result === "string" ? result : JSON.stringify(result, null, 2));
 
     reportEl.innerHTML = renderMarkdown(reportMd || "No report returned.");
