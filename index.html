@@ -747,7 +747,25 @@ function extractServicesFromAnalyzeResponse(data) {
 /**
  * Normalizes a service line into the shape the UI expects.
  */
+/**
+ * Maintenance items that should never be flagged as symptoms,
+ * regardless of what the parser returns.
+ */
+const MAINTENANCE_KEYS = new Set([
+  'front_brake_pads',
+  'rear_brake_pads',
+  'brake_pads',
+  'spark_plugs',
+  'cabin_filter',
+  'engine_oil',
+  'oil_filter',
+  'air_filter',
+  'brake_fluid',
+  'coolant'
+]);
+
 function normalizeServiceItem(item) {
+  // Default fallback for invalid inputs
   if (!item || typeof item !== 'object') {
     return {
       display: 'Unknown item',
@@ -758,55 +776,29 @@ function normalizeServiceItem(item) {
     };
   }
 
-  const display =
-    item.display ??
-    item.name ??
-    item.label ??
-    item.service ??
-    item.item ??
-    item.description ??
-    item.raw ??
-    'Unknown item';
+  // Extract primary fields
+  const display = item.display ?? item.name ?? item.label ?? item.service ?? item.item ?? item.description ?? item.raw ?? 'Unknown item';
+  const raw = item.raw ?? item.text ?? item.line ?? item.description ?? display;
+  const part_key = item.part_key ?? item.partKey ?? item.key ?? item.match_key ?? item.canonical_key ?? 'UNMATCHED';
+  const price = item.price ?? item.amount ?? item.cost ?? item.value ?? null;
 
-  const raw =
-    item.raw ??
-    item.text ??
-    item.line ??
-    item.description ??
-    display;
+  // Determine symptom status
+  // 1. Get the value from the parser (default false)
+  const is_parser_symptom = Boolean(item.is_symptom ?? item.symptom ?? item.is_repair_symptom ?? false);
 
-  const part_key =
-    item.part_key ??
-    item.partKey ??
-    item.key ??
-    item.match_key ??
-    item.canonical_key ??
-    'UNMATCHED';
-
-  const price =
-    item.price ??
-    item.amount ??
-    item.cost ??
-    item.value ??
-    null;
-
-  const is_symptom = Boolean(
-    item.is_symptom ??
-    item.symptom ??
-    item.is_repair_symptom ??
-    false
-  );
+  // 2. Enforce the maintenance rule: 
+  // If the key is in our maintenance list, force false. Otherwise, use parser value.
+  const is_symptom = MAINTENANCE_KEYS.has(part_key) ? false : is_parser_symptom;
 
   return {
     ...item,
     display,
     raw,
     part_key,
-    price,
+    price: price !== null ? Number(price) : null,
     is_symptom
   };
 }
-
 /**
  * Returns a report item lookup map keyed by part_key if possible.
  */
@@ -985,12 +977,24 @@ async function finalizeReport() {
   });
 
   try {
-    const vehicle = getVehiclePayload();
+    // Collect vehicle details directly from inputs
+    const make = document.getElementById('make').value;
+    const model = document.getElementById('model').value;
+    const year = document.getElementById('year').value;
+    const mileage = document.getElementById('mileage').value;
+    const driving = document.querySelector('[name="driving"]:checked')?.value;
+    const drivetrain = document.getElementById('drivetrain').value;
 
     const payload = {
       services: currentServices,
       history_answers: answers,
-      ...vehicle
+      make: make,
+      model: model,
+      year: year,
+      mileage: Number(mileage),
+      driving: driving,
+      drivetrain: drivetrain,
+      consent_to_log: false // Defaulting per your requirement
     };
 
     const r = await fetch(`${API}/generate-report`, {
@@ -1005,17 +1009,9 @@ async function finalizeReport() {
     }
 
     const reportResult = await r.json();
-    console.log('Report response:', reportResult);
-
     document.getElementById('history-review').classList.add('hidden');
 
-    renderReport(currentServices, reportResult, {
-      make: vehicle.vehicle_make,
-      model: vehicle.vehicle_model,
-      year: vehicle.vehicle_year,
-      mileage: vehicle.total_km
-    });
-
+    renderReport(currentServices, reportResult, { make, model, year, mileage });
     clearStatus();
   } catch (e) {
     console.error(e);
@@ -1027,7 +1023,6 @@ async function finalizeReport() {
     }
   }
 }
-
 /* ================================
    REPORT RENDERING
 ================================ */
