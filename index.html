@@ -178,26 +178,16 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 .drop-file { font-size: 12px; color: var(--green); margin-top: 5px; font-weight: 500; }
 
 /* ── History Review ── */
-.history-item {
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border);
-}
-.history-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
 .history-question { margin-bottom: 15px; }
 
 /* ── Services List ── */
 .service-row {
   background: var(--surface2);
   border: 1px solid var(--border);
-  padding: 10px;
+  padding: 12px;
   border-radius: var(--r-sm);
   margin-bottom: 8px;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 /* ── Divider ── */
@@ -226,8 +216,6 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 .btn:disabled { opacity: 0.38; cursor: not-allowed; }
 .btn-primary { background: var(--accent); color: white; }
 .btn-primary:hover:not(:disabled) { opacity: 0.88; }
-.btn-ghost { background: var(--surface2); color: var(--text); border: 1px solid var(--border2); }
-.btn-ghost:hover:not(:disabled) { background: var(--surface3); }
 
 /* ── Status bar ── */
 .status-bar {
@@ -255,6 +243,25 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 .report { margin-top: 28px; animation: rise 0.35s ease; }
 @keyframes rise { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
 
+.full-report {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 18px 20px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.section-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted2);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 10px;
+}
 .hidden { display: none !important; }
 
 @media (max-width: 520px) {
@@ -279,9 +286,9 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
   </div>
 
   <div class="hero">
-    <div class="eyebrow">GCC service center transparency tool</div>
+    <div class="eyebrow">GCC workshop transparency tool</div>
     <h1>Is your workshop<br>quote fair?</h1>
-    <p>Upload or paste your quote. Get an independent verdict on every line item's designed life health in under a minute.</p>
+    <p>Upload or paste your quote. Get an independent verdict on every line item in under a minute.</p>
   </div>
 
   <div class="card" id="vehicle-section">
@@ -407,7 +414,6 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
       <button class="btn btn-primary" id="analyze-btn">Analyze quote</button>
       <div id="status" class="status-bar hidden"></div>
       
-      <!-- Container for parsed services -->
       <div id="services-list" class="hidden" style="margin-top: 15px;"></div>
     </div>
   </div>
@@ -419,7 +425,7 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
     </div>
     <div class="card-body">
       <p style="font-size:12px; color:var(--muted)">
-        Some items need context to ensure an accurate designed life health audit.
+        Some items need context to ensure an accurate audit.
       </p>
       <div id="questions-list"></div>
       <button class="btn btn-primary" id="finalize-btn">Get final health audit</button>
@@ -435,11 +441,10 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 ================================ */
 const API_BASE = "http://127.0.0.1:8000";
 
-// ---------- DOM ----------
+// ---------- DOM Elements ----------
 const quoteTextEl = document.getElementById("quote-text");
 const analyzeBtn = document.getElementById("analyze-btn");
 
-const vehicleSection = document.getElementById("vehicle-section");
 const makeSelect = document.getElementById("make");
 const modelSelect = document.getElementById("model");
 const yearInput = document.getElementById("year");
@@ -465,26 +470,23 @@ let availableMakes = [];
 let availableModels = [];
 let selectedFile = null;
 
-// ---------- Custom Radio Pills Setup ----------
+// ---------- Radio Pills Logic ----------
 document.querySelectorAll('.radio-pill').forEach(pill => {
-  pill.addEventListener('click', (e) => {
-    // Only update visual state if clicked via JS (the input still changes)
+  pill.addEventListener('click', () => {
     document.querySelectorAll('.radio-pill').forEach(p => p.classList.remove('on'));
     pill.classList.add('on');
     pill.querySelector('input[type="radio"]').checked = true;
   });
 });
 
-// ---------- File Upload Zone Setup ----------
+// ---------- File Handling logic ----------
 dropZone.addEventListener('dragover', (e) => {
   e.preventDefault();
   dropZone.classList.add('drag');
 });
-
 dropZone.addEventListener('dragleave', () => {
   dropZone.classList.remove('drag');
 });
-
 dropZone.addEventListener('drop', (e) => {
   e.preventDefault();
   dropZone.classList.remove('drag');
@@ -493,7 +495,6 @@ dropZone.addEventListener('drop', (e) => {
     handleFileSelection();
   }
 });
-
 fileInput.addEventListener('change', handleFileSelection);
 
 function handleFileSelection() {
@@ -502,18 +503,20 @@ function handleFileSelection() {
     dropZone.classList.add('has-file');
     dropFileText.textContent = `Attached: ${selectedFile.name}`;
     dropFileText.classList.remove('hidden');
-    // Clear text area if file is chosen
-    quoteTextEl.value = "";
+    quoteTextEl.value = ""; // clear plain text input
   }
 }
 
-// ---------- Helpers ----------
+// ---------- Visual Helpers ----------
 function setStatus(msg, isError = false) {
   if (!statusEl) return;
-  statusEl.textContent = msg || "";
+  if (!msg) {
+    statusEl.classList.add("hidden");
+    return;
+  }
+  statusEl.textContent = msg;
   statusEl.className = `status-bar ${isError ? 'error' : 'info'}`;
   statusEl.classList.remove("hidden");
-  if (!msg) statusEl.classList.add("hidden");
 }
 
 function escapeHtml(str) {
@@ -551,7 +554,7 @@ function createOption(value, label) {
   return opt;
 }
 
-// ---------- API ----------
+// ---------- API Wrapper ----------
 async function apiGet(path) {
   const res = await fetch(`${API_BASE}${path}`);
   if (!res.ok) {
@@ -563,27 +566,22 @@ async function apiGet(path) {
 
 async function apiPost(path, body) {
   const isFormData = body instanceof FormData;
-  
   const options = {
     method: "POST",
     body: isFormData ? body : JSON.stringify(body),
   };
-  
   if (!isFormData) {
     options.headers = { "Content-Type": "application/json" };
   }
-
   const res = await fetch(`${API_BASE}${path}`, options);
-
   if (!res.ok) {
     const txt = await res.text();
     throw new Error(`POST ${path} failed (${res.status}) ${txt}`);
   }
-
   return res.json();
 }
 
-// ---------- Load make/model data ----------
+// ---------- Load Vehicle Data Flow ----------
 async function loadMakes() {
   try {
     const data = await apiGet("/makes");
@@ -594,16 +592,16 @@ async function loadMakes() {
     availableMakes.forEach((make) => {
       makeSelect.appendChild(createOption(make, make));
     });
+    setStatus(""); // Clear loading status if successful
   } catch (err) {
     console.error(err);
-    setStatus(`Failed to load makes: ${err.message}`, true);
+    setStatus(`Failed to load makes: ${err.message}. Is your backend server online at port 8000?`, true);
   }
 }
 
 async function loadModels(make) {
   modelSelect.innerHTML = "";
   modelSelect.appendChild(createOption("", "Select model"));
-  
   if (!make) {
     modelSelect.disabled = true;
     return;
@@ -616,7 +614,6 @@ async function loadModels(make) {
     availableModels.forEach((model) => {
       modelSelect.appendChild(createOption(model, model));
     });
-    
     modelSelect.disabled = false;
   } catch (err) {
     console.error(err);
@@ -629,31 +626,27 @@ makeSelect?.addEventListener("change", async () => {
   await loadModels(makeSelect.value);
 });
 
-// ---------- Analyze quote ----------
+// ---------- Stage 3: Quote Analysis ----------
 async function analyzeQuote() {
   const quoteText = quoteTextEl?.value?.trim();
-  
   if (!quoteText && !selectedFile) {
-    setStatus("Please upload a file or paste the quote text first.", true);
+    setStatus("Please upload a file or paste your quote text.", true);
     return;
   }
 
   setStatus("Analyzing quote...");
-  reportOutput.style.display = "none";
+  reportOutput.classList.add("hidden");
   historySection.classList.add("hidden");
   servicesList.classList.add("hidden");
 
   try {
     let data;
-    
     if (selectedFile) {
       const formData = new FormData();
       formData.append("file", selectedFile);
       data = await apiPost("/analyze-quote", formData);
     } else {
-      data = await apiPost("/analyze-quote-text", {
-        text: quoteText,
-      });
+      data = await apiPost("/analyze-quote-text", { text: quoteText });
     }
 
     analyzedServices = data.services || [];
@@ -663,50 +656,32 @@ async function analyzeQuote() {
     renderHistoryQuestions(analyzedServices);
 
     servicesList.classList.remove("hidden");
-    
-    // Only show history section if there are actually questions to ask
-    const historyServices = analyzedServices.filter(
-      (svc) => Array.isArray(svc.history_options) && svc.history_options.length > 0
-    );
-    
-    if (historyServices.length > 0) {
-      historySection.classList.remove("hidden");
-    } else {
-      // If no history is needed, swap the button to immediately run the report
-      historySection.classList.remove("hidden");
-      questionsList.innerHTML = "<p style='font-size: 13px;'>No additional history required for these parts.</p>";
-    }
+    historySection.classList.remove("hidden");
 
-    // Set status dynamically from API if badla passed one through
     if (data.status) {
       setStatus(data.status);
     } else {
-      setStatus("Quote analyzed successfully.");
+      setStatus("Quote successfully analyzed.");
     }
-    
   } catch (err) {
     console.error(err);
     setStatus(err.message, true);
   }
 }
 
-// ---------- Render analyzed services ----------
 function renderServices(services) {
   if (!servicesList) return;
-  servicesList.innerHTML = `
-    <div class="section-label">Extracted Services</div>
-  `;
+  servicesList.innerHTML = `<div class="section-label">Extracted Items</div>`;
 
   if (!services?.length) {
-    servicesList.innerHTML += "<p style='font-size:12px;'>No valid services were extracted.</p>";
+    servicesList.innerHTML += "<p style='font-size:12px;'>No valid lines were extracted.</p>";
     return;
   }
 
   services.forEach((svc, idx) => {
     const row = document.createElement("div");
     row.className = "service-row";
-
-    const display = svc.display || svc.raw || `Service ${idx + 1}`;
+    const display = svc.display || svc.raw || `Item ${idx + 1}`;
     const price = svc.price ?? 0;
     const matched = svc.part_key && svc.part_key !== "UNMATCHED";
 
@@ -716,15 +691,13 @@ function renderServices(services) {
         <span>AED ${escapeHtml(price)}</span>
       </div>
       <div style="color:var(--muted); font-size:11px;">
-        Part mapping: ${matched ? escapeHtml(svc.part_key) : "Unmatched"}
+        Engine Part Mapping: ${matched ? escapeHtml(svc.part_key) : "Unmatched / General labor"}
       </div>
     `;
-
     servicesList.appendChild(row);
   });
 }
 
-// ---------- Render history questions ----------
 function renderHistoryQuestions(services) {
   if (!questionsList) return;
   questionsList.innerHTML = "";
@@ -733,7 +706,10 @@ function renderHistoryQuestions(services) {
     (svc) => Array.isArray(svc.history_options) && svc.history_options.length > 0
   );
 
-  if (!historyServices.length) return;
+  if (!historyServices.length) {
+    questionsList.innerHTML = "<p style='font-size:13px;'>No item metrics require replacement milestones.</p>";
+    return;
+  }
 
   historyServices.forEach((svc, idx) => {
     const wrapper = document.createElement("div");
@@ -744,18 +720,16 @@ function renderHistoryQuestions(services) {
     label.style.marginBottom = "5px";
     label.style.fontSize = "13px";
     label.style.fontWeight = "500";
-    label.textContent = `When was "${svc.display || svc.raw}" last done?`;
+    label.textContent = `When was "${svc.display || svc.raw}" last changed?`;
 
     const select = document.createElement("select");
     select.dataset.partKey = svc.part_key;
     select.dataset.index = String(idx);
-
-    select.appendChild(createOption("", "Select one"));
+    select.appendChild(createOption("", "Select a history baseline"));
 
     svc.history_options.forEach((opt) => {
       let optionLabel = "";
       let optionValue = "";
-
       if (Array.isArray(opt)) {
         optionLabel = opt[0];
         optionValue = opt[1];
@@ -763,7 +737,6 @@ function renderHistoryQuestions(services) {
         optionLabel = opt.label;
         optionValue = opt.value;
       }
-
       select.appendChild(createOption(optionValue, optionLabel));
     });
 
@@ -779,7 +752,7 @@ function renderHistoryQuestions(services) {
   });
 }
 
-// ---------- Validate vehicle inputs ----------
+// ---------- Stage 4: Execution Pipeline ----------
 function collectVehicleData() {
   const make = makeSelect?.value?.trim();
   const model = modelSelect?.value?.trim();
@@ -787,9 +760,8 @@ function collectVehicleData() {
   const mileage = normalizeNumber(mileageInput?.value);
   const drivetrain = drivetrainSelect?.value?.trim();
   
-  // Extract currently selected driving radio
-  const drivingEl = document.querySelector('input[name="driving"]:checked');
-  const driving = drivingEl ? drivingEl.value : "mixed";
+  const selectedDrivingInput = document.querySelector('input[name="driving"]:checked');
+  const driving = selectedDrivingInput ? selectedDrivingInput.value : "mixed";
 
   const missing = [];
   if (!make) missing.push("make");
@@ -799,33 +771,24 @@ function collectVehicleData() {
   if (!drivetrain) missing.push("drivetrain");
 
   if (missing.length) {
-    throw new Error(`Missing required fields: ${missing.join(", ")}`);
+    throw new Error(`Provide required vehicle parameters: ${missing.join(", ")}`);
   }
 
-  return {
-    make,
-    model,
-    year: parseInt(year, 10),
-    mileage,
-    drivetrain,
-    driving,
-  };
+  return { make, model, year: parseInt(year, 10), mileage, drivetrain, driving };
 }
 
-// ---------- Generate report ----------
-async function submitHistoryAndGenerateReport() {
+async function generateReport() {
   try {
-    setStatus("Preparing report...");
-
+    setStatus("Generating health compliance report...");
     const vehicle = collectVehicleData();
 
-    const servicesRequiringHistory = analyzedServices.filter(
+    const servicesWithHistory = analyzedServices.filter(
       (svc) => Array.isArray(svc.history_options) && svc.history_options.length > 0
     );
 
-    for (const svc of servicesRequiringHistory) {
+    for (const svc of servicesWithHistory) {
       if (!historyAnswers[svc.part_key]) {
-        throw new Error(`Please answer the history question for "${svc.display || svc.raw}".`);
+        throw new Error(`Please specify a tracking baseline history option for "${svc.display || svc.raw}".`);
       }
     }
 
@@ -843,31 +806,27 @@ async function submitHistoryAndGenerateReport() {
     };
 
     const result = await apiPost("/generate-report", payload);
-
+    
     reportOutput.innerHTML = `
       <div class="full-report">
-        ${renderMarkdown(result.report || "No report returned.")}
+        ${renderMarkdown(result.report || "Empty response summary payload returned.")}
       </div>
     `;
-    
     reportOutput.classList.remove("hidden");
-    reportOutput.style.display = "block";
-    
-    // Auto scroll down to report
     reportOutput.scrollIntoView({ behavior: 'smooth' });
-    
-    setStatus("Designed life health audit completed successfully.");
+
+    setStatus("Report loaded successfully.");
   } catch (err) {
     console.error(err);
     setStatus(err.message, true);
   }
 }
 
-// ---------- Events ----------
+// ---------- Listeners ----------
 analyzeBtn?.addEventListener("click", analyzeQuote);
-finalizeBtn?.addEventListener("click", submitHistoryAndGenerateReport);
+finalizeBtn?.addEventListener("click", generateReport);
 
-// ---------- Init ----------
+// ---------- Bootstrap ----------
 loadMakes();
 </script>
 </body>
