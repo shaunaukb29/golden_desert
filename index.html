@@ -367,6 +367,34 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 .reset-bar { margin-top: 20px; display: flex; justify-content: center; }
 .hidden { display: none !important; }
 
+/* ── Life interval bar ── */
+.life-bar-wrap {
+  margin: 8px 0 4px;
+}
+.life-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--muted);
+  margin-bottom: 4px;
+  letter-spacing: 0.03em;
+}
+.life-bar-track {
+  height: 5px;
+  background: var(--surface3);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.life-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.6s ease;
+}
+.life-bar-fill.lbf-green  { background: var(--green); }
+.life-bar-fill.lbf-amber  { background: var(--amber); }
+.life-bar-fill.lbf-red    { background: var(--red); }
+.life-bar-fill.lbf-blue   { background: var(--accent); }
+
 @media (max-width: 520px) {
   .row3 { grid-template-columns: 1fr 1fr; }
   .row3 .field:last-child { grid-column: span 2; }
@@ -605,6 +633,31 @@ function renderMarkdown(md) {
   html = html.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
   html = html.replace(/^- (.*)$/gm, "<li>$1</li>");
   html = html.replace(/(<li>.*<\/li>)/gs, "<ul>$1</ul>");
+
+  // Inject designed-life progress bar after any 🧮 line that contains a % figure
+  html = html.replace(
+    /(🧮[^\n]*?~(\d+)%[^\n]*of the interval used[^\n]*)/g,
+    (match, _full, pctStr) => {
+      const pct = Math.min(parseInt(pctStr, 10), 150);
+      const displayPct = parseInt(pctStr, 10);
+      // colour: green <60%, amber 60-99%, red 100%+
+      const cls = pct >= 100 ? "lbf-red" : pct >= 60 ? "lbf-amber" : "lbf-green";
+      const fillW = Math.min(pct, 100);
+      // if overdue, show a red overfill marker instead
+      const overdue = pct >= 100
+        ? `<div style="position:absolute;right:0;top:0;height:100%;width:3px;background:var(--red);border-radius:99px;"></div>`
+        : "";
+      const bar = `<div class="life-bar-wrap">` +
+        `<div class="life-bar-label"><span>Designed life used</span><span>${displayPct}%${pct >= 100 ? " — overdue" : ""}</span></div>` +
+        `<div class="life-bar-track" style="position:relative;">` +
+          `<div class="life-bar-fill ${cls}" style="width:${fillW}%;"></div>` +
+          overdue +
+        `</div>` +
+      `</div>`;
+      return match + bar;
+    }
+  );
+
   html = html.replace(/\n/g, "<br>");
 
   return html;
