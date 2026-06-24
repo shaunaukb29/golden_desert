@@ -523,13 +523,11 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
   <div id="history-review" class="card hidden">
     <div class="card-head">
       <div class="step on">4</div>
-      <div class="card-title">Clarify details</div>
+      <div class="card-title">Service history</div>
     </div>
     <div class="card-body">
-      <div class="section-label">Parsed line items</div>
-      <div id="services-list" class="items"></div>
       <p style="font-size:12px; color:var(--muted)">
-        Some items need context to ensure an accurate audit.
+        A few of the items in your quote need extra context to ensure an accurate audit.
       </p>
       <div id="questions-list"></div>
       <button class="btn btn-primary" id="finalize-btn">Get final audit</button>
@@ -543,7 +541,7 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 /* ================================
    CONFIG
 ================================ */
-const API_BASE = "https://x748873y-bcvbc.hf.space";
+const API_BASE = "http://127.0.0.1:8000";
 
 // ---------- DOM ----------
 const makeSelect = document.getElementById("make");
@@ -563,7 +561,6 @@ const analyzeBtn = document.getElementById("analyze-btn");
 const statusEl = document.getElementById("status");
 
 const historyReview = document.getElementById("history-review");
-const servicesListEl = document.getElementById("services-list");
 const questionsListEl = document.getElementById("questions-list");
 const finalizeBtn = document.getElementById("finalize-btn");
 
@@ -834,42 +831,10 @@ async function analyzeQuote() {
     return;
   }
 
-  renderServices(analyzedServices);
   renderHistoryQuestions(analyzedServices);
   historyReview?.classList.remove("hidden");
   setStatus(statusMsg, "success");
   historyReview?.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-// ---------- Render analyzed services ----------
-function renderServices(services) {
-  if (!servicesListEl) return;
-  servicesListEl.innerHTML = "";
-
-  if (!services?.length) {
-    servicesListEl.innerHTML = '<p style="font-size:12px;color:var(--muted)">No services found.</p>';
-    return;
-  }
-
-  services.forEach((svc, idx) => {
-    const display = svc.display || svc.raw || `Service ${idx + 1}`;
-    const price = svc.price ?? 0;
-    const matched = Boolean(svc.part_key && svc.part_key !== "UNMATCHED");
-
-    const row = document.createElement("div");
-    row.className = "item";
-    row.innerHTML = `
-      <div>
-        <div class="item-name">${escapeHtml(display)}</div>
-        <div class="item-key">${escapeHtml(svc.part_key || "UNMATCHED")}</div>
-      </div>
-      <div class="item-right">
-        <div class="item-price">AED ${escapeHtml(Number(price).toLocaleString())}</div>
-        <span class="badge ${matched ? "b-green" : "b-gray"}">${matched ? "Matched" : "Unmatched"}</span>
-      </div>
-    `;
-    servicesListEl.appendChild(row);
-  });
 }
 
 // ---------- Render history questions ----------
