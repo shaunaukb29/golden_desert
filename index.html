@@ -289,16 +289,7 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 .stat-n { font-size: 22px; font-weight: 600; letter-spacing: -0.03em; margin-bottom: 2px; }
 .stat-l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
 
-.section-label {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted2);
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 10px;
-}
+/* .section-label — defined in report renderer styles below */
 
 .items { display: flex; flex-direction: column; gap: 7px; }
 
@@ -366,6 +357,163 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 }
 .reset-bar { margin-top: 20px; display: flex; justify-content: center; }
 .hidden { display: none !important; }
+
+/* ── Report renderer styles ── */
+.rpt-report-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.rpt-meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+  line-height: 1.6;
+}
+.rpt-meta strong { color: var(--text); }
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted2);
+  padding: 18px 0 8px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 10px;
+}
+.sl-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Item card overrides for report context */
+.rpt-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: start;
+}
+.item-left { min-width: 0; }
+
+.rpt-kv {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  font-size: 11px;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+.rpt-k {
+  color: var(--muted2);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.rpt-v {
+  color: var(--muted);
+}
+.rpt-v strong { color: var(--text); }
+.rpt-v em    { color: var(--muted); font-style: normal; }
+.rpt-v code  {
+  background: var(--surface3);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 10px;
+  color: #93c5fd;
+}
+
+.evidence {
+  margin-top: 8px;
+  padding: 8px 11px;
+  background: var(--surface2);
+  border-radius: 5px;
+  border-left: 2px solid var(--border2);
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.evidence-ask  { border-left-color: var(--accent); }
+.evidence-math { border-left-color: var(--amber); }
+.evidence-info { border-left-color: var(--muted2); }
+.evidence strong { color: var(--text); }
+.evidence em     { color: var(--muted); font-style: normal; }
+.evidence code   {
+  background: var(--surface3);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+.rpt-callout {
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: var(--r-sm);
+  padding: 12px 14px;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 12px 0;
+}
+.rpt-callout strong { color: var(--text); }
+
+.rpt-hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 6px 0 14px;
+}
+
+.rpt-free { color: var(--muted2) !important; font-size: 12px !important; }
+
+.rpt-misc {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 5px;
+  line-height: 1.6;
+}
+.rpt-unmatched {
+  font-size: 11px;
+  color: var(--muted2);
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+}
+.rpt-unmatched:last-child { border-bottom: none; }
+
+.rpt-p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 4px 0;
+}
+.rpt-p strong { color: var(--text); }
+
+.rpt-li {
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: 16px;
+  line-height: 1.7;
+  list-style: disc;
+}
+
+/* Disclaimer block at the bottom */
+.report > .evidence:last-child {
+  margin-top: 16px;
+  font-size: 10px;
+  opacity: 0.7;
+}
 
 @media (max-width: 520px) {
   .row3 { grid-template-columns: 1fr 1fr; }
@@ -595,18 +743,239 @@ function escapeHtml(str) {
     .replace(/>/g, "&gt;");
 }
 
+/* ─── Inline markdown: bold, italic, code, escape ─── */
+function inlineMd(raw) {
+  let s = escapeHtml(raw);
+  s = s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  s = s.replace(/\*(.+?)\*/g,     "<em>$1</em>");
+  s = s.replace(/_(.+?)_/g,       "<em>$1</em>");
+  s = s.replace(/`(.+?)`/g,       "<code>$1</code>");
+  return s;
+}
+
+/* ─── Priority section metadata ─── */
+const SECTION_META = {
+  "🟥": { cls: "section-do-now",   dot: "#ef4444", label: "Do Now"   },
+  "🟧": { cls: "section-soon",     dot: "#f59e0b", label: "Soon"      },
+  "🟩": { cls: "section-can-wait", dot: "#22c55e", label: "Can Wait"  },
+  "⚠️": { cls: "section-symptom",  dot: "#f59e0b", label: "Review"    },
+  "📋": { cls: "section-unmatched",dot: "#71717a", label: "Additional" },
+};
+
+function getSectionDot(heading) {
+  for (const [emoji, meta] of Object.entries(SECTION_META)) {
+    if (heading.includes(emoji)) return meta.dot;
+  }
+  return "var(--accent)";
+}
+
+/* ─── Render one item block (#### heading through next ####/###/---) ─── */
+function renderItemBlock(lines, currentSectionDot) {
+  const title = lines[0].replace(/^####\s*/, "").trim();
+  const rest   = lines.slice(1);
+
+  // Collect key/value pairs (**Key:** value) and notes (> ...) and misc lines
+  const kvPairs   = [];
+  const notes     = [];
+  const miscLines = [];
+  let   price     = null;
+  let   urgency   = null;
+
+  // Detect urgency badge from "Priority:" line
+  const urgencyMap = {
+    "🟥": { cls: "b-red",   label: "Do Now"   },
+    "🟧": { cls: "b-amber", label: "Soon"      },
+    "🟩": { cls: "b-green", label: "Can Wait"  },
+    "⚠️": { cls: "b-amber", label: "Review"    },
+  };
+
+  for (const raw of rest) {
+    const line = raw.trim();
+    if (!line || line === "---") continue;
+
+    // Blockquote lines → note cards
+    if (line.startsWith("> ")) {
+      notes.push(line.slice(2));
+      continue;
+    }
+
+    // **Key:** Value
+    const kvMatch = line.match(/^\*\*(.+?):\*\*\s*(.*)/);
+    if (kvMatch) {
+      const key = kvMatch[1].trim();
+      const val = kvMatch[2].trim();
+
+      // Extract price
+      if (key === "Quoted Price") {
+        const priceMatch = val.match(/AED\s*([\d,]+)/);
+        if (priceMatch) price = priceMatch[1];
+      }
+
+      // Extract urgency emoji for badge
+      if (key === "Priority") {
+        for (const [emoji, meta] of Object.entries(urgencyMap)) {
+          if (val.includes(emoji)) { urgency = meta; break; }
+        }
+      }
+
+      kvPairs.push({ key, val });
+      continue;
+    }
+
+    miscLines.push(line);
+  }
+
+  // Build item card
+  let html = `<div class="item rpt-item">`;
+
+  // Left column
+  html += `<div class="item-left">`;
+  html += `<div class="item-name">${inlineMd(title)}</div>`;
+
+  // Key-value rows (skip price — shown on right; skip Priority — shown as badge)
+  const skipKeys = new Set(["Quoted Price", "Priority"]);
+  for (const { key, val } of kvPairs) {
+    if (skipKeys.has(key)) continue;
+    html += `<div class="rpt-kv"><span class="rpt-k">${escapeHtml(key)}</span><span class="rpt-v">${inlineMd(val)}</span></div>`;
+  }
+
+  // Notes / blockquotes
+  for (const note of notes) {
+    const isEvidence = note.includes("🔎");
+    const isMath     = note.includes("🧮");
+    const isInfo     = note.includes("ℹ️");
+    const cls        = isEvidence ? "evidence evidence-ask"
+                     : isMath     ? "evidence evidence-math"
+                     : isInfo     ? "evidence evidence-info"
+                     :              "evidence";
+    html += `<div class="${cls}">${inlineMd(note)}</div>`;
+  }
+
+  for (const line of miscLines) {
+    html += `<div class="rpt-misc">${inlineMd(line)}</div>`;
+  }
+
+  html += `</div>`; // item-left
+
+  // Right column
+  html += `<div class="item-right">`;
+  if (price) {
+    html += `<div class="item-price">AED ${escapeHtml(price)}</div>`;
+  } else {
+    html += `<div class="item-price rpt-free">—</div>`;
+  }
+  if (urgency) {
+    html += `<span class="badge ${urgency.cls}">${escapeHtml(urgency.label)}</span>`;
+  }
+  html += `</div>`; // item-right
+
+  html += `</div>`; // item
+  return html;
+}
+
+/* ─── Main renderer ─── */
 function renderMarkdown(md) {
   if (!md) return "";
-  let html = escapeHtml(md);
 
-  html = html.replace(/^### (.*)$/gm, "<h3>$1</h3>");
-  html = html.replace(/^## (.*)$/gm, "<h2>$1</h2>");
-  html = html.replace(/^# (.*)$/gm, "<h1>$1</h1>");
-  html = html.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-  html = html.replace(/^- (.*)$/gm, "<li>$1</li>");
-  html = html.replace(/(<li>.*<\/li>)/gs, "<ul>$1</ul>");
-  html = html.replace(/\n/g, "<br>");
+  const lines  = md.split("\n");
+  let   html   = "";
+  let   i      = 0;
+  let   inItems = false;          // tracking whether we're inside an .items wrapper
+  let   currentDot = "var(--accent)";
 
+  function closeItems() {
+    if (inItems) { html += "</div>"; inItems = false; }
+  }
+  function openItems() {
+    if (!inItems) { html += `<div class="items">`; inItems = true; }
+  }
+
+  while (i < lines.length) {
+    const raw  = lines[i];
+    const line = raw.trim();
+
+    // ── ## Section title (report title / major heading) ──
+    if (/^## /.test(line)) {
+      closeItems();
+      html += `<div class="rpt-report-title">${inlineMd(line.replace(/^## /, ""))}</div>`;
+      i++; continue;
+    }
+
+    // ── ### Section heading (Do Now / Soon / Can Wait / etc.) ──
+    if (/^### /.test(line)) {
+      closeItems();
+      const heading = line.replace(/^### /, "");
+      currentDot = getSectionDot(heading);
+      html += `<div class="section-label" style="--s-dot:${currentDot}">
+        <span class="sl-dot" style="background:${currentDot}"></span>
+        ${inlineMd(heading)}
+      </div>`;
+      i++; continue;
+    }
+
+    // ── #### Item heading — collect its whole block ──
+    if (/^#### /.test(line)) {
+      openItems();
+      // Gather all lines until the next #### / ### / ## / ---
+      const block = [line];
+      i++;
+      while (i < lines.length) {
+        const peek = lines[i].trim();
+        if (/^#{2,4} /.test(peek) || peek === "---") break;
+        block.push(lines[i]);
+        i++;
+      }
+      html += renderItemBlock(block, currentDot);
+      continue;
+    }
+
+    // ── Horizontal rule ──
+    if (line === "---") {
+      closeItems();
+      html += `<hr class="rpt-hr">`;
+      i++; continue;
+    }
+
+    // ── Blockquote ──
+    if (/^> /.test(line)) {
+      closeItems();
+      const content = line.replace(/^> /, "");
+      const isRec   = content.includes("💬") || content.includes("✅");
+      html += `<div class="${isRec ? "rpt-callout" : "evidence"}">${inlineMd(content)}</div>`;
+      i++; continue;
+    }
+
+    // ── Bold metadata lines (Vehicle: / Mileage: / etc.) ──
+    if (/^\*\*[^*]+:\*\*/.test(line)) {
+      closeItems();
+      html += `<div class="rpt-meta">${inlineMd(line)}</div>`;
+      i++; continue;
+    }
+
+    // ── Unordered list items ──
+    if (/^- /.test(line)) {
+      closeItems();
+      html += `<li class="rpt-li">${inlineMd(line.replace(/^- /, ""))}</li>`;
+      i++; continue;
+    }
+
+    // ── Italic-only line (e.g. _INSPECTION_ — AED 0) ──
+    if (/^_/.test(line) && line.length > 0) {
+      closeItems();
+      html += `<div class="rpt-misc rpt-unmatched">${inlineMd(line)}</div>`;
+      i++; continue;
+    }
+
+    // ── Empty line — skip ──
+    if (!line) { i++; continue; }
+
+    // ── Fallback: plain paragraph ──
+    closeItems();
+    html += `<p class="rpt-p">${inlineMd(line)}</p>`;
+    i++;
+  }
+
+  closeItems();
   return html;
 }
 
