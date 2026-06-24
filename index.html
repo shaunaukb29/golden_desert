@@ -640,26 +640,32 @@ makeSelect?.addEventListener("change", async () => {
 
 // ---------- Analyze quote ----------
 async function analyzeQuote() {
-  const quoteText = quoteTextEl?.value?.trim();
-  
-  // Basic validation: user needs to either paste text or upload a file
-  if (!quoteText && fileInput.files.length === 0) {
-    setStatus("Please paste the quote text or upload a file first.", true);
-    return;
-  }
+  const quoteTextEl = document.getElementById('quote-text');
+  const fileInput = document.getElementById('file-input');
 
-  setStatus("Analyzing quote...");
-  reportSection.classList.add("hidden");
-  historySection.classList.add("hidden");
+  // Prepare payload explicitly
+  const payload = {
+    quote_text: quoteTextEl ? quoteTextEl.value : "",
+    text_fallback: quoteTextEl ? quoteTextEl.value : "",
+    file_name: (fileInput && fileInput.files.length > 0) ? fileInput.files[0].name : ""
+  };
+
+  console.log("Sending to API:", JSON.stringify(payload)); // Check this in Console
 
   try {
-    // If a file is uploaded, you'd ideally use FormData here instead of raw JSON. 
-    // Kept as JSON for the text extraction path.
-    const payload = fileInput.files.length > 0 ? 
-      { text_fallback: quoteText, file_name: fileInput.files[0].name } : // Adjust for your actual FastAPI implementation
-      { quote_text: quoteText };
+    const response = await fetch(`${API_BASE}/analyze-quote-text`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
 
-    const data = await apiPost("/analyze-quote-text", payload);
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Server rejected request:", errorData); // THIS IS YOUR SMOKING GUN
+      throw new Error(`Error ${response.status}: ${JSON.stringify(errorData.detail)}`);
+    }
+    
+    const data = await response.json();
 
     analyzedServices = data.services || [];
     historyAnswers = {};
@@ -679,7 +685,7 @@ async function analyzeQuote() {
     setStatus("Quote successfully analyzed.");
   } catch (err) {
     console.error(err);
-    setStatus(err.message, true);
+    alert(err.message);
   }
 }
 
