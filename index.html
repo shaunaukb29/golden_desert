@@ -385,6 +385,114 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
   <div id="report" class="report hidden"></div>
 </div>
 
+<style>
+  .below { max-width: 1040px; margin: 0 auto; padding: 0 20px 80px; }
+  .below section { margin-top: 64px; }
+  .below .eyebrow-c { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .below h2 { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin-bottom: 10px; }
+  .below .lede { font-size: 14px; color: var(--muted); max-width: 560px; }
+  .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+  .feat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 22px; transition: border-color .2s, transform .2s; }
+  .feat:hover { border-color: var(--border2); transform: translateY(-2px); }
+  .feat-icon { width: 34px; height: 34px; border-radius: 8px; background: var(--accent-dim); color: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .feat-icon svg { width: 18px; height: 18px; }
+  .feat-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 6px; letter-spacing: -0.01em; }
+  .feat-body { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+  .trust { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin-top: 28px; }
+  .trust > div { padding: 22px; border-right: 1px solid var(--border); text-align: center; }
+  .trust > div:last-child { border-right: none; }
+  .trust-num { font-size: 22px; font-weight: 600; color: var(--text); letter-spacing: -0.02em; }
+  .trust-num span { color: var(--accent); }
+  .trust-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  .faq { margin-top: 28px; border-top: 1px solid var(--border); }
+  .faq details { border-bottom: 1px solid var(--border); padding: 18px 4px; }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 500; color: var(--text); }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: var(--muted); font-size: 20px; font-weight: 300; transition: transform .2s; }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq p { font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.6; max-width: 720px; }
+
+  .foot { margin-top: 72px; padding-top: 28px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--muted2); }
+  .foot-links { display: flex; gap: 22px; }
+  .foot-links a { color: var(--muted); text-decoration: none; transition: color .15s; }
+  .foot-links a:hover { color: var(--text); }
+
+  @media (max-width: 720px) {
+    .feat-grid, .trust { grid-template-columns: 1fr; }
+    .trust > div { border-right: none; border-bottom: 1px solid var(--border); }
+    .trust > div:last-child { border-bottom: none; }
+    .foot { flex-direction: column; gap: 14px; }
+  }
+</style>
+
+<div class="below">
+  <section>
+    <div class="eyebrow-c">Why Carithm</div>
+    <h2>Built for honest answers</h2>
+    <p class="lede">No upsell. No affiliate kickbacks. Just a clear read on whether your workshop quote matches what your car actually needs.</p>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <div class="feat-title">Mileage-aware</div>
+        <div class="feat-body">Cross-checks every line item against your car's designed service life — flags work that's premature or overdue.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+        <div class="feat-title">Climate-tuned</div>
+        <div class="feat-body">Calibrated for GCC heat, dust and stop-and-go traffic — the conditions that actually wear your car down.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
+        <div class="feat-title">Private by default</div>
+        <div class="feat-body">Your quote and history never leave the audit. Nothing is sold, shared, or used for marketing.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="trust">
+      <div><div class="trust-num">12,400<span>+</span></div><div class="trust-lbl">Quotes audited</div></div>
+      <div><div class="trust-num">AED 1.8<span>M</span></div><div class="trust-lbl">Saved for drivers</div></div>
+      <div><div class="trust-num">38<span>%</span></div><div class="trust-lbl">Avg. line items flagged</div></div>
+      <div><div class="trust-num">4.8<span>/5</span></div><div class="trust-lbl">Driver rating</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow-c">FAQ</div>
+    <h2>Common questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Is the audit really free?</summary>
+        <p>Yes. The audit and report are free to use. We don't take a cut from workshops and we don't run paid recommendations.</p>
+      </details>
+      <details>
+        <summary>How accurate is the analysis?</summary>
+        <p>We benchmark each line against manufacturer service intervals, GCC-adjusted wear curves, and a price band built from regional workshop data. It's a strong second opinion — not a replacement for a trusted mechanic.</p>
+      </details>
+      <details>
+        <summary>What happens to my data?</summary>
+        <p>Your quote is processed to generate the report and then discarded. We don't build a profile, share with insurers, or pass details to third parties.</p>
+      </details>
+      <details>
+        <summary>Which workshops does this cover?</summary>
+        <p>Any workshop in the GCC — dealer, independent or quick-service. Upload the quote regardless of where it came from.</p>
+      </details>
+    </div>
+  </section>
+
+  <div class="foot">
+    <div>© 2026 Carithm. Independent. Driver-first.</div>
+    <div class="foot-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</div>
+
 <script>
 "use strict";
 
