@@ -237,107 +237,11 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 .life-bar-fill.lbf-amber { background: var(--amber); }
 .life-bar-fill.lbf-red   { background: var(--red); }
 
-/* ── Financial punchline ── */
-.rpt-punch {
-  display: grid; grid-template-columns: 1fr 1fr;
-  border: 1px solid var(--border2); border-radius: var(--r);
-  overflow: hidden; margin-bottom: 18px; background: var(--border2); gap: 1px;
-}
-.rpt-punch-cell { background: var(--surface); padding: 16px 20px; }
-.rpt-punch-cell:first-child { border-radius: var(--r) 0 0 var(--r); }
-.rpt-punch-cell:last-child  { border-radius: 0 var(--r) var(--r) 0; }
-.rpt-punch-label { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-.rpt-punch-amount { font-size: 26px; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
-.rpt-punch-amount.savings { color: var(--green); }
-.rpt-punch-sub { font-size: 10px; color: var(--muted2); margin-top: 4px; }
-
-/* ── Vehicle row ── */
-.rpt-vehicle { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 0 14px; border-bottom: 1px solid var(--border); margin-bottom: 4px; }
-.rpt-vehicle-name { font-size: 13px; font-weight: 600; }
-.rpt-vehicle-chip { font-size: 10px; color: var(--muted); background: var(--surface2); border: 1px solid var(--border2); border-radius: 20px; padding: 2px 8px; }
-
-/* ── Section heading ── */
-.rpt-section { display: flex; align-items: center; gap: 8px; margin: 20px 0 8px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-.rpt-section-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-.rpt-section-title { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted2); }
-.rpt-section-count { font-size: 10px; color: var(--muted2); background: var(--surface2); border: 1px solid var(--border2); border-radius: 20px; padding: 1px 7px; margin-left: auto; }
-
-/* ── Item card ── */
-.rpt-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); margin-bottom: 8px; overflow: hidden; transition: border-color 0.12s; }
-.rpt-card:hover { border-color: var(--border2); }
-.rpt-card-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; gap: 10px; }
-.rpt-item-name { font-size: 13px; font-weight: 600; letter-spacing: -0.01em; }
-.rpt-card-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-.rpt-price { font-size: 14px; font-weight: 600; letter-spacing: -0.02em; }
-.rpt-price-free { color: var(--muted2); font-size: 12px; }
-
-/* ── Status one-liner ── */
-.rpt-status { font-size: 12px; color: var(--muted); line-height: 1.6; padding: 0 14px 10px; }
-.rpt-status strong { color: var(--text); font-weight: 500; }
-
-/* ── Lifecycle bar (new visual) ── */
-.rpt-bar-wrap { padding: 0 14px 12px; }
-.rpt-bar-labels { display: flex; justify-content: space-between; font-size: 9px; color: var(--muted2); margin-bottom: 5px; letter-spacing: 0.02em; }
-.rpt-bar-track { height: 5px; background: var(--surface3); border-radius: 3px; position: relative; overflow: visible; }
-.rpt-bar-fill { height: 100%; border-radius: 3px; transition: width 0.8s cubic-bezier(0.16,1,0.3,1); }
-.rpt-bar-marker { position: absolute; top: -3px; width: 2px; height: 11px; background: rgba(255,255,255,0.85); border-radius: 1px; transform: translateX(-50%); }
-.rpt-bar-sublabel { display: flex; justify-content: flex-end; font-size: 9px; color: var(--muted2); margin-top: 4px; }
-
-/* ── Evidence pill ── */
-.rpt-evidence { margin: 0 14px 12px; padding: 8px 10px; background: var(--surface2); border-radius: 5px; border-left: 2px solid var(--accent); font-size: 11px; color: var(--muted); line-height: 1.6; }
-.rpt-evidence strong { color: var(--text); }
-
-/* ── Price warning ── */
-.rpt-price-warn { margin: 0 14px 10px; padding: 6px 10px; background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.18); border-radius: 5px; font-size: 11px; color: var(--amber); }
-
-/* ── Recommendation callout ── */
-.rpt-callout { background: var(--surface2); border: 1px solid var(--border2); border-radius: var(--r-sm); padding: 12px 14px; font-size: 12px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
-.rpt-callout strong { color: var(--text); }
-
-/* ── Cluster (unmatched items) ── */
-.rpt-cluster { margin-bottom: 8px; }
-.rpt-cluster-head { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted2); padding: 8px 12px; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm) var(--r-sm) 0 0; border-bottom: none; }
-.rpt-cluster-body { background: var(--surface); border: 1px solid var(--border); border-radius: 0 0 var(--r-sm) var(--r-sm); }
-.rpt-cluster-row { display: flex; align-items: center; justify-content: space-between; padding: 9px 12px; border-bottom: 1px solid var(--border); font-size: 12px; }
-.rpt-cluster-row:last-child { border-bottom: none; }
-.rpt-cluster-name { color: var(--muted); }
-.rpt-cluster-price { color: var(--text); font-weight: 500; }
-.rpt-cluster-warn { font-size: 10px; color: var(--amber); padding: 4px 12px 8px; }
-
-/* ── WhatsApp panel ── */
-.rpt-wa { background: var(--surface); border: 1px solid var(--border2); border-radius: var(--r); overflow: hidden; margin-top: 20px; }
-.rpt-wa-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--border); }
-.rpt-wa-title { font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 7px; }
-.rpt-wa-icon { width: 20px; height: 20px; background: #25d366; border-radius: 5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.rpt-wa-icon svg { width: 12px; height: 12px; fill: white; }
-.rpt-wa-intro { font-size: 11px; color: var(--muted); padding: 10px 16px; border-bottom: 1px solid var(--border); }
-.rpt-wa-items { padding: 6px 16px; }
-.rpt-wa-row { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
-.rpt-wa-row:last-child { border-bottom: none; }
-.rpt-wa-cb { width: 16px; height: 16px; border-radius: 4px; border: 1.5px solid var(--border2); background: var(--surface2); flex-shrink: 0; margin-top: 1px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.12s, border-color 0.12s; }
-.rpt-wa-cb.checked { background: var(--accent); border-color: var(--accent); }
-.rpt-wa-cb.checked::after { content: ""; display: block; width: 8px; height: 5px; border-left: 1.5px solid white; border-bottom: 1.5px solid white; transform: rotate(-45deg) translateY(-1px); }
-.rpt-wa-item-text { font-size: 12px; color: var(--muted); line-height: 1.5; }
-.rpt-wa-item-text strong { color: var(--text); font-weight: 500; }
-.rpt-wa-preview-wrap { padding: 10px 16px; border-top: 1px solid var(--border); }
-.rpt-wa-preview-label { font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted2); margin-bottom: 8px; }
-.rpt-wa-preview-box { background: var(--surface2); border: 1px solid var(--border2); border-radius: var(--r-sm); padding: 11px 13px; font-size: 12px; color: var(--muted); line-height: 1.7; white-space: pre-wrap; word-break: break-word; min-height: 56px; }
-.rpt-wa-empty { color: var(--muted2); font-style: italic; }
-.rpt-wa-actions { display: flex; gap: 8px; padding: 10px 16px 14px; }
-.btn-sm { padding: 7px 13px; font-size: 12px; width: auto; }
-
-/* ── Disclaimer ── */
-.rpt-disclaimer { margin-top: 18px; padding: 10px 14px; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); font-size: 10px; color: var(--muted2); line-height: 1.6; }
-
 @media (max-width: 520px) {
   .row3 { grid-template-columns: 1fr 1fr; }
   .row3 .field:last-child { grid-column: span 2; }
   .stats { grid-template-columns: 1fr 1fr; }
   .hero h1 { font-size: 26px; }
-  .rpt-punch { grid-template-columns: 1fr; background: var(--surface); gap: 0; }
-  .rpt-punch-cell { border-radius: 0 !important; border-bottom: 1px solid var(--border); }
-  .rpt-punch-cell:first-child { border-radius: var(--r) var(--r) 0 0 !important; }
-  .rpt-punch-cell:last-child  { border-bottom: none; border-radius: 0 0 var(--r) var(--r) !important; }
 }
 </style>
 </head>
@@ -650,440 +554,79 @@ function normalizeNumber(value) {
 }
 
 /* ================================
-   REPORT RENDERER
-   Structured parser — turns backend markdown into card-based UI.
+   MARKDOWN RENDERER
    All user/API data goes through esc() before touching the DOM.
+   The only raw HTML we emit is from our own template strings (bar, blockquote)
+   which contain no user data.
 ================================ */
-
-// WhatsApp panel state — lives at module level so event handlers can reach it
-let _waItems = [];
-
-function inlineMd(raw) {
-  let s = esc(raw);
-  s = s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-  s = s.replace(/\*(.+?)\*/g,     "<em>$1</em>");
-  s = s.replace(/_(.+?)_/g,       "<em>$1</em>");
-  s = s.replace(/`(.+?)`/g,       `<code style="background:var(--surface3);padding:1px 4px;border-radius:3px;font-size:10px">$1</code>`);
-  return s;
-}
-
-// ── Parse lifecycle numbers out of the 🧮 math note ──
-function parseBar(mathText) {
-  const sinceM = mathText.match(/replaced about ([\d,]+)\s*km ago/i);
-  const intM   = mathText.match(/typical[^0-9]*([\d,]+)\s*km interval/i);
-  const totM   = mathText.match(/([\d,]+)\s*km odometer/i);
-  const toN    = s => parseInt((s||"").replace(/,/g,""), 10) || 0;
-  if (!intM) return null;
-  const interval = toN(intM[1]);
-  if (!interval) return null;               // zero interval → no bar
-  const kmSince  = sinceM ? toN(sinceM[1]) : null;
-  const totalKm  = totM  ? toN(totM[1])   : null;
-  const usedKm   = kmSince ?? totalKm ?? 0;
-  return { interval, kmSince, totalKm, usedKm, pct: usedKm / interval };
-}
-
-function buildBar(mathText) {
-  const d = parseBar(mathText);
-  if (!d) return "";
-  const { interval, kmSince, totalKm, usedKm, pct } = d;
-  const fillPct  = Math.min(pct * 100, 100).toFixed(1);
-  const nowPct   = fillPct;   // marker == fill when not overdue
-  const overdue  = pct >= 1.0;
-  const color    = overdue      ? "var(--red)"
-                 : pct >= 0.8  ? "var(--amber)"
-                 :                "var(--accent)";
-  const fmt      = n => n >= 1000 ? `${Math.round(n/1000)}k km` : `${n} km`;
-  const lastLabel = kmSince && totalKm ? `Last: ${fmt(totalKm - kmSince)}` : "Start";
-  const dueLabel  = `Due: ${fmt(interval)}`;
-  const nowLabel  = totalKm ? `Now: ${fmt(totalKm)}` : `Used: ${fmt(usedKm)}`;
-
-  return `<div class="rpt-bar-wrap">
-    <div class="rpt-bar-labels"><span>${esc(lastLabel)}</span><span>${esc(dueLabel)}</span></div>
-    <div class="rpt-bar-track">
-      <div class="rpt-bar-fill" style="width:${fillPct}%;background:${color}"></div>
-      ${!overdue ? `<div class="rpt-bar-marker" style="left:${nowPct}%"></div>` : ""}
-    </div>
-    <div class="rpt-bar-sublabel"><span>${esc(nowLabel)}</span></div>
-  </div>`;
-}
-
-// ── Condense the status into one sentence using actual km ratio ──
-function buildStatusLine(mathText, kvMap) {
-  const d = parseBar(mathText);
-  if (!d) return "";
-  const { pct, kmSince, interval } = d;
-  let verdict, remaining;
-  if (pct >= 1.0) {
-    const over = Math.round((pct - 1) * interval / 1000);
-    verdict = over > 0 ? `${over}k km past its service interval` : "at its service interval";
-  } else {
-    remaining = Math.round((1 - pct) * interval / 1000);
-    verdict = pct >= 0.8
-      ? `within the normal preventative window — ~${remaining}k km remaining`
-      : `~${remaining}k km of service life remaining`;
-  }
-  const conf = (kvMap["Confidence"] || "").replace(/\*\*/g,"").trim();
-  const confNote = conf && conf !== "High" ? ` <span style="font-size:10px;color:var(--muted2)">(${esc(conf)} confidence)</span>` : "";
-  return `<div class="rpt-status">${esc(verdict)}${confNote}</div>`;
-}
-
-// ── Render one item card ──
-function renderCard(title, kvMap, notes, sectionEmoji) {
-  const priceM = (kvMap["Quoted Price"] || "").match(/AED\s*([\d,]+)/);
-  const price  = priceM ? priceM[1] : null;
-
-  const badgeMap = {
-    "🟥": { cls: "b-red",   label: "Do Now"  },
-    "🟧": { cls: "b-amber", label: "Soon"     },
-    "🟩": { cls: "b-green", label: "Can Wait" },
-    "⚠️": { cls: "b-amber", label: "Review"   },
-  };
-  const badge = badgeMap[sectionEmoji] || null;
-
-  const mathNote = notes.find(n => n.includes("🧮")) || "";
-  const mathClean = mathNote.replace(/^🧮\s*_?/, "").replace(/_?$/, "").trim();
-  const evNote    = notes.find(n => n.includes("🔎")) || "";
-  const priceWarn = notes.some(n => n.includes("No UAE pricing benchmark") || n.includes("No price data"));
-
-  // Only show evidence ask for parts where workshop CAN show evidence
-  // (skip if the part is a sealed/embedded item requiring teardown)
-  const nameLower  = title.toLowerCase();
-  const skipEvidence = /spark.?plug|engine oil|oil filter|cabin filter|ac filter|cvt|transmission fluid|coolant|fuel filter/.test(nameLower);
-
-  let h = `<div class="rpt-card">`;
-
-  // Header row
-  h += `<div class="rpt-card-head">
-    <div class="rpt-item-name">${inlineMd(title)}</div>
-    <div class="rpt-card-right">
-      ${price ? `<div class="rpt-price">AED ${esc(price)}</div>` : `<div class="rpt-price rpt-price-free">—</div>`}
-      ${badge ? `<span class="badge ${badge.cls}">${badge.label}</span>` : ""}
-    </div>
-  </div>`;
-
-  if (priceWarn) {
-    h += `<div class="rpt-price-warn">No benchmark price available for this vehicle — get a second quote before approving.</div>`;
-  }
-
-  // Lifecycle bar + condensed status (only when we have math data)
-  if (mathClean) {
-    h += buildBar(mathClean);
-    h += buildStatusLine(mathClean, kvMap);
-  }
-
-  // Evidence ask
-  if (evNote && !skipEvidence) {
-    const evText = evNote.replace(/^🔎\s*\*?Evidence to ask for:\*?\s*/i, "").trim();
-    h += `<div class="rpt-evidence"><strong>Ask for:</strong> ${inlineMd(evText)}</div>`;
-  }
-
-  h += `</div>`;
-  return h;
-}
-
-// ── Cluster unmatched items into keyword buckets ──
-const _CLUSTERS = [
-  { key: "pkg",    label: "📦 Bundled Packages",  re: /inspection|service|package|check.*up|pointer|tyre|fluid top|computer/i },
-  { key: "labour", label: "🔧 Labour & Fees",     re: /labour|labor|charge|discount|vat|consumable/i },
-  { key: "hw",     label: "⚙️ Hardware",           re: /filter|gasket|disk|skimm|sealant|seal/i },
-];
-
-function clusterUnmatched(items) {
-  const buckets = { pkg: [], labour: [], hw: [], other: [] };
-  items.forEach(item => {
-    let placed = false;
-    for (const c of _CLUSTERS) {
-      if (c.re.test(item.name)) { buckets[c.key].push(item); placed = true; break; }
-    }
-    if (!placed) buckets.other.push(item);
-  });
-
-  let h = "";
-  const defs = [..._CLUSTERS, { key: "other", label: "⚙️ Miscellaneous" }];
-  for (const { key, label } of defs) {
-    if (!buckets[key].length) continue;
-    h += `<div class="rpt-cluster">
-      <div class="rpt-cluster-head">${esc(label)}</div>
-      <div class="rpt-cluster-body">`;
-    buckets[key].forEach(r => {
-      h += `<div class="rpt-cluster-row">
-        <span class="rpt-cluster-name">${inlineMd(r.name)}</span>
-        <span class="rpt-cluster-price">${r.price ? "AED " + esc(r.price) : "—"}</span>
-      </div>`;
-      if (r.warn) h += `<div class="rpt-cluster-warn">${esc(r.warn)}</div>`;
-    });
-    h += `</div></div>`;
-  }
-  return h;
-}
-
-// ── WhatsApp panel ──
-function buildWaPanel(vehicleLabel, flaggedItems) {
-  if (!flaggedItems.length) return "";
-  _waItems = flaggedItems.map((item, i) => ({ id: i, ...item, checked: false }));
-
-  let h = `<div class="rpt-wa">
-    <div class="rpt-wa-head">
-      <div class="rpt-wa-title">
-        <div class="rpt-wa-icon">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        </div>
-        Message to workshop
-      </div>
-      <span style="font-size:10px;color:var(--muted2)">Select items to challenge</span>
-    </div>
-    <div class="rpt-wa-intro">Tick the items you want to push back on. A ready-to-send message generates below.</div>
-    <div class="rpt-wa-items">`;
-
-  _waItems.forEach(item => {
-    h += `<div class="rpt-wa-row">
-      <div class="rpt-wa-cb" id="wacb-${item.id}" onclick="toggleWa(${item.id})"></div>
-      <div class="rpt-wa-item-text"><strong>${esc(item.name)}</strong> — ${esc(item.question)}</div>
-    </div>`;
-  });
-
-  h += `</div>
-    <div class="rpt-wa-preview-wrap">
-      <div class="rpt-wa-preview-label">Generated message</div>
-      <div class="rpt-wa-preview-box" id="wa-preview" data-vehicle="${esc(vehicleLabel)}">
-        <span class="rpt-wa-empty">Select items above to generate your message</span>
-      </div>
-    </div>
-    <div class="rpt-wa-actions">
-      <button class="btn btn-ghost btn-sm" onclick="selectAllWa()">Select all</button>
-      <button class="btn btn-primary btn-sm" id="wa-copy" onclick="copyWa()" disabled>Copy message</button>
-    </div>
-  </div>`;
-  return h;
-}
-
-function toggleWa(id) {
-  const item = _waItems.find(w => w.id === id);
-  if (!item) return;
-  item.checked = !item.checked;
-  document.getElementById(`wacb-${id}`)?.classList.toggle("checked", item.checked);
-  updateWaPreview();
-}
-
-function selectAllWa() {
-  _waItems.forEach(item => {
-    item.checked = true;
-    document.getElementById(`wacb-${item.id}`)?.classList.add("checked");
-  });
-  updateWaPreview();
-}
-
-function updateWaPreview() {
-  const sel     = _waItems.filter(w => w.checked);
-  const preview = document.getElementById("wa-preview");
-  const copyBtn = document.getElementById("wa-copy");
-  if (!preview) return;
-  if (!sel.length) {
-    preview.innerHTML = `<span class="rpt-wa-empty">Select items above to generate your message</span>`;
-    if (copyBtn) copyBtn.disabled = true;
-    return;
-  }
-  const vehicle   = preview.dataset.vehicle || "my vehicle";
-  const itemLines = sel.map(w => `• ${w.name}: ${w.question}`).join("\n");
-  const msg = `Hi, I've reviewed the service quote for ${vehicle} and would like clarification on a few items before I approve them:\n\n${itemLines}\n\nCould you provide the relevant reading, photo, or measurement for each? Happy to approve once I can see the evidence.`;
-  preview.textContent = msg;
-  if (copyBtn) copyBtn.disabled = false;
-}
-
-function copyWa() {
-  const preview = document.getElementById("wa-preview");
-  if (!preview?.textContent) return;
-  navigator.clipboard.writeText(preview.textContent).then(() => {
-    const btn = document.getElementById("wa-copy");
-    if (btn) { btn.textContent = "Copied!"; setTimeout(() => { btn.textContent = "Copy message"; }, 2000); }
-  });
-}
-
-// ── Main renderer ──
 function renderMarkdown(md) {
   if (!md) return "";
 
-  const lines = md.split("\n");
-  let html    = "";
-  let i       = 0;
-
-  // ── Extract summary numbers for punchline header ──
-  const totalM   = md.match(/Total Quote:\s*AED\s*([\d,]+)/i);
-  const vehicleM = md.match(/Vehicle:\s*([^\n]+)/);
-  const mileM    = md.match(/Mileage:\s*([^\n]+)/);
-  const drivingM = md.match(/Driving Pattern:\s*([^\n]+)/);
-  const totalAed = totalM ? parseInt(totalM[1].replace(/,/g,""), 10) : 0;
-  const vehicleLabel = vehicleM ? vehicleM[1].trim() : "";
-
-  // Savings = sum of non-zero prices in "Can Wait" section
-  let savings = 0;
-  const cwSection = md.match(/### 🟩 Can Wait([\s\S]*?)(?=### |$)/);
-  if (cwSection) {
-    [...cwSection[1].matchAll(/Quoted Price:\*?\s*AED\s*([\d,]+)/gi)]
-      .forEach(m => { savings += parseInt(m[1].replace(/,/g,""), 10); });
+  function inlineFormat(text) {
+    // esc() first, THEN apply formatting — never the other way around
+    let s = esc(text);
+    s = s.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+    s = s.replace(/\*(.*?)\*/g,     "<em>$1</em>");
+    // Underscore italics — badla.py uses _like this_ extensively
+    // (workshop-recommended names, the 🧮 explanation text, etc.).
+    // Require a non-word boundary so things like snake_case part_keys
+    // (e.g. front_brake_pads) don't get mangled into <em> tags.
+    s = s.replace(/(^|[^\w])_([^_]+)_(?!\w)/g, "$1<em>$2</em>");
+    s = s.replace(/`([^`]+)`/g,     "<code>$1</code>");
+    return s;
   }
 
-  // Financial punchline
-  if (totalAed > 0) {
-    html += `<div class="rpt-punch">
-      <div class="rpt-punch-cell">
-        <div class="rpt-punch-label">Total quoted</div>
-        <div class="rpt-punch-amount">AED ${totalAed.toLocaleString()}</div>
-        <div class="rpt-punch-sub">across all line items</div>
-      </div>
-      <div class="rpt-punch-cell">
-        <div class="rpt-punch-label">Deferrable today</div>
-        <div class="rpt-punch-amount savings">${savings > 0 ? "AED " + savings.toLocaleString() : "—"}</div>
-        <div class="rpt-punch-sub">${savings > 0 ? "by skipping non-urgent items" : "All flagged items need attention"}</div>
-      </div>
-    </div>`;
+  function lifeBar(pctRaw) {
+    const pct   = Math.max(0, parseInt(pctRaw, 10) || 0);
+    const fillW = Math.min(pct, 100);
+    // Classify colour — no user data enters these strings
+    const cls   = pct >= 100 ? "lbf-red" : pct >= 60 ? "lbf-amber" : "lbf-green";
+    const label = pct >= 100 ? `${pct}% — overdue` : `${pct}%`;
+    const marker = pct >= 100
+      ? `<div style="position:absolute;right:0;top:0;height:100%;width:3px;background:var(--red);border-radius:99px;"></div>`
+      : "";
+    return `<div class="life-bar-wrap">` +
+      `<div class="life-bar-label"><span>Designed life used</span><span>${label}</span></div>` +
+      `<div class="life-bar-track" style="position:relative;">` +
+        `<div class="life-bar-fill ${cls}" style="width:${fillW}%;"></div>${marker}` +
+      `</div></div>`;
   }
 
-  // Vehicle chips
-  if (vehicleLabel) {
-    html += `<div class="rpt-vehicle">
-      <span class="rpt-vehicle-name">${esc(vehicleLabel)}</span>
-      ${mileM    ? `<span class="rpt-vehicle-chip">${esc(mileM[1].trim())}</span>`    : ""}
-      ${drivingM ? `<span class="rpt-vehicle-chip">${esc(drivingM[1].trim())}</span>` : ""}
-    </div>`;
+  const lines  = md.split("\n");
+  const parts  = [];
+  let listBuf  = [];
+
+  function flushList() {
+    if (!listBuf.length) return;
+    parts.push("<ul>" + listBuf.map(t => `<li>${inlineFormat(t)}</li>`).join("") + "</ul>");
+    listBuf = [];
   }
 
-  const sectionColors = { "🟥":"#ef4444","🟧":"#f59e0b","🟩":"#22c55e","⚠️":"#f59e0b","📋":"#71717a" };
-  let curEmoji   = "";
-  let curColor   = "var(--accent)";
-  const unmatched = [];
-  const flaggedWa = [];
+  for (const raw of lines) {
+    if (/^#### /.test(raw)) { flushList(); parts.push(`<h4>${inlineFormat(raw.slice(5))}</h4>`); continue; }
+    if (/^### /.test(raw))  { flushList(); parts.push(`<h3>${inlineFormat(raw.slice(4))}</h3>`); continue; }
+    if (/^## /.test(raw))   { flushList(); parts.push(`<h2>${inlineFormat(raw.slice(3))}</h2>`); continue; }
+    if (/^# /.test(raw))    { flushList(); parts.push(`<h1>${inlineFormat(raw.slice(2))}</h1>`); continue; }
+    if (/^---+$/.test(raw.trim())) { flushList(); parts.push("<hr>"); continue; }
 
-  // Skip meta lines we already used
-  const skipLine = l => {
-    const t = l.trim();
-    return /^(Vehicle|Mileage|Driving Pattern|Total Quote):/i.test(t) ||
-           /^## /.test(t) ||
-           /^> (💬|✅)/.test(t) ||
-           /^> ⚠️ IMPORTANT DISCLAIMER/.test(t) ||
-           /^What to Say at the Workshop/.test(t) ||
-           /^Copy and show/.test(t) ||
-           /^Re: Service quote/.test(t) ||
-           /^I've reviewed/.test(t) ||
-           /^Could you please/.test(t) ||
-           /^_I'm happy/.test(t) ||
-           // Strip the legacy "Designed life used / N% — overdue" plain-text lines
-           /^Designed life used$/i.test(t) ||
-           /^\d+%\s*—\s*(overdue|on track|due)/i.test(t);
-  };
-
-  while (i < lines.length) {
-    const raw  = lines[i];
-    const line = raw.trim();
-
-    if (skipLine(raw)) { i++; continue; }
-
-    // Recommendation callout
-    if (/^> 💬|^> ✅/.test(raw)) {
-      html += `<div class="rpt-callout">${inlineMd(raw.slice(2))}</div>`;
-      i++; continue;
-    }
-
-    // Disclaimer
-    if (/DISCLAIMER/i.test(line)) {
-      html += `<div class="rpt-disclaimer">${inlineMd(line.replace(/^> /,""))}</div>`;
-      i++; continue;
-    }
-
-    // Section heading
-    if (/^### /.test(raw)) {
-      const heading = raw.slice(4).trim();
-      curEmoji = Object.keys(sectionColors).find(e => heading.includes(e)) || "";
-      curColor = sectionColors[curEmoji] || "var(--accent)";
-
-      // Count items in this section
-      let count = 0;
-      for (let j = i+1; j < lines.length; j++) {
-        if (/^### /.test(lines[j])) break;
-        if (/^#### /.test(lines[j])) count++;
-      }
-      html += `<div class="rpt-section">
-        <div class="rpt-section-dot" style="background:${curColor}"></div>
-        <div class="rpt-section-title">${inlineMd(heading)}</div>
-        ${count > 0 ? `<div class="rpt-section-count">${count}</div>` : ""}
-      </div>`;
-      i++; continue;
-    }
-
-    // Item block
-    if (/^#### /.test(raw)) {
-      const title = raw.slice(5).trim();
-      const block = [];
-      i++;
-      while (i < lines.length) {
-        if (/^#{2,4} /.test(lines[i].trim()) || lines[i].trim() === "---") break;
-        block.push(lines[i]);
-        i++;
-      }
-
-      // Parse block
-      const kvMap = {}, notes = [];
-      for (const bl of block) {
-        const t = bl.trim();
-        if (!t || t === "---") continue;
-        if (t.startsWith("> ")) { notes.push(t.slice(2)); continue; }
-        const kvM = t.match(/^\*\*(.+?):\*\*\s*(.*)/);
-        if (kvM) { kvMap[kvM[1].trim()] = kvM[2].trim(); continue; }
-        // Legacy plain-text lines — skip (handled by skipLine above or just noise)
-      }
-
-      // Unmatched items → cluster
-      if (curEmoji === "📋") {
-        const prM   = (kvMap["Quoted Price"] || "").match(/AED\s*([\d,]+)/);
-        const warnN = notes.find(n => /lump.sum|padded/.test(n));
-        unmatched.push({
-          name:  title.replace(/^_|_$/g, ""),
-          price: prM ? prM[1] : null,
-          warn:  warnN ? "Lump-sum charge — ask for a breakdown" : null,
-        });
-        continue;
-      }
-
-      // Collect for WA panel if early/unclear
-      const statusRaw = (kvMap["Status"] || "").toLowerCase();
-      const evNote    = notes.find(n => n.includes("🔎")) || "";
-      const isEarly   = statusRaw.includes("early") || curEmoji === "⚠️";
-      if (isEarly) {
-        const q = evNote
-          ? evNote.replace(/^🔎\s*\*?Evidence to ask for:\*?\s*/i, "").trim()
-          : `Can you show me the diagnostic evidence for ${title}?`;
-        flaggedWa.push({ name: title, question: q });
-      }
-
-      html += renderCard(title, kvMap, notes, curEmoji);
+    if (/^> /.test(raw)) {
+      flushList();
+      const inner    = raw.slice(2);
+      const barMatch = inner.match(/~(\d+)%[^%]*of the interval used/);
+      parts.push(`<blockquote>${inlineFormat(inner)}</blockquote>`);
+      if (barMatch) parts.push(lifeBar(barMatch[1]));
       continue;
     }
 
-    // Horizontal rule / section separator
-    if (/^---+$/.test(line)) { i++; continue; }
+    if (/^- /.test(raw)) { listBuf.push(raw.slice(2)); continue; }
 
-    // Generic blockquote (fallback)
-    if (/^> /.test(raw)) { i++; continue; }
-
-    i++;
+    flushList();
+    if (!raw.trim()) { parts.push(`<div style="height:4px"></div>`); continue; }
+    parts.push(`<p>${inlineFormat(raw)}</p>`);
   }
 
-  // Clustered unmatched items
-  if (unmatched.length) {
-    html += `<div class="rpt-section">
-      <div class="rpt-section-dot" style="background:#71717a"></div>
-      <div class="rpt-section-title">Additional Items</div>
-      <div class="rpt-section-count">${unmatched.length}</div>
-    </div>`;
-    html += clusterUnmatched(unmatched);
-  }
-
-  // WhatsApp panel
-  if (flaggedWa.length) {
-    html += buildWaPanel(vehicleLabel, flaggedWa);
-  }
-
-  return html;
+  flushList();
+  return parts.join("\n");
 }
 
 /* ================================
