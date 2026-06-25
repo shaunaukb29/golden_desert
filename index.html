@@ -3,16 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Carithm | AI Workshop Quote Auditor</title>
-<meta name="description" content="Upload your workshop repair quote. Get an independent, AI-driven verdict on every line item in under a minute. Is your workshop overcharging you?">
-<meta name="keywords" content="car repair quote, workshop quote check, UAE mechanic, auto repair auditor, fair price car repair, carithm, GCC workshop transparency, repair estimate check">
-<meta property="og:title" content="Carithm | AI Workshop Quote Auditor">
-<meta property="og:description" content="Upload your workshop repair quote. Get an independent, AI-driven verdict on every line item in under a minute.">
+<title>Carithm | AI Quote Certification for Service Centers</title>
+<meta name="description" content="Empower your service advisors. Validate repair quotes with an independent, AI-driven predictive maintenance standard to close more repair orders in the UAE.">
+<meta name="keywords" content="UAE service center software, workshop quote certification, auto repair predictive maintenance, Carithm B2B, GCC service advisor tool">
+<meta property="og:title" content="Carithm | AI Quote Certification">
+<meta property="og:description" content="Empower your service advisors and validate your repair quotes with an independent AI standard.">
 
 <!-- Security headers via meta where HTTP headers aren't available -->
-<!-- frame-ancestors blocks clickjacking; default-src locks script/style origins;
-     connect-src restricts fetch() to only the API and same-origin;
-     img-src allows data: URIs (used in the select arrow SVG) -->
 <meta http-equiv="Content-Security-Policy"
   content="default-src 'self';
            script-src 'self' 'unsafe-inline';
@@ -27,7 +24,7 @@
 <meta name="referrer" content="no-referrer">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -72,10 +69,18 @@ body {
 .brand { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
 .brand-tag { font-size: 11px; color: var(--muted); font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; border-left: 1px solid var(--border2); padding-left: 10px; margin-left: 2px; }
 
-.hero { margin-bottom: 40px; }
+.hero { margin-bottom: 20px; }
 .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
 .hero h1 { font-size: 32px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 12px; }
 .hero p { font-size: 14px; color: var(--muted); max-width: 440px; line-height: 1.7; }
+
+.disclaimer-banner {
+  display: flex; align-items: flex-start; gap: 12px; padding: 14px 18px;
+  background: var(--surface2); border: 1px solid var(--border2); border-left: 3px solid var(--accent);
+  border-radius: var(--r-sm); margin-bottom: 30px; font-size: 12px; color: var(--text); line-height: 1.6;
+}
+.disclaimer-banner svg { width: 18px; height: 18px; flex-shrink: 0; stroke: var(--accent); margin-top: 2px; }
+.disclaimer-banner strong { font-weight: 600; color: white; }
 
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); margin-bottom: 10px; overflow: hidden; }
 .card-head { padding: 16px 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); }
@@ -84,8 +89,8 @@ body {
 .card-title { font-size: 13px; font-weight: 500; }
 .card-body { padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; }
 
-.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.row3 { display: grid; grid-template-columns: 2fr 2fr 1fr; gap: 10px; }
+/* Grid adjustments to fit Vehicle Type and legacy compatibility */
+.row3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .field { display: flex; flex-direction: column; gap: 5px; }
 .field label { font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
 
@@ -241,9 +246,16 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 .life-bar-fill.lbf-amber { background: var(--amber); }
 .life-bar-fill.lbf-red   { background: var(--red); }
 
-@media (max-width: 520px) {
+/* Added Tablet Breakpoint for Service Advisors using iPads */
+@media (max-width: 1024px) {
   .row3 { grid-template-columns: 1fr 1fr; }
   .row3 .field:last-child { grid-column: span 2; }
+  .stats { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 520px) {
+  .row3 { grid-template-columns: 1fr; }
+  .row3 .field:last-child { grid-column: span 1; }
   .stats { grid-template-columns: 1fr 1fr; }
   .hero h1 { font-size: 26px; }
 }
@@ -287,13 +299,13 @@ header {
 <header>
   <div class="logo">CARITHM<span> AI</span></div>
   <nav class="nav" aria-label="Main navigation">
-    <a href="#auditor">Try Auditor</a>
+    <a href="#auditor">Try Certifier</a>
     <a href="#explorer">Pricing Benchmark</a>
     <a href="#faq">FAQ</a>
     <a href="https://carithm.vercel.app/blog/">Blog</a>
-    <a href="https://carithm.vercel.app/about/">Intelligence Platform</a>
+    <a href="https://carithm.vercel.app/about/">Platform</a>
     <a href="https://carithm.vercel.app/predictive">UAE Valuation</a>
-    <a href="mailto:carithmai29@gmail.com?subject=Pilot%20Evaluation%20Request&body=Hi%2C%0A%0AI%27d%20like%20to%20request%20a%20structured%20pilot%20evaluation.%0A%0AHere%20are%20my%20vehicle%20details%3A%0A%0A-%20Engine%20number%3A%0A-%20Current%20mileage%20(km)%3A%0A-%20Vehicle%20year%20%2F%20age%3A%0A-%20Region%20%2F%20city%3A%0A-%20Service%20history%20(what%20was%20replaced%20and%20at%20what%20mileage)%3A%0A%0AThanks" class="cta-btn">Request Pilot Evaluation</a>
+    <a href="mailto:carithmai29@gmail.com" class="cta-btn">Partner with us</a>
   </nav>
 </header>
 <div class="shell">
@@ -306,19 +318,30 @@ header {
       </svg>
     </div>
     <span class="brand">Carithm</span>
-    <span class="brand-tag">Repair Auditor</span>
+    <span class="brand-tag">Advisor Tool</span>
   </div>
 
   <div class="hero">
-    <div class="eyebrow">GCC workshop transparency tool</div>
-    <h1>Is your workshop<br>quote fair?</h1>
-    <p>Upload or paste your quote. Get an independent verdict on every line item in under a minute.</p>
+    <div class="eyebrow">UAE Predictive Maintenance Standard</div>
+    <h1>Prove your quotes are fair.<br>Close more repair orders.</h1>
+    <p>Upload a repair quote to generate an independent, AI-verified health report for your customers in under a minute.</p>
+  </div>
+
+  <div class="disclaimer-banner">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="16" x2="12" y2="12"></line>
+      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+    </svg>
+    <span>
+      <strong>Note to Advisors:</strong> This tool calculates <em>designed life part health</em> based on manufacturer intervals and local wear curves, not the literal physical health of the component.
+    </span>
   </div>
 
   <div class="card">
     <div class="card-head">
       <div class="step on">1</div>
-      <div class="card-title">Your vehicle</div>
+      <div class="card-title">Customer Vehicle</div>
     </div>
     <div class="card-body">
       <div class="row3">
@@ -331,20 +354,29 @@ header {
           <select id="model" disabled><option value="">Select model</option></select>
         </div>
         <div class="field">
-          <label>Year</label>
+          <label>Year (inc. Legacy)</label>
           <input type="number" id="year" value="2021" min="1990" max="2026">
         </div>
       </div>
-      <div class="row2">
+      <div class="row3">
         <div class="field">
           <label>Mileage (km)</label>
           <input type="number" id="mileage" value="80000" min="0">
         </div>
         <div class="field">
+          <label>Vehicle Type</label>
+          <select id="vehicle-type">
+            <option value="sedan">Sedan</option>
+            <option value="suv" selected>SUV / 4x4</option>
+            <option value="hatchback">Hatchback</option>
+            <option value="commercial">Commercial / Van</option>
+          </select>
+        </div>
+        <div class="field">
           <label>Drivetrain</label>
           <select id="drivetrain">
-            <option value="fwd">FWD — front-wheel drive</option>
-            <option value="rwd">RWD — rear-wheel drive</option>
+            <option value="fwd">FWD</option>
+            <option value="rwd">RWD</option>
             <option value="awd" selected>AWD / 4WD</option>
           </select>
         </div>
@@ -355,14 +387,14 @@ header {
   <div class="card">
     <div class="card-head">
       <div class="step on">2</div>
-      <div class="card-title">Driving pattern</div>
+      <div class="card-title">Customer Driving Pattern</div>
     </div>
     <div class="card-body">
       <div class="radios">
         <label class="radio-pill" data-val="city">
           <input type="radio" name="driving" value="city">
           <div class="pip"><div class="pip-dot"></div></div>
-          <div><div class="pill-label">City</div><div class="pill-sub">Stop-and-go, short trips, urban</div></div>
+          <div><div class="pill-label">City</div><div class="pill-sub">Stop-and-go, short trips, heavy traffic</div></div>
         </label>
         <label class="radio-pill" data-val="highway">
           <input type="radio" name="driving" value="highway">
@@ -386,7 +418,7 @@ header {
   <div class="card">
     <div class="card-head">
       <div class="step on">3</div>
-      <div class="card-title">Workshop quote</div>
+      <div class="card-title">Quote Certification</div>
     </div>
     <div class="card-body">
       <div class="drop-zone" id="drop-zone">
@@ -399,23 +431,23 @@ header {
             <polyline points="9 15 12 12 15 15"/>
           </svg>
         </div>
-        <div class="drop-title" id="drop-title">Drop a file here</div>
+        <div class="drop-title" id="drop-title">Drop your quote file here</div>
         <div class="drop-sub" id="drop-sub">PDF, image or text · max 15 MB</div>
         <div class="drop-file hidden" id="drop-file"></div>
       </div>
 
       <div class="or">
         <div class="or-line"></div>
-        <div class="or-text">or paste text</div>
+        <div class="or-text">or paste RO text</div>
         <div class="or-line"></div>
       </div>
 
       <div class="field">
-        <label>Quote text</label>
+        <label>Repair Order text</label>
         <textarea id="quote-text" placeholder="Spark plugs              AED 180&#10;Brake fluid flush        AED 120&#10;Fuel injector cleaning   AED 350"></textarea>
       </div>
 
-      <button class="btn btn-primary" id="analyze-btn">Analyze quote</button>
+      <button class="btn btn-primary" id="analyze-btn">Certify Quote</button>
       <div id="status" class="hidden"></div>
     </div>
   </div>
@@ -426,9 +458,9 @@ header {
       <div class="card-title">Service history</div>
     </div>
     <div class="card-body">
-      <p style="font-size:12px; color:var(--muted)">A few of the items in your quote need extra context to ensure an accurate audit.</p>
+      <p style="font-size:12px; color:var(--muted)">Confirm service history with the customer to ensure accurate predictive maintenance tracking.</p>
       <div id="questions-list"></div>
-      <button class="btn btn-primary" id="finalize-btn">Get final audit</button>
+      <button class="btn btn-primary" id="finalize-btn">Generate Customer Report</button>
     </div>
   </div>
 
@@ -479,24 +511,24 @@ header {
 
 <div class="below">
   <section>
-    <div class="eyebrow-c">Why Carithm</div>
-    <h2>Built for honest answers</h2>
-    <p class="lede">No upsell. No affiliate kickbacks. Just a clear read on whether your workshop quote matches what your car actually needs.</p>
+    <div class="eyebrow-c">Why Carithm B2B</div>
+    <h2>Built to empower service centers</h2>
+    <p class="lede">Validate your service recommendations with an independent AI standard. Increase customer approval rates by proving your maintenance plans align with their vehicle's designed life.</p>
     <div class="feat-grid">
       <div class="feat">
         <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-        <div class="feat-title">Mileage-aware</div>
-        <div class="feat-body">Cross-checks every line item against your car's designed service life — flags work that's premature or overdue.</div>
+        <div class="feat-title">Predictive Maintenance</div>
+        <div class="feat-body">Cross-checks every line item against designed service life—helping you ethically recommend preventative care before parts physically fail.</div>
       </div>
       <div class="feat">
         <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
-        <div class="feat-title">Climate-tuned</div>
-        <div class="feat-body">Calibrated for GCC heat, dust and stop-and-go traffic — the conditions that actually wear your car down.</div>
+        <div class="feat-title">UAE Climate-Tuned</div>
+        <div class="feat-body">Calibrated specifically for UAE heat, high humidity, and fine dust—the conditions that accelerate part degradation locally.</div>
       </div>
       <div class="feat">
         <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
         <div class="feat-title">Private by default</div>
-        <div class="feat-body">Your quote and history never leave the audit. Nothing is sold, shared, or used for marketing.</div>
+        <div class="feat-body">Your customer data never leaves the audit. Nothing is sold, shared, or used for external marketing.</div>
       </div>
     </div>
   </section>
@@ -505,40 +537,40 @@ header {
     <div class="trust">
       <div><div class="trust-num">46<span>+</span></div><div class="trust-lbl">Brands Supported</div></div>
       <div><div class="trust-num">500<span>+</span></div><div class="trust-lbl">Engines Modeled</div></div>
-      <div><div class="trust-num">2</div><div class="trust-lbl">Live Pilots</div></div>
-      <div><div class="trust-num">15<span>+</span></div><div class="trust-lbl">Components Audited</div></div>
+      <div><div class="trust-num">RTA</div><div class="trust-lbl">Aligned with Local Standards</div></div>
+      <div><div class="trust-num">15<span>+</span></div><div class="trust-lbl">Components Certified</div></div>
     </div>
   </section>
 
   <section>
     <div class="eyebrow-c">FAQ</div>
-    <h2>Common questions</h2>
+    <h2>Common questions for Advisors</h2>
     <div class="faq">
       <details>
-        <summary>Is the audit really free?</summary>
-        <p>Yes. The audit and report are free to use. We don't take a cut from workshops and we don't run paid recommendations.</p>
+        <summary>How does this help me close Repair Orders?</summary>
+        <p>Customers often seek second opinions. By providing them an independent, AI-verified health report at the counter, you remove their doubt and establish immediate trust, accelerating their approval process.</p>
       </details>
       <details>
-        <summary>How accurate is the analysis?</summary>
-        <p>We benchmark each line against manufacturer service intervals, GCC-adjusted wear curves, and a price band built from regional workshop data. It's a strong second opinion — not a replacement for a trusted mechanic.</p>
+        <summary>Does the AI physically inspect the car?</summary>
+        <p>No. Carithm is a data-driven tool that calculates the *designed life* of a part based on mileage, age, UAE weather, and drivetrain types. It complements your physical inspections by predicting lifecycle replacements.</p>
       </details>
       <details>
-        <summary>What happens to my data?</summary>
-        <p>Your quote is processed to generate the report and then discarded. We don't build a profile, share with insurers, or pass details to third parties.</p>
+        <summary>What happens to my customer's data?</summary>
+        <p>Your uploaded quote is processed instantly to generate the report and then discarded. We do not build profiles or share details with third parties.</p>
       </details>
       <details>
-        <summary>Which workshops does this cover?</summary>
-        <p>Any workshop in the GCC — dealer, independent or quick-service. Upload the quote regardless of where it came from.</p>
+        <summary>Does it handle older models common in the UAE?</summary>
+        <p>Yes, our database comprehensively supports legacy fleets extending back prior to 2005, supporting ubiquitous vehicles found in local garages.</p>
       </details>
     </div>
   </section>
 
   <div class="foot">
-    <div>© 2026 Carithm. Independent. Driver-first.</div>
+    <div>© 2026 Carithm. Built for UAE Service Centers.</div>
     <div class="foot-links">
       <a href="#">Privacy</a>
       <a href="#">Terms</a>
-      <a href="#">Contact</a>
+      <a href="#">Partner Support</a>
     </div>
   </div>
 </div>
@@ -635,6 +667,7 @@ const modelSelect     = document.getElementById("model");
 const yearInput       = document.getElementById("year");
 const mileageInput    = document.getElementById("mileage");
 const drivetrainSelect= document.getElementById("drivetrain");
+const vehicleTypeSel  = document.getElementById("vehicle-type");
 const radioPills      = document.querySelectorAll(".radio-pill");
 const dropZone        = document.getElementById("drop-zone");
 const fileInput       = document.getElementById("file-input");
@@ -713,22 +746,14 @@ function normalizeNumber(value) {
 
 /* ================================
    MARKDOWN RENDERER
-   All user/API data goes through esc() before touching the DOM.
-   The only raw HTML we emit is from our own template strings (bar, blockquote)
-   which contain no user data.
 ================================ */
 function renderMarkdown(md) {
   if (!md) return "";
 
   function inlineFormat(text) {
-    // esc() first, THEN apply formatting — never the other way around
     let s = esc(text);
     s = s.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
     s = s.replace(/\*(.*?)\*/g,     "<em>$1</em>");
-    // Underscore italics — badla.py uses _like this_ extensively
-    // (workshop-recommended names, the 🧮 explanation text, etc.).
-    // Require a non-word boundary so things like snake_case part_keys
-    // (e.g. front_brake_pads) don't get mangled into <em> tags.
     s = s.replace(/(^|[^\w])_([^_]+)_(?!\w)/g, "$1<em>$2</em>");
     s = s.replace(/`([^`]+)`/g,     "<code>$1</code>");
     return s;
@@ -737,7 +762,6 @@ function renderMarkdown(md) {
   function lifeBar(pctRaw) {
     const pct   = Math.max(0, parseInt(pctRaw, 10) || 0);
     const fillW = Math.min(pct, 100);
-    // Classify colour — no user data enters these strings
     const cls   = pct >= 100 ? "lbf-red" : pct >= 60 ? "lbf-amber" : "lbf-green";
     const label = pct >= 100 ? `${pct}% — overdue` : `${pct}%`;
     const marker = pct >= 100
@@ -844,12 +868,11 @@ function setSelectedFile(file) {
     dropZone.classList.add("has-file");
     setText(dropTitle, "File ready");
     setText(dropSub, "Click to choose a different file");
-    // Use textContent — file.name is untrusted
     setText(dropFileLabel, file.name);
     dropFileLabel.classList.remove("hidden");
   } else {
     dropZone.classList.remove("has-file");
-    setText(dropTitle, "Drop a file here");
+    setText(dropTitle, "Drop your quote file here");
     setText(dropSub, "PDF, image or text · max 15 MB");
     dropFileLabel.classList.add("hidden");
     setText(dropFileLabel, "");
@@ -897,7 +920,7 @@ async function analyzeQuote() {
   try {
     let data;
     if (selectedFile) {
-      setStatus(`Analyzing ${selectedFile.name}...`);
+      setStatus(`Certifying ${selectedFile.name}...`);
       data = await API.postFile("/analyze-quote", selectedFile);
     } else {
       const quoteText = quoteTextEl?.value?.trim();
@@ -905,27 +928,25 @@ async function analyzeQuote() {
         setStatus("Please upload a file or paste the quote text first.", "error");
         return;
       }
-      // Enforce a reasonable length cap on paste input
       if (quoteText.length > 50_000) {
         setStatus("Quote text is too long. Please trim it and try again.", "error");
         return;
       }
-      setStatus("Analyzing quote...");
+      setStatus("Certifying quote...");
       data = await API.post("/analyze-quote-text", { text: quoteText });
     }
 
     analyzedServices = Array.isArray(data.services) ? data.services : [];
     historyAnswers   = {};
 
-    // Use a generic status string if the server sends something unexpected
-    const statusMsg = typeof data.status === "string" ? data.status : "Quote analyzed.";
+    const statusMsg = typeof data.status === "string" ? data.status : "Quote certified.";
 
     if (!analyzedServices.length) {
       if (typeof data.ocr_text === "string") {
         quoteTextEl.value = data.ocr_text;
         setSelectedFile(null);
         fileInput.value = "";
-        setStatus(statusMsg + " We've pasted the extracted text below — review it and click Analyze again.", "error");
+        setStatus(statusMsg + " We've pasted the extracted text below — review it and click Certify again.", "error");
       } else {
         setStatus(statusMsg || "No items found in quote.", "error");
       }
@@ -949,7 +970,6 @@ async function analyzeQuote() {
 ================================ */
 function renderHistoryQuestions(services) {
   if (!questionsListEl) return;
-  // Clear via textContent trick — safe
   while (questionsListEl.firstChild) questionsListEl.removeChild(questionsListEl.firstChild);
 
   const historyServices = services.filter(
@@ -969,7 +989,6 @@ function renderHistoryQuestions(services) {
     wrapper.className = "field history-item";
 
     const label = document.createElement("label");
-    // tidyLabel + textContent — no HTML, no injection
     label.textContent = `When was the ${tidyLabel(svc.display || svc.raw)} last done?`;
 
     const knowRow = document.createElement("label");
@@ -986,11 +1005,10 @@ function renderHistoryQuestions(services) {
     pipDot.className = "pip-dot";
     pip.appendChild(pipDot);
 
-    // Build know-text with DOM — not innerHTML
     const knowText  = document.createElement("div");
     const pillLabel = document.createElement("div");
     pillLabel.className = "pill-label";
-    pillLabel.textContent = "I know the history";
+    pillLabel.textContent = "Customer knows the history";
     const pillSub = document.createElement("div");
     pillSub.className = "pill-sub";
     pillSub.textContent = "Leave unchecked if unsure — we'll assume unknown";
@@ -1047,6 +1065,7 @@ function collectVehicleData() {
   const year      = Number.isFinite(yearNum) && yearNum >= 1990 && yearNum <= 2030 ? yearNum : null;
   const mileage   = normalizeNumber(mileageInput?.value);
   const drivetrain= String(drivetrainSelect?.value ?? "").trim();
+  const vType     = String(vehicleTypeSel?.value ?? "").trim();
   const driving   = getSelectedDriving();
   const engineVal = Object.prototype.hasOwnProperty.call(modelEngineMap, model)
                       ? modelEngineMap[model]
@@ -1058,16 +1077,19 @@ function collectVehicleData() {
   if (year === null) missing.push("year (must be 1990–2030)");
   if (mileage === null || mileage < 0) missing.push("mileage");
   if (!drivetrain) missing.push("drivetrain");
+  if (!vType)      missing.push("vehicle type");
   if (!driving)    missing.push("driving pattern");
 
-  // Whitelist drivetrain values — never send arbitrary strings to the API
   if (drivetrain && !["fwd","rwd","awd"].includes(drivetrain)) {
     throw new Error("Invalid drivetrain value.");
+  }
+  if (vType && !["sedan","suv","hatchback","commercial"].includes(vType)) {
+    throw new Error("Invalid vehicle type value.");
   }
 
   if (missing.length) throw new Error(`Missing required fields: ${missing.join(", ")}`);
 
-  return { make, model, year, mileage, drivetrain, driving, engineVal };
+  return { make, model, year, mileage, drivetrain, vType, driving, engineVal };
 }
 
 /* ================================
@@ -1089,6 +1111,7 @@ async function submitHistoryAndGenerateReport() {
       mileage:         vehicle.mileage,
       driving:         vehicle.driving,
       drivetrain:      vehicle.drivetrain,
+      vehicle_type:    vehicle.vType,
       consent_to_log:  false,
     };
 
