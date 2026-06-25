@@ -3,7 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Carithm — Workshop Audit</title>
+<title>Carithm | AI Workshop Quote Auditor</title>
+<meta name="description" content="Upload your workshop repair quote. Get an independent, AI-driven verdict on every line item in under a minute. Is your workshop overcharging you?">
+<meta name="keywords" content="car repair quote, workshop quote check, UAE mechanic, auto repair auditor, fair price car repair, carithm, GCC workshop transparency, repair estimate check">
+<meta property="og:title" content="Carithm | AI Workshop Quote Auditor">
+<meta property="og:description" content="Upload your workshop repair quote. Get an independent, AI-driven verdict on every line item in under a minute.">
 
 <!-- Security headers via meta where HTTP headers aren't available -->
 <!-- frame-ancestors blocks clickjacking; default-src locks script/style origins;
@@ -60,7 +64,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.shell { max-width: 680px; margin: 0 auto; padding: 44px 20px 100px; }
+.shell { max-width: 680px; margin: 0 auto; padding: 100px 20px 100px; }
 
 .header { display: flex; align-items: center; gap: 10px; margin-bottom: 44px; }
 .logo { width: 30px; height: 30px; background: var(--accent); border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -244,8 +248,54 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
   .hero h1 { font-size: 26px; }
 }
 </style>
+
+<style>
+header {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 2.5rem;
+  z-index: 100;
+  background: rgba(5, 8, 15, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+}
+.logo span { color: var(--accent); }
+.nav { display: flex; gap: 2rem; align-items: center; }
+.nav a {
+  text-decoration: none; color: var(--text); font-size: 0.85rem; font-weight: 500;
+  letter-spacing: 0.02em; transition: color 0.2s;
+}
+.nav a:hover { color: #fff; }
+.cta-btn {
+  background: rgba(255, 255, 255, 0.08); padding: 0.5rem 1.2rem;
+  border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.15);
+  font-weight: 600; font-size: 0.8rem;
+}
+.cta-btn:hover { background: var(--text); color: var(--bg); border-color: transparent; }
+</style>
+
 </head>
 <body>
+<header>
+  <div class="logo">CARITHM<span> AI</span></div>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#auditor">Try Auditor</a>
+    <a href="#explorer">Pricing Benchmark</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://carithm.vercel.app/blog/">Blog</a>
+    <a href="https://carithm.vercel.app/about/">Intelligence Platform</a>
+    <a href="https://carithm.vercel.app/predictive">UAE Valuation</a>
+    <a href="mailto:carithmai29@gmail.com?subject=Pilot%20Evaluation%20Request&body=Hi%2C%0A%0AI%27d%20like%20to%20request%20a%20structured%20pilot%20evaluation.%0A%0AHere%20are%20my%20vehicle%20details%3A%0A%0A-%20Engine%20number%3A%0A-%20Current%20mileage%20(km)%3A%0A-%20Vehicle%20year%20%2F%20age%3A%0A-%20Region%20%2F%20city%3A%0A-%20Service%20history%20(what%20was%20replaced%20and%20at%20what%20mileage)%3A%0A%0AThanks" class="cta-btn">Request Pilot Evaluation</a>
+  </nav>
+</header>
 <div class="shell">
 
   <div class="header">
@@ -453,10 +503,10 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 
   <section>
     <div class="trust">
-      <div><div class="trust-num">12,400<span>+</span></div><div class="trust-lbl">Quotes audited</div></div>
-      <div><div class="trust-num">AED 1.8<span>M</span></div><div class="trust-lbl">Saved for drivers</div></div>
-      <div><div class="trust-num">38<span>%</span></div><div class="trust-lbl">Avg. line items flagged</div></div>
-      <div><div class="trust-num">4.8<span>/5</span></div><div class="trust-lbl">Driver rating</div></div>
+      <div><div class="trust-num">46<span>+</span></div><div class="trust-lbl">Brands Supported</div></div>
+      <div><div class="trust-num">500<span>+</span></div><div class="trust-lbl">Engines Modeled</div></div>
+      <div><div class="trust-num">2</div><div class="trust-lbl">Live Pilots</div></div>
+      <div><div class="trust-num">15<span>+</span></div><div class="trust-lbl">Components Audited</div></div>
     </div>
   </section>
 
