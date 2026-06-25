@@ -204,7 +204,7 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 .spin { width: 15px; height: 15px; border: 2px solid rgba(255,255,255,0.2); border-top-color: white; border-radius: 50%; animation: rotate 0.65s linear infinite; }
 @keyframes rotate { to { transform: rotate(360deg); } }
 
-.status-bar { display: flex; align-items: center; gap: 8px; padding: 9px 13px; border-radius: var(--r-sm); font-size: 12px; border: 1px solid transparent; }
+.status-bar { display: flex; align-items: center; gap: 8px; padding: 9px 13px; border-radius: var(--r-sm); font-size: 12px; border: 1px solid transparent; margin-top: 10px; }
 .status-bar.info { background: var(--accent-dim); border-color: rgba(59,130,246,0.2); color: #93c5fd; }
 .status-bar.error { background: var(--red-dim); border-color: rgba(239,68,68,0.2); color: #fca5a5; }
 .status-bar.success { background: var(--green-dim); border-color: rgba(34,197,94,0.2); color: #86efac; }
@@ -320,7 +320,6 @@ header {
 .cta-btn:hover { background: var(--text); color: var(--bg); border-color: transparent; }
 </style>
 
-
 <style>
 /* How It Works Styles */
 .how-flow { display: flex; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; }
@@ -335,527 +334,134 @@ header {
   .how-arrow { display: block; position: absolute; right: -1.5rem; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; background: url('data:image/svg+xml;utf8,<svg fill="none" stroke="%233b82f6" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>') no-repeat center center; z-index: 10; }
 }
 
-    /* ─── DYNAMIC DESIGN ARCHITECTURE EXPLORER ─── */
-    #explorer {
-      background: var(--bg2);
-    }
-
-    #explorer .section-label { color: var(--blue); }
-    #explorer .section-title { color: #fff; }
-    #explorer .section-sub { color: var(--muted); }
-
-    .explorer-wrap {
-      position: relative;
-      margin-top: 2.5rem;
-      border-radius: 20px;
-      overflow: visible;
-      background: #05080f;
-      padding: 2rem 2rem 1.5rem;
-      border: 1px solid var(--border);
-      max-width: 860px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .car-img-wrap {
-      position: relative;
-      width: 100%;
-      user-select: none;
-    }
-
-    .car-img-wrap img {
-      width: 100%;
-      display: block;
-      border-radius: 12px;
-      filter: saturate(0.92) contrast(1.04);
-    }
-
-    /* ── INTERACTIVE HOTSPOTS ── */
-    .hs {
-      position: absolute;
-      width: 52px;
-      height: 52px;
-      border: 2.5px solid #22c55e;
-      border-radius: 6px;
-      cursor: pointer;
-      transform: translate(-50%, -50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: box-shadow .2s, border-color .2s;
-      z-index: 10;
-      background: rgba(34, 197, 94, 0.08);
-    }
-
-    .hs:hover {
-      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
-      border-color: #16a34a;
-    }
-
-    .hs.active {
-      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.4);
-      background: rgba(34, 197, 94, 0.15);
-    }
-
-    .hs-num {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: #22c55e;
-      color: #fff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--body);
-    }
-
-    /* ── POPUP ANOMALY EXPANSION CARDS ── */
-    .hs-card {
-      position: absolute;
-      background: #0d1524;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 1rem 1.2rem;
-      min-width: 190px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(45, 124, 246, 0.15);
-      pointer-events: none;
-      opacity: 0;
-      transform: translateY(6px) scale(0.97);
-      transition: opacity .2s ease, transform .2s ease;
-      z-index: 20;
-    }
-
-    .hs-card.visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      pointer-events: auto;
-    }
-
-    .hs-card-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #fff;
-      font-family: var(--body);
-    }
-
-    .hs-card-km {
-      font-size: 0.82rem;
-      color: #8499be;
-      margin: 0.15rem 0 0.55rem;
-      font-family: var(--body);
-    }
-
-    .hs-card-tags {
-      display: flex;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      padding: 0.22rem 0.6rem;
-      border-radius: 20px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      font-family: var(--body);
-    }
-
-    .tag-green  { background: rgba(34, 197, 94, 0.15);  color: #4ade80; }
-    .tag-red    { background: rgba(239, 68, 68, 0.15);  color: #f87171; }
-    .tag-amber  { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
-    .tag-blue   { background: rgba(45, 124, 246, 0.15); color: #60a5fa; }
-
-    .explorer-hint {
-      text-align: center;
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-top: 1rem;
-      letter-spacing: 0.03em;
-    }
-
-    .explorer-hint b { color: var(--blue); font-weight: 600; }
-
-    /* ─── INSIGHT DETAILS & COMPONENT HEALTH TRACKERS ─── */
-    .panel-desc { font-size: 0.82rem; color: #8499be; line-height: 1.65; }
-
-    .health-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.4rem;
-    }
-
-    .health-lbl {
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-    }
-
-    .health-val {
-      font-family: var(--display);
-      font-size: 1.3rem;
-      letter-spacing: 0.04em;
-    }
-
-    .bar-track {
-      height: 7px;
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 99px;
-      overflow: hidden;
-    }
-
-    .bar-fill {
-      height: 100%;
-      border-radius: 99px;
-      transition: width .9s cubic-bezier(.22, 1, .36, 1);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.6rem;
-    }
-
-    .stat-box {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      padding: 0.75rem 0.9rem;
-    }
-
-    .stat-lbl {
-      font-size: 0.63rem;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .stat-val {
-      font-family: var(--display);
-      font-size: 1rem;
-      letter-spacing: 0.04em;
-      color: #fff;
-    }
-
-    .driven-by {
-      background: var(--blue-dim);
-      border: 1px solid rgba(45, 124, 246, 0.15);
-      border-radius: 9px;
-      padding: 0.8rem 1rem;
-    }
-
-    .driven-title {
-      font-size: 0.65rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--blue);
-      margin-bottom: 0.5rem;
-    }
-
-    .driven-text { font-size: 0.78rem; color: #7faef8; line-height: 1.55; }
-
-    .panel-cta {
-      display: block;
-      margin: 0 1.5rem 1.3rem;
-      padding: 0.8rem;
-      background: var(--blue);
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-align: center;
-      border-radius: 9px;
-      text-decoration: none;
-      transition: all .2s;
-      box-shadow: 0 0 18px var(--blue-glow);
-    }
-
-    .panel-cta:hover {
-      background: #1a6ae0;
-      transform: translateY(-1px);
-    }
-
-    /* ─── VALUE PROPOSITION PROFILES (3-COLUMN GRID) ─── */
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .why-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2rem 1.6rem;
-      transition: border-color .25s, transform .25s;
-    }
-
-    .why-card:hover {
-      border-color: rgba(45, 124, 246, 0.3);
-      transform: translateY(-3px);
-    }
-
-    .why-icon  { font-size: 1.8rem; margin-bottom: 1rem; }
-    .why-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.6rem; }
-    .why-body  { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
-
-    /* ─── TARGET AUDIENCE ARCHITECTURES ─── */
-    .for-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .for-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2rem 1.6rem;
-    }
-
-    .for-icon  { font-size: 2rem; margin-bottom: 1rem; }
-
-    .for-title {
-      font-family: var(--display);
-      font-size: 1.4rem;
-      color: #fff;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.6rem;
-    }
-
-    .for-body  { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; }
-    .for-list  { display: flex; flex-direction: column; gap: 0.4rem; }
-    .for-item  { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.78rem; color: #8499be; }
-    .for-check { color: var(--green); flex-shrink: 0; }
-
-    /* ─── ANALYTICS NARRATIVE PROFILE ─── */
-    .story-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 3rem;
-      max-width: 780px;
-      margin: 3rem auto 0;
-      border-left: 3px solid var(--blue);
-    }
-
-    .story-line           { font-size: 1.05rem; color: #94a3b8; line-height: 1.8; margin-bottom: 0.8rem; }
-    .story-line.bad       { color: var(--red); font-weight: 600; font-size: 1.1rem; }
-    .story-line.good      { color: var(--green); font-weight: 600; font-size: 1.1rem; }
-    .story-line.highlight { color: #fff; font-size: 1.15rem; font-style: italic; }
-
-    .story-note {
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.8rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ─── ACCORDION SYSTEM (FAQ) ─── */
-    .faq-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 820px;
-      margin: 3rem auto 0;
-    }
-
-    .faq-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.4rem 1.6rem;
-      cursor: pointer;
-      transition: border-color .2s;
-    }
-
-    .faq-item:hover { border-color: rgba(45, 124, 246, 0.25); }
-
-    .faq-q {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .faq-arrow {
-      color: var(--blue);
-      font-size: 1.1rem;
-      flex-shrink: 0;
-      transition: transform .25s;
-    }
-
-    .faq-item.open .faq-arrow { transform: rotate(180deg); }
-
-    .faq-a {
-      font-size: 0.83rem;
-      color: var(--muted);
-      line-height: 1.7;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .35s ease, margin-top .25s;
-    }
-
-    .faq-item.open .faq-a { max-height: 300px; margin-top: 0.9rem; }
-
-    /* ─── CLOSING INITIATION PANEL (FINAL CTA) ─── */
-    .cta-section {
-      text-align: center;
-      padding: 8rem 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-glow {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(45, 124, 246, 0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .cta-section h2 {
-      font-family: var(--display);
-      font-size: clamp(2.8rem, 7vw, 6rem);
-      color: #fff;
-      letter-spacing: 0.02em;
-      line-height: 0.95;
-      margin-bottom: 1.5rem;
-      position: relative;
-    }
-
-    .cta-section h2 span { color: var(--blue); }
-
-    .cta-section p {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 500px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.7;
-      position: relative;
-    }
-
-    /* ─── PLATFORM SITE FOOTER ─── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-logo { font-family: var(--display); font-size: 1.2rem; color: var(--blue); letter-spacing: 0.04em; }
-    .footer-links { display: flex; gap: 1.5rem; }
-
-    .footer-links a {
-      font-size: 0.78rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color .2s;
-    }
-
-    .footer-links a:hover { color: var(--blue); }
-    .footer-copy { font-size: 0.72rem; color: #2a3452; }
-
-    /* ─── ADAPTIVE MEDIA VIEWPORTS (RESPONSIVE GRID SYSTEM) ─── */
-    @media (max-width: 960px) {
-      .mobile-hidden { display: none !important; }
-
-      .hero { display: flex; flex-direction: column; }
-      .hero-left { padding: 6rem 2rem 3rem 2rem; }
-
-      .hero-right {
-        height: auto;
-        min-height: auto;
-        padding: 3rem 2rem;
-        border-left: none;
-        border-top: 1px solid var(--border);
-        width: 100%;
-      }
-
-      .explorer-layout { grid-template-columns: 1fr; }
-      .info-panel { position: static; margin-top: 2rem; }
-      .why-grid, .for-grid { grid-template-columns: 1fr 1fr; }
-      .how-flow { grid-template-columns: 1fr; }
-
-      .how-step { border-right: none; border-bottom: 1px solid var(--border); }
-      .how-step:last-child { border-bottom: none; }
-    }
-
-    @media (max-width: 620px) {
-      .hero-left  { padding: 5rem 1.5rem 2rem 1.5rem; }
-      .hero-right { padding: 2rem 1.5rem; }
-      .section-inner { padding: 4rem 1.5rem; max-width: 960px; margin-left: auto; margin-right: auto; }
-      .why-grid, .for-grid { grid-template-columns: 1fr; }
-      header { padding: 1rem 1.2rem; }
-      .nav a:not(.cta-btn) { display: none; }
-    }
-
-
-  /* ─── MEGA FOOTER ─── */
-  .site-footer {
-    background: var(--bg2);
-    border-top: 1px solid var(--border);
-    padding: 4rem 2.5rem 2rem;
-    margin-top: 4rem;
-  }
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
-    gap: 3rem;
-  }
-  .footer-col h4 {
-    font-family: var(--display);
-    color: #fff;
-    font-size: 1.1rem;
-    letter-spacing: 0.06em;
-    margin-bottom: 1.2rem;
-    text-transform: uppercase;
-  }
-  .mission-statement {
-    color: var(--muted);
-    font-size: 0.85rem;
-    line-height: 1.65;
-    margin: 0.8rem 0 1.2rem;
-    max-width: 280px;
-  }
-  .footer-col ul { list-style: none; }
-  .footer-col ul li { margin-bottom: 0.75rem; }
-  .footer-col ul li a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.84rem;
-    transition: color .2s, transform .2s;
-    display: inline-block;
-  }
-  .footer-col ul li a:hover { color: var(--blue); transform: translateX(4px); }
-  .footer-contact a { color: var(--text); text-decoration: none; font-size: 0.84rem; font-weight: 500; }
-  .social-links { margin-top: 0.8rem; }
-  .social-links a { color: var(--blue); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
-  .footer-bottom { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center; }
-  .footer-bottom p { color: var(--muted); font-size: 0.74rem; letter-spacing: 0.02em; }
-  @media (max-width: 768px) {
-    .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .footer-col:first-child { grid-column: span 2; }
-  }
-  @media (max-width: 480px) {
-    .footer-container { grid-template-columns: 1fr; }
-    .footer-col:first-child { grid-column: span 1; }
-  }
+/* ─── DYNAMIC DESIGN ARCHITECTURE EXPLORER ─── */
+#explorer { background: var(--bg2); }
+#explorer .section-label { color: var(--blue); }
+#explorer .section-title { color: #fff; }
+#explorer .section-sub { color: var(--muted); }
+.explorer-wrap { position: relative; margin-top: 2.5rem; border-radius: 20px; overflow: visible; background: #05080f; padding: 2rem 2rem 1.5rem; border: 1px solid var(--border); max-width: 860px; margin-left: auto; margin-right: auto; }
+.car-img-wrap { position: relative; width: 100%; user-select: none; }
+.car-img-wrap img { width: 100%; display: block; border-radius: 12px; filter: saturate(0.92) contrast(1.04); }
+
+/* ── INTERACTIVE HOTSPOTS ── */
+.hs { position: absolute; width: 52px; height: 52px; border: 2.5px solid #22c55e; border-radius: 6px; cursor: pointer; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; transition: box-shadow .2s, border-color .2s; z-index: 10; background: rgba(34, 197, 94, 0.08); }
+.hs:hover { box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25); border-color: #16a34a; }
+.hs.active { box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.4); background: rgba(34, 197, 94, 0.15); }
+.hs-num { width: 22px; height: 22px; border-radius: 50%; background: #22c55e; color: #fff; font-size: 0.72rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--body); }
+
+/* ── POPUP ANOMALY EXPANSION CARDS ── */
+.hs-card { position: absolute; background: #0d1524; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1rem 1.2rem; min-width: 190px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(45, 124, 246, 0.15); pointer-events: none; opacity: 0; transform: translateY(6px) scale(0.97); transition: opacity .2s ease, transform .2s ease; z-index: 20; }
+.hs-card.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.hs-card-title { font-size: 0.95rem; font-weight: 700; color: #fff; font-family: var(--body); }
+.hs-card-km { font-size: 0.82rem; color: #8499be; margin: 0.15rem 0 0.55rem; font-family: var(--body); }
+.hs-card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.tag { padding: 0.22rem 0.6rem; border-radius: 20px; font-size: 0.72rem; font-weight: 600; font-family: var(--body); }
+.tag-green  { background: rgba(34, 197, 94, 0.15);  color: #4ade80; }
+.tag-red    { background: rgba(239, 68, 68, 0.15);  color: #f87171; }
+.tag-amber  { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+.tag-blue   { background: rgba(45, 124, 246, 0.15); color: #60a5fa; }
+.explorer-hint { text-align: center; font-size: 0.75rem; color: var(--muted); margin-top: 1rem; letter-spacing: 0.03em; }
+.explorer-hint b { color: var(--blue); font-weight: 600; }
+
+/* ─── INSIGHT DETAILS & COMPONENT HEALTH TRACKERS ─── */
+.panel-desc { font-size: 0.82rem; color: #8499be; line-height: 1.65; }
+.health-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem; }
+.health-lbl { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.health-val { font-family: var(--display); font-size: 1.3rem; letter-spacing: 0.04em; }
+.bar-track { height: 7px; background: rgba(255, 255, 255, 0.06); border-radius: 99px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 99px; transition: width .9s cubic-bezier(.22, 1, .36, 1); }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.stat-box { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 9px; padding: 0.75rem 0.9rem; }
+.stat-lbl { font-size: 0.63rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); margin-bottom: 0.3rem; }
+.stat-val { font-family: var(--display); font-size: 1rem; letter-spacing: 0.04em; color: #fff; }
+.driven-by { background: var(--blue-dim); border: 1px solid rgba(45, 124, 246, 0.15); border-radius: 9px; padding: 0.8rem 1rem; }
+.driven-title { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--blue); margin-bottom: 0.5rem; }
+.driven-text { font-size: 0.78rem; color: #7faef8; line-height: 1.55; }
+.panel-cta { display: block; margin: 0 1.5rem 1.3rem; padding: 0.8rem; background: var(--blue); color: #fff; font-weight: 700; font-size: 0.85rem; text-align: center; border-radius: 9px; text-decoration: none; transition: all .2s; box-shadow: 0 0 18px var(--blue-glow); }
+.panel-cta:hover { background: #1a6ae0; transform: translateY(-1px); }
+
+/* ─── VALUE PROPOSITION PROFILES ─── */
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.why-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 2rem 1.6rem; transition: border-color .25s, transform .25s; }
+.why-card:hover { border-color: rgba(45, 124, 246, 0.3); transform: translateY(-3px); }
+.why-icon  { font-size: 1.8rem; margin-bottom: 1rem; }
+.why-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.6rem; }
+.why-body  { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+
+/* ─── TARGET AUDIENCE ARCHITECTURES ─── */
+.for-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.for-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 2rem 1.6rem; }
+.for-icon  { font-size: 2rem; margin-bottom: 1rem; }
+.for-title { font-family: var(--display); font-size: 1.4rem; color: #fff; letter-spacing: 0.04em; margin-bottom: 0.6rem; }
+.for-body  { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; }
+.for-list  { display: flex; flex-direction: column; gap: 0.4rem; }
+.for-item  { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.78rem; color: #8499be; }
+.for-check { color: var(--green); flex-shrink: 0; }
+
+/* ─── ANALYTICS NARRATIVE PROFILE ─── */
+.story-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 3rem; max-width: 780px; margin: 3rem auto 0; border-left: 3px solid var(--blue); }
+.story-line           { font-size: 1.05rem; color: #94a3b8; line-height: 1.8; margin-bottom: 0.8rem; }
+.story-line.bad       { color: var(--red); font-weight: 600; font-size: 1.1rem; }
+.story-line.good      { color: var(--green); font-weight: 600; font-size: 1.1rem; }
+.story-line.highlight { color: #fff; font-size: 1.15rem; font-style: italic; }
+.story-note { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+
+/* ─── ACCORDION SYSTEM (FAQ) ─── */
+.faq-list { display: flex; flex-direction: column; gap: 1rem; max-width: 820px; margin: 3rem auto 0; }
+.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.6rem; cursor: pointer; transition: border-color .2s; }
+.faq-item:hover { border-color: rgba(45, 124, 246, 0.25); }
+.faq-q { font-size: 0.95rem; font-weight: 600; color: #fff; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq-arrow { color: var(--blue); font-size: 1.1rem; flex-shrink: 0; transition: transform .25s; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-a { font-size: 0.83rem; color: var(--muted); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height .35s ease, margin-top .25s; }
+.faq-item.open .faq-a { max-height: 300px; margin-top: 0.9rem; }
+
+/* ─── CLOSING INITIATION PANEL (FINAL CTA) ─── */
+.cta-section { text-align: center; padding: 8rem 2rem; position: relative; overflow: hidden; }
+.cta-glow { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(45, 124, 246, 0.12) 0%, transparent 70%); pointer-events: none; }
+.cta-section h2 { font-family: var(--display); font-size: clamp(2.8rem, 7vw, 6rem); color: #fff; letter-spacing: 0.02em; line-height: 0.95; margin-bottom: 1.5rem; position: relative; }
+.cta-section h2 span { color: var(--blue); }
+.cta-section p { font-size: 1rem; color: var(--muted); max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7; position: relative; }
+
+/* ─── MEGA FOOTER ─── */
+.site-footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4rem 2.5rem 2rem; margin-top: 4rem; }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 3rem; }
+.footer-col h4 { font-family: var(--display); color: #fff; font-size: 1.1rem; letter-spacing: 0.06em; margin-bottom: 1.2rem; text-transform: uppercase; }
+.mission-statement { color: var(--muted); font-size: 0.85rem; line-height: 1.65; margin: 0.8rem 0 1.2rem; max-width: 280px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.75rem; }
+.footer-col ul li a { color: var(--muted); text-decoration: none; font-size: 0.84rem; transition: color .2s, transform .2s; display: inline-block; }
+.footer-col ul li a:hover { color: var(--blue); transform: translateX(4px); }
+.footer-contact a { color: var(--text); text-decoration: none; font-size: 0.84rem; font-weight: 500; }
+.social-links { margin-top: 0.8rem; }
+.social-links a { color: var(--blue); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
+.footer-bottom { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center; }
+.footer-bottom p { color: var(--muted); font-size: 0.74rem; letter-spacing: 0.02em; }
+
+@media (max-width: 960px) {
+  .hero-left { padding: 6rem 2rem 3rem 2rem; }
+  .explorer-layout { grid-template-columns: 1fr; }
+  .why-grid, .for-grid { grid-template-columns: 1fr 1fr; }
+  .how-flow { grid-template-columns: 1fr; }
+  .how-step { border-right: none; border-bottom: 1px solid var(--border); }
+  .how-step:last-child { border-bottom: none; }
+}
+
+@media (max-width: 768px) {
+  .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-col:first-child { grid-column: span 2; }
+}
+
+@media (max-width: 620px) {
+  .why-grid, .for-grid { grid-template-columns: 1fr; }
+  header { padding: 1rem 1.2rem; }
+  .nav a:not(.cta-btn) { display: none; }
+}
+
+@media (max-width: 480px) {
+  .footer-container { grid-template-columns: 1fr; }
+  .footer-col:first-child { grid-column: span 1; }
+}
 </style>
 </head>
 <body>
@@ -877,7 +483,6 @@ header {
   <p style="font-size: 1rem; color: var(--muted); max-width: 460px; margin: 0 auto 40px; line-height: 1.6;">Upload your service estimate. Get an independent, AI-driven second opinion on every maintenance item and lifecycle part in seconds.</p>
 
 </section>
-
 
 <div class="shell" id="tool-shell">
 
@@ -1022,6 +627,10 @@ header {
       </div>
 
       <button class="btn btn-primary" id="analyze-btn">Verify My Quote</button>
+      
+      <!-- USAGE COUNTER INJECTED HERE -->
+      <div id="usage-counter" style="font-size: 12px; font-weight: 500; text-align: center; margin-top: 10px;"></div>
+      
       <div id="status" class="hidden"></div>
     </div>
   </div>
@@ -1170,6 +779,49 @@ const API = Object.freeze({
               return safeFetch(`${API_ORIGIN}${path}`, { method: "POST", body: fd });
             },
 });
+
+/* ================================
+   USAGE LIMITER ENFORCEMENT
+================================ */
+const MAX_IMAGE_UPLOADS = 3;
+const RESET_MS = 24 * 60 * 60 * 1000; // 24 hours
+
+function getUsageStats() {
+  let stats = JSON.parse(localStorage.getItem('carithm_usage_stats'));
+  const now = Date.now();
+  if (!stats || (now - stats.timestamp > RESET_MS)) {
+    stats = { count: 0, timestamp: now };
+    localStorage.setItem('carithm_usage_stats', JSON.stringify(stats));
+  }
+  return stats;
+}
+
+function incrementUsage() {
+  let stats = getUsageStats();
+  stats.count++;
+  localStorage.setItem('carithm_usage_stats', JSON.stringify(stats));
+  updateCounterDisplay();
+}
+
+function updateCounterDisplay() {
+  const counterEl = document.getElementById('usage-counter');
+  if (!counterEl) return;
+  
+  const stats = getUsageStats();
+  const remaining = Math.max(0, MAX_IMAGE_UPLOADS - stats.count);
+  
+  if (selectedFile) {
+    counterEl.textContent = `Image Audits Remaining Today: ${remaining} / ${MAX_IMAGE_UPLOADS}`;
+    if (remaining === 0) {
+      counterEl.style.color = 'var(--red)';
+    } else {
+      counterEl.style.color = 'var(--muted)';
+    }
+  } else {
+    counterEl.textContent = "Text Audit: Free & Unlimited Uses";
+    counterEl.style.color = 'var(--green)';
+  }
+}
 
 /* ================================
    SAFE FETCH
@@ -1440,6 +1092,7 @@ function setSelectedFile(file) {
     dropFileLabel.classList.add("hidden");
     setText(dropFileLabel, "");
   }
+  updateCounterDisplay(); // Re-check the free vs limit status label
 }
 
 fileInput?.addEventListener("change", () => {
@@ -1480,9 +1133,22 @@ async function analyzeQuote() {
   historyReview?.classList.add("hidden");
   reportEl?.classList.add("hidden");
 
+  const isUsingFile = !!selectedFile;
+
+  // Enforce usage limit purely for Image/File Uploads
+  if (isUsingFile) {
+    const stats = getUsageStats();
+    if (stats.count >= MAX_IMAGE_UPLOADS) {
+      setStatus("Daily image upload limit reached. Please copy-paste your estimate text into the box below (unlimited free uses).", "error");
+      releaseLock(analyzeBtn);
+      return;
+    }
+  }
+
   try {
     let data;
-    if (selectedFile) {
+    if (isUsingFile) {
+      incrementUsage(); // Deduct point since they passed the check
       setStatus(`Scanning and verifying ${selectedFile.name}...`);
       data = await API.postFile("/analyze-quote", selectedFile);
     } else {
@@ -1495,7 +1161,7 @@ async function analyzeQuote() {
         setStatus("Text list is uncommonly long. Please trim non-essential lines.", "error");
         return;
       }
-      setStatus("Auditing items...");
+      setStatus("Auditing text items...");
       data = await API.post("/analyze-quote-text", { text: quoteText });
     }
 
@@ -1704,6 +1370,10 @@ async function submitHistoryAndGenerateReport() {
 analyzeBtn?.addEventListener("click", analyzeQuote);
 finalizeBtn?.addEventListener("click", submitHistoryAndGenerateReport);
 loadMakes();
+document.addEventListener("DOMContentLoaded", updateCounterDisplay);
+
+quoteTextEl?.addEventListener("input", updateCounterDisplay);
+
 </script>
 <section id="how-it-works" aria-label="How Carithm works">
       <div class="section-inner">
@@ -1900,7 +1570,6 @@ loadMakes();
 <script>
 document.addEventListener("DOMContentLoaded", function() {
 
-
     // ─── COMPONENT DATA ───
     const components = {
       'hs-engine-oil': {
@@ -2009,32 +1678,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function updateSimulation() {
       if (simState.body === 'suv' && simState.drive === 'awd') {
-        statBrake.textContent = '1.35x';
-        statBrake.className = 'stat-val alert';
-        statTCase.textContent = 'HIGH STRESS';
-        statTCase.className = 'stat-val alert';
-        simWarning.classList.remove('hidden');
+        if(statBrake){ statBrake.textContent = '1.35x'; statBrake.className = 'stat-val alert'; }
+        if(statTCase){ statTCase.textContent = 'HIGH STRESS'; statTCase.className = 'stat-val alert'; }
+        if(simWarning) simWarning.classList.remove('hidden');
       } else if (simState.body === 'suv' && simState.drive === 'fwd') {
-        statBrake.textContent = '1.20x';
-        statBrake.className = 'stat-val alert';
-        statTCase.textContent = 'N/A (2WD)';
-        statTCase.className = 'stat-val';
-        statTCase.style.color = 'var(--muted)';
-        simWarning.classList.add('hidden');
+        if(statBrake){ statBrake.textContent = '1.20x'; statBrake.className = 'stat-val alert'; }
+        if(statTCase){ statTCase.textContent = 'N/A (2WD)'; statTCase.className = 'stat-val'; statTCase.style.color = 'var(--muted)'; }
+        if(simWarning) simWarning.classList.add('hidden');
       } else if (simState.body === 'sedan' && simState.drive === 'awd') {
-        statBrake.textContent = '1.10x';
-        statBrake.className = 'stat-val';
-        statTCase.textContent = 'MODERATE';
-        statTCase.className = 'stat-val';
-        statTCase.style.color = 'var(--text)';
-        simWarning.classList.add('hidden');
+        if(statBrake){ statBrake.textContent = '1.10x'; statBrake.className = 'stat-val'; }
+        if(statTCase){ statTCase.textContent = 'MODERATE'; statTCase.className = 'stat-val'; statTCase.style.color = 'var(--text)'; }
+        if(simWarning) simWarning.classList.add('hidden');
       } else {
-        statBrake.textContent = '1.00x';
-        statBrake.className = 'stat-val';
-        statTCase.textContent = 'N/A (2WD)';
-        statTCase.className = 'stat-val';
-        statTCase.style.color = 'var(--muted)';
-        simWarning.classList.add('hidden');
+        if(statBrake){ statBrake.textContent = '1.00x'; statBrake.className = 'stat-val'; }
+        if(statTCase){ statTCase.textContent = 'N/A (2WD)'; statTCase.className = 'stat-val'; statTCase.style.color = 'var(--muted)'; }
+        if(simWarning) simWarning.classList.add('hidden');
       }
     }
 
@@ -2071,8 +1729,6 @@ document.addEventListener("DOMContentLoaded", function() {
       
       observer.observe(hotspotGrid);
     }
-  
-
 });
 </script>
 </body>
