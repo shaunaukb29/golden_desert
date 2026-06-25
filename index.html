@@ -4,7 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Carithm — Workshop Audit</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<!-- Security headers via meta where HTTP headers aren't available -->
+<!-- frame-ancestors blocks clickjacking; default-src locks script/style origins;
+     connect-src restricts fetch() to only the API and same-origin;
+     img-src allows data: URIs (used in the select arrow SVG) -->
+<meta http-equiv="Content-Security-Policy"
+  content="default-src 'self';
+           script-src 'self' 'unsafe-inline';
+           style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+           font-src https://fonts.gstatic.com;
+           connect-src 'self' https://x748873y-bcvbc.hf.space;
+           img-src 'self' data:;
+           frame-ancestors 'none';
+           base-uri 'self';
+           form-action 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="no-referrer">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,23 +60,19 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Layout ── */
 .shell { max-width: 680px; margin: 0 auto; padding: 44px 20px 100px; }
 
-/* ── Header ── */
 .header { display: flex; align-items: center; gap: 10px; margin-bottom: 44px; }
 .logo { width: 30px; height: 30px; background: var(--accent); border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .logo svg { width: 16px; height: 16px; }
 .brand { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
 .brand-tag { font-size: 11px; color: var(--muted); font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; border-left: 1px solid var(--border2); padding-left: 10px; margin-left: 2px; }
 
-/* ── Hero ── */
 .hero { margin-bottom: 40px; }
 .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
 .hero h1 { font-size: 32px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 12px; }
 .hero p { font-size: 14px; color: var(--muted); max-width: 440px; line-height: 1.7; }
 
-/* ── Cards ── */
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); margin-bottom: 10px; overflow: hidden; }
 .card-head { padding: 16px 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); }
 .step { width: 20px; height: 20px; border-radius: 50%; background: var(--surface3); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: var(--muted); flex-shrink: 0; }
@@ -66,7 +80,6 @@ body {
 .card-title { font-size: 13px; font-weight: 500; }
 .card-body { padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; }
 
-/* ── Form elements ── */
 .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .row3 { display: grid; grid-template-columns: 2fr 2fr 1fr; gap: 10px; }
 .field { display: flex; flex-direction: column; gap: 5px; }
@@ -100,117 +113,50 @@ select option { background: #27272a; }
 select:disabled { opacity: 0.45; cursor: not-allowed; }
 textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.6; }
 
-/* ── Radio pills ── */
 .radios { display: flex; flex-direction: column; gap: 7px; }
 .radio-pill {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 12px;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: var(--r-sm);
-  cursor: pointer;
-  transition: border-color 0.12s, background 0.12s;
-  user-select: none;
+  display: flex; align-items: center; gap: 10px; padding: 9px 12px;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--r-sm); cursor: pointer;
+  transition: border-color 0.12s, background 0.12s; user-select: none;
 }
 .radio-pill:hover { border-color: var(--border2); }
 .radio-pill.on { border-color: var(--accent); background: var(--accent-dim); }
 .radio-pill input[type=radio] { display: none; }
-.pip {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  border: 1.5px solid var(--muted2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: border-color 0.12s;
-}
+.pip { width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid var(--muted2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: border-color 0.12s; }
 .radio-pill.on .pip { border-color: var(--accent); background: var(--accent); }
 .pip-dot { width: 5px; height: 5px; border-radius: 50%; background: white; display: none; }
 .radio-pill.on .pip-dot { display: block; }
 .pill-label { font-size: 13px; font-weight: 500; }
 .pill-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
 
-/* ── Upload zone ── */
 .drop-zone {
-  border: 1px dashed var(--border2);
-  border-radius: var(--r-sm);
-  padding: 24px 16px;
-  text-align: center;
-  cursor: pointer;
-  position: relative;
-  transition: border-color 0.15s, background 0.15s;
+  border: 1px dashed var(--border2); border-radius: var(--r-sm);
+  padding: 24px 16px; text-align: center; cursor: pointer;
+  position: relative; transition: border-color 0.15s, background 0.15s;
 }
-.drop-zone:hover, .drop-zone.drag {
-  border-color: var(--accent);
-  background: var(--accent-dim);
-}
-.drop-zone.has-file {
-  border-color: var(--green);
-  background: var(--green-dim);
-  border-style: solid;
-}
-.drop-zone input[type=file] {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-}
-.drop-icon {
-  width: 32px;
-  height: 32px;
-  background: var(--surface3);
-  border: 1px solid var(--border2);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 10px;
-}
+.drop-zone:hover, .drop-zone.drag { border-color: var(--accent); background: var(--accent-dim); }
+.drop-zone.has-file { border-color: var(--green); background: var(--green-dim); border-style: solid; }
+.drop-zone input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+.drop-icon { width: 32px; height: 32px; background: var(--surface3); border: 1px solid var(--border2); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; }
 .drop-icon svg { width: 16px; height: 16px; stroke: var(--muted); }
 .drop-zone.has-file .drop-icon svg { stroke: var(--green); }
 .drop-title { font-size: 13px; font-weight: 500; }
 .drop-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
 .drop-file { font-size: 12px; color: var(--green); margin-top: 5px; font-weight: 500; }
 
-/* ── History Review ── */
-.history-item {
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border);
-}
-.history-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
+.history-item { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.history-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
-/* ── Divider ── */
 .or { display: flex; align-items: center; gap: 10px; }
 .or-line { flex: 1; height: 1px; background: var(--border); }
 .or-text { font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.06em; }
 
-/* ── Buttons ── */
 .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  padding: 11px 18px;
-  border-radius: var(--r-sm);
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  border: none;
-  transition: opacity 0.15s, transform 0.1s;
-  width: 100%;
-  letter-spacing: -0.01em;
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 11px 18px; border-radius: var(--r-sm); font-family: inherit;
+  font-size: 14px; font-weight: 500; cursor: pointer; border: none;
+  transition: opacity 0.15s, transform 0.1s; width: 100%; letter-spacing: -0.01em;
 }
 .btn:active:not(:disabled) { transform: scale(0.99); }
 .btn:disabled { opacity: 0.38; cursor: not-allowed; }
@@ -219,42 +165,13 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 .btn-ghost { background: var(--surface2); color: var(--text); border: 1px solid var(--border2); }
 .btn-ghost:hover:not(:disabled) { background: var(--surface3); }
 
-/* ── Spinner ── */
-.spin {
-  width: 15px;
-  height: 15px;
-  border: 2px solid rgba(255,255,255,0.2);
-  border-top-color: white;
-  border-radius: 50%;
-  animation: rotate 0.65s linear infinite;
-}
+.spin { width: 15px; height: 15px; border: 2px solid rgba(255,255,255,0.2); border-top-color: white; border-radius: 50%; animation: rotate 0.65s linear infinite; }
 @keyframes rotate { to { transform: rotate(360deg); } }
 
-/* ── Status bar ── */
-.status-bar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 13px;
-  border-radius: var(--r-sm);
-  font-size: 12px;
-  border: 1px solid transparent;
-}
-.status-bar.info {
-  background: var(--accent-dim);
-  border-color: rgba(59,130,246,0.2);
-  color: #93c5fd;
-}
-.status-bar.error {
-  background: var(--red-dim);
-  border-color: rgba(239,68,68,0.2);
-  color: #fca5a5;
-}
-.status-bar.success {
-  background: var(--green-dim);
-  border-color: rgba(34,197,94,0.2);
-  color: #86efac;
-}
+.status-bar { display: flex; align-items: center; gap: 8px; padding: 9px 13px; border-radius: var(--r-sm); font-size: 12px; border: 1px solid transparent; }
+.status-bar.info { background: var(--accent-dim); border-color: rgba(59,130,246,0.2); color: #93c5fd; }
+.status-bar.error { background: var(--red-dim); border-color: rgba(239,68,68,0.2); color: #fca5a5; }
+.status-bar.success { background: var(--green-dim); border-color: rgba(34,197,94,0.2); color: #86efac; }
 .s-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
 .status-bar.info .s-dot { background: var(--accent); animation: pulse 1.4s ease infinite; }
 .status-bar.error .s-dot { background: var(--red); }
@@ -275,100 +192,39 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 .report li { font-size: 12px; color: var(--muted); margin: 2px 0; line-height: 1.6; }
 @keyframes rise { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
 
-.report-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 18px;
-}
+.report-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 18px; }
 .report-h { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; }
 .report-sub { font-size: 12px; color: var(--muted); margin-top: 3px; }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin-bottom: 20px;
-}
-.stat {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r-sm);
-  padding: 12px 14px;
-}
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 20px; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 12px 14px; }
 .stat-n { font-size: 22px; font-weight: 600; letter-spacing: -0.03em; margin-bottom: 2px; }
 .stat-l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
 
-.section-label {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted2);
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 10px;
-}
-
+.section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted2); padding-bottom: 8px; border-bottom: 1px solid var(--border); margin-bottom: 10px; }
 .items { display: flex; flex-direction: column; gap: 7px; }
-
-.item {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r-sm);
-  padding: 14px 16px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 12px;
-  align-items: start;
-  transition: border-color 0.12s;
-}
+.item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 14px 16px; display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: start; transition: border-color 0.12s; }
 .item:hover { border-color: var(--border2); }
 .item-name { font-size: 13px; font-weight: 500; margin-bottom: 3px; letter-spacing: -0.01em; }
 .item-key { font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px; }
 .item-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
 .item-price { font-size: 14px; font-weight: 600; letter-spacing: -0.02em; }
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 2px 7px;
-  border-radius: 20px;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-  border: 1px solid transparent;
-}
+.badge { display: inline-flex; align-items: center; padding: 2px 7px; border-radius: 20px; font-size: 10px; font-weight: 500; letter-spacing: 0.02em; white-space: nowrap; border: 1px solid transparent; }
 .b-green { background: var(--green-dim); color: var(--green); border-color: rgba(34,197,94,0.2); }
 .b-amber { background: var(--amber-dim); color: var(--amber); border-color: rgba(245,158,11,0.2); }
 .b-red   { background: var(--red-dim); color: var(--red); border-color: rgba(239,68,68,0.2); }
 .b-blue  { background: var(--accent-dim); color: #93c5fd; border-color: rgba(59,130,246,0.2); }
 .b-gray  { background: rgba(113,113,122,0.12); color: var(--muted); border-color: var(--border2); }
 
-.evidence {
-  margin-top: 7px;
-  padding: 8px 10px;
-  background: var(--surface2);
-  border-radius: 5px;
-  border-left: 2px solid var(--accent);
-  font-size: 11px;
-  color: var(--muted);
-  line-height: 1.6;
-}
+.evidence { margin-top: 7px; padding: 8px 10px; background: var(--surface2); border-radius: 5px; border-left: 2px solid var(--accent); font-size: 11px; color: var(--muted); line-height: 1.6; }
 .bench { font-size: 11px; color: var(--muted); margin-top: 4px; }
 .bench span { color: var(--text); }
 .urgency { display: flex; align-items: center; gap: 5px; margin-top: 5px; }
 .u-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
 .urgency small { font-size: 10px; color: var(--muted); }
 
-.full-report {
-  margin-top: 20px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r-sm);
-  padding: 18px 20px;
-}
+.full-report { margin-top: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 18px 20px; }
 .reset-bar { margin-top: 20px; display: flex; justify-content: center; }
 .hidden { display: none !important; }
 
@@ -418,22 +274,17 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
       <div class="row3">
         <div class="field">
           <label>Make</label>
-          <select id="make">
-            <option value="">Loading...</option>
-          </select>
+          <select id="make"><option value="">Loading...</option></select>
         </div>
         <div class="field">
           <label>Model</label>
-          <select id="model" disabled>
-            <option value="">Select model</option>
-          </select>
+          <select id="model" disabled><option value="">Select model</option></select>
         </div>
         <div class="field">
           <label>Year</label>
           <input type="number" id="year" value="2021" min="1990" max="2026">
         </div>
       </div>
-
       <div class="row2">
         <div class="field">
           <label>Mileage (km)</label>
@@ -461,37 +312,22 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
         <label class="radio-pill" data-val="city">
           <input type="radio" name="driving" value="city">
           <div class="pip"><div class="pip-dot"></div></div>
-          <div>
-            <div class="pill-label">City</div>
-            <div class="pill-sub">Stop-and-go, short trips, urban</div>
-          </div>
+          <div><div class="pill-label">City</div><div class="pill-sub">Stop-and-go, short trips, urban</div></div>
         </label>
-
         <label class="radio-pill" data-val="highway">
           <input type="radio" name="driving" value="highway">
           <div class="pip"><div class="pip-dot"></div></div>
-          <div>
-            <div class="pill-label">Highway</div>
-            <div class="pill-sub">Long distance, open road</div>
-          </div>
+          <div><div class="pill-label">Highway</div><div class="pill-sub">Long distance, open road</div></div>
         </label>
-
         <label class="radio-pill on" data-val="mixed">
           <input type="radio" name="driving" value="mixed" checked>
           <div class="pip"><div class="pip-dot"></div></div>
-          <div>
-            <div class="pill-label">Mixed</div>
-            <div class="pill-sub">Combination of city and highway</div>
-          </div>
+          <div><div class="pill-label">Mixed</div><div class="pill-sub">Combination of city and highway</div></div>
         </label>
-
         <label class="radio-pill" data-val="offroad">
           <input type="radio" name="driving" value="offroad">
           <div class="pip"><div class="pip-dot"></div></div>
-          <div>
-            <div class="pill-label">Off-road / Desert</div>
-            <div class="pill-sub">Sand, gravel, wadi driving</div>
-          </div>
+          <div><div class="pill-label">Off-road / Desert</div><div class="pill-sub">Sand, gravel, wadi driving</div></div>
         </label>
       </div>
     </div>
@@ -540,9 +376,7 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
       <div class="card-title">Service history</div>
     </div>
     <div class="card-body">
-      <p style="font-size:12px; color:var(--muted)">
-        A few of the items in your quote need extra context to ensure an accurate audit.
-      </p>
+      <p style="font-size:12px; color:var(--muted)">A few of the items in your quote need extra context to ensure an accurate audit.</p>
       <div id="questions-list"></div>
       <button class="btn btn-primary" id="finalize-btn">Get final audit</button>
     </div>
@@ -552,92 +386,197 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 </div>
 
 <script>
+"use strict";
+
 /* ================================
-   CONFIG
+   CONFIG — locked constant, never user-controlled
 ================================ */
-const API_BASE = "https://x748873y-bcvbc.hf.space";
+const API_ORIGIN = "https://x748873y-bcvbc.hf.space";
 
-// ---------- DOM ----------
-const makeSelect = document.getElementById("make");
-const modelSelect = document.getElementById("model");
-const yearInput = document.getElementById("year");
-const mileageInput = document.getElementById("mileage");
-const drivetrainSelect = document.getElementById("drivetrain");
-const radioPills = document.querySelectorAll(".radio-pill");
+// Freeze so no prototype-pollution trick can swap the origin at runtime
+const API = Object.freeze({
+  get:      (path) => safeFetch(`${API_ORIGIN}${path}`, {}),
+  post:     (path, body) => safeFetch(`${API_ORIGIN}${path}`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(body),
+            }),
+  postFile: (path, file) => {
+              const fd = new FormData();
+              fd.append("file", file);
+              // No Content-Type — browser sets multipart boundary
+              return safeFetch(`${API_ORIGIN}${path}`, { method: "POST", body: fd });
+            },
+});
 
-const dropZone = document.getElementById("drop-zone");
-const fileInput = document.getElementById("file-input");
-const dropTitle = document.getElementById("drop-title");
-const dropSub = document.getElementById("drop-sub");
-const dropFileLabel = document.getElementById("drop-file");
-const quoteTextEl = document.getElementById("quote-text");
-const analyzeBtn = document.getElementById("analyze-btn");
-const statusEl = document.getElementById("status");
-
-const historyReview = document.getElementById("history-review");
-const questionsListEl = document.getElementById("questions-list");
-const finalizeBtn = document.getElementById("finalize-btn");
-
-const reportEl = document.getElementById("report");
-
-// ---------- State ----------
-let analyzedServices = [];
-let historyAnswers = {};
-let availableMakes = [];
-let availableModels = [];
-let modelEngineMap = {};
-let selectedFile = null;
-
-const MAX_FILE_BYTES = 15 * 1024 * 1024;
-
-// ---------- Helpers ----------
-function setStatus(msg, kind = "info") {
-  if (!statusEl) return;
-  if (!msg) {
-    statusEl.className = "hidden";
-    statusEl.innerHTML = "";
-    return;
+/* ================================
+   SAFE FETCH — validates origin, sanitises errors shown to user
+================================ */
+async function safeFetch(url, options) {
+  // Guard: only ever talk to our known API origin
+  const parsed = new URL(url);
+  if (parsed.origin !== API_ORIGIN) {
+    throw new Error("Request blocked: unexpected origin.");
   }
-  statusEl.className = `status-bar ${kind}`;
-  statusEl.innerHTML = `<span class="s-dot"></span><span>${escapeHtml(msg)}</span>`;
+  let res;
+  try {
+    res = await fetch(url, options);
+  } catch (_) {
+    // Network error — don't expose internal URL or browser internals
+    throw new Error("Network error — check your connection and try again.");
+  }
+  if (!res.ok) {
+    // Don't leak status codes or raw server error bodies to the UI
+    throw new Error(`The server returned an error. Please try again.`);
+  }
+  try {
+    return await res.json();
+  } catch (_) {
+    throw new Error("Unexpected response from server.");
+  }
 }
 
-function escapeHtml(str) {
+/* ================================
+   IN-FLIGHT LOCK — prevents double-submits
+================================ */
+let _inFlight = false;
+function acquireLock(btn) {
+  if (_inFlight) return false;
+  _inFlight = true;
+  if (btn) btn.disabled = true;
+  return true;
+}
+function releaseLock(btn) {
+  _inFlight = false;
+  if (btn) btn.disabled = false;
+}
+
+/* ================================
+   FILE VALIDATION
+================================ */
+const MAX_FILE_BYTES = 15 * 1024 * 1024;
+const ALLOWED_MIME   = new Set(["application/pdf", "image/png", "image/jpeg", "text/plain"]);
+const ALLOWED_EXT    = new Set([".pdf", ".png", ".jpg", ".jpeg", ".txt"]);
+
+function validateFile(file) {
+  if (!file) return "No file selected.";
+  if (file.size > MAX_FILE_BYTES) return "File too large — max 15 MB.";
+  // Check MIME type (best-effort; not spoofable server-side but helps UX)
+  if (file.type && !ALLOWED_MIME.has(file.type)) return "File type not supported.";
+  // Check extension too — file.type can be empty on some browsers
+  const ext = file.name.slice(file.name.lastIndexOf(".")).toLowerCase();
+  if (!ALLOWED_EXT.has(ext)) return "File extension not supported. Use PDF, PNG, JPG, or TXT.";
+  return null; // valid
+}
+
+/* ================================
+   DOM REFS
+================================ */
+const makeSelect      = document.getElementById("make");
+const modelSelect     = document.getElementById("model");
+const yearInput       = document.getElementById("year");
+const mileageInput    = document.getElementById("mileage");
+const drivetrainSelect= document.getElementById("drivetrain");
+const radioPills      = document.querySelectorAll(".radio-pill");
+const dropZone        = document.getElementById("drop-zone");
+const fileInput       = document.getElementById("file-input");
+const dropTitle       = document.getElementById("drop-title");
+const dropSub         = document.getElementById("drop-sub");
+const dropFileLabel   = document.getElementById("drop-file");
+const quoteTextEl     = document.getElementById("quote-text");
+const analyzeBtn      = document.getElementById("analyze-btn");
+const statusEl        = document.getElementById("status");
+const historyReview   = document.getElementById("history-review");
+const questionsListEl = document.getElementById("questions-list");
+const finalizeBtn     = document.getElementById("finalize-btn");
+const reportEl        = document.getElementById("report");
+
+/* ================================
+   STATE
+================================ */
+let analyzedServices = [];
+let historyAnswers   = {};
+let modelEngineMap   = {};
+let selectedFile     = null;
+
+/* ================================
+   HELPERS
+================================ */
+function esc(str) {
+  // Single canonical escape function — used everywhere user/API data touches the DOM
   return String(str ?? "")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;");
+}
+
+function setText(el, str) {
+  // Use textContent for plain strings — never innerHTML
+  if (el) el.textContent = String(str ?? "");
+}
+
+function setStatus(msg, kind = "info") {
+  if (!statusEl) return;
+  if (!msg) { statusEl.className = "hidden"; statusEl.textContent = ""; return; }
+  statusEl.className = `status-bar ${kind}`;
+  // Safe: s-dot is a static element, msg goes through esc()
+  statusEl.innerHTML = `<span class="s-dot"></span><span>${esc(msg)}</span>`;
 }
 
 function tidyLabel(raw) {
-  if (!raw) return raw;
-  // Already spaced (e.g. "Transmission Fluid") — return as-is
+  if (!raw) return "";
   if (/\s/.test(raw)) return raw;
-  // Insert space before each uppercase letter that follows a lowercase letter
-  // e.g. "FrontLowerArm" → "Front Lower Arm"
   let s = raw.replace(/([a-z])([A-Z])/g, "$1 $2");
-  // Insert space before digits that follow letters and vice versa
   s = s.replace(/([a-zA-Z])(\d)/g, "$1 $2").replace(/(\d)([a-zA-Z])/g, "$1 $2");
-  // Title-case the result
   return s.replace(/\b\w/g, c => c.toUpperCase());
 }
 
+function createOption(value, label) {
+  const opt = document.createElement("option");
+  // Use properties, not innerHTML — avoids any injection via make/model names
+  opt.value = String(value ?? "");
+  opt.textContent = String(label ?? "");
+  return opt;
+}
+
+function getSelectedDriving() {
+  const checked = document.querySelector('input[name="driving"]:checked');
+  return checked ? checked.value : "";
+}
+
+function normalizeNumber(value) {
+  const cleaned = String(value ?? "").replace(/,/g, "").trim();
+  if (!cleaned) return null;
+  const num = Number(cleaned);
+  return Number.isFinite(num) ? num : null;
+}
+
+/* ================================
+   MARKDOWN RENDERER
+   All user/API data goes through esc() before touching the DOM.
+   The only raw HTML we emit is from our own template strings (bar, blockquote)
+   which contain no user data.
+================================ */
 function renderMarkdown(md) {
   if (!md) return "";
 
   function inlineFormat(text) {
-    return text
-      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
-      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-      .replace(/\*(.*?)\*/g, "<em>$1</em>")
-      .replace(/`([^`]+)`/g, "<code>$1</code>");
+    // esc() first, THEN apply formatting — never the other way around
+    let s = esc(text);
+    s = s.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+    s = s.replace(/\*(.*?)\*/g,     "<em>$1</em>");
+    s = s.replace(/`([^`]+)`/g,     "<code>$1</code>");
+    return s;
   }
 
   function lifeBar(pctRaw) {
-    const pct    = parseInt(pctRaw, 10);
-    const fillW  = Math.min(pct, 100);
-    const cls    = pct >= 100 ? "lbf-red" : pct >= 60 ? "lbf-amber" : "lbf-green";
-    const label  = pct >= 100 ? `${pct}% — overdue` : `${pct}%`;
+    const pct   = Math.max(0, parseInt(pctRaw, 10) || 0);
+    const fillW = Math.min(pct, 100);
+    // Classify colour — no user data enters these strings
+    const cls   = pct >= 100 ? "lbf-red" : pct >= 60 ? "lbf-amber" : "lbf-green";
+    const label = pct >= 100 ? `${pct}% — overdue` : `${pct}%`;
     const marker = pct >= 100
       ? `<div style="position:absolute;right:0;top:0;height:100%;width:3px;background:var(--red);border-radius:99px;"></div>`
       : "";
@@ -658,42 +597,26 @@ function renderMarkdown(md) {
     listBuf = [];
   }
 
-  for (let i = 0; i < lines.length; i++) {
-    const raw = lines[i];
-
-    // headings
-    if (/^#### /.test(raw))      { flushList(); parts.push(`<h4>${inlineFormat(raw.slice(5))}</h4>`); continue; }
-    if (/^### /.test(raw))       { flushList(); parts.push(`<h3>${inlineFormat(raw.slice(4))}</h3>`); continue; }
-    if (/^## /.test(raw))        { flushList(); parts.push(`<h2>${inlineFormat(raw.slice(3))}</h2>`); continue; }
-    if (/^# /.test(raw))         { flushList(); parts.push(`<h1>${inlineFormat(raw.slice(2))}</h1>`); continue; }
-
-    // hr
+  for (const raw of lines) {
+    if (/^#### /.test(raw)) { flushList(); parts.push(`<h4>${inlineFormat(raw.slice(5))}</h4>`); continue; }
+    if (/^### /.test(raw))  { flushList(); parts.push(`<h3>${inlineFormat(raw.slice(4))}</h3>`); continue; }
+    if (/^## /.test(raw))   { flushList(); parts.push(`<h2>${inlineFormat(raw.slice(3))}</h2>`); continue; }
+    if (/^# /.test(raw))    { flushList(); parts.push(`<h1>${inlineFormat(raw.slice(2))}</h1>`); continue; }
     if (/^---+$/.test(raw.trim())) { flushList(); parts.push("<hr>"); continue; }
 
-    // blockquote — check if it contains the 🧮 bar trigger
     if (/^> /.test(raw)) {
       flushList();
-      const inner = raw.slice(2);
-      const bq = `<blockquote>${inlineFormat(inner)}</blockquote>`;
+      const inner    = raw.slice(2);
       const barMatch = inner.match(/~(\d+)%[^%]*of the interval used/);
-      if (barMatch) {
-        parts.push(bq);
-        parts.push(lifeBar(barMatch[1]));
-      } else {
-        parts.push(bq);
-      }
+      parts.push(`<blockquote>${inlineFormat(inner)}</blockquote>`);
+      if (barMatch) parts.push(lifeBar(barMatch[1]));
       continue;
     }
 
-    // list
     if (/^- /.test(raw)) { listBuf.push(raw.slice(2)); continue; }
 
     flushList();
-
-    // blank line → spacer
     if (!raw.trim()) { parts.push(`<div style="height:4px"></div>`); continue; }
-
-    // plain paragraph
     parts.push(`<p>${inlineFormat(raw)}</p>`);
   }
 
@@ -701,84 +624,18 @@ function renderMarkdown(md) {
   return parts.join("\n");
 }
 
-function normalizeNumber(value) {
-  if (value === null || value === undefined) return null;
-  const cleaned = String(value).replace(/,/g, "").trim();
-  if (!cleaned) return null;
-  const num = Number(cleaned);
-  return Number.isFinite(num) ? num : null;
-}
-
-function createOption(value, label) {
-  const opt = document.createElement("option");
-  opt.value = value;
-  opt.textContent = label;
-  return opt;
-}
-
-function getSelectedDriving() {
-  const checked = document.querySelector('input[name="driving"]:checked');
-  return checked ? checked.value : "";
-}
-
-// ---------- API ----------
-async function apiGet(path) {
-  const res = await fetch(`${API_BASE}${path}`);
-  if (!res.ok) {
-    const txt = await res.text();
-    throw new Error(`GET ${path} failed (${res.status}) ${txt}`);
-  }
-  return res.json();
-}
-
-async function apiPost(path, body) {
-  const res = await fetch(`${API_BASE}${path}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
-
-  if (!res.ok) {
-    const txt = await res.text();
-    throw new Error(`POST ${path} failed (${res.status}) ${txt}`);
-  }
-
-  return res.json();
-}
-
-async function apiPostFile(path, file) {
-  const formData = new FormData();
-  formData.append("file", file);
-
-  // NOTE: do not set Content-Type manually — the browser needs to set
-  // the multipart boundary itself.
-  const res = await fetch(`${API_BASE}${path}`, {
-    method: "POST",
-    body: formData,
-  });
-
-  if (!res.ok) {
-    const txt = await res.text();
-    throw new Error(`POST ${path} failed (${res.status}) ${txt}`);
-  }
-
-  return res.json();
-}
-
-// ---------- Load make/model data ----------
+/* ================================
+   MAKE / MODEL LOADING
+================================ */
 async function loadMakes() {
   try {
-    const data = await apiGet("/makes");
-    availableMakes = Array.isArray(data) ? data : (data.makes || []);
+    const data = await API.get("/makes");
+    const makes = Array.isArray(data) ? data : (data.makes || []);
     makeSelect.innerHTML = "";
     makeSelect.appendChild(createOption("", "Select make"));
-
-    availableMakes.forEach((make) => {
-      makeSelect.appendChild(createOption(make, make));
-    });
+    makes.forEach(m => makeSelect.appendChild(createOption(m, m)));
   } catch (err) {
-    console.error(err);
-    setStatus(`Failed to load makes: ${err.message}`, "error");
+    setStatus(err.message, "error");
   }
 }
 
@@ -787,71 +644,61 @@ async function loadModels(make) {
   modelSelect.appendChild(createOption("", "Select model"));
   modelSelect.disabled = true;
   modelEngineMap = {};
-
   if (!make) return;
-
   try {
-    const data = await apiGet(`/models/${encodeURIComponent(make)}`);
-    availableModels = Array.isArray(data) ? data : (data.models || []);
-
-    // Engine-key mapping key name isn't pinned down in the API schema —
-    // try the common shapes defensively. engine_val is optional on
-    // /generate-report so this is best-effort.
+    const data = await API.get(`/models/${encodeURIComponent(make)}`);
+    const models = Array.isArray(data) ? data : (data.models || []);
     if (!Array.isArray(data)) {
-      modelEngineMap =
-        data.model_to_engine || data.engine_map || data.model_engine_map || {};
+      modelEngineMap = data.model_to_engine || data.engine_map || data.model_engine_map || {};
     }
-
-    availableModels.forEach((model) => {
-      modelSelect.appendChild(createOption(model, model));
-    });
-    modelSelect.disabled = availableModels.length === 0;
+    models.forEach(m => modelSelect.appendChild(createOption(m, m)));
+    modelSelect.disabled = models.length === 0;
   } catch (err) {
-    console.error(err);
-    setStatus(`Failed to load models: ${err.message}`, "error");
+    setStatus(err.message, "error");
   }
 }
 
-makeSelect?.addEventListener("change", async () => {
-  await loadModels(makeSelect.value);
-});
+makeSelect?.addEventListener("change", () => loadModels(makeSelect.value));
 
-// ---------- Driving pills ----------
-radioPills.forEach((pill) => {
+/* ================================
+   DRIVING PILLS
+================================ */
+radioPills.forEach(pill => {
   pill.addEventListener("click", () => {
-    radioPills.forEach((p) => p.classList.remove("on"));
+    radioPills.forEach(p => p.classList.remove("on"));
     pill.classList.add("on");
     const input = pill.querySelector('input[type="radio"]');
     if (input) input.checked = true;
   });
 });
 
-// ---------- File drop zone ----------
+/* ================================
+   FILE HANDLING
+================================ */
 function setSelectedFile(file) {
   selectedFile = file;
   if (file) {
     dropZone.classList.add("has-file");
-    dropTitle.textContent = "File ready";
-    dropSub.textContent = "Click to choose a different file";
-    dropFileLabel.textContent = file.name;
+    setText(dropTitle, "File ready");
+    setText(dropSub, "Click to choose a different file");
+    // Use textContent — file.name is untrusted
+    setText(dropFileLabel, file.name);
     dropFileLabel.classList.remove("hidden");
   } else {
     dropZone.classList.remove("has-file");
-    dropTitle.textContent = "Drop a file here";
-    dropSub.textContent = "PDF, image or text · max 15 MB";
+    setText(dropTitle, "Drop a file here");
+    setText(dropSub, "PDF, image or text · max 15 MB");
     dropFileLabel.classList.add("hidden");
-    dropFileLabel.textContent = "";
+    setText(dropFileLabel, "");
   }
 }
 
 fileInput?.addEventListener("change", () => {
   const file = fileInput.files?.[0];
-  if (!file) {
-    setSelectedFile(null);
-    return;
-  }
-  if (file.size > MAX_FILE_BYTES) {
-    setStatus("File too large — max 15 MB.", "error");
+  if (!file) { setSelectedFile(null); return; }
+  const err = validateFile(file);
+  if (err) {
+    setStatus(err, "error");
     fileInput.value = "";
     setSelectedFile(null);
     return;
@@ -859,86 +706,98 @@ fileInput?.addEventListener("change", () => {
   setSelectedFile(file);
 });
 
-["dragover", "dragenter"].forEach((evt) =>
-  dropZone?.addEventListener(evt, (e) => {
-    e.preventDefault();
-    dropZone.classList.add("drag");
-  })
+["dragover", "dragenter"].forEach(evt =>
+  dropZone?.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.add("drag"); })
 );
-["dragleave", "dragend"].forEach((evt) =>
+["dragleave", "dragend"].forEach(evt =>
   dropZone?.addEventListener(evt, () => dropZone.classList.remove("drag"))
 );
-dropZone?.addEventListener("drop", (e) => {
+dropZone?.addEventListener("drop", e => {
   e.preventDefault();
   dropZone.classList.remove("drag");
   const file = e.dataTransfer?.files?.[0];
   if (!file) return;
+  const err = validateFile(file);
+  if (err) { setStatus(err, "error"); return; }
   fileInput.files = e.dataTransfer.files;
-  fileInput.dispatchEvent(new Event("change"));
+  setSelectedFile(file);
 });
 
-// ---------- Analyze quote ----------
+/* ================================
+   ANALYZE QUOTE
+================================ */
 async function analyzeQuote() {
+  if (!acquireLock(analyzeBtn)) return;
   historyReview?.classList.add("hidden");
   reportEl?.classList.add("hidden");
 
-  let data;
-
   try {
+    let data;
     if (selectedFile) {
       setStatus(`Analyzing ${selectedFile.name}...`);
-      data = await apiPostFile("/analyze-quote", selectedFile);
+      data = await API.postFile("/analyze-quote", selectedFile);
     } else {
       const quoteText = quoteTextEl?.value?.trim();
       if (!quoteText) {
         setStatus("Please upload a file or paste the quote text first.", "error");
         return;
       }
+      // Enforce a reasonable length cap on paste input
+      if (quoteText.length > 50_000) {
+        setStatus("Quote text is too long. Please trim it and try again.", "error");
+        return;
+      }
       setStatus("Analyzing quote...");
-      data = await apiPost("/analyze-quote-text", { text: quoteText });
+      data = await API.post("/analyze-quote-text", { text: quoteText });
     }
+
+    analyzedServices = Array.isArray(data.services) ? data.services : [];
+    historyAnswers   = {};
+
+    // Use a generic status string if the server sends something unexpected
+    const statusMsg = typeof data.status === "string" ? data.status : "Quote analyzed.";
+
+    if (!analyzedServices.length) {
+      if (typeof data.ocr_text === "string") {
+        quoteTextEl.value = data.ocr_text;
+        setSelectedFile(null);
+        fileInput.value = "";
+        setStatus(statusMsg + " We've pasted the extracted text below — review it and click Analyze again.", "error");
+      } else {
+        setStatus(statusMsg || "No items found in quote.", "error");
+      }
+      return;
+    }
+
+    renderHistoryQuestions(analyzedServices);
+    historyReview?.classList.remove("hidden");
+    setStatus(statusMsg, "success");
+    historyReview?.scrollIntoView({ behavior: "smooth", block: "start" });
+
   } catch (err) {
-    console.error(err);
     setStatus(err.message, "error");
-    return;
+  } finally {
+    releaseLock(analyzeBtn);
   }
-
-  analyzedServices = data.services || [];
-  historyAnswers = {};
-
-  let statusMsg = data.status || "Quote analyzed.";
-  if (data.file_note) statusMsg += ` (${data.file_note})`;
-
-  if (!analyzedServices.length) {
-    // Image OCR succeeded but parsing failed — backend hands back the raw
-    // OCR text so we can let the user paste/edit and retry as text.
-    if (data.ocr_text) {
-      quoteTextEl.value = data.ocr_text;
-      setSelectedFile(null);
-      fileInput.value = "";
-      statusMsg += " We've pasted the extracted text below — review it and click Analyze again.";
-    }
-    setStatus(statusMsg, "error");
-    return;
-  }
-
-  renderHistoryQuestions(analyzedServices);
-  historyReview?.classList.remove("hidden");
-  setStatus(statusMsg, "success");
-  historyReview?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-// ---------- Render history questions ----------
+/* ================================
+   HISTORY QUESTIONS
+================================ */
 function renderHistoryQuestions(services) {
   if (!questionsListEl) return;
-  questionsListEl.innerHTML = "";
+  // Clear via textContent trick — safe
+  while (questionsListEl.firstChild) questionsListEl.removeChild(questionsListEl.firstChild);
 
   const historyServices = services.filter(
-    (svc) => Array.isArray(svc.history_options) && svc.history_options.length > 0
+    svc => Array.isArray(svc.history_options) && svc.history_options.length > 0
   );
 
   if (!historyServices.length) {
-    questionsListEl.innerHTML = '<p style="font-size:12px;color:var(--muted)">No history questions needed for this quote.</p>';
+    const p = document.createElement("p");
+    p.style.cssText = "font-size:12px;color:var(--muted)";
+    p.textContent = "No history questions needed for this quote.";
+    questionsListEl.appendChild(p);
     return;
   }
 
@@ -947,11 +806,9 @@ function renderHistoryQuestions(services) {
     wrapper.className = "field history-item";
 
     const label = document.createElement("label");
+    // tidyLabel + textContent — no HTML, no injection
     label.textContent = `When was the ${tidyLabel(svc.display || svc.raw)} last done?`;
 
-    // ── "I know / I don't know" toggle ──────────────────────────────────
-    // Defaults to "don't know" — select stays disabled and no answer is
-    // sent, so the backend falls back to history_answers.get(key, "unknown").
     const knowRow = document.createElement("label");
     knowRow.className = "radio-pill";
     knowRow.style.marginBottom = "6px";
@@ -966,34 +823,31 @@ function renderHistoryQuestions(services) {
     pipDot.className = "pip-dot";
     pip.appendChild(pipDot);
 
-    const knowText = document.createElement("div");
-    knowText.innerHTML = `<div class="pill-label">I know the history</div><div class="pill-sub">Leave unchecked if unsure — we'll assume unknown</div>`;
+    // Build know-text with DOM — not innerHTML
+    const knowText  = document.createElement("div");
+    const pillLabel = document.createElement("div");
+    pillLabel.className = "pill-label";
+    pillLabel.textContent = "I know the history";
+    const pillSub = document.createElement("div");
+    pillSub.className = "pill-sub";
+    pillSub.textContent = "Leave unchecked if unsure — we'll assume unknown";
+    knowText.appendChild(pillLabel);
+    knowText.appendChild(pillSub);
 
     knowRow.appendChild(knowCheckbox);
     knowRow.appendChild(pip);
     knowRow.appendChild(knowText);
 
     const select = document.createElement("select");
-    select.dataset.partKey = svc.part_key;
-    select.dataset.index = String(idx);
+    select.dataset.partKey = String(svc.part_key ?? "");
+    select.dataset.index   = String(idx);
     select.disabled = true;
-
     select.appendChild(createOption("", "Select one"));
 
-    svc.history_options.forEach((opt) => {
-      // supports either ["label", "code"] tuples or {label, value} objects
-      let optionLabel = "";
-      let optionValue = "";
-
-      if (Array.isArray(opt)) {
-        optionLabel = opt[0];
-        optionValue = opt[1];
-      } else if (opt && typeof opt === "object") {
-        optionLabel = opt.label;
-        optionValue = opt.value;
-      }
-
-      select.appendChild(createOption(optionValue, optionLabel));
+    (svc.history_options || []).forEach(opt => {
+      const val = Array.isArray(opt) ? opt[1] : (opt?.value ?? "");
+      const lbl = Array.isArray(opt) ? opt[0] : (opt?.label ?? "");
+      select.appendChild(createOption(val, lbl));
     });
 
     knowRow.addEventListener("click", () => {
@@ -1001,8 +855,6 @@ function renderHistoryQuestions(services) {
       knowRow.classList.toggle("on", knowCheckbox.checked);
       select.disabled = !knowCheckbox.checked;
       if (!knowCheckbox.checked) {
-        // Switched back to "don't know" — clear any prior answer and reset
-        // the dropdown so a stale value never gets submitted silently.
         select.value = "";
         if (svc.part_key) delete historyAnswers[svc.part_key];
       }
@@ -1010,11 +862,8 @@ function renderHistoryQuestions(services) {
 
     select.addEventListener("change", () => {
       if (svc.part_key) {
-        if (select.value) {
-          historyAnswers[svc.part_key] = select.value;
-        } else {
-          delete historyAnswers[svc.part_key];
-        }
+        if (select.value) historyAnswers[svc.part_key] = select.value;
+        else delete historyAnswers[svc.part_key];
       }
     });
 
@@ -1025,80 +874,87 @@ function renderHistoryQuestions(services) {
   });
 }
 
-// ---------- Validate vehicle inputs ----------
+/* ================================
+   VEHICLE INPUT VALIDATION
+================================ */
 function collectVehicleData() {
-  const make = makeSelect?.value?.trim();
-  const model = modelSelect?.value?.trim();
-  const yearNum = parseInt(yearInput?.value, 10);
-  const year = Number.isFinite(yearNum) ? yearNum : null;
-  const mileage = normalizeNumber(mileageInput?.value);
-  const drivetrain = drivetrainSelect?.value?.trim();
-  const driving = getSelectedDriving();
-  const engineVal = modelEngineMap[model] ?? null;
+  const make      = String(makeSelect?.value ?? "").trim();
+  const model     = String(modelSelect?.value ?? "").trim();
+  const yearNum   = parseInt(yearInput?.value, 10);
+  const year      = Number.isFinite(yearNum) && yearNum >= 1990 && yearNum <= 2030 ? yearNum : null;
+  const mileage   = normalizeNumber(mileageInput?.value);
+  const drivetrain= String(drivetrainSelect?.value ?? "").trim();
+  const driving   = getSelectedDriving();
+  const engineVal = Object.prototype.hasOwnProperty.call(modelEngineMap, model)
+                      ? modelEngineMap[model]
+                      : null;
 
   const missing = [];
-  if (!make) missing.push("make");
-  if (!model) missing.push("model");
-  if (year === null) missing.push("year");
-  if (mileage === null) missing.push("mileage");
+  if (!make)       missing.push("make");
+  if (!model)      missing.push("model");
+  if (year === null) missing.push("year (must be 1990–2030)");
+  if (mileage === null || mileage < 0) missing.push("mileage");
   if (!drivetrain) missing.push("drivetrain");
-  if (!driving) missing.push("driving pattern");
+  if (!driving)    missing.push("driving pattern");
 
-  if (missing.length) {
-    throw new Error(`Missing required fields: ${missing.join(", ")}`);
+  // Whitelist drivetrain values — never send arbitrary strings to the API
+  if (drivetrain && !["fwd","rwd","awd"].includes(drivetrain)) {
+    throw new Error("Invalid drivetrain value.");
   }
+
+  if (missing.length) throw new Error(`Missing required fields: ${missing.join(", ")}`);
 
   return { make, model, year, mileage, drivetrain, driving, engineVal };
 }
 
-// ---------- Generate report ----------
+/* ================================
+   GENERATE REPORT
+================================ */
 async function submitHistoryAndGenerateReport() {
+  if (!acquireLock(finalizeBtn)) return;
   try {
     setStatus("Preparing report...");
-
     const vehicle = collectVehicleData();
 
-    // History answers are optional — the backend defaults any unanswered
-    // part to "unknown" (see main.py: req.history_answers.get(part_key,
-    // "unknown")). We just send whatever the user actually picked.
     const payload = {
-      services: analyzedServices,
+      services:        analyzedServices,
       history_answers: historyAnswers,
-      make: vehicle.make,
-      model: vehicle.model,
-      year: vehicle.year,
-      engine_val: vehicle.engineVal,
-      mileage: vehicle.mileage,
-      driving: vehicle.driving,
-      drivetrain: vehicle.drivetrain,
-      consent_to_log: false,
+      make:            vehicle.make,
+      model:           vehicle.model,
+      year:            vehicle.year,
+      engine_val:      vehicle.engineVal,
+      mileage:         vehicle.mileage,
+      driving:         vehicle.driving,
+      drivetrain:      vehicle.drivetrain,
+      consent_to_log:  false,
     };
 
-    const result = await apiPost("/generate-report", payload);
+    const result = await API.post("/generate-report", payload);
 
-    // Backend (main.py) returns {"report_markdown": "..."}. Keep the other
-    // key names as fallbacks in case that ever changes.
     const reportMd =
       result.report_markdown ?? result.report ?? result.markdown ?? result.audit_report ??
-      (typeof result === "string" ? result : JSON.stringify(result, null, 2));
+      (typeof result === "string" ? result : "");
 
-    reportEl.innerHTML = renderMarkdown(reportMd || "No report returned.");
+    if (!reportMd) { setStatus("No report returned. Please try again.", "error"); return; }
+
+    reportEl.innerHTML = renderMarkdown(reportMd);
     reportEl.classList.remove("hidden");
     reportEl.scrollIntoView({ behavior: "smooth", block: "start" });
     setStatus("Report generated.", "success");
+
   } catch (err) {
-    console.error(err);
     setStatus(err.message, "error");
+  } finally {
+    releaseLock(finalizeBtn);
   }
 }
 
-// ---------- Events ----------
+/* ================================
+   EVENTS + INIT
+================================ */
 analyzeBtn?.addEventListener("click", analyzeQuote);
 finalizeBtn?.addEventListener("click", submitHistoryAndGenerateReport);
-
-// ---------- Init ----------
 loadMakes();
-
 </script>
 </body>
 </html>
