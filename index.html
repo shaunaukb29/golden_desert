@@ -33,8 +33,25 @@
 <title>Car Maintenance Quote Auditor in UAE | Avoid Overpaying in Dubai</title>
 <meta name="description" content="Upload your car maintenance estimate and let AI cross-check it against GCC pricing and 500+ engine wear models. Find out if your UAE mechanic is pushing unnecessary maintenance in seconds.">
 <meta name="keywords" content="verify car maintenance quote, UAE mechanic checker, auto maintenance price audit, predictive maintenance consumer, Dubai car service check">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://carithm.vercel.app/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://carithm.vercel.app/">
 <meta property="og:title" content="Carithm | AI Car Maintenance Quote Auditor in UAE">
 <meta property="og:description" content="Protect yourself from unnecessary repairs. Audit your garage quote with independent AI lifecycle data instantly.">
+<meta property="og:site_name" content="Carithm AI">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Carithm | AI Car Maintenance Quote Auditor UAE">
+<meta name="twitter:description" content="Upload your service estimate. Get an independent AI second opinion on every repair item instantly. Built for UAE drivers.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <!-- JSON-LD Schema -->
 <script type="application/ld+json">
@@ -42,6 +59,7 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Carithm UAE Maintenance Auditor",
+  "url": "https://carithm.vercel.app/",
   "operatingSystem": "Web",
   "applicationCategory": "UtilitiesApplication",
   "offers": {
@@ -49,12 +67,7 @@
     "price": "0",
     "priceCurrency": "AED"
   },
-  "description": "Upload your car repair estimate and let AI cross-check it against GCC pricing and 500+ engine wear models. Find out if your UAE mechanic is pushing unnecessary maintenance.",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "ratingCount": "89"
-  }
+  "description": "Upload your car repair estimate and let AI cross-check it against GCC pricing and 500+ engine wear models. Find out if your UAE mechanic is pushing unnecessary maintenance."
 }
 </script>
 
@@ -73,10 +86,12 @@
            base-uri 'self';
            form-action 'none';">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta name="referrer" content="no-referrer">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 
+<!-- Fonts: preload Inter (body font), load Bebas Neue for display headings only -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -123,7 +138,7 @@ body {
 
 .hero { margin-bottom: 20px; }
 .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
-.hero h1 { font-size: 32px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 12px; }
+.hero h1, .hero h2 { font-size: 32px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 12px; }
 .hero p { font-size: 14px; color: var(--muted); max-width: 460px; line-height: 1.7; }
 
 .expansion-badge {
@@ -529,7 +544,7 @@ header {
 
   <div class="hero">
     <div class="eyebrow">Independent Repair Verification</div>
-    <h1>Stop overpaying for repairs.<br>Verify your quote instantly.</h1>
+    <h2>Stop overpaying for repairs.<br>Verify your quote instantly.</h2>
     <p>Got an expensive estimate from a garage or dealer? Upload it below to run an independent, data-backed check on what your car actually needs.</p>
     <div class="expansion-badge">
       <span>🇦🇪 Live in UAE</span> · <span>🇶🇦 🇸🇦 Qatar & Saudi Arabia launching soon!</span>
@@ -750,7 +765,7 @@ header {
     <div class="trust">
       <div><div class="trust-num">46<span>+</span></div><div class="trust-lbl">Makes Covered</div></div>
       <div><div class="trust-num">500<span>+</span></div><div class="trust-lbl">Drivetrains Modeled</div></div>
-      <div><div class="trust-num">0</div><div class="trust-lbl">Garage Commissions</div></div>
+      <div><div class="trust-num">2</div><div class="trust-lbl">Workshop Pilot's</div></div>
       <div><div class="trust-num">100%</div><div class="trust-lbl">Consumer Focused</div></div>
     </div>
   </section>
@@ -782,8 +797,8 @@ header {
     <div>© 2026 Carithm. Empowering vehicle owners. </div>
     <div style="font-size: 11px; color: var(--muted);">Regional Notice: Expanding to Qatar & KSA markets soon.</div>
     <div class="foot-links">
-      <a href="#">Consumer Privacy</a>
-      <a href="#">Terms of Use</a>
+      <a href="/privacy/">Consumer Privacy</a>
+      <a href="/terms/">Terms of Use</a>
     </div>
   </div>
 </div>
@@ -1456,7 +1471,7 @@ quoteTextEl?.addEventListener("input", updateCounterDisplay);
           <img
           src="car.png"
             
-            alt="Vehicle component explorer" draggable="false" id="car-photo" />
+            alt="Interactive car component lifecycle explorer — UAE maintenance audit tool" draggable="false" id="car-photo" />
 
             <!-- 1 Engine Oil -->
             <div class="hs" id="hs1" style="left:40%;top:28%" data-id="hs-engine-oil">
@@ -1584,10 +1599,10 @@ quoteTextEl?.addEventListener("input", updateCounterDisplay);
     <div class="footer-col">
       <h4>Coverage</h4>
       <ul>
-        <li><a href="#">46+ Brands Modelled</a></li>
-        <li><a href="#">500+ Engine Variants</a></li>
-        <li><a href="#">15+ Lifecycle Components</a></li>
-        <li><a href="#">GCC Climate Adjusted</a></li>
+        <li><span>46+ Brands Modelled</span></li>
+        <li><span>500+ Engine Variants</span></li>
+        <li><span>15+ Lifecycle Components</span></li>
+        <li><span>GCC Climate Adjusted</span></li>
       </ul>
     </div>
   </div>
