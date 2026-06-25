@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Carithm | AI Quote Certification for Service Centers</title>
-<meta name="description" content="Empower your service advisors. Validate repair quotes with an independent, AI-driven predictive maintenance standard to close more repair orders in the UAE.">
-<meta name="keywords" content="UAE service center software, workshop quote certification, auto repair predictive maintenance, Carithm B2B, GCC service advisor tool">
-<meta property="og:title" content="Carithm | AI Quote Certification">
-<meta property="og:description" content="Empower your service advisors and validate your repair quotes with an independent AI standard.">
+<title>Carithm | Independent AI Car Repair Quote Auditor</title>
+<meta name="description" content="Stop overpaying for car repairs. Scan or paste your mechanic's repair quote to verify it against independent predictive maintenance standards in the UAE.">
+<meta name="keywords" content="verify car repair quote, UAE mechanic checker, auto repair price audit, predictive maintenance consumer, Dubai car service check">
+<meta property="og:title" content="Carithm | AI Car Repair Quote Auditor">
+<meta property="og:description" content="Protect yourself from unnecessary repairs. Audit your garage quote with independent AI data instantly.">
 
 <!-- Security headers via meta where HTTP headers aren't available -->
 <meta http-equiv="Content-Security-Policy"
@@ -72,14 +72,20 @@ body {
 .hero { margin-bottom: 20px; }
 .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
 .hero h1 { font-size: 32px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 12px; }
-.hero p { font-size: 14px; color: var(--muted); max-width: 440px; line-height: 1.7; }
+.hero p { font-size: 14px; color: var(--muted); max-width: 460px; line-height: 1.7; }
+
+.expansion-badge {
+  display: inline-flex; align-items: center; gap: 6px; background: rgba(245,158,11,0.08); 
+  border: 1px solid rgba(245,158,11,0.2); color: #f59e0b; padding: 4px 10px; 
+  border-radius: 20px; font-size: 11px; font-weight: 500; margin-top: 14px;
+}
 
 .disclaimer-banner {
   display: flex; align-items: flex-start; gap: 12px; padding: 14px 18px;
-  background: var(--surface2); border: 1px solid var(--border2); border-left: 3px solid var(--accent);
+  background: var(--surface2); border: 1px solid var(--border2); border-left: 3px solid var(--amber);
   border-radius: var(--r-sm); margin-bottom: 30px; font-size: 12px; color: var(--text); line-height: 1.6;
 }
-.disclaimer-banner svg { width: 18px; height: 18px; flex-shrink: 0; stroke: var(--accent); margin-top: 2px; }
+.disclaimer-banner svg { width: 18px; height: 18px; flex-shrink: 0; stroke: var(--amber); margin-top: 2px; }
 .disclaimer-banner strong { font-weight: 600; color: white; }
 
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); margin-bottom: 10px; overflow: hidden; }
@@ -89,7 +95,6 @@ body {
 .card-title { font-size: 13px; font-weight: 500; }
 .card-body { padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; }
 
-/* Grid adjustments to fit Vehicle Type and legacy compatibility */
 .row3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .field { display: flex; flex-direction: column; gap: 5px; }
 .field label { font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
@@ -246,7 +251,6 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 .life-bar-fill.lbf-amber { background: var(--amber); }
 .life-bar-fill.lbf-red   { background: var(--red); }
 
-/* Added Tablet Breakpoint for Service Advisors using iPads */
 @media (max-width: 1024px) {
   .row3 { grid-template-columns: 1fr 1fr; }
   .row3 .field:last-child { grid-column: span 2; }
@@ -299,16 +303,14 @@ header {
 <header>
   <div class="logo">CARITHM<span> AI</span></div>
   <nav class="nav" aria-label="Main navigation">
-    <a href="#auditor">Try Certifier</a>
-    <a href="#explorer">Pricing Benchmark</a>
+    <a href="#auditor">Quote Auditor</a>
+    <a href="#how-it-works">How It Works</a>
     <a href="#faq">FAQ</a>
-    <a href="https://carithm.vercel.app/blog/">Blog</a>
-    <a href="https://carithm.vercel.app/about/">Platform</a>
-    <a href="https://carithm.vercel.app/predictive">UAE Valuation</a>
-    <a href="mailto:carithmai29@gmail.com" class="cta-btn">Partner with us</a>
+    <a href="https://carithm.vercel.app/blog/">Car Care Blog</a>
+    <a href="https://carithm.vercel.app/about/">Our Data</a>
   </nav>
 </header>
-<div class="shell">
+<div class="shell" id="auditor">
 
   <div class="header">
     <div class="logo">
@@ -318,13 +320,16 @@ header {
       </svg>
     </div>
     <span class="brand">Carithm</span>
-    <span class="brand-tag">Advisor Tool</span>
+    <span class="brand-tag">Car Owner Tool</span>
   </div>
 
   <div class="hero">
-    <div class="eyebrow">UAE Predictive Maintenance Standard</div>
-    <h1>Prove your quotes are fair.<br>Close more repair orders.</h1>
-    <p>Upload a repair quote to generate an independent, AI-verified health report for your customers in under a minute.</p>
+    <div class="eyebrow">Independent Repair Verification</div>
+    <h1>Stop overpaying for repairs.<br>Verify your quote instantly.</h1>
+    <p>Got an expensive estimate from a garage or dealer? Upload it below to run an independent, data-backed check on what your car actually needs.</p>
+    <div class="expansion-badge">
+      <span>🇦🇪 Live in UAE</span> · <span>🇶🇦 🇸🇦 Qatar & Saudi Arabia launching soon!</span>
+    </div>
   </div>
 
   <div class="disclaimer-banner">
@@ -334,14 +339,14 @@ header {
       <line x1="12" y1="8" x2="12.01" y2="8"></line>
     </svg>
     <span>
-      <strong>Note to Advisors:</strong> This tool calculates <em>designed life part health</em> based on manufacturer intervals and local wear curves, not the literal physical health of the component.
+      <strong>How this works:</strong> This engine calculates the <em>designed life part health</em> based on your model's engineering standards and local wear curves. It checks if a part is mathematically due for replacement, not its immediate physical state.
     </span>
   </div>
 
   <div class="card">
     <div class="card-head">
       <div class="step on">1</div>
-      <div class="card-title">Customer Vehicle</div>
+      <div class="card-title">Your Vehicle Details</div>
     </div>
     <div class="card-body">
       <div class="row3">
@@ -354,29 +359,29 @@ header {
           <select id="model" disabled><option value="">Select model</option></select>
         </div>
         <div class="field">
-          <label>Year (inc. Legacy)</label>
+          <label>Year</label>
           <input type="number" id="year" value="2021" min="1990" max="2026">
         </div>
       </div>
       <div class="row3">
         <div class="field">
-          <label>Mileage (km)</label>
+          <label>Current Mileage (km)</label>
           <input type="number" id="mileage" value="80000" min="0">
         </div>
         <div class="field">
           <label>Vehicle Type</label>
           <select id="vehicle-type">
             <option value="sedan">Sedan</option>
-            <option value="suv" selected>SUV / 4x4</option>
+            <option value="suv" selected>SUV / 4x4 / Crossover</option>
             <option value="hatchback">Hatchback</option>
-            <option value="commercial">Commercial / Van</option>
+            <option value="commercial">Van / Pickup</option>
           </select>
         </div>
         <div class="field">
           <label>Drivetrain</label>
           <select id="drivetrain">
-            <option value="fwd">FWD</option>
-            <option value="rwd">RWD</option>
+            <option value="fwd">FWD (Front-Wheel Drive)</option>
+            <option value="rwd">RWD (Rear-Wheel Drive)</option>
             <option value="awd" selected>AWD / 4WD</option>
           </select>
         </div>
@@ -387,29 +392,29 @@ header {
   <div class="card">
     <div class="card-head">
       <div class="step on">2</div>
-      <div class="card-title">Customer Driving Pattern</div>
+      <div class="card-title">Your Typical Driving Environment</div>
     </div>
     <div class="card-body">
       <div class="radios">
         <label class="radio-pill" data-val="city">
           <input type="radio" name="driving" value="city">
           <div class="pip"><div class="pip-dot"></div></div>
-          <div><div class="pill-label">City</div><div class="pill-sub">Stop-and-go, short trips, heavy traffic</div></div>
+          <div><div class="pill-label">Mainly City</div><div class="pill-sub">Heavy stop-and-go traffic, short school runs, shopping trips</div></div>
         </label>
         <label class="radio-pill" data-val="highway">
           <input type="radio" name="driving" value="highway">
           <div class="pip"><div class="pip-dot"></div></div>
-          <div><div class="pill-label">Highway</div><div class="pill-sub">Long distance, open road</div></div>
+          <div><div class="pill-label">Mainly Highway</div><div class="pill-sub">Long commutes on E11/E311, open road driving</div></div>
         </label>
         <label class="radio-pill on" data-val="mixed">
           <input type="radio" name="driving" value="mixed" checked>
           <div class="pip"><div class="pip-dot"></div></div>
-          <div><div class="pill-label">Mixed</div><div class="pill-sub">Combination of city and highway</div></div>
+          <div><div class="pill-label">Mixed Driving</div><div class="pill-sub">A balanced combination of city gridlock and highways</div></div>
         </label>
         <label class="radio-pill" data-val="offroad">
           <input type="radio" name="driving" value="offroad">
           <div class="pip"><div class="pip-dot"></div></div>
-          <div><div class="pill-label">Off-road / Desert</div><div class="pill-sub">Sand, gravel, wadi driving</div></div>
+          <div><div class="pill-label">Frequent Off-road / Desert</div><div class="pill-sub">Wadi exploration, dune driving, heavy sand exposure</div></div>
         </label>
       </div>
     </div>
@@ -418,7 +423,7 @@ header {
   <div class="card">
     <div class="card-head">
       <div class="step on">3</div>
-      <div class="card-title">Quote Certification</div>
+      <div class="card-title">Upload the Garage Estimate</div>
     </div>
     <div class="card-body">
       <div class="drop-zone" id="drop-zone">
@@ -431,23 +436,23 @@ header {
             <polyline points="9 15 12 12 15 15"/>
           </svg>
         </div>
-        <div class="drop-title" id="drop-title">Drop your quote file here</div>
-        <div class="drop-sub" id="drop-sub">PDF, image or text · max 15 MB</div>
+        <div class="drop-title" id="drop-title">Drop your quote or invoice here</div>
+        <div class="drop-sub" id="drop-sub">Upload a PDF, photo, or screenshot · Max 15 MB</div>
         <div class="drop-file hidden" id="drop-file"></div>
       </div>
 
       <div class="or">
         <div class="or-line"></div>
-        <div class="or-text">or paste RO text</div>
+        <div class="or-text">or copy-paste the text line items</div>
         <div class="or-line"></div>
       </div>
 
       <div class="field">
-        <label>Repair Order text</label>
-        <textarea id="quote-text" placeholder="Spark plugs              AED 180&#10;Brake fluid flush        AED 120&#10;Fuel injector cleaning   AED 350"></textarea>
+        <label>List of Repairs / Parts</label>
+        <textarea id="quote-text" placeholder="Example:&#10;Front Brake Pads          AED 450&#10;Spark Plug Replacement   AED 320&#10;Engine Oil Flush         AED 180"></textarea>
       </div>
 
-      <button class="btn btn-primary" id="analyze-btn">Certify Quote</button>
+      <button class="btn btn-primary" id="analyze-btn">Verify My Quote</button>
       <div id="status" class="hidden"></div>
     </div>
   </div>
@@ -455,12 +460,12 @@ header {
   <div id="history-review" class="card hidden">
     <div class="card-head">
       <div class="step on">4</div>
-      <div class="card-title">Service history</div>
+      <div class="card-title">Your Car's History</div>
     </div>
     <div class="card-body">
-      <p style="font-size:12px; color:var(--muted)">Confirm service history with the customer to ensure accurate predictive maintenance tracking.</p>
+      <p style="font-size:12px; color:var(--muted)">Tell us if you've recently changed any of these items. If you aren't sure, don't worry—leave it unchecked and our AI will calculate the baseline designed life.</p>
       <div id="questions-list"></div>
-      <button class="btn btn-primary" id="finalize-btn">Generate Customer Report</button>
+      <button class="btn btn-primary" id="finalize-btn">Generate My Verification Report</button>
     </div>
   </div>
 
@@ -509,68 +514,68 @@ header {
   }
 </style>
 
-<div class="below">
+<div class="below" id="how-it-works">
   <section>
-    <div class="eyebrow-c">Why Carithm B2B</div>
-    <h2>Built to empower service centers</h2>
-    <p class="lede">Validate your service recommendations with an independent AI standard. Increase customer approval rates by proving your maintenance plans align with their vehicle's designed life.</p>
+    <div class="eyebrow-c">Unbiased Protection</div>
+    <h2>Know before you approve</h2>
+    <p class="lede">Mechanics often try to replace parts early to hit sales targets. Carithm is an independent software layer that acts as your personal automotive consultant, ensuring you only swap components when engineering standards dictate it.</p>
     <div class="feat-grid">
       <div class="feat">
         <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-        <div class="feat-title">Predictive Maintenance</div>
-        <div class="feat-body">Cross-checks every line item against designed service life—helping you ethically recommend preventative care before parts physically fail.</div>
+        <div class="feat-title">Designed Life Analysis</div>
+        <div class="feat-body">We cross-examine every line item on your bill against manufacturer-designed service lifecycles to detect premature replacement traps.</div>
       </div>
       <div class="feat">
         <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
-        <div class="feat-title">UAE Climate-Tuned</div>
-        <div class="feat-body">Calibrated specifically for UAE heat, high humidity, and fine dust—the conditions that accelerate part degradation locally.</div>
+        <div class="feat-title">GCC Heat Modeling</div>
+        <div class="feat-body">Calibrated precisely for local realities. Our algorithms scale part lifespans down to account for brutal regional summer temperatures and dust.</div>
       </div>
       <div class="feat">
         <div class="feat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
-        <div class="feat-title">Private by default</div>
-        <div class="feat-body">Your customer data never leaves the audit. Nothing is sold, shared, or used for external marketing.</div>
+        <div class="feat-title">100% Conflict-Free</div>
+        <div class="feat-body">We don't own workshops, we don't take commissions from garages, and we don't sell spare parts. Our only incentive is accuracy.</div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="trust">
-      <div><div class="trust-num">46<span>+</span></div><div class="trust-lbl">Brands Supported</div></div>
-      <div><div class="trust-num">500<span>+</span></div><div class="trust-lbl">Engines Modeled</div></div>
-      <div><div class="trust-num">RTA</div><div class="trust-lbl">Aligned with Local Standards</div></div>
-      <div><div class="trust-num">15<span>+</span></div><div class="trust-lbl">Components Certified</div></div>
+      <div><div class="trust-num">46<span>+</span></div><div class="trust-lbl">Makes Covered</div></div>
+      <div><div class="trust-num">500<span>+</span></div><div class="trust-lbl">Drivetrains Modeled</div></div>
+      <div><div class="trust-num">0</div><div class="trust-lbl">Garage Commissions</div></div>
+      <div><div class="trust-num">100%</div><div class="trust-lbl">Consumer Focused</div></div>
     </div>
   </section>
 
-  <section>
+  <section id="faq">
     <div class="eyebrow-c">FAQ</div>
-    <h2>Common questions for Advisors</h2>
+    <h2>Frequently Asked Questions</h2>
     <div class="faq">
       <details>
-        <summary>How does this help me close Repair Orders?</summary>
-        <p>Customers often seek second opinions. By providing them an independent, AI-verified health report at the counter, you remove their doubt and establish immediate trust, accelerating their approval process.</p>
+        <summary>What is the difference between physical health and "designed life"?</summary>
+        <p>A mechanic looks under the car and might claim a part looks worn just to secure a sale. Carithm looks at the underlying engineering data. We compute the mathematical lifespan of the part based on vehicle weight, drivetrain layout, mileage, and environment. If a part has only used 30% of its designed life, you should request a deep explanation from your garage before replacing it.</p>
       </details>
       <details>
-        <summary>Does the AI physically inspect the car?</summary>
-        <p>No. Carithm is a data-driven tool that calculates the *designed life* of a part based on mileage, age, UAE weather, and drivetrain types. It complements your physical inspections by predicting lifecycle replacements.</p>
+        <summary>Can this app tell me if a specific repair price is too high?</summary>
+        <p>The core engine checks the validity and necessity of the repair itself based on the part lifecycle. However, if the text structure matches common benchmarks, the output report highlights anomalies where regional pricing deviations look suspicious.</p>
       </details>
       <details>
-        <summary>What happens to my customer's data?</summary>
-        <p>Your uploaded quote is processed instantly to generate the report and then discarded. We do not build profiles or share details with third parties.</p>
+        <summary>Does it work for old or imported cars?</summary>
+        <p>Yes. Our historical engineering databases accommodate vehicles extending past 2005, which covers most legacy models, common imports, and classic builds operating in the GCC region.</p>
       </details>
       <details>
-        <summary>Does it handle older models common in the UAE?</summary>
-        <p>Yes, our database comprehensively supports legacy fleets extending back prior to 2005, supporting ubiquitous vehicles found in local garages.</p>
+        <summary>Are you rolling out across the rest of the GCC?</summary>
+        <p>Yes. While our primary regional environmental maps focus on the UAE right now, expansion modules specifically calibrated for atmospheric profiles and driving habits in **Qatar** and **Saudi Arabia** are scheduled to launch shortly.</p>
       </details>
     </div>
   </section>
 
   <div class="foot">
-    <div>© 2026 Carithm. Built for UAE Service Centers.</div>
+    <div>© 2026 Carithm. Empowering vehicle owners. </div>
+    <div style="font-size: 11px; color: var(--muted);">Regional Notice: Expanding to Qatar & KSA markets soon.</div>
     <div class="foot-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Partner Support</a>
+      <a href="#">Consumer Privacy</a>
+      <a href="#">Terms of Use</a>
     </div>
   </div>
 </div>
@@ -583,7 +588,6 @@ header {
 ================================ */
 const API_ORIGIN = "https://x748873y-bcvbc.hf.space";
 
-// Freeze so no prototype-pollution trick can swap the origin at runtime
 const API = Object.freeze({
   get:      (path) => safeFetch(`${API_ORIGIN}${path}`, {}),
   post:     (path, body) => safeFetch(`${API_ORIGIN}${path}`, {
@@ -594,16 +598,14 @@ const API = Object.freeze({
   postFile: (path, file) => {
               const fd = new FormData();
               fd.append("file", file);
-              // No Content-Type — browser sets multipart boundary
               return safeFetch(`${API_ORIGIN}${path}`, { method: "POST", body: fd });
             },
 });
 
 /* ================================
-   SAFE FETCH — validates origin, sanitises errors shown to user
+   SAFE FETCH
 ================================ */
 async function safeFetch(url, options) {
-  // Guard: only ever talk to our known API origin
   const parsed = new URL(url);
   if (parsed.origin !== API_ORIGIN) {
     throw new Error("Request blocked: unexpected origin.");
@@ -612,11 +614,9 @@ async function safeFetch(url, options) {
   try {
     res = await fetch(url, options);
   } catch (_) {
-    // Network error — don't expose internal URL or browser internals
     throw new Error("Network error — check your connection and try again.");
   }
   if (!res.ok) {
-    // Don't leak status codes or raw server error bodies to the UI
     throw new Error(`The server returned an error. Please try again.`);
   }
   try {
@@ -627,7 +627,7 @@ async function safeFetch(url, options) {
 }
 
 /* ================================
-   IN-FLIGHT LOCK — prevents double-submits
+   IN-FLIGHT LOCK
 ================================ */
 let _inFlight = false;
 function acquireLock(btn) {
@@ -651,12 +651,10 @@ const ALLOWED_EXT    = new Set([".pdf", ".png", ".jpg", ".jpeg", ".txt"]);
 function validateFile(file) {
   if (!file) return "No file selected.";
   if (file.size > MAX_FILE_BYTES) return "File too large — max 15 MB.";
-  // Check MIME type (best-effort; not spoofable server-side but helps UX)
   if (file.type && !ALLOWED_MIME.has(file.type)) return "File type not supported.";
-  // Check extension too — file.type can be empty on some browsers
   const ext = file.name.slice(file.name.lastIndexOf(".")).toLowerCase();
   if (!ALLOWED_EXT.has(ext)) return "File extension not supported. Use PDF, PNG, JPG, or TXT.";
-  return null; // valid
+  return null;
 }
 
 /* ================================
@@ -694,7 +692,6 @@ let selectedFile     = null;
    HELPERS
 ================================ */
 function esc(str) {
-  // Single canonical escape function — used everywhere user/API data touches the DOM
   return String(str ?? "")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -704,7 +701,6 @@ function esc(str) {
 }
 
 function setText(el, str) {
-  // Use textContent for plain strings — never innerHTML
   if (el) el.textContent = String(str ?? "");
 }
 
@@ -712,7 +708,6 @@ function setStatus(msg, kind = "info") {
   if (!statusEl) return;
   if (!msg) { statusEl.className = "hidden"; statusEl.textContent = ""; return; }
   statusEl.className = `status-bar ${kind}`;
-  // Safe: s-dot is a static element, msg goes through esc()
   statusEl.innerHTML = `<span class="s-dot"></span><span>${esc(msg)}</span>`;
 }
 
@@ -726,7 +721,6 @@ function tidyLabel(raw) {
 
 function createOption(value, label) {
   const opt = document.createElement("option");
-  // Use properties, not innerHTML — avoids any injection via make/model names
   opt.value = String(value ?? "");
   opt.textContent = String(label ?? "");
   return opt;
@@ -763,12 +757,12 @@ function renderMarkdown(md) {
     const pct   = Math.max(0, parseInt(pctRaw, 10) || 0);
     const fillW = Math.min(pct, 100);
     const cls   = pct >= 100 ? "lbf-red" : pct >= 60 ? "lbf-amber" : "lbf-green";
-    const label = pct >= 100 ? `${pct}% — overdue` : `${pct}%`;
+    const label = pct >= 100 ? `${pct}% — Lifespan Depleted` : `${pct}%`;
     const marker = pct >= 100
       ? `<div style="position:absolute;right:0;top:0;height:100%;width:3px;background:var(--red);border-radius:99px;"></div>`
       : "";
     return `<div class="life-bar-wrap">` +
-      `<div class="life-bar-label"><span>Designed life used</span><span>${label}</span></div>` +
+      `<div class="life-bar-label"><span>Designed Lifecycle Extent</span><span>${label}</span></div>` +
       `<div class="life-bar-track" style="position:relative;">` +
         `<div class="life-bar-fill ${cls}" style="width:${fillW}%;"></div>${marker}` +
       `</div></div>`;
@@ -819,7 +813,7 @@ async function loadMakes() {
     const data = await API.get("/makes");
     const makes = Array.isArray(data) ? data : (data.makes || []);
     makeSelect.innerHTML = "";
-    makeSelect.appendChild(createOption("", "Select make"));
+    makeSelect.appendChild(createOption("", "Select your car make"));
     makes.forEach(m => makeSelect.appendChild(createOption(m, m)));
   } catch (err) {
     setStatus(err.message, "error");
@@ -828,7 +822,7 @@ async function loadMakes() {
 
 async function loadModels(make) {
   modelSelect.innerHTML = "";
-  modelSelect.appendChild(createOption("", "Select model"));
+  modelSelect.appendChild(createOption("", "Select your car model"));
   modelSelect.disabled = true;
   modelEngineMap = {};
   if (!make) return;
@@ -866,14 +860,14 @@ function setSelectedFile(file) {
   selectedFile = file;
   if (file) {
     dropZone.classList.add("has-file");
-    setText(dropTitle, "File ready");
-    setText(dropSub, "Click to choose a different file");
+    setText(dropTitle, "Estimate file loaded");
+    setText(dropSub, "Click to replace with a different document");
     setText(dropFileLabel, file.name);
     dropFileLabel.classList.remove("hidden");
   } else {
     dropZone.classList.remove("has-file");
-    setText(dropTitle, "Drop your quote file here");
-    setText(dropSub, "PDF, image or text · max 15 MB");
+    setText(dropTitle, "Drop your quote or invoice here");
+    setText(dropSub, "Upload a PDF, photo, or screenshot · Max 15 MB");
     dropFileLabel.classList.add("hidden");
     setText(dropFileLabel, "");
   }
@@ -920,35 +914,35 @@ async function analyzeQuote() {
   try {
     let data;
     if (selectedFile) {
-      setStatus(`Certifying ${selectedFile.name}...`);
+      setStatus(`Scanning and verifying ${selectedFile.name}...`);
       data = await API.postFile("/analyze-quote", selectedFile);
     } else {
       const quoteText = quoteTextEl?.value?.trim();
       if (!quoteText) {
-        setStatus("Please upload a file or paste the quote text first.", "error");
+        setStatus("Please drop an estimate file or paste repair text items first.", "error");
         return;
       }
       if (quoteText.length > 50_000) {
-        setStatus("Quote text is too long. Please trim it and try again.", "error");
+        setStatus("Text list is uncommonly long. Please trim non-essential lines.", "error");
         return;
       }
-      setStatus("Certifying quote...");
+      setStatus("Auditing items...");
       data = await API.post("/analyze-quote-text", { text: quoteText });
     }
 
     analyzedServices = Array.isArray(data.services) ? data.services : [];
     historyAnswers   = {};
 
-    const statusMsg = typeof data.status === "string" ? data.status : "Quote certified.";
+    const statusMsg = typeof data.status === "string" ? data.status : "Estimate analyzed.";
 
     if (!analyzedServices.length) {
       if (typeof data.ocr_text === "string") {
         quoteTextEl.value = data.ocr_text;
         setSelectedFile(null);
         fileInput.value = "";
-        setStatus(statusMsg + " We've pasted the extracted text below — review it and click Certify again.", "error");
+        setStatus(statusMsg + " Double-check the text formatting below and press Verify again.", "error");
       } else {
-        setStatus(statusMsg || "No items found in quote.", "error");
+        setStatus(statusMsg || "Could not read any identifiable components.", "error");
       }
       return;
     }
@@ -979,7 +973,7 @@ function renderHistoryQuestions(services) {
   if (!historyServices.length) {
     const p = document.createElement("p");
     p.style.cssText = "font-size:12px;color:var(--muted)";
-    p.textContent = "No history questions needed for this quote.";
+    p.textContent = "No extra historical inputs required for these components.";
     questionsListEl.appendChild(p);
     return;
   }
@@ -989,7 +983,7 @@ function renderHistoryQuestions(services) {
     wrapper.className = "field history-item";
 
     const label = document.createElement("label");
-    label.textContent = `When was the ${tidyLabel(svc.display || svc.raw)} last done?`;
+    label.textContent = `Do you know when the ${tidyLabel(svc.display || svc.raw)} was last replaced?`;
 
     const knowRow = document.createElement("label");
     knowRow.className = "radio-pill";
@@ -1008,10 +1002,10 @@ function renderHistoryQuestions(services) {
     const knowText  = document.createElement("div");
     const pillLabel = document.createElement("div");
     pillLabel.className = "pill-label";
-    pillLabel.textContent = "Customer knows the history";
+    pillLabel.textContent = "Yes, I remember the timeline";
     const pillSub = document.createElement("div");
     pillSub.className = "pill-sub";
-    pillSub.textContent = "Leave unchecked if unsure — we'll assume unknown";
+    pillSub.textContent = "Leave unchecked if you don't know—we will calculate standard factory lifespan maps instead.";
     knowText.appendChild(pillLabel);
     knowText.appendChild(pillSub);
 
@@ -1023,7 +1017,7 @@ function renderHistoryQuestions(services) {
     select.dataset.partKey = String(svc.part_key ?? "");
     select.dataset.index   = String(idx);
     select.disabled = true;
-    select.appendChild(createOption("", "Select one"));
+    select.appendChild(createOption("", "Select timeline choice"));
 
     (svc.history_options || []).forEach(opt => {
       const val = Array.isArray(opt) ? opt[1] : (opt?.value ?? "");
@@ -1074,20 +1068,20 @@ function collectVehicleData() {
   const missing = [];
   if (!make)       missing.push("make");
   if (!model)      missing.push("model");
-  if (year === null) missing.push("year (must be 1990–2030)");
-  if (mileage === null || mileage < 0) missing.push("mileage");
-  if (!drivetrain) missing.push("drivetrain");
-  if (!vType)      missing.push("vehicle type");
-  if (!driving)    missing.push("driving pattern");
+  if (year === null) missing.push("year");
+  if (mileage === null || mileage < 0) missing.push("mileage value");
+  if (!drivetrain) missing.push("drivetrain type");
+  if (!vType)      missing.push("body structure layout");
+  if (!driving)    missing.push("driving profile selection");
 
   if (drivetrain && !["fwd","rwd","awd"].includes(drivetrain)) {
-    throw new Error("Invalid drivetrain value.");
+    throw new Error("Invalid drivetrain configuration structural value.");
   }
   if (vType && !["sedan","suv","hatchback","commercial"].includes(vType)) {
-    throw new Error("Invalid vehicle type value.");
+    throw new Error("Invalid body outline structure type layout.");
   }
 
-  if (missing.length) throw new Error(`Missing required fields: ${missing.join(", ")}`);
+  if (missing.length) throw new Error(`Fill out your missing car criteria: ${missing.join(", ")}`);
 
   return { make, model, year, mileage, drivetrain, vType, driving, engineVal };
 }
@@ -1098,7 +1092,7 @@ function collectVehicleData() {
 async function submitHistoryAndGenerateReport() {
   if (!acquireLock(finalizeBtn)) return;
   try {
-    setStatus("Preparing report...");
+    setStatus("Assembling independent life metrics...");
     const vehicle = collectVehicleData();
 
     const payload = {
@@ -1121,12 +1115,12 @@ async function submitHistoryAndGenerateReport() {
       result.report_markdown ?? result.report ?? result.markdown ?? result.audit_report ??
       (typeof result === "string" ? result : "");
 
-    if (!reportMd) { setStatus("No report returned. Please try again.", "error"); return; }
+    if (!reportMd) { setStatus("No evaluation report generated. Please repeat try.", "error"); return; }
 
     reportEl.innerHTML = renderMarkdown(reportMd);
     reportEl.classList.remove("hidden");
     reportEl.scrollIntoView({ behavior: "smooth", block: "start" });
-    setStatus("Report generated.", "success");
+    setStatus("Audit evaluation successfully completed.", "success");
 
   } catch (err) {
     setStatus(err.message, "error");
@@ -1136,7 +1130,7 @@ async function submitHistoryAndGenerateReport() {
 }
 
 /* ================================
-   EVENTS + INIT
+   INIT
 ================================ */
 analyzeBtn?.addEventListener("click", analyzeQuote);
 finalizeBtn?.addEventListener("click", submitHistoryAndGenerateReport);
