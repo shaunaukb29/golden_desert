@@ -144,6 +144,21 @@ body {
 .card-head { padding: 16px 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); }
 .step { width: 20px; height: 20px; border-radius: 50%; background: var(--surface3); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: var(--muted); flex-shrink: 0; }
 .step.on { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
+
+.progress-strip { position: sticky; top: 0; z-index: 40; display: flex; align-items: center; justify-content: center; gap: 0; background: rgba(9,9,11,0.88); backdrop-filter: blur(10px); padding: 12px 8px; margin: 0 -20px 24px; border-bottom: 1px solid var(--border); }
+.progress-dot { width: 26px; height: 26px; border-radius: 50%; background: var(--surface3); border: 1.5px solid var(--border2); color: var(--muted); font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .25s, border-color .25s, color .25s; position: relative; }
+.progress-dot .pd-check { display: none; font-size: 12px; }
+.progress-dot .pd-num { display: inline; }
+.progress-dot.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
+.progress-dot.complete { background: var(--green); border-color: var(--green); color: #fff; }
+.progress-dot.complete .pd-num { display: none; }
+.progress-dot.complete .pd-check { display: inline; }
+.progress-line { width: 28px; height: 1.5px; background: var(--border2); flex-shrink: 0; transition: background .25s; }
+.progress-line.complete { background: var(--green); }
+@media (max-width: 480px) {
+  .progress-strip { margin: 0 -20px 18px; padding: 10px 4px; }
+  .progress-line { width: 16px; }
+}
 .card-title { font-size: 13px; font-weight: 500; }
 .card-body { padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; }
 
@@ -210,9 +225,21 @@ textarea { resize: vertical; min-height: 120px; font-size: 13px; line-height: 1.
 .drop-title { font-size: 13px; font-weight: 500; }
 .drop-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
 .drop-file { font-size: 12px; color: var(--green); margin-top: 5px; font-weight: 500; }
+.limit-legend { font-size: 11px; color: var(--muted); text-align: center; margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 4px; flex-wrap: wrap; }
+.ll-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; margin-right: 3px; }
+.ll-dot.ll-amber { background: var(--amber); }
+.ll-dot.ll-green { background: var(--green); }
+@media (max-width: 480px) {
+  .limit-legend { font-size: 10.5px; }
+}
 
-.history-item { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
-.history-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.history-item { margin-bottom: 8px; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--r-sm); background: var(--surface2); }
+.hist-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.hist-part-name { font-size: 13px; font-weight: 500; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hist-toggle { flex-shrink: 0; font-size: 11px; font-weight: 600; padding: 6px 11px; border-radius: 99px; border: 1px solid var(--border2); background: var(--surface3); color: var(--muted); cursor: pointer; transition: background .15s, border-color .15s, color .15s; white-space: nowrap; }
+.hist-toggle.on { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
+.hist-select.hidden { display: none; }
+.hist-select { margin-top: 8px; }
 
 .or { display: flex; align-items: center; gap: 10px; }
 .or-line { flex: 1; height: 1px; background: var(--border); }
@@ -393,6 +420,16 @@ header {
 .explorer-hint { text-align: center; font-size: 0.75rem; color: var(--muted); margin-top: 1rem; letter-spacing: 0.03em; }
 .explorer-hint b { color: var(--blue); font-weight: 600; }
 
+@media (max-width: 620px) {
+  .explorer-wrap { padding: 1rem 0.75rem 1.25rem; border-radius: 14px; }
+  .hs { width: 36px; height: 36px; border-width: 2px; }
+  .hs-num { width: 17px; height: 17px; font-size: 0.62rem; }
+  .hs-card { min-width: 150px; max-width: calc(100vw - 56px); padding: 0.75rem 0.9rem; }
+  .hs-card-title { font-size: 0.82rem; }
+  .hs-card-km { font-size: 0.72rem; }
+  .tag { padding: 0.18rem 0.5rem; font-size: 0.66rem; }
+}
+
 /* ─── INSIGHT DETAILS & COMPONENT HEALTH TRACKERS ─── */
 .panel-desc { font-size: 0.82rem; color: #8499be; line-height: 1.65; }
 .health-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem; }
@@ -547,6 +584,16 @@ header {
 
 <div class="shell" id="tool-shell" style="padding-top:32px;">
 
+  <div class="progress-strip" id="progress-strip">
+    <div class="progress-dot active" data-step="1"><span class="pd-num">1</span><span class="pd-check">✓</span></div>
+    <div class="progress-line"></div>
+    <div class="progress-dot" data-step="2"><span class="pd-num">2</span><span class="pd-check">✓</span></div>
+    <div class="progress-line"></div>
+    <div class="progress-dot" data-step="3"><span class="pd-num">3</span><span class="pd-check">✓</span></div>
+    <div class="progress-line"></div>
+    <div class="progress-dot" data-step="4"><span class="pd-num">4</span><span class="pd-check">✓</span></div>
+  </div>
+
   <div class="card">
     <div class="card-head">
       <div class="step on">1</div>
@@ -644,6 +691,7 @@ header {
         <div class="drop-sub" id="drop-sub">Upload a PDF, photo, or screenshot · Max 15 MB</div>
         <div class="drop-file hidden" id="drop-file"></div>
       </div>
+      <div class="limit-legend"><span class="ll-dot ll-amber"></span>Photos / PDFs: 3 free per day &nbsp;·&nbsp; <span class="ll-dot ll-green"></span>Pasted text: unlimited</div>
 
       <div class="or">
         <div class="or-line"></div>
@@ -671,7 +719,7 @@ header {
       <div class="card-title">Your Car's History</div>
     </div>
     <div class="card-body">
-      <p style="font-size:12px; color:var(--muted)">Tell us if you've recently changed any of these items. If you aren't sure, don't worry—leave it unchecked and our AI will calculate the baseline expected wear.</p>
+      <p style="font-size:12px; color:var(--muted)">Know when any of these were last replaced? Tell us — otherwise we'll assume factory defaults.</p>
       <div id="questions-list"></div>
       <button class="btn btn-primary" id="finalize-btn">Generate My Verification Report</button>
     </div>
@@ -997,6 +1045,23 @@ function setStatus(msg, kind = "info") {
   statusEl.innerHTML = `<span class="s-dot"></span><span>${esc(msg)}</span>`;
 }
 
+/* ================================
+   PROGRESS STRIP
+================================ */
+function setProgress(step) {
+  const dots  = document.querySelectorAll(".progress-dot");
+  const lines = document.querySelectorAll(".progress-line");
+  dots.forEach(dot => {
+    const n = Number(dot.dataset.step);
+    dot.classList.remove("active", "complete");
+    if (n < step) dot.classList.add("complete");
+    else if (n === step) dot.classList.add("active");
+  });
+  lines.forEach((line, i) => {
+    line.classList.toggle("complete", (i + 1) < step);
+  });
+}
+
 function tidyLabel(raw) {
   if (!raw) return "";
   if (/\s/.test(raw)) return raw;
@@ -1125,7 +1190,7 @@ async function loadModels(make) {
   }
 }
 
-makeSelect?.addEventListener("change", () => loadModels(makeSelect.value));
+makeSelect?.addEventListener("change", () => { loadModels(makeSelect.value); if (makeSelect.value) setProgress(2); });
 
 /* ================================
    DRIVING PILLS
@@ -1136,6 +1201,7 @@ radioPills.forEach(pill => {
     pill.classList.add("on");
     const input = pill.querySelector('input[type="radio"]');
     if (input) input.checked = true;
+    setProgress(3);
   });
 });
 
@@ -1250,6 +1316,7 @@ async function analyzeQuote() {
     renderHistoryQuestions(analyzedServices);
     historyReview?.classList.remove("hidden");
     setStatus(statusMsg, "success");
+    setProgress(4);
     historyReview?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   } catch (err) {
@@ -1282,42 +1349,26 @@ function renderHistoryQuestions(services) {
     const wrapper = document.createElement("div");
     wrapper.className = "field history-item";
 
-    const label = document.createElement("label");
-    label.textContent = `Do you know when the ${tidyLabel(svc.display || svc.raw)} was last replaced?`;
+    const topRow = document.createElement("div");
+    topRow.className = "hist-row";
 
-    const knowRow = document.createElement("label");
-    knowRow.className = "radio-pill";
-    knowRow.style.marginBottom = "6px";
+    const partName = document.createElement("div");
+    partName.className = "hist-part-name";
+    partName.textContent = tidyLabel(svc.display || svc.raw);
 
-    const knowCheckbox = document.createElement("input");
-    knowCheckbox.type = "checkbox";
-    knowCheckbox.style.display = "none";
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "hist-toggle";
+    toggle.textContent = "I know when";
 
-    const pip = document.createElement("div");
-    pip.className = "pip";
-    const pipDot = document.createElement("div");
-    pipDot.className = "pip-dot";
-    pip.appendChild(pipDot);
-
-    const knowText  = document.createElement("div");
-    const pillLabel = document.createElement("div");
-    pillLabel.className = "pill-label";
-    pillLabel.textContent = "Yes, I remember the timeline";
-    const pillSub = document.createElement("div");
-    pillSub.className = "pill-sub";
-    pillSub.textContent = "Otherwise we'll use the factory estimate.";
-    knowText.appendChild(pillLabel);
-    knowText.appendChild(pillSub);
-
-    knowRow.appendChild(knowCheckbox);
-    knowRow.appendChild(pip);
-    knowRow.appendChild(knowText);
+    topRow.appendChild(partName);
+    topRow.appendChild(toggle);
 
     const select = document.createElement("select");
+    select.className = "hist-select hidden";
     select.dataset.partKey = String(svc.part_key ?? "");
     select.dataset.index   = String(idx);
-    select.disabled = true;
-    select.appendChild(createOption("", "Select timeline choice"));
+    select.appendChild(createOption("", "Select timeline"));
 
     (svc.history_options || []).forEach(opt => {
       const val = Array.isArray(opt) ? opt[1] : (opt?.value ?? "");
@@ -1325,13 +1376,16 @@ function renderHistoryQuestions(services) {
       select.appendChild(createOption(val, lbl));
     });
 
-    knowRow.addEventListener("click", () => {
-      knowCheckbox.checked = !knowCheckbox.checked;
-      knowRow.classList.toggle("on", knowCheckbox.checked);
-      select.disabled = !knowCheckbox.checked;
-      if (!knowCheckbox.checked) {
+    toggle.addEventListener("click", () => {
+      const isOn = toggle.classList.contains("on");
+      toggle.classList.toggle("on", !isOn);
+      toggle.textContent = isOn ? "I know when" : "Don't track";
+      select.classList.toggle("hidden", isOn);
+      if (isOn) {
         select.value = "";
         if (svc.part_key) delete historyAnswers[svc.part_key];
+      } else {
+        select.focus();
       }
     });
 
@@ -1342,8 +1396,7 @@ function renderHistoryQuestions(services) {
       }
     });
 
-    wrapper.appendChild(label);
-    wrapper.appendChild(knowRow);
+    wrapper.appendChild(topRow);
     wrapper.appendChild(select);
     questionsListEl.appendChild(wrapper);
   });
@@ -1421,6 +1474,7 @@ async function submitHistoryAndGenerateReport() {
     reportEl.classList.remove("hidden");
     reportEl.scrollIntoView({ behavior: "smooth", block: "start" });
     setStatus("Audit evaluation successfully completed.", "success");
+    setProgress(5);
 
   } catch (err) {
     setStatus(err.message, "error");
