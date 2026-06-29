@@ -84,30 +84,19 @@
     { "@type": "Country", "name": "United Arab Emirates" },
     { "@type": "Country", "name": "Saudi Arabia" },
     { "@type": "Country", "name": "Kuwait" }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/carithm-ai/",
+    "https://www.linkedin.com/in/shaunauk-basu-581928248/",
+    "https://x.com/carithmai"
   ]
 }
 </script>
 
-<!-- SEO UPGRADE #6 — LocalBusiness schema for UAE geo signals -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Carithm",
-  "description": "AI-powered car repair quote checker serving UAE drivers in Dubai, Abu Dhabi, Sharjah and across the GCC.",
-  "url": "https://carithm.vercel.app/",
-  "email": "carithmai29@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "AE",
-    "addressRegion": "Dubai"
-  },
-  "areaServed": ["Dubai", "Abu Dhabi", "Sharjah", "UAE", "GCC"],
-  "sameAs": [
-    "https://www.linkedin.com/company/carithm-ai/"
-  ]
-}
-</script>
+<!-- SEO UPGRADE #6 — LocalBusiness schema removed: Carithm is not yet a
+     registered business with a real address/phone, so this block was
+     misrepresenting entity status. SoftwareApplication schema above now
+     carries the sameAs/entity signals instead. -->
 
 <!-- SEO UPGRADE #7 — FAQPage schema expanded to 10 questions -->
 <script type="application/ld+json">
@@ -149,10 +138,10 @@
     },
     {
       "@type": "Question",
-      "name": "Can Carithm tell me if a repair is actually necessary?",
+      "name": "Can I trust this report?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Carithm calculates whether each repair is expected based on engineering data, your mileage, the GCC climate, and manufacturer service intervals. If the numbers show a part has only used 35% of its expected wear life, you should ask your garage for a detailed explanation before approving the job."
+        "text": "We don't physically inspect your car. We calculate whether a repair is expected based on engineering data, your mileage, the GCC climate, and manufacturer service intervals. If the numbers show a part has only used 35% of its expected wear life, you should ask your garage for a detailed explanation before approving the job."
       }
     },
     {
@@ -1231,6 +1220,8 @@ header {
           <a href="https://www.linkedin.com/company/carithm-ai/" target="_blank" rel="noopener">Company LinkedIn</a>
           <span style="color:var(--border);margin:0 4px;">|</span>
           <a href="https://www.linkedin.com/in/shaunauk-basu-581928248/" target="_blank" rel="noopener">Founder's Log</a>
+          <span style="color:var(--border);margin:0 4px;">|</span>
+          <a href="https://x.com/carithmai" target="_blank" rel="noopener">X / Twitter</a>
         </div>
       </div>
     </div>
@@ -1772,15 +1763,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  // FAQ accordion
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const q = item.querySelector('.faq-q');
-    if (q) q.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
-  });
+  // FAQ: native <details>/<summary> elements handle their own accordion
+  // behavior, no JS needed.
 
   // Hotspot auto-peek on scroll into view
   const hotspotArea = document.querySelector('#car-img-wrap');
