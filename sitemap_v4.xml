@@ -66,7 +66,7 @@
   <!-- RESEARCH HUB -->
   <url>
     <loc>https://carithm.vercel.app/research/</loc>
-    <lastmod>2026-06-05</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -83,6 +83,45 @@
     <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- CORE FUEL PAGES (HIGH INTENT SEO) -->
+
+  <url>
+    <loc>https://carithm.vercel.app/research/repair.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/servicing.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/inspection.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- MECHANICAL SUPPORT ARTICLES -->
+
+  <url>
+    <loc>https://carithm.vercel.app/research/brakes.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/suspension.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
 </urlset>
