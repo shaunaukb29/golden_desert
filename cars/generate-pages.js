@@ -1,34 +1,31 @@
 const fs = require("fs");
 const path = require("path");
+const Handlebars = require("handlebars");
 
 const cars = require("./cars.json");
+const template = fs.readFileSync("./template.html", "utf-8");
 
-// read template
-const template = fs.readFileSync("template.html", "utf8");
+const compiled = Handlebars.compile(template);
 
-// output folder
-const outputDir = path.join(__dirname, "output");
+cars.forEach(car => {
+  const html = compiled(car);
 
-if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir);
-}
+  const outputDir = path.join(
+    __dirname,
+    "..",
+    "car",
+    car.make.toLowerCase(),
+    car.model.toLowerCase()
+  );
 
-function replaceTemplate(data) {
-  return template
-    .replace(/{{MAKE}}/g, data.make)
-    .replace(/{{MODEL}}/g, data.model)
-    .replace(/{{CITY}}/g, data.city)
-    .replace(/{{COUNTRY}}/g, data.country);
-}
+  fs.mkdirSync(outputDir, { recursive: true });
 
-cars.forEach((car) => {
-  const html = replaceTemplate(car);
+  const fileName = car.slug + ".html";
 
-  const filePath = path.join(outputDir, car.slug + ".html");
+  fs.writeFileSync(
+    path.join(outputDir, fileName),
+    html
+  );
 
-  fs.writeFileSync(filePath, html);
-
-  console.log("Generated:", filePath);
+  console.log("Generated:", car.make, car.model);
 });
-
-console.log("DONE: All pages generated.");
