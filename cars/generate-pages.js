@@ -1,56 +1,95 @@
+// generate-sitemap.js
+
 const fs = require("fs");
 const path = require("path");
-const Handlebars = require("handlebars");
 
-// Load data
-const cars = require("./cars.json");
+const BASE_URL = "https://carithm.vercel.app";
 
-// Load template
-const templatePath = path.join(__dirname, "template.html");
-const templateSource = fs.readFileSync(templatePath, "utf-8");
+// folders to scan
+const ROOT_DIR = path.join(__dirname, "..");
 
-const compile = Handlebars.compile(templateSource);
+const IGNORE = ["node_modules", ".git", ".vercel", "cars"];
 
-function createSlug(car) {
-  const make = car.make.toLowerCase().replace(/\s+/g, "-");
-  const model = car.model.toLowerCase().replace(/\s+/g, "-");
+let urls = [];
 
-  const location = (car.location || "uae").toLowerCase().replace(/\s+/g, "-");
-  const type = (car.type || "repair-cost").toLowerCase().replace(/\s+/g, "-");
+/**
+ * Recursively scan directory for HTML files
+ */
+function scanDir(dir) {
+  const files = fs.readdirSync(dir);
 
-  return `${type}-${location}`;
-}
+  for (const file of files) {
+    const fullPath = path.join(dir, file);
 
-function generatePages() {
-  console.log("🚀 Starting page generation...\n");
+    if (IGNORE.some((i) => fullPath.includes(i))) continue;
 
-  cars.forEach((car, index) => {
-    try {
-      const html = compile(car);
+    const stat = fs.statSync(fullPath);
 
-      const slug = car.slug || createSlug(car);
-
-      // 🔥 IMPORTANT FIX: OUTPUT TO ROOT-LEVEL FOLDER
-      const outputDir = path.join(
-        __dirname,
-        "..",
-        car.make.toLowerCase().replace(/\s+/g, "-"),
-        car.model.toLowerCase().replace(/\s+/g, "-")
-      );
-
-      fs.mkdirSync(outputDir, { recursive: true });
-
-      const outputPath = path.join(outputDir, `${slug}.html`);
-
-      fs.writeFileSync(outputPath, html, "utf-8");
-
-      console.log(`✅ [${index + 1}/${cars.length}] Generated: ${outputPath}`);
-    } catch (err) {
-      console.error(`❌ Error generating ${car.make} ${car.model}:`, err.message);
+    if (stat.isDirectory()) {
+      scanDir(fullPath);
+    } else if (file.endsWith(".html")) {
+      const relative = fullPath.replace(ROOT_DIR, "").replace(/\\/g, "/");
+      urls.push(relative);
     }
-  });
-
-  console.log("\n🎉 All pages generated successfully!");
+  }
 }
 
-generatePages();
+/**
+ * Convert file path → URL
+ */
+function toUrl(filePath) {
+  return BASE_URL + filePath;
+}
+
+/**
+ * Build sitemap XML
+ */
+function buildSitemap(urls) {
+  const today = new Date().toISOString().split("T")[0];
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+${urls
+  .map((url) => {
+    let priority = "0.6";
+
+    if (url.includes("/toyota/") || url.includes("/bmw/") || url.includes("/mercedes/")) {
+      priority = "0.9";
+    }
+
+    if (url === "/index.html") {
+      priority = "1.0";
+    }
+
+    return `
+  <url>
+    <loc>${toUrl(url)}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>${priority}</priority>
+  </url>`;
+  })
+  .join("\n")}
+
+</urlset>`;
+}
+
+/**
+ * Run generator
+ */
+function generateSitemap() {
+  console.log("🗺 Generating sitemap...");
+
+  scanDir(ROOT_DIR);
+
+  const sitemap = buildSitemap(urls);
+
+  const outputPath = path.join(ROOT_DIR, "sitemap.xml");
+
+  fs.writeFileSync(outputPath, sitemap);
+
+  console.log(`✅ Sitemap generated with ${urls.length} URLs`);
+}
+
+generateSitemap();
