@@ -64,9 +64,49 @@
       <strong>Check your {{MAKE}} {{MODEL}} service quote</strong><br>
       Upload your invoice and get an AI breakdown in under 30 seconds.
       <br>
-      <a class="button" href="https://carithm.vercel.app/">Audit My Quote</a>
+      <a class="button" id="cta-link" href="https://carithm.vercel.app/">
+        Audit My Quote
+      </a>
     </div>
 
   </div>
+
+  <!-- STEP 7: REF PARAM PROPAGATION -->
+  <script>
+  (function applyRefTracking() {
+    const url = new URL(window.location.href);
+    const ref = url.searchParams.get("ref");
+    if (!ref) return;
+
+    const links = document.querySelectorAll("a[href]");
+
+    links.forEach(a => {
+      const href = a.getAttribute("href");
+
+      if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return;
+      if (href.startsWith("http") && !href.includes(location.host)) return;
+
+      try {
+        const u = new URL(href, window.location.origin);
+        u.searchParams.set("ref", ref);
+        a.href = u.toString();
+      } catch (e) {}
+    });
+  })();
+
+  (function attachRefToCTA() {
+    const url = new URL(window.location.href);
+    const ref = url.searchParams.get("ref");
+    if (!ref) return;
+
+    const cta = document.getElementById("cta-link");
+    if (!cta) return;
+
+    const target = new URL(cta.href);
+    target.searchParams.set("ref", ref);
+    cta.href = target.toString();
+  })();
+  </script>
+
 </body>
 </html>
