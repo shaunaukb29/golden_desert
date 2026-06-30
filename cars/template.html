@@ -99,12 +99,13 @@
 
   </div>
 
-  <!-- STEP 7: REF PARAM PROPAGATION -->
+  <!-- STEP 9: FIXED REF PARAM PROPAGATION -->
   <script>
   (function applyRefTracking() {
     const url = new URL(window.location.href);
     const ref = url.searchParams.get("ref");
-    if (!ref) return;
+
+    if (!ref || ref.length < 2 || ref.length > 50) return;
 
     const links = document.querySelectorAll("a[href]");
 
@@ -112,11 +113,17 @@
       const href = a.getAttribute("href");
 
       if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return;
-      if (href.startsWith("http") && !href.includes(location.host)) return;
+
+      const isExternal = href.startsWith("http") && !href.includes(window.location.hostname);
+      if (isExternal) return;
 
       try {
         const u = new URL(href, window.location.origin);
-        u.searchParams.set("ref", ref);
+
+        if (!u.searchParams.has("ref")) {
+          u.searchParams.set("ref", ref);
+        }
+
         a.href = u.toString();
       } catch (e) {}
     });
@@ -125,14 +132,21 @@
   (function attachRefToCTA() {
     const url = new URL(window.location.href);
     const ref = url.searchParams.get("ref");
-    if (!ref) return;
+
+    if (!ref || ref.length < 2 || ref.length > 50) return;
 
     const cta = document.getElementById("cta-link");
     if (!cta) return;
 
-    const target = new URL(cta.href);
-    target.searchParams.set("ref", ref);
-    cta.href = target.toString();
+    try {
+      const target = new URL(cta.href);
+
+      if (!target.searchParams.has("ref")) {
+        target.searchParams.set("ref", ref);
+      }
+
+      cta.href = target.toString();
+    } catch (e) {}
   })();
   </script>
 
