@@ -6,38 +6,30 @@ const BASE_URL = "https://carithm.vercel.app";
 const ROOT = process.cwd();
 const SITEMAP_PATH = path.join(ROOT, "sitemap_v4.xml");
 
-const CAR_DIRS = ["toyota", "bmw", "mercedes"];
+// IMPORTANT: adjust this path if your cars.json is elsewhere
+const CARS_PATH = path.join(ROOT, "cars", "cars.json");
 
 /**
- * SAFELY collect all car HTML pages
- * (no deep assumptions, Vercel-safe)
+ * Collect all car URLs from JSON (Vercel-safe, no filesystem scanning)
  */
 function getCarUrls() {
-  const urls = [];
-
-  for (const brand of CAR_DIRS) {
-    const brandPath = path.join(ROOT, brand);
-
-    if (!fs.existsSync(brandPath)) continue;
-
-    const models = fs.readdirSync(brandPath);
-
-    for (const model of models) {
-      const modelPath = path.join(brandPath, model);
-
-      if (!fs.existsSync(modelPath)) continue;
-
-      const files = fs.readdirSync(modelPath);
-
-      for (const file of files) {
-        if (file.endsWith(".html")) {
-          urls.push(`/${brand}/${model}/${file}`);
-        }
-      }
-    }
+  if (!fs.existsSync(CARS_PATH)) {
+    console.error("❌ cars.json not found at:", CARS_PATH);
+    return [];
   }
 
-  return urls;
+  const cars = JSON.parse(fs.readFileSync(CARS_PATH, "utf-8"));
+
+  return cars.map((car) => {
+    const make = car.make.toLowerCase().replace(/\s+/g, "-");
+    const model = car.model.toLowerCase().replace(/\s+/g, "-");
+
+    const slug =
+      car.slug ||
+      `${car.type || "repair-cost"}-${car.location || "uae"}`;
+
+    return `/${make}/${model}/${slug}.html`;
+  });
 }
 
 /**
@@ -70,7 +62,7 @@ function buildXml(urls) {
  * MAIN
  */
 function generateSitemap() {
-  console.log("🗺 Updating sitemap_v4.xml...");
+  console.log("🗺 Generating sitemap...");
 
   if (!fs.existsSync(SITEMAP_PATH)) {
     console.error("❌ sitemap_v4.xml not found");
@@ -83,7 +75,7 @@ function generateSitemap() {
   const dynamicXml = buildXml(carUrls);
 
   if (carUrls.length === 0) {
-    console.warn("⚠️ No car pages found — check build output directories");
+    console.warn("⚠️ No car pages found — check cars.json path/data");
   }
 
   const finalXml = staticXml.replace(
