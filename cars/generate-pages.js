@@ -1,5 +1,3 @@
-// cars/generate-pages.js
-
 const fs = require("fs");
 const path = require("path");
 const Handlebars = require("handlebars");
@@ -11,12 +9,8 @@ const cars = require("./cars.json");
 const templatePath = path.join(__dirname, "template.html");
 const templateSource = fs.readFileSync(templatePath, "utf-8");
 
-// Compile template once (important for performance)
 const compile = Handlebars.compile(templateSource);
 
-/**
- * Create SEO-friendly slug if not provided
- */
 function createSlug(car) {
   const make = car.make.toLowerCase().replace(/\s+/g, "-");
   const model = car.model.toLowerCase().replace(/\s+/g, "-");
@@ -27,24 +21,18 @@ function createSlug(car) {
   return `${type}-${location}`;
 }
 
-/**
- * Main generator
- */
 function generatePages() {
   console.log("🚀 Starting page generation...\n");
 
   cars.forEach((car, index) => {
     try {
-      // Build HTML from template
       const html = compile(car);
 
       const slug = car.slug || createSlug(car);
 
-      // Output folder structure:
-      // /car/toyota/camry/
+      // 🔥 IMPORTANT FIX: OUTPUT TO ROOT-LEVEL FOLDER
       const outputDir = path.join(
         __dirname,
-        "..",
         "..",
         car.make.toLowerCase().replace(/\s+/g, "-"),
         car.model.toLowerCase().replace(/\s+/g, "-")
