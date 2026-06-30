@@ -4,19 +4,12 @@ const path = require("path");
 const BASE_URL = "https://carithm.vercel.app";
 
 const ROOT = process.cwd();
-const SITEMAP_PATH = path.join(ROOT, "sitemap_v4.xml");
+const OUTPUT_PATH = path.join(ROOT, "sitemap_v4.xml");
 
-// IMPORTANT: adjust this path if your cars.json is elsewhere
 const CARS_PATH = path.join(ROOT, "cars", "cars.json");
 
-/**
- * Collect all car URLs from JSON (Vercel-safe, no filesystem scanning)
- */
 function getCarUrls() {
-  if (!fs.existsSync(CARS_PATH)) {
-    console.error("❌ cars.json not found at:", CARS_PATH);
-    return [];
-  }
+  if (!fs.existsSync(CARS_PATH)) return [];
 
   const cars = JSON.parse(fs.readFileSync(CARS_PATH, "utf-8"));
 
@@ -32,60 +25,75 @@ function getCarUrls() {
   });
 }
 
-/**
- * Convert URLs → sitemap XML blocks
- */
 function buildXml(urls) {
   const today = new Date().toISOString().split("T")[0];
 
   return urls
     .map((u) => {
-      const priority =
-        u.includes("/toyota/") ||
-        u.includes("/bmw/") ||
-        u.includes("/mercedes/")
-          ? "0.9"
-          : "0.8";
-
       return `
   <url>
     <loc>${BASE_URL}${u}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>${priority}</priority>
+    <priority>0.9</priority>
   </url>`;
     })
     .join("\n");
 }
 
-/**
- * MAIN
- */
 function generateSitemap() {
   console.log("🗺 Generating sitemap...");
-
-  if (!fs.existsSync(SITEMAP_PATH)) {
-    console.error("❌ sitemap_v4.xml not found");
-    process.exit(1);
-  }
-
-  const staticXml = fs.readFileSync(SITEMAP_PATH, "utf-8");
 
   const carUrls = getCarUrls();
   const dynamicXml = buildXml(carUrls);
 
-  if (carUrls.length === 0) {
-    console.warn("⚠️ No car pages found — check cars.json path/data");
-  }
+  const finalXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  const finalXml = staticXml.replace(
-    "</urlset>",
-    `${dynamicXml}\n</urlset>`
-  );
+  <!-- STATIC PAGES -->
+  <url>
+    <loc>${BASE_URL}/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-  fs.writeFileSync(SITEMAP_PATH, finalXml, "utf-8");
+  <url>
+    <loc>${BASE_URL}/blog/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-  console.log(`✅ Sitemap updated with ${carUrls.length} car pages`);
+  <url>
+    <loc>${BASE_URL}/predictive/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>${BASE_URL}/about/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>${BASE_URL}/research/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- CAR PAGES -->
+${dynamicXml}
+
+</urlset>`;
+
+  fs.writeFileSync(OUTPUT_PATH, finalXml, "utf-8");
+
+  console.log(`✅ Sitemap generated with ${carUrls.length} car pages`);
 }
 
 generateSitemap();
