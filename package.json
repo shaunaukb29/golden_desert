@@ -4,9 +4,9 @@
   "description": "Programmatic SEO generator for car repair cost pages",
   "main": "generate-pages.js",
   "scripts": {
-    "build": "node cars/generate-pages.js",
+    "build": "node cars/generate-pages.js && node generate-sitemap.js",
     "sitemap": "node generate-sitemap.js",
-    "deploy": "npm run build && npm run sitemap"
+    "deploy": "npm run build"
   },
   "dependencies": {
     "fs-extra": "^11.1.1",
