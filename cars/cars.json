@@ -1,0 +1,23 @@
+[
+  {
+    "make": "Toyota",
+    "model": "Camry",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "toyota-camry-repair-cost-uae"
+  },
+  {
+    "make": "BMW",
+    "model": "X5",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "bmw-x5-maintenance-cost-dubai"
+  },
+  {
+    "make": "Mercedes",
+    "model": "C200",
+    "country": "UAE",
+    "city": "Abu Dhabi",
+    "slug": "mercedes-c200-service-cost-abu-dhabi"
+  }
+]
