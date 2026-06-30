@@ -4,17 +4,16 @@ const path = require("path");
 const BASE_URL = "https://carithm.vercel.app";
 
 const ROOT = process.cwd();
-
-// your static sitemap file
 const SITEMAP_PATH = path.join(ROOT, "sitemap_v4.xml");
 
 const CAR_DIRS = ["toyota", "bmw", "mercedes"];
 
 /**
- * Scan only generated car pages safely
+ * SAFELY collect all car HTML pages
+ * (no deep assumptions, Vercel-safe)
  */
 function getCarUrls() {
-  let urls = [];
+  const urls = [];
 
   for (const brand of CAR_DIRS) {
     const brandPath = path.join(ROOT, brand);
@@ -42,26 +41,29 @@ function getCarUrls() {
 }
 
 /**
- * Convert URLs into sitemap XML blocks
+ * Convert URLs → sitemap XML blocks
  */
 function buildXml(urls) {
   const today = new Date().toISOString().split("T")[0];
 
-  return urls.map((u) => {
-    let priority = "0.8";
+  return urls
+    .map((u) => {
+      const priority =
+        u.includes("/toyota/") ||
+        u.includes("/bmw/") ||
+        u.includes("/mercedes/")
+          ? "0.9"
+          : "0.8";
 
-    if (u.includes("/toyota/") || u.includes("/bmw/") || u.includes("/mercedes/")) {
-      priority = "0.9";
-    }
-
-    return `
+      return `
   <url>
     <loc>${BASE_URL}${u}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${priority}</priority>
   </url>`;
-  }).join("\n");
+    })
+    .join("\n");
 }
 
 /**
@@ -80,7 +82,10 @@ function generateSitemap() {
   const carUrls = getCarUrls();
   const dynamicXml = buildXml(carUrls);
 
-  // insert BEFORE closing tag
+  if (carUrls.length === 0) {
+    console.warn("⚠️ No car pages found — check build output directories");
+  }
+
   const finalXml = staticXml.replace(
     "</urlset>",
     `${dynamicXml}\n</urlset>`
