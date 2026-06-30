@@ -1232,8 +1232,12 @@ header {
 <footer class="site-footer" aria-label="Site footer">
   <div class="footer-container">
     <div class="footer-col">
-      <a href="/" style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;color:#fff;text-decoration:none;">CARITHM<span style="color:var(--accent)"> AI</span></a>
-      <p class="mission-statement">Predictive maintenance intelligence for car owners across Dubai, Abu Dhabi, Sharjah and the GCC. We analyse every line item on your service quote against engine-specific lifecycle models — so you only replace parts when engineering standards say it's time.</p>
+      <a href="/" style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;color:#fff;text-decoration:none;">
+    CARITHM<span style="color:var(--accent)"> AI</span>
+    </a>
+      <p class="mission-statement">
+Check if your car repair bill is fair — instantly. We analyze every line item in your invoice and flag overpriced or unnecessary charges so you don’t get overcharged by garages in the UAE & GCC.
+</p>
       <p style="font-size:0.78rem;color:var(--muted);margin-top:0.6rem;line-height:1.6;">
         Built by <strong style="color:#94a3b8;">Shaunauk Basu</strong><br>
         <span style="color:#4ade80;font-weight:600;">✓ 2 Pilots completed</span><br>
@@ -1255,7 +1259,7 @@ header {
       <h4>Tools</h4>
       <ul>
         <li><a href="#auditor">Quote Auditor</a></li>
-        <li><a href="https://carithm.vercel.app/valuation/">UAE Car Valuation</a></li>
+        <li><a href="https://carithm.vercel.app/predictive/">UAE Car Valuation</a></li>
         <li><a href="#how-it-works-detail">How It Works</a></li>
         <li><a href="#explorer">Component Explorer</a></li>
       </ul>
@@ -1268,24 +1272,52 @@ header {
         <li><a href="https://carithm.vercel.app/research/">Car Care research</a></li>
         <li><a href="#faq">FAQ</a></li>
         <!-- SEO UPGRADE #28 — City landing page anchors for local SEO roadmap -->
-        <li><a href="#">Car Repairs Dubai</a></li>
-        <li><a href="#">Car Repairs Abu Dhabi</a></li>
+        <li><a href="/dubai/car-repairs">Car Repairs Dubai</a></li>
+        <li><a href="/abu-dhabi/car-repairs">Car Repairs Abu Dhabi</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
       <h4>Coverage</h4>
       <ul>
-        <li><a href="#">46+ Brands Modelled</a></li>
-        <li><a href="#">500+ Engine Variants</a></li>
-        <li><a href="#">15+ Lifecycle Components</a></li>
-        <li><a href="#">GCC Climate Adjusted</a></li>
-        <li><a href="#">UAE · Saudi Arabia · Kuwait</a></li>
+        <li><a href="#coverage-brands">46+ Brands Modeled</a></li>
+<li><a href="#coverage-engines">500+ Engine Variants</a></li>
+<li><a href="#coverage-components">15+ Lifecycle Components</a></li>
+<li><a href="#coverage-climate">GCC Climate Adjusted</a></li>
+<li><a href="#coverage-regions">UAE · Saudi Arabia · Kuwait</a></li>
       </ul>
     </div>
   </div>
 
-  <div class="footer-bottom">
+  <div class="footer-cta-strip" style="margin: 2rem 0; padding: 1.2rem; border: 1px solid var(--border); border-radius: 12px; background: rgba(255,255,255,0.02);">
+
+  <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;">
+    
+    <div>
+      <p style="margin:0;font-size:1rem;color:#fff;font-weight:600;">
+        Don’t overpay on your next service bill.
+      </p>
+      <p style="margin:0;font-size:0.85rem;color:var(--muted);">
+        Run a free AI audit on your repair quote in under 30 seconds.
+      </p>
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      
+      <a href="#auditor" 
+         style="padding:10px 14px;border-radius:8px;background:var(--accent);color:#000;font-weight:600;text-decoration:none;">
+         Audit My Quote
+      </a>
+
+      <a href="https://carithm.vercel.app/valuation/" 
+         style="padding:10px 14px;border-radius:8px;border:1px solid var(--border);color:#fff;text-decoration:none;">
+         Check Car Value
+      </a>
+
+    </div>
+
+  </div>
+</div>
     <!-- SEO UPGRADE #29 — Footer copy includes geo keywords naturally -->
     <p>&copy; 2026 Carithm. Free AI car repair quote checker for UAE & GCC car owners in Dubai, Abu Dhabi, and Sharjah. All rights reserved. | <a href="https://carithm.vercel.app/about/" style="color:var(--muted); text-decoration:none;">About</a> · <a href="#" style="color:var(--muted); text-decoration:none;">Privacy</a> · <a href="#" style="color:var(--muted); text-decoration:none;">Terms</a></p>
   </div>
@@ -1735,7 +1767,38 @@ async function submitHistoryAndGenerateReport() {
     const result = await API.post("/generate-report", payload);
     const reportMd = result.report_markdown ?? result.report ?? result.markdown ?? result.audit_report ?? (typeof result === "string" ? result : "");
     if (!reportMd) { setStatus("No evaluation report generated. Please repeat try.", "error"); return; }
-    reportEl.innerHTML = renderMarkdown(reportMd);
+    const shareId = Math.random().toString(36).substring(2, 10);
+
+const shareFooter = `
+<div style="margin-top:24px;padding:16px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,0.02);">
+  <p style="margin:0 0 8px 0;font-weight:600;color:#fff;">
+    Your AI audit is ready to share
+  </p>
+  <p style="margin:0 0 12px 0;color:var(--muted);font-size:0.85rem;">
+    Send this to your mechanic or save it for your next service visit.
+  </p>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;">
+    
+    <button id="share-report-btn"
+      style="padding:10px 14px;border-radius:8px;background:var(--accent);color:#000;font-weight:600;border:none;cursor:pointer;">
+      Copy Report Link
+    </button>
+
+    <a href="#auditor"
+      style="padding:10px 14px;border-radius:8px;border:1px solid var(--border);color:#fff;text-decoration:none;">
+      Audit Another Quote
+    </a>
+
+  </div>
+
+  <p style="margin-top:10px;font-size:0.75rem;color:var(--muted);">
+    Report ID: ${shareId}
+  </p>
+</div>
+`;
+
+reportEl.innerHTML = renderMarkdown(reportMd) + shareFooter;
     reportEl.classList.remove("hidden");
     reportEl.scrollIntoView({ behavior: "smooth", block: "start" });
     setStatus("Audit evaluation successfully completed.", "success");
@@ -1820,6 +1883,18 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(hotspotArea);
   }
 });
+document.addEventListener("click", async (e) => {
+  if (e.target && e.target.id === "share-report-btn") {
+    const text = window.location.href + "#report";
+    try {
+      await navigator.clipboard.writeText(text);
+      e.target.textContent = "Copied!";
+      setTimeout(() => e.target.textContent = "Copy Report Link", 1500);
+    } catch {
+      alert("Copy failed. Please copy manually.");
+    }
+  }
+});  
 </script>
 
 </body>
