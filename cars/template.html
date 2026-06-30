@@ -27,6 +27,22 @@
       background:rgba(255,255,255,0.03);
     }
 
+    .intent-box{
+      margin:18px 0;
+      padding:14px;
+      border:1px solid #334155;
+      border-radius:10px;
+      background:rgba(255,255,255,0.02);
+      font-size:0.9rem;
+      color:#cbd5e1;
+    }
+
+    .urgency {
+      color:#fbbf24;
+      font-size:0.85rem;
+      margin-top:18px;
+    }
+
     a.button {
       display:inline-block;
       margin-top:12px;
@@ -36,6 +52,12 @@
       font-weight:600;
       text-decoration:none;
       border-radius:8px;
+    }
+
+    .secondary {
+      margin-top:10px;
+      font-size:0.8rem;
+      color:#64748b;
     }
   </style>
 </head>
@@ -52,6 +74,12 @@
       🇦🇪 UAE & KSA repair benchmarks included
     </div>
 
+    <!-- STEP 10: SEO INTENT CAPTURE BLOCK -->
+    <div class="intent-box">
+      Looking for <strong>{{MAKE}} {{MODEL}} repair cost in UAE or GCC</strong>?  
+      This page breaks down real workshop pricing vs fair lifecycle benchmarks.
+    </div>
+
     <p>
       The {{MAKE}} {{MODEL}} is a widely serviced vehicle in the GCC region.
       However, repair costs vary significantly depending on workshop practices and part replacement decisions.
@@ -60,6 +88,11 @@
     <p>
       Carithm AI evaluates {{MAKE}} {{MODEL}} service quotes using lifecycle engineering data to identify overcharging and unnecessary replacements.
     </p>
+
+    <!-- STEP 10: comparison hook -->
+    <div class="intent-box">
+      Compare your invoice against real-world {{MAKE}} {{MODEL}} servicing patterns across Dubai, Abu Dhabi, and Saudi Arabia workshops.
+    </div>
 
     <h2>Common cost risks</h2>
     <ul>
@@ -70,11 +103,11 @@
     </ul>
 
     <!-- STEP 8: urgency trigger -->
-    <p style="color:#fbbf24;font-size:0.85rem;margin-top:18px;">
+    <p class="urgency">
       ⚠️ Most workshops overcharge on {{MAKE}} {{MODEL}} by 18–42% (based on GCC samples)
     </p>
 
-    <!-- STEP 8: upgraded CTA -->
+    <!-- STEP 10: CTA STACK -->
     <div class="cta">
       <strong>Stop overpaying on {{MAKE}} {{MODEL}} repairs</strong><br>
 
@@ -92,14 +125,19 @@
         Analyze My Quote Free
       </a>
 
-      <p style="margin-top:10px;font-size:0.75rem;color:#64748b;">
+      <div class="secondary">
         No signup required • Instant AI breakdown
-      </p>
+      </div>
+
+      <!-- STEP 10: micro-trust reinforcement -->
+      <div class="secondary">
+        Trusted across UAE & GCC workshops for lifecycle-based pricing validation
+      </div>
     </div>
 
   </div>
 
-  <!-- STEP 9: FIXED REF PARAM PROPAGATION -->
+  <!-- STEP 10 + STEP 9: REF TRACKING (FINAL CLEAN VERSION) -->
   <script>
   (function applyRefTracking() {
     const url = new URL(window.location.href);
