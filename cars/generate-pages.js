@@ -45,7 +45,7 @@ function generatePages() {
       const outputDir = path.join(
         __dirname,
         "..",
-        "car",
+        "..", "public",
         car.make.toLowerCase().replace(/\s+/g, "-"),
         car.model.toLowerCase().replace(/\s+/g, "-")
       );
