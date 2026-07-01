@@ -7,6 +7,21 @@
     "slug": "toyota-camry-repair-cost-uae"
   },
   {
+    "make": "Toyota",
+    "model": "Land Cruiser",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "toyota-land-cruiser-maintenance-cost-uae"
+  },
+  {
+    "make": "Toyota",
+    "model": "Corolla",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "toyota-corolla-service-cost-uae"
+  },
+
+  {
     "make": "BMW",
     "model": "X5",
     "country": "UAE",
@@ -14,10 +29,84 @@
     "slug": "bmw-x5-maintenance-cost-dubai"
   },
   {
+    "make": "BMW",
+    "model": "X3",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "bmw-x3-repair-cost-uae"
+  },
+  {
+    "make": "BMW",
+    "model": "5 Series",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "bmw-5-series-service-cost-uae"
+  },
+
+  {
     "make": "Mercedes",
     "model": "C200",
     "country": "UAE",
     "city": "Abu Dhabi",
     "slug": "mercedes-c200-service-cost-abu-dhabi"
+  },
+  {
+    "make": "Mercedes",
+    "model": "E300",
+    "country": "UAE",
+    "city": "Abu Dhabi",
+    "slug": "mercedes-e300-maintenance-cost-uae"
+  },
+  {
+    "make": "Mercedes",
+    "model": "GLE 350",
+    "country": "UAE",
+    "city": "Abu Dhabi",
+    "slug": "mercedes-gle-350-repair-cost-uae"
+  },
+
+  {
+    "make": "Nissan",
+    "model": "Patrol",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "nissan-patrol-maintenance-cost-uae"
+  },
+  {
+    "make": "Nissan",
+    "model": "Altima",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "nissan-altima-service-cost-uae"
+  },
+
+  {
+    "make": "Honda",
+    "model": "Accord",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "honda-accord-repair-cost-uae"
+  },
+  {
+    "make": "Honda",
+    "model": "Civic",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "honda-civic-maintenance-cost-uae"
+  },
+
+  {
+    "make": "Lexus",
+    "model": "RX 350",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "lexus-rx350-maintenance-cost-uae"
+  },
+  {
+    "make": "Lexus",
+    "model": "LX 570",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "lexus-lx570-repair-cost-uae"
   }
 ]
