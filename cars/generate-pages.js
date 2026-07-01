@@ -6,7 +6,12 @@ const BASE_URL = "https://carithm.vercel.app";
 const ROOT_DIR = process.cwd();
 
 const CARS_JSON_PATH = path.join(ROOT_DIR, "cars", "cars.json");
-const TEMPLATE_PATH = path.join(ROOT_DIR, "template.html");
+const TEMPLATE_PATH = path.join(ROOT_DIR, "cars", "template.html");
+const BRAND_TEMPLATE_PATH = path.join(ROOT_DIR, "brand-hub-template.html");
+const HOMEPAGE_PATH = path.join(ROOT_DIR, "index.html");
+
+const AUTO_LINKS_START = "<!-- AUTO_CAR_LINKS_START -->";
+const AUTO_LINKS_END = "<!-- AUTO_CAR_LINKS_END -->";
 
 // IndexNow config
 // Generate a key at https://www.bing.com/indexnow — it's just a random hex string.
@@ -102,6 +107,100 @@ function renderCarPage(template, car, allCars) {
 }
 
 /**
+ * Group cars by make.
+ */
+function groupByMake(cars) {
+  const groups = new Map();
+  for (const car of cars) {
+    if (!groups.has(car.make)) groups.set(car.make, []);
+    groups.get(car.make).push(car);
+  }
+  return groups;
+}
+
+/**
+ * Generate one hub page per brand (e.g. /toyota/index.html) listing
+ * every model page for that brand. Fixes the nav/hero links on the
+ * homepage that point at /toyota, /bmw, /mercedes.
+ */
+function generateBrandHubs(cars) {
+  if (!fs.existsSync(BRAND_TEMPLATE_PATH)) {
+    console.warn("⚠️  brand-hub-template.html not found — skipping brand hub generation.");
+    return [];
+  }
+
+  const brandTemplate = fs.readFileSync(BRAND_TEMPLATE_PATH, "utf-8");
+  const grouped = groupByMake(cars);
+  const generatedUrls = [];
+
+  for (const [make, models] of grouped.entries()) {
+    const makeLower = make.toLowerCase().replace(/\s+/g, "-");
+    const dir = path.join(ROOT_DIR, makeLower);
+    const filePath = path.join(dir, "index.html");
+    const url = `/${makeLower}/`;
+
+    const listHtml = models
+      .map((c) => {
+        const { url: carUrl } = getOutputPath(c);
+        return `      <li><a href="${carUrl}">${c.make} ${c.model} Repair Cost</a></li>`;
+      })
+      .join("\n");
+
+    let output = brandTemplate
+      .split("{{MAKE}}").join(make)
+      .split("{{MAKE_LOWER}}").join(makeLower)
+      .split("{{MODEL_COUNT}}").join(String(models.length))
+      .split("{{MODEL_LIST}}").join(listHtml)
+      .split("{{YEAR}}").join(String(new Date().getFullYear()));
+
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(filePath, output, "utf-8");
+    generatedUrls.push(url);
+
+    console.log(`  ✅ ${url} (${models.length} models)`);
+  }
+
+  return generatedUrls;
+}
+
+/**
+ * Keep the homepage footer's model links in sync with cars.json.
+ * Replaces everything between AUTO_CAR_LINKS_START/END markers.
+ * If the homepage or markers are missing, this is skipped safely —
+ * it never touches the file outside of those markers.
+ */
+function syncHomepageFooterLinks(cars) {
+  if (!fs.existsSync(HOMEPAGE_PATH)) {
+    console.warn("⚠️  index.html not found — skipping footer link sync.");
+    return;
+  }
+
+  const html = fs.readFileSync(HOMEPAGE_PATH, "utf-8");
+  const startIdx = html.indexOf(AUTO_LINKS_START);
+  const endIdx = html.indexOf(AUTO_LINKS_END);
+
+  if (startIdx === -1 || endIdx === -1 || endIdx < startIdx) {
+    console.warn("⚠️  AUTO_CAR_LINKS markers not found in index.html — skipping footer link sync.");
+    return;
+  }
+
+  const linksHtml = cars
+    .map((car) => {
+      const { url } = getOutputPath(car);
+      return `    <li>\n      <a href="${url}">\n        ${car.make} ${car.model} Repair Cost\n      </a>\n    </li>`;
+    })
+    .join("\n\n");
+
+  const before = html.slice(0, startIdx + AUTO_LINKS_START.length);
+  const after = html.slice(endIdx);
+
+  const updated = `${before}\n${linksHtml}\n    ${after}`;
+  fs.writeFileSync(HOMEPAGE_PATH, updated, "utf-8");
+
+  console.log(`  ✅ Homepage footer synced with ${cars.length} car links`);
+}
+
+/**
  * Ping IndexNow with the list of URLs that were generated/updated this run.
  */
 function pingIndexNow(urls) {
@@ -168,9 +267,16 @@ async function generatePages() {
     console.log(`  ✅ ${url}`);
   }
 
-  console.log(`✅ Generated ${generatedUrls.length} pages`);
+  console.log(`✅ Generated ${generatedUrls.length} car pages`);
 
-  await pingIndexNow(generatedUrls);
+  console.log("🏷️  Generating brand hub pages...");
+  const brandUrls = generateBrandHubs(cars);
+  console.log(`✅ Generated ${brandUrls.length} brand hub pages`);
+
+  console.log("🔗 Syncing homepage footer links...");
+  syncHomepageFooterLinks(cars);
+
+  await pingIndexNow([...generatedUrls, ...brandUrls]);
 }
 
 generatePages().catch((err) => {
