@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset 
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
-  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- =========================
        CORE STATIC PAGES
@@ -45,7 +42,7 @@
   </url>
 
   <!-- =========================
-       BLOG CONTENT
+       BLOG CONTENT (EXAMPLE)
   ========================== -->
 
   <url>
@@ -55,5 +52,97 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- =========================
+       CAR BRAND + MODEL PAGES
+       (MATCH YOUR ACTUAL STRUCTURE)
+  ========================== -->
+
+  <!-- TOYOTA -->
   <url>
-    <loc>
+    <loc>https://carithm.vercel.app/toyota/camry/toyota-camry-repair-cost-uae.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/toyota/corolla/toyota-corolla-service-cost-uae.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/toyota/land-cruiser/toyota-land-cruiser-maintenance-cost-uae.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- BMW -->
+  <url>
+    <loc>https://carithm.vercel.app/bmw/x5/bmw-x5-maintenance-cost-dubai.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/bmw/x3/bmw-x3-repair-cost-uae.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/bmw/5-series/bmw-5-series-service-cost-uae.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- MERCEDES -->
+  <url>
+    <loc>https://carithm.vercel.app/mercedes/c200/mercedes-c200-service-cost-abu-dhabi.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/mercedes/e300/mercedes-e300-maintenance-cost-uae.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/mercedes/gle-350/mercedes-gle-350-repair-cost-uae.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- OTHER BRANDS -->
+  <url>
+    <loc>https://carithm.vercel.app/nissan/patrol/nissan-patrol-maintenance-cost-uae.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/honda/civic/honda-civic-maintenance-cost-uae.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/lexus/rx-350/lexus-rx350-maintenance-cost-uae.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>
