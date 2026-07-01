@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- =========================
-       CORE STATIC PAGES
-  ========================== -->
+  <!-- STATIC PAGES -->
   <url>
     <loc>https://carithm.vercel.app/</loc>
     <lastmod>2026-07-01</lastmod>
@@ -33,10 +31,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- =========================
-       LOCATION HUB PAGES
-  ========================== -->
+  <!-- LOCATION HUB PAGES -->
   <url>
     <loc>https://carithm.vercel.app/dubai/car-repairs/</loc>
     <lastmod>2026-07-01</lastmod>
@@ -55,33 +50,22 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- BRAND HUBS, CAR PAGES, BLOG POSTS, RESEARCH PAGES (auto-discovered) -->
 
-  <!-- =========================
-       BLOG CONTENT (confirmed real)
-  ========================== -->
-  <url>
-    <loc>https://carithm.vercel.app/blog/how-to-fix-common-car-problems.html</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- =========================
-       BRAND HUB PAGES
-       (built by cars/generate-pages.js)
-  ========================== -->
   <url>
     <loc>https://carithm.vercel.app/toyota/</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://carithm.vercel.app/bmw/</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://carithm.vercel.app/mercedes/</loc>
     <lastmod>2026-07-01</lastmod>
@@ -89,24 +73,20 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- =========================
-       CAR MODEL PAGES
-       Flat pattern: /{make}/{slug}.html
-       (matches cars/generate-pages.js output — verified against cars.json)
-  ========================== -->
-  <!-- TOYOTA -->
   <url>
     <loc>https://carithm.vercel.app/toyota/toyota-camry-repair-cost-uae.html</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://carithm.vercel.app/toyota/toyota-land-cruiser-maintenance-cost-uae.html</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://carithm.vercel.app/toyota/toyota-corolla-service-cost-uae.html</loc>
     <lastmod>2026-07-01</lastmod>
@@ -114,19 +94,20 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- BMW -->
   <url>
     <loc>https://carithm.vercel.app/bmw/bmw-x5-maintenance-cost-dubai.html</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://carithm.vercel.app/bmw/bmw-x3-repair-cost-uae.html</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://carithm.vercel.app/bmw/bmw-5-series-service-cost-uae.html</loc>
     <lastmod>2026-07-01</lastmod>
@@ -134,24 +115,101 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- MERCEDES -->
   <url>
     <loc>https://carithm.vercel.app/mercedes/mercedes-c200-service-cost-abu-dhabi.html</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://carithm.vercel.app/mercedes/mercedes-e300-maintenance-cost-uae.html</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://carithm.vercel.app/mercedes/mercedes-gle-350-service-cost-abu-dhabi.html</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
+  <url>
+    <loc>https://carithm.vercel.app/blog/battery_problems.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/blog/diagnosing-car-engine-problems.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/blog/how-to-fix-common-car-problems.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/blog/things-to-check-before-buying-a-used-car.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/brakes.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/fleet.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/inspection.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/repair.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/servicing.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/suspension.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/workflow.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
