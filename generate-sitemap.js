@@ -47,16 +47,62 @@ function getLastMod(filePath) {
   }
 }
 
-function buildXml(carUrls) {
-  return carUrls
-    .map(({ url, filePath }) => {
+/**
+ * Scan a flat content folder (blog/, research/) for .html files.
+ * Excludes index.html from individual listing since it's added separately
+ * as the folder's hub URL.
+ */
+function scanContentFolder(folderName, options = {}) {
+  const folderPath = path.join(ROOT, folderName);
+  if (!fs.existsSync(folderPath)) return [];
+
+  const urls = [];
+  const entries = fs.readdirSync(folderPath);
+
+  for (const entry of entries) {
+    if (!entry.endsWith(".html")) continue;
+    if (entry === "index.html") continue; // hub page added separately
+    const filePath = path.join(folderPath, entry);
+    if (!fs.statSync(filePath).isFile()) continue;
+    urls.push({ url: `/${folderName}/${entry}`, filePath, priority: options.priority || "0.7" });
+  }
+
+  return urls;
+}
+
+/**
+ * Brand hub URLs (/{make}/), derived from cars.json makes.
+ * Only included if the hub file actually exists on disk.
+ */
+function getBrandHubUrls() {
+  if (!fs.existsSync(CARS_PATH)) return [];
+
+  const cars = JSON.parse(fs.readFileSync(CARS_PATH, "utf-8"));
+  const makes = [...new Set(cars.map((c) => c.make.toLowerCase().replace(/\s+/g, "-")))];
+  const urls = [];
+
+  for (const make of makes) {
+    const filePath = path.join(ROOT, make, "index.html");
+    if (!fs.existsSync(filePath)) {
+      console.warn(`⚠️  Skipping missing brand hub: /${make}/`);
+      continue;
+    }
+    urls.push({ url: `/${make}/`, filePath, priority: "0.8" });
+  }
+
+  return urls;
+}
+
+function buildXml(urls) {
+  return urls
+    .map(({ url, filePath, priority }) => {
       const lastmod = getLastMod(filePath);
       return `
   <url>
     <loc>${BASE_URL}${url}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>${priority || "0.7"}</priority>
   </url>`;
     })
     .join("\n");
@@ -66,8 +112,13 @@ function generateSitemap() {
   console.log("🗺 Generating sitemap...");
 
   const today = new Date().toISOString().split("T")[0];
-  const carUrls = getCarUrls();
-  const dynamicXml = buildXml(carUrls);
+
+  const carUrls = getCarUrls().map((u) => ({ ...u, priority: "0.9" }));
+  const brandUrls = getBrandHubUrls();
+  const blogUrls = scanContentFolder("blog", { priority: "0.8" });
+  const researchUrls = scanContentFolder("research", { priority: "0.7" });
+
+  const allDynamicXml = buildXml([...brandUrls, ...carUrls, ...blogUrls, ...researchUrls]);
 
   const finalXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -100,7 +151,7 @@ function generateSitemap() {
     <loc>${BASE_URL}/research/</loc>
     <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <!-- LOCATION HUB PAGES -->
   <url>
@@ -121,12 +172,14 @@ function generateSitemap() {
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- CAR PAGES -->
-${dynamicXml}
+  <!-- BRAND HUBS, CAR PAGES, BLOG POSTS, RESEARCH PAGES (auto-discovered) -->
+${allDynamicXml}
 </urlset>`;
 
   fs.writeFileSync(OUTPUT_PATH, finalXml, "utf-8");
-  console.log(`✅ Sitemap generated with ${carUrls.length} car pages`);
+  console.log(
+    `✅ Sitemap generated: ${brandUrls.length} brand hubs, ${carUrls.length} car pages, ${blogUrls.length} blog posts, ${researchUrls.length} research pages`
+  );
 }
 
 generateSitemap();
