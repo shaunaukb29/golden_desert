@@ -1,285 +1,312 @@
-const fs = require("fs");
-const path = require("path");
-const https = require("https");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
-const BASE_URL = "https://carithm.vercel.app";
-const ROOT_DIR = process.cwd();
+  <title>{{MAKE}} {{MODEL}} Repair Cost UAE (2026) | Carithm</title>
 
-const CARS_JSON_PATH = path.join(ROOT_DIR, "cars", "cars.json");
-const TEMPLATE_PATH = path.join(ROOT_DIR, "cars", "template.html");
-const BRAND_TEMPLATE_PATH = path.join(ROOT_DIR, "brand-hub-template.html");
-const HOMEPAGE_PATH = path.join(ROOT_DIR, "index.html");
+  <meta name="description" content="{{MAKE}} {{MODEL}} repair & service costs in UAE: dealer vs independent pricing, common issues, and yearly ownership estimates.">
 
-const AUTO_LINKS_START = "<!-- AUTO_CAR_LINKS_START -->";
-const AUTO_LINKS_END = "<!-- AUTO_CAR_LINKS_END -->";
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
 
-// IndexNow config
-// Generate a key at https://www.bing.com/indexnow — it's just a random hex string.
-// Host it at https://carithm.vercel.app/{INDEXNOW_KEY}.txt containing only the key itself.
-const INDEXNOW_KEY = process.env.INDEXNOW_KEY || "REPLACE_WITH_YOUR_INDEXNOW_KEY";
-const INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow";
+  <!-- CANONICAL -->
+  <link rel="canonical" href="https://carithm.vercel.app/{{MAKE_LOWER}}/{{MODEL_SLUG}}.html">
 
-/**
- * Load and parse cars.json
- */
-function loadCars() {
-  const raw = fs.readFileSync(CARS_JSON_PATH, "utf-8");
-  return JSON.parse(raw);
-}
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="{{MAKE}} {{MODEL}} UAE Repair Cost Guide (2026)">
+  <meta property="og:description" content="Full cost breakdown: servicing, repairs, common issues, and ownership estimates for {{MAKE}} {{MODEL}} in UAE.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://carithm.vercel.app/{{MAKE_LOWER}}/{{MODEL_SLUG}}.html">
+  <meta property="og:image" content="{{OG_IMAGE}}">
 
-/**
- * Build the file path + URL for a given car.
- * Uses the car's own slug as the filename: /{make}/{slug}.html
- */
-function getOutputPath(car) {
-  const makeLower = car.make.toLowerCase().replace(/\s+/g, "-");
-  const dir = path.join(ROOT_DIR, makeLower);
-  const filePath = path.join(dir, `${car.slug}.html`);
-  const url = `/${makeLower}/${car.slug}.html`;
-  return { dir, filePath, url, makeLower };
-}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{MAKE}} {{MODEL}} Maintenance Cost UAE (2026)">
+  <meta name="twitter:description" content="Real-world {{MAKE}} {{MODEL}} repair costs: dealer vs independent garages, common issues, and annual ownership cost.">
+  <meta name="twitter:image" content="{{OG_IMAGE}}">
 
-/**
- * Build the related-links <li> markup for other models of the same make,
- * excluding the current car itself.
- */
-function buildRelatedLinks(car, allCars) {
-  const siblings = allCars.filter(
-    (c) => c.make === car.make && c.slug !== car.slug
-  );
-
-  if (siblings.length === 0) return { html: "", hasRelated: false };
-
-  const html = siblings
-    .map((c) => {
-      const { url } = getOutputPath(c);
-      return `      <li><a href="${url}">${c.make} ${c.model} Repair Cost</a></li>`;
-    })
-    .join("\n");
-
-  return { html, hasRelated: true };
-}
-
-/**
- * Resolve the {{#IF_RELATED_LINKS}}...{{/IF_RELATED_LINKS}} block.
- * Strips the block entirely if there are no related links, otherwise
- * keeps the inner content and removes just the markers.
- */
-function resolveConditionalBlock(template, hasRelated) {
-  const blockRegex = /{{#IF_RELATED_LINKS}}([\s\S]*?){{\/IF_RELATED_LINKS}}/;
-
-  if (hasRelated) {
-    return template.replace(blockRegex, (_, inner) => inner);
+  <!-- JSON-LD: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://carithm.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{MAKE}}",
+        "item": "https://carithm.vercel.app/{{MAKE_LOWER}}/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{{MODEL}}",
+        "item": "https://carithm.vercel.app/{{MAKE_LOWER}}/{{MODEL_SLUG}}.html"
+      }
+    ]
   }
-  return template.replace(blockRegex, "");
-}
+  </script>
 
-/**
- * Fill all placeholders in the template for a single car.
- */
-function renderCarPage(template, car, allCars) {
-  const { url, makeLower } = getOutputPath(car);
-  const modelSlug = car.slug.replace(new RegExp(`^${makeLower}-`), "");
-  const today = new Date().toISOString().split("T")[0];
-  const year = new Date().getFullYear();
-
-  const { html: relatedLinksHtml, hasRelated } = buildRelatedLinks(car, allCars);
-
-  let output = resolveConditionalBlock(template, hasRelated);
-
-  const replacements = {
-    "{{MAKE}}": car.make,
-    "{{MODEL}}": car.model,
-    "{{MAKE_LOWER}}": makeLower,
-    "{{MODEL_SLUG}}": car.slug,
-    "{{OG_IMAGE}}": car.og_image || `${BASE_URL}/og-image.png`,
-    "{{DATE_PUBLISHED}}": car.date_published || today,
-    "{{DATE_MODIFIED}}": today,
-    "{{YEAR}}": String(year),
-    "{{RELATED_LINKS}}": relatedLinksHtml,
-  };
-
-  for (const [placeholder, value] of Object.entries(replacements)) {
-    output = output.split(placeholder).join(value);
+  <!-- JSON-LD: FAQ (enables FAQ rich results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is {{MAKE}} {{MODEL}} expensive to maintain in UAE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on mileage and service history, but GCC heat increases wear on AC and suspension systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is dealer service more expensive?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dealers typically charge 30-60% more due to labor rates and OEM parts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I service {{MAKE}} {{MODEL}}?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually every 10,000 km or 6-12 months depending on driving conditions."
+        }
+      }
+    ]
   }
+  </script>
 
-  return { output, url };
-}
-
-/**
- * Group cars by make.
- */
-function groupByMake(cars) {
-  const groups = new Map();
-  for (const car of cars) {
-    if (!groups.has(car.make)) groups.set(car.make, []);
-    groups.get(car.make).push(car);
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{MAKE}} {{MODEL}} Repair & Maintenance Cost in UAE (2026)",
+    "description": "{{MAKE}} {{MODEL}} repair & service costs in UAE: dealer vs independent pricing, common issues, and yearly ownership estimates.",
+    "author": { "@type": "Organization", "name": "Carithm" },
+    "publisher": { "@type": "Organization", "name": "Carithm" },
+    "mainEntityOfPage": "https://carithm.vercel.app/{{MAKE_LOWER}}/{{MODEL_SLUG}}.html",
+    "datePublished": "{{DATE_PUBLISHED}}",
+    "dateModified": "{{DATE_MODIFIED}}"
   }
-  return groups;
-}
+  </script>
 
-/**
- * Generate one hub page per brand (e.g. /toyota/index.html) listing
- * every model page for that brand. Fixes the nav/hero links on the
- * homepage that point at /toyota, /bmw, /mercedes.
- */
-function generateBrandHubs(cars) {
-  if (!fs.existsSync(BRAND_TEMPLATE_PATH)) {
-    console.warn("⚠️  brand-hub-template.html not found — skipping brand hub generation.");
-    return [];
-  }
-
-  const brandTemplate = fs.readFileSync(BRAND_TEMPLATE_PATH, "utf-8");
-  const grouped = groupByMake(cars);
-  const generatedUrls = [];
-
-  for (const [make, models] of grouped.entries()) {
-    const makeLower = make.toLowerCase().replace(/\s+/g, "-");
-    const dir = path.join(ROOT_DIR, makeLower);
-    const filePath = path.join(dir, "index.html");
-    const url = `/${makeLower}/`;
-
-    const listHtml = models
-      .map((c) => {
-        const { url: carUrl } = getOutputPath(c);
-        return `      <li><a href="${carUrl}">${c.make} ${c.model} Repair Cost</a></li>`;
-      })
-      .join("\n");
-
-    let output = brandTemplate
-      .split("{{MAKE}}").join(make)
-      .split("{{MAKE_LOWER}}").join(makeLower)
-      .split("{{MODEL_COUNT}}").join(String(models.length))
-      .split("{{MODEL_LIST}}").join(listHtml)
-      .split("{{YEAR}}").join(String(new Date().getFullYear()));
-
-    fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(filePath, output, "utf-8");
-    generatedUrls.push(url);
-
-    console.log(`  ✅ ${url} (${models.length} models)`);
-  }
-
-  return generatedUrls;
-}
-
-/**
- * Keep the homepage footer's model links in sync with cars.json.
- * Replaces everything between AUTO_CAR_LINKS_START/END markers.
- * If the homepage or markers are missing, this is skipped safely —
- * it never touches the file outside of those markers.
- */
-function syncHomepageFooterLinks(cars) {
-  if (!fs.existsSync(HOMEPAGE_PATH)) {
-    console.warn("⚠️  index.html not found — skipping footer link sync.");
-    return;
-  }
-
-  const html = fs.readFileSync(HOMEPAGE_PATH, "utf-8");
-  const startIdx = html.indexOf(AUTO_LINKS_START);
-  const endIdx = html.indexOf(AUTO_LINKS_END);
-
-  if (startIdx === -1 || endIdx === -1 || endIdx < startIdx) {
-    console.warn("⚠️  AUTO_CAR_LINKS markers not found in index.html — skipping footer link sync.");
-    return;
-  }
-
-  const linksHtml = cars
-    .map((car) => {
-      const { url } = getOutputPath(car);
-      return `    <li>\n      <a href="${url}">\n        ${car.make} ${car.model} Repair Cost\n      </a>\n    </li>`;
-    })
-    .join("\n\n");
-
-  const before = html.slice(0, startIdx + AUTO_LINKS_START.length);
-  const after = html.slice(endIdx);
-
-  const updated = `${before}\n${linksHtml}\n    ${after}`;
-  fs.writeFileSync(HOMEPAGE_PATH, updated, "utf-8");
-
-  console.log(`  ✅ Homepage footer synced with ${cars.length} car links`);
-}
-
-/**
- * Ping IndexNow with the list of URLs that were generated/updated this run.
- */
-function pingIndexNow(urls) {
-  return new Promise((resolve) => {
-    if (!urls.length) return resolve();
-
-    if (!INDEXNOW_KEY || INDEXNOW_KEY === "REPLACE_WITH_YOUR_INDEXNOW_KEY") {
-      console.warn("⚠️  INDEXNOW_KEY not set — skipping IndexNow ping.");
-      return resolve();
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background:#0b0f14;
+      color:#fff;
+      margin:0;
+      padding:40px;
+      line-height:1.7;
     }
 
-    const payload = JSON.stringify({
-      host: "carithm.vercel.app",
-      key: INDEXNOW_KEY,
-      keyLocation: `${BASE_URL}/${INDEXNOW_KEY}.txt`,
-      urlList: urls.map((u) => `${BASE_URL}${u}`),
-    });
+    .container { max-width:850px; margin:auto; }
 
-    const req = https.request(
-      INDEXNOW_ENDPOINT,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json; charset=utf-8",
-          "Content-Length": Buffer.byteLength(payload),
-        },
-      },
-      (res) => {
-        console.log(`📡 IndexNow ping status: ${res.statusCode}`);
-        res.on("data", () => {});
-        res.on("end", resolve);
-      }
-    );
+    h1 { font-size: 2rem; margin-bottom: 10px; }
 
-    req.on("error", (err) => {
-      console.error("⚠️  IndexNow ping failed:", err.message);
-      resolve();
-    });
+    h2 {
+      margin-top:28px;
+      font-size:1.3rem;
+      border-left:4px solid #4ade80;
+      padding-left:10px;
+    }
 
-    req.write(payload);
-    req.end();
-  });
-}
+    .box {
+      margin:18px 0;
+      padding:16px;
+      border:1px solid #334155;
+      border-radius:10px;
+      background:rgba(255,255,255,0.03);
+    }
 
-/**
- * MAIN
- */
-async function generatePages() {
-  console.log("🚗 Generating car pages...");
+    .note { font-size:0.85rem; color:#94a3b8; }
 
-  const cars = loadCars();
-  const template = fs.readFileSync(TEMPLATE_PATH, "utf-8");
+    table {
+      width:100%;
+      border-collapse: collapse;
+      margin-top:10px;
+      font-size:0.95rem;
+    }
 
-  const generatedUrls = [];
+    td, th {
+      border-bottom:1px solid #334155;
+      padding:10px;
+      text-align:left;
+    }
 
-  for (const car of cars) {
-    const { dir, filePath } = getOutputPath(car);
-    const { output, url } = renderCarPage(template, car, cars);
+    a.button {
+      display:inline-block;
+      margin-top:12px;
+      padding:12px 16px;
+      background:#4ade80;
+      color:#000;
+      font-weight:600;
+      text-decoration:none;
+      border-radius:8px;
+    }
 
-    fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(filePath, output, "utf-8");
-    generatedUrls.push(url);
+    ul { padding-left:18px; }
 
-    console.log(`  ✅ ${url}`);
-  }
+    .hub {
+      font-size:0.9rem;
+      margin-bottom:10px;
+      color:#94a3b8;
+    }
+  </style>
+</head>
 
-  console.log(`✅ Generated ${generatedUrls.length} car pages`);
+<body>
+<header class="container">
+  <!-- HUB — only rendered by the generator if /repair-costs/ actually exists -->
+  <div class="hub">
+    <a href="/repair-costs/">← Browse all car repair guides</a>
+  </div>
+</header>
 
-  console.log("🏷️  Generating brand hub pages...");
-  const brandUrls = generateBrandHubs(cars);
-  console.log(`✅ Generated ${brandUrls.length} brand hub pages`);
+<main class="container">
 
-  console.log("🔗 Syncing homepage footer links...");
-  syncHomepageFooterLinks(cars);
+  <h1>{{MAKE}} {{MODEL}} Repair & Maintenance Cost in UAE (2026)</h1>
 
-  await pingIndexNow([...generatedUrls, ...brandUrls]);
-}
+  <!-- INTRO -->
+  <p class="box">
+    This page breaks down real {{MAKE}} {{MODEL}} repair costs in UAE workshops, including dealer vs independent garage pricing, common failure points, and annual ownership estimates to help you avoid overpaying.
+  </p>
 
-generatePages().catch((err) => {
-  console.error("❌ Page generation failed:", err);
-  process.exit(1);
-});
+  <!-- BRAND AUTHORITY CONTEXT -->
+  <p>
+    This guide is part of our UAE car repair database covering
+    <a href="/repair-costs/">repair cost benchmarks</a> and
+    <a href="/maintenance-guide/">maintenance schedules</a>.
+  </p>
+
+  <!-- SECTION 1 -->
+  <h2>Average Service Costs for {{MAKE}} {{MODEL}}</h2>
+
+  <div class="box">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Service Type</th>
+          <th scope="col">Estimated Cost (AED)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Minor Service</td><td>400 – 900</td></tr>
+        <tr><td>Major Service</td><td>1,200 – 3,500</td></tr>
+        <tr><td>Brake Replacement</td><td>800 – 2,200</td></tr>
+        <tr><td>AC System Repair</td><td>600 – 3,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="note">
+    Dealer pricing is often 30–60% higher than independent garages in UAE.
+  </p>
+
+  <!-- SECTION 2 -->
+  <h2>Common {{MAKE}} {{MODEL}} Issues in GCC Climate</h2>
+
+  <div class="box">
+    <ul>
+      <li>AC compressor wear due to extreme heat</li>
+      <li>Suspension degradation from road conditions</li>
+      <li>Brake wear from city driving</li>
+      <li>Sensor and electrical issues in older models</li>
+    </ul>
+  </div>
+
+  <p>
+    Learn more in our <a href="/maintenance-guide/">GCC maintenance guide</a>.
+  </p>
+
+  <!-- SECTION 3 -->
+  <h2>Dealer vs Independent Garage Pricing</h2>
+
+  <div class="box">
+    Dealer servicing is typically 30–60% more expensive than independent workshops in UAE.
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2>Annual Ownership Cost Estimate</h2>
+
+  <div class="box">
+    <b>Low usage:</b> AED 2,000 – 4,000 / year<br>
+    <b>Average usage:</b> AED 4,000 – 8,000 / year<br>
+    <b>High usage:</b> AED 8,000 – 15,000+ / year
+  </div>
+
+  <!-- SECTION 5 -->
+  <h2>Why Costs Vary</h2>
+
+  <div class="box note">
+    Costs vary due to driving style, service history, workshop type, and GCC climate impact on parts durability.
+  </div>
+
+  <!-- SECTION 6: only rendered by the generator if related models exist -->
+  {{#IF_RELATED_LINKS}}
+  <h2>Related {{MAKE}} Models</h2>
+
+  <div class="box">
+    <ul>
+      {{RELATED_LINKS}}
+    </ul>
+  </div>
+  {{/IF_RELATED_LINKS}}
+
+  <!-- SECTION 7 -->
+  <h2>Compare Across Brands</h2>
+
+  <div class="box">
+    <ul>
+      <li><a href="/toyota/">Toyota repair cost guides</a></li>
+      <li><a href="/bmw/">BMW maintenance cost breakdowns</a></li>
+      <li><a href="/mercedes/">Mercedes service pricing UAE</a></li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="box">
+
+    <strong>Is {{MAKE}} {{MODEL}} expensive to maintain in UAE?</strong>
+    <p>It depends on mileage and service history, but GCC heat increases wear on AC and suspension systems.</p>
+
+    <strong>Why is dealer service more expensive?</strong>
+    <p>Dealers typically charge 30–60% more due to labor rates and OEM parts.</p>
+
+    <strong>How often should I service {{MAKE}} {{MODEL}}?</strong>
+    <p>Usually every 10,000 km or 6–12 months depending on driving conditions.</p>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="box">
+    <strong>Want deeper analysis?</strong><br>
+    Upload your invoice and compare it against real UAE workshop benchmarks.
+    <br>
+    <a class="button" href="https://carithm.vercel.app/">
+      Analyze My Repair Cost
+    </a>
+  </div>
+
+</main>
+
+<footer class="container note">
+  <p>© {{YEAR}} Carithm — {{MAKE}} {{MODEL}} repair cost data for the UAE.</p>
+</footer>
+
+</body>
+</html>
