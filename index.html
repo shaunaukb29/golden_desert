@@ -647,17 +647,23 @@ header {
 <!-- SEO UPGRADE #11 — Skip link for accessibility (also a crawlability signal) -->
 <a href="#auditor" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.left='8px';this.style.top='8px';this.style.width='auto';this.style.height='auto';this.style.zIndex='999';this.style.background='#111';this.style.color='#fff';this.style.padding='8px 12px';this.style.borderRadius='6px';" onblur="this.style.left='-9999px';this.style.width='1px';this.style.height='1px'">Skip to main content</a>
 
-<header>
-  <!-- SEO UPGRADE #12 — Logo wrapped in anchor tag pointing to homepage -->
-  <a href="/" class="nav-logo" aria-label="Carithm home">CARITHM<span> AI</span></a>
-  <nav class="nav" aria-label="Main navigation">
-    <!-- SEO UPGRADE #13 — Added descriptive nav links for internal linking -->
-    <a href="#how-it-works">How It Works</a>
-    <a href="#faq">FAQ</a>
-    <a href="https://carithm.vercel.app/research/" aria-label="Car care research">Research</a>
-    <a href="#auditor" class="cta-btn">Check My Quote</a>
-  </nav>
-</header>
+<nav class="nav" aria-label="Main navigation">
+
+  <!-- CORE PAGES -->
+  <a href="/">Home</a>
+
+  <a href="/toyota">Toyota</a>
+  <a href="/bmw">BMW</a>
+  <a href="/mercedes">Mercedes</a>
+
+  <!-- SUPPORT -->
+  <a href="/repair-costs">Costs</a>
+  <a href="/maintenance-guide">Guide</a>
+
+  <!-- CTA -->
+  <a href="#auditor" class="cta-btn">Check Quote</a>
+
+</nav>
 
 <!-- ══════════════════════════════════════════════
      SEO UPGRADE #14 — Hero section restructured:
@@ -668,51 +674,91 @@ header {
 ══════════════════════════════════════════════ -->
 <section class="hero-section" id="auditor" aria-label="Car service quote checker tool" style="padding-top: 110px; text-align: center; max-width: 600px; margin: 0 auto 0;">
 
-  <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px;">Garage says you need a service?</p>
+  <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px;">
+    Is your car service actually due?
+  </p>
 
-  <!-- THE REAL H1 — targets panic-intent search phrases, crawlable, semantically correct -->
+  <!-- MAIN H1 -->
   <h1 style="font-size: clamp(2.2rem, 6vw, 3.4rem); font-weight: 700; letter-spacing: -0.03em; color: var(--text); margin-bottom: 1rem; line-height: 1.05;">
     Check if it's actually<br>due before you pay
   </h1>
 
-  <!-- Body copy mentions Dubai, Abu Dhabi, Sharjah for local geo signals -->
-  <p style="font-size: 1rem; color: var(--muted); max-width: 460px; margin: 0 auto 28px; line-height: 1.65;">
-    Garages sometimes recommend maintenance well before it's genuinely needed. Upload your service quote and get an independent AI second opinion in under 30 seconds — no signup. Used by car owners across Dubai, Abu Dhabi, Sharjah, and the wider GCC.
+  <!-- SEO + INTERNAL LINKS (enhanced but still clean UX) -->
+  <p style="font-size: 1rem; color: var(--muted); max-width: 460px; margin: 0 auto 18px; line-height: 1.65;">
+    Garages sometimes recommend maintenance earlier than necessary. Upload your service quote and get an independent AI second opinion in under 30 seconds — no signup. Used by car owners across
+    <a href="/dubai/car-repairs" style="color:var(--accent); text-decoration:none;">Dubai</a>,
+    <a href="/abu-dhabi/car-repairs" style="color:var(--accent); text-decoration:none;">Abu Dhabi</a>,
+    Sharjah, and the wider GCC.
   </p>
 
+  <!-- BRAND HUB INTERNAL LINKS (SEO CLUSTER #1) -->
+  <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:18px;">
+    <a href="/toyota" style="font-size:12px; color:var(--accent); text-decoration:none; border:1px solid var(--border); padding:6px 10px; border-radius:999px;">
+      Toyota Repair Costs
+    </a>
+    <a href="/bmw" style="font-size:12px; color:var(--accent); text-decoration:none; border:1px solid var(--border); padding:6px 10px; border-radius:999px;">
+      BMW Maintenance Costs
+    </a>
+    <a href="/mercedes" style="font-size:12px; color:var(--accent); text-decoration:none; border:1px solid var(--border); padding:6px 10px; border-radius:999px;">
+      Mercedes Service Intervals
+    </a>
+  </div>
+
+  <!-- TRUST PILLS -->
   <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:36px;">
     <div style="display:flex; align-items:center; gap:7px; background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:#4ade80; padding:7px 14px; border-radius:99px; font-size:13px; font-weight:500;">✓ Free</div>
     <div style="display:flex; align-items:center; gap:7px; background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:#4ade80; padding:7px 14px; border-radius:99px; font-size:13px; font-weight:500;">✓ No signup</div>
-    <div style="display:flex; align-items:center; gap:7px; background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:#4ade80; padding:7px 14px; border-radius:99px; font-size:13px; font-weight:500;">✓ Takes under 30 seconds</div>
-    <div style="display:flex; align-items:center; gap:7px; background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:#4ade80; padding:7px 14px; border-radius:99px; font-size:13px; font-weight:500;">✓ Works with photos and PDFs</div>
+    <div style="display:flex; align-items:center; gap:7px; background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:#4ade80; padding:7px 14px; border-radius:99px; font-size:13px; font-weight:500;">✓ Under 30 seconds</div>
+    <div style="display:flex; align-items:center; gap:7px; background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:#4ade80; padding:7px 14px; border-radius:99px; font-size:13px; font-weight:500;">✓ Photo & PDF support</div>
   </div>
 
+  <!-- TRUST METRICS -->
   <div class="trust" style="margin-bottom:36px; border-radius:12px; overflow:hidden;">
     <div><div class="trust-num">46<span>+</span></div><div class="trust-lbl">Makes Supported</div></div>
     <div><div class="trust-num">500<span>+</span></div><div class="trust-lbl">Engine Models</div></div>
-    <div><div class="trust-num" style="font-size:14px; padding-top:4px;">GCC<span>✓</span></div><div class="trust-lbl">Climate Built-in</div></div>
-    <div><div class="trust-num">0</div><div class="trust-lbl">Garage Commissions</div></div>
+    <div><div class="trust-num" style="font-size:14px; padding-top:4px;">GCC<span>✓</span></div><div class="trust-lbl">Climate Adjusted</div></div>
+    <div><div class="trust-num">0</div><div class="trust-lbl">Garage Commission Bias</div></div>
   </div>
 
+  <!-- SEO CONTEXT BLOCK (NEW — authority + linking signal) -->
+  <p style="font-size: 0.95rem; color: var(--muted); max-width: 520px; margin: 0 auto 28px; line-height: 1.6;">
+    Compare repair needs across
+    <a href="/repair-costs" style="color:var(--accent); text-decoration:none;">car repair cost patterns</a>
+    and
+    <a href="/maintenance-guide" style="color:var(--accent); text-decoration:none;">maintenance schedules</a>
+    to understand whether your quote is necessary or premature.
+  </p>
+
+  <!-- EXAMPLE OUTPUT -->
   <div style="background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px 24px; text-align:left; margin-bottom:0;">
-    <div style="font-size:10px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:14px;">Example — What you'll see</div>
+
+    <div style="font-size:10px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:14px;">
+      Example — What you'll see
+    </div>
+
     <div style="display:flex; flex-direction:column; gap:8px;">
+
       <div style="display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:12px; padding:10px 12px; background:var(--surface2); border-radius:8px; border:1px solid var(--border);">
         <div style="font-size:13px; font-weight:500;">Brake Pads</div>
         <div style="font-size:13px; font-weight:600; color:var(--muted);">AED 700</div>
-        <div style="background:rgba(34,197,94,0.12); color:#4ade80; border:1px solid rgba(34,197,94,0.25); padding:3px 9px; border-radius:99px; font-size:11px; font-weight:600; white-space:nowrap;">✅ Needed</div>
+        <div style="background:rgba(34,197,94,0.12); color:#4ade80; border:1px solid rgba(34,197,94,0.25); padding:3px 9px; border-radius:99px; font-size:11px; font-weight:600;">✓ Needed</div>
       </div>
+
       <div style="display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:12px; padding:10px 12px; background:var(--surface2); border-radius:8px; border:1px solid rgba(239,68,68,0.2);">
         <div style="font-size:13px; font-weight:500;">Engine Flush</div>
         <div style="font-size:13px; font-weight:600; color:var(--muted);">AED 450</div>
-        <div style="background:rgba(239,68,68,0.12); color:#f87171; border:1px solid rgba(239,68,68,0.25); padding:3px 9px; border-radius:99px; font-size:11px; font-weight:600; white-space:nowrap;">❌ Not Necessary</div>
+        <div style="background:rgba(239,68,68,0.12); color:#f87171; border:1px solid rgba(239,68,68,0.25); padding:3px 9px; border-radius:99px; font-size:11px; font-weight:600;">✕ Not Necessary</div>
       </div>
+
     </div>
+
     <div style="margin-top:12px; padding:10px 12px; background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.18); border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
       <div style="font-size:12px; color:var(--muted);">Potential Saving</div>
       <div style="font-size:18px; font-weight:700; color:#4ade80;">AED 450</div>
     </div>
+
   </div>
+
 </section>
 
 <div class="shell" id="tool-shell" style="padding-top:32px;">
@@ -1231,96 +1277,105 @@ header {
 
 <footer class="site-footer" aria-label="Site footer">
   <div class="footer-container">
+
+    <!-- BRAND + TRUST -->
     <div class="footer-col">
       <a href="/" style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;color:#fff;text-decoration:none;">
-    CARITHM<span style="color:var(--accent)"> AI</span>
-    </a>
+        CARITHM<span style="color:var(--accent)"> AI</span>
+      </a>
+
       <p class="mission-statement">
-Check if your car repair bill is fair — instantly. We analyze every line item in your invoice and flag overpriced or unnecessary charges so you don’t get overcharged by garages in the UAE & GCC.
-</p>
+        Check if your car repair bill is fair — instantly. We analyze every line item in your invoice and flag overpriced or unnecessary charges so you don’t get overcharged by garages in the UAE & GCC.
+      </p>
+
       <p style="font-size:0.78rem;color:var(--muted);margin-top:0.6rem;line-height:1.6;">
         Built by <strong style="color:#94a3b8;">Shaunauk Basu</strong><br>
-        <span style="color:#4ade80;font-weight:600;">✓ 2 Pilots completed</span><br>
-        <span style="color:#64748b;font-size:0.74rem;">UAE · Saudi Arabia launching soon</span>
+        <span style="color:#4ade80;font-weight:600;">✓ Live in UAE pilot</span><br>
+        <span style="color:#64748b;font-size:0.74rem;">Expanding across GCC</span>
       </p>
+
       <div class="footer-contact">
         <a href="mailto:carithmai29@gmail.com">carithmai29@gmail.com</a>
+
         <div class="social-links">
-          <a href="https://www.linkedin.com/company/carithm-ai/" target="_blank" rel="noopener">Company LinkedIn</a>
+          <a href="https://www.linkedin.com/company/carithm-ai/" target="_blank" rel="noopener">LinkedIn</a>
           <span style="color:var(--border);margin:0 4px;">|</span>
-          <a href="https://www.linkedin.com/in/shaunauk-basu-581928248/" target="_blank" rel="noopener">Founder's Log</a>
-          <span style="color:var(--border);margin:0 4px;">|</span>
-          <a href="https://x.com/carithmai" target="_blank" rel="noopener">X / Twitter</a>
+          <a href="https://x.com/carithmai" target="_blank" rel="noopener">X</a>
         </div>
       </div>
     </div>
 
+    <!-- CORE TOOL LINKS -->
     <div class="footer-col">
       <h4>Tools</h4>
       <ul>
-        <li><a href="#auditor">Quote Auditor</a></li>
-        <li><a href="https://carithm.vercel.app/predictive/">UAE Car Valuation</a></li>
-        <li><a href="#how-it-works-detail">How It Works</a></li>
-        <li><a href="#explorer">Component Explorer</a></li>
+        <li><a href="#auditor">Car Repair Quote Checker</a></li>
+        <li><a href="/valuation/">Car Value Checker UAE</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#explorer">Car Component Explorer</a></li>
       </ul>
     </div>
 
+    <!-- KNOWLEDGE HUB (SEO CLUSTER CORE) -->
     <div class="footer-col">
-      <h4>Intelligence</h4>
+      <h4>Car Repair Guides</h4>
       <ul>
-        <li><a href="https://carithm.vercel.app/about/">Our Data & Methodology</a></li>
-        <li><a href="https://carithm.vercel.app/research/">Car Care research</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <!-- SEO UPGRADE #28 — City landing page anchors for local SEO roadmap -->
-        <li><a href="/dubai/car-repairs">Car Repairs Dubai</a></li>
-        <li><a href="/abu-dhabi/car-repairs">Car Repairs Abu Dhabi</a></li>
+        <li><a href="/toyota">Toyota Repair Cost Guide</a></li>
+        <li><a href="/bmw">BMW Maintenance Cost Guide</a></li>
+        <li><a href="/mercedes">Mercedes Service Interval Guide</a></li>
+        <li><a href="/repair-costs">Car Repair Cost Breakdown</a></li>
+        <li><a href="/maintenance-guide">Car Maintenance Guide</a></li>
       </ul>
     </div>
 
+    <!-- COVERAGE / AUTHORITY SIGNAL -->
     <div class="footer-col">
       <h4>Coverage</h4>
       <ul>
-        <li><a href="#coverage-brands">46+ Brands Modeled</a></li>
-<li><a href="#coverage-engines">500+ Engine Variants</a></li>
-<li><a href="#coverage-components">15+ Lifecycle Components</a></li>
-<li><a href="#coverage-climate">GCC Climate Adjusted</a></li>
-<li><a href="#coverage-regions">UAE · Saudi Arabia · Kuwait</a></li>
+        <li><a href="#coverage-brands">46+ Car Brands Analyzed</a></li>
+        <li><a href="#coverage-engines">500+ Engine Variants</a></li>
+        <li><a href="#coverage-components">Lifecycle Component Data</a></li>
+        <li><a href="#coverage-climate">GCC Climate Adjustments</a></li>
+        <li><a href="#coverage-regions">UAE · Saudi Arabia · Kuwait</a></li>
       </ul>
     </div>
+
   </div>
 
+  <!-- CTA STRIP -->
   <div class="footer-cta-strip" style="margin: 2rem 0; padding: 1.2rem; border: 1px solid var(--border); border-radius: 12px; background: rgba(255,255,255,0.02);">
 
-  <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;">
-    
-    <div>
-      <p style="margin:0;font-size:1rem;color:#fff;font-weight:600;">
-        Don’t overpay on your next service bill.
-      </p>
-      <p style="margin:0;font-size:0.85rem;color:var(--muted);">
-        Run a free AI audit on your repair quote in under 30 seconds.
-      </p>
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;">
+
+      <div>
+        <p style="margin:0;font-size:1rem;color:#fff;font-weight:600;">
+          Don’t overpay on your next car service.
+        </p>
+        <p style="margin:0;font-size:0.85rem;color:var(--muted);">
+          Run a free AI repair quote check in under 30 seconds.
+        </p>
+      </div>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="#auditor"
+           style="padding:10px 14px;border-radius:8px;background:var(--accent);color:#000;font-weight:600;text-decoration:none;">
+           Check My Quote
+        </a>
+
+        <a href="/valuation/"
+           style="padding:10px 14px;border-radius:8px;border:1px solid var(--border);color:#fff;text-decoration:none;">
+           Check Car Value
+        </a>
+      </div>
+
     </div>
-
-    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-      
-      <a href="#auditor" 
-         style="padding:10px 14px;border-radius:8px;background:var(--accent);color:#000;font-weight:600;text-decoration:none;">
-         Audit My Quote
-      </a>
-
-      <a href="https://carithm.vercel.app/valuation/" 
-         style="padding:10px 14px;border-radius:8px;border:1px solid var(--border);color:#fff;text-decoration:none;">
-         Check Car Value
-      </a>
-
-    </div>
-
   </div>
-</div>
-    <!-- SEO UPGRADE #29 — Footer copy includes geo keywords naturally -->
-    <p>&copy; 2026 Carithm. Free AI car repair quote checker for UAE & GCC car owners in Dubai, Abu Dhabi, and Sharjah. All rights reserved. | <a href="https://carithm.vercel.app/about/" style="color:var(--muted); text-decoration:none;">About</a> · <a href="#" style="color:var(--muted); text-decoration:none;">Privacy</a> · <a href="#" style="color:var(--muted); text-decoration:none;">Terms</a></p>
-  </div>
+
+  <!-- FINAL FOOTER LINE -->
+  <p style="font-size:0.75rem;color:var(--muted);text-align:center;line-height:1.6;">
+    © 2026 Carithm. AI-powered car repair quote checker for UAE & GCC drivers. Dubai · Abu Dhabi · Sharjah.
+  </p>
+
 </footer>
 
 <script>
