@@ -51,9 +51,9 @@
       padding-left:10px;
     }
 
-    .highlight {
-      color:#fbbf24;
-      font-weight:600;
+    .note {
+      font-size:0.85rem;
+      color:#94a3b8;
     }
 
     table {
@@ -80,9 +80,19 @@
       border-radius:8px;
     }
 
-    .note {
-      font-size:0.85rem;
+    ul {
+      margin:0;
+      padding-left:18px;
+    }
+
+    .hub {
+      font-size:0.9rem;
+      margin-bottom:10px;
       color:#94a3b8;
+    }
+
+    .related ul li {
+      margin:6px 0;
     }
   </style>
 </head>
@@ -90,11 +100,16 @@
 <body>
 <div class="container">
 
+  <!-- BRAND HUB (GLOBAL INTERNAL LINK ENTRY POINT) -->
+  <div class="hub">
+    <a href="/{{MAKE_LOWER}}/">← Browse all {{MAKE}} models repair & maintenance guides</a>
+  </div>
+
   <h1>{{MAKE}} {{MODEL}} Repair & Maintenance Cost in UAE (2026)</h1>
 
   <div class="box">
     This guide explains real-world ownership costs of the {{MAKE}} {{MODEL}} in the UAE,
-    including <span class="highlight">service pricing, common repairs, and workshop differences</span> between dealership and independent garages.
+    including service pricing, common repairs, and workshop differences between dealership and independent garages.
   </div>
 
   <div class="section-title">1. Average Service Costs</div>
@@ -143,6 +158,25 @@
 
   <div class="box note">
     Costs vary due to driving style, service history, workshop type, and GCC climate impact on parts durability.
+  </div>
+
+  <!-- RELATED MODELS INTERNAL LINKS -->
+  <div class="section-title">6. Related {{MAKE}} Models</div>
+
+  <div class="box related">
+    <ul>
+      {{{RELATED_LINKS}}}
+    </ul>
+  </div>
+
+  <div class="section-title">7. Compare Across Brands</div>
+
+  <div class="box related">
+    <ul>
+      <li><a href="/toyota/">Toyota repair cost guides</a></li>
+      <li><a href="/bmw/">BMW maintenance cost breakdowns</a></li>
+      <li><a href="/mercedes/">Mercedes service pricing UAE</a></li>
+    </ul>
   </div>
 
   <div class="box">
