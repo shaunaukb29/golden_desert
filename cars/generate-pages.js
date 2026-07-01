@@ -4,14 +4,15 @@ const path = require("path");
 const BASE_URL = "https://carithm.vercel.app";
 const ROOT_DIR = process.cwd();
 
-// ignore noise folders
-const IGNORE = new Set(["node_modules", ".git", ".vercel"]);
+// ignore noise folders/files
+const IGNORE_DIRS = new Set(["node_modules", ".git", ".vercel"]);
+const IGNORE_FILES = new Set([".DS_Store"]);
 
-// store clean URLs only (dedupe)
+// store clean URLs only
 const urlSet = new Set();
 
 /**
- * STATIC PAGES (explicit control = SEO stability)
+ * STATIC PAGES (SEO core index)
  */
 const STATIC_URLS = [
   "/",
@@ -22,9 +23,19 @@ const STATIC_URLS = [
 ];
 
 /**
- * scan only relevant car structure:
- * /toyota/model/file.html
- * /bmw/model/file.html
+ * Normalize URL (VERY IMPORTANT for SEO dedupe)
+ */
+function normalizeUrl(url) {
+  return url
+    .replace(/\\/g, "/")
+    .replace(/\/+/g, "/")
+    .replace(/\/index\.html$/, "/")
+    .replace(/\.html$/, "");
+}
+
+/**
+ * Scan structured car pages
+ * /toyota/camry/service.html
  */
 function scanCars() {
   const brands = ["toyota", "bmw", "mercedes"];
@@ -46,7 +57,9 @@ function scanCars() {
       for (const file of files) {
         if (!file.endsWith(".html")) continue;
 
-        const url = `/${brand}/${model}/${file}`;
+        const rawUrl = `/${brand}/${model}/${file}`;
+        const url = normalizeUrl(rawUrl);
+
         urlSet.add(url);
       }
     }
@@ -54,24 +67,37 @@ function scanCars() {
 }
 
 /**
- * scan extra html files (blogs, static pages, etc.)
+ * Scan misc HTML pages safely
  */
 function scanMisc(dir) {
-  const files = fs.readdirSync(dir);
+  let files;
+
+  try {
+    files = fs.readdirSync(dir);
+  } catch (e) {
+    return;
+  }
 
   for (const file of files) {
+    if (IGNORE_FILES.has(file)) continue;
+    if (file.startsWith(".")) continue;
+
     const full = path.join(dir, file);
 
-    if (IGNORE.has(file)) continue;
-
-    const stat = fs.statSync(full);
+    let stat;
+    try {
+      stat = fs.statSync(full);
+    } catch (e) {
+      continue;
+    }
 
     if (stat.isDirectory()) {
+      if (IGNORE_DIRS.has(file)) continue;
       scanMisc(full);
     } else if (file.endsWith(".html")) {
-      const relative = full
-        .replace(ROOT_DIR, "")
-        .replace(/\\/g, "/");
+      const relative = normalizeUrl(
+        full.replace(ROOT_DIR, "").replace(/\\/g, "/")
+      );
 
       urlSet.add(relative);
     }
@@ -79,43 +105,36 @@ function scanMisc(dir) {
 }
 
 /**
- * convert to XML
+ * Build XML entries
  */
 function buildXml() {
   const today = new Date().toISOString().split("T")[0];
 
-  const urls = Array.from(urlSet);
+  return Array.from(urlSet)
+    .map((url) => {
+      let priority = "0.6";
 
-  return urls.map((url) => {
-    let priority = "0.6";
+      if (url === "/" || url === "/index") {
+        priority = "1.0";
+      } else if (
+        url.includes("/toyota/") ||
+        url.includes("/bmw/") ||
+        url.includes("/mercedes/")
+      ) {
+        priority = "0.9";
+      } else if (url.includes("/blog/")) {
+        priority = "0.8";
+      }
 
-    // homepage
-    if (url === "/" || url === "/index.html") {
-      priority = "1.0";
-    }
-
-    // brand + model pages
-    else if (
-      url.includes("/toyota/") ||
-      url.includes("/bmw/") ||
-      url.includes("/mercedes/")
-    ) {
-      priority = "0.9";
-    }
-
-    // blog/content pages
-    else if (url.includes("/blog/")) {
-      priority = "0.8";
-    }
-
-    return `
+      return `
   <url>
     <loc>${BASE_URL}${url}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${priority}</priority>
   </url>`;
-  }).join("\n");
+    })
+    .join("\n");
 }
 
 /**
@@ -124,13 +143,9 @@ function buildXml() {
 function generateSitemap() {
   console.log("🗺 Generating sitemap...");
 
-  // add static pages first
-  STATIC_URLS.forEach((u) => urlSet.add(u));
+  STATIC_URLS.forEach((u) => urlSet.add(normalizeUrl(u)));
 
-  // scan structured car pages
   scanCars();
-
-  // scan everything else (blogs etc.)
   scanMisc(ROOT_DIR);
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
