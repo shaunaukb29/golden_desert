@@ -9,12 +9,14 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="canonical" href="https://carithm.vercel.app/{{MAKE}}/{{MODEL}}/">
+  <!-- FIXED CANONICAL -->
+  <link rel="canonical" href="https://carithm.vercel.app/{{MAKE_LOWER}}/{{MODEL_SLUG}}/">
 
+  <!-- OPEN GRAPH -->
   <meta property="og:title" content="{{MAKE}} {{MODEL}} UAE Repair Cost Guide (2026)">
   <meta property="og:description" content="Full cost breakdown: servicing, repairs, common issues, and ownership estimates for {{MAKE}} {{MODEL}} in UAE.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="">
+  <meta property="og:url" content="https://carithm.vercel.app/{{MAKE_LOWER}}/{{MODEL_SLUG}}/">
   <meta property="og:image" content="https://carithm.vercel.app/og-image.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -36,6 +38,13 @@
 
     h1 { font-size: 2rem; margin-bottom: 10px; }
 
+    h2 {
+      margin-top:28px;
+      font-size:1.3rem;
+      border-left:4px solid #4ade80;
+      padding-left:10px;
+    }
+
     .box {
       margin:18px 0;
       padding:16px;
@@ -44,17 +53,7 @@
       background:rgba(255,255,255,0.03);
     }
 
-    .section-title {
-      margin-top:28px;
-      font-size:1.3rem;
-      border-left:4px solid #4ade80;
-      padding-left:10px;
-    }
-
-    .note {
-      font-size:0.85rem;
-      color:#94a3b8;
-    }
+    .note { font-size:0.85rem; color:#94a3b8; }
 
     table {
       width:100%;
@@ -80,19 +79,12 @@
       border-radius:8px;
     }
 
-    ul {
-      margin:0;
-      padding-left:18px;
-    }
+    ul { padding-left:18px; }
 
     .hub {
       font-size:0.9rem;
       margin-bottom:10px;
       color:#94a3b8;
-    }
-
-    .related ul li {
-      margin:6px 0;
     }
   </style>
 </head>
@@ -100,22 +92,30 @@
 <body>
 <div class="container">
 
-  <!-- BRAND HUB (GLOBAL INTERNAL LINK ENTRY POINT) -->
+  <!-- HUB LINK -->
   <div class="hub">
-    <a href="/{{MAKE_LOWER}}/">← Browse all {{MAKE}} models repair & maintenance guides</a>
+    <a href="/{{MAKE_LOWER}}/">← Browse all {{MAKE}} repair guides</a>
   </div>
 
   <h1>{{MAKE}} {{MODEL}} Repair & Maintenance Cost in UAE (2026)</h1>
 
-  <div class="box">
-    This guide explains real-world ownership costs of the {{MAKE}} {{MODEL}} in the UAE,
-    including service pricing, common repairs, and workshop differences between dealership and independent garages.
-  </div>
+  <!-- SEO INTENT PARAGRAPH -->
+  <p class="box">
+    This page breaks down real {{MAKE}} {{MODEL}} repair costs in UAE workshops, including dealer vs independent garage pricing, common failure points, and annual ownership estimates to help you avoid overpaying.
+  </p>
 
-  <div class="section-title">1. Average Service Costs</div>
+  <!-- INTERNAL CONTEXT LINKS -->
+  <p>
+    Compare against other guides like
+    <a href="/repair-costs" style="color:#4ade80;">repair cost benchmarks</a>
+    and
+    <a href="/maintenance-guide" style="color:#4ade80;">maintenance schedules</a>.
+  </p>
+
+  <!-- SECTION 1 -->
+  <h2>Average Service Costs for {{MAKE}} {{MODEL}}</h2>
 
   <div class="box">
-    Typical maintenance costs vary depending on mileage and condition:
     <table>
       <tr><th>Service Type</th><th>Estimated Cost (AED)</th></tr>
       <tr><td>Minor Service</td><td>400 – 900</td></tr>
@@ -125,53 +125,63 @@
     </table>
   </div>
 
-  <div class="section-title">2. Common {{MAKE}} {{MODEL}} Issues</div>
+  <p class="note">
+    Tip: Dealer pricing is often 30–60% higher than independent garages in UAE.
+  </p>
+
+  <!-- SECTION 2 -->
+  <h2>Common {{MAKE}} {{MODEL}} Issues in GCC Climate</h2>
 
   <div class="box">
-    Owners in GCC climates typically report:
     <ul>
-      <li>AC compressor wear due to heat</li>
+      <li>AC compressor wear due to extreme heat</li>
       <li>Suspension degradation from road conditions</li>
       <li>Brake wear from city driving</li>
       <li>Sensor and electrical issues in older models</li>
     </ul>
   </div>
 
-  <div class="section-title">3. Dealer vs Independent Garage Pricing</div>
+  <p>
+    Learn more about long-term maintenance strategy in our
+    <a href="/maintenance-guide" style="color:#4ade80;">GCC maintenance guide</a>.
+  </p>
+
+  <!-- SECTION 3 -->
+  <h2>Dealer vs Independent Garage Pricing</h2>
 
   <div class="box">
     Dealer servicing is typically 30–60% more expensive than independent workshops in UAE.
-    However, independent garages vary widely in quality and parts sourcing.
   </div>
 
-  <div class="section-title">4. Annual Ownership Cost Estimate</div>
+  <!-- SECTION 4 -->
+  <h2>Annual Ownership Cost Estimate</h2>
 
   <div class="box">
-    Based on typical UAE driving patterns:
-    <br><br>
     <b>Low usage:</b> AED 2,000 – 4,000 / year<br>
     <b>Average usage:</b> AED 4,000 – 8,000 / year<br>
     <b>High usage:</b> AED 8,000 – 15,000+ / year
   </div>
 
-  <div class="section-title">5. Why Costs Vary</div>
+  <!-- SECTION 5 -->
+  <h2>Why Costs Vary</h2>
 
   <div class="box note">
     Costs vary due to driving style, service history, workshop type, and GCC climate impact on parts durability.
   </div>
 
-  <!-- RELATED MODELS INTERNAL LINKS -->
-  <div class="section-title">6. Related {{MAKE}} Models</div>
+  <!-- SECTION 6 -->
+  <h2>Related {{MAKE}} Models</h2>
 
-  <div class="box related">
+  <div class="box">
     <ul>
-      {{{RELATED_LINKS}}}
+      {{RELATED_LINKS}}
     </ul>
   </div>
 
-  <div class="section-title">7. Compare Across Brands</div>
+  <!-- SECTION 7 -->
+  <h2>Compare Across Brands</h2>
 
-  <div class="box related">
+  <div class="box">
     <ul>
       <li><a href="/toyota/">Toyota repair cost guides</a></li>
       <li><a href="/bmw/">BMW maintenance cost breakdowns</a></li>
@@ -179,10 +189,24 @@
     </ul>
   </div>
 
+  <!-- FAQ (SEO BOOST SECTION) -->
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="box">
+    <strong>Is {{MAKE}} {{MODEL}} expensive to maintain in UAE?</strong>
+    <p>It depends on mileage and service history, but GCC heat increases wear on AC and suspension systems.</p>
+
+    <strong>Why is dealer service more expensive?</strong>
+    <p>Dealers typically charge 30–60% more due to labor rates and OEM parts.</p>
+
+    <strong>How often should I service {{MAKE}} {{MODEL}}?</strong>
+    <p>Usually every 10,000 km or 6–12 months depending on driving conditions.</p>
+  </div>
+
+  <!-- CTA -->
   <div class="box">
     <strong>Want deeper analysis?</strong><br>
     Upload your invoice and compare it against real UAE workshop benchmarks.
-
     <br>
     <a class="button" href="https://carithm.vercel.app/">
       Analyze My Repair Cost
