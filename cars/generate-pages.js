@@ -6,6 +6,39 @@ const ROOT_DIR = process.cwd();
 
 const CARS_JSON_PATH = path.join(ROOT_DIR, "cars", "cars.json");
 const TEMPLATE_PATH = path.join(ROOT_DIR, "cars", "template.html");
+const BRAND_HUB_TEMPLATE_PATH = path.join(ROOT_DIR, "brand-hub-template.html");
+const MANIFEST_PATH = path.join(ROOT_DIR, "cars", ".generated-manifest.json");
+
+/**
+ * One-time migration list: old stuttered filenames -> new clean slugs.
+ * These were created before the URL structure was fixed and are NOT
+ * tracked by the manifest system, so they need to be removed explicitly
+ * once. Safe to delete this block after your next deploy confirms the
+ * old files are gone from the live site.
+ */
+const LEGACY_FILES = [
+  "toyota/toyota-camry-repair-cost-uae.html",
+  "toyota/toyota-land-cruiser-maintenance-cost-uae.html",
+  "toyota/toyota-corolla-service-cost-uae.html",
+  "toyota/toyota-prado-repair-cost-uae.html",
+  "bmw/bmw-x5-maintenance-cost-dubai.html",
+  "bmw/bmw-x3-repair-cost-uae.html",
+  "bmw/bmw-5-series-service-cost-uae.html",
+  "bmw/bmw-3-series-repair-cost-uae.html",
+  "mercedes/mercedes-c200-service-cost-abu-dhabi.html",
+  "mercedes/mercedes-e300-maintenance-cost-uae.html",
+  "mercedes/mercedes-gle-350-repair-cost-uae.html",
+  "mercedes/mercedes-s500-maintenance-cost-uae.html",
+  "nissan/nissan-patrol-maintenance-cost-uae.html",
+  "nissan/nissan-altima-service-cost-uae.html",
+  "nissan/nissan-xtrail-repair-cost-uae.html",
+  "honda/honda-accord-repair-cost-uae.html",
+  "honda/honda-civic-maintenance-cost-uae.html",
+  "honda/honda-crv-service-cost-uae.html",
+  "lexus/lexus-rx350-maintenance-cost-uae.html",
+  "lexus/lexus-lx570-repair-cost-uae.html",
+  "lexus/lexus-es350-service-cost-uae.html"
+];
 
 function loadCars() {
   return JSON.parse(fs.readFileSync(CARS_JSON_PATH, "utf-8"));
@@ -63,8 +96,6 @@ function buildCostTable(car) {
 
 /**
  * Issue sections built from real known_issues per car, not generic text.
- * Falls back to generic categories only if a car has no data yet, so
- * pages never break, but incentivizes filling in real data.
  */
 function buildIssueSections(car) {
   const issues = car.known_issues && car.known_issues.length
@@ -142,9 +173,6 @@ function buildFAQJsonLd(car) {
   return `<script type="application/ld+json">\n${JSON.stringify(jsonLd, null, 2)}\n</script>`;
 }
 
-/**
- * SEO intent paragraph, now city-aware instead of generic "UAE".
- */
 function buildIntentBlock(car) {
   const city = car.city || "the UAE";
   return `
@@ -154,9 +182,6 @@ ${car.make} ${car.model} repair cost data for ${city}, covering dealer vs indepe
 `;
 }
 
-/**
- * Related models — same make, different model.
- */
 function buildInternalLinks(car, allCars) {
   const sameMake = allCars
     .filter(c => c.make === car.make && c.slug !== car.slug)
@@ -175,9 +200,6 @@ ${sameMake.map(c => {
 `;
 }
 
-/**
- * Hub links — one per brand, pointing at that brand's hub/index page.
- */
 function buildHubLinks(allCars) {
   const makes = [...new Set(allCars.map(c => c.make))];
   return makes
@@ -188,10 +210,6 @@ function buildHubLinks(allCars) {
     .join("\n");
 }
 
-/**
- * Popular links — cars explicitly flagged "popular": true in cars.json,
- * so this is editorially controlled rather than arbitrary.
- */
 function buildPopularLinks(allCars, currentSlug) {
   const popular = allCars.filter(c => c.popular && c.slug !== currentSlug).slice(0, 8);
   if (!popular.length) return "<li>No popular guides yet.</li>";
@@ -203,9 +221,6 @@ function buildPopularLinks(allCars, currentSlug) {
     .join("\n");
 }
 
-/**
- * Render page
- */
 function renderCarPage(template, car, allCars) {
   const { url, makeLower } = getOutputPath(car);
   const now = new Date();
@@ -243,47 +258,36 @@ function renderCarPage(template, car, allCars) {
 }
 
 /**
- * Brand hub page — lists every model page for that make.
- * Fixes the previously-dead /toyota/, /bmw/ links in the footer.
+ * Brand hub page — uses the real brand-hub-template.html.
  */
-function renderBrandHub(make, carsForMake) {
-  const rows = carsForMake
+function renderBrandHub(brandHubTemplate, make, carsForMake) {
+  const makeLower = make.toLowerCase().replace(/\s+/g, "-");
+  const year = new Date().getFullYear();
+
+  const modelList = carsForMake
     .map(c => {
       const { url } = getOutputPath(c);
-      return `<li><a href="${url}">${c.make} ${c.model} \u2014 repair &amp; maintenance cost</a></li>`;
+      return `      <li><a href="${url}">${c.make} ${c.model} \u2014 repair &amp; maintenance cost</a></li>`;
     })
     .join("\n");
 
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>${make} Repair Cost Guides UAE (2026) | Carithm</title>
-<meta name="description" content="All ${make} repair and maintenance cost guides for the UAE \u2014 dealer vs independent pricing, common issues, and ownership estimates.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="${BASE_URL}/${make.toLowerCase().replace(/\s+/g, "-")}/">
-<style>
-body{font-family:system-ui,sans-serif;background:#0b0f14;color:#fff;margin:0;padding:40px;line-height:1.7}
-.container{max-width:850px;margin:auto}
-a{color:#4ade80}
-ul{padding-left:18px}
-</style>
-</head>
-<body>
-<main class="container">
-<p><a href="/repair-costs/">\u2190 Browse all car repair guides</a></p>
-<h1>${make} Repair &amp; Maintenance Cost Guides (UAE)</h1>
-<ul>
-${rows}
-</ul>
-</main>
-</body>
-</html>`;
+  const replacements = {
+    "{{MAKE}}": make,
+    "{{MAKE_LOWER}}": makeLower,
+    "{{MODEL_COUNT}}": String(carsForMake.length),
+    "{{MODEL_LIST}}": modelList,
+    "{{YEAR}}": String(year)
+  };
+
+  let output = brandHubTemplate;
+  for (const [k, v] of Object.entries(replacements)) {
+    output = output.split(k).join(v);
+  }
+  return output;
 }
 
 /**
- * Site-wide hub page — fixes the previously-dead /repair-costs/ link
- * that every generated page already links to.
+ * Site-wide hub page.
  */
 function renderSiteHub(allCars) {
   const makes = [...new Set(allCars.map(c => c.make))];
@@ -325,13 +329,66 @@ ${sections}
 </html>`;
 }
 
+/**
+ * Remove the known old stuttered files (one-time migration). Safe to
+ * leave in permanently — once the files are gone, this is a no-op.
+ */
+function cleanupLegacyFiles() {
+  let removed = 0;
+  for (const rel of LEGACY_FILES) {
+    const filePath = path.join(ROOT_DIR, rel);
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath);
+      console.log(`\ud83e\uddf9 Removed legacy file: /${rel}`);
+      removed++;
+    }
+  }
+  return removed;
+}
+
+/**
+ * Manifest-based cleanup: if a car's slug changes in the future (or a
+ * car is removed from cars.json), delete the file this script wrote
+ * for it last time, so stale generated pages never accumulate again.
+ */
+function cleanupStaleGenerated(newFilePaths) {
+  let previous = [];
+  if (fs.existsSync(MANIFEST_PATH)) {
+    try {
+      previous = JSON.parse(fs.readFileSync(MANIFEST_PATH, "utf-8"));
+    } catch (e) {
+      previous = [];
+    }
+  }
+
+  const newSet = new Set(newFilePaths);
+  let removed = 0;
+  for (const oldPath of previous) {
+    if (!newSet.has(oldPath) && fs.existsSync(oldPath)) {
+      fs.unlinkSync(oldPath);
+      console.log(`\ud83e\uddf9 Removed stale generated file: ${path.relative(ROOT_DIR, oldPath)}`);
+      removed++;
+    }
+  }
+
+  fs.writeFileSync(MANIFEST_PATH, JSON.stringify(newFilePaths, null, 2));
+  return removed;
+}
+
 function generatePages() {
   console.log("\ud83d\ude97 Generating pages with real per-car data");
 
+  const legacyRemoved = cleanupLegacyFiles();
+  if (legacyRemoved > 0) {
+    console.log(`\ud83e\uddf9 Cleaned up ${legacyRemoved} legacy stuttered-URL file(s)\n`);
+  }
+
   const cars = loadCars();
   const template = fs.readFileSync(TEMPLATE_PATH, "utf-8");
+  const brandHubTemplate = fs.readFileSync(BRAND_HUB_TEMPLATE_PATH, "utf-8");
 
   const allUrls = [];
+  const generatedFilePaths = [];
   let count = 0;
 
   for (const car of cars) {
@@ -342,6 +399,7 @@ function generatePages() {
     fs.writeFileSync(filePath, output);
 
     allUrls.push(url);
+    generatedFilePaths.push(filePath);
     console.log(`\u2714 ${url}`);
     count++;
   }
@@ -352,17 +410,26 @@ function generatePages() {
     const makeLower = make.toLowerCase().replace(/\s+/g, "-");
     const dir = path.join(ROOT_DIR, makeLower);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, "index.html"), renderBrandHub(make, cars.filter(c => c.make === make)));
+    const hubPath = path.join(dir, "index.html");
+    fs.writeFileSync(hubPath, renderBrandHub(brandHubTemplate, make, cars.filter(c => c.make === make)));
     allUrls.push(`/${makeLower}/`);
+    generatedFilePaths.push(hubPath);
     console.log(`\u2714 /${makeLower}/ (brand hub)`);
   }
 
   // Site-wide hub page
   const hubDir = path.join(ROOT_DIR, "repair-costs");
   fs.mkdirSync(hubDir, { recursive: true });
-  fs.writeFileSync(path.join(hubDir, "index.html"), renderSiteHub(cars));
+  const siteHubPath = path.join(hubDir, "index.html");
+  fs.writeFileSync(siteHubPath, renderSiteHub(cars));
   allUrls.push("/repair-costs/");
+  generatedFilePaths.push(siteHubPath);
   console.log("\u2714 /repair-costs/ (site hub)");
+
+  const staleRemoved = cleanupStaleGenerated(generatedFilePaths);
+  if (staleRemoved > 0) {
+    console.log(`\ud83e\uddf9 Cleaned up ${staleRemoved} stale generated file(s) from previous builds`);
+  }
 
   console.log(`\n\u2705 Generated ${count} car pages, ${makes.length} brand hubs, 1 site hub`);
   console.log("\u2139\ufe0f  Run `npm run build` (or `node generate-sitemap.js`) next to regenerate sitemap_v4.xml");
