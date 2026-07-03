@@ -1,285 +1,168 @@
 const fs = require("fs");
 const path = require("path");
-const https = require("https");
 
 const BASE_URL = "https://carithm.vercel.app";
 const ROOT_DIR = process.cwd();
 
 const CARS_JSON_PATH = path.join(ROOT_DIR, "cars", "cars.json");
 const TEMPLATE_PATH = path.join(ROOT_DIR, "cars", "template.html");
-const BRAND_TEMPLATE_PATH = path.join(ROOT_DIR, "brand-hub-template.html");
-const HOMEPAGE_PATH = path.join(ROOT_DIR, "index.html");
-
-const AUTO_LINKS_START = "<!-- AUTO_CAR_LINKS_START -->";
-const AUTO_LINKS_END = "<!-- AUTO_CAR_LINKS_END -->";
-
-// IndexNow config
-// Generate a key at https://www.bing.com/indexnow — it's just a random hex string.
-// Host it at https://carithm.vercel.app/{INDEXNOW_KEY}.txt containing only the key itself.
-const INDEXNOW_KEY = process.env.INDEXNOW_KEY || "REPLACE_WITH_YOUR_INDEXNOW_KEY";
-const INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow";
 
 /**
- * Load and parse cars.json
+ * Load cars
  */
 function loadCars() {
-  const raw = fs.readFileSync(CARS_JSON_PATH, "utf-8");
-  return JSON.parse(raw);
+  return JSON.parse(fs.readFileSync(CARS_JSON_PATH, "utf-8"));
 }
 
 /**
- * Build the file path + URL for a given car.
- * Uses the car's own slug as the filename: /{make}/{slug}.html
+ * Path helper
  */
 function getOutputPath(car) {
   const makeLower = car.make.toLowerCase().replace(/\s+/g, "-");
-  const dir = path.join(ROOT_DIR, makeLower);
-  const filePath = path.join(dir, `${car.slug}.html`);
-  const url = `/${makeLower}/${car.slug}.html`;
-  return { dir, filePath, url, makeLower };
+  return {
+    dir: path.join(ROOT_DIR, makeLower),
+    filePath: path.join(ROOT_DIR, makeLower, `${car.slug}.html`),
+    url: `/${makeLower}/${car.slug}.html`,
+    makeLower
+  };
 }
 
 /**
- * Build the related-links <li> markup for other models of the same make,
- * excluding the current car itself.
+ * 🔥 ISSUE CLUSTERS (LEVEL 5.5 CORE)
  */
-function buildRelatedLinks(car, allCars) {
-  const siblings = allCars.filter(
-    (c) => c.make === car.make && c.slug !== car.slug
-  );
+function buildIssueSections(car) {
+  const model = car.model.toLowerCase();
 
-  if (siblings.length === 0) return { html: "", hasRelated: false };
+  return `
+<h2>Common ${car.make} ${car.model} Problems in UAE</h2>
 
-  const html = siblings
-    .map((c) => {
-      const { url } = getOutputPath(c);
-      return `      <li><a href="${url}">${c.make} ${c.model} Repair Cost</a></li>`;
-    })
-    .join("\n");
+<h3>❄️ AC System Issues</h3>
+<p>In UAE heat, ${car.make} ${car.model} AC compressor wear is one of the most common repair costs due to continuous high-load usage.</p>
 
-  return { html, hasRelated: true };
+<h3>⚙️ Transmission / Gearbox</h3>
+<p>Gearbox wear in ${car.model} models can increase repair costs significantly, especially in stop-and-go Dubai traffic conditions.</p>
+
+<h3>🛞 Suspension Problems</h3>
+<p>Suspension components degrade faster in GCC road conditions due to heat and road texture stress.</p>
+
+<h3>🔌 Electrical Issues</h3>
+<p>Sensor failures and electrical degradation can occur in older ${car.make} ${car.model} units due to heat exposure.</p>
+`;
 }
 
 /**
- * Resolve the {{#IF_RELATED_LINKS}}...{{/IF_RELATED_LINKS}} block.
- * Strips the block entirely if there are no related links, otherwise
- * keeps the inner content and removes just the markers.
+ * 🔥 INTENT FAQ GENERATOR
  */
-function resolveConditionalBlock(template, hasRelated) {
-  const blockRegex = /{{#IF_RELATED_LINKS}}([\s\S]*?){{\/IF_RELATED_LINKS}}/;
+function buildFAQ(car) {
+  return `
+<h2>Frequently Asked Questions</h2>
 
-  if (hasRelated) {
-    return template.replace(blockRegex, (_, inner) => inner);
-  }
-  return template.replace(blockRegex, "");
+<h3>Is ${car.make} ${car.model} expensive to maintain in UAE?</h3>
+<p>It depends on mileage, but GCC heat significantly increases AC and suspension repair frequency.</p>
+
+<h3>What is the most common repair for ${car.model}?</h3>
+<p>AC compressor and suspension components are among the most common repairs in UAE conditions.</p>
+
+<h3>Dealer vs garage — which is cheaper?</h3>
+<p>Independent garages are typically 30–60% cheaper than dealers in UAE.</p>
+
+<h3>How often should I service it?</h3>
+<p>Every 8,000–10,000 km is recommended under UAE driving conditions.</p>
+`;
 }
 
 /**
- * Fill all placeholders in the template for a single car.
+ * 🔥 SEO INTENT LAYER
+ */
+function buildIntentBlock(car) {
+  return `
+<p>
+${car.make} ${car.model} repair cost UAE analysis includes dealer vs independent garage pricing, common issues in Dubai heat, and long-term maintenance breakdowns.
+</p>
+`;
+}
+
+/**
+ * SMART INTERNAL LINKS (authority graph)
+ */
+function buildInternalLinks(car, allCars) {
+  const sameMake = allCars
+    .filter(c => c.make === car.make && c.slug !== car.slug)
+    .slice(0, 5);
+
+  return `
+<h2>Related ${car.make} Models</h2>
+<ul>
+${sameMake.map(c => {
+  const { url } = getOutputPath(c);
+  return `<li><a href="${url}">${c.make} ${c.model} repair cost</a></li>`;
+}).join("\n")}
+</ul>
+`;
+}
+
+/**
+ * Render page
  */
 function renderCarPage(template, car, allCars) {
   const { url, makeLower } = getOutputPath(car);
-  const modelSlug = car.slug.replace(new RegExp(`^${makeLower}-`), "");
-  const today = new Date().toISOString().split("T")[0];
-  const year = new Date().getFullYear();
+  const now = new Date();
 
-  const { html: relatedLinksHtml, hasRelated } = buildRelatedLinks(car, allCars);
+  const today = now.toISOString().split("T")[0];
+  const year = now.getFullYear();
 
-  let output = resolveConditionalBlock(template, hasRelated);
+  let output = template;
+
+  const issueBlock = buildIssueSections(car);
+  const faqBlock = buildFAQ(car);
+  const intentBlock = buildIntentBlock(car);
+  const internalLinks = buildInternalLinks(car, allCars);
 
   const replacements = {
     "{{MAKE}}": car.make,
     "{{MODEL}}": car.model,
     "{{MAKE_LOWER}}": makeLower,
     "{{MODEL_SLUG}}": car.slug,
-    "{{OG_IMAGE}}": car.og_image || `${BASE_URL}/og-image.png`,
     "{{DATE_PUBLISHED}}": car.date_published || today,
     "{{DATE_MODIFIED}}": today,
     "{{YEAR}}": String(year),
-    "{{RELATED_LINKS}}": relatedLinksHtml,
+
+    "{{ISSUE_BLOCK}}": issueBlock,
+    "{{FAQ_BLOCK}}": faqBlock,
+    "{{INTENT_BLOCK}}": intentBlock,
+    "{{INTERNAL_LINKS}}": internalLinks
   };
 
-  for (const [placeholder, value] of Object.entries(replacements)) {
-    output = output.split(placeholder).join(value);
+  for (const [k, v] of Object.entries(replacements)) {
+    output = output.split(k).join(v);
   }
 
   return { output, url };
 }
 
 /**
- * Group cars by make.
- */
-function groupByMake(cars) {
-  const groups = new Map();
-  for (const car of cars) {
-    if (!groups.has(car.make)) groups.set(car.make, []);
-    groups.get(car.make).push(car);
-  }
-  return groups;
-}
-
-/**
- * Generate one hub page per brand (e.g. /toyota/index.html) listing
- * every model page for that brand. Fixes the nav/hero links on the
- * homepage that point at /toyota, /bmw, /mercedes.
- */
-function generateBrandHubs(cars) {
-  if (!fs.existsSync(BRAND_TEMPLATE_PATH)) {
-    console.warn("⚠️  brand-hub-template.html not found — skipping brand hub generation.");
-    return [];
-  }
-
-  const brandTemplate = fs.readFileSync(BRAND_TEMPLATE_PATH, "utf-8");
-  const grouped = groupByMake(cars);
-  const generatedUrls = [];
-
-  for (const [make, models] of grouped.entries()) {
-    const makeLower = make.toLowerCase().replace(/\s+/g, "-");
-    const dir = path.join(ROOT_DIR, makeLower);
-    const filePath = path.join(dir, "index.html");
-    const url = `/${makeLower}/`;
-
-    const listHtml = models
-      .map((c) => {
-        const { url: carUrl } = getOutputPath(c);
-        return `      <li><a href="${carUrl}">${c.make} ${c.model} Repair Cost</a></li>`;
-      })
-      .join("\n");
-
-    let output = brandTemplate
-      .split("{{MAKE}}").join(make)
-      .split("{{MAKE_LOWER}}").join(makeLower)
-      .split("{{MODEL_COUNT}}").join(String(models.length))
-      .split("{{MODEL_LIST}}").join(listHtml)
-      .split("{{YEAR}}").join(String(new Date().getFullYear()));
-
-    fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(filePath, output, "utf-8");
-    generatedUrls.push(url);
-
-    console.log(`  ✅ ${url} (${models.length} models)`);
-  }
-
-  return generatedUrls;
-}
-
-/**
- * Keep the homepage footer's model links in sync with cars.json.
- * Replaces everything between AUTO_CAR_LINKS_START/END markers.
- * If the homepage or markers are missing, this is skipped safely —
- * it never touches the file outside of those markers.
- */
-function syncHomepageFooterLinks(cars) {
-  if (!fs.existsSync(HOMEPAGE_PATH)) {
-    console.warn("⚠️  index.html not found — skipping footer link sync.");
-    return;
-  }
-
-  const html = fs.readFileSync(HOMEPAGE_PATH, "utf-8");
-  const startIdx = html.indexOf(AUTO_LINKS_START);
-  const endIdx = html.indexOf(AUTO_LINKS_END);
-
-  if (startIdx === -1 || endIdx === -1 || endIdx < startIdx) {
-    console.warn("⚠️  AUTO_CAR_LINKS markers not found in index.html — skipping footer link sync.");
-    return;
-  }
-
-  const linksHtml = cars
-    .map((car) => {
-      const { url } = getOutputPath(car);
-      return `    <li>\n      <a href="${url}">\n        ${car.make} ${car.model} Repair Cost\n      </a>\n    </li>`;
-    })
-    .join("\n\n");
-
-  const before = html.slice(0, startIdx + AUTO_LINKS_START.length);
-  const after = html.slice(endIdx);
-
-  const updated = `${before}\n${linksHtml}\n    ${after}`;
-  fs.writeFileSync(HOMEPAGE_PATH, updated, "utf-8");
-
-  console.log(`  ✅ Homepage footer synced with ${cars.length} car links`);
-}
-
-/**
- * Ping IndexNow with the list of URLs that were generated/updated this run.
- */
-function pingIndexNow(urls) {
-  return new Promise((resolve) => {
-    if (!urls.length) return resolve();
-
-    if (!INDEXNOW_KEY || INDEXNOW_KEY === "REPLACE_WITH_YOUR_INDEXNOW_KEY") {
-      console.warn("⚠️  INDEXNOW_KEY not set — skipping IndexNow ping.");
-      return resolve();
-    }
-
-    const payload = JSON.stringify({
-      host: "carithm.vercel.app",
-      key: INDEXNOW_KEY,
-      keyLocation: `${BASE_URL}/${INDEXNOW_KEY}.txt`,
-      urlList: urls.map((u) => `${BASE_URL}${u}`),
-    });
-
-    const req = https.request(
-      INDEXNOW_ENDPOINT,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json; charset=utf-8",
-          "Content-Length": Buffer.byteLength(payload),
-        },
-      },
-      (res) => {
-        console.log(`📡 IndexNow ping status: ${res.statusCode}`);
-        res.on("data", () => {});
-        res.on("end", resolve);
-      }
-    );
-
-    req.on("error", (err) => {
-      console.error("⚠️  IndexNow ping failed:", err.message);
-      resolve();
-    });
-
-    req.write(payload);
-    req.end();
-  });
-}
-
-/**
  * MAIN
  */
-async function generatePages() {
-  console.log("🚗 Generating car pages...");
+function generatePages() {
+  console.log("🚗 LEVEL 5.5 SEO AUTHORITY MODE");
 
   const cars = loadCars();
   const template = fs.readFileSync(TEMPLATE_PATH, "utf-8");
 
-  const generatedUrls = [];
+  let count = 0;
 
   for (const car of cars) {
     const { dir, filePath } = getOutputPath(car);
     const { output, url } = renderCarPage(template, car, cars);
 
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(filePath, output, "utf-8");
-    generatedUrls.push(url);
+    fs.writeFileSync(filePath, output);
 
-    console.log(`  ✅ ${url}`);
+    console.log(`✔ ${url}`);
+    count++;
   }
 
-  console.log(`✅ Generated ${generatedUrls.length} car pages`);
-
-  console.log("🏷️  Generating brand hub pages...");
-  const brandUrls = generateBrandHubs(cars);
-  console.log(`✅ Generated ${brandUrls.length} brand hub pages`);
-
-  console.log("🔗 Syncing homepage footer links...");
-  syncHomepageFooterLinks(cars);
-
-  await pingIndexNow([...generatedUrls, ...brandUrls]);
+  console.log(`\n✅ Generated ${count} authority pages`);
 }
 
-generatePages().catch((err) => {
-  console.error("❌ Page generation failed:", err);
-  process.exit(1);
-});
+generatePages();
