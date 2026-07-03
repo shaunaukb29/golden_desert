@@ -1,0 +1,61 @@
+name: Generate Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      # Only re-run when something that affects generated output changes.
+      # Prevents infinite loops from the auto-commit step below, and
+      # avoids pointless runs on unrelated commits (e.g. blog/ edits).
+      - "cars/cars.json"
+      - "cars/generate-pages.js"
+      - "cars/template.html"
+      - "brand-hub-template.html"
+      - "generate-sitemap.js"
+  workflow_dispatch: {}
+
+# Avoid two runs racing and committing over each other
+concurrency:
+  group: generate-pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+
+    # Required so the workflow can push commits back to the repo
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          # Full history not needed, but fetch enough for a clean push
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run generator
+        run: npm run build
+
+      - name: Commit generated files (if any changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No generated file changes — nothing to commit."
+          else
+            git commit -m "chore: regenerate pages [automated]"
+            git push
+          fi
