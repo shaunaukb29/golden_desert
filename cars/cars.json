@@ -20,6 +20,13 @@
     "city": "Dubai",
     "slug": "toyota-corolla-service-cost-uae"
   },
+  {
+    "make": "Toyota",
+    "model": "Prado",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "toyota-prado-repair-cost-uae"
+  },
 
   {
     "make": "BMW",
@@ -41,6 +48,13 @@
     "country": "UAE",
     "city": "Dubai",
     "slug": "bmw-5-series-service-cost-uae"
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "bmw-3-series-repair-cost-uae"
   },
 
   {
@@ -64,6 +78,13 @@
     "city": "Abu Dhabi",
     "slug": "mercedes-gle-350-repair-cost-uae"
   },
+  {
+    "make": "Mercedes",
+    "model": "S500",
+    "country": "UAE",
+    "city": "Abu Dhabi",
+    "slug": "mercedes-s500-maintenance-cost-uae"
+  },
 
   {
     "make": "Nissan",
@@ -78,6 +99,13 @@
     "country": "UAE",
     "city": "Dubai",
     "slug": "nissan-altima-service-cost-uae"
+  },
+  {
+    "make": "Nissan",
+    "model": "X-Trail",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "nissan-xtrail-repair-cost-uae"
   },
 
   {
@@ -94,6 +122,13 @@
     "city": "Dubai",
     "slug": "honda-civic-maintenance-cost-uae"
   },
+  {
+    "make": "Honda",
+    "model": "CR-V",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "honda-crv-service-cost-uae"
+  },
 
   {
     "make": "Lexus",
@@ -108,5 +143,12 @@
     "country": "UAE",
     "city": "Dubai",
     "slug": "lexus-lx570-repair-cost-uae"
+  },
+  {
+    "make": "Lexus",
+    "model": "ES 350",
+    "country": "UAE",
+    "city": "Dubai",
+    "slug": "lexus-es350-service-cost-uae"
   }
 ]
