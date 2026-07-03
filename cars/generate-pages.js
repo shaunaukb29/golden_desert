@@ -325,17 +325,6 @@ ${sections}
 </html>`;
 }
 
-function generateSitemap(urls) {
-  const today = new Date().toISOString().split("T")[0];
-  const body = urls
-    .map(u => `  <url>\n    <loc>${BASE_URL}${u}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`)
-    .join("\n");
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
-}
-
-/**
- * MAIN
- */
 function generatePages() {
   console.log("\ud83d\ude97 Generating pages with real per-car data");
 
@@ -375,11 +364,8 @@ function generatePages() {
   allUrls.push("/repair-costs/");
   console.log("\u2714 /repair-costs/ (site hub)");
 
-  // Sitemap
-  fs.writeFileSync(path.join(ROOT_DIR, "sitemap.xml"), generateSitemap(["/repair-costs/", ...allUrls]));
-  console.log("\u2714 sitemap.xml");
-
-  console.log(`\n\u2705 Generated ${count} car pages, ${makes.length} brand hubs, 1 site hub, 1 sitemap`);
+  console.log(`\n\u2705 Generated ${count} car pages, ${makes.length} brand hubs, 1 site hub`);
+  console.log("\u2139\ufe0f  Run `npm run build` (or `node generate-sitemap.js`) next to regenerate sitemap_v4.xml");
 }
 
 generatePages();
