@@ -3,7 +3,7 @@
     "make": "Toyota",
     "model": "Camry",
     "city": "Dubai",
-    "slug": "camry-repair-cost",
+    "slug": "toyota-camry-repair-cost-uae",
     "popular": true,
     "year_range": "2018-2024",
     "costs": {
@@ -22,7 +22,7 @@
     "make": "Toyota",
     "model": "Land Cruiser",
     "city": "Dubai",
-    "slug": "land-cruiser-maintenance-cost",
+    "slug": "toyota-land-cruiser-maintenance-cost-uae",
     "popular": true,
     "year_range": "2016-2024",
     "costs": {
@@ -41,7 +41,7 @@
     "make": "Toyota",
     "model": "Corolla",
     "city": "Dubai",
-    "slug": "corolla-service-cost",
+    "slug": "toyota-corolla-service-cost-uae",
     "popular": true,
     "year_range": "2019-2024",
     "costs": {
@@ -60,7 +60,7 @@
     "make": "Toyota",
     "model": "Prado",
     "city": "Dubai",
-    "slug": "prado-repair-cost",
+    "slug": "toyota-prado-repair-cost-uae",
     "popular": false,
     "year_range": "2017-2024",
     "costs": {
@@ -75,12 +75,11 @@
       { "title": "Rear AC Blower Noise", "detail": "A whining rear AC blower is a frequent early symptom of bearing wear." }
     ]
   },
-
   {
     "make": "BMW",
     "model": "X5",
     "city": "Dubai",
-    "slug": "x5-maintenance-cost",
+    "slug": "bmw-x5-maintenance-cost-uae",
     "popular": true,
     "year_range": "2019-2024",
     "costs": {
@@ -99,7 +98,7 @@
     "make": "BMW",
     "model": "X3",
     "city": "Dubai",
-    "slug": "x3-repair-cost",
+    "slug": "bmw-x3-repair-cost-uae",
     "popular": false,
     "year_range": "2018-2024",
     "costs": {
@@ -118,7 +117,7 @@
     "make": "BMW",
     "model": "5 Series",
     "city": "Dubai",
-    "slug": "5-series-service-cost",
+    "slug": "bmw-5-series-service-cost-uae",
     "popular": false,
     "year_range": "2017-2024",
     "costs": {
@@ -137,7 +136,7 @@
     "make": "BMW",
     "model": "3 Series",
     "city": "Dubai",
-    "slug": "3-series-repair-cost",
+    "slug": "bmw-3-series-repair-cost-uae",
     "popular": false,
     "year_range": "2019-2024",
     "costs": {
@@ -152,12 +151,11 @@
       { "title": "Run-Flat Tire Cost", "detail": "Standard run-flat fitment means tire replacement cost is notably higher than non-run-flat competitors." }
     ]
   },
-
   {
     "make": "Mercedes",
     "model": "C200",
-    "city": "Abu Dhabi",
-    "slug": "c200-service-cost",
+    "city": "Dubai",
+    "slug": "mercedes-c200-service-cost-uae",
     "popular": true,
     "year_range": "2019-2024",
     "costs": {
@@ -167,7 +165,7 @@
       "ac_repair": [1000, 3400]
     },
     "known_issues": [
-      { "title": "AC Compressor Wear", "detail": "A commonly cited repair given the compressor's continuous duty cycle in Abu Dhabi's climate." },
+      { "title": "AC Compressor Wear", "detail": "A commonly cited repair given the compressor's continuous duty cycle in the region's climate." },
       { "title": "Air Suspension (AIRMATIC trims)", "detail": "Where fitted, AIRMATIC compressor and strut wear is among the highest single repair costs reported." },
       { "title": "Mechatronic Unit / Transmission Sensor Faults", "detail": "9G-Tronic transmission sensor faults can trigger limp mode; diagnosis is usually straightforward but parts aren't cheap." }
     ]
@@ -175,8 +173,8 @@
   {
     "make": "Mercedes",
     "model": "E300",
-    "city": "Abu Dhabi",
-    "slug": "e300-maintenance-cost",
+    "city": "Dubai",
+    "slug": "mercedes-e300-maintenance-cost-uae",
     "popular": false,
     "year_range": "2017-2024",
     "costs": {
@@ -194,8 +192,8 @@
   {
     "make": "Mercedes",
     "model": "GLE 350",
-    "city": "Abu Dhabi",
-    "slug": "gle-350-repair-cost",
+    "city": "Dubai",
+    "slug": "mercedes-gle-350-repair-cost-uae",
     "popular": false,
     "year_range": "2018-2024",
     "costs": {
@@ -213,8 +211,8 @@
   {
     "make": "Mercedes",
     "model": "S500",
-    "city": "Abu Dhabi",
-    "slug": "s500-maintenance-cost",
+    "city": "Dubai",
+    "slug": "mercedes-s500-maintenance-cost-uae",
     "popular": false,
     "year_range": "2016-2024",
     "costs": {
@@ -229,12 +227,11 @@
       { "title": "Adaptive Headlight Actuators", "detail": "A known wear item on higher-spec S-Class cars, more of a comfort/luxury repair than a mechanical necessity." }
     ]
   },
-
   {
     "make": "Nissan",
     "model": "Patrol",
     "city": "Dubai",
-    "slug": "patrol-maintenance-cost",
+    "slug": "nissan-patrol-maintenance-cost-uae",
     "popular": true,
     "year_range": "2017-2024",
     "costs": {
@@ -253,7 +250,7 @@
     "make": "Nissan",
     "model": "Altima",
     "city": "Dubai",
-    "slug": "altima-service-cost",
+    "slug": "nissan-altima-service-cost-uae",
     "popular": false,
     "year_range": "2019-2024",
     "costs": {
@@ -272,7 +269,7 @@
     "make": "Nissan",
     "model": "X-Trail",
     "city": "Dubai",
-    "slug": "xtrail-repair-cost",
+    "slug": "nissan-xtrail-repair-cost-uae",
     "popular": false,
     "year_range": "2018-2024",
     "costs": {
@@ -287,12 +284,11 @@
       { "title": "Suspension Noise Over Bumps", "detail": "Front strut mount wear is a commonly reported noise complaint after 60,000+ km." }
     ]
   },
-
   {
     "make": "Honda",
     "model": "Accord",
     "city": "Dubai",
-    "slug": "accord-repair-cost",
+    "slug": "honda-accord-repair-cost-uae",
     "popular": false,
     "year_range": "2018-2024",
     "costs": {
@@ -311,7 +307,7 @@
     "make": "Honda",
     "model": "Civic",
     "city": "Dubai",
-    "slug": "civic-maintenance-cost",
+    "slug": "honda-civic-maintenance-cost-uae",
     "popular": false,
     "year_range": "2019-2024",
     "costs": {
@@ -330,7 +326,7 @@
     "make": "Honda",
     "model": "CR-V",
     "city": "Dubai",
-    "slug": "crv-service-cost",
+    "slug": "honda-crv-service-cost-uae",
     "popular": false,
     "year_range": "2018-2024",
     "costs": {
@@ -345,12 +341,11 @@
       { "title": "Sunroof Drain Clogging", "detail": "A known maintenance item; neglecting drain cleaning can lead to water ingress." }
     ]
   },
-
   {
     "make": "Lexus",
     "model": "RX 350",
     "city": "Dubai",
-    "slug": "rx350-maintenance-cost",
+    "slug": "lexus-rx350-maintenance-cost-uae",
     "popular": true,
     "year_range": "2018-2024",
     "costs": {
@@ -369,7 +364,7 @@
     "make": "Lexus",
     "model": "LX 570",
     "city": "Dubai",
-    "slug": "lx570-repair-cost",
+    "slug": "lexus-lx570-repair-cost-uae",
     "popular": true,
     "year_range": "2016-2024",
     "costs": {
@@ -388,7 +383,7 @@
     "make": "Lexus",
     "model": "ES 350",
     "city": "Dubai",
-    "slug": "es350-service-cost",
+    "slug": "lexus-es350-service-cost-uae",
     "popular": false,
     "year_range": "2019-2024",
     "costs": {
