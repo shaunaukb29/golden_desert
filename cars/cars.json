@@ -1,46 +1,6 @@
 [
   {
     "make": "Toyota",
-    "model": "Camry",
-    "city": "Dubai",
-    "slug": "camry-repair-cost",
-    "popular": true,
-    "year_range": "2018-2024",
-    "costs": {
-      "minor_service": [
-        350,
-        700
-      ],
-      "major_service": [
-        900,
-        2200
-      ],
-      "brakes": [
-        600,
-        1600
-      ],
-      "ac_repair": [
-        500,
-        2200
-      ]
-    },
-    "known_issues": [
-      {
-        "title": "AC Compressor Wear",
-        "detail": "Continuous highway use in summer heat accelerates compressor wear, typically surfacing after 80,000-120,000 km."
-      },
-      {
-        "title": "CVT/Automatic Transmission Shudder",
-        "detail": "Some model years report mild shudder under light acceleration; a transmission fluid flush often resolves early symptoms."
-      },
-      {
-        "title": "Rear Suspension Bushings",
-        "detail": "Bushings degrade faster on Sheikh Zayed Road-heavy commutes due to sustained high speed and heat."
-      }
-    ]
-  },
-  {
-    "make": "Toyota",
     "model": "Land Cruiser",
     "city": "Dubai",
     "slug": "land-cruiser-maintenance-cost",

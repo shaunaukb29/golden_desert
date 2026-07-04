@@ -388,6 +388,7 @@ function generatePages() {
   let count = 0;
 
   for (const car of cars) {
+    if (car.slug && car.slug.includes("camry")) continue;
     const { dir, filePath } = getOutputPath(car);
     const { output, url } = renderCarPage(template, car, cars);
 
