@@ -1,35 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TCCEJ6DCM1');
-  (function() {
-    let activeSeconds = 0;
-    const interval = 10;
-    setInterval(() => {
-      if (!document.hidden) {
-        activeSeconds += interval;
-        if (typeof gtag === 'function') {
-          gtag('event', 'true_dwell_time', {
-            'event_category': 'Engagement',
-            'event_label': activeSeconds + 's_active',
-            'value': activeSeconds
-          });
-        }
-      }
-    }, interval * 1000);
-  })();
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-TCCEJ6DCM1');
+
+(function () {
+  let activeSeconds = 0;
+  const interval = 10;
+
+  setInterval(() => {
+    if (!document.hidden) {
+      activeSeconds += interval;
+      gtag('event', 'true_dwell_time', {
+        event_category: 'Engagement',
+        event_label: activeSeconds + 's_active',
+        value: activeSeconds
+      });
+    }
+  }, interval * 1000);
+})();
 </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Carithm Research Hub | Automotive Repair & Servicing Decision Intelligence</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Carithm Research publishes technical and decision-focused analysis on vehicle servicing, repair quotations, inspection language, brake systems, suspension diagnostics, and maintenance approval decisions." />
+<title>Carithm Research Hub | Vehicle Maintenance Guides, Repair Advice & Automotive Research</title>
+
+<meta name="description" content="Explore Carithm Research for AI-powered repair quote analysis, vehicle maintenance guides, brake wear, battery life, engine oil, timing chains, transmission reliability, repair costs, and automotive repair insights.">
+
+<meta name="keywords" content="car maintenance, automotive research, repair guides, repair quotes, AI mechanic, battery life UAE, brake wear Dubai, engine oil, timing chain, transmission life GCC, vehicle maintenance">
+
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<link rel="canonical" href="https://carithm.vercel.app/research/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Carithm Research Hub">
+<meta property="og:description" content="Automotive maintenance guides, repair intelligence, AI-powered repair quote analysis, and practical vehicle ownership research.">
+<meta property="og:url" content="https://carithm.vercel.app/research/">
+<meta property="og:image" content="https://carithm.vercel.app/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Carithm Research Hub">
+<meta name="twitter:description" content="Automotive maintenance guides, repair intelligence, AI-powered repair quote analysis, and practical vehicle ownership research.">
+
+<meta name="theme-color" content="#0b1220">
 
   <style>
     body{
@@ -112,125 +133,181 @@
 
 <p><a href="/">← Back to Carithm</a></p>
 
-<span class="tag">Automotive Decision Intelligence Research</span>
+<span class="tag">Automotive Research & Vehicle Maintenance Guides</span>
 
 <h1>Research Hub</h1>
 
 <p>
-Carithm Research focuses on how vehicle servicing, repair quotes, and workshop decisions are actually made —
-and how customers can interpret them before approving work.
+Carithm Research helps drivers make smarter decisions about vehicle maintenance, repair quotes, and long-term ownership. From AI-powered repair analysis to practical maintenance guides, our research explains how vehicles wear, why repairs are recommended, and how to avoid unnecessary costs.
 </p>
 
-<h2>Core Research Areas</h2>
+<h2>Featured Research</h2>
 
 <div class="card">
 
-<h3>🔥 AI-Powered Repair Quote Review (TOP PAGE)</h3>
-<p>How AI can review a repair estimate and explain labor, parts, and recommendations before you approve expensive repairs.</p>
-<p><a href="/research/ai.html"><b>→ AI Car Repair Quote Auditor: Your Independent Second Opinion</b></a></p>
+<h3>🔥 AI-Powered Repair Quote Review (Featured)</h3>
+
+<p>
+Upload a repair estimate and let AI explain labour, parts, pricing, and recommendations before you approve expensive repairs.
+</p>
+
+<p>
+<a href="/research/ai.html"><b>→ AI Car Repair Quote Auditor: Your Independent Second Opinion</b></a>
+</p>
 
 </div>
 
 <div class="card">
 
-<h3>Fleet & Operating Conditions</h3>
-<p>How environment and usage patterns affect real-world vehicle degradation.</p>
-<p><a href="/research/fleet.html">→ Fleet Maintenance Failure in High-Stress Climates</a></p>
+<h3>🔥 Servicing Approval Framework (Featured)</h3>
+
+<p>
+A practical framework that helps drivers decide which maintenance recommendations are essential, optional, or worth questioning before approving work.
+</p>
+
+<p>
+<a href="/research/servicing.html"><b>→ 8 Questions Before Approving Any Car Service</b></a>
+</p>
 
 </div>
 
-<div class="card">
-
-<h3>Workshop Decision Systems</h3>
-<p>How workshops convert symptoms and service history into repair recommendations.</p>
-<p><a href="/research/workflow.html">→ Turning Service History Into Preventative Revenue</a></p>
-
-</div>
+<h2>Repair & Workshop Intelligence</h2>
 
 <div class="card">
 
 <h3>Repair Quote Intelligence</h3>
-<p>How to interpret repair quotes and separate essential vs optional work.</p>
-<p><a href="/research/repair.html">→ How to Read a Car Repair Quote Before You Approve It</a></p>
+
+<p>
+Learn how repair estimates are structured and how to separate essential work from optional recommendations.
+</p>
+
+<p>
+<a href="/research/repair.html">→ How to Read a Car Repair Quote Before You Approve It</a>
+</p>
 
 </div>
 
 <div class="card">
 
 <h3>Repair Cost Analysis</h3>
-<p>Learn how to identify overpriced repair estimates, understand common warning signs, and ask the right questions before approving expensive work.</p>
-<p><a href="/research/cost.html">→ How to Tell if a Mechanic Is Overcharging You</a></p>
+
+<p>
+Understand repair pricing, identify potentially overpriced estimates, and ask better questions before approving expensive repairs.
+</p>
+
+<p>
+<a href="/research/cost.html">→ How to Tell if a Mechanic Is Overcharging You</a>
+</p>
 
 </div>
 
 <div class="card">
 
 <h3>Brake & Suspension Diagnostics</h3>
-<p>Understanding how common safety components are diagnosed and often over-recommended.</p>
+
 <p>
-<a href="/research/brakes.html">Brake Pads vs Brake Discs</a><br>
-<a href="/research/suspension.html">Suspension Arms Verification</a>
+Learn how workshops diagnose common brake and suspension problems and understand when repairs are truly necessary.
+</p>
+
+<p>
+<a href="/research/brakes.html">→ Brake Pads vs Brake Discs</a><br>
+<a href="/research/suspension.html">→ Suspension Arms Verification</a>
 </p>
 
 </div>
 
 <div class="card">
 
-<h3>Inspection & Servicing Language</h3>
-<p>Understanding workshop wording, inspection terms, and servicing decisions.</p>
+<h3>Inspection & Workshop Language</h3>
 
-<p><a href="/research/inspection.html">What Does "Needs Inspection" Mean?</a></p>
+<p>
+Understand inspection reports, maintenance terminology, and the wording commonly used by workshops.
+</p>
+
+<p>
+<a href="/research/inspection.html">→ What Does "Needs Inspection" Mean?</a>
+</p>
 
 </div>
 
 <div class="card">
 
-<h3>🔥 Servicing Approval Framework (TOP PAGE)</h3>
+<h3>Industry & Fleet Research</h3>
+
 <p>
-Before approving any service, customers often don’t know what is necessary vs optional.
-This page introduces a structured way to evaluate servicing recommendations.
+Research into fleet operations, workshop decision systems, and real-world vehicle degradation in demanding environments.
 </p>
 
-<p><a href="/research/servicing.html"><b>→ 8 Questions Before Approving Any Car Service</b></a></p>
+<p>
+<a href="/research/fleet.html">→ Fleet Maintenance Failure in High-Stress Climates</a><br>
+<a href="/research/workflow.html">→ Turning Service History Into Preventative Revenue</a>
+</p>
+
+</div>
+
+<h2>Maintenance & Reliability Guides</h2>
+
+<div class="card">
+
+<h3>Everyday Vehicle Maintenance</h3>
+
+<p>
+Simple, research-backed guides covering batteries, brakes, engine oil, transmissions, timing chains, and common maintenance myths—especially for drivers in the UAE and GCC.
+</p>
+
+<p>
+<a href="/research/battery-life-uae.html">→ Car Battery Life in UAE</a><br>
+<a href="/research/brake-wear-dubai.html">→ Brake Wear in Dubai</a><br>
+<a href="/research/heat-engine-oil.html">→ Engine Oil in UAE Heat</a><br>
+<a href="/research/oil-change-myths.html">→ Common Oil Change Myths</a><br>
+<a href="/research/timing-chain-failures.html">→ Timing Chain Failure Signs</a><br>
+<a href="/research/transmission-life-gcc.html">→ Transmission Life in GCC</a>
+</p>
 
 </div>
 
 <h2>Why this research exists</h2>
 
 <p>
-Most vehicle owners are not confused about price — they are confused about reasoning.
+Vehicle owners are often faced with repair recommendations and maintenance decisions without enough context. Carithm Research exists to explain the reasoning behind those recommendations using clear, evidence-based guidance.
 </p>
 
 <p>
-This research exists to translate workshop logic into clear decision structures
-so servicing and repairs can be understood before approval, not after cost escalation.
+Whether you're reviewing a repair quote, diagnosing a warning light, or learning how extreme climates affect your vehicle, our goal is to help you make informed decisions with confidence.
 </p>
 
 <h2>What we study</h2>
 
 <ul>
+<li>AI-assisted repair estimate analysis</li>
 <li>Workshop servicing decision logic</li>
 <li>Repair recommendation validation</li>
-<li>Service interval vs real-world wear mismatch</li>
-<li>Inspection terminology interpretation</li>
-<li>Brake and suspension diagnostic behaviour</li>
-<li>Quote structure and bundling patterns</li>
-<li>Consumer approval decision frameworks</li>
-<li>AI-assisted repair estimate auditing</li>
+<li>Vehicle reliability and preventive maintenance</li>
+<li>Battery lifespan in hot climates</li>
+<li>Brake wear and safety systems</li>
+<li>Engine oil performance in extreme heat</li>
+<li>Transmission longevity and servicing</li>
+<li>Timing chain reliability</li>
+<li>Service intervals vs real-world vehicle wear</li>
+<li>Inspection terminology and workshop language</li>
+<li>Consumer maintenance decision frameworks</li>
 </ul>
 
 <h2>Explore the research</h2>
 
 <p>
-<a href="/research/ai.html">→ AI Car Repair Quote Auditor: Your Independent Second Opinion</a><br><br>
 
-<a href="/research/fleet.html">→ Fleet Maintenance Failure in High-Stress Climates</a><br><br>
+<strong>AI & Repair Decisions</strong><br><br>
 
-<a href="/research/workflow.html">→ Turning Service History Into Preventative Revenue</a><br><br>
+<a href="/research/ai.html">→ AI Car Repair Quote Auditor</a><br><br>
 
-<a href="/research/repair.html">→ How to Read a Car Repair Quote Before You Approve It</a><br><br>
+<a href="/research/servicing.html">→ 8 Questions Before Approving Any Car Service</a><br><br>
+
+<a href="/research/repair.html">→ How to Read a Car Repair Quote</a><br><br>
 
 <a href="/research/cost.html">→ How to Tell if a Mechanic Is Overcharging You</a><br><br>
+
+<strong>Vehicle Systems</strong><br><br>
 
 <a href="/research/brakes.html">→ Brake Pads vs Brake Discs</a><br><br>
 
@@ -238,9 +315,27 @@ so servicing and repairs can be understood before approval, not after cost escal
 
 <a href="/research/inspection.html">→ What Does "Needs Inspection" Mean?</a><br><br>
 
-<a href="/research/servicing.html">→ 8 Questions Before Approving Any Car Service</a>
-</p>
+<strong>Maintenance Guides</strong><br><br>
 
+<a href="/research/battery-life-uae.html">→ Car Battery Life in UAE</a><br><br>
+
+<a href="/research/brake-wear-dubai.html">→ Brake Wear in Dubai</a><br><br>
+
+<a href="/research/heat-engine-oil.html">→ Engine Oil in UAE Heat</a><br><br>
+
+<a href="/research/oil-change-myths.html">→ Common Oil Change Myths</a><br><br>
+
+<a href="/research/timing-chain-failures.html">→ Timing Chain Failure Signs</a><br><br>
+
+<a href="/research/transmission-life-gcc.html">→ Transmission Life in GCC</a><br><br>
+
+<strong>Industry Research</strong><br><br>
+
+<a href="/research/fleet.html">→ Fleet Maintenance Failure in High-Stress Climates</a><br><br>
+
+<a href="/research/workflow.html">→ Turning Service History Into Preventative Revenue</a>
+
+</p>
 </div>
 
 </body>
