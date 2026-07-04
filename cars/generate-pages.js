@@ -335,7 +335,7 @@ function cleanupLegacyFiles() {
   for (const rel of LEGACY_FILES) {
     const filePath = path.join(ROOT_DIR, rel);
     if (fs.existsSync(filePath)) {
-      fs.unlinkSync(filePath);
+      if (filePath.includes("cars") || filePath.includes(".html")) if (isSafeDelete(filePath)) fs.unlinkSync(filePath);
       console.log(`\ud83e\uddf9 Removed legacy file: /${rel}`);
       removed++;
     }
@@ -362,7 +362,7 @@ function cleanupStaleGenerated(newFilePaths) {
   let removed = 0;
   for (const oldPath of previous) {
     if (!newSet.has(oldPath) && fs.existsSync(oldPath)) {
-      fs.unlinkSync(oldPath);
+      if (oldPath.includes("cars") || oldPath.includes(".html")) fs.unlinkSync(oldPath);
       console.log(`\ud83e\uddf9 Removed stale generated file: ${path.relative(ROOT_DIR, oldPath)}`);
       removed++;
     }
@@ -432,3 +432,5 @@ function generatePages() {
 }
 
 generatePages();
+
+function isSafeDelete(p){ return typeof p === 'string' && (p.includes('cars') || p.includes('.html')); }
