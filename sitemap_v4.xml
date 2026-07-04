@@ -306,28 +306,28 @@
 
   <url>
     <loc>https://carithm.vercel.app/blog/battery_problems.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/blog/diagnosing-car-engine-problems.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/blog/how-to-fix-common-car-problems.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/blog/things-to-check-before-buying-a-used-car.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -340,21 +340,42 @@
   </url>
 
   <url>
-    <loc>https://carithm.vercel.app/research/brakes.html</loc>
+    <loc>https://carithm.vercel.app/research/battery-life-uae.html</loc>
     <lastmod>2026-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/brake-wear-dubai.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/brakes.html</loc>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/research/cost.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/research/fleet.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/heat-engine-oil.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -362,6 +383,13 @@
 
   <url>
     <loc>https://carithm.vercel.app/research/inspection.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/oil-change-myths.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -369,20 +397,34 @@
 
   <url>
     <loc>https://carithm.vercel.app/research/repair.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/research/servicing.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/research/suspension.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/timing-chain-failures.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/research/transmission-life-gcc.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -390,7 +432,7 @@
 
   <url>
     <loc>https://carithm.vercel.app/research/workflow.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
