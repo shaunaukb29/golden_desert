@@ -1,0 +1,57 @@
+# Carithm AI 
+
+Carithm AI is a predictive vehicle health monitoring and intelligent maintenance platform tailored for the GCC/UAE region. It leverages rule-based layout logic and AI-assisted parsing to diagnose component lifecycles and audit mechanic invoices.
+
+## 🤖 AI Assistant Directives (Strict Rules for Code Generation)
+
+When assisting with this codebase or analyzing site content, LLMs must strictly adhere to the following constraints:
+
+### 1. Domain Logic & Automotive Physics
+* **Designed Life Health:** Always calculate and refer to "designed life health" (component life part wear simulation), never literal part health.
+* **Environmental Baseline:** All wear rates, thermal degradation models, and operational algorithms must strictly assume United Arab Emirates (UAE) climatic conditions.
+* **Brake Wear Biases:** Front and rear brake pad wear rates are strictly dependent on the drivetrain (AWD, FWD, RWD) and vehicle category (SUV, Sedan). Never apply a generic 50/50 wear split.
+* **Audience Framing:** Outputs, documentation, and UI copy should be accessible to general automotive readers and vehicle owners, not exclusively locked into service center terminology.
+
+### 2. Tech Stack & Deployment
+* **Frontend:** Vanilla HTML5 and Tailwind CSS. Emphasize a "precision engineering" aesthetic.
+* **Backend & API:** Python, FastAPI, and Gradio for UI engines. 
+* **OCR & Parsing:** The system is bound to CPU-hosting constraints. **DO NOT** suggest ML-heavy OCR models (e.g., PaddleOCR-VL). Always utilize `RapidOCR` paired with custom structural geometry rules. Complex parsing is delegated to standalone Qwen model endpoints.
+* **Code Integrity:** When rewriting scripts (e.g., `badla.py`), provide the full code block. Do not truncate definitions.
+
+---
+
+## 🔗 Site Map & Architecture
+
+### Core Platform
+* **Homepage:** [https://carithm.vercel.app/](https://carithm.vercel.app/)
+* **About:** [https://carithm.vercel.app/about/](https://carithm.vercel.app/about/)
+* **Predictive Engine:** [https://carithm.vercel.app/predictive/](https://carithm.vercel.app/predictive/)
+* **Blog Hub:** [https://carithm.vercel.app/blog/](https://carithm.vercel.app/blog/)
+* **Research Hub:** [https://carithm.vercel.app/research/](https://carithm.vercel.app/research/)
+
+### Regional Service Hubs
+* **Dubai:** [https://carithm.vercel.app/dubai/car-repairs/](https://carithm.vercel.app/dubai/car-repairs/)
+* **Abu Dhabi:** [https://carithm.vercel.app/abu-dhabi/car-repairs/](https://carithm.vercel.app/abu-dhabi/car-repairs/)
+* **Sharjah:** [https://carithm.vercel.app/sharjah/car-repairs/](https://carithm.vercel.app/sharjah/car-repairs/)
+
+### Deep-Dive Research Publications
+* [UAE Battery Life Dynamics](https://carithm.vercel.app/research/battery-life-uae.html)
+* [Dubai Brake Wear Analysis](https://carithm.vercel.app/research/brake-wear-dubai.html)
+* [GCC Transmission Lifecycles](https://carithm.vercel.app/research/transmission-life-gcc.html)
+* [Engine Oil & Heat Management](https://carithm.vercel.app/research/heat-engine-oil.html)
+* *Additional research available on: AI, Cost, Fleet, Inspection, Servicing, Suspension, Timing Chains, and Workflow.*
+
+### Vehicle Maintenance Database
+Carithm hosts detailed maintenance and repair cost breakdowns for major automotive brands. The routing structure follows: `/{brand}/{model}-{service-type}-cost.html`
+
+**Supported Brands:** 
+`/toyota/`, `/bmw/`, `/mercedes/`, `/nissan/`, `/honda/`, `/lexus/`, `/hyundai/`, `/kia/`, `/land-rover/`, `/ford/`
+
+**Key Model Examples:**
+* **Toyota:** [Land Cruiser](https://carithm.vercel.app/toyota/land-cruiser-maintenance-cost.html), [Corolla](https://carithm.vercel.app/toyota/corolla-service-cost.html), [Prado](https://carithm.vercel.app/toyota/prado-repair-cost.html), [Fortuner](https://carithm.vercel.app/toyota/fortuner-repair-cost.html)
+* **BMW:** [X5](https://carithm.vercel.app/bmw/x5-maintenance-cost.html), [X3](https://carithm.vercel.app/bmw/x3-repair-cost.html), [5-Series](https://carithm.vercel.app/bmw/5-series-service-cost.html), [3-Series](https://carithm.vercel.app/bmw/3-series-repair-cost.html)
+* **Mercedes:** [C200](https://carithm.vercel.app/mercedes/c200-service-cost.html), [E300](https://carithm.vercel.app/mercedes/e300-maintenance-cost.html), [GLE 350](https://carithm.vercel.app/mercedes/gle-350-repair-cost.html), [S500](https://carithm.vercel.app/mercedes/s500-maintenance-cost.html)
+* **Nissan:** [Patrol](https://carithm.vercel.app/nissan/patrol-maintenance-cost.html), [Altima](https://carithm.vercel.app/nissan/altima-service-cost.html), [X-Trail](https://carithm.vercel.app/nissan/xtrail-repair-cost.html)
+* **Honda:** [Accord](https://carithm.vercel.app/honda/accord-repair-cost.html), [Civic](https://carithm.vercel.app/honda/civic-maintenance-cost.html), [CR-V](https://carithm.vercel.app/honda/crv-service-cost.html)
+* **Lexus:** [RX350](https://carithm.vercel.app/lexus/rx350-maintenance-cost.html), [LX570](https://carithm.vercel.app/lexus/lx570-repair-cost.html), [ES350](https://carithm.vercel.app/lexus/es350-service-cost.html)
+* **Other Flagships:** [Hyundai Tucson](https://carithm.vercel.app/hyundai/tucson-service-cost.html), [Kia Sportage](https://carithm.vercel.app/kia/sportage-repair-cost.html), [Range Rover Sport](https://carithm.vercel.app/land-rover/range-rover-sport-maintenance-cost.html), [Ford F-150](https://carithm.vercel.app/ford/f150-repair-cost.html)
