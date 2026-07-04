@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
+      }
+    }, interval * 1000);
+  })();
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Carithm Research Hub | Automotive Repair & Servicing Decision Intelligence</title>
+
+  <meta name="description" content="Carithm Research publishes technical and decision-focused analysis on vehicle servicing, repair quotations, inspection language, brake systems, suspension diagnostics, and maintenance approval decisions." />
+
+  <style>
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto;
+      background:#0b1220;
+      color:#e5e7eb;
+      line-height:1.65;
+    }
+
+    .container{
+      max-width:900px;
+      margin:0 auto;
+      padding:4rem 1.5rem;
+    }
+
+    h1{
+      font-size:2.6rem;
+      color:#fff;
+      margin-bottom:1rem;
+      font-weight:800;
+    }
+
+    h2{
+      color:#fff;
+      margin-top:3rem;
+      font-size:1.5rem;
+    }
+
+    h3{
+      color:#fff;
+      margin-top:0;
+    }
+
+    p{
+      color:#b6c2d1;
+      font-size:1.05rem;
+    }
+
+    ul{
+      color:#b6c2d1;
+    }
+
+    li{
+      margin:.5rem 0;
+    }
+
+    a{
+      color:#60a5fa;
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:5px 12px;
+      border-radius:999px;
+      background:rgba(96,165,250,.12);
+      color:#60a5fa;
+      font-size:12px;
+      margin-bottom:1rem;
+    }
+
+    .card{
+      margin-top:1.5rem;
+      padding:1.4rem;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<p><a href="/">← Back to Carithm</a></p>
+
+<span class="tag">Automotive Decision Intelligence Research</span>
+
+<h1>Research Hub</h1>
+
+<p>
+Carithm Research focuses on how vehicle servicing, repair quotes, and workshop decisions are actually made —
+and how customers can interpret them before approving work.
+</p>
+
+<h2>Core Research Areas</h2>
+
+<div class="card">
+
+<h3>🔥 AI-Powered Repair Quote Review (TOP PAGE)</h3>
+<p>How AI can review a repair estimate and explain labor, parts, and recommendations before you approve expensive repairs.</p>
+<p><a href="/research/ai.html"><b>→ AI Car Repair Quote Auditor: Your Independent Second Opinion</b></a></p>
+
+</div>
+
+<div class="card">
+
+<h3>Fleet & Operating Conditions</h3>
+<p>How environment and usage patterns affect real-world vehicle degradation.</p>
+<p><a href="/research/fleet.html">→ Fleet Maintenance Failure in High-Stress Climates</a></p>
+
+</div>
+
+<div class="card">
+
+<h3>Workshop Decision Systems</h3>
+<p>How workshops convert symptoms and service history into repair recommendations.</p>
+<p><a href="/research/workflow.html">→ Turning Service History Into Preventative Revenue</a></p>
+
+</div>
+
+<div class="card">
+
+<h3>Repair Quote Intelligence</h3>
+<p>How to interpret repair quotes and separate essential vs optional work.</p>
+<p><a href="/research/repair.html">→ How to Read a Car Repair Quote Before You Approve It</a></p>
+
+</div>
+
+<div class="card">
+
+<h3>Repair Cost Analysis</h3>
+<p>Learn how to identify overpriced repair estimates, understand common warning signs, and ask the right questions before approving expensive work.</p>
+<p><a href="/research/cost.html">→ How to Tell if a Mechanic Is Overcharging You</a></p>
+
+</div>
+
+<div class="card">
+
+<h3>Brake & Suspension Diagnostics</h3>
+<p>Understanding how common safety components are diagnosed and often over-recommended.</p>
+<p>
+<a href="/research/brakes.html">Brake Pads vs Brake Discs</a><br>
+<a href="/research/suspension.html">Suspension Arms Verification</a>
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Inspection & Servicing Language</h3>
+<p>Understanding workshop wording, inspection terms, and servicing decisions.</p>
+
+<p><a href="/research/inspection.html">What Does "Needs Inspection" Mean?</a></p>
+
+</div>
+
+<div class="card">
+
+<h3>🔥 Servicing Approval Framework (TOP PAGE)</h3>
+<p>
+Before approving any service, customers often don’t know what is necessary vs optional.
+This page introduces a structured way to evaluate servicing recommendations.
+</p>
+
+<p><a href="/research/servicing.html"><b>→ 8 Questions Before Approving Any Car Service</b></a></p>
+
+</div>
+
+<h2>Why this research exists</h2>
+
+<p>
+Most vehicle owners are not confused about price — they are confused about reasoning.
+</p>
+
+<p>
+This research exists to translate workshop logic into clear decision structures
+so servicing and repairs can be understood before approval, not after cost escalation.
+</p>
+
+<h2>What we study</h2>
+
+<ul>
+<li>Workshop servicing decision logic</li>
+<li>Repair recommendation validation</li>
+<li>Service interval vs real-world wear mismatch</li>
+<li>Inspection terminology interpretation</li>
+<li>Brake and suspension diagnostic behaviour</li>
+<li>Quote structure and bundling patterns</li>
+<li>Consumer approval decision frameworks</li>
+<li>AI-assisted repair estimate auditing</li>
+</ul>
+
+<h2>Explore the research</h2>
+
+<p>
+<a href="/research/ai.html">→ AI Car Repair Quote Auditor: Your Independent Second Opinion</a><br><br>
+
+<a href="/research/fleet.html">→ Fleet Maintenance Failure in High-Stress Climates</a><br><br>
+
+<a href="/research/workflow.html">→ Turning Service History Into Preventative Revenue</a><br><br>
+
+<a href="/research/repair.html">→ How to Read a Car Repair Quote Before You Approve It</a><br><br>
+
+<a href="/research/cost.html">→ How to Tell if a Mechanic Is Overcharging You</a><br><br>
+
+<a href="/research/brakes.html">→ Brake Pads vs Brake Discs</a><br><br>
+
+<a href="/research/suspension.html">→ Suspension Arms Verification</a><br><br>
+
+<a href="/research/inspection.html">→ What Does "Needs Inspection" Mean?</a><br><br>
+
+<a href="/research/servicing.html">→ 8 Questions Before Approving Any Car Service</a>
+</p>
+
+</div>
+
+</body>
+</html>
