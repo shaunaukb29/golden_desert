@@ -26,5 +26,31 @@
     { "source": "/lexus/lexus-rx350-maintenance-cost-uae.html", "destination": "/lexus/rx350-maintenance-cost.html", "permanent": true },
     { "source": "/lexus/lexus-lx570-repair-cost-uae.html", "destination": "/lexus/lx570-repair-cost.html", "permanent": true },
     { "source": "/lexus/lexus-es350-service-cost-uae.html", "destination": "/lexus/es350-service-cost.html", "permanent": true }
+  ],
+  "rewrites": [
+    {
+      "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)",
+      "destination": "/$1/index.html"
+    },
+    {
+      "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)/(:model)",
+      "destination": "/$1/$2/index.html"
+    },
+    {
+      "source": "/parts/:part",
+      "destination": "/parts/:part.html"
+    },
+    {
+      "source": "/repairs/:repair",
+      "destination": "/repairs/:repair.html"
+    },
+    {
+      "source": "/problems/:problem",
+      "destination": "/problems/:problem.html"
+    },
+    {
+      "source": "/research/:study",
+      "destination": "/research/:study.html"
+    }
   ]
 }
