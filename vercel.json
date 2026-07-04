@@ -5,7 +5,6 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/toyota/toyota-camry-repair-cost-uae.html", "destination": "/toyota/camry-repair-cost.html", "permanent": true },
     { "source": "/toyota/toyota-land-cruiser-maintenance-cost-uae.html", "destination": "/toyota/land-cruiser-maintenance-cost.html", "permanent": true },
     { "source": "/toyota/toyota-corolla-service-cost-uae.html", "destination": "/toyota/corolla-service-cost.html", "permanent": true },
     { "source": "/toyota/toyota-prado-repair-cost-uae.html", "destination": "/toyota/prado-repair-cost.html", "permanent": true },

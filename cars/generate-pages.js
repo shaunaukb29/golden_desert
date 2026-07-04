@@ -10,14 +10,13 @@ const BRAND_HUB_TEMPLATE_PATH = path.join(ROOT_DIR, "brand-hub-template.html");
 const MANIFEST_PATH = path.join(ROOT_DIR, "cars", ".generated-manifest.json");
 
 /**
- * One-time migration list: old stuttered filenames -> new clean slugs.
  * These were created before the URL structure was fixed and are NOT
  * tracked by the manifest system, so they need to be removed explicitly
  * once. Safe to delete this block after your next deploy confirms the
  * old files are gone from the live site.
  */
 const LEGACY_FILES = [
-  "toyota/toyota-camry-repair-cost-uae.html",
+  "",
   "toyota/toyota-land-cruiser-maintenance-cost-uae.html",
   "toyota/toyota-corolla-service-cost-uae.html",
   "toyota/toyota-prado-repair-cost-uae.html",
@@ -46,7 +45,6 @@ function loadCars() {
 
 /**
  * Path helper — slug already excludes the make, so no more
- * /toyota/toyota-camry-repair-cost.html stutter.
  */
 function getOutputPath(car) {
   const makeLower = car.make.toLowerCase().replace(/\s+/g, "-");
@@ -330,7 +328,6 @@ ${sections}
 }
 
 /**
- * Remove the known old stuttered files (one-time migration). Safe to
  * leave in permanently — once the files are gone, this is a no-op.
  */
 function cleanupLegacyFiles() {
@@ -380,7 +377,6 @@ function generatePages() {
 
   const legacyRemoved = cleanupLegacyFiles();
   if (legacyRemoved > 0) {
-    console.log(`\ud83e\uddf9 Cleaned up ${legacyRemoved} legacy stuttered-URL file(s)\n`);
   }
 
   const cars = loadCars();

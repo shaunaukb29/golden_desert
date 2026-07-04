@@ -16,7 +16,6 @@ replacements = {
 
     # predictive fixes
     "/toyota/toyota-corolla-service-cost-uae.html": "/toyota/corolla-service-cost.html",
-    "/toyota/toyota-camry-repair-cost-uae.html": "/toyota/camry-repair-cost.html",
 
     "/toyota/toyota-land-cruiser-maintenance-cost-uae.html": "/toyota/land-cruiser-maintenance-cost.html",
     "/mercedes/mercedes-c200-service-cost-abu-dhabi.html": "/mercedes/c200-service-cost.html",
