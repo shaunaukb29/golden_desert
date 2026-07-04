@@ -88,6 +88,37 @@
     "target": "https://carithm.vercel.app/?q={search_term_string}",
     "query-input": "required name=search_term_string"
   },
+  "author": { "@type": "Organization", "name": "Carithm" },
+  "publisher": { "@type": "Organization", "name": "Carithm" },
+  "dateModified": "2026-07-04",
+  "sameAs": [
+    "https://www.linkedin.com/company/carithm-ai/",
+    "https://x.com/carithmai"
+  ]
+}
+</script>
+
+<!-- SEO UPGRADE #32 — Organization + founder schema for E-E-A-T:
+     ties the site to a named person with a stated role, which is what
+     Google's quality guidelines look for as an authorship/expertise signal. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Carithm",
+  "url": "https://carithm.vercel.app/",
+  "email": "carithmai29@gmail.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Shaunauk Basu",
+    "jobTitle": "Founder & Engineer"
+  },
+  "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
+  "knowsAbout": [
+    "Vehicle maintenance scheduling",
+    "Automotive repair cost analysis",
+    "GCC climate wear modelling"
+  ],
   "sameAs": [
     "https://www.linkedin.com/company/carithm-ai/",
     "https://x.com/carithmai"
@@ -194,6 +225,38 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes. Extreme GCC temperatures increase wear on fluids, filters, and components. Carithm adjusts service expectations to reflect faster degradation in hot climates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if I need new brake discs or just pads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Discs typically need replacing far less often than pads, usually every second or third pad change, unless they are scored, warped, or below minimum thickness."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do brake pads last in the UAE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most brake pads last 35,000 to 60,000 km in UAE conditions due to heavy stop-and-go city traffic, shorter than typical manufacturer estimates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an engine flush every time I change my oil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Engine flushes are rarely needed on a normal service schedule and are one of the most common unnecessary upsells Carithm flags."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do car batteries last in the UAE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typically 2.5 to 3.5 years in the UAE, shorter than the 4 to 5 years seen in temperate climates, due to sustained high temperatures."
       }
     }
   ]
@@ -948,7 +1011,282 @@ header {
   }
 </style>
 
+<!-- SEO UPGRADE #28 — Additional site-content sections: brands, parts coverage,
+     repair categories, maintenance intervals, cost ranges, upsell guide,
+     UAE coverage, common problems, research. Reuses existing design tokens. -->
+<style>
+  .brand-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .brand-chip { font-size: 13px; font-weight: 500; color: var(--text); text-decoration: none; border: 1px solid var(--border); padding: 9px 16px; border-radius: 10px; background: var(--surface); transition: border-color .2s, transform .2s; }
+  .brand-chip:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+  .chip-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+  .chip-link { font-size: 12px; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 7px 12px; border-radius: 8px; background: var(--surface); transition: border-color .2s, color .2s; }
+  .chip-link:hover { border-color: var(--accent); color: var(--accent); }
+
+  .data-table { width: 100%; border-collapse: collapse; margin-top: 24px; font-size: 13px; }
+  .data-table th, .data-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--border); }
+  .data-table th { color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
+  .data-table td { color: var(--text); }
+  .data-table tr:last-child td { border-bottom: none; }
+
+  .cost-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
+  .cost-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 16px 18px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .cost-part { font-size: 13px; font-weight: 500; color: var(--text); }
+  .cost-range { font-size: 13px; font-weight: 600; color: var(--accent); white-space: nowrap; }
+
+  .upsell-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
+  .upsell-row { display: flex; justify-content: space-between; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 12px 16px; gap: 10px; }
+  .upsell-name { font-size: 13px; color: var(--text); font-weight: 500; }
+
+  .tile-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 24px; }
+  .tile-link { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 14px 16px; font-size: 13px; font-weight: 500; color: var(--text); text-decoration: none; text-align: center; transition: border-color .2s, transform .2s, color .2s; }
+  .tile-link:hover { border-color: var(--accent); transform: translateY(-2px); color: var(--accent); }
+
+  .coverage-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .coverage-chip { font-size: 13px; font-weight: 500; color: var(--text); background: var(--surface); border: 1px solid var(--border); padding: 9px 16px; border-radius: 99px; }
+
+  .research-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px; }
+  .research-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 20px; text-decoration: none; display: block; transition: border-color .2s, transform .2s; }
+  .research-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .research-card h3 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .research-card p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  @media (max-width: 860px) {
+    .cost-grid, .research-grid { grid-template-columns: 1fr 1fr; }
+    .tile-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 620px) {
+    .cost-grid, .research-grid, .upsell-grid { grid-template-columns: 1fr; }
+    .tile-grid { grid-template-columns: 1fr 1fr; }
+    .data-table { font-size: 12px; }
+    .data-table th, .data-table td { padding: 10px 8px; }
+  }
+</style>
+
 <div class="below" id="how-it-works">
+
+  <!-- SEO UPGRADE #28a — Featured Brands: entity coverage + internal linking -->
+  <section aria-labelledby="brands-heading">
+    <div class="eyebrow-c">Supported Manufacturers</div>
+    <h2 id="brands-heading">Car brands Carithm checks quotes for</h2>
+    <p class="lede">46+ manufacturers, each calibrated with brand-specific service intervals and GCC wear data.</p>
+    <div class="brand-grid">
+      <a class="brand-chip" href="/toyota">Toyota</a>
+      <a class="brand-chip" href="/nissan">Nissan</a>
+      <a class="brand-chip" href="/honda">Honda</a>
+      <a class="brand-chip" href="/bmw">BMW</a>
+      <a class="brand-chip" href="/mercedes">Mercedes-Benz</a>
+      <a class="brand-chip" href="/audi">Audi</a>
+      <a class="brand-chip" href="/volkswagen">Volkswagen</a>
+      <a class="brand-chip" href="/hyundai">Hyundai</a>
+      <a class="brand-chip" href="/kia">Kia</a>
+      <a class="brand-chip" href="/mazda">Mazda</a>
+      <a class="brand-chip" href="/ford">Ford</a>
+      <a class="brand-chip" href="/chevrolet">Chevrolet</a>
+      <a class="brand-chip" href="/lexus">Lexus</a>
+      <a class="brand-chip" href="/porsche">Porsche</a>
+      <a class="brand-chip" href="/land-rover">Land Rover</a>
+      <a class="brand-chip" href="/range-rover">Range Rover</a>
+      <a class="brand-chip" href="/tesla">Tesla</a>
+      <a class="brand-chip" href="/volvo">Volvo</a>
+      <a class="brand-chip" href="/infiniti">Infiniti</a>
+      <a class="brand-chip" href="/mitsubishi">Mitsubishi</a>
+    </div>
+  </section>
+
+  <!-- SEO UPGRADE #30 — Popular Models: higher-intent model-level search terms -->
+  <section aria-labelledby="models-heading">
+    <div class="eyebrow-c">Popular Models</div>
+    <h2 id="models-heading">Model-specific service costs and schedules</h2>
+    <p class="lede">Most GCC searches are model-specific, not just brand-specific — these are the vehicles we see most often.</p>
+    <div class="chip-grid">
+      <a class="chip-link" href="/toyota/land-cruiser">Toyota Land Cruiser</a>
+      <a class="chip-link" href="/toyota/prado">Toyota Prado</a>
+      <a class="chip-link" href="/toyota/camry">Toyota Camry</a>
+      <a class="chip-link" href="/toyota/corolla">Toyota Corolla</a>
+      <a class="chip-link" href="/toyota/fortuner">Toyota Fortuner</a>
+      <a class="chip-link" href="/nissan/patrol">Nissan Patrol</a>
+      <a class="chip-link" href="/nissan/altima">Nissan Altima</a>
+      <a class="chip-link" href="/honda/accord">Honda Accord</a>
+      <a class="chip-link" href="/honda/civic">Honda Civic</a>
+      <a class="chip-link" href="/bmw/x5">BMW X5</a>
+      <a class="chip-link" href="/bmw/3-series">BMW 3 Series</a>
+      <a class="chip-link" href="/mercedes/c-class">Mercedes C-Class</a>
+      <a class="chip-link" href="/mercedes/gle">Mercedes GLE</a>
+      <a class="chip-link" href="/lexus/rx">Lexus RX</a>
+      <a class="chip-link" href="/hyundai/tucson">Hyundai Tucson</a>
+      <a class="chip-link" href="/kia/sportage">Kia Sportage</a>
+      <a class="chip-link" href="/land-rover/range-rover-sport">Range Rover Sport</a>
+      <a class="chip-link" href="/ford/f150">Ford F-150</a>
+    </div>
+  </section>
+
+  <!-- SEO UPGRADE #28b — What We Verify: full parts coverage -->
+  <section aria-labelledby="verify-heading">
+    <div class="eyebrow-c">Full Coverage</div>
+    <h2 id="verify-heading">Every component we check on your quote</h2>
+    <p class="lede">From routine wear items to major driveline components — if it's on your invoice, Carithm checks it against expected service life.</p>
+    <div class="chip-grid">
+      <a class="chip-link" href="/parts/brake-pads">Brake Pads</a>
+      <a class="chip-link" href="/parts/brake-discs">Brake Discs</a>
+      <a class="chip-link" href="/parts/engine-oil">Engine Oil</a>
+      <a class="chip-link" href="/parts/oil-filters">Oil Filters</a>
+      <a class="chip-link" href="/parts/spark-plugs">Spark Plugs</a>
+      <a class="chip-link" href="/parts/air-filters">Air Filters</a>
+      <a class="chip-link" href="/parts/cabin-filters">Cabin Filters</a>
+      <a class="chip-link" href="/parts/timing-belt">Timing Belt</a>
+      <a class="chip-link" href="/parts/timing-chain">Timing Chain</a>
+      <a class="chip-link" href="/parts/battery">Battery</a>
+      <a class="chip-link" href="/parts/alternator">Alternator</a>
+      <a class="chip-link" href="/parts/starter-motor">Starter Motor</a>
+      <a class="chip-link" href="/parts/transmission">Transmission</a>
+      <a class="chip-link" href="/parts/differential">Differential</a>
+      <a class="chip-link" href="/parts/suspension">Suspension</a>
+      <a class="chip-link" href="/parts/shock-absorbers">Shock Absorbers</a>
+      <a class="chip-link" href="/parts/steering">Steering</a>
+      <a class="chip-link" href="/parts/radiator">Radiator</a>
+      <a class="chip-link" href="/parts/water-pump">Water Pump</a>
+      <a class="chip-link" href="/parts/cooling-system">Cooling System</a>
+      <a class="chip-link" href="/parts/air-conditioning">Air Conditioning</a>
+      <a class="chip-link" href="/parts/turbocharger">Turbocharger</a>
+      <a class="chip-link" href="/parts/fuel-pump">Fuel Pump</a>
+      <a class="chip-link" href="/parts/wheel-bearings">Wheel Bearings</a>
+      <a class="chip-link" href="/parts/cv-axles">CV Axles</a>
+      <a class="chip-link" href="/parts/drive-belts">Drive Belts</a>
+      <a class="chip-link" href="/parts/engine-mounts">Engine Mounts</a>
+      <a class="chip-link" href="/parts/control-arms">Control Arms</a>
+      <a class="chip-link" href="/parts/wheel-alignment">Wheel Alignment</a>
+    </div>
+  </section>
+
+  <!-- SEO UPGRADE #28c — Repair Categories -->
+  <section aria-labelledby="categories-heading">
+    <div class="eyebrow-c">Repair Categories</div>
+    <h2 id="categories-heading">Browse by repair type</h2>
+    <p class="lede">Jump straight to cost and necessity guidance for the most common UAE workshop jobs.</p>
+    <div class="tile-grid">
+      <a class="tile-link" href="/repairs/brakes">Brake Repair</a>
+      <a class="tile-link" href="/repairs/engine">Engine Repair</a>
+      <a class="tile-link" href="/repairs/transmission">Transmission Repair</a>
+      <a class="tile-link" href="/repairs/oil-change">Oil Change</a>
+      <a class="tile-link" href="/repairs/ac">Car AC Repair</a>
+      <a class="tile-link" href="/repairs/suspension">Suspension Repair</a>
+      <a class="tile-link" href="/repairs/battery">Battery Replacement</a>
+      <a class="tile-link" href="/repairs/electrical">Electrical Diagnosis</a>
+      <a class="tile-link" href="/repairs/cooling">Cooling System</a>
+      <a class="tile-link" href="/repairs/tyres">Tyres</a>
+      <a class="tile-link" href="/repairs/steering">Steering</a>
+      <a class="tile-link" href="/repairs/exhaust">Exhaust</a>
+    </div>
+  </section>
+
+  <!-- SEO UPGRADE #28d — Maintenance Interval table -->
+  <section aria-labelledby="intervals-heading">
+    <div class="eyebrow-c">Maintenance Intervals</div>
+    <h2 id="intervals-heading">Manufacturer life vs. typical UAE life</h2>
+    <p class="lede">Manufacturer intervals assume moderate climates. Heat and dust in the UAE shorten most of these — here's roughly by how much.</p>
+    <table class="data-table">
+      <thead><tr><th>Part</th><th>Manufacturer Life</th><th>Typical UAE Life</th></tr></thead>
+      <tbody>
+        <tr><td>Engine Oil</td><td>10,000–15,000 km</td><td>7,000–10,000 km</td></tr>
+        <tr><td>Battery</td><td>4–5 years</td><td>2.5–3.5 years</td></tr>
+        <tr><td>Tyres</td><td>60,000–80,000 km</td><td>40,000–55,000 km</td></tr>
+        <tr><td>Spark Plugs</td><td>60,000–100,000 km</td><td>50,000–80,000 km</td></tr>
+        <tr><td>Coolant</td><td>4–5 years</td><td>2.5–4 years</td></tr>
+        <tr><td>Transmission Oil</td><td>60,000–100,000 km</td><td>50,000–80,000 km</td></tr>
+        <tr><td>Brake Fluid</td><td>2 years</td><td>1.5–2 years</td></tr>
+        <tr><td>Cabin Filter</td><td>15,000–20,000 km</td><td>8,000–12,000 km</td></tr>
+        <tr><td>Air Filter</td><td>20,000–30,000 km</td><td>12,000–20,000 km</td></tr>
+        <tr><td>Brake Pads</td><td>40,000–70,000 km</td><td>35,000–60,000 km</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SEO UPGRADE #28e — Repair Cost Overview -->
+  <section aria-labelledby="costs-heading">
+    <div class="eyebrow-c">Repair Cost Insights</div>
+    <h2 id="costs-heading">Typical UAE repair cost ranges</h2>
+    <p class="lede">Rough benchmarks — actual pricing varies by brand, workshop, and part quality (OEM vs. aftermarket).</p>
+    <div class="cost-grid">
+      <div class="cost-card"><span class="cost-part">Brake Pads</span><span class="cost-range">AED 350–900</span></div>
+      <div class="cost-card"><span class="cost-part">Battery</span><span class="cost-range">AED 300–900</span></div>
+      <div class="cost-card"><span class="cost-part">Oil Change</span><span class="cost-range">AED 180–650</span></div>
+      <div class="cost-card"><span class="cost-part">Spark Plugs</span><span class="cost-range">AED 300–1,200</span></div>
+      <div class="cost-card"><span class="cost-part">AC Service</span><span class="cost-range">AED 250–900</span></div>
+      <div class="cost-card"><span class="cost-part">Suspension</span><span class="cost-range">AED 400–3,000</span></div>
+    </div>
+  </section>
+
+  <!-- SEO UPGRADE #28f — Common Garage Upsells -->
+  <section aria-labelledby="upsells-heading">
+    <div class="eyebrow-c">Know Before You Approve</div>
+    <h2 id="upsells-heading">Common garage upsells — and how often they're actually needed</h2>
+    <p class="lede">These are the services most frequently recommended ahead of schedule at UAE workshops.</p>
+    <div class="upsell-grid">
+      <div class="upsell-row"><span class="upsell-name">Engine Flush</span><span class="tag tag-amber">Sometimes Needed</span></div>
+      <div class="upsell-row"><span class="upsell-name">Injector Cleaning</span><span class="tag tag-amber">Sometimes Needed</span></div>
+      <div class="upsell-row"><span class="upsell-name">Fuel System Cleaner</span><span class="tag tag-red">Rarely Needed</span></div>
+      <div class="upsell-row"><span class="upsell-name">AC Sanitiser</span><span class="tag tag-amber">Sometimes Needed</span></div>
+      <div class="upsell-row"><span class="upsell-name">Throttle Cleaning</span><span class="tag tag-red">Rarely Needed</span></div>
+      <div class="upsell-row"><span class="upsell-name">Power Steering Flush</span><span class="tag tag-red">Rarely Needed</span></div>
+      <div class="upsell-row"><span class="upsell-name">Transmission Flush</span><span class="tag tag-amber">Sometimes Needed</span></div>
+      <div class="upsell-row"><span class="upsell-name">Coolant Flush</span><span class="tag tag-green">Usually Needed</span></div>
+      <div class="upsell-row"><span class="upsell-name">Wheel Alignment</span><span class="tag tag-green">Usually Needed</span></div>
+      <div class="upsell-row"><span class="upsell-name">Nitrogen Tyres</span><span class="tag tag-red">Rarely Needed</span></div>
+    </div>
+  </section>
+
+  <!-- SEO UPGRADE #28g — UAE Coverage -->
+  <section aria-labelledby="coverage-heading">
+    <div class="eyebrow-c">UAE Coverage</div>
+    <h2 id="coverage-heading">Used by drivers across every emirate</h2>
+    <p class="lede">Climate-adjusted wear models and locally typical workshop pricing, tuned per region.</p>
+    <div class="coverage-grid">
+      <span class="coverage-chip">Dubai</span>
+      <span class="coverage-chip">Abu Dhabi</span>
+      <span class="coverage-chip">Sharjah</span>
+      <span class="coverage-chip">Ajman</span>
+      <span class="coverage-chip">Al Ain</span>
+      <span class="coverage-chip">Ras Al Khaimah</span>
+      <span class="coverage-chip">Fujairah</span>
+      <span class="coverage-chip">Umm Al Quwain</span>
+    </div>
+  </section>
+
+  <!-- SEO UPGRADE #28h — Common Repair Problems -->
+  <section aria-labelledby="problems-heading">
+    <div class="eyebrow-c">Diagnose First</div>
+    <h2 id="problems-heading">Common car problems drivers search for</h2>
+    <p class="lede">If your garage quote was triggered by one of these symptoms, check whether the recommended fix matches.</p>
+    <div class="tile-grid">
+      <a class="tile-link" href="/problems/wont-start">Car Won't Start</a>
+      <a class="tile-link" href="/problems/check-engine-light">Check Engine Light</a>
+      <a class="tile-link" href="/problems/overheating">Engine Overheating</a>
+      <a class="tile-link" href="/problems/brake-squeaking">Brake Squeaking</a>
+      <a class="tile-link" href="/problems/steering-vibration">Steering Vibration</a>
+      <a class="tile-link" href="/problems/ac-not-cold">AC Not Cold</a>
+      <a class="tile-link" href="/problems/battery-dying">Battery Keeps Dying</a>
+      <a class="tile-link" href="/problems/oil-leak">Oil Leak</a>
+      <a class="tile-link" href="/problems/coolant-leak">Coolant Leak</a>
+      <a class="tile-link" href="/problems/transmission-slipping">Transmission Slipping</a>
+      <a class="tile-link" href="/problems/exhaust-smoke">Smoke From Exhaust</a>
+      <a class="tile-link" href="/problems/engine-misfire">Engine Misfire</a>
+    </div>
+  </section>
+
+  <!-- SEO UPGRADE #28i — Recent Research -->
+  <section aria-labelledby="research-heading">
+    <div class="eyebrow-c">Recent Research</div>
+    <h2 id="research-heading">Car care research for GCC conditions</h2>
+    <div class="research-grid">
+      <a class="research-card" href="/research/battery-life-uae"><h3>Why Batteries Die Faster in the UAE</h3><p>How sustained heat above 45°C accelerates internal battery degradation.</p></a>
+      <a class="research-card" href="/research/heat-engine-oil"><h3>How Heat Affects Engine Oil</h3><p>Why oil breaks down faster in GCC summers than manufacturer specs assume.</p></a>
+      <a class="research-card" href="/research/brake-wear-dubai"><h3>Brake Wear in Dubai Traffic</h3><p>Stop-and-go city driving and its effect on pad and disc lifespan.</p></a>
+      <a class="research-card" href="/research/transmission-life-gcc"><h3>Transmission Life in the GCC</h3><p>What actually shortens gearbox life in high-heat, high-mileage driving.</p></a>
+      <a class="research-card" href="/research/oil-change-myths"><h3>Oil Change Myths</h3><p>Separating genuine intervals from garage-driven early replacement habits.</p></a>
+      <a class="research-card" href="/research/timing-chain-failures"><h3>Timing Chain Failures</h3><p>Which engines are prone to early timing chain wear in this region.</p></a>
+    </div>
+  </section>
 
   <!-- SEO UPGRADE #17 — "Unbiased Protection" section now uses real H2 heading -->
   <section aria-labelledby="protection-heading">
@@ -1112,17 +1450,73 @@ header {
       <p>Yes. Extreme temperatures and dust significantly increase wear on fluids, filters, and certain mechanical components. Carithm applies GCC-specific adjustment models that reflect faster degradation compared to cooler climates, making service recommendations more locally accurate.</p>
     </details>
 
+    <!-- SEO UPGRADE #29 — Grouped topical FAQs: Brakes, Oil, Battery -->
+    <details>
+      <summary>How do I know if I need new brake discs or just pads?</summary>
+      <p>Discs typically need replacing far less often than pads — usually every second or third pad change, unless they're scored, warped, or below minimum thickness. If a garage recommends discs at every pad change, it's worth asking for a measured thickness reading before approving.</p>
+    </details>
+
+    <details>
+      <summary>How long do brake pads last in the UAE?</summary>
+      <p>Most brake pads last 35,000–60,000 km in UAE conditions, shorter than the 40,000–70,000 km manufacturer estimate, mainly due to heavy stop-and-go city traffic. Highway-dominant driving tends to land at the higher end of that range.</p>
+    </details>
+
+    <details>
+      <summary>Should I replace brake pads on both sides at the same time?</summary>
+      <p>Generally yes, per axle — front pads should be replaced as a pair, and rear pads as a pair, to keep braking balanced. You don't need to replace front and rear together unless both are actually due.</p>
+    </details>
+
+    <details>
+      <summary>Do I need an engine flush every time I change my oil?</summary>
+      <p>No. Engine flushes are rarely needed for vehicles on a normal service schedule and are one of the most common unnecessary upsells Carithm flags. They're occasionally justified after a missed service or visible sludge buildup, not as a routine add-on.</p>
+    </details>
+
+    <details>
+      <summary>Is synthetic oil worth it for UAE driving conditions?</summary>
+      <p>Yes, in most cases. Full synthetic oil holds up better under sustained high temperatures and stop-and-go traffic than conventional oil, which is why most manufacturers spec it as standard for GCC-market vehicles.</p>
+    </details>
+
+    <details>
+      <summary>How often should I change my oil in UAE heat?</summary>
+      <p>Most vehicles need oil changes every 7,000–10,000 km in the UAE, shorter than the 10,000–15,000 km manufacturer interval, because sustained heat breaks down oil viscosity faster.</p>
+    </details>
+
+    <details>
+      <summary>How long do car batteries last in the UAE?</summary>
+      <p>Typically 2.5–3.5 years, compared with 4–5 years in temperate climates. Sustained high temperatures accelerate internal plate degradation, which is why battery failure is one of the most common roadside issues in the region.</p>
+    </details>
+
+    <details>
+      <summary>Should I replace my battery before it fails?</summary>
+      <p>Preventive replacement is reasonable once a battery is close to or past its typical UAE lifespan (around 2.5–3 years), especially before summer. Carithm flags this based on age and mileage rather than recommending it universally.</p>
+    </details>
+
   </div>
 </section>
 
-  <!-- SEO UPGRADE #24 — Trust/About section with H2 and internal link to blog -->
+  <!-- SEO UPGRADE #31 — E-E-A-T block: author credentials, methodology/sourcing,
+       and content-freshness date. This is what Google's quality raters and
+       ranking systems specifically look for beyond keyword coverage. -->
   <section aria-labelledby="about-heading">
     <div style="background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:14px; padding:28px 32px; max-width:660px; margin:0 auto;">
       <h2 id="about-heading" style="font-size:10px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px;">Built by engineers. Independent.</h2>
       <p style="font-size:15px; line-height:1.7; color:var(--text); margin-bottom:14px;">No garage partnerships. No commissions. No sponsored repairs.</p>
       <p style="font-size:13px; line-height:1.7; color:var(--muted); margin-bottom:16px;">Your report is generated from engineering lifecycle models and GCC climate wear data — not workshop incentives. We don't make money when you replace parts. Carithm exists solely to give UAE car owners an independent data layer between them and their garage.</p>
-      <!-- SEO UPGRADE #25 — Internal link to blog for PageRank flow and crawl depth -->
-      <p style="font-size:13px; color:var(--muted); line-height:1.7;">Want to learn more about how we calculate wear? <a href="https://carithm.vercel.app/research/" style="color:var(--accent); text-decoration:none; font-weight:500;">Read our car care research →</a></p>
+
+      <!-- Author / expertise signal -->
+      <div style="display:flex; align-items:center; gap:12px; padding:14px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:16px;">
+        <div style="width:38px; height:38px; border-radius:50%; background:var(--surface3); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:600; color:var(--accent); flex-shrink:0;">SB</div>
+        <div>
+          <div style="font-size:13px; font-weight:600; color:#fff;">Shaunauk Basu</div>
+          <div style="font-size:12px; color:var(--muted);">Founder & Engineer, Carithm — automotive maintenance modelling for GCC conditions</div>
+        </div>
+      </div>
+
+      <!-- Methodology / sourcing transparency -->
+      <p style="font-size:12px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">Where our numbers come from</p>
+      <p style="font-size:13px; line-height:1.7; color:var(--muted); margin-bottom:16px;">Service intervals are drawn from manufacturer maintenance schedules; UAE-adjusted lifespans and cost ranges are derived from workshop invoice data and climate wear modelling for GCC conditions. Ranges are estimates for guidance, not a substitute for a physical inspection — see our <a href="https://carithm.vercel.app/research/" style="color:var(--accent); text-decoration:none;">methodology and research</a> for detail.</p>
+
+      <p style="font-size:11px; color:var(--muted2); margin-bottom:0;">Content last reviewed: July 2026 &nbsp;·&nbsp; Questions or corrections: <a href="mailto:carithmai29@gmail.com" style="color:var(--muted2);">carithmai29@gmail.com</a></p>
     </div>
   </section>
 
