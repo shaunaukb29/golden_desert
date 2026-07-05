@@ -50,14 +50,15 @@
 <link rel="alternate" hreflang="en-ae" href="https://carithm.vercel.app/">
 <link rel="alternate" hreflang="en" href="https://carithm.vercel.app/">
 
+<!-- FIXED: changed @type from SoftwareApplication to WebApplication (removes aggregateRating/review
+     requirement), and removed the invalid areaServed property (kept correctly under Organization below) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "WebApplication",
   "name": "Carithm",
   "alternateName": "Carithm AI Car Repair Quote Checker",
   "url": "https://carithm.vercel.app/",
-  "operatingSystem": "Web",
   "applicationCategory": "UtilitiesApplication",
   "offers": {
     "@type": "Offer",
@@ -71,11 +72,6 @@
     "Vehicle maintenance interval checks",
     "PDF, image, and text quote support",
     "No signup required"
-  ],
-  "areaServed": [
-    { "@type": "Country", "name": "United Arab Emirates" },
-    { "@type": "Country", "name": "Saudi Arabia" },
-    { "@type": "Country", "name": "Kuwait" }
   ],
   "potentialAction": {
     "@type": "SearchAction",
@@ -1303,7 +1299,7 @@ header {
 
     <details>
       <summary>Is it normal for garages to pressure you to approve repairs immediately?</summary>
-      <p>Immediate pressure is not a reliability indicator. Legitimate maintenance needs do not disappear within minutes. If you feel rushed, it’s reasonable to pause and get a second opinion using a quote check or another workshop before approving any work.</p>
+      <p>Immediate pressure is not a reliability indicator. Legitimate maintenance needs do not disappear within minutes. If you feel rushed, it's reasonable to pause and get a second opinion using a quote check or another workshop before approving any work.</p>
     </details>
 
     <details>
@@ -1582,7 +1578,7 @@ header {
       </a>
 
       <p class="mission-statement">
-        Check if your car repair bill is fair — instantly. We analyze every line item in your invoice and flag overpriced or unnecessary charges so you don’t get overcharged by garages in the UAE & GCC.
+        Check if your car repair bill is fair — instantly. We analyze every line item in your invoice and flag overpriced or unnecessary charges so you don't get overcharged by garages in the UAE & GCC.
       </p>
 
       <p style="font-size:0.78rem;color:var(--muted);margin-top:0.6rem;line-height:1.6;">
@@ -1706,7 +1702,7 @@ header {
 
       <div>
         <p style="margin:0;font-size:1rem;color:#fff;font-weight:600;">
-          Don’t overpay on your next car service.
+          Don't overpay on your next car service.
         </p>
         <p style="margin:0;font-size:0.85rem;color:var(--muted);">
           Run a free AI repair quote check in under 30 seconds.
