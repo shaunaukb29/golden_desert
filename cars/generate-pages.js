@@ -14,9 +14,13 @@ const MANIFEST_PATH = path.join(ROOT_DIR, "cars", ".generated-manifest.json");
  * tracked by the manifest system, so they need to be removed explicitly
  * once. Safe to delete this block after your next deploy confirms the
  * old files are gone from the live site.
+ *
+ * NOTE: never put "" or "." in this list — path.join(ROOT_DIR, "")
+ * resolves to ROOT_DIR itself and will attempt to delete your entire
+ * project directory. isSafeDelete() below now guards against this too,
+ * but keep the list clean regardless.
  */
 const LEGACY_FILES = [
-  "",
   "toyota/toyota-land-cruiser-maintenance-cost-uae.html",
   "toyota/toyota-corolla-service-cost-uae.html",
   "toyota/toyota-prado-repair-cost-uae.html",
@@ -328,14 +332,30 @@ ${sections}
 }
 
 /**
+ * Guards against ever deleting anything outside the project, anything
+ * that isn't a plain file, or the project root itself. This is the
+ * safety net that should have stopped the "" entry from ever reaching
+ * fs.unlinkSync in the first place.
+ */
+function isSafeDelete(p) {
+  if (typeof p !== "string" || !p) return false;
+  if (p === ROOT_DIR) return false;
+  if (!p.startsWith(ROOT_DIR + path.sep)) return false;
+  if (!fs.existsSync(p)) return false;
+  if (!fs.statSync(p).isFile()) return false;
+  return p.includes("cars") || p.includes(".html");
+}
+
+/**
  * leave in permanently — once the files are gone, this is a no-op.
  */
 function cleanupLegacyFiles() {
   let removed = 0;
   for (const rel of LEGACY_FILES) {
+    if (!rel) continue; // defensive: skip empty/falsy entries
     const filePath = path.join(ROOT_DIR, rel);
-    if (fs.existsSync(filePath)) {
-      if (filePath.includes("cars") || filePath.includes(".html")) if (isSafeDelete(filePath)) fs.unlinkSync(filePath);
+    if (isSafeDelete(filePath)) {
+      fs.unlinkSync(filePath);
       console.log(`\ud83e\uddf9 Removed legacy file: /${rel}`);
       removed++;
     }
@@ -361,8 +381,8 @@ function cleanupStaleGenerated(newFilePaths) {
   const newSet = new Set(newFilePaths);
   let removed = 0;
   for (const oldPath of previous) {
-    if (!newSet.has(oldPath) && fs.existsSync(oldPath)) {
-      if (oldPath.includes("cars") || oldPath.includes(".html")) fs.unlinkSync(oldPath);
+    if (!newSet.has(oldPath) && isSafeDelete(oldPath)) {
+      fs.unlinkSync(oldPath);
       console.log(`\ud83e\uddf9 Removed stale generated file: ${path.relative(ROOT_DIR, oldPath)}`);
       removed++;
     }
@@ -433,5 +453,3 @@ function generatePages() {
 }
 
 generatePages();
-
-function isSafeDelete(p){ return typeof p === 'string' && (p.includes('cars') || p.includes('.html')); }
