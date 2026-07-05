@@ -32,8 +32,8 @@
       "destination": "/$1/index.html"
     },
     {
-      "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)/(:model)",
-      "destination": "/$1/$2/index.html"
+      "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)/:model",
+      "destination": "/$1/:model/index.html"
     },
     {
       "source": "/parts/:part",
