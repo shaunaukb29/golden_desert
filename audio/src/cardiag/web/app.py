@@ -45,9 +45,8 @@ def _classifier():
 
 
 @app.get("/")
-def landing() -> FileResponse:
-    return FileResponse(_STATIC / "landing.html")
-
+def root():
+    return FileResponse(_STATIC / "app.html")
 
 @app.get("/app/audio")
 def app_page() -> FileResponse:
