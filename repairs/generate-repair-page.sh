@@ -8,7 +8,7 @@ TITLE="${BRAND} Repair Quote Analysis (UAE) | Carithm Knowledge Base"
 URL="https://carithm.vercel.app/repairs/${FILE}"
 H1="${BRAND} Repair Quote Breakdown (UAE)"
 
-cat > repairs/$FILE <<EOL
+cat > "$FILE" <<EOL
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +26,9 @@ cat > repairs/$FILE <<EOL
   <meta property="og:description" content="${BRAND} repair cost breakdown UAE — dealer vs independent garage pricing insights.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${URL}">
+</head>
+
+<body>
 
   <h1>${H1}</h1>
 
@@ -42,7 +45,9 @@ cat > repairs/$FILE <<EOL
   </ul>
 
   <h2>How to avoid overpaying</h2>
-  <p>Always compare dealer pricing with independent garages and verify whether parts are OEM or aftermarket.</p>
+  <p>
+    Always compare dealer pricing with independent garages and verify whether parts are OEM or aftermarket.
+  </p>
 
   <footer>
     <p>© 2026 Carithm — ${BRAND} repair guide UAE</p>
@@ -52,4 +57,4 @@ cat > repairs/$FILE <<EOL
 </html>
 EOL
 
-echo "Created: repairs/$FILE"
+echo "Created: $FILE"
