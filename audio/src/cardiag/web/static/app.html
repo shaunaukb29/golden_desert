@@ -3,74 +3,265 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Audio Intelligence | AI Mechanical Sound Analysis & Fault Detection | Golden Desert</title>
+<title>Audio Intelligence | AI Mechanical Sound Analysis & Fault Detection | Carithm</title>
 <meta name="description" content="Analyze engine and mechanical audio using AI-powered Audio Intelligence. Detect abnormal sounds, identify likely fault regions, assess uncertainty, and receive ranked maintenance insights from uploaded recordings.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://goldendesert.ai/audio">
+
 <meta property="og:type" content="website">
 <meta property="og:title" content="Audio Intelligence | AI Mechanical Sound Analysis">
 <meta property="og:description" content="Upload a recording and receive AI-powered analysis of abnormal mechanical sounds, likely fault regions, confidence estimates, and ranked maintenance insights.">
 <meta property="og:url" content="https://goldendesert.ai/audio">
+
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Audio Intelligence">
 <meta name="twitter:description" content="AI-powered analysis for mechanical audio, anomaly detection, and maintenance triage.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"SoftwareApplication",
+ "name":"Audio Intelligence",
+ "applicationCategory":"BusinessApplication",
+ "operatingSystem":"Web",
+ "offers":{ "@type":"Offer", "price":"0" },
+ "description":"AI-powered audio analysis platform for mechanical sound inspection, anomaly detection, acoustic pattern recognition, and maintenance triage."
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"BreadcrumbList",
+ "itemListElement":[
+   {"@type":"ListItem","position":1,"name":"Home","item":"https://goldendesert.ai/"},
+   {"@type":"ListItem","position":2,"name":"Audio Intelligence","item":"https://goldendesert.ai/audio"}
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"FAQPage",
+ "mainEntity":[
+  {"@type":"Question","name":"What is AI audio analysis?","acceptedAnswer":{"@type":"Answer","text":"AI audio analysis identifies meaningful patterns within recordings to detect abnormal acoustic behaviour and assist maintenance decisions."}},
+  {"@type":"Question","name":"Can AI detect mechanical problems from sound?","acceptedAnswer":{"@type":"Answer","text":"Audio Intelligence can identify unusual sound signatures and estimate likely areas requiring inspection. Results should be used as decision support rather than a replacement for physical inspection."}},
+  {"@type":"Question","name":"Does the system return uncertainty?","acceptedAnswer":{"@type":"Answer","text":"Yes. When recordings are noisy or evidence is insufficient, the system returns an uncertainty assessment instead of making unsupported conclusions."}}
+ ]
+}
+</script>
+
 <style>
-:root { color-scheme: dark; }
+:root {
+  --bg:         #09090b;
+  --surface:    #111113;
+  --surface2:   #18181b;
+  --surface3:   #27272a;
+  --border:     rgba(255,255,255,0.07);
+  --border2:    rgba(255,255,255,0.13);
+  --text:       #fafafa;
+  --muted:      #a1a8b3;
+  --muted2:     #71717a;
+  --accent:     #2f81f7;
+  --accent-dim: rgba(47,129,247,0.1);
+  --accent-glow:rgba(47,129,247,0.22);
+  --green:      #22c55e;
+  --green-dim:  rgba(34,197,94,0.1);
+  --amber:      #f59e0b;
+  --amber-dim:  rgba(245,158,11,0.1);
+  --red:        #ef4444;
+  --red-dim:    rgba(239,68,68,0.1);
+  --r: 12px; --r-sm: 8px;
+  color-scheme: dark;
+}
 * { box-sizing: border-box; }
-body { font-family: system-ui, Arial, sans-serif; margin: 0; background: #0b0f14; color: #e6edf3; line-height: 1.55; }
-header { padding: 20px 40px; border-bottom: 1px solid #1e2732; }
-header a { color: #e6edf3; text-decoration: none; font-weight: 600; }
-main { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
-h1 { font-size: 2rem; margin-bottom: 8px; }
-h2 { font-size: 1.3rem; margin-top: 40px; }
-h3 { font-size: 1.05rem; margin-top: 24px; }
-p { color: #c7d0da; }
-ul, ol { color: #c7d0da; padding-left: 22px; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+
+/* ── Header ── */
+header {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(9,9,11,0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none;
+}
+.nav-logo span { color: var(--accent); }
+.nav { display: flex; gap: 1.75rem; align-items: center; }
+.nav a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; transition: color .2s; }
+.nav a:hover { color: #fff; }
+.nav .cta-btn {
+  background: var(--accent-dim); border: 1px solid rgba(47,129,247,0.3); color: var(--accent);
+  padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600;
+}
+.nav .cta-btn:hover { background: var(--accent); color: #000; }
+
+main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
+
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 14px; line-height: 1.12; }
+h2 { font-size: 1.3rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; }
+h3 { font-size: 1.02rem; font-weight: 600; margin-top: 22px; }
+p { color: var(--muted); margin: 0 0 8px; }
+ul, ol { color: var(--muted); padding-left: 20px; }
 li { margin-bottom: 6px; }
-.card { background: #151b23; padding: 24px; border-radius: 12px; margin-top: 24px; border: 1px solid #1e2732; }
-input[type="file"] { color: #c7d0da; }
-button { padding: 10px 18px; border: 0; border-radius: 8px; background: #2f81f7; color: white; cursor: pointer; margin-top: 14px; font-size: 14px; font-weight: 600; }
-button:hover { background: #1f6feb; }
-button:disabled { background: #33414f; cursor: not-allowed; }
-.status { margin-top: 16px; font-size: 14px; opacity: 0.9; min-height: 20px; }
-.result { margin-top: 20px; display: none; }
-.badge { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; margin-bottom: 14px; }
-.ok { background: #238636; }
-.warn { background: #d29922; color: #1a1300; }
-.uncertain { background: #6e7681; }
-.err { background: #f85149; }
-.result-block { background: #0d1117; border: 1px solid #1e2732; border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; }
-.result-block h4 { margin: 0 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: #8b949e; }
-.row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #161b22; font-size: 14px; }
+
+.trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 22px 0 8px; }
+.trust-strip > div { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); }
+.trust-strip > div:last-child { border-right: none; }
+.trust-num { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+.trust-num span { color: var(--accent); }
+.trust-lbl { font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 3px; }
+
+.card {
+  background: var(--surface);
+  padding: 26px;
+  border-radius: var(--r);
+  margin-top: 26px;
+  border: 1px solid var(--border);
+}
+.card.tool { border-color: rgba(47,129,247,0.25); }
+
+input[type="file"] { color: var(--muted); font-size: 13px; }
+
+button {
+  padding: 12px 20px;
+  border: 0;
+  border-radius: var(--r-sm);
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: opacity .15s, transform .1s;
+}
+button:hover { opacity: 0.88; }
+button:active { transform: scale(0.99); }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.status { margin-top: 16px; font-size: 13px; opacity: 0.9; min-height: 20px; display: flex; align-items: center; gap: 8px; }
+.status .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 1.4s ease infinite; flex-shrink: 0; }
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.25;} }
+
+.result { margin-top: 24px; display: none; }
+
+.badge { display: inline-flex; align-items: center; padding: 4px 13px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.03em; margin-bottom: 16px; border: 1px solid transparent; }
+.ok        { background: var(--green-dim); color: var(--green); border-color: rgba(34,197,94,0.25); }
+.warn      { background: var(--amber-dim); color: var(--amber); border-color: rgba(245,158,11,0.25); }
+.uncertain { background: rgba(161,168,179,0.1); color: var(--muted); border-color: var(--border2); }
+.err       { background: var(--red-dim); color: var(--red); border-color: rgba(239,68,68,0.25); }
+
+.result-block { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 18px 20px; margin-bottom: 14px; }
+.result-block h4 { margin: 0 0 12px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted2); font-weight: 700; }
+
+/* ── HERO result block: Likely Causes ── */
+.result-block.hero-causes {
+  background: linear-gradient(180deg, rgba(47,129,247,0.09), rgba(47,129,247,0.02));
+  border: 1.5px solid rgba(47,129,247,0.4);
+  box-shadow: 0 0 0 1px rgba(47,129,247,0.08), 0 8px 28px rgba(47,129,247,0.08);
+  padding: 22px 24px;
+  margin-bottom: 18px;
+  position: relative;
+}
+.hero-causes h4 { color: var(--accent); font-size: 13px; display: flex; align-items: center; gap: 8px; }
+.hero-causes h4::before { content: "★"; font-size: 12px; }
+.hero-causes .cause-row { padding: 10px 0; }
+.hero-causes .cause-row:first-of-type { padding-top: 4px; }
+.cause-top {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px;
+}
+.cause-name { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+.cause-pct { font-size: 15px; font-weight: 700; color: var(--accent); }
+.cause-row:first-child .cause-name, .cause-row:first-child .cause-pct { font-size: 17px; }
+.cause-note { font-size: 12px; color: var(--muted); font-style: italic; margin-top: 2px; }
+
+.row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
 .row:last-child { border-bottom: none; }
-.row .label { color: #c7d0da; }
+.row .label { color: var(--muted); }
 .row .value { font-weight: 600; }
-.bar-track { background: #1e2732; border-radius: 6px; height: 8px; width: 120px; overflow: hidden; }
-.bar-fill { height: 100%; background: #2f81f7; }
-.note { margin-top: 12px; font-size: 13px; color: #8b949e; font-style: italic; }
-footer { border-top: 1px solid #1e2732; padding: 20px 40px; }
-footer a { color: #8b949e; text-decoration: none; }
+
+.bar-track { background: var(--surface3); border-radius: 6px; height: 8px; width: 120px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--accent); border-radius: 6px; }
+.hero-causes .bar-track { width: 100%; height: 10px; }
+.hero-causes .bar-fill { background: linear-gradient(90deg, var(--accent), #60a5fa); }
+
+.note { margin-top: 12px; font-size: 12.5px; color: var(--muted2); font-style: italic; }
+
+footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
+.footer-inner { max-width: 760px; margin: 0 auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
+.footer-links a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+.footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
+
+@media (max-width: 620px) {
+  header { padding: 0.9rem 1.1rem; }
+  .nav a:not(.cta-btn) { display: none; }
+  .trust-strip { grid-template-columns: 1fr 1fr; }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<nav><a href="/">Golden Desert</a></nav>
+  <a href="https://goldendesert.ai/" class="nav-logo">Golden<span>Desert</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://goldendesert.ai/">Home</a>
+    <a href="https://goldendesert.ai/audio">Audio Intelligence</a>
+    <a href="https://carithm.vercel.app/">Carithm (Repair Quotes)</a>
+    <a href="#try" class="cta-btn">Try It Free</a>
+  </nav>
 </header>
+
 <main>
+
 <section>
+<div class="eyebrow">AI Acoustic Diagnostics</div>
 <h1>Audio Intelligence</h1>
-<p>Audio Intelligence is an AI-powered acoustic analysis platform designed to evaluate mechanical sound recordings and identify unusual operating behaviour. Rather than attempting definitive diagnosis from a single recording, the system performs intelligent triage by analysing sound characteristics, estimating confidence, and highlighting the most likely inspection areas.</p>
-<p>Every uploaded recording undergoes automated signal processing before machine learning models evaluate acoustic patterns associated with abnormal operation. When evidence is insufficient, the system explicitly communicates uncertainty instead of producing misleading results.</p>
+<p>
+Audio Intelligence is an AI-powered acoustic analysis platform designed to evaluate mechanical sound recordings and identify unusual operating behaviour. Rather than attempting definitive diagnosis from a single recording, the system performs intelligent triage by analysing sound characteristics, estimating confidence, and highlighting the most likely inspection areas.
+</p>
+<p>
+Every uploaded recording undergoes automated signal processing before machine learning models evaluate acoustic patterns associated with abnormal operation. When evidence is insufficient, the system explicitly communicates uncertainty instead of producing misleading results.
+</p>
+
+<div class="trust-strip">
+  <div><div class="trust-num">50<span>+</span></div><div class="trust-lbl">Fault Classes</div></div>
+  <div><div class="trust-num">CLAP</div><div class="trust-lbl">Embedding Model</div></div>
+  <div><div class="trust-num">0</div><div class="trust-lbl">Cost / Signup</div></div>
+  <div><div class="trust-num">~5s</div><div class="trust-lbl">Analysis Time</div></div>
+</div>
 </section>
-<section class="card">
+
+<section class="card tool" id="try">
 <h2 style="margin-top:0;">Try Audio Intelligence</h2>
 <p>Upload a recording to receive AI-powered mechanical sound analysis, anomaly detection, confidence estimates, and prioritized inspection guidance.</p>
+
 <input type="file" id="audioFile" accept="audio/*" />
 <br>
 <button id="uploadBtn" onclick="uploadAudio()">Upload & Diagnose</button>
+
 <div class="status" id="status"></div>
 <div class="result" id="result"></div>
 </section>
+
 <section>
 <h2>Key Features</h2>
 <ul>
@@ -84,16 +275,18 @@ footer a { color: #8b949e; text-decoration: none; }
 <li>Designed for maintenance triage workflows</li>
 </ul>
 </section>
+
 <section>
 <h2>How It Works</h2>
 <ol>
 <li>Upload a recording containing mechanical or engine sounds.</li>
 <li>The platform isolates useful acoustic information while reducing irrelevant background interference.</li>
 <li>Machine learning evaluates the processed audio for abnormal operating characteristics.</li>
-<li>The system produces confidence-aware results with prioritized inspection recommendations.</li>
+<li>The system produces confidence-aware results with prioritized inspection recommendations, led by the most likely causes.</li>
 <li>If recording quality prevents reliable interpretation, uncertainty is reported instead of forcing a prediction.</li>
 </ol>
 </section>
+
 <section>
 <h2>Typical Applications</h2>
 <ul>
@@ -107,14 +300,21 @@ footer a { color: #8b949e; text-decoration: none; }
 <li>General sound anomaly detection</li>
 </ul>
 </section>
+
 <section>
 <h2>Designed for Real-World Recordings</h2>
-<p>Real-world audio often contains speech, traffic, wind, vibration, and environmental interference. Audio Intelligence is built to operate under these imperfect conditions by extracting meaningful acoustic information while accounting for recording uncertainty. Rather than overconfident predictions, the platform emphasizes calibrated confidence and transparent interpretation to support better maintenance decisions.</p>
+<p>
+Real-world audio often contains speech, traffic, wind, vibration, and environmental interference. Audio Intelligence is built to operate under these imperfect conditions by extracting meaningful acoustic information while accounting for recording uncertainty. Rather than overconfident predictions, the platform emphasizes calibrated confidence and transparent interpretation to support better maintenance decisions.
+</p>
 </section>
+
 <section>
 <h2>Why Confidence Matters</h2>
-<p>Reliable AI systems should recognise their own limitations. Audio Intelligence reports uncertainty whenever recordings lack sufficient evidence, helping reduce false positives and encouraging further inspection when necessary. This approach supports safer, more trustworthy decision making than systems that always produce a definitive answer.</p>
+<p>
+Reliable AI systems should recognise their own limitations. Audio Intelligence reports uncertainty whenever recordings lack sufficient evidence, helping reduce false positives and encouraging further inspection when necessary. This approach supports safer, more trustworthy decision making than systems that always produce a definitive answer.
+</p>
 </section>
+
 <section>
 <h2>Frequently Asked Questions</h2>
 <h3>Can Audio Intelligence diagnose a vehicle?</h3>
@@ -126,69 +326,118 @@ footer a { color: #8b949e; text-decoration: none; }
 <h3>Can uncertain results occur?</h3>
 <p>Yes. When recordings do not contain enough reliable information, the system reports uncertainty rather than making unsupported predictions.</p>
 </section>
+
+<section>
+<h2>Related Tools</h2>
+<p>
+If your acoustic diagnosis points to something wallet-related — like a recommended repair after inspection — check
+<a href="https://carithm.vercel.app/" style="color:var(--accent); text-decoration:none;">Carithm</a>,
+our AI car repair quote checker for UAE & GCC drivers, before you approve any work.
+</p>
+</section>
+
 </main>
-<footer>
-<a href="/">← Back to Home</a>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://goldendesert.ai/">Carithm Home</a>
+      <a href="https://goldendesert.ai/audio">Audio Intelligence</a>
+      <a href="https://carithm.vercel.app/">Carithm — Repair Quote Checker</a>
+      <a href="https://carithm.vercel.app/research/">Research</a>
+    </div>
+    <div class="footer-bottom">© 2026 Carithm. Audio Intelligence is a decision-support tool, not a substitute for physical inspection.</div>
+  </div>
 </footer>
+
 <script>
 function pct(p) { return Math.round((p || 0) * 100) + "%"; }
-function barRow(label, p) {
-  return `<div class="row"><span class="label">${label}</span><div style="display:flex; align-items:center; gap:10px;"><div class="bar-track"><div class="bar-fill" style="width:${pct(p)}"></div></div><span class="value">${pct(p)}</span></div></div>`;
+
+function barRow(label, p, big) {
+  return `<div class="row" style="border:none; padding:${big ? '4px 0' : '6px 0'};">
+    <span class="label">${label}</span>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div class="bar-track"><div class="bar-fill" style="width:${pct(p)}"></div></div>
+      <span class="value">${pct(p)}</span>
+    </div>
+  </div>`;
 }
+
 function verdictBadge(verdict) {
   const map = { ok: "ok", normal: "ok", fault: "warn", uncertain: "uncertain" };
   const cls = map[verdict] || "uncertain";
   const label = (verdict || "unknown").toUpperCase();
   return `<span class="badge ${cls}">${label}</span>`;
 }
+
 function renderDiagnosis(data) {
   let html = "";
   html += verdictBadge(data.verdict);
+
+  // HERO: Likely Causes — the most actionable, most accurate answer, shown first and biggest
+  if (data.causes && data.causes.length) {
+    html += `<div class="result-block hero-causes"><h4>Most Likely Cause</h4>`;
+    data.causes.forEach((c, i) => {
+      html += `<div class="cause-row">
+        <div class="cause-top">
+          <span class="cause-name">${c.part.replace(/_/g, " ")}</span>
+          <span class="cause-pct">${pct(c.p)}</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill" style="width:${pct(c.p)}"></div></div>
+        ${c.note ? `<div class="cause-note">${c.note}</div>` : ""}
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
   html += `<div class="result-block"><h4>Overall Assessment</h4>${barRow("Fault probability", data.fault_probability)}${data.engine_knock_probability !== undefined ? barRow("Engine knock probability", data.engine_knock_probability) : ""}</div>`;
+
   if (data.triage) {
     html += `<div class="result-block"><h4>Triage</h4><div class="row"><span class="label">Category</span><span class="value">${data.triage.label || data.triage.triage || "—"}</span></div><div class="row"><span class="label">Confidence</span><span class="value">${pct(data.triage.confidence)} (${data.triage.band || ""})</span></div>${data.triage.next_step ? `<p class="note">${data.triage.next_step}</p>` : ""}</div>`;
   }
+
   if (data.regions && data.regions.length) {
     html += `<div class="result-block"><h4>Likely Regions</h4>`;
     for (const r of data.regions) { html += barRow(r.zone, r.p); }
     html += `</div>`;
   }
-  if (data.causes && data.causes.length) {
-    html += `<div class="result-block"><h4>Likely Causes</h4>`;
-    for (const c of data.causes) {
-      html += barRow(c.part.replace(/_/g, " "), c.p);
-      if (c.note) html += `<p class="note">${c.note}</p>`;
-    }
-    html += `</div>`;
-  }
+
   if (data.note) { html += `<p class="note">${data.note}</p>`; }
   return html;
 }
+
 async function uploadAudio() {
   const file = document.getElementById("audioFile").files[0];
   const status = document.getElementById("status");
   const result = document.getElementById("result");
   const btn = document.getElementById("uploadBtn");
+
   result.style.display = "none";
   result.innerHTML = "";
+
   if (!file) { alert("Please select an audio file"); return; }
+
   btn.disabled = true;
-  status.textContent = "Uploading…";
+  status.innerHTML = `<span class="dot"></span> Uploading…`;
+
   const form = new FormData();
   form.append("file", file);
+
   try {
     const res = await fetch("/api/diagnose/stream", { method: "POST", body: form });
     const reader = res.body.getReader();
     const decoder = new TextDecoder();
     let buffer = "";
+
     function handleEvent(type, data) {
       if (type === "waveform" || type === "spectrogram") return;
-      if (type === "meta") { status.textContent = `Loaded ${data.title || "clip"} (${data.duration}s)…`; }
-      if (type === "stage") { status.textContent = data.narration || data.label || "Processing…"; }
+      if (type === "meta") { status.innerHTML = `<span class="dot"></span> Loaded ${data.title || "clip"} (${data.duration}s)…`; }
+      if (type === "stage") { status.innerHTML = `<span class="dot"></span> ${data.narration || data.label || "Processing…"}`; }
       if (type === "error") { status.innerHTML = `<span class="badge err">Error</span> ${data.message}`; btn.disabled = false; }
       if (type === "diagnosis") { status.innerHTML = ""; result.style.display = "block"; result.innerHTML = renderDiagnosis(data); }
       if (type === "done") { btn.disabled = false; }
     }
+
     while (true) {
       const { value, done } = await reader.read();
       if (done) break;
@@ -210,5 +459,6 @@ async function uploadAudio() {
   }
 }
 </script>
+
 </body>
 </html>
