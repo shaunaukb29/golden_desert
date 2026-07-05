@@ -429,4 +429,208 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+
+    <!-- PARTS PAGES -->
+  <url>
+    <loc>https://carithm.vercel.app/parts/air-conditioning.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/air-filters.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/alternator.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/battery.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/brake-discs.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/brake-pads.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/cabin-filters.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/control-arms.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/cooling-system.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/cv-axles.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/differential.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/drive-belts.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/engine-mounts.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/engine-oil.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/fuel-pump.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/oil-filters.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/radiator.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/shock-absorbers.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/spark-plugs.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/starter-motor.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/steering.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/suspension.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/timing-belt.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/timing-chain.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/transmission.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/turbocharger.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/water-pump.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/wheel-alignment.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/parts/wheel-bearings.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
