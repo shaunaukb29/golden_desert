@@ -1,177 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<title>Audio Intelligence</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audio Intelligence | AI Mechanical Sound Analysis & Fault Detection | Golden Desert</title>
+<meta name="description" content="Analyze engine and mechanical audio using AI-powered Audio Intelligence. Detect abnormal sounds, identify likely fault regions, assess uncertainty, and receive ranked maintenance insights from uploaded recordings.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://goldendesert.ai/audio">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Audio Intelligence | AI Mechanical Sound Analysis">
+<meta property="og:description" content="Upload a recording and receive AI-powered analysis of abnormal mechanical sounds, likely fault regions, confidence estimates, and ranked maintenance insights.">
+<meta property="og:url" content="https://goldendesert.ai/audio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Audio Intelligence">
+<meta name="twitter:description" content="AI-powered analysis for mechanical audio, anomaly detection, and maintenance triage.">
 <style>
-body {
-    font-family: system-ui, Arial, sans-serif;
-    margin: 40px;
-    background: #0b0f14;
-    color: #e6edf3;
-}
-
-.container {
-    max-width: 720px;
-    margin: auto;
-}
-
-.card {
-    background: #151b23;
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
-}
-
-button {
-    padding: 10px 16px;
-    border: 0;
-    border-radius: 8px;
-    background: #2f81f7;
-    color: white;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background: #1f6feb;
-}
-
-.status {
-    margin-top: 15px;
-    font-size: 14px;
-    opacity: 0.85;
-}
-
-.result {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    background: #0d1117;
-    white-space: pre-wrap;
-}
-
-.badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 12px;
-    margin-bottom: 10px;
-}
-
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { font-family: system-ui, Arial, sans-serif; margin: 0; background: #0b0f14; color: #e6edf3; line-height: 1.55; }
+header { padding: 20px 40px; border-bottom: 1px solid #1e2732; }
+header a { color: #e6edf3; text-decoration: none; font-weight: 600; }
+main { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font-size: 2rem; margin-bottom: 8px; }
+h2 { font-size: 1.3rem; margin-top: 40px; }
+h3 { font-size: 1.05rem; margin-top: 24px; }
+p { color: #c7d0da; }
+ul, ol { color: #c7d0da; padding-left: 22px; }
+li { margin-bottom: 6px; }
+.card { background: #151b23; padding: 24px; border-radius: 12px; margin-top: 24px; border: 1px solid #1e2732; }
+input[type="file"] { color: #c7d0da; }
+button { padding: 10px 18px; border: 0; border-radius: 8px; background: #2f81f7; color: white; cursor: pointer; margin-top: 14px; font-size: 14px; font-weight: 600; }
+button:hover { background: #1f6feb; }
+button:disabled { background: #33414f; cursor: not-allowed; }
+.status { margin-top: 16px; font-size: 14px; opacity: 0.9; min-height: 20px; }
+.result { margin-top: 20px; display: none; }
+.badge { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; margin-bottom: 14px; }
 .ok { background: #238636; }
-.warn { background: #d29922; }
+.warn { background: #d29922; color: #1a1300; }
+.uncertain { background: #6e7681; }
 .err { background: #f85149; }
+.result-block { background: #0d1117; border: 1px solid #1e2732; border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; }
+.result-block h4 { margin: 0 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: #8b949e; }
+.row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #161b22; font-size: 14px; }
+.row:last-child { border-bottom: none; }
+.row .label { color: #c7d0da; }
+.row .value { font-weight: 600; }
+.bar-track { background: #1e2732; border-radius: 6px; height: 8px; width: 120px; overflow: hidden; }
+.bar-fill { height: 100%; background: #2f81f7; }
+.note { margin-top: 12px; font-size: 13px; color: #8b949e; font-style: italic; }
+footer { border-top: 1px solid #1e2732; padding: 20px 40px; }
+footer a { color: #8b949e; text-decoration: none; }
 </style>
 </head>
-
 <body>
-
-<div class="container">
-
+<header>
+<nav><a href="/">Golden Desert</a></nav>
+</header>
+<main>
+<section>
 <h1>Audio Intelligence</h1>
-<p>Upload a mechanical sound clip for AI analysis.</p>
-
-<div class="card">
-    <input type="file" id="audioFile" accept="audio/*" />
-    <br />
-    <button onclick="uploadAudio()">Upload & Diagnose</button>
-
-    <div class="status" id="status"></div>
-
-    <div class="result" id="result" style="display:none;"></div>
-</div>
-
-</div>
-
+<p>Audio Intelligence is an AI-powered acoustic analysis platform designed to evaluate mechanical sound recordings and identify unusual operating behaviour. Rather than attempting definitive diagnosis from a single recording, the system performs intelligent triage by analysing sound characteristics, estimating confidence, and highlighting the most likely inspection areas.</p>
+<p>Every uploaded recording undergoes automated signal processing before machine learning models evaluate acoustic patterns associated with abnormal operation. When evidence is insufficient, the system explicitly communicates uncertainty instead of producing misleading results.</p>
+</section>
+<section class="card">
+<h2 style="margin-top:0;">Try Audio Intelligence</h2>
+<p>Upload a recording to receive AI-powered mechanical sound analysis, anomaly detection, confidence estimates, and prioritized inspection guidance.</p>
+<input type="file" id="audioFile" accept="audio/*" />
+<br>
+<button id="uploadBtn" onclick="uploadAudio()">Upload & Diagnose</button>
+<div class="status" id="status"></div>
+<div class="result" id="result"></div>
+</section>
+<section>
+<h2>Key Features</h2>
+<ul>
+<li>AI-powered mechanical sound analysis</li>
+<li>Acoustic anomaly detection</li>
+<li>Confidence-aware predictions</li>
+<li>Ranked inspection recommendations</li>
+<li>Automatic background noise reduction</li>
+<li>Supports real-world recordings</li>
+<li>Fast cloud-based processing</li>
+<li>Designed for maintenance triage workflows</li>
+</ul>
+</section>
+<section>
+<h2>How It Works</h2>
+<ol>
+<li>Upload a recording containing mechanical or engine sounds.</li>
+<li>The platform isolates useful acoustic information while reducing irrelevant background interference.</li>
+<li>Machine learning evaluates the processed audio for abnormal operating characteristics.</li>
+<li>The system produces confidence-aware results with prioritized inspection recommendations.</li>
+<li>If recording quality prevents reliable interpretation, uncertainty is reported instead of forcing a prediction.</li>
+</ol>
+</section>
+<section>
+<h2>Typical Applications</h2>
+<ul>
+<li>Engine sound inspection</li>
+<li>Mechanical fault triage</li>
+<li>Preventive maintenance screening</li>
+<li>Fleet monitoring</li>
+<li>Equipment health assessment</li>
+<li>Industrial acoustic monitoring</li>
+<li>Machine condition analysis</li>
+<li>General sound anomaly detection</li>
+</ul>
+</section>
+<section>
+<h2>Designed for Real-World Recordings</h2>
+<p>Real-world audio often contains speech, traffic, wind, vibration, and environmental interference. Audio Intelligence is built to operate under these imperfect conditions by extracting meaningful acoustic information while accounting for recording uncertainty. Rather than overconfident predictions, the platform emphasizes calibrated confidence and transparent interpretation to support better maintenance decisions.</p>
+</section>
+<section>
+<h2>Why Confidence Matters</h2>
+<p>Reliable AI systems should recognise their own limitations. Audio Intelligence reports uncertainty whenever recordings lack sufficient evidence, helping reduce false positives and encouraging further inspection when necessary. This approach supports safer, more trustworthy decision making than systems that always produce a definitive answer.</p>
+</section>
+<section>
+<h2>Frequently Asked Questions</h2>
+<h3>Can Audio Intelligence diagnose a vehicle?</h3>
+<p>No. It provides AI-assisted maintenance triage and identifies acoustic patterns that may warrant further inspection.</p>
+<h3>What audio recordings are supported?</h3>
+<p>Most standard audio recordings captured using mobile phones or other digital recording devices can be analysed.</p>
+<h3>Is the analysis immediate?</h3>
+<p>Most recordings are processed within seconds, depending on file size.</p>
+<h3>Can uncertain results occur?</h3>
+<p>Yes. When recordings do not contain enough reliable information, the system reports uncertainty rather than making unsupported predictions.</p>
+</section>
+</main>
+<footer>
+<a href="/">← Back to Home</a>
+</footer>
 <script>
-async function uploadAudio() {
-    const file = document.getElementById("audioFile").files[0];
-    const status = document.getElementById("status");
-    const result = document.getElementById("result");
-
-    result.style.display = "none";
-    result.textContent = "";
-
-    if (!file) {
-        alert("Please select an audio file");
-        return;
+function pct(p) { return Math.round((p || 0) * 100) + "%"; }
+function barRow(label, p) {
+  return `<div class="row"><span class="label">${label}</span><div style="display:flex; align-items:center; gap:10px;"><div class="bar-track"><div class="bar-fill" style="width:${pct(p)}"></div></div><span class="value">${pct(p)}</span></div></div>`;
+}
+function verdictBadge(verdict) {
+  const map = { ok: "ok", normal: "ok", fault: "warn", uncertain: "uncertain" };
+  const cls = map[verdict] || "uncertain";
+  const label = (verdict || "unknown").toUpperCase();
+  return `<span class="badge ${cls}">${label}</span>`;
+}
+function renderDiagnosis(data) {
+  let html = "";
+  html += verdictBadge(data.verdict);
+  html += `<div class="result-block"><h4>Overall Assessment</h4>${barRow("Fault probability", data.fault_probability)}${data.engine_knock_probability !== undefined ? barRow("Engine knock probability", data.engine_knock_probability) : ""}</div>`;
+  if (data.triage) {
+    html += `<div class="result-block"><h4>Triage</h4><div class="row"><span class="label">Category</span><span class="value">${data.triage.label || data.triage.triage || "—"}</span></div><div class="row"><span class="label">Confidence</span><span class="value">${pct(data.triage.confidence)} (${data.triage.band || ""})</span></div>${data.triage.next_step ? `<p class="note">${data.triage.next_step}</p>` : ""}</div>`;
+  }
+  if (data.regions && data.regions.length) {
+    html += `<div class="result-block"><h4>Likely Regions</h4>`;
+    for (const r of data.regions) { html += barRow(r.zone, r.p); }
+    html += `</div>`;
+  }
+  if (data.causes && data.causes.length) {
+    html += `<div class="result-block"><h4>Likely Causes</h4>`;
+    for (const c of data.causes) {
+      html += barRow(c.part.replace(/_/g, " "), c.p);
+      if (c.note) html += `<p class="note">${c.note}</p>`;
     }
-
-    status.textContent = "Uploading...";
-
-    const form = new FormData();
-    form.append("file", file);
-
-    const res = await fetch("/api/diagnose/stream", {
-        method: "POST",
-        body: form
-    });
-
+    html += `</div>`;
+  }
+  if (data.note) { html += `<p class="note">${data.note}</p>`; }
+  return html;
+}
+async function uploadAudio() {
+  const file = document.getElementById("audioFile").files[0];
+  const status = document.getElementById("status");
+  const result = document.getElementById("result");
+  const btn = document.getElementById("uploadBtn");
+  result.style.display = "none";
+  result.innerHTML = "";
+  if (!file) { alert("Please select an audio file"); return; }
+  btn.disabled = true;
+  status.textContent = "Uploading…";
+  const form = new FormData();
+  form.append("file", file);
+  try {
+    const res = await fetch("/api/diagnose/stream", { method: "POST", body: form });
     const reader = res.body.getReader();
     const decoder = new TextDecoder();
-
     let buffer = "";
-
     function handleEvent(type, data) {
-
-        // IGNORE noisy internal pipeline events
-        if (type === "meta" || type === "waveform" || type === "spectrogram") {
-            return;
-        }
-
-        if (type === "status") {
-            status.textContent = data.message;
-        }
-
-        if (type === "error") {
-            status.innerHTML = `<span class="badge err">Error</span> ${data.message}`;
-        }
-
-        if (type === "result") {
-            status.innerHTML = `<span class="badge ok">Complete</span>`;
-            result.style.display = "block";
-
-            result.textContent =
-                "Diagnosis Result:\n\n" +
-                JSON.stringify(data, null, 2);
-        }
+      if (type === "waveform" || type === "spectrogram") return;
+      if (type === "meta") { status.textContent = `Loaded ${data.title || "clip"} (${data.duration}s)…`; }
+      if (type === "stage") { status.textContent = data.narration || data.label || "Processing…"; }
+      if (type === "error") { status.innerHTML = `<span class="badge err">Error</span> ${data.message}`; btn.disabled = false; }
+      if (type === "diagnosis") { status.innerHTML = ""; result.style.display = "block"; result.innerHTML = renderDiagnosis(data); }
+      if (type === "done") { btn.disabled = false; }
     }
-
     while (true) {
-        const { value, done } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-
-        const parts = buffer.split("\n\n");
-        buffer = parts.pop();
-
-        for (const chunk of parts) {
-
-            const eventMatch = chunk.match(/^event:\s*(.*)$/m);
-            const dataMatch = chunk.match(/^data:\s*(.*)$/m);
-
-            if (!eventMatch || !dataMatch) continue;
-
-            const type = eventMatch[1].trim();
-
-            let data;
-            try {
-                data = JSON.parse(dataMatch[1]);
-            } catch (e) {
-                continue;
-            }
-
-            handleEvent(type, data);
-        }
+      const { value, done } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      const parts = buffer.split("\n\n");
+      buffer = parts.pop();
+      for (const chunk of parts) {
+        const eventMatch = chunk.match(/^event:\s*(.*)$/m);
+        const dataMatch = chunk.match(/^data:\s*(.*)$/m);
+        if (!eventMatch || !dataMatch) continue;
+        let data;
+        try { data = JSON.parse(dataMatch[1]); } catch (e) { continue; }
+        handleEvent(eventMatch[1].trim(), data);
+      }
     }
+  } catch (e) {
+    status.innerHTML = `<span class="badge err">Error</span> ${e.message}`;
+    btn.disabled = false;
+  }
 }
 </script>
-
 </body>
 </html>
