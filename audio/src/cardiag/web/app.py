@@ -1,0 +1,301 @@
+"""FastAPI app: upload a sound clip, get it cleaned and diagnosed locally.
+
+The clip is run through the *same* ``clean()`` cascade as the training corpus,
+then the model, so an uploaded clip is processed exactly like a training clip.
+The model is loaded lazily and cached; if no trained model is present the app
+still runs and returns the cleaning result (isolated spans, music flag).
+
+    audio serve            # or: uvicorn audio.web.app:app --reload
+"""
+from __future__ import annotations
+
+import json
+import os
+import shutil
+import tempfile
+import threading
+from functools import lru_cache
+from pathlib import Path
+
+from fastapi import FastAPI, File, Form, Request, UploadFile
+from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
+
+from cardiag import clean
+
+app = FastAPI(
+    title="Audio Intelligence",
+    description="AI-powered mechanical sound analysis by Golden Desert."
+)
+
+_STATIC = Path(__file__).parent / "static"
+
+MAX_BYTES = 50 * 1024 * 1024          # 50 MB upload cap (a sound clip is tiny)
+_OK_SUFFIX = {".wav", ".mp3", ".m4a", ".ogg", ".flac", ".aac", ".webm", ".mp4"}
+_LOCK = threading.Lock()              # serialize CLAP/torch (MPS not thread-safe)
+
+
+@lru_cache(maxsize=1)
+def _classifier():
+    """Load the model once, lazily. Returns None if no model is available."""
+    from cardiag import Classifier
+    try:
+        return Classifier.load(os.environ.get("CARDIAG_MODEL"))
+    except (FileNotFoundError, ValueError):
+        return None
+
+
+@app.get("/")
+def landing() -> FileResponse:
+    return FileResponse(_STATIC / "landing.html")
+
+
+@app.get("/app/audio")
+def app_page() -> FileResponse:
+    return FileResponse(_STATIC / "app.html")
+
+
+@app.get("/favicon.svg")
+def favicon() -> FileResponse:
+    return FileResponse(_STATIC / "favicon.svg")
+
+
+@app.get("/health")
+def health() -> dict:
+    return {"status": "ok", "model_loaded": _classifier() is not None}
+
+
+def _safe_suffix(filename: str | None) -> str:
+    """A whitelisted, sanitized file suffix: never trust the raw filename
+    (path traversal, NUL bytes, megabyte-long fake extensions)."""
+    suffix = Path(filename or "").suffix.lower()
+    suffix = "".join(c for c in suffix if c.isalnum() or c == ".")[:8]
+    return suffix if suffix in _OK_SUFFIX else ".wav"
+
+
+def _finite(o):
+    """Replace non-finite floats (NaN/Inf) with None so the payload is valid JSON
+    a browser's JSON.parse won't choke on (json.dumps would otherwise emit NaN)."""
+    import math
+    if isinstance(o, float):
+        return o if math.isfinite(o) else None
+    if isinstance(o, dict):
+        return {k: _finite(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [_finite(v) for v in o]
+    return o
+
+
+def _sse(event: str, payload: dict) -> str:
+    return f"event: {event}\ndata: {json.dumps(_finite(payload))}\n\n"
+
+
+def _check_origin(request) -> None:
+    """Block cross-site (CSRF) calls to the state-changing endpoints. Same-origin
+    requests omit Origin or match Host; a malicious page's fetch carries its own
+    Origin and is refused (defence-in-depth on top of the 127.0.0.1 bind)."""
+    from fastapi import HTTPException
+    origin = request.headers.get("origin")
+    if not origin:
+        return
+    host = request.headers.get("host", "")
+    netloc = origin.split("://", 1)[-1]
+    if netloc != host and not any(h in netloc for h in ("localhost", "127.0.0.1")):
+        raise HTTPException(status_code=403, detail="cross-origin request refused")
+
+
+# Small bounded cache of downloaded audio so the front end can PLAY a pasted-link
+# clip (uploads play locally via an object URL; URL inputs are fetched server-side).
+_AUDIO_DIR = Path(tempfile.gettempdir()) / "audio_audio"
+_AUDIO_KEEP = 12
+_AUDIO_LOCK = threading.Lock()        # serialize cache eviction (concurrent TOCTOU)
+
+
+def _cache_audio(src_path: Path) -> str:
+    """Move a downloaded clip into the audio cache; return its hex id. Evicts the
+    oldest so the cache stays bounded. Eviction is locked + tolerant of files a
+    concurrent request already removed (was a TOCTOU crash under load)."""
+    import secrets
+
+    def _mtime(p):
+        try:
+            return p.stat().st_mtime
+        except OSError:
+            return 0.0
+    _AUDIO_DIR.mkdir(exist_ok=True)
+    jid = secrets.token_hex(8)
+    dest = _AUDIO_DIR / f"{jid}{src_path.suffix.lower() or '.wav'}"
+    shutil.move(str(src_path), dest)
+    with _AUDIO_LOCK:
+        for p in sorted(_AUDIO_DIR.glob("*"), key=_mtime)[:-_AUDIO_KEEP]:
+            p.unlink(missing_ok=True)
+    return jid
+
+
+@app.get("/api/audio/{jid}")
+def get_audio(jid: str):
+    """Serve a cached clip for playback. ``jid`` is validated as hex (no traversal)."""
+    if not (jid and all(c in "0123456789abcdef" for c in jid) and len(jid) <= 32):
+        return JSONResponse({"error": "bad id"}, status_code=400)
+    hits = list(_AUDIO_DIR.glob(f"{jid}.*"))
+    if not hits or not hits[0].exists():
+        return JSONResponse({"error": "expired"}, status_code=404)
+    try:
+        return FileResponse(hits[0])
+    except (FileNotFoundError, RuntimeError):   # evicted between glob and send
+        return JSONResponse({"error": "expired"}, status_code=404)
+
+
+@app.post("/api/diagnose/stream")
+async def diagnose_stream(request: Request, file: UploadFile | None = File(None),
+                          url: str | None = Form(None)) -> StreamingResponse:
+    """Stream the pipeline stage-by-stage as Server-Sent Events for the live UI.
+
+    Accepts either an uploaded ``file`` or a ``url`` (YouTube/TikTok/Reddit). Each
+    cleaning + diagnosis stage is emitted as it completes so the front end can
+    animate the timeline. Heavy work runs in Starlette's threadpool (sync
+    generator) and is serialized by ``_LOCK`` (torch/MPS is not thread-safe)."""
+    _check_origin(request)
+    from cardiag.web import explain
+
+    workdir = tempfile.mkdtemp(prefix="audio_")
+    src, title, path, err = "upload", "", None, None
+    if url:
+        src = explain.platform_of(url)
+        title = url
+    elif file is not None:
+        path = Path(workdir) / f"upload{_safe_suffix(file.filename)}"
+        total = 0
+        with open(path, "wb") as fh:
+            while chunk := await file.read(1 << 20):
+                total += len(chunk)
+                if total > MAX_BYTES:
+                    err = f"file too large (>{MAX_BYTES // 1024 // 1024} MB)"
+                    break
+                fh.write(chunk)
+        title = file.filename or "your clip"
+        if total == 0:
+            err = "empty upload"
+    else:
+        err = "provide a file or a url"
+
+    def gen():
+        nonlocal path, title
+        try:
+            if err:
+                yield _sse("error", {"message": err})
+                return
+            if url:
+                yield _sse("status", {"message": f"fetching audio from {src}…"})
+                try:
+                    path, got = explain.acquire_url(url, Path(workdir))
+                    title = got or url
+                except ValueError as e:
+                    yield _sse("error", {"message": str(e)})
+                    return
+                jid = _cache_audio(path)                 # keep it so the UI can play it
+                cached = list(_AUDIO_DIR.glob(f"{jid}.*"))
+                path = cached[0] if cached else path     # tolerate a racing eviction
+                yield _sse("audio", {"url": f"/api/audio/{jid}"})
+            with _LOCK:
+                for name, payload in explain.explain(path, source=src, title=title):
+                    yield _sse(name, payload)
+        except Exception as e:                              # never leak a 500 mid-stream
+            yield _sse("error", {"message": f"unexpected error: {type(e).__name__}"})
+        finally:
+            shutil.rmtree(workdir, ignore_errors=True)
+
+    return StreamingResponse(gen(), media_type="text/event-stream",
+                             headers={"Cache-Control": "no-cache",
+                                      "X-Accel-Buffering": "no"})
+
+
+def _saliency_locked(path, model):
+    """Run the heavy occlusion saliency holding _LOCK *inside the worker thread*
+    (not across the event-loop await, which would block other requests)."""
+    from cardiag.audio import saliency
+    with _LOCK:
+        return saliency.occlusion_saliency(path, model)
+
+
+@app.post("/api/explain")
+async def explain_why(request: Request, file: UploadFile | None = File(None),
+                      audio_id: str | None = Form(None)) -> JSONResponse:
+    """Occlusion-saliency explanation of the fault/normal verdict: *why* the model
+    decided. Accepts the same clip back (an upload, or a cached ``audio_id`` from a
+    pasted-link run) and returns a time×frequency importance map. Heavy (re-embeds
+    a grid of masked variants), so it's a deliberate opt-in, serialized by _LOCK."""
+    from starlette.concurrency import run_in_threadpool
+    _check_origin(request)
+
+    tmp = None
+    try:
+        if audio_id:
+            if not (all(c in "0123456789abcdef" for c in audio_id) and len(audio_id) <= 32):
+                return JSONResponse({"error": "bad id"}, status_code=400)
+            hits = list(_AUDIO_DIR.glob(f"{audio_id}.*"))
+            if not hits:
+                return JSONResponse({"error": "audio expired — re-run the clip"}, status_code=404)
+            path = str(hits[0])
+        elif file is not None:
+            with tempfile.NamedTemporaryFile(suffix=_safe_suffix(file.filename),
+                                             delete=False) as fh:
+                tmp = fh.name
+                total = 0
+                while chunk := await file.read(1 << 20):
+                    total += len(chunk)
+                    if total > MAX_BYTES:
+                        return JSONResponse({"error": "file too large"}, status_code=413)
+                    fh.write(chunk)
+            path = tmp
+        else:
+            return JSONResponse({"error": "provide a file or audio_id"}, status_code=400)
+
+        model = os.environ.get("CARDIAG_MODEL")
+        res = await run_in_threadpool(_saliency_locked, path, model)
+        return JSONResponse(_finite(res))
+    except (ValueError, FileNotFoundError, OSError):
+        return JSONResponse({"error": "could not explain this clip — is it valid audio?"},
+                            status_code=400)
+    finally:
+        if tmp and os.path.exists(tmp):
+            os.unlink(tmp)
+
+
+@app.post("/diagnose")
+async def diagnose(request: Request, file: UploadFile) -> JSONResponse:
+    """Clean the uploaded clip, then diagnose it if a model is loaded. Hardened:
+    size-capped chunked read, whitelisted suffix, errors -> 400/413 (never 500),
+    inference serialized (torch/MPS is not thread-safe), temp file always removed."""
+    _check_origin(request)
+    tmp_path = None
+    try:
+        with tempfile.NamedTemporaryFile(suffix=_safe_suffix(file.filename),
+                                         delete=False) as tmp:
+            tmp_path = tmp.name
+            total = 0
+            while chunk := await file.read(1 << 20):       # 1 MB chunks
+                total += len(chunk)
+                if total > MAX_BYTES:
+                    return JSONResponse(
+                        {"error": f"file too large (>{MAX_BYTES // 1024 // 1024} MB)"},
+                        status_code=413)
+                tmp.write(chunk)
+        if total == 0:
+            return JSONResponse({"error": "empty upload"}, status_code=400)
+
+        clf = _classifier()
+        with _LOCK:                                        # one clip on the model at a time
+            if clf is None:
+                res = clean(tmp_path)
+                return JSONResponse({"model_loaded": False, "cleaning": res.to_dict()})
+            result = clf.diagnose(tmp_path)
+        payload = result.to_dict()
+        payload["filename"] = file.filename
+        payload["model_loaded"] = True
+        return JSONResponse(payload)
+    except (ValueError, FileNotFoundError, OSError):   # never echo e, leaks temp paths
+        return JSONResponse({"error": "could not process audio — is it a valid clip?"},
+                            status_code=400)
+    finally:
+        if tmp_path and os.path.exists(tmp_path):
+            os.unlink(tmp_path)
