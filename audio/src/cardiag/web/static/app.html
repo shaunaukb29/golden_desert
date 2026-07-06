@@ -136,6 +136,15 @@ li { margin-bottom: 6px; }
 }
 .card.tool { border-color: rgba(47,129,247,0.25); }
 
+/* Widen the tool card beyond the article's reading width so the
+   embedded app has real room to lay out its UI (columns, sidebars, etc). */
+.card.tool.tool-wide {
+  max-width: 1100px;
+  width: 100%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
 input[type="file"] { color: var(--muted); font-size: 13px; }
 
 button {
@@ -203,6 +212,31 @@ button:disabled { opacity: 0.4; cursor: not-allowed; }
 
 .note { margin-top: 12px; font-size: 12.5px; color: var(--muted2); font-style: italic; }
 
+/* ── Streamlit embed ── */
+.streamlit-embed-wrap {
+  --streamlit-height: min(1200px, 90vh);
+  margin-top: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  background: var(--surface2);
+  resize: vertical; /* let visitors drag for more room if they want it */
+}
+.streamlit-embed {
+  display: block;
+  width: 100%;
+  height: var(--streamlit-height);
+  min-height: 640px;
+  border: 0;
+}
+@media (max-width: 900px) {
+  .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); }
+}
+@media (max-width: 620px) {
+  .streamlit-embed-wrap { --streamlit-height: min(850px, 80vh); }
+  .streamlit-embed { min-height: 560px; }
+}
+
 footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
 .footer-inner { max-width: 760px; margin: 0 auto; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
@@ -250,16 +284,38 @@ Every uploaded recording undergoes automated signal processing before machine le
 </div>
 </section>
 
-<section class="card tool" id="try">
+<section class="card tool tool-wide" id="try">
 <h2 style="margin-top:0;">Try Audio Intelligence</h2>
-<p>Upload a recording to receive AI-powered mechanical sound analysis, anomaly detection, confidence estimates, and prioritized inspection guidance.</p>
+<p>Upload a recording below to receive AI-powered mechanical sound analysis, anomaly detection, confidence estimates, and prioritized inspection guidance.</p>
 
-<input type="file" id="audioFile" accept="audio/*" />
-<br>
-<button id="uploadBtn" onclick="uploadAudio()">Upload & Diagnose</button>
+<!--
+  STREAMLIT EMBED
+  ---------------
+  Replace STREAMLIT_APP_URL with your deployed app's URL, e.g.:
+  https://your-app-name.streamlit.app/?embed=true
 
-<div class="status" id="status"></div>
-<div class="result" id="result"></div>
+  Tips:
+  - Append "?embed=true" (Streamlit's own param) to hide its default
+    header/footer/menu chrome so it blends into this page.
+  - Adjust the --streamlit-height custom property in the CSS above
+    (.streamlit-embed-wrap) if your app's UI needs more or less room.
+  - If the app needs mic/clipboard access, the `allow` attribute below
+    already requests it.
+-->
+<div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
+  <iframe
+    id="streamlitFrame"
+    class="streamlit-embed"
+    src="STREAMLIT_APP_URL"
+    title="Audio Intelligence App"
+    loading="lazy"
+    allow="microphone; clipboard-write"
+  ></iframe>
+</div>
+
+<noscript>
+  <p class="note">This tool requires JavaScript to load the embedded app.</p>
+</noscript>
 </section>
 
 <section>
@@ -349,116 +405,6 @@ our AI car repair quote checker for UAE & GCC drivers, before you approve any wo
     <div class="footer-bottom">© 2026 Carithm. Audio Intelligence is a decision-support tool, not a substitute for physical inspection.</div>
   </div>
 </footer>
-
-<script>
-function pct(p) { return Math.round((p || 0) * 100) + "%"; }
-
-function barRow(label, p, big) {
-  return `<div class="row" style="border:none; padding:${big ? '4px 0' : '6px 0'};">
-    <span class="label">${label}</span>
-    <div style="display:flex; align-items:center; gap:10px;">
-      <div class="bar-track"><div class="bar-fill" style="width:${pct(p)}"></div></div>
-      <span class="value">${pct(p)}</span>
-    </div>
-  </div>`;
-}
-
-function verdictBadge(verdict) {
-  const map = { ok: "ok", normal: "ok", fault: "warn", uncertain: "uncertain" };
-  const cls = map[verdict] || "uncertain";
-  const label = (verdict || "unknown").toUpperCase();
-  return `<span class="badge ${cls}">${label}</span>`;
-}
-
-function renderDiagnosis(data) {
-  let html = "";
-  html += verdictBadge(data.verdict);
-
-  // HERO: Likely Causes — the most actionable, most accurate answer, shown first and biggest
-  if (data.causes && data.causes.length) {
-    html += `<div class="result-block hero-causes"><h4>Most Likely Cause</h4>`;
-    data.causes.forEach((c, i) => {
-      html += `<div class="cause-row">
-        <div class="cause-top">
-          <span class="cause-name">${c.part.replace(/_/g, " ")}</span>
-          <span class="cause-pct">${pct(c.p)}</span>
-        </div>
-        <div class="bar-track"><div class="bar-fill" style="width:${pct(c.p)}"></div></div>
-        ${c.note ? `<div class="cause-note">${c.note}</div>` : ""}
-      </div>`;
-    });
-    html += `</div>`;
-  }
-
-  html += `<div class="result-block"><h4>Overall Assessment</h4>${barRow("Fault probability", data.fault_probability)}${data.engine_knock_probability !== undefined ? barRow("Engine knock probability", data.engine_knock_probability) : ""}</div>`;
-
-  if (data.triage) {
-    html += `<div class="result-block"><h4>Triage</h4><div class="row"><span class="label">Category</span><span class="value">${data.triage.label || data.triage.triage || "—"}</span></div><div class="row"><span class="label">Confidence</span><span class="value">${pct(data.triage.confidence)} (${data.triage.band || ""})</span></div>${data.triage.next_step ? `<p class="note">${data.triage.next_step}</p>` : ""}</div>`;
-  }
-
-  if (data.regions && data.regions.length) {
-    html += `<div class="result-block"><h4>Likely Regions</h4>`;
-    for (const r of data.regions) { html += barRow(r.zone, r.p); }
-    html += `</div>`;
-  }
-
-  if (data.note) { html += `<p class="note">${data.note}</p>`; }
-  return html;
-}
-
-async function uploadAudio() {
-  const file = document.getElementById("audioFile").files[0];
-  const status = document.getElementById("status");
-  const result = document.getElementById("result");
-  const btn = document.getElementById("uploadBtn");
-
-  result.style.display = "none";
-  result.innerHTML = "";
-
-  if (!file) { alert("Please select an audio file"); return; }
-
-  btn.disabled = true;
-  status.innerHTML = `<span class="dot"></span> Uploading…`;
-
-  const form = new FormData();
-  form.append("file", file);
-
-  try {
-    const res = await fetch("/api/diagnose/stream", { method: "POST", body: form });
-    const reader = res.body.getReader();
-    const decoder = new TextDecoder();
-    let buffer = "";
-
-    function handleEvent(type, data) {
-      if (type === "waveform" || type === "spectrogram") return;
-      if (type === "meta") { status.innerHTML = `<span class="dot"></span> Loaded ${data.title || "clip"} (${data.duration}s)…`; }
-      if (type === "stage") { status.innerHTML = `<span class="dot"></span> ${data.narration || data.label || "Processing…"}`; }
-      if (type === "error") { status.innerHTML = `<span class="badge err">Error</span> ${data.message}`; btn.disabled = false; }
-      if (type === "diagnosis") { status.innerHTML = ""; result.style.display = "block"; result.innerHTML = renderDiagnosis(data); }
-      if (type === "done") { btn.disabled = false; }
-    }
-
-    while (true) {
-      const { value, done } = await reader.read();
-      if (done) break;
-      buffer += decoder.decode(value, { stream: true });
-      const parts = buffer.split("\n\n");
-      buffer = parts.pop();
-      for (const chunk of parts) {
-        const eventMatch = chunk.match(/^event:\s*(.*)$/m);
-        const dataMatch = chunk.match(/^data:\s*(.*)$/m);
-        if (!eventMatch || !dataMatch) continue;
-        let data;
-        try { data = JSON.parse(dataMatch[1]); } catch (e) { continue; }
-        handleEvent(eventMatch[1].trim(), data);
-      }
-    }
-  } catch (e) {
-    status.innerHTML = `<span class="badge err">Error</span> ${e.message}`;
-    btn.disabled = false;
-  }
-}
-</script>
 
 </body>
 </html>
