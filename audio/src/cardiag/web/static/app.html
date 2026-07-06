@@ -214,13 +214,14 @@ button:disabled { opacity: 0.4; cursor: not-allowed; }
 
 /* ── Streamlit embed ── */
 .streamlit-embed-wrap {
+  position: relative; /* Essential anchor point for the masking panel overlay */
   --streamlit-height: min(1200px, 90vh);
   margin-top: 18px;
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
   overflow: hidden;
   background: var(--surface2);
-  resize: vertical; /* let visitors drag for more room if they want it */
+  resize: vertical;
 }
 .streamlit-embed {
   display: block;
@@ -228,8 +229,22 @@ button:disabled { opacity: 0.4; cursor: not-allowed; }
   height: var(--streamlit-height);
   min-height: 640px;
   border: 0;
-  background: var(--bg); /* Mask any browser canvas leakage completely with the dark theme color */
+  background: var(--bg);
 }
+
+/* Concrete DOM element cover mask to hide default signatures completely */
+.iframe-brand-mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44px; /* Perfectly sizing over the white Streamlit footer block height */
+  background: var(--surface2); /* Blends into the card base color setup */
+  z-index: 99999; /* Forces layer hierarchy priority over the active iframe container */
+  pointer-events: none; /* Allows click logic to clip through safely if required */
+  border-top: 1px solid var(--border); /* Continuity line accent */
+}
+
 @media (max-width: 900px) {
   .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); }
 }
@@ -298,6 +313,8 @@ Every uploaded recording undergoes automated signal processing before machine le
     loading="lazy"
     allow="microphone; clipboard-write"
   ></iframe>
+  <!-- Explicit DOM mask layered precisely on top of the iframe window footer -->
+  <div class="iframe-brand-mask"></div>
 </div>
 
 <noscript>
