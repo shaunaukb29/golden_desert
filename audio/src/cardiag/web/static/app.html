@@ -228,6 +228,7 @@ button:disabled { opacity: 0.4; cursor: not-allowed; }
   height: var(--streamlit-height);
   min-height: 640px;
   border: 0;
+  background: var(--bg); /* Mask any browser canvas leakage completely with the dark theme color */
 }
 @media (max-width: 900px) {
   .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); }
@@ -288,20 +289,6 @@ Every uploaded recording undergoes automated signal processing before machine le
 <h2 style="margin-top:0;">Try Audio Intelligence</h2>
 <p>Upload a recording below to receive AI-powered mechanical sound analysis, anomaly detection, confidence estimates, and prioritized inspection guidance.</p>
 
-<!--
-  STREAMLIT EMBED
-  ---------------
-  Replace STREAMLIT_APP_URL with your deployed app's URL, e.g.:
-  https://your-app-name.streamlit.app/?embed=true
-
-  Tips:
-  - Append "?embed=true" (Streamlit's own param) to hide its default
-    header/footer/menu chrome so it blends into this page.
-  - Adjust the --streamlit-height custom property in the CSS above
-    (.streamlit-embed-wrap) if your app's UI needs more or less room.
-  - If the app needs mic/clipboard access, the `allow` attribute below
-    already requests it.
--->
 <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
   <iframe
     id="streamlitFrame"
