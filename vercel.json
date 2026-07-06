@@ -29,7 +29,7 @@
   "rewrites": [
     {
       "source": "/audio",
-      "destination": "/audio/src/cardiag/web/static/app.html"
+      "destination": "/audio/src/cardiag/web/static/app"
     },
     {
       "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)",
