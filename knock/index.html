@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
+      }
+    }, interval * 1000);
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>AI Engine Knock & Tick Analyzer | Diagnose Rod Knock Instantly | Carithm</title>
+
+<meta name="description" content="Engine knocking or ticking? Upload a recording and get an instant AI diagnosis of rod knock, lifter tick, detonation, piston slap, or timing chain rattle. Free, no signup, results in seconds.">
+
+<meta name="keywords" content="engine knock detector, rod knock sound diagnosis, lifter tick vs rod knock, AI engine sound analyzer, engine ticking sound, diagnose engine noise audio, spark knock detector, engine knocking when accelerating, engine knock when idling, ticking noise but engine runs fine, knocking noise under car, engine knock at startup">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Carithm">
+
+<link rel="canonical" href="https://carithm.vercel.app/engine-knock">
+<link rel="alternate" hreflang="en-us" href="https://carithm.vercel.app/engine-knock">
+<link rel="alternate" hreflang="x-default" href="https://carithm.vercel.app/engine-knock">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="AI Engine Knock & Tick Analyzer | Diagnose Engine Noises | Carithm">
+<meta property="og:description" content="Hear a strange knocking or ticking from your engine? Upload an audio clip and get an AI-powered diagnosis in seconds. Differentiate rod knock from lifter tick instantly.">
+<meta property="og:url" content="https://carithm.vercel.app/engine-knock">
+<meta property="og:image" content="https://carithm.vercel.app/engine-bay-diagram.png">
+<meta property="og:site_name" content="Carithm">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Engine Knock & Tick Analyzer | Carithm">
+<meta name="twitter:description" content="Upload an engine noise recording and instantly detect rod knock, lifter tick, or detonation using AI. Free. No signup.">
+<meta name="twitter:image" content="https://carithm.vercel.app/engine-bay-diagram.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebApplication",
+ "name":"Carithm AI Engine Knock Analyzer",
+ "applicationCategory":"UtilitiesApplication",
+ "operatingSystem":"Web",
+ "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
+ "description":"Free AI engine knock and tick analyzer. Upload a recording of your engine noise and get instant fault detection for rod knock, lifter tick, and detonation.",
+ "url":"https://carithm.vercel.app/engine-knock",
+ "author":{ "@type":"Organization", "name":"Carithm" },
+ "publisher":{ "@type":"Organization", "name":"Carithm" },
+ "areaServed":"US",
+ "inLanguage":"en-US",
+ "dateModified":"2026-07-10"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"BreadcrumbList",
+ "itemListElement":[
+   {"@type":"ListItem","position":1,"name":"Home","item":"https://carithm.vercel.app/"},
+   {"@type":"ListItem","position":2,"name":"Audio Diagnosis","item":"https://carithm.vercel.app/audio"},
+   {"@type":"ListItem","position":3,"name":"Engine Knock Analyzer","item":"https://carithm.vercel.app/engine-knock"}
+ ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"FAQPage",
+ "mainEntity":[
+  {"@type":"Question","name":"What does rod knock sound like?","acceptedAnswer":{"@type":"Answer","text":"Rod knock is a deep, heavy, metallic thudding or knocking sound from deep within the engine block that usually speeds up and gets louder as you accelerate."}},
+  {"@type":"Question","name":"How can I tell the difference between lifter tick and rod knock?","acceptedAnswer":{"@type":"Answer","text":"Lifter tick is a lighter, rapid, clicking or tapping sound near the top of the engine that sometimes goes away as the engine warms up. Rod knock is a deeper, heavier thudding near the bottom of the engine that gets worse under load."}},
+  {"@type":"Question","name":"Can an AI detect engine knocking?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm's AI Engine Sound Analyzer is trained to identify the acoustic signatures of detonation, rod knock, and valvetrain ticking from smartphone audio recordings."}},
+  {"@type":"Question","name":"Why does my engine tick at idle?","acceptedAnswer":{"@type":"Answer","text":"A light tick at idle is often related to the valvetrain, such as sticking hydraulic lifters, worn rocker arms, or insufficient oil pressure reaching the top of the engine."}},
+  {"@type":"Question","name":"Is it safe to drive a car with engine knock?","acceptedAnswer":{"@type":"Answer","text":"If you suspect rod knock or severe detonation (spark knock), you should not drive the vehicle. Continuing to drive with lower-end engine knocking can result in catastrophic engine failure, such as throwing a rod."}},
+  {"@type":"Question","name":"How much does it cost to fix rod knock?","acceptedAnswer":{"@type":"Answer","text":"In the US, replacing worn rod bearings typically runs from about 1,500 to 3,500 dollars depending on labor rates and whether the engine needs to be removed. A full engine replacement due to rod knock damage commonly runs from 3,000 to 8,000 dollars or more, depending on the vehicle."}},
+  {"@type":"Question","name":"Can low oil cause engine knock?","acceptedAnswer":{"@type":"Answer","text":"Yes. Low oil level or low oil pressure reduces the protective film between moving engine parts, which can cause both lifter tick and, in more severe or prolonged cases, rod knock as bearings wear down from inadequate lubrication."}},
+  {"@type":"Question","name":"Does engine knock always mean I need a new engine?","acceptedAnswer":{"@type":"Answer","text":"Not always. Light detonation or spark knock can often be resolved with a fuel or ignition system fix, such as higher octane fuel, new spark plugs, or a carbon cleaning. True rod knock, however, usually indicates worn bearings and often requires a bearing replacement or full engine rebuild."}},
+  {"@type":"Question","name":"Can I fix a lifter tick myself?","acceptedAnswer":{"@type":"Answer","text":"Some cases of lifter tick can be resolved with an oil and filter change, using a slightly heavier oil weight, or an oil additive designed to free up sticking lifters. Persistent ticking after an oil change usually points to a worn lifter or rocker arm that needs professional replacement."}}
+ ]
+}
+</script>
+
+<style>
+:root {
+  --bg:         #09090b;
+  --surface:    #111113;
+  --surface2:   #18181b;
+  --surface3:   #27272a;
+  --border:     rgba(255,255,255,0.07);
+  --border2:    rgba(255,255,255,0.13);
+  --text:       #fafafa;
+  --muted:      #a1a8b3;
+  --muted2:     #71717a;
+  --accent:     #2f81f7;
+  --accent-dim: rgba(47,129,247,0.1);
+  --accent-glow:rgba(47,129,247,0.22);
+  --green:      #22c55e;
+  --green-dim:  rgba(34,197,94,0.1);
+  --amber:      #f59e0b;
+  --amber-dim:  rgba(245,158,11,0.1);
+  --red:        #ef4444;
+  --red-dim:    rgba(239,68,68,0.1);
+  --r: 12px; --r-sm: 8px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+
+header {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(9,9,11,0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none;
+}
+.nav-logo span { color: var(--accent); }
+
+.nav { display: flex; gap: 1.75rem; align-items: center; }
+.nav a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; transition: color .2s; }
+.nav a:hover, .nav a.active { color: #fff; }
+.nav .cta-btn {
+  background: var(--accent-dim); border: 1px solid rgba(47,129,247,0.3); color: var(--accent);
+  padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600;
+}
+.nav .cta-btn:hover { background: var(--accent); color: #000; }
+
+main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
+
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 14px; line-height: 1.12; }
+h2 { font-size: 1.3rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; }
+h3 { font-size: 1.02rem; font-weight: 600; margin-top: 22px; }
+p { color: var(--muted); margin: 0 0 8px; }
+ul, ol { color: var(--muted); padding-left: 20px; }
+li { margin-bottom: 6px; }
+
+.updated-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11.5px; color: var(--muted2);
+  margin-bottom: 18px;
+}
+.updated-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+
+.trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 22px 0 8px; }
+.trust-strip > div { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); }
+.trust-strip > div:last-child { border-right: none; }
+.trust-num { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+.trust-num span { color: var(--accent); }
+.trust-lbl { font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 3px; }
+
+.card {
+  background: var(--surface);
+  padding: 26px;
+  border-radius: var(--r);
+  margin-top: 26px;
+  border: 1px solid var(--border);
+}
+.card.tool { border-color: rgba(47,129,247,0.25); }
+.card.tool.tool-wide {
+  max-width: 1100px;
+  width: 100%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.card.about {
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.about-avatar {
+  flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%;
+  background: var(--accent-dim); border: 1px solid rgba(47,129,247,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: var(--accent); font-size: 14px;
+}
+.about p { margin: 0 0 4px; font-size: 13.5px; }
+.about .about-name { color: var(--text); font-weight: 600; font-size: 14.5px; margin-bottom: 2px; }
+.about .about-role { color: var(--muted2); font-size: 12px; margin-bottom: 8px; }
+
+button {
+  padding: 12px 20px;
+  border: 0;
+  border-radius: var(--r-sm);
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: opacity .15s, transform .1s;
+}
+button:hover { opacity: 0.88; }
+button:active { transform: scale(0.99); }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.streamlit-embed-wrap {
+  position: relative;
+  --streamlit-height: min(1200px, 90vh);
+  margin-top: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  background: var(--surface2);
+  resize: vertical;
+}
+.streamlit-embed {
+  display: block;
+  width: 100%;
+  height: var(--streamlit-height);
+  min-height: 640px;
+  border: 0;
+  background: var(--bg);
+}
+.iframe-brand-mask {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 44px;
+  background: var(--surface2);
+  z-index: 99999;
+  pointer-events: auto;
+  border-top: 1px solid var(--border);
+  cursor: default;
+}
+
+@media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
+@media (max-width: 620px) {
+  .streamlit-embed-wrap { --streamlit-height: min(850px, 80vh); }
+  .streamlit-embed { min-height: 560px; }
+}
+
+.crosslink-banner {
+  background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
+  border: 1px solid rgba(47,129,247,0.25);
+  border-radius: var(--r);
+  padding: 22px 26px;
+  margin-top: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.crosslink-banner p { margin: 0; color: var(--muted); font-size: 13px; }
+.crosslink-banner strong { color: var(--text); display: block; font-size: 15px; margin-bottom: 4px; }
+.crosslink-btn {
+  background: var(--accent); color: #000; font-weight: 700;
+  padding: 10px 18px; border-radius: var(--r-sm);
+  text-decoration: none; font-size: 13px; white-space: nowrap; flex-shrink: 0;
+}
+.crosslink-btn:hover { opacity: 0.88; }
+
+.symptom-table-wrap { overflow-x: auto; margin-top: 16px; border: 1px solid var(--border); border-radius: var(--r-sm); }
+table.symptom-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 560px; }
+table.symptom-table th {
+  text-align: left; background: var(--surface2); color: var(--text);
+  padding: 10px 14px; font-weight: 600; border-bottom: 1px solid var(--border2);
+  white-space: nowrap;
+}
+table.symptom-table td {
+  padding: 10px 14px; color: var(--muted); border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+table.symptom-table tr:last-child td { border-bottom: none; }
+.sev { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.sev.high { background: var(--red-dim); color: var(--red); }
+.sev.med { background: var(--amber-dim); color: var(--amber); }
+.sev.low { background: var(--green-dim); color: var(--green); }
+
+.cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+.cost-card { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 16px 18px; }
+.cost-card h4 { margin: 0 0 6px; font-size: 13.5px; color: var(--text); }
+.cost-card .cost-range { font-size: 18px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+.cost-card p { font-size: 12px; margin: 0; }
+@media (max-width: 620px) { .cost-grid { grid-template-columns: 1fr; } }
+
+.internal-links { margin-top: 14px; }
+.internal-links a { color: var(--accent); text-decoration: none; font-size: 13.5px; }
+.internal-links a:hover { text-decoration: underline; }
+
+footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
+.footer-inner { max-width: 760px; margin: 0 auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
+.footer-links a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+.footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
+
+@media (max-width: 620px) {
+  header { padding: 0.9rem 1.1rem; }
+  .nav a:not(.cta-btn) { display: none; }
+  .trust-strip { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <a href="https://carithm.vercel.app/toyota">Toyota</a>
+    <a href="https://carithm.vercel.app/bmw">BMW</a>
+    <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
+    <a href="https://carithm.vercel.app/research">Research</a>
+    <a href="https://carithm.vercel.app/audio" class="active" aria-current="page">Audio Diagnosis</a>
+    <a href="#try" class="cta-btn">Try It Free</a>
+  </nav>
+</header>
+
+<main>
+
+<section>
+  <div class="eyebrow">Carithm Audio Intelligence</div>
+
+  <h1>AI Engine Knock & Tick Analyzer</h1>
+
+  <div class="updated-badge"><span class="dot"></span> Updated July 2026</div>
+
+  <p>
+    Hear a deep thud, a rapid ticking, or a rattling noise from your engine bay? Upload a recording and Carithm's AI Engine Sound Analyzer will instantly differentiate between serious lower-engine issues (like rod knock) and upper-engine valvetrain noises (like lifter tick) with confidence-scored accuracy.
+  </p>
+
+  <p>
+    Don't panic over an expensive engine rebuild until you know what you're dealing with. The system evaluates the recording quality, measures acoustic signatures, and explains whether you need an immediate tow or a standard inspection.
+  </p>
+
+  <div class="trust-strip">
+    <div><div class="trust-num">Instant</div><div class="trust-lbl">Knock Detection</div></div>
+    <div><div class="trust-num">Free</div><div class="trust-lbl">No Signup</div></div>
+    <div><div class="trust-num">~5s</div><div class="trust-lbl">Analysis Time</div></div>
+    <div><div class="trust-num">24/7</div><div class="trust-lbl">Always On</div></div>
+  </div>
+</section>
+
+<section class="card tool tool-wide" id="try">
+  <h2 style="margin-top:0;">Analyze Engine Sound</h2>
+  <p>
+    Pop your hood, hold your phone near the engine block (avoiding moving belts), and record a 5-10 second clip of the noise. Upload the audio below to receive an instant AI breakdown of the most likely causes.
+  </p>
+
+  <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
+    <iframe
+      id="streamlitFrame"
+      class="streamlit-embed"
+      src="https://heidi23982-fwppnbxn37fjvhtaslkx5q.streamlit.app/?embed=true"
+      title="Carithm AI Engine Sound Analyzer"
+      loading="lazy"
+      allow="microphone; clipboard-write"
+    ></iframe>
+    <div class="iframe-brand-mask"></div>
+  </div>
+
+  <noscript>
+    <p class="note">This tool requires JavaScript to load the embedded app.</p>
+  </noscript>
+</section>
+
+<section class="card about">
+  <div class="about-avatar">CA</div>
+  <div>
+    <div class="about-name">Reviewed by the Carithm Diagnostics Team</div>
+    <div class="about-role">ASE-familiar automotive content, cross-checked against OEM service literature</div>
+    <p>Carithm's diagnostic guides are compiled from manufacturer service documentation, ASE-aligned training material, and mechanic-reported case data, then reviewed for accuracy before publishing. Carithm is based in the United States and this guide reflects US repair-cost averages.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What Engine Faults Can We Diagnose?</h2>
+  <ul>
+    <li><strong>Rod Knock:</strong> Deep, metallic knocking from the lower engine block.</li>
+    <li><strong>Lifter Tick / Valvetrain Noise:</strong> Rapid, lighter tapping from the top of the cylinder head.</li>
+    <li><strong>Piston Slap:</strong> Hollow, muffled knocking that is loudest when the engine is cold.</li>
+    <li><strong>Detonation / Spark Knock:</strong> Pinging or rattling sound, especially during acceleration.</li>
+    <li><strong>Timing Chain Rattle:</strong> Clattering noise at startup or specific RPMs.</li>
+    <li><strong>Exhaust Leak Ticking:</strong> Sounds like an engine tick but is actually escaping exhaust gas.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Engine Noise Symptom Checker</h2>
+  <p>Quick-reference table for the most commonly searched engine noise symptoms. Match your sound and situation, then upload a recording above for a confidence-scored AI diagnosis.</p>
+
+  <div class="symptom-table-wrap">
+    <table class="symptom-table">
+      <thead>
+        <tr>
+          <th>Symptom</th>
+          <th>Location</th>
+          <th>When it happens</th>
+          <th>Likely cause</th>
+          <th>Severity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Deep, heavy thud</td>
+          <td>Lower engine block</td>
+          <td>Gets louder accelerating</td>
+          <td>Rod knock</td>
+          <td><span class="sev high">High</span></td>
+        </tr>
+        <tr>
+          <td>Rapid light clicking</td>
+          <td>Top of engine / valve cover</td>
+          <td>Constant, may fade warm</td>
+          <td>Lifter tick</td>
+          <td><span class="sev low">Low–Med</span></td>
+        </tr>
+        <tr>
+          <td>Hollow slapping</td>
+          <td>Cylinder walls</td>
+          <td>Cold start, fades as engine warms</td>
+          <td>Piston slap</td>
+          <td><span class="sev med">Medium</span></td>
+        </tr>
+        <tr>
+          <td>Pinging / marbles rattling</td>
+          <td>Combustion chamber</td>
+          <td>Under acceleration or load</td>
+          <td>Detonation / spark knock</td>
+          <td><span class="sev med">Medium</span></td>
+        </tr>
+        <tr>
+          <td>Clattering rattle</td>
+          <td>Front of engine, timing cover</td>
+          <td>Cold startup, fades in seconds</td>
+          <td>Timing chain slack</td>
+          <td><span class="sev med">Medium</span></td>
+        </tr>
+        <tr>
+          <td>Sharp metallic tick</td>
+          <td>Near exhaust manifold</td>
+          <td>Louder on acceleration</td>
+          <td>Exhaust manifold leak</td>
+          <td><span class="sev low">Low</span></td>
+        </tr>
+        <tr>
+          <td>Ticking noise, engine runs fine</td>
+          <td>Varies</td>
+          <td>Idle or light load</td>
+          <td>Often lifter tick or minor exhaust leak</td>
+          <td><span class="sev low">Low</span></td>
+        </tr>
+        <tr>
+          <td>Knocking noise under car</td>
+          <td>Undercarriage, not engine bay</td>
+          <td>Over bumps or turns</td>
+          <td>Often suspension/exhaust hanger, not engine</td>
+          <td><span class="sev low">Low</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Engine Knocking & Ticking Sounds Explained</h2>
+  <p>Not sure what your specific engine noise implies? Here are the most common engine sound issues searched by drivers. Match your symptoms, then upload a recording for an AI confidence score.</p>
+
+  <h3>What does rod knock sound like?</h3>
+  <p>Rod knock is a deep, heavy, metallic thudding or knocking sound from deep within the lower part of the engine block. It typically gets faster and much louder as you rev the engine. This implies severe wear on the connecting rod bearings and requires immediate attention to prevent total engine failure.</p>
+
+  <h3>How to tell the difference between lifter tick and rod knock?</h3>
+  <p>Lifter tick is a lighter, faster, "clicking" or "tapping" sound that comes from the top of the engine (near the valve cover). It often goes away as the engine warms up or oil pressure builds. Rod knock is a deeper, heavier "thudding" from the bottom of the engine that gets worse under load or acceleration.</p>
+
+  <h3>Why does my engine knock when accelerating?</h3>
+  <p>Knocking that specifically worsens under acceleration or load points to either rod knock (deep, heavy) or detonation/spark knock (higher-pitched pinging). Rod knock gets worse because more load is placed on already-worn bearings. Spark knock gets worse because more fuel and air are being ignited under higher cylinder pressure, which exposes premature or uneven combustion.</p>
+
+  <h3>Why does my engine knock at idle but not while driving?</h3>
+  <p>A knock that appears mainly at idle and quiets down at higher RPM is frequently related to low oil pressure, a failing hydraulic lifter, or in some cases early-stage rod bearing wear that has not yet progressed to the point of knocking under load.</p>
+
+  <h3>Why does my car make a ticking noise but the engine runs fine?</h3>
+  <p>A ticking sound with no noticeable performance loss is usually cosmetic to engine health in the short term — most often a lifter tick, a minor exhaust leak, or a loose heat shield vibrating against the exhaust. It's still worth having checked, since some causes (like an exhaust leak) can point to bigger issues down the line.</p>
+
+  <h3>Why does my engine ping or rattle when I accelerate?</h3>
+  <p>This is classic "spark knock" or detonation. It sounds like marbles rattling in a tin can when you step on the gas. It happens when the fuel-air mixture ignites prematurely, often caused by using low-octane fuel, bad spark plugs, or severe carbon buildup.</p>
+
+  <h3>Why does my engine rattle for a few seconds on a cold start?</h3>
+  <p>A brief rattle right when you start the engine that fades within 2-3 seconds is frequently caused by timing chain slack. This happens before the hydraulic timing chain tensioner gets enough oil pressure to tighten the chain. If it persists, the tensioner or guides may need replacing.</p>
+
+  <h3>Can an exhaust leak sound like an engine tick?</h3>
+  <p>Yes. A cracked exhaust manifold or a blown manifold gasket will release puffs of high-pressure gas that sound exactly like a sharp, metallic "tick" in the engine bay. A good rule of thumb: if the ticking is louder near the exhaust headers and gets much louder immediately upon acceleration, suspect an exhaust leak.</p>
+
+  <h3>What's a "knocking noise under the car" instead of under the hood?</h3>
+  <p>If the knock seems to come from underneath the vehicle rather than the engine bay, and it happens mainly over bumps, potholes, or turns, it's frequently a suspension component (like a worn sway bar link or strut mount) or a loose exhaust hanger rather than an actual engine fault.</p>
+
+  <h3>Can low oil cause engine knock?</h3>
+  <p>Yes. Low oil level or low oil pressure reduces the protective film between moving parts. In the short term this often shows up as lifter tick; if left unresolved, it can accelerate bearing wear and eventually contribute to rod knock.</p>
+
+  <h3>Does engine knock always mean I need a new engine?</h3>
+  <p>Not necessarily. Light detonation is often fixable with higher-octane fuel, new spark plugs, or a carbon cleaning. True rod knock, however, usually means the rod bearings need replacing, and in more severe cases the crankshaft or block may be damaged, requiring a rebuild or replacement engine.</p>
+
+  <h3>Is it safe to drive with an engine tick?</h3>
+  <p>If it is a confirmed lifter tick, the car can usually be driven to a shop safely, though fixing the root cause (often low oil, old oil, or a failing hydraulic lifter) is important. If the sound is a heavy rod knock, driving it further will likely result in the rod breaking through the engine block. When in doubt, upload the sound above for AI analysis before turning the key again.</p>
+
+</section>
+
+<section>
+  <h2>How Much Does It Cost to Fix Engine Knock? (US Estimates)</h2>
+  <p>Repair costs vary by vehicle, region, and labor rates. These are typical US ranges based on independent shop and dealer estimates as of 2026 — get a written quote before authorizing any work.</p>
+
+  <div class="cost-grid">
+    <div class="cost-card">
+      <h4>Rod bearing replacement</h4>
+      <div class="cost-range">$1,500 – $3,500</div>
+      <p>Labor-intensive; cost rises if the engine must be pulled from the vehicle.</p>
+    </div>
+    <div class="cost-card">
+      <h4>Engine replacement (rod knock damage)</h4>
+      <div class="cost-range">$3,000 – $8,000+</div>
+      <p>Varies heavily by make/model and whether used, remanufactured, or new.</p>
+    </div>
+    <div class="cost-card">
+      <h4>Lifter / valvetrain repair</h4>
+      <div class="cost-range">$200 – $900</div>
+      <p>Single lifter replacement is cheaper; full valvetrain service costs more.</p>
+    </div>
+    <div class="cost-card">
+      <h4>Timing chain & tensioner</h4>
+      <div class="cost-range">$500 – $1,800</div>
+      <p>Cost depends on whether it's a simple tensioner or full chain/guide kit.</p>
+    </div>
+    <div class="cost-card">
+      <h4>Exhaust manifold gasket/leak</h4>
+      <div class="cost-range">$150 – $600</div>
+      <p>Among the cheaper fixes; higher if the manifold itself is cracked.</p>
+    </div>
+    <div class="cost-card">
+      <h4>Spark knock / detonation fix</h4>
+      <div class="cost-range">$50 – $400</div>
+      <p>Spark plugs, octane booster, or carbon cleaning resolve most cases.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>How the AI Knock Detector Works</h2>
+  <ol>
+    <li>Record the unusual sound using your phone — hold it close to the engine block, taking care around moving parts.</li>
+    <li>Upload the recording through the tool above.</li>
+    <li>The AI removes background fan and wind noise to isolate the mechanical frequencies.</li>
+    <li>The system cross-references the frequency, pitch, and interval of the noise against a database of known rod knock, valvetrain, and timing issues.</li>
+    <li>You get a ranked list of likely fault areas to show your mechanic.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Related Diagnostics</h2>
+  <div class="internal-links">
+    <p><a href="https://carithm.vercel.app/audio">Full audio diagnosis hub: all engine & car sound tools →</a></p>
+    <p><a href="https://carithm.vercel.app/toyota">Toyota engine knock & common noise issues →</a></p>
+    <p><a href="https://carithm.vercel.app/bmw">BMW engine tick & timing chain problems →</a></p>
+    <p><a href="https://carithm.vercel.app/mercedes">Mercedes engine noise diagnostics →</a></p>
+    <p><a href="https://carithm.vercel.app/research">Carithm research: how AI acoustic diagnosis works →</a></p>
+  </div>
+</section>
+
+<div class="crosslink-banner" aria-label="Related tool">
+  <div>
+    <strong>Heard a noise and now have a repair quote?</strong>
+    <p>Once your garage gives you an estimate, check if every line item is actually due before you approve anything — free, under 30 seconds.</p>
+  </div>
+  <a href="https://carithm.vercel.app/" class="crosslink-btn">Check My Repair Quote →</a>
+</div>
+
+<section style="margin-top: 44px;">
+  <div class="eyebrow">Also on Carithm</div>
+  <h2 style="margin-top: 8px;">Understand the repair before you pay for it</h2>
+  <p>If the sound diagnosis points to a specific issue, our AI invoice analyzer can verify if the quoted repair costs and required hours are fair and necessary before you commit to the work.</p>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://carithm.vercel.app/">Home</a>
+      <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+      <a href="https://carithm.vercel.app/research">Research</a>
+      <a href="https://carithm.vercel.app/toyota">Toyota</a>
+      <a href="https://carithm.vercel.app/bmw">BMW</a>
+      <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Carithm AI. All rights reserved. Carithm is based in the United States. Repair cost estimates are general US averages and not a quote for any specific vehicle.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
