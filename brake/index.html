@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
+      }
+    }, interval * 1000);
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>AI Brake Noise Analyzer | Diagnose Squealing & Grinding Brakes | Carithm</title>
+
+<meta name="description" content="Brakes squealing, grinding, or squeaking? Upload a recording and get an instant AI diagnosis of worn pads, warped rotors, caliper issues, or a stuck wear indicator. Free, no signup, results in seconds.">
+
+<meta name="keywords" content="brake squealing noise, grinding brakes diagnosis, brakes squeaking when stopping, metal grinding sound brakes, AI brake noise analyzer, brake pad wear indicator sound, brakes squeal when driving not braking, brake noise detector, warped rotor sound, squealing brakes but pads are fine, brake noise when turning">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Carithm">
+
+<link rel="canonical" href="https://carithm.vercel.app/brake-noise">
+<link rel="alternate" hreflang="en-us" href="https://carithm.vercel.app/brake-noise">
+<link rel="alternate" hreflang="x-default" href="https://carithm.vercel.app/brake-noise">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="AI Brake Noise Analyzer | Diagnose Squealing & Grinding Brakes | Carithm">
+<meta property="og:description" content="Hear squealing, grinding, or squeaking brakes? Upload an audio clip and get an AI-powered diagnosis in seconds — worn pads, warped rotors, or caliper issues.">
+<meta property="og:url" content="https://carithm.vercel.app/brake-noise">
+<meta property="og:image" content="https://carithm.vercel.app/brake-rotor-diagram.png">
+<meta property="og:site_name" content="Carithm">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Brake Noise Analyzer | Carithm">
+<meta name="twitter:description" content="Upload a brake noise recording and instantly detect worn pads, warped rotors, or caliper issues using AI. Free. No signup.">
+<meta name="twitter:image" content="https://carithm.vercel.app/brake-rotor-diagram.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebApplication",
+ "name":"Carithm AI Brake Noise Analyzer",
+ "applicationCategory":"UtilitiesApplication",
+ "operatingSystem":"Web",
+ "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
+ "description":"Free AI brake noise analyzer. Upload a recording of your brake squealing or grinding and get instant fault detection for worn pads, warped rotors, and caliper issues.",
+ "url":"https://carithm.vercel.app/brake-noise",
+ "author":{ "@type":"Organization", "name":"Carithm" },
+ "publisher":{ "@type":"Organization", "name":"Carithm" },
+ "areaServed":"US",
+ "inLanguage":"en-US",
+ "dateModified":"2026-07-10"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"BreadcrumbList",
+ "itemListElement":[
+   {"@type":"ListItem","position":1,"name":"Home","item":"https://carithm.vercel.app/"},
+   {"@type":"ListItem","position":2,"name":"Audio Diagnosis","item":"https://carithm.vercel.app/audio"},
+   {"@type":"ListItem","position":3,"name":"Brake Noise Analyzer","item":"https://carithm.vercel.app/brake-noise"}
+ ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"FAQPage",
+ "mainEntity":[
+  {"@type":"Question","name":"Why do my brakes squeal when I stop?","acceptedAnswer":{"@type":"Answer","text":"A high-pitched squeal when braking is most often caused by the built-in metal wear indicator on the brake pad contacting the rotor, which is a deliberate design feature that warns you the pads are getting thin and need replacement soon."}},
+  {"@type":"Question","name":"Why do my brakes grind when I stop?","acceptedAnswer":{"@type":"Answer","text":"A grinding or metallic scraping sound usually means the brake pads are completely worn through and the metal backing plate is now contacting the rotor directly, which can quickly damage the rotor and should be addressed immediately."}},
+  {"@type":"Question","name":"Can an AI detect brake problems from sound?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm's AI Brake Noise Analyzer identifies the acoustic signatures of worn pad wear indicators, grinding metal-on-metal contact, warped rotor pulsation, and caliper or hardware rattle from a smartphone audio recording."}},
+  {"@type":"Question","name":"Why do my brakes squeal only when it's cold or wet outside?","acceptedAnswer":{"@type":"Answer","text":"A light surface squeal in cold or damp conditions that disappears after a few stops is usually just surface rust or condensation on the rotor being cleared off by the pads, and is generally not a cause for concern."}},
+  {"@type":"Question","name":"Is it safe to drive with grinding brakes?","acceptedAnswer":{"@type":"Answer","text":"No. Grinding brakes typically mean metal is contacting metal, which significantly reduces stopping power and can quickly damage the rotors, calipers, and in severe cases lead to brake failure. The vehicle should be brought in for service immediately."}},
+  {"@type":"Question","name":"How much does it cost to fix squealing or grinding brakes?","acceptedAnswer":{"@type":"Answer","text":"In the US, a standard brake pad replacement typically costs between 150 and 300 dollars per axle. If the rotors also need to be replaced or resurfaced due to grinding damage, total cost typically runs from 300 to 600 dollars per axle, and caliper replacement adds roughly 150 to 300 dollars per caliper."}},
+  {"@type":"Question","name":"Why do my brakes squeak only at low speed?","acceptedAnswer":{"@type":"Answer","text":"A squeak that appears mainly at low speed or during the first few stops of the day is frequently related to surface rust, glazed pad material, or dust buildup on the rotor rather than a sign of worn-out brakes."}},
+  {"@type":"Question","name":"Why do my brakes make noise when turning but not going straight?","acceptedAnswer":{"@type":"Answer","text":"A noise that only occurs while turning is often related to a loose heat shield, a small rock or debris trapped between the rotor and shield, or uneven pad wear on one side, rather than a symptom of the braking system itself failing."}}
+ ]
+}
+</script>
+
+<style>
+:root {
+  --bg:         #09090b;
+  --surface:    #111113;
+  --surface2:   #18181b;
+  --surface3:   #27272a;
+  --border:     rgba(255,255,255,0.07);
+  --border2:    rgba(255,255,255,0.13);
+  --text:       #fafafa;
+  --muted:      #a1a8b3;
+  --muted2:     #71717a;
+  --accent:     #2f81f7;
+  --accent-dim: rgba(47,129,247,0.1);
+  --accent-glow:rgba(47,129,247,0.22);
+  --green:      #22c55e;
+  --green-dim:  rgba(34,197,94,0.1);
+  --amber:      #f59e0b;
+  --amber-dim:  rgba(245,158,11,0.1);
+  --red:        #ef4444;
+  --red-dim:    rgba(239,68,68,0.1);
+  --r: 12px; --r-sm: 8px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+
+header {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(9,9,11,0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none;
+}
+.nav-logo span { color: var(--accent); }
+
+.nav { display: flex; gap: 1.75rem; align-items: center; }
+.nav a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; transition: color .2s; }
+.nav a:hover, .nav a.active { color: #fff; }
+.nav .cta-btn {
+  background: var(--accent-dim); border: 1px solid rgba(47,129,247,0.3); color: var(--accent);
+  padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600;
+}
+.nav .cta-btn:hover { background: var(--accent); color: #000; }
+
+main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
+
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 14px; line-height: 1.12; }
+h2 { font-size: 1.3rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; }
+h3 { font-size: 1.02rem; font-weight: 600; margin-top: 22px; }
+p { color: var(--muted); margin: 0 0 8px; }
+ul, ol { color: var(--muted); padding-left: 20px; }
+li { margin-bottom: 6px; }
+
+.updated-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11.5px; color: var(--muted2);
+  margin-bottom: 18px;
+}
+.updated-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+
+.trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 22px 0 8px; }
+.trust-strip > div { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); }
+.trust-strip > div:last-child { border-right: none; }
+.trust-num { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+.trust-num span { color: var(--accent); }
+.trust-lbl { font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 3px; }
+
+.card {
+  background: var(--surface);
+  padding: 26px;
+  border-radius: var(--r);
+  margin-top: 26px;
+  border: 1px solid var(--border);
+}
+.card.tool { border-color: rgba(47,129,247,0.25); }
+.card.tool.tool-wide {
+  max-width: 1100px;
+  width: 100%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.card.about {
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.about-avatar {
+  flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%;
+  background: var(--accent-dim); border: 1px solid rgba(47,129,247,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: var(--accent); font-size: 14px;
+}
+.about p { margin: 0 0 4px; font-size: 13.5px; }
+.about .about-name { color: var(--text); font-weight: 600; font-size: 14.5px; margin-bottom: 2px; }
+.about .about-role { color: var(--muted2); font-size: 12px; margin-bottom: 8px; }
+
+button {
+  padding: 12px 20px;
+  border: 0;
+  border-radius: var(--r-sm);
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: opacity .15s, transform .1s;
+}
+button:hover { opacity: 0.88; }
+button:active { transform: scale(0.99); }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.streamlit-embed-wrap {
+  position: relative;
+  --streamlit-height: min(1200px, 90vh);
+  margin-top: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  background: var(--surface2);
+  resize: vertical;
+}
+.streamlit-embed {
+  display: block;
+  width: 100%;
+  height: var(--streamlit-height);
+  min-height: 640px;
+  border: 0;
+  background: var(--bg);
+}
+.iframe-brand-mask {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 44px;
+  background: var(--surface2);
+  z-index: 99999;
+  pointer-events: auto;
+  border-top: 1px solid var(--border);
+  cursor: default;
+}
+
+@media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
+@media (max-width: 620px) {
+  .streamlit-embed-wrap { --streamlit-height: min(850px, 80vh); }
+  .streamlit-embed { min-height: 560px; }
+}
+
+.crosslink-banner {
+  background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
+  border: 1px solid rgba(47,129,247,0.25);
+  border-radius: var(--r);
+  padding: 22px 26px;
+  margin-top: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.crosslink-banner p { margin: 0; color: var(--muted); font-size: 13px; }
+.crosslink-banner strong { color: var(--text); display: block; font-size: 15px; margin-bottom: 4px; }
+.crosslink-btn {
+  background: var(--accent); color: #000; font-weight: 700;
+  padding: 10px 18px; border-radius: var(--r-sm);
+  text-decoration: none; font-size: 13px; white-space: nowrap; flex-shrink: 0;
+}
+.crosslink-btn:hover { opacity: 0.88; }
+
+.symptom-table-wrap { overflow-x: auto; margin-top: 16px; border: 1px solid var(--border); border-radius: var(--r-sm); }
+table.symptom-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 560px; }
+table.symptom-table th {
+  text-align: left; background: var(--surface2); color: var(--text);
+  padding: 10px 14px; font-weight: 600; border-bottom: 1px solid var(--border2);
+  white-space: nowrap;
+}
+table.symptom-table td {
+  padding: 10px 14px; color: var(--muted); border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+table.symptom-table tr:last-child td { border-bottom: none; }
+.sev { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.sev.high { background: var(--red-dim); color: var(--red); }
+.sev.med { background: var(--amber-dim); color: var(--amber); }
+.sev.low { background: var(--green-dim); color: var(--green); }
+
+.cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+.cost-card { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 16px 18px; }
+.cost-card h4 { margin: 0 0 6px; font-size: 13.5px; color: var(--text); }
+.cost-card .cost-range { font-size: 18px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+.cost-card p { font-size: 12px; margin: 0; }
+@media (max-width: 620px) { .cost-grid { grid-template-columns: 1fr; } }
+
+.internal-links { margin-top: 14px; }
+.internal-links a { color: var(--accent); text-decoration: none; font-size: 13.5px; }
+.internal-links a:hover { text-decoration: underline; }
+
+footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
+.footer-inner { max-width: 760px; margin: 0 auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
+.footer-links a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+.footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
+
+@media (max-width: 620px) {
+  header { padding: 0.9rem 1.1rem; }
+  .nav a:not(.cta-btn) { display: none; }
+  .trust-strip { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <a href="https://carithm.vercel.app/toyota">Toyota</a>
+    <a href="https://carithm.vercel.app/bmw">BMW</a>
+    <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
+    <a href="https://carithm.vercel.app/research">Research</a>
+    <a href="https://carithm.vercel.app/audio" class="active" aria-current="page">Audio Diagnosis</a>
+    <a href="#try" class="cta-btn">Try It Free</a>
+  </nav>
+</header>
+
+<main>
+
+<section>
+  <div class="eyebrow">Carithm Audio Intelligence</div>
+
+  <h1>AI Brake Noise Analyzer</h1>
+
+  <div class="updated-badge"><span class="dot"></span> Updated July 2026</div>
+
+  <p>
+    Squealing every time you stop? A grinding, metallic scrape? Upload a recording and Carithm's AI Brake Noise Analyzer will instantly tell you whether you're hearing a normal wear indicator, worn-through pads, a warped rotor, or a loose caliper — with a confidence-scored breakdown.
+  </p>
+
+  <p>
+    Brake noise ranges from "replace your pads this week" to "stop driving today." The system evaluates pitch, consistency, and speed-dependence of the sound to tell you which one you're dealing with before you even get to the shop.
+  </p>
+
+  <div class="trust-strip">
+    <div><div class="trust-num">Instant</div><div class="trust-lbl">Brake Diagnosis</div></div>
+    <div><div class="trust-num">Free</div><div class="trust-lbl">No Signup</div></div>
+    <div><div class="trust-num">~5s</div><div class="trust-lbl">Analysis Time</div></div>
+    <div><div class="trust-num">24/7</div><div class="trust-lbl">Always On</div></div>
+  </div>
+</section>
+
+<section class="card tool tool-wide" id="try">
+  <h2 style="margin-top:0;">Analyze Brake Sound</h2>
+  <p>
+    Record 5-10 seconds of the noise while braking gently in a safe, low-traffic area (or ask a passenger to record from inside the car). Upload the clip below to receive an instant AI breakdown of the most likely cause.
+  </p>
+
+  <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
+    <iframe
+      id="streamlitFrame"
+      class="streamlit-embed"
+      src="https://heidi23982-fwppnbxn37fjvhtaslkx5q.streamlit.app/?embed=true"
+      title="Carithm AI Brake Noise Analyzer"
+      loading="lazy"
+      allow="microphone; clipboard-write"
+    ></iframe>
+    <div class="iframe-brand-mask"></div>
+  </div>
+
+  <noscript>
+    <p class="note">This tool requires JavaScript to load the embedded app.</p>
+  </noscript>
+</section>
+
+<section class="card about">
+  <div class="about-avatar">CA</div>
+  <div>
+    <div class="about-name">Reviewed by the Carithm Diagnostics Team</div>
+    <div class="about-role">ASE-familiar automotive content, cross-checked against OEM service literature</div>
+    <p>Carithm's diagnostic guides are compiled from manufacturer service documentation, ASE-aligned training material, and mechanic-reported case data, then reviewed for accuracy before publishing. Carithm is based in the United States and this guide reflects US repair-cost averages.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What Brake Faults Can We Diagnose?</h2>
+  <ul>
+    <li><strong>Wear Indicator Squeal:</strong> High-pitched, consistent squeal that appears whenever the brakes are used.</li>
+    <li><strong>Metal-on-Metal Grinding:</strong> Harsh, grating scrape meaning the pads are fully worn through.</li>
+    <li><strong>Warped Rotor Pulsation:</strong> Rhythmic vibration or noise tied to wheel speed, often with a pulsing pedal.</li>
+    <li><strong>Glazed Pad Squeak:</strong> Higher-pitched, intermittent squeak from hardened, overheated pad material.</li>
+    <li><strong>Caliper / Hardware Rattle:</strong> Loose clunking or rattling, often worse over bumps.</li>
+    <li><strong>Surface Rust Squeal:</strong> Light morning squeal that clears up after the first few stops.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Brake Noise Symptom Checker</h2>
+  <p>Quick-reference table for the most commonly searched brake noise symptoms. Match your sound and situation, then upload a recording above for a confidence-scored AI diagnosis.</p>
+
+  <div class="symptom-table-wrap">
+    <table class="symptom-table">
+      <thead>
+        <tr>
+          <th>Symptom</th>
+          <th>When it happens</th>
+          <th>Pedal feel</th>
+          <th>Likely cause</th>
+          <th>Severity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>High-pitched squeal</td>
+          <td>Every time braking</td>
+          <td>Normal</td>
+          <td>Pad wear indicator contacting rotor</td>
+          <td><span class="sev med">Medium</span></td>
+        </tr>
+        <tr>
+          <td>Harsh metal grinding</td>
+          <td>Every time braking</td>
+          <td>May feel rougher</td>
+          <td>Pads worn through, metal-on-metal</td>
+          <td><span class="sev high">High</span></td>
+        </tr>
+        <tr>
+          <td>Rhythmic thump or vibration</td>
+          <td>Braking at speed</td>
+          <td>Pulsing pedal</td>
+          <td>Warped or unevenly worn rotor</td>
+          <td><span class="sev med">Medium</span></td>
+        </tr>
+        <tr>
+          <td>Light squeal, morning only</td>
+          <td>First few stops of the day</td>
+          <td>Normal</td>
+          <td>Surface rust or moisture on rotor</td>
+          <td><span class="sev low">Low</span></td>
+        </tr>
+        <tr>
+          <td>Intermittent squeak</td>
+          <td>Random, comes and goes</td>
+          <td>Normal</td>
+          <td>Glazed pads or dust buildup</td>
+          <td><span class="sev low">Low</span></td>
+        </tr>
+        <tr>
+          <td>Clunk or rattle</td>
+          <td>Over bumps, not just braking</td>
+          <td>Normal</td>
+          <td>Loose caliper bracket or hardware</td>
+          <td><span class="sev med">Medium</span></td>
+        </tr>
+        <tr>
+          <td>Squeal only when turning</td>
+          <td>Turning, not straight-line braking</td>
+          <td>Normal</td>
+          <td>Loose heat shield or trapped debris</td>
+          <td><span class="sev low">Low</span></td>
+        </tr>
+        <tr>
+          <td>Grinding but pads look fine</td>
+          <td>Braking, especially rear</td>
+          <td>May feel soft</td>
+          <td>Corroded rotor edge or seized caliper slide</td>
+          <td><span class="sev med">Medium</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Brake Noises Explained</h2>
+  <p>Not sure what your specific brake noise implies? Here are the most common symptoms searched by drivers. Match your situation, then upload a recording for an AI confidence score.</p>
+
+  <h3>Why do my brakes squeal when I stop?</h3>
+  <p>A consistent high-pitched squeal is most often the brake pad's built-in metal wear indicator lightly scraping the rotor. It's an intentional early-warning feature designed to tell you the pads are getting thin, not necessarily a sign of an emergency, but it does mean a pad replacement is coming up soon.</p>
+
+  <h3>Why do my brakes grind when I stop?</h3>
+  <p>Grinding is a harsher, deeper, metallic scraping sound. It usually means the pad material has completely worn away and the metal backing plate is now grinding directly against the rotor. This can damage the rotor quickly and reduces your stopping power, so it should be addressed right away.</p>
+
+  <h3>Why do my brakes squeal only when it's cold or wet?</h3>
+  <p>A light squeal in the early morning or after rain that disappears after a few stops is usually just surface rust or condensation on the rotor being cleared away by the pads as you drive. This is common and typically not a concern on its own.</p>
+
+  <h3>Why do my brakes squeak only at low speed?</h3>
+  <p>Squeaking that shows up mainly at low speed or during the first stops of a drive is frequently related to glazed pad material (hardened from overheating) or a light layer of brake dust on the rotor surface, rather than a sign the pads need immediate replacement.</p>
+
+  <h3>Why do my brakes make noise only when turning?</h3>
+  <p>Noise that only appears while turning, and not during straight-line braking, is often caused by a loose heat shield vibrating, a small rock or piece of debris trapped between the rotor and the shield, or uneven pad wear on one side of the vehicle.</p>
+
+  <h3>My brakes are grinding but the pads still look fine — why?</h3>
+  <p>If pad thickness looks acceptable but you're still hearing grinding, check for a corroded rotor edge (common on rear rotors that see less use), a seized caliper slide pin causing uneven contact, or debris trapped against the rotor. These can all produce a grinding sound independent of pad wear.</p>
+
+  <h3>Is it safe to drive with squealing brakes?</h3>
+  <p>A steady, high-pitched squeal from the wear indicator is generally safe to drive on for a short time while you schedule a pad replacement. However, you should not ignore it for long, since continued driving lets the pads wear down to metal-on-metal contact.</p>
+
+  <h3>Is it safe to drive with grinding brakes?</h3>
+  <p>No. Grinding almost always means reduced braking performance and active damage to your rotors. Continuing to drive on grinding brakes can lead to costly rotor replacement, caliper damage, and in severe cases a real loss of stopping power. Have it inspected immediately.</p>
+
+</section>
+
+<section>
+  <h2>How Much Does It Cost to Fix Squealing or Grinding Brakes? (US Estimates)</h2>
+  <p>Repair costs vary by vehicle, region, and labor rates. These are typical US ranges based on independent shop and dealer estimates as of 2026 — get a written quote before authorizing any work.</p>
+
+  <div class="cost-grid">
+    <div class="cost-card">
+      <h4>Brake pad replacement (per axle)</h4>
+      <div class="cost-range">$150 – $300</div>
+      <p>Covers standard pad-only replacement on one axle (front or rear).</p>
+    </div>
+    <div class="cost-card">
+      <h4>Pads + rotor replacement (per axle)</h4>
+      <div class="cost-range">$300 – $600</div>
+      <p>Needed when grinding has damaged or scored the rotor surface.</p>
+    </div>
+    <div class="cost-card">
+      <h4>Rotor resurfacing (per axle)</h4>
+      <div class="cost-range">$100 – $200</div>
+      <p>Cheaper alternative to replacement if rotors are still within spec thickness.</p>
+    </div>
+    <div class="cost-card">
+      <h4>Caliper replacement (each)</h4>
+      <div class="cost-range">$150 – $300</div>
+      <p>Add roughly $50–$100 more per caliper if it must be rebuilt instead.</p>
+    </div>
+    <div class="cost-card">
+      <h4>Caliper bracket / hardware kit</h4>
+      <div class="cost-range">$40 – $150</div>
+      <p>Fixes rattling and clunking without a full caliper swap.</p>
+    </div>
+    <div class="cost-card">
+      <h4>Full brake job, all 4 wheels</h4>
+      <div class="cost-range">$600 – $1,200</div>
+      <p>Pads and rotors on all four corners, typical for higher-mileage vehicles.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>How the AI Brake Noise Detector Works</h2>
+  <ol>
+    <li>Record the noise using your phone while braking gently in a safe location, or have a passenger record from inside the car.</li>
+    <li>Upload the recording through the tool above.</li>
+    <li>The AI isolates the brake-related frequencies from road, wind, and cabin noise.</li>
+    <li>The system cross-references pitch, consistency, and speed-dependence against a database of known pad, rotor, and caliper issues.</li>
+    <li>You get a ranked list of likely fault areas to show your mechanic.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Related Diagnostics</h2>
+  <div class="internal-links">
+    <p><a href="https://carithm.vercel.app/audio">Full audio diagnosis hub: all engine & car sound tools →</a></p>
+    <p><a href="https://carithm.vercel.app/engine-knock">Engine knock & tick analyzer →</a></p>
+    <p><a href="https://carithm.vercel.app/toyota">Toyota brake & noise issues →</a></p>
+    <p><a href="https://carithm.vercel.app/bmw">BMW brake & noise issues →</a></p>
+    <p><a href="https://carithm.vercel.app/mercedes">Mercedes brake & noise issues →</a></p>
+    <p><a href="https://carithm.vercel.app/research">Carithm research: how AI acoustic diagnosis works →</a></p>
+  </div>
+</section>
+
+<div class="crosslink-banner" aria-label="Related tool">
+  <div>
+    <strong>Heard a noise and now have a repair quote?</strong>
+    <p>Once your garage gives you an estimate, check if every line item is actually due before you approve anything — free, under 30 seconds.</p>
+  </div>
+  <a href="https://carithm.vercel.app/" class="crosslink-btn">Check My Repair Quote →</a>
+</div>
+
+<section style="margin-top: 44px;">
+  <div class="eyebrow">Also on Carithm</div>
+  <h2 style="margin-top: 8px;">Understand the repair before you pay for it</h2>
+  <p>If the sound diagnosis points to a specific issue, our AI invoice analyzer can verify if the quoted repair costs and required hours are fair and necessary before you commit to the work.</p>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://carithm.vercel.app/">Home</a>
+      <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+      <a href="https://carithm.vercel.app/engine-knock">Engine Knock</a>
+      <a href="https://carithm.vercel.app/research">Research</a>
+      <a href="https://carithm.vercel.app/toyota">Toyota</a>
+      <a href="https://carithm.vercel.app/bmw">BMW</a>
+      <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Carithm AI. All rights reserved. Carithm is based in the United States. Repair cost estimates are general US averages and not a quote for any specific vehicle.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
