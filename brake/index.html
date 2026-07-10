@@ -53,6 +53,7 @@
 <meta name="twitter:image" content="https://carithm.vercel.app/brake-rotor-diagram.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" type="font/woff2" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
@@ -70,6 +71,20 @@
  "areaServed":"US",
  "inLanguage":"en-US",
  "dateModified":"2026-07-10"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"HowTo",
+ "name":"How to Record Brake Noise for AI Diagnosis",
+ "step":[
+   {"@type":"HowToStep","name":"Find a safe location","text":"Choose a quiet, low-traffic area with room to brake gently and safely."},
+   {"@type":"HowToStep","name":"Position the phone","text":"Hold the phone near the wheel well, or have a passenger record from inside the car near the floor."},
+   {"@type":"HowToStep","name":"Record while braking","text":"Record 5-10 seconds of audio while braking gently from a low speed, repeating a few times if needed."},
+   {"@type":"HowToStep","name":"Capture different conditions","text":"If possible, record both a cold start (first stop of the day) and a normal stop, since some brake noises only happen in one condition."},
+   {"@type":"HowToStep","name":"Upload for analysis","text":"Upload the clip to the AI Brake Noise Analyzer to get a ranked list of likely causes with confidence scores."}
+ ]
 }
 </script>
 <script type="application/ld+json">
@@ -94,9 +109,17 @@
   {"@type":"Question","name":"Can an AI detect brake problems from sound?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm's AI Brake Noise Analyzer identifies the acoustic signatures of worn pad wear indicators, grinding metal-on-metal contact, warped rotor pulsation, and caliper or hardware rattle from a smartphone audio recording."}},
   {"@type":"Question","name":"Why do my brakes squeal only when it's cold or wet outside?","acceptedAnswer":{"@type":"Answer","text":"A light surface squeal in cold or damp conditions that disappears after a few stops is usually just surface rust or condensation on the rotor being cleared off by the pads, and is generally not a cause for concern."}},
   {"@type":"Question","name":"Is it safe to drive with grinding brakes?","acceptedAnswer":{"@type":"Answer","text":"No. Grinding brakes typically mean metal is contacting metal, which significantly reduces stopping power and can quickly damage the rotors, calipers, and in severe cases lead to brake failure. The vehicle should be brought in for service immediately."}},
-  {"@type":"Question","name":"How much does it cost to fix squealing or grinding brakes?","acceptedAnswer":{"@type":"Answer","text":"In the US, a standard brake pad replacement typically costs between 150 and 300 dollars per axle. If the rotors also need to be replaced or resurfaced due to grinding damage, total cost typically runs from 300 to 600 dollars per axle, and caliper replacement adds roughly 150 to 300 dollars per caliper."}},
+  {"@type":"Question","name":"How much does it cost to fix squealing or grinding brakes?","acceptedAnswer":{"@type":"Answer","text":"In the US, a standard brake pad replacement typically costs between 150 and 300 dollars per axle. If the rotors also need to be replaced or resurfaced due to grinding damage, total cost typically runs from 300 to 600 dollars per axle, and caliper replacement adds roughly 150 to 300 dollars per caliper. Costs vary significantly by vehicle make, region, and labor rates."}},
   {"@type":"Question","name":"Why do my brakes squeak only at low speed?","acceptedAnswer":{"@type":"Answer","text":"A squeak that appears mainly at low speed or during the first few stops of the day is frequently related to surface rust, glazed pad material, or dust buildup on the rotor rather than a sign of worn-out brakes."}},
-  {"@type":"Question","name":"Why do my brakes make noise when turning but not going straight?","acceptedAnswer":{"@type":"Answer","text":"A noise that only occurs while turning is often related to a loose heat shield, a small rock or debris trapped between the rotor and shield, or uneven pad wear on one side, rather than a symptom of the braking system itself failing."}}
+  {"@type":"Question","name":"Why do my brakes make noise when turning but not going straight?","acceptedAnswer":{"@type":"Answer","text":"A noise that only occurs while turning is often related to a loose heat shield, a small rock or debris trapped between the rotor and shield, or uneven pad wear on one side, rather than a symptom of the braking system itself failing."}},
+  {"@type":"Question","name":"Can bad rotors cause squealing?","acceptedAnswer":{"@type":"Answer","text":"Yes. A warped or unevenly worn rotor can cause a rhythmic squeal or grinding tied to wheel rotation, often paired with a pulsing brake pedal, distinct from the constant squeal of a wear indicator."}},
+  {"@type":"Question","name":"Can new brakes squeal?","acceptedAnswer":{"@type":"Answer","text":"Yes, briefly. New pads often squeal for the first few hundred miles while the anti-squeal coating burns off and the pad and rotor surfaces bed in together. Persistent squealing well beyond that break-in period usually points to glazing, hardware, or an incompatible pad compound."}},
+  {"@type":"Question","name":"Should I replace pads and rotors together?","acceptedAnswer":{"@type":"Answer","text":"Not always. If the rotors are still within their minimum thickness spec and free of deep grooves or warping, pads alone can often be replaced. If the rotors are scored, warped, or thin, replacing both at the same time is usually recommended."}},
+  {"@type":"Question","name":"Can low brake fluid cause brake noise?","acceptedAnswer":{"@type":"Answer","text":"Low brake fluid is more commonly associated with a soft or low pedal than with noise directly, but the underlying cause of low fluid, such as a sticking caliper, can also produce grinding or dragging sounds."}},
+  {"@type":"Question","name":"Why do rear brakes squeal but the front don't?","acceptedAnswer":{"@type":"Answer","text":"Rear brakes often see less use than the front (which handle the majority of braking force), so rear pads and rotors are more prone to surface rust and glazing, which can cause squealing even when wear is minimal."}},
+  {"@type":"Question","name":"Why do my brakes squeal in reverse but not going forward?","acceptedAnswer":{"@type":"Answer","text":"A squeal that only appears in reverse is often related to a directional wear indicator design or debris that only contacts the rotor when it spins the opposite way, and is generally not a sign of a serious problem on its own."}},
+  {"@type":"Question","name":"Why do ceramic brake pads squeal?","acceptedAnswer":{"@type":"Answer","text":"Ceramic pads are generally quieter than semi-metallic pads, but they can still squeal due to glazing, moisture, dust buildup, or a missing/worn shim, especially in cold or damp weather."}},
+  {"@type":"Question","name":"Can wheel bearings sound like brakes?","acceptedAnswer":{"@type":"Answer","text":"Yes. A failing wheel bearing produces a humming or grinding noise that changes with vehicle speed rather than brake pedal application, which can be mistaken for a brake issue. Applying light brake pressure while coasting can help tell them apart — bearing noise usually persists either way."}}
  ]
 }
 </script>
@@ -181,6 +204,25 @@ li { margin-bottom: 6px; }
 .trust-num { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
 .trust-num span { color: var(--accent); }
 .trust-lbl { font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 3px; }
+
+.at-a-glance-wrap { overflow-x: auto; margin-top: 18px; border: 1px solid rgba(47,129,247,0.3); border-radius: var(--r-sm); }
+table.glance-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+table.glance-table th {
+  text-align: left; background: var(--accent-dim); color: var(--accent);
+  padding: 10px 14px; font-weight: 700; border-bottom: 1px solid rgba(47,129,247,0.3);
+  white-space: nowrap; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em;
+}
+table.glance-table td {
+  padding: 10px 14px; color: var(--muted); border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+table.glance-table tr:last-child td { border-bottom: none; }
+
+.diagram-figure { margin: 18px 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 18px; text-align: center; }
+.diagram-figure svg { max-width: 100%; height: auto; }
+.diagram-figure figcaption { margin-top: 10px; font-size: 12px; color: var(--muted2); }
+.diagram-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 620px) { .diagram-grid { grid-template-columns: 1fr; } }
 
 .card {
   background: var(--surface);
@@ -350,11 +392,11 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   <div class="updated-badge"><span class="dot"></span> Updated July 2026</div>
 
   <p>
-    Squealing every time you stop? A grinding, metallic scrape? Upload a recording and Carithm's AI Brake Noise Analyzer will instantly tell you whether you're hearing a normal wear indicator, worn-through pads, a warped rotor, or a loose caliper — with a confidence-scored breakdown.
+    Squealing every time you stop? A grinding, metallic scrape? Front brake squeal, rear brakes grinding, or a new brake squeal that won't go away? Upload a recording and Carithm's AI Brake Noise Analyzer will instantly tell you whether you're hearing a normal wear indicator, worn-through pads, a warped rotor, brake chirping, or a loose caliper — with a confidence-scored breakdown.
   </p>
 
   <p>
-    Brake noise ranges from "replace your pads this week" to "stop driving today." The system evaluates pitch, consistency, and speed-dependence of the sound to tell you which one you're dealing with before you even get to the shop.
+    Brake noise ranges from "replace your pads this week" to "stop driving today." The system evaluates pitch, consistency, and speed-dependence of the sound — whether it's a metal scraping noise when braking, a brake scraping noise at low speed, or brake rotor noise tied to wheel rotation — to tell you which one you're dealing with before you even get to the shop.
   </p>
 
   <div class="trust-strip">
@@ -362,6 +404,22 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     <div><div class="trust-num">Free</div><div class="trust-lbl">No Signup</div></div>
     <div><div class="trust-num">~5s</div><div class="trust-lbl">Analysis Time</div></div>
     <div><div class="trust-num">24/7</div><div class="trust-lbl">Always On</div></div>
+  </div>
+
+  <h2 style="margin-top: 28px;">At a Glance: Brake Noise Quick Reference</h2>
+  <div class="at-a-glance-wrap">
+    <table class="glance-table">
+      <thead>
+        <tr><th>Brake Noise</th><th>Most Likely Cause</th><th>Urgency</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>High-pitched squeal</td><td>Wear indicator</td><td>Schedule service soon</td></tr>
+        <tr><td>Grinding</td><td>Pads worn through</td><td>Stop driving if possible</td></tr>
+        <tr><td>Morning squeal</td><td>Surface rust</td><td>Usually normal</td></tr>
+        <tr><td>Rhythmic vibration</td><td>Warped rotor</td><td>Inspect soon</td></tr>
+        <tr><td>Rattle / clunk</td><td>Loose hardware</td><td>Inspect</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
@@ -402,16 +460,54 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   <ul>
     <li><strong>Wear Indicator Squeal:</strong> High-pitched, consistent squeal that appears whenever the brakes are used.</li>
     <li><strong>Metal-on-Metal Grinding:</strong> Harsh, grating scrape meaning the pads are fully worn through.</li>
-    <li><strong>Warped Rotor Pulsation:</strong> Rhythmic vibration or noise tied to wheel speed, often with a pulsing pedal.</li>
-    <li><strong>Glazed Pad Squeak:</strong> Higher-pitched, intermittent squeak from hardened, overheated pad material.</li>
+    <li><strong>Warped Rotor Pulsation:</strong> Rhythmic vibration or brake rotor noise tied to wheel speed, often with a pulsing pedal.</li>
+    <li><strong>Glazed Pad Squeak:</strong> Higher-pitched, intermittent squeak or brake chirping from hardened, overheated pad material.</li>
     <li><strong>Caliper / Hardware Rattle:</strong> Loose clunking or rattling, often worse over bumps.</li>
     <li><strong>Surface Rust Squeal:</strong> Light morning squeal that clears up after the first few stops.</li>
   </ul>
+
+  <div class="diagram-grid">
+    <figure class="diagram-figure">
+      <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="rotorTitle">
+        <title id="rotorTitle">Brake rotor diagram showing disc, hub, and caliper position</title>
+        <circle cx="150" cy="110" r="85" fill="none" stroke="#a1a8b3" stroke-width="3"/>
+        <circle cx="150" cy="110" r="55" fill="none" stroke="#a1a8b3" stroke-width="2" stroke-dasharray="4 4"/>
+        <circle cx="150" cy="110" r="18" fill="#27272a" stroke="#2f81f7" stroke-width="2"/>
+        <rect x="205" y="85" width="55" height="50" rx="6" fill="#111113" stroke="#2f81f7" stroke-width="2"/>
+        <text x="150" y="205" text-anchor="middle" fill="#71717a" font-size="11" font-family="Inter, sans-serif">Rotor (disc) with caliper straddling the edge</text>
+      </svg>
+      <figcaption>Brake rotor diagram: the caliper clamps brake pads against the spinning rotor to slow the wheel.</figcaption>
+    </figure>
+    <figure class="diagram-figure">
+      <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="padTitle">
+        <title id="padTitle">Normal versus worn brake pad thickness comparison</title>
+        <rect x="30" y="60" width="90" height="30" fill="#22c55e" opacity="0.25" stroke="#22c55e" stroke-width="2"/>
+        <text x="75" y="80" text-anchor="middle" fill="#22c55e" font-size="11" font-family="Inter, sans-serif">Normal</text>
+        <rect x="30" y="130" width="90" height="8" fill="#ef4444" opacity="0.35" stroke="#ef4444" stroke-width="2"/>
+        <text x="75" y="150" text-anchor="middle" fill="#ef4444" font-size="11" font-family="Inter, sans-serif">Worn through</text>
+        <rect x="160" y="60" width="110" height="30" fill="none" stroke="#a1a8b3" stroke-width="2"/>
+        <line x1="165" y1="65" x2="265" y2="65" stroke="#f59e0b" stroke-width="3"/>
+        <text x="215" y="105" text-anchor="middle" fill="#71717a" font-size="10" font-family="Inter, sans-serif">Wear indicator tab</text>
+        <text x="150" y="205" text-anchor="middle" fill="#71717a" font-size="11" font-family="Inter, sans-serif">Normal pad vs. worn pad with wear indicator</text>
+      </svg>
+      <figcaption>Normal vs worn brake pad: a thin, worn pad exposes the metal wear indicator that causes squealing.</figcaption>
+    </figure>
+  </div>
+  <figure class="diagram-figure" style="margin-top:14px;">
+    <svg viewBox="0 0 500 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="warpedTitle">
+      <title id="warpedTitle">Warped rotor illustration showing uneven disc surface</title>
+      <line x1="20" y1="90" x2="480" y2="90" stroke="#27272a" stroke-width="2"/>
+      <path d="M20,90 C80,60 140,120 200,90 C260,60 320,120 380,90 C420,70 460,100 480,90" fill="none" stroke="#f59e0b" stroke-width="3"/>
+      <line x1="20" y1="90" x2="480" y2="90" stroke="#a1a8b3" stroke-width="1" stroke-dasharray="3 3"/>
+      <text x="250" y="130" text-anchor="middle" fill="#71717a" font-size="11" font-family="Inter, sans-serif">Warped rotor surface (exaggerated) vs. true flat plane</text>
+    </svg>
+    <figcaption>Warped rotor illustration: uneven high and low spots cause the pulsing pedal feel and rhythmic noise drivers describe.</figcaption>
+  </figure>
 </section>
 
 <section>
   <h2>Brake Noise Symptom Checker</h2>
-  <p>Quick-reference table for the most commonly searched brake noise symptoms. Match your sound and situation, then upload a recording above for a confidence-scored AI diagnosis.</p>
+  <p>Quick-reference table for the most commonly searched brake noise symptoms — squealing, grinding, chirping, scraping, and more. Match your sound and situation, then upload a recording above for a confidence-scored AI diagnosis.</p>
 
   <div class="symptom-table-wrap">
     <table class="symptom-table">
@@ -454,7 +550,7 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
           <td><span class="sev low">Low</span></td>
         </tr>
         <tr>
-          <td>Intermittent squeak</td>
+          <td>Intermittent squeak / chirping</td>
           <td>Random, comes and goes</td>
           <td>Normal</td>
           <td>Glazed pads or dust buildup</td>
@@ -481,44 +577,96 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
           <td>Corroded rotor edge or seized caliper slide</td>
           <td><span class="sev med">Medium</span></td>
         </tr>
+        <tr>
+          <td>Squeal right after new pads installed</td>
+          <td>First few hundred miles</td>
+          <td>Normal</td>
+          <td>Break-in / bedding-in period</td>
+          <td><span class="sev low">Low</span></td>
+        </tr>
       </tbody>
     </table>
   </div>
 </section>
 
 <section>
-  <h2>Brake Noises Explained</h2>
-  <p>Not sure what your specific brake noise implies? Here are the most common symptoms searched by drivers. Match your situation, then upload a recording for an AI confidence score.</p>
-
-  <h3>Why do my brakes squeal when I stop?</h3>
+  <h2>Why do my brakes squeal when I stop?</h2>
   <p>A consistent high-pitched squeal is most often the brake pad's built-in metal wear indicator lightly scraping the rotor. It's an intentional early-warning feature designed to tell you the pads are getting thin, not necessarily a sign of an emergency, but it does mean a pad replacement is coming up soon.</p>
+</section>
 
-  <h3>Why do my brakes grind when I stop?</h3>
+<section>
+  <h2>Why do my brakes grind when I stop?</h2>
   <p>Grinding is a harsher, deeper, metallic scraping sound. It usually means the pad material has completely worn away and the metal backing plate is now grinding directly against the rotor. This can damage the rotor quickly and reduces your stopping power, so it should be addressed right away.</p>
+</section>
 
-  <h3>Why do my brakes squeal only when it's cold or wet?</h3>
-  <p>A light squeal in the early morning or after rain that disappears after a few stops is usually just surface rust or condensation on the rotor being cleared away by the pads as you drive. This is common and typically not a concern on its own.</p>
+<section>
+  <h2>Brake squeal in cold or rainy weather</h2>
+  <p>A light squeal in the early morning or after rain that disappears after a few stops is usually just surface rust or condensation on the rotor being cleared away by the pads as you drive. This is common and typically not a concern on its own. Some drivers describe this as brake chirping rather than a true squeal.</p>
+</section>
 
-  <h3>Why do my brakes squeak only at low speed?</h3>
-  <p>Squeaking that shows up mainly at low speed or during the first stops of a drive is frequently related to glazed pad material (hardened from overheating) or a light layer of brake dust on the rotor surface, rather than a sign the pads need immediate replacement.</p>
+<section>
+  <h2>Why do my brakes squeak only at low speed?</h2>
+  <p>Squeaking at low speed or during the first stops of a drive is frequently related to glazed pad material (hardened from overheating) or a light layer of brake dust on the rotor surface, rather than a sign the pads need immediate replacement.</p>
+</section>
 
-  <h3>Why do my brakes make noise only when turning?</h3>
+<section>
+  <h2>Brake noise when turning</h2>
   <p>Noise that only appears while turning, and not during straight-line braking, is often caused by a loose heat shield vibrating, a small rock or piece of debris trapped between the rotor and the shield, or uneven pad wear on one side of the vehicle.</p>
+</section>
 
-  <h3>My brakes are grinding but the pads still look fine — why?</h3>
+<section>
+  <h2>Grinding but pads look fine — why?</h2>
   <p>If pad thickness looks acceptable but you're still hearing grinding, check for a corroded rotor edge (common on rear rotors that see less use), a seized caliper slide pin causing uneven contact, or debris trapped against the rotor. These can all produce a grinding sound independent of pad wear.</p>
+</section>
 
-  <h3>Is it safe to drive with squealing brakes?</h3>
-  <p>A steady, high-pitched squeal from the wear indicator is generally safe to drive on for a short time while you schedule a pad replacement. However, you should not ignore it for long, since continued driving lets the pads wear down to metal-on-metal contact.</p>
+<section>
+  <h2>Can bad rotors cause squealing?</h2>
+  <p>Yes. A warped or unevenly worn rotor can cause a rhythmic squeal or grinding tied to wheel rotation, often paired with a pulsing brake pedal — distinct from the constant squeal produced by a wear indicator.</p>
+</section>
 
-  <h3>Is it safe to drive with grinding brakes?</h3>
-  <p>No. Grinding almost always means reduced braking performance and active damage to your rotors. Continuing to drive on grinding brakes can lead to costly rotor replacement, caliper damage, and in severe cases a real loss of stopping power. Have it inspected immediately.</p>
+<section>
+  <h2>Can new brakes squeal?</h2>
+  <p>Yes, briefly. A new brake squeal for the first few hundred miles is common while the anti-squeal coating burns off and the pad and rotor surfaces bed in together. Persistent squealing well beyond that break-in period usually points to glazing, hardware, or an incompatible pad compound — brakes making noise after replacing pads for more than a week or two is worth a follow-up look.</p>
+</section>
 
+<section>
+  <h2>Should I replace pads and rotors together?</h2>
+  <p>Not always. If the rotors are still within their minimum thickness spec and free of deep grooves or warping, pads alone can often be replaced. If the rotors are scored, warped, or thin, replacing both at the same time is usually recommended.</p>
+</section>
+
+<section>
+  <h2>Can low brake fluid cause brake noise?</h2>
+  <p>Low brake fluid is more commonly associated with a soft or low pedal than with noise directly, but the underlying cause of low fluid, such as a sticking caliper, can also produce grinding or dragging sounds.</p>
+</section>
+
+<section>
+  <h2>Why do rear brakes squeal but the front don't?</h2>
+  <p>Rear brakes often see less use than the front (which handle the majority of braking force), so rear pads and rotors are more prone to surface rust and glazing, which can cause rear brakes grinding or squealing even when wear is minimal. The reverse — front brake squeal only — usually points to front-specific wear, since the front pads work harder and wear faster.</p>
+</section>
+
+<section>
+  <h2>Why do my brakes squeal in reverse but not going forward?</h2>
+  <p>A squeal that only appears in reverse is often related to a directional wear indicator design or debris that only contacts the rotor when it spins the opposite way, and is generally not a sign of a serious problem on its own.</p>
+</section>
+
+<section>
+  <h2>Why do ceramic brake pads squeal?</h2>
+  <p>Ceramic pads are generally quieter than semi-metallic pads, but they can still squeal due to glazing, moisture, dust buildup, or a missing or worn shim, especially in cold or damp weather.</p>
+</section>
+
+<section>
+  <h2>Can wheel bearings sound like brakes?</h2>
+  <p>Yes. A failing wheel bearing produces a humming or grinding noise that changes with vehicle speed rather than brake pedal application, which can be mistaken for a brake issue. Applying light brake pressure while coasting can help tell them apart — bearing noise usually persists either way.</p>
+</section>
+
+<section>
+  <h2>Is it safe to drive with squealing or grinding brakes?</h2>
+  <p>A steady, high-pitched squeal from the wear indicator is generally safe to drive on for a short time while you schedule a pad replacement. However, you should not ignore it for long, since continued driving lets the pads wear down to metal-on-metal contact. Grinding is different — it almost always means reduced braking performance and active damage to your rotors. Continuing to drive on grinding brakes can lead to costly rotor replacement, caliper damage, and in severe cases a real loss of stopping power. Have it inspected immediately.</p>
 </section>
 
 <section>
   <h2>How Much Does It Cost to Fix Squealing or Grinding Brakes? (US Estimates)</h2>
-  <p>Repair costs vary by vehicle, region, and labor rates. These are typical US ranges based on independent shop and dealer estimates as of 2026 — get a written quote before authorizing any work.</p>
+  <p>Repair costs vary significantly by vehicle make, region, and labor rates. These are typical US ranges based on independent shop and dealer estimates as of 2026 — get a written quote before authorizing any work.</p>
 
   <div class="cost-grid">
     <div class="cost-card">
@@ -557,7 +705,10 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 <section>
   <h2>How the AI Brake Noise Detector Works</h2>
   <ol>
-    <li>Record the noise using your phone while braking gently in a safe location, or have a passenger record from inside the car.</li>
+    <li>Find a safe, quiet, low-traffic location.</li>
+    <li>Hold the phone near the wheel well, or have a passenger record from inside the car near the floor.</li>
+    <li>Record 5-10 seconds of audio while braking gently, repeating a few times if needed.</li>
+    <li>If possible, capture both a cold, first-stop-of-the-day recording and a normal warm stop, since some brake noises only happen in one condition.</li>
     <li>Upload the recording through the tool above.</li>
     <li>The AI isolates the brake-related frequencies from road, wind, and cabin noise.</li>
     <li>The system cross-references pitch, consistency, and speed-dependence against a database of known pad, rotor, and caliper issues.</li>
