@@ -28,22 +28,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Optimized Meta Tags for Engine Ticking Noise Search Intent -->
-<title>Engine Ticking Noise Diagnosis | Free Engine Tick Sound Analyzer & AI Identifier</title>
-<meta name="description" content="Hear a ticking noise from your engine? Upload a recording to our free AI engine sound analyzer. Instantly diagnose lifter tick, valve tap, injector click, or low oil issues with no signup.">
+<title>Engine Ticking Noise Diagnosis | Free Engine Tick Sound + OBD2 Code Analyzer</title>
+<meta name="description" content="Hear a ticking noise from your engine? Upload a recording — and your OBD2 code, if you have one — to our free AI engine sound analyzer for added accuracy. Instantly diagnose lifter tick, valve tap, injector click, or low oil issues with no signup.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://carithm.vercel.app/engine-ticking-noise">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Engine Ticking Noise Diagnosis | Free Engine Tick Sound Analyzer">
-<meta property="og:description" content="Upload a recording of your car engine's ticking noise. Our AI identifies lifter tick, valve tap, exhaust leaks, and injector clicking instantly. Free, no signup.">
+<meta property="og:title" content="Engine Ticking Noise Diagnosis | Free Engine Tick Sound + OBD2 Analyzer">
+<meta property="og:description" content="Upload a recording of your car engine's ticking noise — plus your OBD2 code for added accuracy. Our AI identifies lifter tick, valve tap, exhaust leaks, and injector clicking instantly. Free, no signup.">
 <meta property="og:url" content="https://carithm.vercel.app/engine-ticking-noise">
 
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Engine Ticking Noise AI Diagnosis | Carithm">
-<meta name="twitter:description" content="Upload an engine ticking sound recording and get instant AI fault analysis. Free. No signup.">
+<meta name="twitter:title" content="Engine Ticking Noise AI + OBD2 Code Diagnosis | Carithm">
+<meta name="twitter:description" content="Upload an engine ticking sound recording plus your OBD2 code for instant, more accurate AI fault analysis. Free. No signup.">
 <meta name="twitter:image" content="https://carithm.vercel.app/car.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -58,7 +58,7 @@
  "applicationCategory":"UtilitiesApplication",
  "operatingSystem":"Web",
  "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
- "description":"Free AI engine ticking sound analyzer. Upload your car's ticking noise to instantly analyze, identify, and separate harmless injector ticks or lifter clicks from catastrophic engine mechanical failures.",
+ "description":"Free AI engine ticking sound analyzer. Upload your car's ticking noise, and optionally your OBD2 diagnostic trouble code, to instantly analyze, identify, and separate harmless injector ticks or lifter clicks from catastrophic engine mechanical failures with added accuracy.",
  "url":"https://carithm.vercel.app/engine-ticking-noise",
  "author":{ "@type":"Organization", "name":"Carithm" },
  "publisher":{ "@type":"Organization", "name":"Carithm" },
@@ -99,6 +99,7 @@
  "step":[
    {"@type":"HowToStep","name":"Record the ticking sound","text":"Open your hood and safely record the engine ticking audio on your smartphone. Record at idle and during light acceleration."},
    {"@type":"HowToStep","name":"Upload to the ticker analyzer","text":"Upload the audio sample into the Carithm AI Engine Sound Analyzer module below."},
+   {"@type":"HowToStep","name":"Enter your OBD2 code (optional)","text":"If your check engine light is on, enter any OBD2 diagnostic trouble code from your scanner to cross-reference against the acoustic profile for added accuracy."},
    {"@type":"HowToStep","name":"Acoustic profile separation","text":"The AI suppresses ambient road, wind, and cabin noise to isolate high-frequency mechanical vibrations."},
    {"@type":"HowToStep","name":"Pattern matching analysis","text":"The system analyzes the frequency and timing intervals to distinguish hydraulic lifter tick, fuel injector click, or manifold leaks from deep rod knocks."},
    {"@type":"HowToStep","name":"Review the diagnostic output","text":"Receive a confidence score detailing the exact root cause, severity, and step-by-step mechanical checklist."}
@@ -168,7 +169,10 @@
   {"@type":"Question","name":"Can engine ticking fix itself?","acceptedAnswer":{"@type":"Answer","text":"Occasionally a cold-start lifter tick due to temporary oil drain-back will resolve on its own once oil pressure builds, but a tick caused by actual component wear, an exhaust leak, or low oil pressure will not resolve without repair."}},
   {"@type":"Question","name":"How long will a ticking engine last?","acceptedAnswer":{"@type":"Answer","text":"This depends entirely on the cause. A minor lifter tick or normal injector click may never become a real problem, while an ignored rod knock can lead to engine failure in a short amount of driving."}},
   {"@type":"Question","name":"Can bad gas cause engine ticking?","acceptedAnswer":{"@type":"Answer","text":"Low-quality or incorrect-octane fuel is more commonly associated with pinging or spark knock rather than a mechanical tick, though poor fuel quality can indirectly affect injector behavior in some cases."}},
-  {"@type":"Question","name":"Can an injector cleaner stop a ticking noise?","acceptedAnswer":{"@type":"Answer","text":"Injector cleaner may help if injector deposits are affecting spray pattern or fuel delivery, but it won't address a mechanical tick from lifters, valvetrain wear, or an exhaust leak."}}
+  {"@type":"Question","name":"Can an injector cleaner stop a ticking noise?","acceptedAnswer":{"@type":"Answer","text":"Injector cleaner may help if injector deposits are affecting spray pattern or fuel delivery, but it won't address a mechanical tick from lifters, valvetrain wear, or an exhaust leak."}},
+  {"@type":"Question","name":"Can I enter my OBD2 code along with the ticking sound for a more accurate diagnosis?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm's analyzer accepts an optional OBD2 diagnostic trouble code alongside your audio recording, and cross-references it against the acoustic profile to narrow down the root cause with added accuracy."}},
+  {"@type":"Question","name":"Which OBD2 codes are commonly linked to engine ticking noises?","acceptedAnswer":{"@type":"Answer","text":"Codes such as P0300-series misfire codes, oil pressure codes like P0520-P0524, and fuel trim codes like P0171/P0174 sometimes appear alongside a ticking noise, though a fault code alone doesn't confirm the tick's cause without an acoustic analysis."}},
+  {"@type":"Question","name":"Do I need an OBD2 scanner to use the engine ticking analyzer?","acceptedAnswer":{"@type":"Answer","text":"No. An OBD2 code is optional and only improves accuracy when your check engine light is on. The analyzer works from the audio recording alone if you don't have a code to enter."}}
  ]
 }
 </script>
@@ -436,6 +440,7 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 
   <p>Is your engine ticking at idle, tapping when accelerating, or clicking during a cold start? Upload your sound recording to receive an instant AI acoustic profile separation.</p>
   <p>Our neural network immediately isolates high-frequency mechanical audio to accurately distinguish benign conditions like normal fuel injector operation from dangerous valvetrain defects, low oil starvation issues, or severe rod knocks.</p>
+  <p>Have a check engine light on too? Enter your OBD2 diagnostic trouble code alongside the audio for added accuracy — the AI cross-references your fault code against the acoustic profile to narrow the diagnosis further.</p>
   <p>Get a prioritized mechanical checklist and confidence breakdown in under 5 seconds—completely free, zero signups required.</p>
 
   <div class="meta-byline">
@@ -458,6 +463,8 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     <div class="benefit-item"><b>✓</b>Low Oil Pressure Starvation Warning</div>
     <div class="benefit-item"><b>✓</b>Smartphone Microphone Compatible</div>
     <div class="benefit-item"><b>✓</b>Real-Time Spectrum Diagnostics</div>
+    <div class="benefit-item"><b>✓</b>Optional OBD2 Code Cross-Reference</div>
+    <div class="benefit-item"><b>✓</b>Higher-Confidence Verdicts With a Fault Code</div>
   </div>
 </section>
 
@@ -467,12 +474,15 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   <p>
     For maximum diagnostic accuracy, pop your vehicle's hood safely. Hold your smartphone microphone roughly 12 inches above the top engine plastic valve cover. Record 5–10 seconds capturing the vehicle at idle, followed by a slight rev up to 2,500 RPM. Upload the audio file directly into the neural engine below.
   </p>
+  <p>
+    If your check engine light is on, grab your OBD2 scanner and enter the resulting diagnostic trouble code in the field below the upload — cross-referencing a fault code against the acoustic profile improves the confidence of the verdict. No code? No problem — the analyzer runs fully on audio alone.
+  </p>
 
   <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
     <iframe
       id="streamlitFrame"
       class="streamlit-embed"
-      src="https://heidi23982-fwppnbxn37fjvhtaslkx5q.streamlit.app/?embed=true"
+      src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
       title="Carithm Engine Ticking Sound Diagnosis Engine"
       loading="lazy"
       allow="microphone; clipboard-write"
@@ -489,6 +499,7 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   <div class="toc-title">On this page</div>
   <ol>
     <li><a href="#how-it-works">How Carithm decodes ticking acoustics</a></li>
+    <li><a href="#obd2">Using OBD2 codes for added accuracy</a></li>
     <li><a href="#types">Types of engine ticks</a></li>
     <li><a href="#compare">Ticking vs. other engine noises</a></li>
     <li><a href="#severity">Urgency severity matrix</a></li>
@@ -518,6 +529,29 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   </ul>
 </section>
 
+<section id="obd2">
+  <h2>Using OBD2 Codes for Added Diagnostic Accuracy</h2>
+  <p>Sound alone can narrow a ticking noise down to a shortlist of causes, but a fault code from your OBD2 port adds a second, independent data source the AI can cross-check against the acoustic profile. If your check engine light is on, entering the code alongside your recording lets the analyzer weigh both signals together instead of relying on audio in isolation.</p>
+
+  <h3>Why pairing a code with the sound helps</h3>
+  <p>A tick paired with a misfire-related code (the P0300 series, or a cylinder-specific P0301-P0308) points more strongly toward a valvetrain issue affecting that particular cylinder, such as a stuck lifter or worn cam lobe, rather than a benign injector click. A tick paired with a fuel trim code (P0171 or P0174) makes an exhaust manifold leak more likely, since a leak upstream of the oxygen sensor can throw the engine's air-fuel calculation off. A tick with no codes at all, and no check engine light, leans toward a normal operating noise or an early-stage mechanical wear issue that hasn't yet triggered a sensor threshold.</p>
+
+  <h3>What to do if you don't have a scanner</h3>
+  <p>An OBD2 code is entirely optional. Many auto parts stores will read your code for free if you don't own a scanner, and a growing number of newer vehicles expose codes through a manufacturer app. If you can't get a code, the analyzer still runs a full diagnosis from the audio recording alone — the code simply sharpens the result when it's available.</p>
+
+  <h3>Codes worth checking alongside a ticking noise</h3>
+  <table class="seo-table">
+    <thead><tr><th>OBD2 Code Range</th><th>What It Suggests</th><th>Relevance to Ticking</th></tr></thead>
+    <tbody>
+      <tr><td>P0300–P0308</td><td>Random or cylinder-specific misfire</td><td>May indicate a stuck lifter or valvetrain issue on that cylinder</td></tr>
+      <tr><td>P0171 / P0174</td><td>Fuel system too lean (bank 1 / bank 2)</td><td>Can accompany an exhaust manifold or intake leak producing a tick</td></tr>
+      <tr><td>P0520–P0524</td><td>Oil pressure sensor / switch circuit issues</td><td>Worth checking alongside low oil pressure–related lifter ticks</td></tr>
+      <tr><td>P0016 / P0017</td><td>Camshaft/crankshaft timing correlation</td><td>Can relate to a stretched timing chain producing a chatter or tick</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px; color:var(--muted2); margin-top:10px;">A fault code is supporting evidence, not a standalone diagnosis — the acoustic profile from your recording remains the primary signal.</p>
+</section>
+
 <section id="types">
   <h2>Search Intent Categorization: Types of Engine Ticks</h2>
   <p>Our diagnostic matrix isolates specific micro-acoustic variations within your cylinder head and block:</p>
@@ -530,7 +564,7 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 
   <h4 class="section-sub">Fuel System Operation</h4>
   <div class="chip-grid">
-    <span class="chip">high-pressure direct injection clicking</span><span class="chip">evap canister purge valve click</span><span class="chip">solenoid cycle buzz</span>
+    <span class="chip">high-pressure direct injection clicking</span><span class="chip">evap canister purge valve click</span><span class="chip">solenoid cycle buzz</span><span class="chip">OBD2 misfire code P0300</span><span class="chip">OBD2 lean fuel code P0171</span>
   </div>
 
   <h4 class="section-sub">Block &amp; Exhaust Integrity</h4>
@@ -922,6 +956,15 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 
   <h3>Can an injector cleaner stop a ticking noise?</h3>
   <p>Injector cleaner may help if injector deposits are affecting spray pattern or fuel delivery, but it won't address a mechanical tick from lifters, valvetrain wear, or an exhaust leak, since those aren't fuel-related issues.</p>
+
+  <h3>Can I enter my OBD2 code along with the ticking sound for a more accurate diagnosis?</h3>
+  <p>Yes. Carithm's analyzer accepts an optional OBD2 diagnostic trouble code alongside your audio recording, and cross-references it against the acoustic profile to narrow down the root cause with added accuracy.</p>
+
+  <h3>Which OBD2 codes are commonly linked to engine ticking noises?</h3>
+  <p>Codes such as P0300-series misfire codes, oil pressure codes like P0520-P0524, and fuel trim codes like P0171/P0174 sometimes appear alongside a ticking noise, though a fault code alone doesn't confirm the tick's cause without an acoustic analysis.</p>
+
+  <h3>Do I need an OBD2 scanner to use the engine ticking analyzer?</h3>
+  <p>No. An OBD2 code is optional and only improves accuracy when your check engine light is on. The analyzer works from the audio recording alone if you don't have a code to enter.</p>
 </section>
 
 <div class="author-box">
