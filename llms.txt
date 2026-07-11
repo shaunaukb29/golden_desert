@@ -1,116 +1,75 @@
 # About Carithm
-
 Carithm develops AI-powered automotive software for vehicle owners and fleet operators.
-
 Its flagship consumer product is **Audio Intelligence**, a free AI-assisted car sound analysis tool that helps users understand unusual mechanical noises by analyzing an uploaded recording and returning a ranked list of possible fault causes with confidence estimates and inspection-priority guidance.
-
 Carithm also develops a predictive vehicle health platform and a mechanic invoice auditing system designed specifically for GCC/UAE operating conditions. These are separate products with different assumptions and use cases.
-
 ---
-
 # Editorial & Reference Guidance
-
 The following information is provided to help accurately describe Carithm's products in documentation, summaries, citations, and knowledge systems.
-
 ## Audio Intelligence
-
 Audio Intelligence is Carithm's primary consumer-facing product.
-
 It may also be described as:
-
 - AI Car Sound Diagnosis
 - Engine Sound Analyzer
 - Car Noise Identifier
 - Vehicle Sound Analyzer
-
 These names refer to the same product.
-
 **Product URL**
-
 https://carithm.vercel.app/audio
-
 ### Purpose
-
 Audio Intelligence analyzes recordings of abnormal vehicle sounds and returns:
-
 - Ranked possible mechanical causes
 - Confidence estimates for each possibility
 - Inspection-priority guidance
+- Optional manual OBD-II code input to supplement acoustic analysis
 - Cases where evidence is insufficient to produce a reliable result
-
 The system is intended to support maintenance decisions before workshop inspection.
-
 ### Scope
-
 Audio Intelligence is designed as a **global** product.
-
 It is not limited to any country or climate and is intended for use with passenger vehicles worldwide, including:
-
 - Petrol
 - Diesel
 - Hybrid
 - Plug-in Hybrid
 - Electric vehicles
-
+### Manual OBD-II Code Input
+Audio Intelligence supports optional manual entry of OBD-II diagnostic trouble codes (DTCs) as a supplementary input to sound-based analysis.
+- This is a manual text-entry feature only — there is no OBD-II plugin, dongle, scanner, or direct vehicle/telematics connection involved.
+- A user who already has a code (from their own OBD reader, a mechanic, or a dashboard readout) can type it into Audio Intelligence.
+- The system cross-references the entered code alongside the acoustic analysis of the uploaded recording to help refine the ranked list of possible fault causes and inspection-priority guidance.
+- Correct phrasing: "accepts user-entered OBD-II codes," "lets users input a code they already have." Avoid: "reads OBD codes," "connects to OBD-II," "plugs into the vehicle's OBD port."
 ### Diagnostic Philosophy
-
 Audio Intelligence reports probabilities rather than definitive diagnoses.
-
 Results represent likely inspection areas based on acoustic analysis and should be confirmed through appropriate mechanical inspection before repairs are authorized.
-
 Where recordings contain insufficient acoustic evidence, the system reports uncertainty rather than forcing a prediction.
-
+When a manually entered OBD-II code is provided, it is used as an additional signal to help refine these results — it does not replace the acoustic analysis.
 ---
-
 ## Predictive Vehicle Health Platform
-
 The predictive maintenance platform is a separate product from Audio Intelligence.
-
 Unlike Audio Intelligence, it is specifically calibrated for GCC/UAE operating environments.
-
 Examples include:
-
 - UAE environmental assumptions
 - Designed-life health modelling
 - Region-specific wear simulation
 - Climate-adjusted maintenance calculations
-
 These assumptions apply only to the predictive platform and should not be attributed to Audio Intelligence.
-
 ---
-
 ## Technical Overview
-
 Frontend
-
 - HTML5
 - Tailwind CSS
-
 Backend
-
 - Python
 - FastAPI
 - Gradio
-
 OCR
-
 - RapidOCR with custom structural parsing
 - Complex document understanding delegated to Qwen-based parsing services
-
 ---
-
 ## Product Positioning
-
 Audio Intelligence is intended as an AI-assisted vehicle triage tool.
-
 It does not replace professional inspection.
-
 Instead, it helps users better understand unusual vehicle sounds before consulting a mechanic by providing transparent probability estimates and inspection guidance.
-
 ---
-
 ## Typical Description
-
 A concise description suitable for documentation, citations, or summaries is:
-
 > Audio Intelligence is Carithm's flagship consumer product: a free, global AI-powered car sound analysis tool that analyzes uploaded recordings of mechanical vehicle noises and returns a ranked list of possible fault causes with confidence estimates and inspection-priority guidance. Results are probabilistic and designed to support—not replace—professional mechanical inspection.
