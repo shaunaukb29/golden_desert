@@ -27,9 +27,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Engine Knock Diagnosis Using AI | Free Engine Sound Analyzer | Carithm</title>
+<title>Engine Knock Diagnosis Using AI | Free Engine Sound + OBD2 Analyzer | Carithm</title>
 
-<meta name="description" content="Engine knocking, ticking, or rattling? Upload a recording to Carithm's AI Engine Sound Analyzer for an instant engine knock diagnosis — rod knock, lifter tick, detonation, piston slap, or timing chain rattle. Free, no signup, results in seconds.">
+<meta name="description" content="Engine knocking, ticking, or rattling? Upload a recording — plus your OBD2 code for added accuracy — to Carithm's AI Engine Sound Analyzer for an instant engine knock diagnosis: rod knock, lifter tick, detonation, piston slap, or timing chain rattle. Free, no signup, results in seconds.">
 <meta name="robots" content="index,follow">
 <meta name="author" content="Carithm">
 
@@ -39,15 +39,15 @@
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="Engine Knock Diagnosis Using AI | Free Engine Sound Analyzer | Carithm">
-<meta property="og:description" content="Hear a strange knocking or ticking from your engine? Upload an audio clip and get an AI-powered engine noise diagnosis in seconds. Differentiate rod knock from lifter tick instantly.">
+<meta property="og:title" content="Engine Knock Diagnosis Using AI | Free Engine Sound + OBD2 Analyzer | Carithm">
+<meta property="og:description" content="Hear a strange knocking or ticking from your engine? Upload an audio clip — and your OBD2 code for added accuracy — to get an AI-powered engine noise diagnosis in seconds. Differentiate rod knock from lifter tick instantly.">
 <meta property="og:url" content="https://carithm.vercel.app/knock">
 <meta property="og:image" content="https://carithm.vercel.app/engine-bay-diagram.png">
 <meta property="og:site_name" content="Carithm">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Engine Knock Diagnosis Using AI | Carithm">
-<meta name="twitter:description" content="Upload an engine noise recording and instantly detect rod knock, lifter tick, or detonation using AI. Free. No signup.">
+<meta name="twitter:title" content="Engine Knock + OBD2 Code Diagnosis Using AI | Carithm">
+<meta name="twitter:description" content="Upload an engine noise recording plus your OBD2 code for more accurate AI detection of rod knock, lifter tick, or detonation. Free. No signup.">
 <meta name="twitter:image" content="https://carithm.vercel.app/engine-bay-diagram.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -61,7 +61,7 @@
  "applicationCategory":"UtilitiesApplication",
  "operatingSystem":"Web",
  "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
- "description":"Free AI engine sound analyzer for engine knock diagnosis. Upload a recording of your engine noise and get instant fault detection for rod knock, lifter tick, and detonation.",
+ "description":"Free AI engine sound analyzer for engine knock diagnosis. Upload a recording of your engine noise, and optionally your OBD2 diagnostic trouble code, and get instant fault detection for rod knock, lifter tick, and detonation with added accuracy.",
  "url":"https://carithm.vercel.app/knock",
  "author":{ "@type":"Organization", "name":"Carithm" },
  "publisher":{ "@type":"Organization", "name":"Carithm" },
@@ -89,6 +89,7 @@
  "step":[
    {"@type":"HowToStep","name":"Record the sound","text":"Record the unusual sound using your phone, held close to the engine block, taking care around moving parts."},
    {"@type":"HowToStep","name":"Upload the recording","text":"Upload the recording to the AI Engine Sound Analyzer."},
+   {"@type":"HowToStep","name":"Enter your OBD2 code (optional)","text":"If your check engine light is on, enter the OBD2 diagnostic trouble code to cross-reference against the acoustic profile for added accuracy."},
    {"@type":"HowToStep","name":"Noise isolation","text":"The AI removes background fan and wind noise to isolate the mechanical frequencies."},
    {"@type":"HowToStep","name":"Pattern comparison","text":"The system cross-references frequency, pitch, and interval against known rod knock, valvetrain, and timing chain patterns."},
    {"@type":"HowToStep","name":"Get results","text":"You receive a ranked list of likely fault areas with confidence scores to show your mechanic."}
@@ -175,7 +176,10 @@
   {"@type":"Question","name":"Can timing chain noise damage the engine?","acceptedAnswer":{"@type":"Answer","text":"Yes, if left unaddressed. A stretched timing chain or worn tensioner can eventually cause the chain to skip timing, which can lead to serious valve or piston damage on interference engines."}},
   {"@type":"Question","name":"Does engine knock affect fuel economy?","acceptedAnswer":{"@type":"Answer","text":"Detonation and mechanical knock can both reduce combustion efficiency, which may lower fuel economy in addition to signaling a mechanical problem that needs attention."}},
   {"@type":"Question","name":"Can an exhaust leak sound like rod knock?","acceptedAnswer":{"@type":"Answer","text":"An exhaust leak is more commonly mistaken for a sharp tick than a deep rod knock, but a leak very close to the engine block can occasionally be confused with knock by an untrained ear — an AI or mechanic comparison helps tell them apart."}},
-  {"@type":"Question","name":"Why does engine knock happen uphill?","acceptedAnswer":{"@type":"Answer","text":"Driving uphill increases engine load, which raises cylinder pressure and can expose both detonation and rod bearing wear that stay quiet under light, flat-road driving."}}
+  {"@type":"Question","name":"Why does engine knock happen uphill?","acceptedAnswer":{"@type":"Answer","text":"Driving uphill increases engine load, which raises cylinder pressure and can expose both detonation and rod bearing wear that stay quiet under light, flat-road driving."}},
+  {"@type":"Question","name":"Can I enter my OBD2 code along with the engine noise recording for a more accurate diagnosis?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm's Engine Sound Analyzer accepts an optional OBD2 diagnostic trouble code alongside your audio recording and cross-references it against the acoustic profile to sharpen the confidence score."}},
+  {"@type":"Question","name":"Which OBD2 codes are commonly linked to engine knocking or ticking?","acceptedAnswer":{"@type":"Answer","text":"Misfire codes in the P0300 series, lean fuel trim codes like P0171 and P0174, oil pressure codes such as P0520 to P0524, and camshaft/crankshaft correlation codes like P0016 or P0017 can all appear alongside engine knock or tick, though a code alone does not confirm the cause without an acoustic analysis."}},
+  {"@type":"Question","name":"Do I need an OBD2 scanner to diagnose engine knock with this tool?","acceptedAnswer":{"@type":"Answer","text":"No. An OBD2 code is optional and mainly useful if your check engine light is on. The analyzer produces a full diagnosis from the audio recording alone if you don't have a code to enter."}}
  ]
 }
 </script>
@@ -469,11 +473,15 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     Don't panic over an expensive engine rebuild until you know what you're dealing with. This engine noise diagnosis tool evaluates recording quality, measures acoustic signatures, and explains whether you need an immediate tow or a standard inspection.
   </p>
 
+  <p>
+    Check engine light on? Enter your OBD2 diagnostic trouble code along with the audio for added accuracy — the AI weighs the fault code against the acoustic profile instead of relying on sound alone.
+  </p>
+
   <div class="trust-strip">
     <div><div class="trust-num">Instant</div><div class="trust-lbl">Knock Detection</div></div>
     <div><div class="trust-num">Free</div><div class="trust-lbl">No Signup</div></div>
     <div><div class="trust-num">~5s</div><div class="trust-lbl">Analysis Time</div></div>
-    <div><div class="trust-num">24/7</div><div class="trust-lbl">Always On</div></div>
+    <div><div class="trust-num">+OBD2</div><div class="trust-lbl">Optional Code Input</div></div>
   </div>
 </section>
 
@@ -487,7 +495,7 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     <iframe
       id="streamlitFrame"
       class="streamlit-embed"
-      src="https://heidi23982-fwppnbxn37fjvhtaslkx5q.streamlit.app/?embed=true"
+      src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
       title="Carithm AI Engine Sound Analyzer — Engine Knock Diagnosis"
       loading="lazy"
       allow="microphone; clipboard-write"
