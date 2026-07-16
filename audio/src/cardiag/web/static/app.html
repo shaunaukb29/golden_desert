@@ -81,10 +81,14 @@
  "@context":"https://schema.org",
  "@type":"FAQPage",
  "mainEntity":[
-  {"@type":"Question","name":"Can AI diagnose engine problems?","acceptedAnswer":{"@type":"Answer","text":"AI can recognize abnormal acoustic patterns associated with common mechanical faults — including engine knock, bearing noise, and belt squeal — and estimate likely inspection areas. It should be used as decision support alongside professional inspection, not as a replacement."}},
-  {"@type":"Question","name":"Is this free?","acceptedAnswer":{"@type":"Answer","text":"Yes — Carithm's AI Car Sound Analyzer is free with no signup required. Upload any unusual car noise recording and get an instant AI analysis identifying likely fault areas."}},
-  {"@type":"Question","name":"What sounds are supported?","acceptedAnswer":{"@type":"Answer","text":"Engine knock, belt squeal, brake squeal, wheel bearing hum, suspension clunks, transmission whine, and exhaust rattle, among other common mechanical fault sounds."}},
-  {"@type":"Question","name":"Does it work on phone recordings?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most smartphone recordings are sufficient. Hold the phone close to the noise source, reduce cabin and wind noise where possible, and the analyzer will handle the rest."}}
+  {"@type":"Question","name":"Can AI identify engine problems from sound?","acceptedAnswer":{"@type":"Answer","text":"AI can recognize abnormal acoustic patterns associated with common mechanical faults — including engine knock, bearing noise, and belt squeal — and estimate likely inspection areas. It should be used as decision support alongside professional inspection, not as a replacement."}},
+  {"@type":"Question","name":"Is there a free app to diagnose car noises?","acceptedAnswer":{"@type":"Answer","text":"Yes — Carithm's AI Car Sound Analyzer is free with no signup required. Upload any unusual car noise recording and get an instant AI analysis identifying likely fault areas."}},
+  {"@type":"Question","name":"Can the system detect engine knocking?","acceptedAnswer":{"@type":"Answer","text":"Yes. Engine knock, detonation, ticking, rattling, squealing, and many other abnormal mechanical sounds can often be identified depending on recording quality."}},
+  {"@type":"Question","name":"How do I diagnose a car noise myself?","acceptedAnswer":{"@type":"Answer","text":"Record the unusual sound using your phone as close to the noise source as possible, then upload it to Carithm's AI Car Sound Analyzer. The tool identifies likely fault locations and prioritizes which areas need inspection — helping you go into a garage with knowledge rather than guessing."}},
+  {"@type":"Question","name":"Can I record engine audio using my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most smartphone recordings are sufficient. Hold the phone close to the noise source, reduce cabin and wind noise where possible, and the analyzer will handle the rest."}},
+  {"@type":"Question","name":"Does background noise affect accuracy?","acceptedAnswer":{"@type":"Answer","text":"The system automatically reduces background noise and flags when interference is too high for a reliable result — it never invents a diagnosis when the recording is unclear."}},
+  {"@type":"Question","name":"How long does the analysis take?","acceptedAnswer":{"@type":"Answer","text":"Most recordings are processed within a few seconds after upload."}},
+  {"@type":"Question","name":"Does the AI always make a prediction?","acceptedAnswer":{"@type":"Answer","text":"No. When evidence is insufficient, the platform reports uncertainty rather than generating unsupported conclusions."}}
  ]
 }
 </script>
@@ -229,12 +233,6 @@ li { margin-bottom: 6px; }
   margin-top: 26px;
   border: 1px solid var(--border);
 }
-.diag-table { width: 100%; border-collapse: collapse; margin: 18px 0 8px; font-size: 0.94rem; }
-.diag-table th, .diag-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); text-align: left; }
-.diag-table th { color: var(--muted2); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
-.diag-table td:last-child, .diag-table th:last-child { text-align: center; }
-.diag-table tbody tr:last-child td { border-bottom: none; }
-.diag-table .yes { color: var(--green); font-weight: 700; }
 .card.tool { border-color: rgba(47,129,247,0.25); }
 .card.tool.tool-wide {
   max-width: 1100px;
@@ -431,10 +429,10 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 <section>
   <div class="eyebrow">Carithm Audio Intelligence</div>
 
-  <h1>AI Car Sound Analyzer: Diagnose Engine, Brake & Transmission Noises</h1>
+  <h1>AI Car Sound Analyzer & Noise Diagnosis</h1>
 
   <p>
-Hear an unusual noise from your engine, brakes, suspension, or transmission? Upload a recording of the sound. Carithm's AI analyzes it, identifies likely fault areas, and explains what components may need inspection before you visit a mechanic.
+Hear an unusual noise from your engine, brakes, suspension, or transmission? Record or upload the sound and Carithm's AI Car Sound Analyzer listens for abnormal mechanical noises, identifies likely fault locations, and helps diagnose what should be inspected before paying for a repair.
 </p>
 
   <p>
@@ -442,7 +440,7 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
   </p>
 
   <div class="trust-strip">
-    <div><div class="trust-num">Browser</div><div class="trust-lbl">Based</div></div>
+    <div><div class="trust-num">50<span>+</span></div><div class="trust-lbl">Fault Classes</div></div>
     <div><div class="trust-num">Free</div><div class="trust-lbl">No Signup</div></div>
     <div><div class="trust-num">~5s</div><div class="trust-lbl">Analysis Time</div></div>
     <div><div class="trust-num">Phone</div><div class="trust-lbl">Compatible</div></div>
@@ -452,7 +450,7 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 <section class="card tool tool-wide" id="try">
   <h2 style="margin-top:0;">Try the AI Car Sound Analyzer</h2>
   <p>
-  Record or upload a car sound from your engine, brakes, suspension, transmission, or any unusual mechanical component. Carithm's AI analyzes the recording, identifies abnormal sounds, identifies likely fault areas, and provides confidence-scored car noise diagnosis in seconds. Works with phone recordings—no special equipment needed.
+  Record or upload a car sound from your engine, brakes, suspension, transmission, or any unusual mechanical component. Carithm's AI analyzes the recording, identifies abnormal sounds, detects likely faults, and provides confidence-scored car noise diagnosis in seconds. Works with phone recordings—no special equipment needed.
 </p>
 
   <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
@@ -478,44 +476,80 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 </section>
 
 <section>
-  <h2>Supported Car Sounds</h2>
-  <table class="diag-table">
-    <thead>
-      <tr><th>Sound</th><th>AI can detect</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Engine knock</td><td class="yes">✓</td></tr>
-      <tr><td>Belt squeal</td><td class="yes">✓</td></tr>
-      <tr><td>Brake squeal</td><td class="yes">✓</td></tr>
-      <tr><td>Wheel bearing hum</td><td class="yes">✓</td></tr>
-      <tr><td>Suspension clunk</td><td class="yes">✓</td></tr>
-      <tr><td>Transmission whine</td><td class="yes">✓</td></tr>
-      <tr><td>Exhaust rattle</td><td class="yes">✓</td></tr>
-    </tbody>
-  </table>
+  <h2>What Car Noises Can Our AI Diagnose?</h2>
+  <ul>
+    <li>Engine knocking and detonation</li>
+    <li>Engine ticking and valve train noise</li>
+    <li>Belt squeal and pulley noise</li>
+    <li>Wheel bearing humming</li>
+    <li>Brake squealing and grinding</li>
+    <li>Suspension rattles and clunks</li>
+    <li>Transmission whining</li>
+    <li>Exhaust rattles and leaks</li>
+    <li>AC compressor noise</li>
+    <li>General mechanical anomaly detection</li>
+    <li>Preventive maintenance screening</li>
+  </ul>
 </section>
 
 <section>
-  <h2>How the AI Identifies Different Car Noises</h2>
-  <p>The analyzer groups incoming recordings into acoustic categories before matching them against known fault signatures. Here's what it's listening for in each one.</p>
+  <h2>Common Car Noises Explained</h2>
+  <p>Not sure what your noise means? These are the questions drivers search for most. Match your sound below, then upload a recording above for a confidence-scored diagnosis.</p>
 
-  <h3>Engine knocking</h3>
-  <p>The AI analyzes low-frequency metallic knocking patterns that typically occur under load and compares them against known engine knock signatures.</p>
+  <h3>Why is my car making a noise when I accelerate?</h3>
+  <p>Depends entirely on the sound. A high-pitched squeal is usually a worn serpentine belt. A whine that gets louder with speed points to the transmission, differential, or a wheel bearing. A clunk suggests worn CV joints or suspension components. A popping or backfire points to a fuel or exhaust issue. If you're not sure which one you're hearing, upload the recording above and let the analyzer sort it out.</p>
 
-  <h3>Brake squeal</h3>
-  <p>High-frequency squealing is analyzed alongside harmonic patterns to distinguish worn brake pads from temporary surface rust.</p>
+  <h3>Why does my car make a grinding noise when I turn?</h3>
+  <p>Usually worn brake pads contacting the rotor during a turn, a failing wheel bearing, or a CV joint issue. If it only happens while turning and braking together, start with the brakes; if it happens on turns alone at speed, suspect the bearing or CV joint.</p>
 
-  <h3>Wheel bearing noise</h3>
-  <p>The system looks for speed-dependent humming and vibration characteristics associated with worn bearings.</p>
+  <h3>Why does my car squeal when I brake?</h3>
+  <p>Most often a worn brake pad wear indicator doing exactly what it's designed to do — warning you before the pad runs out. It can also be glazed pads, surface rust after sitting overnight, or a sticking caliper. A grinding sound instead of a squeal means the pad is already gone — stop driving and get it inspected immediately.</p>
 
-  <h3>Transmission whining</h3>
-  <p>Continuous whining that changes with RPM is compared against transmission and differential acoustic patterns.</p>
+  <h3>What causes a clicking noise when turning?</h3>
+  <p>A clicking or popping sound during turns, especially at low speed or full lock, is a classic sign of a worn outer CV joint. It typically gets louder as you accelerate through the turn.</p>
 
-  <h3>Suspension clunks</h3>
-  <p>Short impact sounds over bumps are analyzed to identify likely suspension components requiring inspection.</p>
+  <h3>Why is there a humming or whining noise at highway speed?</h3>
+  <p>Speed-dependent humming that changes pitch with your speed (not engine RPM) usually points to a wheel bearing. Whining that tracks engine RPM instead is more often a transmission, differential, or power steering pump issue.</p>
 
-  <h3>Belt squeal</h3>
-  <p>The analyzer detects high-frequency belt slip sounds and distinguishes them from bearing or pulley noise.</p>
+  <h3>Why does my car clunk over bumps?</h3>
+  <p>Clunking or knocking specifically over bumps and potholes usually means worn suspension components — sway bar links, control arm bushings, or strut mounts. It's rarely urgent but should be checked before a long road trip.</p>
+
+  <h3>Why does my engine knock or tick at idle?</h3>
+  <p>Light ticking at idle that fades once oil pressure builds is common in higher-mileage engines and often lifter or valve-train related. A deeper, heavier knock — especially under load or acceleration — needs urgent inspection, as it can signal detonation or rod bearing wear.</p>
+
+  <h3>Why is my car rattling?</h3>
+  <p>Rattles are the hardest noise to pin down because so many things can cause them — a loose heat shield, worn exhaust hangers, loose interior trim, or something rolling around in the trunk. A rattle that only shows up at certain RPMs usually points to the engine bay or exhaust rather than the cabin.</p>
+
+  <h3>Why is my car making noise but driving fine?</h3>
+  <p>A noise with no change in handling or performance is often cosmetic — a heat shield, worn trim, or minor belt noise. But some serious issues, like early bearing wear or a slipping clutch, can stay quiet on performance for a while before getting worse. "Still drives fine" isn't the same as "safe to ignore indefinitely."</p>
+
+  <h3>What does a popping or backfiring noise mean?</h3>
+  <p>Popping during acceleration usually points to an imbalanced fuel-to-air mixture — a clogged air filter, dirty fuel injector, or failing spark plug. It can also be caused by an exhaust leak upstream of the muffler.</p>
+
+  <h3>Why is my exhaust suddenly loud?</h3>
+  <p>A sudden jump in exhaust volume usually means a leak or hole somewhere in the system — a cracked manifold, rusted-through muffler, or a disconnected pipe joint. Rarely urgent, but worth checking since exhaust leaks can let fumes into the cabin.</p>
+
+  <h3>Why does my AC compressor make noise?</h3>
+  <p>A grinding or squealing noise when the AC is switched on usually points to the compressor clutch or bearing.</p>
+
+  <h3>Why does my car grind when I shift gears?</h3>
+  <p>On manual cars this usually means a worn or failing clutch, or a linkage/sync issue. On automatics, grinding during a shift is less common and worth an inspection sooner rather than later.</p>
+
+  <h3>Why is my car hissing?</h3>
+  <p>Hissing from the engine bay after driving is often normal heat dissipation — but hissing while driving, especially near the radiator, can mean a coolant or vacuum leak. If you smell coolant or see steam, pull over and let the engine cool before checking.</p>
+
+  <h3>Why does my car squeal on startup?</h3>
+  <p>A brief squeal right at startup that fades after a few seconds usually points to a slipping serpentine belt or a worn tensioner pulley.</p>
+
+  <h3>Why does my car rattle when I start it?</h3>
+  <p>A rattle on cold start that goes away after a few seconds can be a loose heat shield or, less commonly, early timing chain slack. If it persists past the first few seconds or returns at idle, it's worth having checked.</p>
+
+  <h3>Is it normal for my car to click when reversing?</h3>
+  <p>Usually yes — a single click when shifting into reverse is often just the brake pads repositioning against the rotor, which is harmless. A repeated clicking that continues while reversing is more likely a CV joint issue.</p>
+
+  <h3>Why does my car rumble or thump at speed?</h3>
+  <p>A steady rumble that grows with speed is a common sign of uneven or worn tires, or a wheel bearing. Thumping at a consistent interval usually points to one specific tire.</p>
+
 </section>
 
 <section>
@@ -523,7 +557,7 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
   <ol>
     <li>Record the unusual sound using your phone — hold it close to the noise source.</li>
     <li>Upload the recording through the tool above.</li>
-    <li>The AI listens to the recording, removes background noise, analyzes the sound, identifies abnormal patterns, and identifies likely mechanical fault areas.</li>
+    <li>The AI listens to the recording, removes background noise, analyzes the sound, identifies abnormal patterns, and detects likely mechanical faults.</li>
     <li>The system compares your recording against known mechanical fault patterns.</li>
     <li>You get a ranked list of likely fault areas and a confidence score.</li>
     <li>If recording quality is insufficient, the system says so — it never invents a diagnosis.</li>
@@ -531,58 +565,45 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 </section>
 
 <section>
-  <h2>Why Use an AI Car Sound Analyzer?</h2>
+  <h2>Why Drivers Use This Tool</h2>
   <p>
-    Traditional diagnostics require a mechanic to reproduce the problem — which isn't always possible if the noise is intermittent or only happens under specific conditions. Carithm analyzes recorded sounds within seconds, identifies likely fault areas, estimates confidence, and highlights when additional inspection is needed.
-  </p>
-  <p>
-    It doesn't replace a mechanic — it helps drivers understand what they're hearing before visiting one.
+    A diagnostic visit at a shop typically costs money and takes time, even if the fix turns out to be minor. Carithm's car noise diagnosis tool gives you a free AI second opinion in seconds — so you know whether you're dealing with something urgent or something that can wait, before committing to a paid inspection or repair. It also helps you go into the shop knowing what to ask, which makes you harder to upsell.
   </p>
 </section>
 
 <section>
-  <h2>How Accurate Is AI Car Sound Diagnosis?</h2>
+  <h2>Can AI Diagnose Engine Problems From Sound?</h2>
   <p>
-    Accuracy depends heavily on what the AI actually has to work with. A few factors matter most:
-  </p>
-  <p>
-    <strong>Recording quality.</strong> A clean, close-up recording of the noise gives the analyzer far more usable signal than a short clip captured from across the garage.
-  </p>
-  <p>
-    <strong>Microphone quality.</strong> Most modern smartphone microphones are sufficient, but low-quality or heavily compressed recordings (e.g. sent through some messaging apps) can strip out the frequencies the model relies on.
-  </p>
-  <p>
-    <strong>Background noise.</strong> Wind, traffic, and cabin chatter compete with the mechanical sound itself. The analyzer filters this out where possible, but heavy interference reduces confidence.
-  </p>
-  <p>
-    <strong>Confidence scores.</strong> Every result includes a confidence score rather than a flat yes/no answer, so you can see how strong the match is, not just what the top guess was.
-  </p>
-  <p>
-    <strong>Uncertainty.</strong> When the recording doesn't provide enough reliable information, the system says so directly instead of forcing a guess — that's a deliberate design choice, not a limitation being hidden.
-  </p>
-</section>
-
-<section>
-  <h2>Engine Sound Analyzer, Car Noise Identifier & Online Diagnosis</h2>
-  <p>
-    Carithm combines an AI engine sound analyzer, an online car noise identifier, and a browser-based diagnosis tool into a single workflow. Upload a recording of the sound and Carithm compares it against common mechanical fault patterns — knocking, ticking, rattling, whining, and belt squeal among them — returning likely fault areas with confidence estimates. Unlike OBD-based apps, it analyzes the sound itself, so no installation or vehicle connection is required.
+    Real-world recordings contain wind, traffic, and cabin noise that make diagnosis harder. The Audio Analyzer is designed to work with these imperfect recordings by separating meaningful acoustic information from background interference — and it clearly flags when confidence is too low to make a reliable call, rather than guessing.
   </p>
 </section>
 
 <section>
   <h2>Frequently Asked Questions</h2>
 
-  <h3>Can AI diagnose engine problems?</h3>
+  <h3>Can AI identify engine problems from sound?</h3>
   <p>AI can recognize abnormal acoustic patterns associated with common mechanical faults — including engine knock, bearing noise, and belt squeal — and estimate likely inspection areas. It should be used as decision support alongside professional inspection, not as a replacement.</p>
 
-  <h3>Is this free?</h3>
+  <h3>Is there a free app to diagnose car noises?</h3>
   <p>Yes — Carithm's AI Car Sound Analyzer is free with no signup required. Upload any unusual car noise recording and get an instant AI analysis identifying likely fault areas.</p>
 
-  <h3>What sounds are supported?</h3>
-  <p>Engine knock, belt squeal, brake squeal, wheel bearing hum, suspension clunks, transmission whine, and exhaust rattle, among other common mechanical fault sounds.</p>
+  <h3>Can the system detect engine knocking?</h3>
+  <p>Yes. Engine knock, detonation, ticking, rattling, squealing, and many other abnormal mechanical sounds can often be identified depending on recording quality.</p>
 
-  <h3>Does it work on phone recordings?</h3>
+  <h3>How do I diagnose a car noise myself?</h3>
+  <p>Record the unusual sound using your phone as close to the noise source as possible, then upload it to Carithm's AI Car Sound Analyzer. The tool identifies likely fault locations and prioritizes which areas need inspection — helping you go into a garage with knowledge rather than guessing.</p>
+
+  <h3>Can I record engine audio using my phone?</h3>
   <p>Yes. Most smartphone recordings are sufficient. Hold the phone close to the noise source, reduce cabin and wind noise where possible, and the analyzer will handle the rest.</p>
+
+  <h3>Does background noise affect accuracy?</h3>
+  <p>The system automatically reduces background noise and flags when interference is too high for a reliable result — it never invents a diagnosis when the recording is unclear.</p>
+
+  <h3>How long does the analysis take?</h3>
+  <p>Most recordings are processed within a few seconds after upload.</p>
+
+  <h3>Does the AI always make a prediction?</h3>
+  <p>No. When evidence is insufficient, the platform reports uncertainty rather than generating unsupported conclusions.</p>
 </section>
 
 <div class="crosslink-banner" aria-label="Related tool">
