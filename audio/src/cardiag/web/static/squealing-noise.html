@@ -39,12 +39,12 @@
 <meta property="og:title" content="Car Squealing Noise? Free AI Diagnosis | Carithm">
 <meta property="og:description" content="Upload a recording and let Carithm's free AI analyze engine, belt, pulley, and brake squeals in seconds.">
 <meta property="og:url" content="https://carithm.vercel.app/audio/squealing-noise">
-<meta property="og:image" content="https://carithm.vercel.app/belt.jpg">
+<meta property="og:image" content="https://carithm.vercel.app/audio/src/cardiag/web/static/belt.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Car Squealing Noise? Free AI Diagnosis | Carithm">
 <meta name="twitter:description" content="Upload a recording and let our free AI analyze engine, belt, pulley, and brake squeals instantly.">
-<meta name="twitter:image" content="https://carithm.vercel.app/belt.jpg">
+<meta name="twitter:image" content="https://carithm.vercel.app/audio/src/cardiag/web/static/belt.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -248,7 +248,14 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
           Hearing a squealing noise from your car? Whether it happens when starting, accelerating, braking or turning, upload a recording and let Carithm AI identify the most likely cause in seconds.
       </p>
 
-      <img src="belt.jpg" alt="Car engine serpentine belt" class="hero-img">
+      <img
+        src="/audio/src/cardiag/web/static/belt.jpg"
+        alt="Car engine serpentine belt"
+        class="hero-img"
+        loading="eager"
+        decoding="async"
+        width="1200"
+        height="675">
 
       <div class="streamlit-embed-wrap">
         <iframe
