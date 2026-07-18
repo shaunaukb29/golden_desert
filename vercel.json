@@ -27,40 +27,14 @@
     { "source": "/lexus/lexus-es350-service-cost-uae.html", "destination": "/lexus/es350-service-cost.html", "permanent": true }
   ],
   "rewrites": [
-    {
-      "source": "/audio",
-      "destination": "/audio/src/cardiag/web/static/app"
-    },
-    [
-  {
-    "source": "/audio/squealing-noise",
-    "destination": "/audio/src/cardiag/web/static/squealing-noise.html"
-  },
-  {
-    "source": "/audio/squealing-on-startup",
-    "destination": "/audio/src/cardiag/web/static/squealing-on-startup.html"
-  },
-  {
-    "source": "/audio/squealing-when-accelerating",
-    "destination": "/audio/src/cardiag/web/static/squealing-when-accelerating.html"
-  },
-  {
-    "source": "/audio/squealing-when-braking",
-    "destination": "/audio/src/cardiag/web/static/squealing-when-braking.html"
-  },
-  {
-    "source": "/audio/squealing-while-turning",
-    "destination": "/audio/src/cardiag/web/static/squealing-while-turning.html"
-  },
-  {
-    "source": "/audio/squealing-only-cold",
-    "destination": "/audio/src/cardiag/web/static/squealing-only-cold.html"
-  },
-  {
-    "source": "/audio/squealing-all-the-time",
-    "destination": "/audio/src/cardiag/web/static/squealing-all-the-time.html"
-  }
-]
+    { "source": "/audio", "destination": "/audio/src/cardiag/web/static/app" },
+    { "source": "/audio/squealing-noise", "destination": "/audio/src/cardiag/web/static/squealing-noise.html" },
+    { "source": "/audio/squealing-on-startup", "destination": "/audio/src/cardiag/web/static/squealing-on-startup.html" },
+    { "source": "/audio/squealing-when-accelerating", "destination": "/audio/src/cardiag/web/static/squealing-when-accelerating.html" },
+    { "source": "/audio/squealing-when-braking", "destination": "/audio/src/cardiag/web/static/squealing-when-braking.html" },
+    { "source": "/audio/squealing-while-turning", "destination": "/audio/src/cardiag/web/static/squealing-while-turning.html" },
+    { "source": "/audio/squealing-only-cold", "destination": "/audio/src/cardiag/web/static/squealing-only-cold.html" },
+    { "source": "/audio/squealing-all-the-time", "destination": "/audio/src/cardiag/web/static/squealing-all-the-time.html" },
     {
       "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)",
       "destination": "/$1/index.html"
@@ -69,21 +43,9 @@
       "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)/:model",
       "destination": "/$1/:model/index.html"
     },
-    {
-      "source": "/parts/:part",
-      "destination": "/parts/:part.html"
-    },
-    {
-      "source": "/repairs/:repair",
-      "destination": "/repairs/:repair.html"
-    },
-    {
-      "source": "/problems/:problem",
-      "destination": "/problems/:problem.html"
-    },
-    {
-      "source": "/research/:study",
-      "destination": "/research/:study.html"
-    }
+    { "source": "/parts/:part", "destination": "/parts/:part.html" },
+    { "source": "/repairs/:repair", "destination": "/repairs/:repair.html" },
+    { "source": "/problems/:problem", "destination": "/problems/:problem.html" },
+    { "source": "/research/:study", "destination": "/research/:study.html" }
   ]
 }
