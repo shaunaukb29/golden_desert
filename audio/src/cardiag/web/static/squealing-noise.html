@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
+      }
+    }, interval * 1000);
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Car Squealing Noise? Free AI Diagnosis | Carithm</title>
+
+<meta name="description" content="Car making a squealing noise? Upload a recording and let Carithm's free AI analyze engine, belt, pulley, and brake squeals in seconds.">
+
+<meta name="robots" content="index,follow">
+
+<link rel="canonical" href="https://carithm.vercel.app/audio/squealing-noise">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Car Squealing Noise? Free AI Diagnosis | Carithm">
+<meta property="og:description" content="Upload a recording and let Carithm's free AI analyze engine, belt, pulley, and brake squeals in seconds.">
+<meta property="og:url" content="https://carithm.vercel.app/audio/squealing-noise">
+<meta property="og:image" content="https://carithm.vercel.app/belt.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Car Squealing Noise? Free AI Diagnosis | Carithm">
+<meta name="twitter:description" content="Upload a recording and let our free AI analyze engine, belt, pulley, and brake squeals instantly.">
+<meta name="twitter:image" content="https://carithm.vercel.app/belt.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebApplication",
+ "name":"Carithm AI Car Sound Analyzer - Squealing Noise",
+ "applicationCategory":"UtilitiesApplication",
+ "operatingSystem":"Web",
+ "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
+ "description":"Free AI car sound analyzer specifically for diagnosing squealing noises like belts, pulleys, and brakes.",
+ "url":"https://carithm.vercel.app/audio/squealing-noise",
+ "author":{ "@type":"Organization", "name":"Carithm" },
+ "publisher":{ "@type":"Organization", "name":"Carithm" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"BreadcrumbList",
+ "itemListElement":[
+   {"@type":"ListItem","position":1,"name":"Home","item":"https://carithm.vercel.app/"},
+   {"@type":"ListItem","position":2,"name":"Audio Diagnosis","item":"https://carithm.vercel.app/audio"},
+   {"@type":"ListItem","position":3,"name":"Squealing Noise Diagnosis","item":"https://carithm.vercel.app/audio/squealing-noise"}
+ ]
+}
+</script>
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#09090b">
+
+<style>
+:root {
+  --bg:         #09090b;
+  --surface:    #111113;
+  --surface2:   #18181b;
+  --surface3:   #27272a;
+  --border:     rgba(255,255,255,0.07);
+  --border2:    rgba(255,255,255,0.13);
+  --text:       #fafafa;
+  --muted:      #a1a8b3;
+  --muted2:     #71717a;
+  --accent:     #2f81f7;
+  --accent-dim: rgba(47,129,247,0.1);
+  --accent-glow:rgba(47,129,247,0.22);
+  --green:      #22c55e;
+  --r: 12px; --r-sm: 8px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+
+header {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(9,9,11,0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none;
+}
+.nav-logo span { color: var(--accent); }
+
+.nav { display: flex; gap: 1.75rem; align-items: center; }
+.nav a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; transition: color .2s; }
+.nav a:hover, .nav a.active { color: #fff; }
+.nav .cta-btn {
+  background: var(--accent-dim); border: 1px solid rgba(47,129,247,0.3); color: var(--accent);
+  padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600;
+}
+.nav .cta-btn:hover { background: var(--accent); color: #000; }
+
+main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
+
+.breadcrumb { font-size: 12.5px; color: var(--muted2); margin-bottom: 18px; }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb .sep { margin: 0 6px; color: var(--muted2); }
+.breadcrumb .current { color: var(--muted); }
+
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 14px; line-height: 1.12; }
+h2 { font-size: 1.3rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; }
+h3 { font-size: 1.02rem; font-weight: 600; margin-top: 22px; }
+p { color: var(--muted); margin: 0 0 8px; }
+.lead { font-size: 1.05rem; color: var(--text); margin-bottom: 24px; }
+ul, ol { color: var(--muted); padding-left: 20px; }
+li { margin-bottom: 6px; }
+
+.hero-img { width: 100%; border-radius: var(--r); margin: 16px 0 24px; object-fit: cover; border: 1px solid var(--border); }
+
+table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); overflow: hidden; display: block; }
+th, td { padding: 14px 20px; text-align: left; border-bottom: 1px solid var(--border); }
+th { font-weight: 600; color: var(--text); background: var(--surface2); border-bottom: 1px solid rgba(255,255,255,0.1); }
+tr:last-child td { border-bottom: none; }
+
+.cta-note { 
+  background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 16px 20px; margin-top: 24px; font-size: 13px; color: var(--muted); 
+}
+.cta-note strong { color: var(--accent); display: block; margin-bottom: 4px; font-size: 14px; }
+
+/* Scenario Links Styling */
+.scenario-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; }
+.scenario-link { 
+  display: flex; align-items: center; gap: 8px; padding: 12px 16px; 
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); 
+  text-decoration: none; font-size: 14px; font-weight: 500; color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.scenario-link::before { content: "○"; color: var(--muted); }
+.scenario-link:hover { border-color: var(--accent); background: var(--surface2); }
+.scenario-link:hover::before { content: "●"; color: var(--accent); }
+
+/* Symptoms List Styling */
+.symptoms-list { list-style: none; padding: 0; margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.symptoms-list li { color: var(--text); font-size: 14px; display: flex; align-items: center; gap: 8px; margin: 0; }
+.symptoms-list li::before { content: "✓"; color: var(--green); font-weight: bold; }
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.02));
+  border: 1px solid rgba(47,129,247,0.3); border-radius: var(--r-sm); padding: 20px; margin: 24px 0;
+}
+.highlight-box p { color: var(--text); margin-bottom: 12px; }
+.highlight-box ul { list-style-type: disc; margin: 0; padding-left: 20px; }
+.highlight-box ul li { color: var(--text); font-weight: 500; }
+
+.streamlit-embed-wrap {
+  position: relative;
+  --streamlit-height: min(1200px, 90vh);
+  margin-top: 24px;
+  border: 1px solid rgba(47,129,247,0.25);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  background: var(--surface2);
+}
+.streamlit-embed { display: block; width: 100%; height: var(--streamlit-height); min-height: 640px; border: 0; background: var(--bg); }
+.iframe-brand-mask { position: absolute; bottom: 0; left: 0; right: 0; height: 44px; background: var(--surface2); border-top: 1px solid var(--border); }
+
+footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
+.footer-inner { max-width: 760px; margin: 0 auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
+.footer-links a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+.footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
+
+@media (max-width: 620px) {
+  header { padding: 0.9rem 1.1rem; }
+  .nav a:not(.cta-btn) { display: none; }
+  table { display: block; overflow-x: auto; white-space: nowrap; }
+  .symptoms-list { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <a href="https://carithm.vercel.app/toyota">Toyota</a>
+    <a href="https://carithm.vercel.app/bmw">BMW</a>
+    <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
+    <a href="https://carithm.vercel.app/research">Research</a>
+    <a href="https://carithm.vercel.app/audio" class="active">Audio Diagnosis</a>
+    <a href="#try" class="cta-btn">Try It Free</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <span class="sep">/</span>
+    <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+    <span class="sep">/</span>
+    <span class="current">Squealing Noise</span>
+  </nav>
+
+  <section class="hero" id="try">
+      <div class="eyebrow">Carithm Audio Intelligence</div>
+      <h1>Why Is My Car Making a Squealing Noise? Free AI Diagnosis</h1>
+
+      <p class="lead">
+          Hearing a squealing noise from your car? Whether it happens when starting, accelerating, braking or turning, upload a recording and let Carithm AI identify the most likely cause in seconds.
+      </p>
+
+      <img src="belt.jpg" alt="Car engine serpentine belt" class="hero-img">
+
+      <div class="streamlit-embed-wrap">
+        <iframe
+          id="streamlitFrame"
+          class="streamlit-embed"
+          src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
+          title="Carithm AI Car Sound Analyzer"
+          loading="lazy"
+          allow="microphone; clipboard-write"
+        ></iframe>
+        <div class="iframe-brand-mask"></div>
+      </div>
+
+      <div class="cta-note">
+          <strong>✓ Free AI Diagnosis</strong>
+          Supports engine squeals, belt noises, pulley bearings, brake squeals and 50+ common vehicle sounds.
+      </div>
+  </section>
+
+  <section>
+      <h2>My squealing noise happens...</h2>
+      <p>Select when you hear the noise to narrow down the cause:</p>
+      <div class="scenario-grid">
+          <a href="/audio/squealing-on-startup" class="scenario-link">When starting</a>
+          <a href="/audio/squealing-when-accelerating" class="scenario-link">When accelerating</a>
+          <a href="/audio/squealing-when-braking" class="scenario-link">When braking</a>
+          <a href="/audio/squealing-while-turning" class="scenario-link">While turning</a>
+          <a href="/audio/squealing-only-cold" class="scenario-link">Only when cold</a>
+          <a href="/audio/squealing-all-the-time" class="scenario-link">All the time</a>
+      </div>
+  </section>
+
+  <section>
+      <h2>Common Symptoms</h2>
+      <ul class="symptoms-list">
+          <li>Squeals on cold mornings</li>
+          <li>Only squeals when accelerating</li>
+          <li>Squeals after rain</li>
+          <li>Squeals when turning</li>
+          <li>Squeals after replacing the belt</li>
+          <li>Constant high pitched squeal</li>
+      </ul>
+  </section>
+
+  <section>
+      <h2>Common Causes of a Car Squealing Noise</h2>
+      <p>
+      A squealing noise usually means a rotating component is slipping or wearing out.
+      Some causes are harmless, while others should be repaired immediately.
+      </p>
+      <ul>
+          <li>Worn serpentine belt</li>
+          <li>Loose drive belt</li>
+          <li>Failing belt tensioner</li>
+          <li>Bad pulley bearing</li>
+          <li>Alternator bearing wear</li>
+          <li>Brake pad wear indicators</li>
+          <li>Wheel bearing beginning to fail</li>
+          <li>Power steering belt slipping</li>
+          <li>Water pump bearing</li>
+      </ul>
+
+      <div class="highlight-box">
+          <p><strong>Not sure where the squeal is coming from?</strong></p>
+          <p>Upload a recording first. Our AI can distinguish between:</p>
+          <ul>
+              <li>Belt squeal</li>
+              <li>Pulley bearing</li>
+              <li>Brake squeal</li>
+              <li>Wheel bearing</li>
+              <li>Alternator</li>
+              <li>Water pump</li>
+          </ul>
+      </div>
+  </section>
+
+  <section>
+      <h2>When Does The Squealing Happen?</h2>
+      <p>The timing of the noise helps narrow the diagnosis.</p>
+      <table>
+      <tr>
+      <th>When you hear it</th>
+      <th>Possible Cause</th>
+      </tr>
+      <tr>
+      <td>Cold start</td>
+      <td>Serpentine belt slipping</td>
+      </tr>
+      <tr>
+      <td>While accelerating</td>
+      <td>Belt tension, alternator or pulley</td>
+      </tr>
+      <tr>
+      <td>While braking</td>
+      <td>Brake wear indicators</td>
+      </tr>
+      <tr>
+      <td>While turning</td>
+      <td>Power steering belt or wheel bearing</td>
+      </tr>
+      <tr>
+      <td>Constant at idle</td>
+      <td>Pulley bearing or accessory component</td>
+      </tr>
+      </table>
+  </section>
+
+  <section>
+      <h2>Is It Safe To Keep Driving?</h2>
+      <p>
+      Sometimes. A worn belt may simply squeal for weeks.
+      However, if the noise suddenly becomes much louder, is accompanied by smoke,
+      burning rubber, battery warnings or engine overheating,
+      stop driving immediately.
+      Our AI can help determine how serious the problem may be,
+      but you should always inspect the vehicle if severe symptoms appear.
+      </p>
+  </section>
+
+  <section>
+      <h2>How Carithm AI Diagnoses Squealing Noises</h2>
+      <ol>
+      <li>Record 10–30 seconds of your vehicle.</li>
+      <li>Upload the audio.</li>
+      <li>Our AI compares your recording against dozens of known vehicle fault patterns.</li>
+      <li>If available, combine the result with OBD-II fault codes for greater confidence.</li>
+      <li>Receive likely causes, confidence scores and recommended next steps.</li>
+      </ol>
+  </section>
+
+  <section>
+      <h2>Frequently Asked Questions</h2>
+      <h3>Can a squealing noise come from the engine?</h3>
+      <p>Yes. Belts, pulleys, alternators, water pumps and tensioners can all produce engine squealing sounds.</p>
+      <h3>Can low temperatures cause squealing?</h3>
+      <p>Yes. Cold weather often causes worn belts to slip until they warm up.</p>
+      <h3>Can brakes make a squealing noise?</h3>
+      <p>Absolutely. Many brake pads include wear indicators designed to squeal when replacement is needed.</p>
+      <h3>Can I diagnose the noise by listening?</h3>
+      <p>Experienced mechanics often can, but subtle differences between belt, bearing and brake noises are difficult to hear. Our AI analyzes patterns that are easy to miss.</p>
+  </section>
+
+  <section>
+      <h2>Similar Car Noises</h2>
+      <ul>
+      <li><a href="/audio/belt-squeal">Belt Squeal AI Diagnosis</a></li>
+      <li><a href="/audio/rod-knock">Rod Knock Analyzer</a></li>
+      <li><a href="/audio/lifter-tick">Lifter Tick Diagnosis</a></li>
+      <li><a href="/audio/timing-chain-rattle">Timing Chain Noise</a></li>
+      <li><a href="/audio/brake-grinding">Brake Grinding Diagnosis</a></li>
+      <li><a href="/audio/wheel-bearing">Wheel Bearing Noise</a></li>
+      </ul>
+  </section>
+
+  <section>
+      <h2>Not sure it's actually a squealing noise?</h2>
+      <p>Compare with other common mechanical sounds:</p>
+      <div class="scenario-grid">
+          <a href="/audio/grinding-noise" class="scenario-link">Grinding noise</a>
+          <a href="/audio/knocking-noise" class="scenario-link">Knocking noise</a>
+          <a href="/audio/ticking-noise" class="scenario-link">Ticking noise</a>
+          <a href="/audio/whining-noise" class="scenario-link">Whining noise</a>
+          <a href="/audio/clicking-noise" class="scenario-link">Clicking noise</a>
+      </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://carithm.vercel.app/">Home</a>
+      <a href="https://carithm.vercel.app/toyota">Toyota</a>
+      <a href="https://carithm.vercel.app/bmw">BMW</a>
+      <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
+      <a href="https://carithm.vercel.app/research">Research</a>
+      <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Carithm. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
