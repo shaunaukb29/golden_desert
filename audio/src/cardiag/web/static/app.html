@@ -27,22 +27,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>AI Car Sound Analyzer – Diagnose Engine, Brake & Car Noises | Free</title>
+<title>Free AI Car Sound Diagnosis App | Engine Noise Identifier</title>
 
-<meta name="description" content="Free AI car sound diagnostic tool — record or upload a noise for an instant engine, brake, or transmission diagnosis. No app, no signup, browser-based.">
+<meta name="description" content="Free online AI car sound diagnostic app. Record engine, brake, or transmission noises for an instant, mechanic-level diagnosis. No download required.">
 
 <meta name="robots" content="index,follow">
 
 <link rel="canonical" href="https://carithm.vercel.app/audio">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="AI Car Sound Analyzer | Diagnose Car Faults from Audio | Carithm">
+<meta property="og:title" content="Free AI Car Sound Diagnosis App | Carithm">
 <meta property="og:description" content="Hear an unusual car noise? Record or upload a sound and get instant AI car sound analysis for engine, brake, suspension, transmission, and exhaust faults. Free. No signup.">
 <meta property="og:url" content="https://carithm.vercel.app/audio">
 <meta property="og:image" content="https://carithm.vercel.app/car.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Car Sound Analyzer | Carithm">
+<meta name="twitter:title" content="Free AI Car Sound Diagnosis App | Carithm">
 <meta name="twitter:description" content="Record or upload a car sound and get instant AI diagnosis for engine, brake, suspension, transmission, and exhaust noises. Free. No signup.">
 <meta name="twitter:image" content="https://carithm.vercel.app/car.png">
 
@@ -57,11 +57,11 @@
  "applicationCategory":"UtilitiesApplication",
  "operatingSystem":"Web",
  "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
- "description":"Free AI car sound analyzer. Record or upload a car noise and get instant AI diagnosis for engine, brake, suspension, transmission, exhaust, and other mechanical faults.",
+ "description":"Free AI car sound diagnostic app. Record or upload a car noise and get instant AI diagnosis for engine, brake, suspension, transmission, exhaust, and other mechanical faults.",
  "url":"https://carithm.vercel.app/audio",
  "author":{ "@type":"Organization", "name":"Carithm" },
  "publisher":{ "@type":"Organization", "name":"Carithm" },
- "dateModified":"2026-07-13"
+ "dateModified":"2026-07-19"
 }
 </script>
 <script type="application/ld+json">
@@ -75,7 +75,6 @@
 }
 </script>
 
-<!-- FAQ schema — mirrors visible on-page FAQ content exactly, expanded with real high-volume search queries -->
 <script type="application/ld+json">
 {
  "@context":"https://schema.org",
@@ -85,7 +84,7 @@
   {"@type":"Question","name":"Is this free?","acceptedAnswer":{"@type":"Answer","text":"Yes — Carithm's AI Car Sound Analyzer is free with no signup required. Upload any unusual car noise recording and get an instant AI analysis identifying likely fault areas."}},
   {"@type":"Question","name":"Is there an app to download, or does it work in the browser?","acceptedAnswer":{"@type":"Answer","text":"There's nothing to install. Carithm's car sound diagnostic tool runs directly in your browser on phone or desktop, so you get an AI diagnosis the moment you upload a recording."}},
   {"@type":"Question","name":"Can the system detect engine knocking?","acceptedAnswer":{"@type":"Answer","text":"Yes. Engine knock, detonation, ticking, rattling, squealing, and many other abnormal mechanical sounds can often be identified depending on recording quality."}},
-  {"@type":"Question","name":"How do I diagnose a car noise myself?","acceptedAnswer":{"@type":"Answer","text":"Record the unusual sound using your phone as close to the noise source as possible, then upload it to Carithm's AI Car Sound Analyzer. The tool identifies likely fault locations and prioritizes which areas need inspection — helping you go into a garage with knowledge rather than guessing."}},
+  {"@type":"Question","name":"How do I diagnose a car noise myself?","acceptedAnswer":{"@type":"Answer","text":"To diagnose a car by sound, follow these 3 steps: 1. Record the unusual noise using your smartphone near the source (engine bay, wheel, or exhaust). 2. Upload the audio file to our free car noise identifier online. 3. Review the instant AI diagnostic report to see which components require inspection."}},
   {"@type":"Question","name":"Can I record engine audio using my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most smartphone recordings are sufficient. Hold the phone close to the noise source, reduce cabin and wind noise where possible, and the analyzer will handle the rest."}},
   {"@type":"Question","name":"Does background noise affect accuracy?","acceptedAnswer":{"@type":"Answer","text":"The system automatically reduces background noise and flags when interference is too high for a reliable result — it never invents a diagnosis when the recording is unclear."}},
   {"@type":"Question","name":"How long does the analysis take?","acceptedAnswer":{"@type":"Answer","text":"Most recordings are processed within a few seconds after upload."}},
@@ -104,7 +103,7 @@
  "browserRequirements":"Requires JavaScript. Microphone access optional for in-browser recording.",
  "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
  "url":"https://carithm.vercel.app/audio",
- "description":"Free AI car sound analyzer. Record or upload a car noise and get instant AI diagnosis for engine, brake, suspension, transmission, exhaust, and other mechanical faults.",
+ "description":"Free AI car sound diagnosis app. Record or upload a car noise and get instant AI diagnosis for engine, brake, suspension, transmission, exhaust, and other mechanical faults.",
  "featureList":[
    "Record or upload car sound recordings",
    "AI-based detection of abnormal mechanical noises",
@@ -242,70 +241,6 @@ li { margin-bottom: 6px; }
   transform: translateX(-50%);
 }
 
-input[type="file"] { color: var(--muted); font-size: 13px; }
-
-button {
-  padding: 12px 20px;
-  border: 0;
-  border-radius: var(--r-sm);
-  background: var(--accent);
-  color: white;
-  cursor: pointer;
-  margin-top: 16px;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: inherit;
-  transition: opacity .15s, transform .1s;
-}
-button:hover { opacity: 0.88; }
-button:active { transform: scale(0.99); }
-button:disabled { opacity: 0.4; cursor: not-allowed; }
-
-.status { margin-top: 16px; font-size: 13px; opacity: 0.9; min-height: 20px; display: flex; align-items: center; gap: 8px; }
-.status .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 1.4s ease infinite; flex-shrink: 0; }
-@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.25;} }
-
-.result { margin-top: 24px; display: none; }
-
-.badge { display: inline-flex; align-items: center; padding: 4px 13px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.03em; margin-bottom: 16px; border: 1px solid transparent; }
-.ok        { background: var(--green-dim); color: var(--green); border-color: rgba(34,197,94,0.25); }
-.warn      { background: var(--amber-dim); color: var(--amber); border-color: rgba(245,158,11,0.25); }
-.uncertain { background: rgba(161,168,179,0.1); color: var(--muted); border-color: var(--border2); }
-.err       { background: var(--red-dim); color: var(--red); border-color: rgba(239,68,68,0.25); }
-
-.result-block { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 18px 20px; margin-bottom: 14px; }
-.result-block h4 { margin: 0 0 12px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted2); font-weight: 700; }
-
-.result-block.hero-causes {
-  background: linear-gradient(180deg, rgba(47,129,247,0.09), rgba(47,129,247,0.02));
-  border: 1.5px solid rgba(47,129,247,0.4);
-  box-shadow: 0 0 0 1px rgba(47,129,247,0.08), 0 8px 28px rgba(47,129,247,0.08);
-  padding: 22px 24px;
-  margin-bottom: 18px;
-  position: relative;
-}
-.hero-causes h4 { color: var(--accent); font-size: 13px; display: flex; align-items: center; gap: 8px; }
-.hero-causes h4::before { content: "★"; font-size: 12px; }
-.hero-causes .cause-row { padding: 10px 0; }
-.hero-causes .cause-row:first-of-type { padding-top: 4px; }
-.cause-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
-.cause-name { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
-.cause-pct { font-size: 15px; font-weight: 700; color: var(--accent); }
-.cause-row:first-child .cause-name, .cause-row:first-child .cause-pct { font-size: 17px; }
-.cause-note { font-size: 12px; color: var(--muted); font-style: italic; margin-top: 2px; }
-
-.row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
-.row:last-child { border-bottom: none; }
-.row .label { color: var(--muted); }
-.row .value { font-weight: 600; }
-
-.bar-track { background: var(--surface3); border-radius: 6px; height: 8px; width: 120px; overflow: hidden; }
-.bar-fill { height: 100%; background: var(--accent); border-radius: 6px; }
-.hero-causes .bar-track { width: 100%; height: 10px; }
-.hero-causes .bar-fill { background: linear-gradient(90deg, var(--accent), #60a5fa); }
-
-.note { margin-top: 12px; font-size: 12.5px; color: var(--muted2); font-style: italic; }
-
 .streamlit-embed-wrap {
   position: relative;
   --streamlit-height: min(1200px, 90vh);
@@ -430,7 +365,7 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 <section>
   <div class="eyebrow">Carithm Audio Intelligence</div>
 
-  <h1>AI Car Sound Analyzer: Diagnose Engine, Brake & Transmission Noises</h1>
+  <h1>Free AI Car Sound Diagnosis App: Analyze Engine & Mechanic Noises</h1>
 
   <p>
 Hear an unusual noise from your engine, brakes, suspension, or transmission? Upload a recording of the sound and Carithm's AI diagnostic tool analyzes it, identifies likely fault areas, and explains what components may need inspection before you visit a mechanic.
@@ -451,7 +386,7 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 <section class="card tool tool-wide" id="try">
   <h2 style="margin-top:0;">Try the AI Car Sound Analyzer</h2>
   <p>
-  Record or upload a car sound from your engine, brakes, suspension, transmission, or any unusual mechanical component. Carithm's AI analyzes the recording, identifies abnormal sounds, identifies likely fault areas, and provides confidence-scored car noise diagnosis in seconds. Works with phone recordings—no special equipment needed.
+  Looking for a free car sound diagnosis app? There's no download required. Record a car sound from your engine, brakes, suspension, or transmission directly in your browser. Our web app's AI analyzes the recording, identifies abnormal sounds, and provides a confidence-scored car noise diagnosis in seconds. Works with phone recordings—no special equipment needed.
 </p>
 
   <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
@@ -477,7 +412,7 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 </section>
 
 <section>
-  <h2>Supported Car Sounds</h2>
+  <h2>Engine Sound Diagnostic AI & Car Noise Identifier</h2>
   <ul>
     <li>Engine knocking and detonation</li>
     <li>Engine ticking and valve train noise</li>
@@ -566,7 +501,7 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 </section>
 
 <section>
-  <h2>Why Use an AI Car Sound Analyzer?</h2>
+  <h2>Why Use an AI Car Noise Diagnostic Tool?</h2>
   <p>
     Traditional diagnostics require a mechanic to reproduce the problem. Carithm's diagnostic analyzer processes recorded sounds within seconds, identifies likely fault areas, estimates confidence, and highlights when additional inspection is needed. It doesn't replace a mechanic — it helps drivers understand what they're hearing before visiting one.
   </p>
@@ -576,6 +511,11 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
   <h2>How Accurate Is AI Car Sound Diagnosis?</h2>
   <p>
     Real-world recordings contain wind, traffic, and cabin noise that make diagnosis harder. The Audio Analyzer is designed to work with these imperfect recordings by separating meaningful acoustic information from background interference — and it clearly flags when confidence is too low to make a reliable call, rather than guessing.
+  </p>
+  
+  <h3>Understanding Designed Life vs. Mechanical Failure</h3>
+  <p>
+    Not all noises mean immediate danger. Brake pads, front and rear, have different wear rates based on your drivetrain (AWD, FWD, RWD) and vehicle type (SUV vs. sedan), which drastically affect brake biases. Our diagnostic AI helps determine if the squeal or clunk you hear is a component reaching the end of its designed life health, or if it is a sudden mechanical failure requiring immediate attention.
   </p>
 </section>
 
@@ -595,7 +535,7 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
   <p>Yes. Engine knock, detonation, ticking, rattling, squealing, and many other abnormal mechanical sounds can often be identified depending on recording quality.</p>
 
   <h3>How do I diagnose a car noise myself?</h3>
-  <p>Record the unusual sound using your phone as close to the noise source as possible, then upload it to Carithm's AI Car Sound Analyzer. The tool identifies likely fault locations and prioritizes which areas need inspection — helping you go into a garage with knowledge rather than guessing.</p>
+  <p>To diagnose a car by sound, follow these 3 steps: 1. Record the unusual noise using your smartphone near the source (engine bay, wheel, or exhaust). 2. Upload the audio file to our free car noise identifier online. 3. Review the instant AI diagnostic report to see which components require inspection.</p>
 
   <h3>Can I record engine audio using my phone?</h3>
   <p>Yes. Most smartphone recordings are sufficient. Hold the phone close to the noise source, reduce cabin and wind noise where possible, and the analyzer will handle the rest.</p>
@@ -670,3 +610,4 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 
 </body>
 </html>
+```[cite: 1]
