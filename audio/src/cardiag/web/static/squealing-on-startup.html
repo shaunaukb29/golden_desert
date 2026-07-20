@@ -11,31 +11,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Why Does My Car Squeal on Startup? Free AI Diagnosis | Carithm</title>
-<meta name="description" content="Does your car make a squealing noise on cold mornings that stops when warm? Upload a recording and let Carithm's AI diagnose it instantly.">
+<title>Car Squeals on Cold Start? Here's Why (Usually Not Serious) | Carithm</title>
+<meta name="description" content="Car makes a squealing noise when you start it but it fades after a minute? See why that happens and get a free AI read on the cause in 30 seconds — no signup needed.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://carithm.vercel.app/audio/squealing-on-startup">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Car Squeals on Startup? Free AI Diagnosis | Carithm">
-<meta property="og:description" content="Car making a squealing noise on startup? Let Carithm's free AI analyze your engine sound in seconds.">
+<meta property="og:title" content="Car Squeals on Cold Start? Here's Why (Usually Not Serious)">
+<meta property="og:description" content="See why cold-start squealing happens and get a free AI read on the cause in 30 seconds — no signup needed.">
 <meta property="og:url" content="https://carithm.vercel.app/audio/squealing-on-startup">
 <meta property="og:image" content="https://carithm.vercel.app/belt.jpg">
 
+<!-- Master Schema combining WebApp, Breadcrumb, and FAQ -->
 <script type="application/ld+json">
 {
- "@context":"https://schema.org",
- "@type":"WebApplication",
- "name":"Carithm AI - Squealing on Startup Diagnosis",
- "applicationCategory":"UtilitiesApplication",
- "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
- "description":"Free AI analysis for car squealing noises that occur on startup.",
- "url":"https://carithm.vercel.app/audio/squealing-on-startup"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://carithm.vercel.app/audio/squealing-on-startup/#webapp",
+      "name": "Carithm AI Car Sound Analyzer - Squealing on Startup",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free, no-signup AI tool that tells drivers why their car squeals on a cold start and whether it's cause for concern.",
+      "url": "https://carithm.vercel.app/audio/squealing-on-startup",
+      "author": { "@type": "Organization", "name": "Carithm" },
+      "publisher": { "@type": "Organization", "name": "Carithm" },
+      "datePublished": "2026-01-15",
+      "dateModified": "2026-07-21"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://carithm.vercel.app/"},
+        {"@type": "ListItem", "position": 2, "name": "Audio Diagnosis", "item": "https://carithm.vercel.app/audio"},
+        {"@type": "ListItem", "position": 3, "name": "Squealing", "item": "https://carithm.vercel.app/audio/squealing-noise"},
+        {"@type": "ListItem", "position": 4, "name": "On Startup", "item": "https://carithm.vercel.app/audio/squealing-on-startup"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is it normal for a car to squeal on a cold start?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, it's one of the most common car sounds there is. Rubber belts stiffen overnight and briefly slip under the alternator's load until they warm up, which is why it usually fades within a minute of driving." } },
+        { "@type": "Question", "name": "Is it bad if the squeal doesn't go away after warming up?", "acceptedAnswer": { "@type": "Answer", "text": "If it doesn't fade within a minute or two of driving, that points to a real belt or tensioner problem rather than simple morning stiffness, and it's worth getting checked soon." } },
+        { "@type": "Question", "name": "Will a startup squeal damage my engine?", "acceptedAnswer": { "@type": "Answer", "text": "A slipping belt on its own usually won't damage the engine. But the belt also drives the alternator and sometimes the water pump, so ignoring it long enough can leave you stranded with a dead battery or overheating." } },
+        { "@type": "Question", "name": "Can I still drive with a startup squeal?", "acceptedAnswer": { "@type": "Answer", "text": "Generally yes for daily driving if the noise fades after warm-up and there are no other warning signs. Belts wear gradually, so it's worth getting inspected before it turns into a bigger repair." } }
+      ]
+    }
+  ]
 }
 </script>
 
 <style>
-:root { --bg: #09090b; --surface: #111113; --surface2: #18181b; --border: rgba(255,255,255,0.07); --text: #fafafa; --muted: #a1a8b3; --muted2: #71717a; --accent: #2f81f7; --accent-dim: rgba(47,129,247,0.1); --green: #22c55e; --r: 12px; --r-sm: 8px; color-scheme: dark; }
+:root { --bg: #09090b; --surface: #111113; --surface2: #18181b; --border: rgba(255,255,255,0.07); --text: #fafafa; --muted: #a1a8b3; --muted2: #71717a; --accent: #2f81f7; --accent-dim: rgba(47,129,247,0.1); --red: #e5484d; --red-dim: rgba(229,72,77,0.1); --green: #22c55e; --r: 12px; --r-sm: 8px; color-scheme: dark; }
 * { box-sizing: border-box; } 
 body { font-family: 'Inter', system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; } 
 a { color: inherit; } 
@@ -45,14 +74,15 @@ header { position: sticky; top: 0; z-index: 100; display: flex; justify-content:
 .nav { display: flex; gap: 1.75rem; align-items: center; } 
 .nav a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; } 
 .cta-btn { background: var(--accent-dim); border: 1px solid rgba(47,129,247,0.3); color: var(--accent); padding: 0.5rem 1.1rem; border-radius: 8px; text-decoration: none; font-weight: 600; } 
-main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; } 
+main { max-width: 760px; margin: 0 auto; padding: 48px 24px 96px; } 
 .breadcrumb { font-size: 12.5px; color: var(--muted2); margin-bottom: 18px; } 
 .breadcrumb a { color: var(--muted); text-decoration: none; } 
 .eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; } 
 h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); font-weight: 700; margin: 0 0 14px; line-height: 1.12; } 
-h2 { font-size: 1.3rem; margin-top: 44px; } 
+h2 { font-size: 1.3rem; margin-top: 44px; }
+h3 { font-size: 1.02rem; margin-top: 20px; color: #fff; }
 p, ul { color: var(--muted); } 
-.lead { font-size: 1.05rem; color: var(--text); margin-bottom: 24px; } 
+.lead { font-size: 1.05rem; color: var(--text); margin-bottom: 20px; } 
 .cta-note { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 16px 20px; margin-top: 24px; font-size: 13px; color: var(--muted); } 
 .cta-note strong { color: var(--accent); display: block; } 
 .scenario-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; } 
@@ -61,7 +91,30 @@ p, ul { color: var(--muted); }
 .highlight-box { background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.02)); border: 1px solid rgba(47,129,247,0.3); border-radius: var(--r-sm); padding: 20px; margin: 24px 0; } 
 .streamlit-embed-wrap { position: relative; margin-top: 24px; border: 1px solid rgba(47,129,247,0.25); border-radius: var(--r-sm); overflow: hidden; background: var(--surface2); } 
 .streamlit-embed { width: 100%; height: min(1200px, 90vh); min-height: 640px; border: 0; } 
-.iframe-brand-mask { position: absolute; bottom: 0; left: 0; right: 0; height: 44px; background: var(--surface2); border-top: 1px solid var(--border); z-index: 10; pointer-events: none; } 
+.iframe-brand-mask { position: absolute; bottom: 0; left: 0; right: 0; height: 44px; background: var(--surface2); border-top: 1px solid var(--border); z-index: 10; pointer-events: none; }
+/* Panic-funnel additions */
+.quickscan { display: flex; align-items: flex-start; gap: 10px; background: var(--red-dim); border: 1px solid rgba(229,72,77,.3); border-radius: var(--r-sm); padding: 14px 16px; margin-bottom: 22px; }
+.quickscan .icon { font-size: 18px; line-height: 1; }
+.quickscan p { margin: 0; font-size: 13.5px; color: var(--text); }
+.quickscan strong { color: var(--red); }
+.trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin-top: 14px; font-size: 12.5px; color: var(--muted); }
+.trust-row span { display: flex; align-items: center; gap: 6px; }
+.trust-row span::before { content: "✓"; color: var(--green); font-weight: 700; }
+table.seo-table { width: 100%; border-collapse: collapse; margin: 14px 0 8px; font-size: 13px; }
+table.seo-table th, table.seo-table td { border: 1px solid var(--border); padding: 12px 14px; text-align: left; color: var(--muted); }
+table.seo-table th { background: var(--surface); color: var(--text); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+.cost-note { font-size: 12px; color: var(--muted2); margin-top: 8px; }
+details.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); margin-bottom: 12px; overflow: hidden; }
+details.faq-item summary { padding: 16px; font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; position: relative; padding-right: 40px; }
+details.faq-item summary::-webkit-details-marker { display: none; }
+details.faq-item summary::after { content: '+'; position: absolute; right: 16px; top: 16px; color: var(--accent); font-size: 18px; }
+details.faq-item[open] summary::after { content: '−'; }
+details.faq-item .faq-content { padding: 0 16px 16px; font-size: 14px; color: var(--muted); }
+.mobile-cta-bar { display: none; }
+@media (max-width: 620px) {
+  .mobile-cta-bar { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--surface); border-top: 1px solid var(--border); padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); box-shadow: 0 -8px 24px rgba(0,0,0,0.35); }
+  .mobile-cta-bar a { flex: 1; text-align: center; background: var(--accent); color: #000; font-weight: 700; font-size: 14.5px; padding: 12px 14px; border-radius: 10px; text-decoration: none; }
+}
 footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); } 
 .footer-inner { max-width: 760px; margin: 0 auto; } 
 .footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
@@ -71,7 +124,7 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 <body>
 <header>
   <a href="/" class="nav-logo">Carithm<span>AI</span></a>
-  <nav class="nav"><a href="/audio">Audio Diagnosis</a><a href="#try" class="cta-btn">Try It Free</a></nav>
+  <nav class="nav"><a href="/audio">Audio Diagnosis</a><a href="#try" class="cta-btn">Analyze My Car Noise</a></nav>
 </header>
 
 <main>
@@ -79,17 +132,31 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     <a href="/">Home</a> / <a href="/audio">Audio</a> / <a href="/audio/squealing-noise">Squealing</a> / <span class="current">On Startup</span>
   </nav>
 
+  <div class="eyebrow">CAR SOUND AI DIAGNOSIS</div>
+  <h1>Car Squeals on Cold Start? Here's Why (Usually Not Serious)</h1>
+  <p class="lead">Most cold-start squeals are just a stiff belt working against a full electrical load — and they fade within a minute of driving. Upload a recording and let Carithm AI confirm what's actually going on.</p>
+
+  <div class="quickscan">
+    <span class="icon">ℹ️</span>
+    <p><strong>Usually not urgent</strong> if the squeal fades after a minute or two. Get it checked soon if it doesn't fade, gets louder, or comes with a burning smell, smoke, or a warning light.</p>
+  </div>
+
   <section id="try">
-      <div class="eyebrow">Carithm Audio Intelligence</div>
-      <h1>Car Squeals on Startup? Free AI Diagnosis</h1>
-      <p class="lead">Does your car make a loud squealing noise when you first start the engine, especially on cold mornings? Upload a recording and let Carithm AI identify the slipping belt or failing pulley in seconds.</p>
-      
+      <h2 style="margin-top:0;">🔊 Upload the Sound. Get an Answer in 30 Seconds.</h2>
+      <p>Record your next cold start and upload it below. Our tool specializes in telling apart morning belt slip, tensioner issues, and alternator load squeals.</p>
+
       <div class="streamlit-embed-wrap">
         <iframe id="streamlitFrame" class="streamlit-embed" src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true" loading="lazy" allow="microphone"></iframe>
         <div class="iframe-brand-mask"></div>
       </div>
 
-      <div class="cta-note"><strong>✓ Free AI Diagnosis</strong> Our tool specializes in differentiating between morning belt slip, tensioner issues, and alternator load squeals.</div>
+      <div class="cta-note"><strong>✓ Free AI Diagnosis</strong> Get a confidence-scored fault prediction instantly.</div>
+      <div class="trust-row">
+        <span>No signup</span>
+        <span>No download</span>
+        <span>No appointment</span>
+        <span>100% free</span>
+      </div>
   </section>
 
   <section>
@@ -101,6 +168,15 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
           <li><strong>Weak automatic belt tensioner:</strong> The spring loses tension, allowing the belt to slip under initial load.</li>
           <li><strong>Morning dew or moisture:</strong> Water on the belt reduces friction temporarily.</li>
       </ul>
+
+      <h3>What Will This Cost to Fix?</h3>
+      <p>Treat these as ballpark U.S. estimates, parts and labor combined — actual cost depends on your vehicle and shop.</p>
+      <table class="seo-table">
+        <tr><th>Likely Cause</th><th>Typical Repair Cost</th></tr>
+        <tr><td>Serpentine belt replacement</td><td>$75 – $200</td></tr>
+        <tr><td>Belt tensioner</td><td>$150 – $400</td></tr>
+      </table>
+      <p class="cost-note">Moisture-related squeals cost nothing to fix — they disappear on their own once the belt dries.</p>
   </section>
 
   <section>
@@ -110,6 +186,26 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
           <p><strong>Diagnose Your Startup Squeal</strong></p>
           <p>Don't guess which pulley or belt is failing. Use the AI Sound Analyzer above to record your next cold start and get a confidence-scored fault prediction instantly.</p>
       </div>
+  </section>
+
+  <section>
+      <h2>Questions People Ask About Startup Squealing</h2>
+      <details class="faq-item" open>
+        <summary>Is it normal for a car to squeal on a cold start?</summary>
+        <div class="faq-content">Yes, it's one of the most common car sounds there is. Rubber belts stiffen overnight and briefly slip under the alternator's load until they warm up, which is why it usually fades within a minute of driving.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is it bad if the squeal doesn't go away after warming up?</summary>
+        <div class="faq-content">If it doesn't fade within a minute or two of driving, that points to a real belt or tensioner problem rather than simple morning stiffness, and it's worth getting checked soon.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Will a startup squeal damage my engine?</summary>
+        <div class="faq-content">A slipping belt on its own usually won't damage the engine. But the belt also drives the alternator and sometimes the water pump, so ignoring it long enough can leave you stranded with a dead battery or overheating.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I still drive with a startup squeal?</summary>
+        <div class="faq-content">Generally yes for daily driving if the noise fades after warm-up and there are no other warning signs. Belts wear gradually, so it's worth getting inspected before it turns into a bigger repair.</div>
+      </details>
   </section>
 
   <section>
@@ -123,8 +219,12 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   </section>
 </main>
 
+<div class="mobile-cta-bar">
+  <a href="#try">🔊 Analyze My Car Noise Now</a>
+</div>
+
 <footer class="site-footer">
-  <div class="footer-inner"><div class="footer-bottom">&copy; 2026 Carithm. All rights reserved.</div></div>
+  <div class="footer-inner"><div class="footer-bottom">&copy; 2026 Carithm. All rights reserved. Repair cost ranges are general estimates, not quotes — actual pricing varies by vehicle, region, and shop.</div></div>
 </footer>
 </body>
 </html>
