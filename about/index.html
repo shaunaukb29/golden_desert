@@ -1,331 +1,641 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TCCEJ6DCM1');
-  </script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://carithm.vercel.app/about/" />
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" crossorigin="anonymous"></script>
-
-  <title>Free AI Car Diagnostic Web App & Car Sound Identifier | Carithm</title>
-  <meta name="title" content="Free AI Car Diagnostic Web App & Car Sound Identifier | Carithm">
-  <meta name="description" content="Free AI car diagnostic web app. No download, no signup required. Listen to your car noise, upload the sound, and get an instant AI engine sound analyzer report.">
-  <meta name="keywords" content="car sound diagnostic ai app, free car diagnostic web app, car noise identifier online, ai car sound diagnosis, engine sound diagnostic ai, ai engine sound analyzer, car sound analyzer app, car sound diagnosis app free, listen to my car noise, car repair guide, engine vibration fix, why is my car shaking, car symptom checker">
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://carithm.vercel.app/about/">
-  <meta property="og:title" content="Free AI Car Diagnostic Web App | Car Sound & Symptom Identifier">
-  <meta property="og:description" content="Use our free car sound diagnostic AI app. Describe the symptom or upload the audio for instant engineering-grade diagnostics. No download needed.">
-  <meta property="og:image" content="https://carithm.vercel.app/preview.png">
-  <meta property="og:locale" content="en_US">
-
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="Free AI Car Diagnostic Web App | Car Noise Identifier">
-  <meta property="twitter:description" content="Free web app — instant engineering-grade car diagnostics for engine sounds, smells, and vibrations. No download needed.">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Carithm Free AI Car Diagnostic Web App",
-    "url": "https://carithm.vercel.app/about/",
-    "description": "Free AI car diagnostic web app and car sound identifier online. No download, no signup. Upload or describe a car sound and get an engineering-grade report.",
-    "applicationCategory": "UtilityApplication",
-    "operatingSystem": "Web Browser",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is there a free AI that can diagnose car noises?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — Carithm's car sound diagnostic AI app is free, with no signup required. Describe the symptom or upload a recording and get an instant AI-generated report."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is this available as an app for iPhone or Android?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "There's no separate car sound analyzer app to download. It's a web app that runs directly in your phone or desktop browser."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need an OBD-II scanner to fix engine vibrations?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. The diagnostic engine works from your description of the symptom or an uploaded sound recording to find your engine vibration fix, with no scanner needed."
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
         }
       }
-    ]
-  }
-  </script>
+    }, interval * 1000);
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
-  
-  <style>
-    body { background: radial-gradient(circle at top, #0f172a 0%, #020617 100%); color: #f1f5f9; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-    .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
-    .accent-glow { color: #3b82f6; text-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
-    .seo-text { color: #94a3b8; line-height: 1.8; }
-    .keyword-pill { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); padding: 6px 14px; border-radius: 99px; font-size: 0.8rem; font-weight: 600; color: #60a5fa; transition: all 0.3s; }
-    .keyword-pill:hover { background: rgba(59, 130, 246, 0.2); transform: translateY(-2px); border-color: rgba(59, 130, 246, 0.5); }
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+<title>Free Engine Sound Diagnostic AI App | Car Noise Identifier Online</title>
+<meta name="description" content="No-download engine sound diagnostic AI app. Run a free car noise diagnosis, engine noise check, or sound analysis from your phone. Identify car noises in seconds — iPhone & Android.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Carithm">
+<link rel="canonical" href="https://carithm.vercel.app/about">
 
-    .streamlit-embed-wrap {
-      position: relative;
-      --streamlit-height: min(1200px, 90vh);
-      margin-top: 0;
-      border: 1px solid rgba(59, 130, 246, 0.2);
-      border-radius: 24px;
-      overflow: hidden;
-      background: #000;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      resize: vertical;
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Engine Sound Diagnostic AI App | Car Noise Identifier Online">
+<meta property="og:description" content="Free AI app to diagnose car sounds and identify car noises — engine noise check, brake noise diagnosis, and more. No download, no signup. Works on any phone.">
+<meta property="og:url" content="https://carithm.vercel.app/about">
+<meta property="og:image" content="https://carithm.vercel.app/car.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Engine Sound Diagnostic AI App | Car Noise Identifier Online">
+<meta name="twitter:description" content="Diagnose car sounds free — run an engine noise check, identify car noises, and get an AI diagnosis. No download needed, works on iPhone & Android.">
+<meta name="twitter:image" content="https://carithm.vercel.app/car.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#09090b">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://carithm.vercel.app/about/#webapp",
+      "name": "Carithm — Free Engine Sound Diagnostic AI App & Car Noise Identifier",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any (Web, iPhone, Android)",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free, no-download AI app that identifies car noises and runs engine noise checks. Upload a recording from your phone and get an instant car noise diagnosis.",
+      "url": "https://carithm.vercel.app/about",
+      "browserRequirements": "Requires JavaScript. No app store install required.",
+      "featureList": [
+        "Diagnose car sounds from phone recordings",
+        "Engine noise check and analysis",
+        "Car noise identifier for brake, suspension, exhaust, and transmission faults",
+        "Car sound problem detector with confidence scoring",
+        "Audio diagnosis app — no download required"
+      ],
+      "author": { "@type": "Organization", "name": "Carithm" },
+      "publisher": { "@type": "Organization", "name": "Carithm" },
+      "datePublished": "2026-07-21",
+      "dateModified": "2026-07-21"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://carithm.vercel.app/"},
+        {"@type": "ListItem", "position": 2, "name": "Car Noise Identifier & Engine Sound Diagnostic App", "item": "https://carithm.vercel.app/about"}
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to Diagnose Car Sounds and Identify Car Noises with AI",
+      "description": "Use Carithm's free engine sound diagnostic AI app to identify car noises and run an engine noise check from your phone.",
+      "step": [
+        {"@type": "HowToStep", "name": "Record the car noise", "text": "Open your phone's voice recorder and hold it near the noise source — engine bay, wheel well, or exhaust. Record 10–30 seconds of the sound."},
+        {"@type": "HowToStep", "name": "Upload to the car noise identifier", "text": "Open the tool on this page and upload the recording. No app download or signup required."},
+        {"@type": "HowToStep", "name": "Get your AI noise diagnosis", "text": "The AI runs an engine noise check, reduces background interference, and returns a ranked list of likely fault areas with confidence scores — or tells you when the recording quality isn't sufficient."}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is there a free engine sound diagnostic AI app?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Carithm is a free engine sound diagnostic AI app that runs in your browser. No download, no signup — upload a recording and get an AI noise diagnosis in seconds." } },
+        { "@type": "Question", "name": "Can AI identify car noises?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The AI car noise identifier analyzes recorded audio to detect patterns associated with engine knock, bearing wear, belt squeal, brake grinding, suspension clunks, and other mechanical faults. It works as an AI sound analyzer for vehicles." } },
+        { "@type": "Question", "name": "Is there an app to diagnose car sounds?", "acceptedAnswer": { "@type": "Answer", "text": "You don't need an app store download. Carithm works as a car sound diagnosis app directly in your browser — same AI diagnosis, no install, no storage used on your phone." } },
+        { "@type": "Question", "name": "How do I run an engine noise check?", "acceptedAnswer": { "@type": "Answer", "text": "Record 10–30 seconds of the engine noise with your phone, upload it to the car noise diagnostic tool on this page, and get a confidence-scored report identifying likely fault areas." } },
+        { "@type": "Question", "name": "Does this car noise diagnostic tool work on iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open this page in Safari or Chrome on your iPhone. No App Store install needed." } },
+        { "@type": "Question", "name": "Does it work on Android?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Any Android browser works — Chrome, Samsung Internet, or otherwise. No Play Store download required." } },
+        { "@type": "Question", "name": "Is this audio diagnosis app actually free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free with no signup, no account, no credit card, and no trial period. Upload a recording and get a result." } },
+        { "@type": "Question", "name": "My car is making a weird sound — can this help?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Record the weird sound on your phone and upload it. The AI acts as a car sound problem detector, identifying whether the noise matches patterns for engine, brake, suspension, transmission, or exhaust faults." } }
+      ]
     }
-    .streamlit-embed {
-      display: block;
-      width: 100%;
-      height: var(--streamlit-height);
-      min-height: 640px;
-      border: 0;
-      background: #000;
-    }
-    .iframe-brand-mask {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 44px;
-      background: #0b1220;
-      z-index: 99999;
-      pointer-events: auto;
-      border-top: 1px solid rgba(255,255,255,0.07);
-      cursor: default;
-    }
-    @media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
-    @media (max-width: 620px) {
-      .streamlit-embed-wrap { --streamlit-height: min(850px, 80vh); }
-      .streamlit-embed { min-height: 560px; }
-    }
-  </style>
+  ]
+}
+</script>
+
+<style>
+:root {
+  --bg:         #09090b;
+  --surface:    #111113;
+  --surface2:   #18181b;
+  --surface3:   #27272a;
+  --border:     rgba(255,255,255,0.07);
+  --border2:    rgba(255,255,255,0.13);
+  --text:       #fafafa;
+  --muted:      #a1a8b3;
+  --muted2:     #71717a;
+  --accent:     #2f81f7;
+  --accent-dim: rgba(47,129,247,0.1);
+  --green:      #22c55e;
+  --green-dim:  rgba(34,197,94,0.1);
+  --amber:      #f59e0b;
+  --amber-dim:  rgba(245,158,11,0.1);
+  --red:        #ef4444;
+  --red-dim:    rgba(239,68,68,0.1);
+  --mono: 'JetBrains Mono', monospace;
+  --r: 12px; --r-sm: 8px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+
+header { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: rgba(9,9,11,0.75); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none; }
+.nav-logo span { color: var(--accent); }
+.nav { display: flex; gap: 1.75rem; align-items: center; }
+.nav a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; transition: color .2s; }
+.nav a:hover, .nav a.active { color: #fff; }
+.nav .cta-btn { background: var(--accent-dim); border: 1px solid rgba(47,129,247,0.3); color: var(--accent); padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600; }
+.nav .cta-btn:hover { background: var(--accent); color: #000; }
+
+.breadcrumb { max-width: 760px; margin: 18px auto 0; padding: 0 24px; font-size: 12px; color: var(--muted2); }
+.breadcrumb a { color: var(--muted2); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb .sep { margin: 0 6px; color: var(--muted2); }
+.breadcrumb .current { color: var(--text); font-weight: 500; }
+
+main { max-width: 760px; margin: 0 auto; padding: 20px 24px 96px; }
+
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+h1 { font-size: clamp(1.8rem, 5vw, 2.3rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 14px; line-height: 1.14; }
+h2 { font-size: 1.28rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; scroll-margin-top: 80px; }
+h3 { font-size: 1.02rem; font-weight: 600; margin-top: 22px; color: #fff; }
+p { color: var(--muted); margin: 0 0 14px; }
+.lead { font-size: 1.05rem; color: var(--text); margin-bottom: 20px; }
+ul, ol { color: var(--muted); padding-left: 20px; margin-bottom: 16px; }
+li { margin-bottom: 6px; }
+strong { color: var(--text); }
+
+.direct-answer { display: flex; align-items: flex-start; gap: 10px; background: var(--green-dim); border: 1px solid rgba(34,197,94,.3); border-radius: var(--r-sm); padding: 14px 16px; margin-bottom: 22px; }
+.direct-answer .icon { font-size: 18px; line-height: 1; }
+.direct-answer p { margin: 0; font-size: 13.5px; color: var(--text); }
+.direct-answer strong { color: var(--green); }
+
+.trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 22px 0 8px; }
+.trust-strip > div { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); }
+.trust-strip > div:last-child { border-right: none; }
+.trust-num { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+.trust-lbl { font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 3px; }
+@media (max-width: 620px) { .trust-strip { grid-template-columns: 1fr 1fr; } }
+
+.card { background: var(--surface); padding: 26px; border-radius: var(--r); margin-top: 26px; border: 1px solid var(--border); }
+.card.tool { border-color: rgba(47,129,247,0.25); }
+.card.tool.tool-wide { max-width: 1100px; width: 100%; margin-left: 50%; transform: translateX(-50%); box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+
+.streamlit-embed-wrap { position: relative; --streamlit-height: min(1200px, 90vh); margin-top: 18px; border: 1px solid rgba(47,129,247,0.25); border-radius: var(--r-sm); overflow: hidden; background: var(--surface2); resize: vertical; }
+.streamlit-embed { display: block; width: 100%; height: var(--streamlit-height); min-height: 640px; border: 0; background: var(--bg); }
+.iframe-brand-mask { position: absolute; bottom: 0; left: 0; right: 0; height: 44px; background: var(--surface2); z-index: 99999; pointer-events: auto; border-top: 1px solid var(--border); cursor: default; }
+.iframe-fallback { display: none; padding: 32px 24px; text-align: center; }
+.iframe-fallback p { margin-bottom: 14px; }
+.iframe-fallback a.crosslink-btn { display: inline-block; }
+
+@media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
+@media (max-width: 620px) {
+  .streamlit-embed-wrap { --streamlit-height: min(850px, 80vh); }
+  .streamlit-embed { min-height: 560px; }
+}
+
+.cta-note { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 16px 20px; margin-top: 24px; font-size: 13px; color: var(--muted); text-align: center; }
+.cta-note strong { color: var(--accent); display: block; margin-bottom: 4px; font-size: 14px; }
+
+.trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin-top: 14px; font-size: 12.5px; color: var(--muted); }
+.trust-row span { display: flex; align-items: center; gap: 6px; }
+.trust-row span::before { content: "✓"; color: var(--green); font-weight: 700; }
+
+.step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0 24px; counter-reset: steps; }
+.step-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 20px 16px; counter-increment: steps; }
+.step-card::before { content: counter(steps); display: block; font-size: 22px; font-weight: 800; color: var(--accent); margin-bottom: 8px; }
+.step-card .s-title { font-size: 13.5px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.step-card .s-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+@media (max-width: 620px) { .step-grid { grid-template-columns: 1fr; } }
+
+.noise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0 24px; }
+.noise-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 14px 16px; display: flex; align-items: center; gap: 10px; }
+.noise-item .n-icon { font-size: 18px; flex-shrink: 0; }
+.noise-item .n-text { font-size: 13px; color: var(--muted); }
+.noise-item .n-text strong { color: var(--text); font-size: 13px; }
+@media (max-width: 620px) { .noise-grid { grid-template-columns: 1fr; } }
+
+table.seo-table { width: 100%; border-collapse: collapse; margin: 14px 0 24px; font-size: 13px; }
+table.seo-table th, table.seo-table td { border: 1px solid var(--border); padding: 12px 14px; text-align: left; color: var(--muted); }
+table.seo-table th { background: var(--surface); color: var(--text); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+table.seo-table td.yes { color: var(--green); font-weight: 700; background: var(--green-dim); }
+table.seo-table td.no { color: var(--red); font-weight: 700; background: var(--red-dim); }
+
+.platform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0 24px; }
+.platform-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 18px 14px; text-align: center; }
+.platform-card .p-icon { font-size: 22px; margin-bottom: 6px; }
+.platform-card .p-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.platform-card .p-note { font-size: 11.5px; color: var(--muted2); }
+@media (max-width: 620px) { .platform-grid { grid-template-columns: 1fr; } }
+
+details.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); margin-bottom: 12px; overflow: hidden; }
+details.faq-item summary { padding: 16px; font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; position: relative; padding-right: 40px; }
+details.faq-item summary::-webkit-details-marker { display: none; }
+details.faq-item summary::after { content: '+'; position: absolute; right: 16px; top: 16px; color: var(--accent); font-size: 18px; line-height: 1; }
+details.faq-item[open] summary::after { content: '−'; }
+details.faq-item .faq-content { padding: 0 16px 16px; font-size: 14px; color: var(--muted); }
+
+.crosslink-banner { background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03)); border: 1px solid rgba(47,129,247,0.25); border-radius: var(--r); padding: 22px 26px; margin-top: 44px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.crosslink-banner p { margin: 0; color: var(--muted); font-size: 13px; }
+.crosslink-banner strong { color: var(--text); display: block; font-size: 15px; margin-bottom: 4px; }
+.crosslink-btn { background: var(--accent); color: #000; font-weight: 700; padding: 10px 18px; border-radius: var(--r-sm); text-decoration: none; font-size: 13px; white-space: nowrap; flex-shrink: 0; }
+.crosslink-btn:hover { opacity: 0.88; }
+
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+.related-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 14px 16px; text-decoration: none; display: block; transition: border-color .2s, transform .2s; }
+.related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.related-card .rc-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); margin-bottom: 4px; }
+.related-card .rc-title { font-size: 13px; font-weight: 600; color: var(--text); }
+@media (max-width: 620px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+
+.mobile-cta-bar { display: none; }
+@media (max-width: 620px) {
+  .mobile-cta-bar { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--surface); border-top: 1px solid var(--border2); padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); box-shadow: 0 -8px 24px rgba(0,0,0,0.35); }
+  .mobile-cta-bar a { flex: 1; text-align: center; background: var(--accent); color: #000; font-weight: 700; font-size: 14.5px; padding: 12px 14px; border-radius: 10px; text-decoration: none; }
+  main { padding-bottom: 90px; }
+}
+
+footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
+.footer-inner { max-width: 760px; margin: 0 auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
+.footer-links a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+.footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
+
+@media (max-width: 620px) { header { padding: 0.9rem 1.1rem; } .nav a:not(.cta-btn) { display: none; } table.seo-table { display: block; overflow-x: auto; white-space: nowrap; } }
+</style>
 </head>
 
-<body class="min-h-screen">
+<body>
 
-<header class="sticky top-0 z-50 glass border-b border-white/5 py-4 px-6 md:px-8">
-    <div class="max-w-6xl mx-auto flex flex-wrap gap-4 justify-between items-center">
-        <a href="https://carithm.vercel.app/" class="text-2xl font-black tracking-tighter text-blue-500 flex items-center hover:opacity-80 transition">
-            CARITHM <span class="text-white text-[10px] md:text-xs font-light tracking-[0.2em] ml-2 mt-1 opacity-70">DIAGNOSER</span>
-        </a>
-        
-        <nav class="flex gap-4 md:gap-8 items-center text-[13px] font-semibold w-full md:w-auto overflow-x-auto no-scrollbar pb-1 md:pb-0">
-            <a href="https://carithm.vercel.app/" class="whitespace-nowrap text-slate-400 hover:text-white transition">Home</a>
-            <a href="https://carithm.vercel.app/blog/" class="whitespace-nowrap text-slate-400 hover:text-white transition">Blog</a>
-            <a href="https://carithm.vercel.app/about/" class="whitespace-nowrap text-white border-b-2 border-blue-500 pb-1">Diagnoser</a>
-            <a href="https://carithm.vercel.app/predictive" class="whitespace-nowrap text-slate-400 hover:text-white transition">UAE Car Valuation</a>
-            <a href="https://wa.me/9715XXXXXXXX" target="_blank" class="whitespace-nowrap hidden lg:flex items-center gap-2 text-xs bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 px-5 py-2 rounded-full border border-blue-500/30 transition shadow-lg shadow-blue-500/10">
-                <span class="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></span>
-                Service Center Partnerships
-            </a>
-        </nav>
-    </div>
+<header>
+  <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <a href="https://carithm.vercel.app/toyota">Toyota</a>
+    <a href="https://carithm.vercel.app/bmw">BMW</a>
+    <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
+    <a href="https://carithm.vercel.app/research">Research</a>
+    <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+    <a href="#tool" class="cta-btn">Try It Free</a>
+  </nav>
 </header>
 
-<main class="max-w-6xl mx-auto px-6 py-12">
-    <div class="text-center mb-16 space-y-4">
-      <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight text-white">Free AI Car <span class="accent-glow">Diagnostic Web App</span></h1>
-      <p class="text-xl text-slate-400 max-w-3xl mx-auto italic">"Listen to my car noise and tell me if it's safe to drive."</p>
-      <p class="text-lg text-slate-300 max-w-2xl mx-auto">
-        The ultimate <strong>car noise identifier online</strong>. Works right in your browser—no app store, no signup. Simply describe or upload the sound, and let our AI engine sound analyzer generate an instant engineering report with permanent fixes and temporary workarounds.
-      </p>
-    </div>
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://carithm.vercel.app/">Home</a>
+  <span class="sep">/</span>
+  <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+  <span class="sep">/</span>
+  <span class="current">Car Noise Identifier & Diagnostic App</span>
+</nav>
 
-    <section class="mb-16">
-      <div class="flex flex-wrap gap-4 mb-8 justify-center">
-        <div class="flex items-center gap-2 px-4 py-2 rounded-full glass border-blue-500/20 shadow-lg shadow-blue-500/10">
-            <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
-            <span class="text-[10px] font-bold uppercase tracking-widest text-blue-400">AI Car Sound Diagnosis Active — 100% Free</span>
-        </div>
-      </div>
-      <p class="text-center text-slate-500 text-sm mb-6 -mt-4">Our car symptom checker runs instantly in your phone or desktop browser.</p>
+<main>
+<article>
 
-      <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
-        <iframe
-          id="streamlitFrame"
-          class="streamlit-embed"
-          src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
-          title="Carithm AI Car Diagnostic Interface"
-          loading="lazy"
-          allow="microphone; clipboard-write"
-        ></iframe>
-        <div class="iframe-brand-mask"></div>
-      </div>
-      <noscript>
-        <p class="text-slate-500 text-sm text-center mt-4">This tool requires JavaScript to load. <a class="text-blue-400 underline" href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener">Open it directly here.</a></p>
-      </noscript>
-    </section>
+  <div class="eyebrow">Free Car Noise Diagnostic Tool</div>
+  <h1>Diagnose Car Sounds Free: AI Engine Noise Check & Car Noise Identifier</h1>
 
-    <div class="mb-20 text-center">
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5227538935323998" data-ad-slot="YOUR_AD_SLOT_1" data-ad-format="auto"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
+  <p class="lead">
+    Your car is making a weird sound and you want to know what it is before paying for a shop visit. Record the noise on your phone, upload it here, and get an AI noise diagnosis — engine knock, brake grinding, suspension clunks, whatever it is.
+  </p>
 
-    <section class="mb-24 py-12 border-y border-white/5 bg-slate-900/30 rounded-3xl">
-        <h2 class="text-2xl font-bold text-white mb-8 text-center uppercase tracking-widest">Identify Symptoms with Our Car Repair Guide</h2>
-        <div class="flex flex-wrap justify-center gap-3 px-4">
-            <span class="keyword-pill">Why Is My Car Shaking?</span>
-            <span class="keyword-pill">Engine Sound Diagnostic AI</span>
-            <span class="keyword-pill">Engine Vibration Fix</span>
-            <span class="keyword-pill">Car Symptom Checker</span>
-            <span class="keyword-pill">AI Engine Sound Analyzer</span>
-            <span class="keyword-pill">Car Sound Analyzer App</span>
-            <span class="keyword-pill">Car Noise Identifier Online</span>
-            <span class="keyword-pill">Squeaking Brakes at Low Speed</span>
-            <span class="keyword-pill">AC Blowing Hot Air</span>
-            <span class="keyword-pill">Clicking Sound When Turning</span>
-            <span class="keyword-pill">Transmission Jerking (1st to 2nd)</span>
-            <span class="keyword-pill">Burning Oil Smell</span>
-            <span class="keyword-pill">White Smoke from Exhaust</span>
-        </div>
-    </section>
+  <div class="direct-answer">
+    <span class="icon">✅</span>
+    <p><strong>Looking for a free engine sound diagnostic AI app?</strong> This is it. No download, no signup, no app store. Open this page on your phone, upload your car noise, and the AI identifies likely fault areas in seconds. Works as a car noise identifier online — free on iPhone and Android.</p>
+  </div>
 
-    <div class="grid md:grid-cols-2 gap-16 mb-20">
-      <div class="space-y-6">
-        <h2 class="text-3xl font-bold text-white">How the Engine Sound Diagnostic AI Works</h2>
-        <p class="seo-text">Our tool uses advanced <strong>symptom-to-solution mapping</strong>. Instead of just giving you a generic fault code, our free car diagnostic web app explains the <i>why</i> behind the mechanical failure.</p>
-        <div class="space-y-6">
-            <div class="flex gap-4">
-                <div class="text-blue-500 font-black text-2xl">01.</div>
-                <div>
-                    <h4 class="text-white font-semibold">Listen to My Car Noise</h4>
-                    <p class="text-sm text-slate-500">Record your engine vibration or upload the audio file. Or, simply describe it: "High-pitched whistle when accelerating."</p>
-                </div>
-            </div>
-            <div class="flex gap-4">
-                <div class="text-blue-500 font-black text-2xl">02.</div>
-                <div>
-                    <h4 class="text-white font-semibold">Identify the Core Failure</h4>
-                    <p class="text-sm text-slate-500">The AI identifies the specific mechanical component (e.g., Turbocharger, Brake Caliper, or Control Arm) driving the issue.</p>
-                </div>
-            </div>
-            <div class="flex gap-4">
-                <div class="text-blue-500 font-black text-2xl">03.</div>
-                <div>
-                    <h4 class="text-white font-semibold">Engine Vibration Fixes & Roadside Solutions</h4>
-                    <p class="text-sm text-slate-500">Is the car safe to drive to the garage? Get a straight answer and a temporary workaround before booking a repair.</p>
-                </div>
-            </div>
-        </div>
-      </div>
+  <div class="trust-strip">
+    <div><div class="trust-num">$0</div><div class="trust-lbl">Free, No Signup</div></div>
+    <div><div class="trust-num">0</div><div class="trust-lbl">Downloads</div></div>
+    <div><div class="trust-num">~5s</div><div class="trust-lbl">Noise Diagnosis</div></div>
+    <div><div class="trust-num">Any Phone</div><div class="trust-lbl">iPhone & Android</div></div>
+  </div>
 
-      <div class="glass p-10 rounded-3xl space-y-6 border-blue-500/10 shadow-2xl">
-        <h3 class="text-2xl font-bold text-white">Why Sensorless Intelligence?</h3>
-        <p class="seo-text text-sm mb-4">
-            Carithm leverages vast vehicle architecture data to provide diagnostics without needing an OBD-II scanner. We track vehicle telemetry across decades, covering everything from modern releases back to a lot of other cars like the LR3 between 2005 and 2026.
-        </p>
-        <p class="seo-text text-sm mb-4">
-            Crucially, our AI evaluates the <strong>designed life health</strong> of components—not just literal part health. We know that brake pads, front and rear, have different wear rates based on drivetrain (AWD, FWD, RWD) and vehicle type (SUV, sedan), which affect the brake biases over time. 
-        </p>
-        <p class="seo-text text-sm">
-            Our models even account for extreme environmental stressors, such as harsh UAE climatic conditions, ensuring your diagnostic results are grounded in reality.
-        </p>
-        <div class="pt-6">
-            <a href="mailto:carithmai29@gmail.com" class="text-blue-400 font-bold border-b border-blue-500 pb-1 hover:text-blue-300 transition uppercase text-xs tracking-widest">Contact Engineering Support →</a>
-        </div>
+  <!-- ─── TOOL EMBED ─── -->
+  <section class="card tool tool-wide" id="tool">
+    <h2 style="margin-top:0;">🎙️ Free Car Noise Diagnosis — Upload & Identify</h2>
+    <p>Record 10–30 seconds of the noise from your phone. Hold it close to the source — engine bay, wheel well, undercarriage, or exhaust. Upload below and the AI runs a sound diagnosis, identifies the noise, and scores its confidence.</p>
+
+    <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
+      <iframe
+        id="streamlitFrame"
+        class="streamlit-embed"
+        src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
+        title="Carithm — Free Engine Sound Diagnostic AI App & Car Noise Identifier"
+        loading="lazy"
+        allow="microphone; clipboard-write"
+        onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
+      ></iframe>
+      <div class="iframe-brand-mask"></div>
+      <div class="iframe-fallback" id="iframeFallback">
+        <p>The car noise diagnostic tool couldn't load in this view.</p>
+        <a class="crosslink-btn" href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener">Open the Noise Identifier in a New Tab →</a>
       </div>
     </div>
 
-    <section class="mb-24">
-      <h2 class="text-2xl font-bold text-white mb-8 text-center uppercase tracking-widest">Search Intents & AI Diagnostics</h2>
-      <div class="max-w-3xl mx-auto grid sm:grid-cols-2 gap-8">
-        <div class="glass p-6 rounded-2xl border-white/5">
-          <h4 class="text-white font-semibold mb-2 text-sm">"Is there a car sound diagnosis app free?"</h4>
-          <p class="seo-text text-sm">Yes. This page serves as a fully functional web app. It’s 100% free, runs directly in your browser, and requires absolutely zero downloads.</p>
-        </div>
-        <div class="glass p-6 rounded-2xl border-white/5">
-          <h4 class="text-white font-semibold mb-2 text-sm">"Engine sound diagnostic AI"</h4>
-          <p class="seo-text text-sm">Upload a recording or describe the issue. The AI analyzes acoustic patterns to narrow down the most likely mechanical fault causing the noise.</p>
-        </div>
-        <div class="glass p-6 rounded-2xl border-white/5">
-          <h4 class="text-white font-semibold mb-2 text-sm">"AI engine sound analyzer"</h4>
-          <p class="seo-text text-sm">Our platform acts as an advanced audio analyzer, separating belt squeaks, bearing hums, and valve-train ticks based on pitch, rhythm, and engine load.</p>
-        </div>
-        <div class="glass p-6 rounded-2xl border-white/5">
-          <h4 class="text-white font-semibold mb-2 text-sm">"Why is my car shaking?"</h4>
-          <p class="seo-text text-sm">Engine vibrations can stem from misfires to bad motor mounts. Use our car symptom checker to pinpoint the exact engine vibration fix you need.</p>
-        </div>
-      </div>
-    </section>
+    <noscript>
+      <p style="padding:16px; font-size:13px; color:var(--muted);">This car noise diagnostic tool requires JavaScript. <a href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener">Open it directly here.</a></p>
+    </noscript>
 
-    <div class="mb-16 text-center">
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5227538935323998" data-ad-slot="YOUR_AD_SLOT_2" data-ad-format="auto"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <div class="cta-note">
+      <strong>✓ Free AI Car Noise Diagnosis</strong>
+      No engine sound diagnosis app to install. No signup. No trial. Upload → result.
     </div>
+    <div class="trust-row">
+      <span>No download</span>
+      <span>No app store</span>
+      <span>No signup</span>
+      <span>iPhone</span>
+      <span>Android</span>
+      <span>Desktop</span>
+    </div>
+  </section>
+
+  <!-- ─── HOW TO DIAGNOSE CAR SOUNDS ─── -->
+  <section id="how-to">
+    <h2>How to Diagnose Car Sounds & Identify Car Noises</h2>
+    <p>You don't need to describe the noise in words or guess from a symptom list. Record it, upload it, and let the AI do the diagnosing.</p>
+
+    <div class="step-grid">
+      <div class="step-card">
+        <div class="s-title">Record the car noise</div>
+        <div class="s-desc">Use your phone's voice recorder. Hold it as close to the noise source as possible — engine bay, brakes, wheel, or exhaust. 10–30 seconds is enough.</div>
+      </div>
+      <div class="step-card">
+        <div class="s-title">Upload to the noise identifier</div>
+        <div class="s-desc">Drop the recording into the tool above. No account, no app to install. The car noise diagnostic tool accepts most audio formats.</div>
+      </div>
+      <div class="step-card">
+        <div class="s-title">Get your noise diagnosis</div>
+        <div class="s-desc">The AI reduces background interference, analyzes the recording, and returns a ranked list of likely fault areas with confidence scores. If the recording is unclear, it says so.</div>
+      </div>
+    </div>
+
+    <p>This is how you diagnose a car by sound without visiting a shop first. The AI identifies patterns — it doesn't guess. If it can't make a reliable call, it reports uncertainty instead of inventing a diagnosis.</p>
+  </section>
+
+  <!-- ─── WHAT CAR NOISES CAN IT IDENTIFY ─── -->
+  <section id="noises">
+    <h2>What Car Noises Can the AI Identify?</h2>
+    <p>The <strong>car noise identifier</strong> works as a <strong>car sound problem detector</strong> across every major system. Whether you're hearing something from the engine, the brakes, or underneath the car — record it and let the <strong>car noise analyzer</strong> figure out what component is likely involved.</p>
+
+    <div class="noise-grid">
+      <div class="noise-item">
+        <span class="n-icon">🔧</span>
+        <div class="n-text"><strong>Engine knock & detonation</strong> — pinging, ticking, or deep knocking under load</div>
+      </div>
+      <div class="noise-item">
+        <span class="n-icon">⚙️</span>
+        <div class="n-text"><strong>Valve train & lifter noise</strong> — tapping or ticking at idle that fades with oil pressure</div>
+      </div>
+      <div class="noise-item">
+        <span class="n-icon">🔩</span>
+        <div class="n-text"><strong>Belt squeal & pulley noise</strong> — high-pitched screech on startup or under load</div>
+      </div>
+      <div class="noise-item">
+        <span class="n-icon">🛞</span>
+        <div class="n-text"><strong>Wheel bearing hum</strong> — speed-dependent humming that changes with steering input</div>
+      </div>
+      <div class="noise-item">
+        <span class="n-icon">🛑</span>
+        <div class="n-text"><strong>Brake squeal & grinding</strong> — metal-on-metal contact or wear indicator activation</div>
+      </div>
+      <div class="noise-item">
+        <span class="n-icon">🔗</span>
+        <div class="n-text"><strong>Suspension clunks & rattles</strong> — knocking over bumps from worn bushings or links</div>
+      </div>
+      <div class="noise-item">
+        <span class="n-icon">⚡</span>
+        <div class="n-text"><strong>Transmission whine</strong> — pitch-dependent noise that tracks speed or gear changes</div>
+      </div>
+      <div class="noise-item">
+        <span class="n-icon">💨</span>
+        <div class="n-text"><strong>Exhaust leaks & rattles</strong> — sudden volume change, hissing, or loose heat shield rattle</div>
+      </div>
+    </div>
+
+    <p>If your car is making a weird sound and you can't tell what it is — that's exactly what this <strong>car sound identifier</strong> is built for. It doesn't ask you to pick from a list of symptoms. It listens to the actual recording and matches acoustic patterns against known mechanical faults.</p>
+  </section>
+
+  <!-- ─── ENGINE NOISE CHECK ─── -->
+  <section id="engine-noise">
+    <h2>Engine Noise Check: What the AI Listens For</h2>
+    <p>An <strong>engine noise check</strong> is the most common use of this tool. The AI performs an <strong>engine noise analysis</strong> by isolating the engine's acoustic signature from road and wind interference, then comparing it against fault patterns.</p>
+
+    <h3>What an AI engine diagnosis covers</h3>
+    <ul>
+      <li><strong>Knock and detonation</strong> — abnormal combustion events that produce a distinct metallic ping or thud, often under acceleration or load</li>
+      <li><strong>Bearing noise</strong> — deep, rhythmic knocking that indicates rod or main bearing wear; position-dependent and RPM-linked</li>
+      <li><strong>Timing chain rattle</strong> — a metallic rattle on cold start that may indicate chain stretch or tensioner wear</li>
+      <li><strong>Accessory noise</strong> — belt squeal, alternator whine, AC compressor grinding, or power steering pump whine isolated from core engine noise</li>
+      <li><strong>Valve train anomalies</strong> — ticking or tapping patterns that differ from normal mechanical valve noise</li>
+    </ul>
+    <p>If you've been searching for an <strong>engine noise analysis app</strong> or trying to <strong>analyze engine</strong> sounds from a phone recording — this does that, without installing anything.</p>
+  </section>
+
+  <!-- ─── NO APP STORE NEEDED ─── -->
+  <section id="no-app">
+    <h2>Engine Sound Diagnosis App? You Don't Need One From the App Store</h2>
+    <p>Most people searching for an <strong>engine sound diagnostic AI app</strong> or an <strong>app to diagnose car sounds</strong> end up on the App Store or Play Store and find either nothing useful, or a paid app that locks you out after one free use. This tool runs the same kind of <strong>AI car noise diagnosis</strong> directly in your browser — it's a <strong>car sound diagnosis app</strong> without the app.</p>
+
+    <table class="seo-table">
+      <tr>
+        <th>&nbsp;</th>
+        <th>This Tool (Audio Diagnosis App)</th>
+        <th>Typical App-Store Option</th>
+      </tr>
+      <tr>
+        <td>Cost</td>
+        <td class="yes">Free — no trial, no paywall</td>
+        <td class="no">Often paywalled after 1–2 uses</td>
+      </tr>
+      <tr>
+        <td>Download / install</td>
+        <td class="yes">None — runs in browser</td>
+        <td class="no">Yes — 10–100MB+</td>
+      </tr>
+      <tr>
+        <td>Account / signup</td>
+        <td class="yes">No</td>
+        <td class="no">Usually required</td>
+      </tr>
+      <tr>
+        <td>iPhone & Android</td>
+        <td class="yes">Same link, both platforms</td>
+        <td class="no">Separate app per platform</td>
+      </tr>
+      <tr>
+        <td>Car noise diagnostic tool</td>
+        <td class="yes">Full AI noise analysis</td>
+        <td class="no">Often symptom-based, not audio</td>
+      </tr>
+    </table>
+
+    <p>Whether you're looking for a <strong>car noise diagnostic app</strong>, an <strong>engine sound diagnosis app</strong>, or an <strong>AI sound analyzer</strong> for vehicles — this is it. No app store, no install, no storage used on your phone.</p>
+  </section>
+
+  <!-- ─── PLATFORMS ─── -->
+  <section id="platforms">
+    <h2>Works on iPhone, Android, and Desktop</h2>
+    <p>You don't need to find a specific app for your device. This works as a web-based <strong>audio diagnosis app</strong> — if you have a browser, you're covered.</p>
+    <div class="platform-grid">
+      <div class="platform-card">
+        <div class="p-icon">📱</div>
+        <div class="p-name">iPhone</div>
+        <div class="p-note">Safari, Chrome, or any iOS browser — no App Store install</div>
+      </div>
+      <div class="platform-card">
+        <div class="p-icon">🤖</div>
+        <div class="p-name">Android</div>
+        <div class="p-note">Chrome, Samsung Internet, or any Android browser — no Play Store</div>
+      </div>
+      <div class="platform-card">
+        <div class="p-icon">💻</div>
+        <div class="p-name">Desktop</div>
+        <div class="p-note">Upload a voice memo, screen recording, or video audio track</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details class="faq-item" open>
+      <summary>Is there a free engine sound diagnostic AI app?</summary>
+      <div class="faq-content">
+        Yes. Carithm is a free engine sound diagnostic AI app that runs in your browser. No download, no signup — upload a recording and get an AI noise diagnosis in seconds.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can AI identify car noises?</summary>
+      <div class="faq-content">
+        Yes. The AI car noise identifier analyzes recorded audio to detect patterns associated with engine knock, bearing wear, belt squeal, brake grinding, suspension clunks, and other mechanical faults. It works as an AI sound analyzer built specifically for vehicles.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is there an app to diagnose car sounds?</summary>
+      <div class="faq-content">
+        You don't need an app store download. Carithm works as a car sound diagnosis app directly in your browser — same AI diagnosis, no install, no storage used on your phone.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How do I run an engine noise check?</summary>
+      <div class="faq-content">
+        Record 10–30 seconds of the engine noise with your phone, upload it to the car noise diagnostic tool on this page, and get a confidence-scored report identifying likely fault areas.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>My car is making a weird sound — can this help?</summary>
+      <div class="faq-content">
+        Yes. Record the weird sound on your phone and upload it. The AI acts as a car sound problem detector, identifying whether the noise matches patterns for engine, brake, suspension, transmission, or exhaust faults. It works whether you can describe the noise or not.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does this car noise diagnostic tool work on iPhone?</summary>
+      <div class="faq-content">
+        Yes. Open this page in Safari or Chrome on your iPhone. No App Store install needed.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does it work on Android?</summary>
+      <div class="faq-content">
+        Yes. Any Android browser works — Chrome, Samsung Internet, or otherwise. No Play Store download required.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is this audio diagnosis app actually free?</summary>
+      <div class="faq-content">
+        Yes — completely free with no signup, no account, no credit card, and no trial period. Upload a recording and get a result.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does the AI always give a diagnosis?</summary>
+      <div class="faq-content">
+        No. When recording quality is too low or the noise doesn't match known patterns clearly enough, the system reports uncertainty rather than guessing. A noise diagnosis with no false positives is more useful than one that always gives an answer.
+      </div>
+    </details>
+  </section>
+
+  <!-- ─── CROSSLINKS ─── -->
+  <div class="crosslink-banner" aria-label="Related tool">
+    <div>
+      <strong>Already know it's a specific noise type?</strong>
+      <p>If you already know you're hearing squealing, grinding, knocking, or humming — see what each sound usually means with the full noise-by-noise guide.</p>
+    </div>
+    <a href="https://carithm.vercel.app/audio" class="crosslink-btn">See Noise-by-Noise Guide →</a>
+  </div>
+
+  <div class="crosslink-banner" aria-label="Related tool" style="margin-top: 16px;">
+    <div>
+      <strong>Got a repair quote after your diagnosis?</strong>
+      <p>Check if every line item is actually due before you approve the work — free, under 30 seconds.</p>
+    </div>
+    <a href="https://carithm.vercel.app/" class="crosslink-btn">Check My Repair Quote →</a>
+  </div>
+
+  <section style="margin-top: 44px;">
+    <div class="eyebrow">Also on Carithm</div>
+    <h2 style="margin-top: 8px;">From noise diagnosis to repair costs</h2>
+    <p>Once you've identified the noise, use these guides to understand what the repair typically costs for your car.</p>
+    <div class="related-grid">
+      <a class="related-card" href="https://carithm.vercel.app/audio">
+        <div class="rc-label">Noise Guide</div>
+        <div class="rc-title">Car Sound Analyzer — Noise-by-Noise Breakdown</div>
+      </a>
+      <a class="related-card" href="https://carithm.vercel.app/toyota">
+        <div class="rc-label">Brand Guide</div>
+        <div class="rc-title">Toyota Repair Cost Guide</div>
+      </a>
+      <a class="related-card" href="https://carithm.vercel.app/bmw">
+        <div class="rc-label">Brand Guide</div>
+        <div class="rc-title">BMW Repair Cost Guide</div>
+      </a>
+      <a class="related-card" href="https://carithm.vercel.app/mercedes">
+        <div class="rc-label">Brand Guide</div>
+        <div class="rc-title">Mercedes Maintenance Guide</div>
+      </a>
+      <a class="related-card" href="https://carithm.vercel.app/repairs/brakes.html">
+        <div class="rc-label">Repair Type</div>
+        <div class="rc-title">Brake Repair Cost Guide</div>
+      </a>
+      <a class="related-card" href="https://carithm.vercel.app/research">
+        <div class="rc-label">Research</div>
+        <div class="rc-title">Data & Methodology</div>
+      </a>
+    </div>
+  </section>
+
+</article>
 </main>
 
-<section id="research" class="py-20 px-6 border-t border-white/5 relative overflow-hidden">
-  <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/5 rounded-full blur-[100px] pointer-events-none" aria-hidden="true"></div>
-  <div class="max-w-6xl mx-auto">
-    <div class="flex items-center gap-4 mb-12">
-      <h2 class="text-3xl font-black text-white tracking-tighter uppercase italic">Engineering Research</h2>
-      <div class="h-px flex-grow bg-gradient-to-r from-blue-500/50 to-transparent"></div>
+<div class="mobile-cta-bar">
+  <a href="#tool">🎙️ Diagnose My Car Noise — Free</a>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://carithm.vercel.app/">Home — Repair Quote Checker</a>
+      <a href="https://carithm.vercel.app/audio">AI Car Sound Analyzer</a>
+      <a href="https://carithm.vercel.app/about">Car Noise Identifier & Diagnostic App</a>
+      <a href="https://carithm.vercel.app/toyota">Toyota</a>
+      <a href="https://carithm.vercel.app/bmw">BMW</a>
+      <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
+      <a href="https://carithm.vercel.app/research">Research</a>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <a href="/about" class="glass group p-8 rounded-[2rem] border border-white/5 hover:border-blue-500/30 transition-all duration-500 flex flex-col justify-between min-h-[320px] relative overflow-hidden">
-        <div class="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/5 transition-colors duration-500"></div>
-        <div class="relative z-10">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase tracking-widest rounded-md border border-blue-500/20">Paper 01</span>
-            <span class="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Asset Depletion</span>
-          </div>
-          <h3 class="text-2xl font-bold text-white leading-tight mb-4 group-hover:text-blue-400 transition-colors">Operational Stress & <br><span class="accent-glow">Designed Life Health</span></h3>
-          <p class="text-slate-400 text-sm leading-relaxed max-w-sm">How we quantify engine asset depletion across 500+ architectures without physical sensors, focusing on designed life health over literal part breakage.</p>
-        </div>
-        <div class="relative z-10 mt-8 flex items-center justify-between border-t border-white/5 pt-6">
-          <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest group-hover:text-slate-300 transition-colors">Read Full Research</span>
-          <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </div>
-        </div>
-      </a>
-      <div class="glass p-8 rounded-[2rem] border border-dashed border-white/5 opacity-40 flex flex-col justify-center items-center text-center">
-        <p class="text-slate-600 text-xs font-bold uppercase tracking-widest">Expanding for Service Centers<br>New Models Incoming</p>
-      </div>
+    <div class="footer-bottom">
+      &copy; 2026 Carithm. AI Car Noise Identifier & Engine Sound Diagnostic App — decision-support tool. Not a substitute for physical inspection.
     </div>
   </div>
-</section>
-
-<footer class="py-16 border-t border-white/5 text-center">
-    <div class="text-xl font-black text-blue-500 mb-4 tracking-tighter uppercase">Carithm AI</div>
-    <p class="text-xs text-slate-600 tracking-widest uppercase mb-4">Free AI Car Sound Diagnostic App & Symptom Checker</p>
-    <div class="text-[10px] text-slate-700 max-w-xl mx-auto px-6">
-        Disclaimer: This AI engine sound analyzer provides mechanical advice for informational purposes. Always consult a certified service center technician for critical safety repairs.
-    </div>
 </footer>
 
 </body>
