@@ -27,9 +27,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Title remains exactly the same as requested -->
 <title>Free AI Car Sound Diagnosis App | Engine Noise Identifier</title>
 
-<meta name="description" content="Free online AI car sound diagnostic app. Record engine, brake, or transmission noises for an instant, mechanic-level diagnosis. No download required.">
+<!-- Updated High-CTR Meta Description -->
+<meta name="description" content="100% free online car noise identifier and engine sound analyzer. Record engine, brake, or belt noise for instant AI diagnosis in your browser. No app download required.">
 
 <meta name="robots" content="index,follow">
 
@@ -37,13 +39,13 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Free AI Car Sound Diagnosis App | Carithm">
-<meta property="og:description" content="Hear an unusual car noise? Record or upload a sound and get instant AI car sound analysis for engine, brake, suspension, transmission, and exhaust faults. Free. No signup.">
+<meta property="og:description" content="100% free online car noise identifier and engine sound analyzer. Record engine, brake, or belt noise for instant AI diagnosis in your browser. No app download required.">
 <meta property="og:url" content="https://carithm.vercel.app/audio">
 <meta property="og:image" content="https://carithm.vercel.app/car.png">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Free AI Car Sound Diagnosis App | Carithm">
-<meta name="twitter:description" content="Record or upload a car sound and get instant AI diagnosis for engine, brake, suspension, transmission, and exhaust noises. Free. No signup.">
+<meta name="twitter:description" content="100% free online car noise identifier and engine sound analyzer. Record engine, brake, or belt noise for instant AI diagnosis in your browser. No app download required.">
 <meta name="twitter:image" content="https://carithm.vercel.app/car.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -61,7 +63,7 @@
  "url":"https://carithm.vercel.app/audio",
  "author":{ "@type":"Organization", "name":"Carithm" },
  "publisher":{ "@type":"Organization", "name":"Carithm" },
- "dateModified":"2026-07-19"
+ "dateModified":"2026-07-22"
 }
 </script>
 <script type="application/ld+json">
@@ -88,7 +90,10 @@
   {"@type":"Question","name":"Can I record engine audio using my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most smartphone recordings are sufficient. Hold the phone close to the noise source, reduce cabin and wind noise where possible, and the analyzer will handle the rest."}},
   {"@type":"Question","name":"Does background noise affect accuracy?","acceptedAnswer":{"@type":"Answer","text":"The system automatically reduces background noise and flags when interference is too high for a reliable result — it never invents a diagnosis when the recording is unclear."}},
   {"@type":"Question","name":"How long does the analysis take?","acceptedAnswer":{"@type":"Answer","text":"Most recordings are processed within a few seconds after upload."}},
-  {"@type":"Question","name":"Does the AI always make a prediction?","acceptedAnswer":{"@type":"Answer","text":"No. When evidence is insufficient, the platform reports uncertainty rather than generating unsupported conclusions."}}
+  {"@type":"Question","name":"Does the AI always make a prediction?","acceptedAnswer":{"@type":"Answer","text":"No. When evidence is insufficient, the platform reports uncertainty rather than generating unsupported conclusions."}},
+  {"@type":"Question","name":"Is there an AI that can diagnose car sounds for free?","acceptedAnswer":{"@type":"Answer","text":"Yes, Carithm is a 100% free online car noise identifier. There are no paywalls or hidden fees."}},
+  {"@type":"Question","name":"Can I use this engine sound analyzer on iPhone or Android?","acceptedAnswer":{"@type":"Answer","text":"Yes, our app to diagnose car sounds works directly in any mobile browser on both iPhone and Android. No app download is required."}},
+  {"@type":"Question","name":"Can I upload computer noise or video files to diagnose my auto sound?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can upload video or audio files containing your engine or car noise directly to the analyzer for instant diagnosis."}}
  ]
 }
 </script>
@@ -219,12 +224,40 @@ p { color: var(--muted); margin: 0 0 8px; }
 ul, ol { color: var(--muted); padding-left: 20px; }
 li { margin-bottom: 6px; }
 
-.trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 22px 0 8px; }
-.trust-strip > div { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); }
-.trust-strip > div:last-child { border-right: none; }
-.trust-num { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
-.trust-num span { color: var(--accent); }
-.trust-lbl { font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 3px; }
+/* NEW: Featured Snippet Bait Box */
+.snippet-bait-box {
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-left: 4px solid var(--accent);
+  padding: 18px 20px;
+  border-radius: var(--r-sm);
+  margin: 22px 0;
+}
+.snippet-bait-box h2 {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.snippet-bait-box ol {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.snippet-bait-box li {
+  margin-bottom: 4px;
+}
+.snippet-bait-box li:last-child {
+  margin-bottom: 0;
+}
+
+/* UPDATED: Trust Strip v2 */
+.trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; background: rgba(34, 197, 94, 0.05); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: var(--r-sm); margin: 20px 0; padding: 14px; }
+.trust-strip > div { text-align: center; }
+.trust-num { font-size: 14px; font-weight: 700; color: #fff; }
+.trust-strip > div:first-child .trust-num { color: var(--green); }
+.trust-lbl { font-size: 11px; color: var(--muted); margin-top: 3px; }
 
 .card {
   background: var(--surface);
@@ -240,6 +273,13 @@ li { margin-bottom: 6px; }
   margin-left: 50%;
   transform: translateX(-50%);
 }
+
+/* NEW: Zero-Bounce Sample Buttons */
+.sample-buttons-container { margin-bottom: 14px; background: var(--surface); padding: 12px 16px; border-radius: var(--r-sm); border: 1px solid var(--border); }
+.sample-buttons-title { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px; }
+.sample-buttons-wrapper { display: flex; gap: 8px; flex-wrap: wrap; }
+.sample-btn { background: var(--surface2); border: 1px solid var(--border2); color: var(--text); padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; transition: background 0.2s; text-decoration: none; }
+.sample-btn:hover { background: var(--surface3); }
 
 .streamlit-embed-wrap {
   position: relative;
@@ -365,21 +405,34 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 <section>
   <div class="eyebrow">Carithm Audio Intelligence</div>
 
+  <!-- Main H1 Left Intact -->
   <h1>Free AI Car Sound Diagnosis App: Analyze Engine & Mechanic Noises</h1>
 
+  <!-- Re-written introductory paragraph hitting the top GSC Keywords -->
   <p>
-Hear an unusual noise from your engine, brakes, suspension, or transmission? Upload a recording of the sound and Carithm's AI diagnostic tool analyzes it, identifies likely fault areas, and explains what components may need inspection before you visit a mechanic.
-</p>
+    Hear an unusual noise from your vehicle? Carithm’s free <strong>engine sound analyzer</strong> acts as an instant <strong>car noise identifier online</strong>. Upload audio of engine knocking, belt squeal, or brake grinding directly in your browser for a mechanic-level AI diagnosis.
+  </p>
+
+  <!-- NEW: Featured Snippet Bait Box for Position 0 -->
+  <div class="snippet-bait-box">
+    <h2>How to Identify Engine & Car Noises Online:</h2>
+    <ol>
+      <li><strong><span style="color:#fff;">Record Audio:</span></strong> Capture a 10-second audio clip of the noise using your phone near the engine, wheel, or exhaust.</li>
+      <li><strong><span style="color:#fff;">Upload File:</span></strong> Drop the recording into our online <strong>engine sound analyzer</strong> below.</li>
+      <li><strong><span style="color:#fff;">Review AI Triage:</span></strong> Get an instant confidence-scored report for rod knock, belt squeal, or bearing wear.</li>
+    </ol>
+  </div>
 
   <p>
     Rather than forcing a diagnosis from limited information, the system evaluates recording quality, measures uncertainty, and explains when additional inspection is recommended.
   </p>
 
+  <!-- UPDATED: High-Contrast Trust Strip to beat competitors -->
   <div class="trust-strip">
-    <div><div class="trust-num">No App</div><div class="trust-lbl">Needed</div></div>
-    <div><div class="trust-num">Free</div><div class="trust-lbl">No Signup</div></div>
-    <div><div class="trust-num">~5s</div><div class="trust-lbl">Analysis Time</div></div>
-    <div><div class="trust-num">Phone</div><div class="trust-lbl">Compatible</div></div>
+    <div><div class="trust-num">100% Free</div><div class="trust-lbl">No Paywalls</div></div>
+    <div><div class="trust-num">Online</div><div class="trust-lbl">No App Download</div></div>
+    <div><div class="trust-num">~5s Scan</div><div class="trust-lbl">Instant AI Result</div></div>
+    <div><div class="trust-num">Any Phone</div><div class="trust-lbl">iPhone & Android</div></div>
   </div>
 </section>
 
@@ -387,7 +440,17 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
   <h2 style="margin-top:0;">Try the AI Car Sound Analyzer</h2>
   <p>
   Looking for a free car sound diagnosis app? There's no download required. Record a car sound from your engine, brakes, suspension, or transmission directly in your browser. Our web app's AI analyzes the recording, identifies abnormal sounds, and provides a confidence-scored car noise diagnosis in seconds. Works with phone recordings—no special equipment needed.
-</p>
+  </p>
+
+  <!-- NEW: Zero-Bounce Sample Buttons linked to your matcher page -->
+  <div class="sample-buttons-container">
+    <span class="sample-buttons-title">Want to see how it works first? Listen to a Sample Sound:</span>
+    <div class="sample-buttons-wrapper">
+      <a href="https://carithm.vercel.app/match" class="sample-btn">🔊 Test Rod Knock</a>
+      <a href="https://carithm.vercel.app/match" class="sample-btn">🔊 Test Belt Squeal</a>
+      <a href="https://carithm.vercel.app/match" class="sample-btn">🔊 Test Lifter Tick</a>
+    </div>
+  </div>
 
   <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
     <iframe
@@ -610,4 +673,3 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 
 </body>
 </html>
-```[cite: 1]
