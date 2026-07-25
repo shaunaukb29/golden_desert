@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+    <script>
+        window.dataLayer=window.dataLayer||[];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js',new Date());
+        gtag('config','G-TCCEJ6DCM1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Engine Noise Spectrum: Diagnosing Ticking, Knocking & Whining by Frequency | Carithm</title>
+    <meta name="description" content="A field-level engineering breakdown of how to diagnose engine ticking, rod knock, belt whine, and mechanical failure using acoustic frequency analysis, Hz math, and AI sound models.">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <link rel="canonical" href="https://carithm.vercel.app/research/engine-noise-spectrum">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Engine Noise Spectrum: Diagnosing Ticking, Knocking & Whining by Frequency">
+    <meta property="og:description" content="Stop guessing what that car noise is. Learn how acoustic AI maps exact frequencies to specific mechanical failures.">
+    <meta property="og:url" content="https://carithm.vercel.app/research/engine-noise-spectrum">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1200&auto=format&fit=crop">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0a0d09">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0a0d09;
+            --surface: #12160f;
+            --surface-elevated: #1c2118;
+            --border: #2b3324;
+            --text-main: #e9ecdf;
+            --text-muted: #8f9a80;
+            --accent: #6ff2a0;
+            --accent-hover: #8ffab8;
+            --accent-2: #ffb454;
+            --accent-2-hover: #ffc97a;
+            --danger: #ff6b5c;
+            --warning: #ffb454;
+            --success: #6ff2a0;
+            --code-bg: #050703;
+            --mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+        }
+
+        * { box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            background-image:
+                radial-gradient(ellipse 900px 500px at 50% -10%, rgba(111,242,160,0.06), transparent);
+            color: var(--text-main);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 70px 20px 100px;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-family: var(--mono);
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 48px;
+        }
+        .nav-link:hover { color: var(--accent); }
+
+        .eyebrow {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .eyebrow::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+            flex-shrink: 0;
+            animation: pulseDot 2.2s ease-in-out infinite;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { box-shadow: 0 0 6px var(--accent); opacity: 1; }
+            50% { box-shadow: 0 0 14px var(--accent); opacity: 0.6; }
+        }
+
+        .metadata {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 24px;
+            margin: 30px 0 0;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-family: var(--mono);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+        }
+        .metadata span strong { color: var(--text-main); font-weight: 500; }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+            margin: 0 0 22px;
+            color: #ffffff;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-top: 64px;
+            margin-bottom: 22px;
+            letter-spacing: -0.01em;
+            color: #ffffff;
+        }
+
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-top: 38px;
+            margin-bottom: 14px;
+        }
+
+        p, li {
+            color: #d4d6ca;
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+        }
+
+        strong { color: #ffffff; font-weight: 600; }
+
+        a { color: var(--accent); }
+
+        /* Hero waveform */
+        .hero-wave {
+            margin: 36px 0 8px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: var(--surface);
+            overflow: hidden;
+        }
+        .hero-wave svg { display: block; width: 100%; height: auto; }
+        .hero-caption {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin: 10px 2px 40px;
+        }
+
+        /* Mini eyebrow used inside boxes */
+        .eyebrow-mini {
+            font-family: var(--mono);
+            font-size: 0.74rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        /* TL;DR / key takeaways */
+        .tldr-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent-2);
+            border-radius: 0 12px 12px 0;
+            padding: 26px 30px;
+            margin: 0 0 30px;
+        }
+        .tldr-box .eyebrow-mini { color: var(--accent-2); }
+        .tldr-box ul { margin: 0; padding-left: 0; list-style: none; }
+        .tldr-box li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            font-size: 0.98rem;
+            color: var(--text-main);
+        }
+        .tldr-box li:last-child { margin-bottom: 0; }
+        .tldr-box li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-2);
+            font-family: var(--mono);
+        }
+
+        /* Table of contents */
+        .toc-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px 30px;
+            margin: 0 0 56px;
+        }
+        .toc-box .eyebrow-mini { color: var(--accent); }
+        .toc-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 30px;
+        }
+        .toc-list li a {
+            font-family: var(--mono);
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: flex;
+            gap: 10px;
+            padding: 3px 6px;
+            margin: -3px -6px;
+            border-radius: 6px;
+            transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+        }
+        .toc-list li a:hover { color: var(--accent); background: rgba(111,242,160,0.06); transform: translateX(3px); }
+        .toc-list li a.active { color: var(--accent); background: rgba(111,242,160,0.09); }
+        .toc-list li a .num { color: var(--accent-2); flex-shrink: 0; }
+        @media (max-width: 560px) {
+            .toc-list { grid-template-columns: 1fr; }
+        }
+
+        /* Diagram card, reused for any inline SVG diagram block */
+        .diagram-card {
+            margin: 30px 0 8px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: var(--surface);
+            overflow: hidden;
+        }
+        .diagram-card svg { display: block; width: 100%; height: auto; }
+        .diagram-caption {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin: 10px 2px 40px;
+        }
+
+        h2 { scroll-margin-top: 20px; }
+
+        /* Author / contact footer */
+        .author-block {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            border-top: 1px solid var(--border);
+            padding-top: 32px;
+            margin-top: 56px;
+        }
+        .author-avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--surface-elevated);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--mono);
+            font-weight: 600;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        .author-block h4 {
+            margin: 0 0 4px;
+            font-size: 1rem;
+            color: #ffffff;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .author-block p { margin: 0; font-size: 0.94rem; color: var(--text-muted); }
+        .author-block .contact-line {
+            margin-top: 10px;
+            font-size: 0.94rem;
+            color: var(--text-muted);
+        }
+        .author-block .contact-line a { color: var(--accent); }
+
+        /* Blockquotes */
+        blockquote {
+            border-left: 3px solid var(--accent);
+            margin: 40px 0;
+            padding: 18px 26px;
+            background: var(--surface);
+            border-radius: 0 10px 10px 0;
+        }
+        blockquote p {
+            margin: 0;
+            font-size: 1.12rem;
+            font-style: normal;
+            color: var(--text-main);
+            font-family: var(--mono);
+            line-height: 1.6;
+        }
+
+        /* Tech Data Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0 40px;
+            font-size: 0.98rem;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .data-table th, .data-table td {
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            padding: 14px 18px;
+            text-align: left;
+        }
+        .data-table th:last-child, .data-table td:last-child { border-right: none; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table th {
+            background: var(--surface-elevated);
+            color: #ffffff;
+            font-weight: 600;
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        .data-table td { color: var(--text-muted); background: var(--surface); transition: background 0.2s ease; }
+        .data-table td strong { color: var(--text-main); }
+        .data-table td.mono { font-family: var(--mono); color: var(--text-main); }
+        .data-table tr:hover td { background: var(--surface-elevated); }
+
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-family: var(--mono);
+            font-weight: 500;
+        }
+        .tag.normal { color: var(--success); background: rgba(111,242,160,0.1); }
+        .tag.moderate { color: var(--warning); background: rgba(255,180,84,0.1); }
+        .tag.severe { color: var(--danger); background: rgba(255,107,92,0.1); animation: severePulse 1.8s ease-in-out infinite; }
+
+        @keyframes severePulse {
+            0%, 100% { background: rgba(255,107,92,0.1); }
+            50% { background: rgba(255,107,92,0.22); }
+        }
+
+        /* Code Blocks */
+        pre {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px 24px;
+            overflow-x: auto;
+            margin: 26px 0 34px;
+        }
+        code {
+            font-family: var(--mono);
+            font-size: 0.86rem;
+            color: #dbe6d6;
+        }
+        p code, li code {
+            background: var(--surface-elevated);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.88em;
+            color: var(--accent);
+        }
+        .code-label {
+            font-family: var(--mono);
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin: -10px 0 10px;
+        }
+
+        /* Custom UI Widgets */
+        .widget-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 38px;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .widget-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(111,242,160,0.35);
+            box-shadow: 0 18px 40px -18px rgba(111,242,160,0.25);
+        }
+        .widget-card.business:hover {
+            border-color: rgba(255,180,84,0.35);
+            box-shadow: 0 18px 40px -18px rgba(255,180,84,0.25);
+        }
+        .widget-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--accent), #3ddc80);
+        }
+        .widget-card.business::before {
+            background: linear-gradient(90deg, var(--accent-2), #ff8f4d);
+        }
+        .widget-card h3 { margin-top: 0; font-size: 1.45rem; color: #ffffff; }
+        .widget-card p { color: var(--text-muted); margin-bottom: 24px; font-size: 1rem; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 26px;
+            background: var(--accent);
+            color: #04150b;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .btn:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 20px -8px rgba(111,242,160,0.5); }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+        }
+        .btn-outline:hover { background: var(--surface-elevated); }
+
+        .btn-amber { background: var(--accent-2); color: #241202; }
+        .btn-amber:hover { background: var(--accent-2-hover); transform: translateY(-2px); box-shadow: 0 8px 20px -8px rgba(255,180,84,0.5); }
+
+        .btn-group { display: flex; gap: 14px; flex-wrap: wrap; }
+
+        /* Images */
+        .article-image {
+            width: 100%;
+            height: auto;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            margin: 36px 0 12px;
+        }
+        .caption {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            font-family: var(--mono);
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-top: 1px solid var(--border);
+            padding: 22px 0;
+            transition: padding-left 0.25s ease;
+        }
+        .faq-item:hover { padding-left: 6px; }
+        .faq-item:last-child { border-bottom: 1px solid var(--border); }
+        .faq-item h3 { margin: 0 0 10px; font-size: 1.05rem; }
+        .faq-item p { margin: 0; font-size: 1rem; }
+
+        .disclaimer {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            border-left: 3px solid var(--border);
+            padding: 14px 20px;
+            margin: 46px 0;
+            border-radius: 0 8px 8px 0;
+            background: var(--surface);
+        }
+
+        /* ---------- Reading progress bar ---------- */
+        .progress-track {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: transparent;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            box-shadow: 0 0 10px rgba(111,242,160,0.5);
+            transition: width 0.08s linear;
+        }
+
+        /* ---------- Scroll-reveal ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+        }
+        .reveal.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ---------- Back to top ---------- */
+        .to-top {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--surface-elevated);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, border-color 0.2s ease, background 0.2s ease;
+            z-index: 900;
+        }
+        .to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .to-top:hover {
+            background: var(--surface);
+            border-color: var(--accent);
+        }
+
+        /* ---------- Hero waveform draw-in ---------- */
+        .hero-wave svg polyline {
+            stroke-dasharray: 3400;
+            stroke-dashoffset: 3400;
+            animation: drawWave 2.6s cubic-bezier(0.65,0,0.35,1) 0.15s forwards;
+        }
+        @keyframes drawWave {
+            to { stroke-dashoffset: 0; }
+        }
+        .hero-wave svg circle {
+            opacity: 0;
+            animation: markerIn 0.5s ease forwards, markerPulse 2.4s ease-in-out 2.6s infinite;
+        }
+        .hero-wave svg circle:nth-of-type(1) { animation-delay: 0.9s, 3s; }
+        .hero-wave svg circle:nth-of-type(2) { animation-delay: 1.6s, 3.7s; }
+        .hero-wave svg circle:nth-of-type(3) { animation-delay: 2.3s, 4.4s; }
+        @keyframes markerIn {
+            from { opacity: 0; r: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes markerPulse {
+            0%, 100% { filter: drop-shadow(0 0 0 rgba(255,180,84,0)); }
+            50% { filter: drop-shadow(0 0 5px rgba(255,180,84,0.9)); }
+        }
+
+        /* ---------- Flowchart entrance ---------- */
+        .diagram-card svg rect {
+            opacity: 0;
+            transform-origin: center;
+            animation: boxIn 0.55s ease forwards;
+        }
+        .diagram-card svg path {
+            stroke-dasharray: 260;
+            stroke-dashoffset: 260;
+            opacity: 0;
+            animation: pathIn 0.6s ease forwards;
+        }
+        .diagram-card svg text {
+            opacity: 0;
+            animation: textIn 0.5s ease forwards;
+        }
+        @keyframes boxIn {
+            from { opacity: 0; transform: scale(0.92) translateY(8px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        @keyframes pathIn {
+            to { stroke-dashoffset: 0; opacity: 1; }
+        }
+        @keyframes textIn {
+            to { opacity: 1; }
+        }
+        .diagram-card svg rect:nth-of-type(1) { animation-delay: 0.05s; }
+        .diagram-card svg rect:nth-of-type(2) { animation-delay: 0.35s; }
+        .diagram-card svg rect:nth-of-type(3) { animation-delay: 0.45s; }
+        .diagram-card svg rect:nth-of-type(4) { animation-delay: 0.55s; }
+        .diagram-card svg rect:nth-of-type(5) { animation-delay: 0.75s; }
+        .diagram-card svg rect:nth-of-type(6) { animation-delay: 0.85s; }
+        .diagram-card svg path:nth-of-type(1) { animation-delay: 0.2s; }
+        .diagram-card svg path:nth-of-type(2) { animation-delay: 0.3s; }
+        .diagram-card svg path:nth-of-type(3) { animation-delay: 0.4s; }
+        .diagram-card svg path:nth-of-type(4) { animation-delay: 0.65s; }
+        .diagram-card svg path:nth-of-type(5) { animation-delay: 0.75s; }
+        .diagram-card svg path:nth-of-type(6) { animation-delay: 0.85s; }
+        .diagram-card svg text { animation-delay: 0.9s; }
+
+        /* Play the diagram animation only once it scrolls into view */
+        .diagram-card { }
+        .diagram-card.diagram-play svg rect,
+        .diagram-card.diagram-play svg path,
+        .diagram-card.diagram-play svg text {
+            animation-play-state: running;
+        }
+        .diagram-card:not(.diagram-play) svg rect,
+        .diagram-card:not(.diagram-play) svg path,
+        .diagram-card:not(.diagram-play) svg text {
+            animation-play-state: paused;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .reveal { opacity: 1; transform: none; transition: none; }
+            .hero-wave svg polyline,
+            .hero-wave svg circle,
+            .diagram-card svg rect,
+            .diagram-card svg path,
+            .diagram-card svg text,
+            .eyebrow::before,
+            .tag.severe {
+                animation: none !important;
+                opacity: 1 !important;
+                stroke-dashoffset: 0 !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.45rem; }
+            .container { padding: 50px 18px 80px; }
+            .data-table { font-size: 0.86rem; }
+            .data-table th, .data-table td { padding: 10px 12px; }
+            .to-top { right: 14px; bottom: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress-track" aria-hidden="true">
+    <div class="progress-fill" id="progressFill"></div>
+</div>
+
+<div class="container">
+    <a href="/research" class="nav-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Engineering Hub
+    </a>
+
+    <div class="eyebrow">Field Notes — Acoustic Diagnostics</div>
+
+    <h1>The Engine Noise Spectrum: Diagnosing Ticking, Knocking &amp; Whining by Frequency</h1>
+
+    <p style="font-size: 1.28rem; color: #ffffff; font-weight: 400; line-height: 1.6;">
+        Human ears are bad at diagnosing engines. What sounds like a vague "clicky tap" to a driver might be a harmless fuel injector pulse — or the opening notes of a rod bearing failure. The fix isn't a better ear. It's math: every noise a healthy or failing engine makes traces back to a rotating part and a frequency in Hz. Here's how to read that spectrum.
+    </p>
+
+    <div class="metadata">
+        <span>AUTHOR: <strong>Shaunauk Basu</strong></span>
+        <span>READ TIME: <strong>14 MIN</strong></span>
+        <span>TOPIC: <strong>Acoustic Diagnostics &amp; Telemetry</strong></span>
+        <span>UPDATED: <strong>July 2026</strong></span>
+    </div>
+
+    <div class="hero-wave">
+        <svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="waveTitle">
+            <title id="waveTitle">Stylized waveform showing three annotated engine frequencies: 8.33 Hz camshaft, 16.66 Hz crankshaft, and 33.33 Hz firing pulse</title>
+            <defs>
+                <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+                    <feGaussianBlur stdDeviation="2.6" result="blur"/>
+                    <feMerge>
+                        <feMergeNode in="blur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+
+            <rect x="0" y="0" width="760" height="260" fill="var(--surface)"/>
+
+            <!-- grid -->
+            <g stroke="var(--border)" stroke-width="1">
+                <line x1="0" y1="65" x2="760" y2="65"/>
+                <line x1="0" y1="130" x2="760" y2="130"/>
+                <line x1="0" y1="195" x2="760" y2="195"/>
+                <line x1="150" y1="20" x2="150" y2="230" stroke-dasharray="3 5"/>
+                <line x1="380" y1="20" x2="380" y2="230" stroke-dasharray="3 5"/>
+                <line x1="610" y1="20" x2="610" y2="230" stroke-dasharray="3 5"/>
+            </g>
+
+            <polyline points="0.0,131.2 1.8,132.6 3.6,132.1 5.4,133.3 7.3,133.5 9.1,129.7 10.9,126.0 12.7,126.7 14.5,128.6 16.3,128.4 18.1,128.9 20.0,132.3 21.8,134.1 23.6,132.3 25.4,131.0 27.2,131.4 29.0,129.5 30.8,125.1 32.6,124.5 34.5,128.5 36.3,131.9 38.1,132.8 39.9,134.0 41.7,134.2 43.5,130.4 45.3,126.2 47.2,127.0 49.0,130.1 50.8,129.8 52.6,127.5 54.4,128.2 56.2,130.8 58.0,132.3 59.9,134.0 61.7,135.8 63.5,132.7 65.3,124.5 67.1,120.0 68.9,124.6 70.7,132.2 72.6,136.1 74.4,135.9 76.2,132.8 78.0,127.3 79.8,124.2 81.6,128.7 83.4,135.7 85.3,134.9 87.1,126.4 88.9,120.6 90.7,123.2 92.5,131.3 94.3,139.7 96.1,143.3 97.9,136.5 99.8,121.7 101.6,113.1 103.4,120.3 105.2,135.2 107.0,142.7 108.8,138.5 110.6,128.4 112.5,120.2 114.3,120.9 116.1,132.5 117.9,144.4 119.7,141.8 121.5,124.8 123.3,111.3 125.2,114.7 127.0,130.8 128.8,146.2 130.6,150.1 132.4,138.4 134.2,118.3 136.0,108.1 137.9,118.7 139.7,139.0 141.5,147.7 143.3,138.5 145.1,122.9 146.9,114.9 148.7,120.6 150.5,136.8 152.4,149.7 154.2,144.5 156.0,123.4 157.8,107.2 159.6,111.9 161.4,131.3 163.2,147.5 165.1,149.4 166.9,136.9 168.7,119.2 170.5,111.4 172.3,121.7 174.1,139.3 175.9,144.9 177.8,134.1 179.6,120.5 181.4,117.0 183.2,124.9 185.0,138.1 186.8,146.7 188.6,141.2 190.5,124.2 192.3,112.0 194.1,116.3 195.9,130.9 197.7,141.3 199.5,141.6 201.3,134.4 203.2,125.0 205.0,120.9 206.8,126.7 208.6,135.7 210.4,136.7 212.2,129.0 214.0,122.4 215.8,123.2 217.7,129.0 219.5,136.1 221.3,140.3 223.1,136.6 224.9,126.8 226.7,120.5 228.5,123.0 230.4,128.9 232.2,132.5 234.0,134.1 235.8,133.5 237.6,130.0 239.4,128.0 241.2,131.1 243.1,133.6 244.9,129.8 246.7,125.4 248.5,126.2 250.3,128.1 252.1,128.3 253.9,132.2 255.8,138.1 257.6,135.6 259.4,127.1 261.2,125.8 263.0,130.1 264.8,127.9 266.6,123.8 268.4,129.5 270.3,136.4 272.1,131.5 273.9,126.6 275.7,134.2 277.5,138.3 279.3,126.7 281.1,120.0 283.0,130.1 284.8,134.2 286.6,123.5 288.4,124.2 290.2,140.6 292.0,140.9 293.8,123.4 295.7,123.6 297.5,139.2 299.3,132.9 301.1,114.1 302.9,122.9 304.7,143.8 306.5,134.7 308.4,117.0 310.2,132.1 312.0,150.0 313.8,129.6 315.6,109.6 317.4,130.2 319.2,146.1 321.1,121.5 322.9,109.6 324.7,141.1 326.5,153.4 328.3,121.0 330.1,112.5 331.9,145.8 333.7,146.9 335.6,107.9 337.4,109.4 339.2,149.7 341.0,145.1 342.8,107.2 344.6,120.6 346.4,160.7 348.3,141.8 350.1,100.5 351.9,121.6 353.7,157.9 355.5,129.2 357.3,95.7 359.1,131.6 361.0,165.1 362.8,127.8 364.6,100.4 366.4,141.7 368.2,161.9 370.0,113.8 371.8,95.9 373.7,144.6 375.5,156.9 377.3,108.9 379.1,106.2 380.9,158.2 382.7,156.3 384.5,104.2 386.3,109.9 388.2,157.3 390.0,142.3 391.8,95.6 393.6,116.6 395.4,162.9 397.2,140.2 399.0,100.8 400.9,129.5 402.7,163.8 404.5,128.8 406.3,96.0 408.1,130.8 409.9,157.0 411.7,120.9 413.6,102.7 415.4,143.5 417.2,159.2 419.0,119.5 420.8,108.2 422.6,144.7 424.4,147.4 426.3,109.2 428.1,109.9 429.9,147.3 431.7,145.1 433.5,113.7 435.3,122.4 437.1,152.1 438.9,139.2 440.8,109.9 442.6,121.7 444.4,144.9 446.2,130.2 448.0,111.6 449.8,130.5 451.6,149.2 453.5,132.3 455.3,117.9 457.1,133.5 458.9,142.0 460.7,123.0 462.5,114.9 464.3,132.3 466.2,139.4 468.0,125.9 469.8,124.4 471.6,139.6 473.4,139.4 475.2,124.8 477.0,122.5 478.9,133.2 480.7,130.8 482.5,121.9 484.3,126.1 486.1,137.0 487.9,136.0 489.7,127.8 491.6,131.5 493.4,133.9 495.2,130.4 497.0,121.6 498.8,127.0 500.6,130.5 502.4,130.3 504.2,129.1 506.1,132.2 507.9,137.7 509.7,129.6 511.5,131.1 513.3,124.6 515.1,132.2 516.9,123.2 518.8,128.9 520.6,128.7 522.4,133.2 524.2,135.5 526.0,127.9 527.8,138.3 529.6,123.0 531.5,137.2 533.3,116.0 535.1,135.5 536.9,121.9 538.7,134.9 540.5,130.4 542.3,129.5 544.2,142.7 546.0,119.2 547.8,145.3 549.6,108.1 551.4,148.1 553.2,107.6 555.0,143.3 556.8,119.4 558.7,137.6 560.5,137.7 562.3,118.8 564.1,153.2 565.9,102.3 567.7,160.6 569.5,89.9 571.4,161.3 573.2,100.6 575.0,151.1 576.8,121.2 578.6,131.6 580.4,150.2 582.2,102.0 584.1,167.4 585.9,81.7 587.7,177.5 589.5,77.3 591.3,170.2 593.1,100.1 594.9,151.5 596.8,130.3 598.6,117.4 600.4,163.3 602.2,85.6 604.0,178.9 605.8,68.7 607.6,185.1 609.5,78.9 611.3,168.6 613.1,108.6 614.9,142.4 616.7,142.5 618.5,103.3 620.3,169.0 622.1,79.3 624.0,179.8 625.8,72.6 627.6,177.9 629.4,94.2 631.2,157.6 633.0,121.4 634.8,129.8 636.7,149.4 638.5,98.4 640.3,163.1 642.1,86.7 643.9,169.2 645.7,90.6 647.5,161.4 649.4,113.2 651.2,144.7 653.0,130.6 654.8,121.2 656.6,146.9 658.4,104.3 660.2,150.5 662.1,102.0 663.9,154.7 665.7,111.7 667.5,146.0 669.3,125.9 671.1,135.7 672.9,133.1 674.7,119.0 676.6,138.8 678.4,114.9 680.2,139.9 682.0,116.6 683.8,143.3 685.6,126.5 687.4,136.8 689.3,129.6 691.1,130.6 692.9,131.5 694.7,120.8 696.5,131.6 698.3,124.0 700.1,135.3 702.0,126.3 703.8,136.6 705.6,132.7 707.4,132.8 709.2,128.4 711.0,127.3 712.8,129.5 714.7,124.5 716.5,128.6 718.3,129.2 720.1,135.0 721.9,131.4 723.7,132.8 725.5,132.4 727.4,130.8 729.2,126.7 731.0,125.3 732.8,128.5 734.6,128.6 736.4,129.6 738.2,131.4 740.0,135.2 741.9,133.3 743.7,130.2 745.5,129.1 747.3,128.9 749.1,126.7 750.9,125.3 752.7,128.8 754.6,132.1 756.4,132.4 758.2,132.0 760.0,133.6"
+                fill="none" stroke="var(--accent)" stroke-width="2" filter="url(#glow)" stroke-linejoin="round"/>
+
+            <!-- markers -->
+            <g font-family="var(--mono)" font-size="12">
+                <circle cx="150" cy="20" r="3" fill="var(--accent-2)"/>
+                <text x="150" y="245" fill="var(--text-muted)" text-anchor="middle">CAMSHAFT</text>
+                <text x="150" y="260" fill="var(--accent-2)" text-anchor="middle" font-weight="600">8.33 Hz</text>
+
+                <circle cx="380" cy="20" r="3" fill="var(--accent-2)"/>
+                <text x="380" y="245" fill="var(--text-muted)" text-anchor="middle">CRANKSHAFT</text>
+                <text x="380" y="260" fill="var(--accent-2)" text-anchor="middle" font-weight="600">16.66 Hz</text>
+
+                <circle cx="610" cy="20" r="3" fill="var(--accent-2)"/>
+                <text x="610" y="245" fill="var(--text-muted)" text-anchor="middle">FIRING PULSE</text>
+                <text x="610" y="260" fill="var(--accent-2)" text-anchor="middle" font-weight="600">33.33 Hz</text>
+            </g>
+        </svg>
+    </div>
+    <div class="hero-caption">
+        <span>FIG 1.0 — Stylized trace, 4-cyl engine at 1,000 RPM idle</span>
+        <span>SOURCE: CARITHM ACOUSTIC MODEL</span>
+    </div>
+
+    <div class="tldr-box reveal">
+        <div class="eyebrow-mini">TL;DR</div>
+        <ul>
+            <li>Every rotating part in the engine has a frequency in Hz: RPM ÷ 60, halved again for anything that turns at half crank speed.</li>
+            <li>A tick that pulses at <strong>half</strong> that frequency is the valvetrain — usually a moderate issue.</li>
+            <li>A knock locked <strong>1:1</strong> with that frequency is a rod bearing — stop driving and get it inspected.</li>
+            <li>A continuous whine that shifts with the steering wheel or an electrical load is a belt or accessory bearing, not a discrete mechanical strike.</li>
+        </ul>
+    </div>
+
+    <nav class="toc-box reveal" aria-label="Table of contents">
+        <div class="eyebrow-mini">Jump to a section</div>
+        <ol class="toc-list">
+            <li><a href="#diagnosis-crisis"><span class="num">01</span>The Diagnosis Crisis</a></li>
+            <li><a href="#math-of-frequencies"><span class="num">02</span>The Math of Engine Frequencies</a></li>
+            <li><a href="#frequency-map"><span class="num">03</span>The Core Frequency Map</a></li>
+            <li><a href="#lifter-tick"><span class="num">04</span>Valvetrain / Lifter Tick</a></li>
+            <li><a href="#rod-knock"><span class="num">05</span>Rod Knock</a></li>
+            <li><a href="#accessory-whine"><span class="num">06</span>Accessory Whine</a></li>
+            <li><a href="#quick-reference"><span class="num">07</span>RPM to Hz Reference</a></li>
+            <li><a href="#acoustic-ai"><span class="num">08</span>How the Acoustic AI Works</a></li>
+            <li><a href="#faq"><span class="num">09</span>FAQ</a></li>
+        </ol>
+    </nav>
+
+    <h2 id="diagnosis-crisis" class="reveal">The Diagnosis Crisis: Why Mechanics Guess</h2>
+    <p>
+        For decades, mechanics have relied on a screwdriver pressed to the ear, or a stethoscope at best, to isolate engine noises. Drivers fare worse — they show up describing a <em>squeak</em>, a <em>rattle</em>, or a <em>groan</em>, and the repair shop has to reverse-engineer a diagnosis from a word choice. That subjective communication loop is exactly why exploratory teardowns are so common, and so expensive.
+    </p>
+    <p>
+        Objective acoustic forensics fixes this by removing the ear from the loop entirely. Measure the sound wave, isolate its frequency content in Hz, and match that frequency to a rotating or reciprocating part, and a mechanical diagnosis follows without a single bolt being turned.
+    </p>
+
+    <h2 id="math-of-frequencies" class="reveal">The Mathematics of Engine Frequencies</h2>
+    <p>
+        Every moving part inside an internal combustion engine produces a sound tied directly to how fast it spins. Once you know the engine's RPM, the frequency of any healthy — or failing — component is just arithmetic.
+    </p>
+    <p>
+        Take a standard 4-cylinder engine idling at <strong>1,000 RPM</strong> (revolutions per minute):
+    </p>
+    <ul>
+        <li><strong>Crankshaft frequency:</strong> 1,000 RPM ÷ 60 seconds = <strong>16.66 Hz</strong>.</li>
+        <li><strong>Camshaft frequency:</strong> the valvetrain turns at half crank speed, so it lands at <strong>8.33 Hz</strong>.</li>
+        <li><strong>Firing frequency:</strong> each cylinder fires once every two revolutions; combined across four cylinders that works out to <strong>33.33 Hz</strong>.</li>
+    </ul>
+
+    <p class="code-label">rpm_to_hz.py</p>
+<pre><code>def rpm_to_hz(rpm, half_speed=False):
+    # Every rotating part in the engine has a frequency in Hz.
+    # A camshaft just turns at half the crankshaft's speed.
+    crank_hz = rpm / 60
+    return crank_hz / 2 if half_speed else crank_hz
+
+# A 4-cylinder engine idling at 1000 RPM
+print(rpm_to_hz(1000))               # 16.66 Hz -> crankshaft
+print(rpm_to_hz(1000, half_speed=True))  # 8.33 Hz  -> camshaft
+</code></pre>
+
+    <blockquote>
+        <p>If an anomaly shows up at 8.33 Hz during a 1,000 RPM idle, the math points straight to the upper valvetrain. If it shows up at 16.66 Hz, it's the lower reciprocating assembly — the crank and its bearings.</p>
+    </blockquote>
+
+    <h2 id="frequency-map" class="reveal">The Core Frequency Map</h2>
+    <p>
+        Not all ticking is bad, and not all whining is expensive. Comparing a sound's frequency and cadence against engine RPM lets you sort a noise into one of four wear zones before you ever open the hood.
+    </p>
+
+    <table class="data-table reveal">
+        <tr>
+            <th>Sound profile</th>
+            <th>Acoustic signature</th>
+            <th>Mechanical cause</th>
+            <th>Severity</th>
+        </tr>
+        <tr>
+            <td><strong>Fuel injector pulse</strong></td>
+            <td class="mono">10–15 Hz, light ticking</td>
+            <td>Normal solenoid operation firing fuel into the cylinders.</td>
+            <td><span class="tag normal">Normal</span></td>
+        </tr>
+        <tr>
+            <td><strong>Valvetrain / lifter tick</strong></td>
+            <td class="mono">½ × crank Hz, sharp tap</td>
+            <td>Low oil pressure or excess clearance in the cylinder head.</td>
+            <td><span class="tag moderate">Moderate</span></td>
+        </tr>
+        <tr>
+            <td><strong>Accessory belt / bearing whine</strong></td>
+            <td class="mono">Non-integer × crank Hz, continuous tone</td>
+            <td>Worn belt, glazed pulley, or a failing accessory bearing.</td>
+            <td><span class="tag moderate">Moderate</span></td>
+        </tr>
+        <tr>
+            <td><strong>Rod knock</strong></td>
+            <td class="mono">1 × crank Hz, deep hammering</td>
+            <td>Spun bearing — metal-on-metal contact at the crankshaft.</td>
+            <td><span class="tag severe">Catastrophic</span></td>
+        </tr>
+    </table>
+
+    <p>Before reaching for a wrench — or a mic — most of that table collapses into one question: where in the engine is the sound actually loudest?</p>
+
+    <div class="diagram-card reveal">
+        <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="flowTitle">
+            <title id="flowTitle">Decision flowchart: locate where the noise is loudest, then match it to a diagnosis</title>
+            <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+                </marker>
+            </defs>
+            <rect x="0" y="0" width="700" height="380" fill="var(--surface)"/>
+
+            <!-- connectors: question to zones -->
+            <g stroke="var(--text-muted)" stroke-width="1.4" fill="none" marker-end="url(#arrow)">
+                <path d="M300,80 L120,148"/>
+                <path d="M350,80 L350,148"/>
+                <path d="M400,80 L580,148"/>
+            </g>
+            <!-- connectors: zone to outcome -->
+            <g stroke="var(--text-muted)" stroke-width="1.4" fill="none" marker-end="url(#arrow)">
+                <path d="M110,220 L110,278"/>
+                <path d="M350,220 L350,278"/>
+                <path d="M590,220 L590,278"/>
+            </g>
+
+            <!-- root question -->
+            <rect x="210" y="20" width="280" height="60" rx="10" fill="var(--surface-elevated)" stroke="var(--accent)" stroke-width="1.5"/>
+            <text x="350" y="55" text-anchor="middle" fill="var(--text-main)" font-family="var(--mono)" font-size="15" font-weight="600">Where is the noise loudest?</text>
+
+            <!-- zone boxes -->
+            <g font-family="var(--mono)">
+                <rect x="10" y="150" width="200" height="70" rx="10" fill="var(--surface-elevated)" stroke="var(--border)"/>
+                <text x="110" y="180" text-anchor="middle" fill="var(--text-main)" font-size="13.5">Top of engine</text>
+                <text x="110" y="200" text-anchor="middle" fill="var(--text-muted)" font-size="12">(valve cover)</text>
+
+                <rect x="250" y="150" width="200" height="70" rx="10" fill="var(--surface-elevated)" stroke="var(--border)"/>
+                <text x="350" y="180" text-anchor="middle" fill="var(--text-main)" font-size="13.5">Front of engine</text>
+                <text x="350" y="200" text-anchor="middle" fill="var(--text-muted)" font-size="12">(belt area)</text>
+
+                <rect x="490" y="150" width="200" height="70" rx="10" fill="var(--surface-elevated)" stroke="var(--border)"/>
+                <text x="590" y="180" text-anchor="middle" fill="var(--text-main)" font-size="13.5">Bottom of engine</text>
+                <text x="590" y="200" text-anchor="middle" fill="var(--text-muted)" font-size="12">(oil pan)</text>
+            </g>
+
+            <!-- outcome boxes -->
+            <g font-family="var(--mono)">
+                <rect x="10" y="280" width="200" height="86" rx="10" fill="var(--surface-elevated)" stroke="var(--accent-2)" stroke-width="2"/>
+                <text x="110" y="308" text-anchor="middle" fill="var(--text-main)" font-size="14" font-weight="600">Lifter tick</text>
+                <text x="110" y="328" text-anchor="middle" fill="var(--text-muted)" font-size="11.5">pulses at ½ RPM</text>
+                <text x="110" y="352" text-anchor="middle" fill="var(--accent-2)" font-size="11" letter-spacing="1">MODERATE</text>
+
+                <rect x="250" y="280" width="200" height="86" rx="10" fill="var(--surface-elevated)" stroke="var(--accent-2)" stroke-width="2"/>
+                <text x="350" y="308" text-anchor="middle" fill="var(--text-main)" font-size="14" font-weight="600">Belt whine</text>
+                <text x="350" y="328" text-anchor="middle" fill="var(--text-muted)" font-size="11.5">continuous tone</text>
+                <text x="350" y="352" text-anchor="middle" fill="var(--accent-2)" font-size="11" letter-spacing="1">MODERATE</text>
+
+                <rect x="490" y="280" width="200" height="86" rx="10" fill="var(--surface-elevated)" stroke="var(--danger)" stroke-width="2"/>
+                <text x="590" y="308" text-anchor="middle" fill="var(--text-main)" font-size="14" font-weight="600">Rod knock</text>
+                <text x="590" y="328" text-anchor="middle" fill="var(--text-muted)" font-size="11.5">locked 1:1 with RPM</text>
+                <text x="590" y="352" text-anchor="middle" fill="var(--danger)" font-size="11" letter-spacing="1">STOP DRIVING</text>
+            </g>
+        </svg>
+    </div>
+    <div class="diagram-caption">FIG 1.5 — A 30-second self-diagnosis, before you ever open the hood.</div>
+
+    <!-- CONSUMER WIDGET -->
+    <div class="widget-card reveal">
+        <h3>Hear a weird noise? Stop guessing.</h3>
+        <p>Don't wait for a breakdown to find out what it was. Upload a 5-second clip of the ticking, knocking, or whining, and Carithm's acoustic model will map the frequency and tell you what's actually failing.</p>
+        <a href="https://carithm.vercel.app/audio" class="btn">Launch Audio Diagnoser</a>
+    </div>
+
+    <h2 id="lifter-tick" class="reveal">Diagnosing Valvetrain Noise (Lifter Tick)</h2>
+    <p>
+        Lifter tick is a light, rhythmic tapping from the very top of the engine. Hydraulic lifters rely on pressurized oil to hold precise clearance between the camshaft and the valves. When a lifter fails to "pump up" — from oil starvation, contaminated oil passages, or plain wear — a small gap opens in the valvetrain.
+    </p>
+    <p>
+        Because the camshaft turns at half crank speed, <strong>a genuine lifter tick always pulses at exactly half the engine's RPM.</strong> At 2,000 RPM, a collapsed lifter taps 1,000 times a minute — not once more, not once less.
+    </p>
+
+    <h2 id="rod-knock" class="reveal">Diagnosing Bottom-End Failure (Rod Knock)</h2>
+    <p>
+        Where lifter tick is annoying, rod knock is a death sentence. It comes from deep inside the block or oil pan, caused by catastrophic wear in the connecting rod bearings — the parts that link the pistons to the crankshaft.
+    </p>
+    <p>
+        Acoustically, rod knock is deep, heavy, and forceful. Unlike a lifter tick, it's <strong>synchronous with the crankshaft</strong> — a 1:1 match with engine RPM — and it typically grows louder and more violent under load. Severe amplitude spikes right at the crankshaft frequency are as close to a certain diagnosis as sound alone gets.
+    </p>
+
+    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1200&auto=format&fit=crop" alt="Mechanic examining an engine block" class="article-image reveal">
+    <div class="caption">FIG 2.0 — Locating a failure means isolating the sound to either the cylinder head (valvetrain) or the block (crankshaft).</div>
+
+    <h2 id="accessory-whine" class="reveal">Diagnosing Accessory Whine (Belts &amp; Bearings)</h2>
+    <p>
+        Whine is the odd one out on this list, because it usually doesn't lock to a simple fraction of crank speed the way a tick or a knock does. Belt-driven accessories — the alternator, power steering pump, water pump, AC compressor — each spin at their own ratio, set by the size of their pulley relative to the crank pulley. An alternator pulley is often smaller than the crank pulley, so it can spin two to three times faster than the engine itself.
+    </p>
+    <p>
+        The acoustic tell isn't a discrete "tick" at all — it's a continuous, friction-driven tone that rises and falls smoothly with RPM, because it comes from a belt slipping or a bearing skating rather than a part physically striking metal. Three quick field checks narrow it down fast:
+    </p>
+    <ul>
+        <li><strong>Turn the steering wheel</strong> while the whine is present — if it changes, suspect the power steering pump.</li>
+        <li><strong>Add an electrical load</strong> (headlights, blower fan) — a whine that shifts with load points at the alternator.</li>
+        <li><strong>Watch it under cold, damp starts</strong> — a whine that appears only briefly at start-up is often just a glazed or slightly loose serpentine belt, not a bearing.</li>
+    </ul>
+
+    <h2 id="quick-reference" class="reveal">Quick Reference: RPM to Hz at Idle</h2>
+    <p>
+        Since almost every diagnosis in this article starts with "what's the crank frequency at this RPM," here's the conversion for common idle speeds on a 4-cylinder engine.
+    </p>
+    <table class="data-table reveal">
+        <tr>
+            <th>Idle RPM</th>
+            <th>Crankshaft Hz</th>
+            <th>Camshaft Hz</th>
+            <th>Firing Hz (4-cyl)</th>
+        </tr>
+        <tr><td class="mono">700</td><td class="mono">11.67</td><td class="mono">5.83</td><td class="mono">23.33</td></tr>
+        <tr><td class="mono">800</td><td class="mono">13.33</td><td class="mono">6.67</td><td class="mono">26.67</td></tr>
+        <tr><td class="mono">900</td><td class="mono">15.00</td><td class="mono">7.50</td><td class="mono">30.00</td></tr>
+        <tr><td class="mono">1,000</td><td class="mono">16.67</td><td class="mono">8.33</td><td class="mono">33.33</td></tr>
+        <tr><td class="mono">1,200</td><td class="mono">20.00</td><td class="mono">10.00</td><td class="mono">40.00</td></tr>
+    </table>
+
+    <h2 id="acoustic-ai" class="reveal">The Logic Behind Acoustic AI (How It Works)</h2>
+    <p>
+        Building a sound-matching diagnostic tool takes more than pattern-matching a waveform. It means bridging raw acoustic telemetry with deterministic vehicle data. Here's the conceptual core of how a modern AI car-diagnostic tool actually works.
+    </p>
+
+    <h3>1. Feature extraction: turning sound into a picture</h3>
+    <p>
+        A neural network doesn't "listen" to audio the way a person does. A library like <code>librosa</code> converts the raw sound wave into a spectrogram — a picture of frequency against time and loudness. That picture is what lets a model filter out background noise, like wind or road hum, and lock onto the mechanical frequencies underneath.
+    </p>
+
+    <p class="code-label">extract_features.py</p>
+<pre><code>import librosa
+import numpy as np
+
+def extract_engine_features(audio_path):
+    # Load the raw sound file
+    signal, sample_rate = librosa.load(audio_path, sr=None)
+
+    # Turn the sound wave into a picture of frequency over time
+    spectrogram = librosa.feature.melspectrogram(y=signal, sr=sample_rate, n_mels=128)
+
+    # Convert to decibels so quiet and loud parts are both easy to see
+    return librosa.power_to_db(spectrogram, ref=np.max)
+</code></pre>
+
+    <h3>2. Fusing audio with OBD-II codes</h3>
+    <p>
+        Sound alone has blind spots. A failing alternator bearing and a failing tensioner pulley can sound almost identical. To tell them apart, the acoustic probability gets combined with a physical diagnostic trouble code from the car's OBD-II port.
+    </p>
+    <p>
+        If the model flags the "accessory zone" as noisy, and the driver also has a <code>P0562</code> (system voltage low) code, the two independent signals together point to a high-confidence diagnosis: a failing alternator.
+    </p>
+
+    <p class="code-label">fuse_diagnosis.py</p>
+<pre><code>def diagnose(audio_findings, trouble_codes):
+    # Was the noise coming from the belt / pulley area?
+    belt_area_score = audio_findings.get("accessory_zone", 0)
+
+    if belt_area_score > 0.85 and "P0562" in trouble_codes:
+        # Low voltage + a noisy accessory zone = likely alternator
+        return "Alternator bearing failure (high confidence)"
+
+    return "Needs more listening — isolate the noise zone first"
+</code></pre>
+
+    <h3>3. Dynamic follow-up</h3>
+    <p>
+        By keeping session state, the tool can ask the driver simple follow-up questions — "is the check engine light flashing?" — and fold each answer back into the confidence score without re-running the heavy audio model. That's the same logical flowchart a good mechanic runs in their head, just made explicit.
+    </p>
+
+    <!-- BUSINESS/WORKSHOP WIDGET -->
+    <div class="widget-card business reveal">
+        <h3>Get matched with a local workshop <span class="tag moderate" style="margin-left:8px; vertical-align:middle;">In testing</span></h3>
+        <p>Once your report flags what's wrong, we recommend a local workshop that actually handles that repair — no separate search required. We're onboarding garages for this right now: if you run one and want to be the workshop drivers get pointed to, email us your name and location and we'll get you set up.</p>
+        <div class="btn-group">
+            <a href="mailto:carithmai29@gmail.com?subject=Workshop%20Partner%20Interest&body=Workshop%20name%3A%0ALocation%3A%0AContact%20details%3A%0A" class="btn btn-amber">Register Your Workshop</a>
+            <a href="https://carithm.vercel.app" class="btn btn-outline">Find a Workshop</a>
+        </div>
+    </div>
+
+    <h2 id="faq" class="reveal">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+        <h3>What's the actual difference between a tick and a knock?</h3>
+        <p>Frequency and depth. A tick is a light, high-pitched sound from the top of the engine, usually at half crank speed (the camshaft). A knock is deep, heavy, and locked 1:1 to crank speed — it's coming from the reciprocating assembly at the bottom of the engine, which is the more serious location.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Can I diagnose engine noise without expensive tools?</h3>
+        <p>Yes, to a point. A phone voice memo and a tachometer reading (or the dashboard RPM gauge) are enough to compare a noise's cadence against the crank and camshaft frequencies from the table above. What you can't easily do by ear is separate two mechanically different sounds that happen to land at a similar pitch — that's where a frequency-based model helps.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Is it safe to keep driving with a ticking noise?</h3>
+        <p>A light valvetrain tick usually isn't an emergency, but it should be checked soon, since low oil pressure can escalate. A deep knock that's synchronous with engine RPM is a different situation — treat it as a reason to stop driving and have the vehicle inspected before the bearing damage spreads.</p>
+    </div>
+    <div class="faq-item">
+        <h3>How accurate is AI acoustic diagnosis compared to a mechanic?</h3>
+        <p>It's best treated as a triage step, not a replacement. The model is very good at narrowing a noise down to a frequency zone and a short list of likely causes, especially when combined with OBD-II codes. Confirming the exact part and the repair still calls for a mechanic's hands-on inspection.</p>
+    </div>
+
+    <p class="disclaimer">
+        This article is an engineering explainer, not a repair manual. Acoustic frequency alone can narrow down a cause, but it can't replace a hands-on inspection — always confirm a diagnosis with a qualified mechanic before major engine work.
+    </p>
+
+    <div class="author-block reveal">
+        <div class="author-avatar">SB</div>
+        <div>
+            <h4>Shaunauk Basu</h4>
+            <p>Founder of Carithm AI. Writes about acoustic diagnostics and predictive maintenance, and builds the models behind them.</p>
+            <p class="contact-line">Run a workshop, spot an error, or just want to talk shop? Reach me at <a href="mailto:carithmai29@gmail.com">carithmai29@gmail.com</a>.</p>
+        </div>
+    </div>
+
+    <!-- Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "The Engine Noise Spectrum: Diagnosing Ticking, Knocking & Whining by Frequency",
+      "description": "A field-level engineering breakdown of how to diagnose engine ticking, rod knock, belt whine, and mechanical failure using acoustic frequency analysis, Hz math, and AI sound models.",
+      "author": {
+        "@type": "Person",
+        "name": "Shaunauk Basu"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Carithm",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://carithm.vercel.app/logo.png"
+        }
+      },
+      "datePublished": "2026-07-25",
+      "dateModified": "2026-07-25",
+      "mainEntityOfPage": "https://carithm.vercel.app/research/engine-noise-spectrum"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Carithm Audio Diagnoser",
+      "url": "https://carithm.vercel.app/audio",
+      "applicationCategory": "Diagnostic Tool",
+      "operatingSystem": "All",
+      "description": "Upload a 5-second audio clip of your engine to diagnose mechanical faults using our acoustic classification model."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the actual difference between a tick and a knock?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A tick is a light, high-pitched sound from the top of the engine, usually at half crank speed (the camshaft). A knock is deep and locked 1:1 to crank speed, coming from the reciprocating assembly at the bottom of the engine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I diagnose engine noise without expensive tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A phone voice memo and a tachometer or dashboard RPM reading are enough to compare a noise's cadence against crank and camshaft frequencies. Separating sounds that land at a similar pitch is harder by ear alone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to keep driving with a ticking noise?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A light valvetrain tick usually isn't an emergency but should be checked soon. A deep knock synchronous with engine RPM should be treated as a reason to stop driving and get the vehicle inspected."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is AI acoustic diagnosis compared to a mechanic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It works best as a triage step that narrows a noise down to a frequency zone and likely causes, especially combined with OBD-II codes. Confirming the exact part still requires a mechanic's hands-on inspection."
+          }
+        }
+      ]
+    }
+    </script>
+
+</div>
+
+<button class="to-top" id="toTopBtn" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function () {
+    // ---- Reading progress bar ----
+    var fill = document.getElementById('progressFill');
+    function updateProgress() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        fill.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+
+    // ---- Back to top button ----
+    var toTop = document.getElementById('toTopBtn');
+    function toggleToTop() {
+        if ((window.scrollY || document.documentElement.scrollTop) > 700) {
+            toTop.classList.add('visible');
+        } else {
+            toTop.classList.remove('visible');
+        }
+    }
+    window.addEventListener('scroll', toggleToTop, { passive: true });
+    toggleToTop();
+    toTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ---- Scroll-reveal for sections ----
+    var revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        var revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { revealObserver.observe(el); });
+    } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+    }
+
+    // ---- Play flowchart draw-in only once it's on screen ----
+    var diagramCards = document.querySelectorAll('.diagram-card');
+    if ('IntersectionObserver' in window) {
+        var diagramObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('diagram-play');
+                    diagramObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        diagramCards.forEach(function (el) { diagramObserver.observe(el); });
+    } else {
+        diagramCards.forEach(function (el) { el.classList.add('diagram-play'); });
+    }
+
+    // ---- TOC active-section highlighting ----
+    var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc-list a'));
+    var sections = tocLinks.map(function (a) {
+        return document.getElementById(a.getAttribute('href').slice(1));
+    }).filter(Boolean);
+
+    function setActiveLink() {
+        var scrollPos = (window.scrollY || document.documentElement.scrollTop) + 140;
+        var current = null;
+        sections.forEach(function (sec) {
+            if (sec.offsetTop <= scrollPos) current = sec;
+        });
+        tocLinks.forEach(function (a) {
+            var id = a.getAttribute('href').slice(1);
+            a.classList.toggle('active', current && current.id === id);
+        });
+    }
+    window.addEventListener('scroll', setActiveLink, { passive: true });
+    setActiveLink();
+})();
+</script>
+
+</body>
+</html>
