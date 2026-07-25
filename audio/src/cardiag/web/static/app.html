@@ -7,6 +7,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-TCCEJ6DCM1');
+
+  // 1. Existing Dwell Time Tracker
   (function() {
     let activeSeconds = 0;
     const interval = 10;
@@ -23,6 +25,25 @@
       }
     }, interval * 1000);
   })();
+
+  // 2. NEW: Iframe PostMessage Listener
+  window.addEventListener('message', function(event) {
+    // Security check: Only accept messages from your specific Streamlit app domain
+    if (event.origin !== 'https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app') return;
+
+    const data = event.data;
+
+    // Route custom Streamlit events directly into Google Analytics
+    if (data && data.type === 'streamlit_analytics') {
+      if (typeof gtag === 'function') {
+        gtag('event', data.eventName, {
+          'event_category': data.eventCategory || 'Carithm Tool',
+          'event_label': data.eventLabel || '',
+          'value': data.eventValue || 0
+        });
+      }
+    }
+  });
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
