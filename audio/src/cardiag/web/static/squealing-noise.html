@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TCCEJ6DCM1');
-  (function() {
-    let activeSeconds = 0;
-    const interval = 10;
-    setInterval(() => {
-      if (!document.hidden) {
-        activeSeconds += interval;
-        if (typeof gtag === 'function') {
-          gtag('event', 'true_dwell_time', {
-            'event_category': 'Engagement',
-            'event_label': activeSeconds + 's_active',
-            'value': activeSeconds
-          });
-        }
-      }
-    }, interval * 1000);
-  })();
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
+      }
+    }, interval * 1000);
+  })();
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,90 +54,90 @@
 <!-- Master Schema combining WebApp, Breadcrumb, Article, and FAQ -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebApplication",
-      "@id": "https://carithm.vercel.app/audio/squealing-noise/#webapp",
-      "name": "Carithm AI Car Sound Analyzer - Squealing Noise",
-      "about": {
-        "@type": "Thing",
-        "name": "Car squealing noise diagnosis"
-      },
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "Web",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "description": "Free AI tool that analyzes car squealing sounds and identifies possible causes including belts, brakes, pulleys, bearings and engine components.",
-      "url": "https://carithm.vercel.app/audio/squealing-noise",
-      "author": { "@type": "Organization", "name": "Carithm" },
-      "publisher": { "@type": "Organization", "name": "Carithm" }
-    },
-    {
-      "@type": "Article",
-      "headline": "My Car Is Making a Squealing Noise — Find the Cause With AI",
-      "author": {
-        "@type": "Organization",
-        "name": "Carithm"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Carithm",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://carithm.vercel.app/favicon.png"
-        }
-      },
-      "datePublished": "2026-01-15",
-      "dateModified": "2026-07-21"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://carithm.vercel.app/"},
-        {"@type": "ListItem", "position": 2, "name": "Audio Diagnosis", "item": "https://carithm.vercel.app/audio"},
-        {"@type": "ListItem", "position": 3, "name": "Squealing Noise Diagnosis", "item": "https://carithm.vercel.app/audio/squealing-noise"}
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Is it dangerous to drive with a squealing belt?", "acceptedAnswer": { "@type": "Answer", "text": "Usually not for a short trip, but a slipping belt can fail without warning and take your power steering or alternator with it. If it only squeals briefly on cold starts you likely have some time; if it is loud and constant, get it checked soon." } },
-        { "@type": "Question", "name": "Can a squealing noise mean my car is about to break down?", "acceptedAnswer": { "@type": "Answer", "text": "On its own, rarely. Squealing is usually a warning sign, not a breakdown in progress. It becomes urgent if it is paired with smoke, a burning smell, a battery warning light, or the steering suddenly feeling heavy." } },
-        { "@type": "Question", "name": "Can I still drive to a mechanic if my car is squealing?", "acceptedAnswer": { "@type": "Answer", "text": "In most cases yes, as long as none of the stop-driving warning signs are present. Drive gently, avoid high RPM, and get it looked at as soon as you reasonably can." } },
-        { "@type": "Question", "name": "How urgent is a car squealing noise?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on when it happens. Brief squeals on cold starts are usually low urgency. Squealing that gets louder, happens constantly, or occurs while braking is higher urgency and worth checking within a day or two." } },
-        { "@type": "Question", "name": "Can a squealing noise come from the engine?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Belts, pulleys, alternators, water pumps and tensioners can all produce engine squealing sounds." } },
-        { "@type": "Question", "name": "Can brakes make a squealing noise?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Many brake pads include wear indicators designed to squeal when replacement is needed." } },
-        { "@type": "Question", "name": "Can a low oil level cause squealing?", "acceptedAnswer": { "@type": "Answer", "text": "Typically, no. Low engine oil usually results in ticking, knocking, or clunking sounds due to internal metal friction. Squealing almost exclusively points to belts, pulleys, or brakes." } },
-        { "@type": "Question", "name": "Why does my car squeal only in the morning?", "acceptedAnswer": { "@type": "Answer", "text": "Morning squeals (cold starts) happen because rubber belts and metal pulleys contract when cold, and morning dew adds moisture. Once the engine warms up, the belt expands and grips better, stopping the squeal." } },
-        { "@type": "Question", "name": "Why does my car squeal when I turn the steering wheel?", "acceptedAnswer": { "@type": "Answer", "text": "This is a classic symptom of a slipping power steering belt or a struggling power steering pump. Turning the wheel—especially to the extremes—puts maximum load on the pump, causing a weak belt to slip and squeal." } },
-        { "@type": "Question", "name": "Why is my car making a squeaking noise but no warning light?", "acceptedAnswer": { "@type": "Answer", "text": "Most components that squeal, like a serpentine belt, tensioner pulley, or brake pad wear indicator, are purely mechanical. They don't have electronic sensors to trigger a dashboard warning light." } }
-      ]
-    }
-  ]
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://carithm.vercel.app/audio/squealing-noise/#webapp",
+      "name": "Carithm AI Car Sound Analyzer - Squealing Noise",
+      "about": {
+        "@type": "Thing",
+        "name": "Car squealing noise diagnosis"
+      },
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free AI tool that analyzes car squealing sounds and identifies possible causes including belts, brakes, pulleys, bearings and engine components.",
+      "url": "https://carithm.vercel.app/audio/squealing-noise",
+      "author": { "@type": "Organization", "name": "Carithm" },
+      "publisher": { "@type": "Organization", "name": "Carithm" }
+    },
+    {
+      "@type": "Article",
+      "headline": "My Car Is Making a Squealing Noise — Find the Cause With AI",
+      "author": {
+        "@type": "Organization",
+        "name": "Carithm"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Carithm",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://carithm.vercel.app/favicon.png"
+        }
+      },
+      "datePublished": "2026-01-15",
+      "dateModified": "2026-07-21"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://carithm.vercel.app/"},
+        {"@type": "ListItem", "position": 2, "name": "Audio Diagnosis", "item": "https://carithm.vercel.app/audio"},
+        {"@type": "ListItem", "position": 3, "name": "Squealing Noise Diagnosis", "item": "https://carithm.vercel.app/audio/squealing-noise"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is it dangerous to drive with a squealing belt?", "acceptedAnswer": { "@type": "Answer", "text": "Usually not for a short trip, but a slipping belt can fail without warning and take your power steering or alternator with it. If it only squeals briefly on cold starts you likely have some time; if it is loud and constant, get it checked soon." } },
+        { "@type": "Question", "name": "Can a squealing noise mean my car is about to break down?", "acceptedAnswer": { "@type": "Answer", "text": "On its own, rarely. Squealing is usually a warning sign, not a breakdown in progress. It becomes urgent if it is paired with smoke, a burning smell, a battery warning light, or the steering suddenly feeling heavy." } },
+        { "@type": "Question", "name": "Can I still drive to a mechanic if my car is squealing?", "acceptedAnswer": { "@type": "Answer", "text": "In most cases yes, as long as none of the stop-driving warning signs are present. Drive gently, avoid high RPM, and get it looked at as soon as you reasonably can." } },
+        { "@type": "Question", "name": "How urgent is a car squealing noise?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on when it happens. Brief squeals on cold starts are usually low urgency. Squealing that gets louder, happens constantly, or occurs while braking is higher urgency and worth checking within a day or two." } },
+        { "@type": "Question", "name": "Can a squealing noise come from the engine?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Belts, pulleys, alternators, water pumps and tensioners can all produce engine squealing sounds." } },
+        { "@type": "Question", "name": "Can brakes make a squealing noise?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Many brake pads include wear indicators designed to squeal when replacement is needed." } },
+        { "@type": "Question", "name": "Can a low oil level cause squealing?", "acceptedAnswer": { "@type": "Answer", "text": "Typically, no. Low engine oil usually results in ticking, knocking, or clunking sounds due to internal metal friction. Squealing almost exclusively points to belts, pulleys, or brakes." } },
+        { "@type": "Question", "name": "Why does my car squeal only in the morning?", "acceptedAnswer": { "@type": "Answer", "text": "Morning squeals (cold starts) happen because rubber belts and metal pulleys contract when cold, and morning dew adds moisture. Once the engine warms up, the belt expands and grips better, stopping the squeal." } },
+        { "@type": "Question", "name": "Why does my car squeal when I turn the steering wheel?", "acceptedAnswer": { "@type": "Answer", "text": "This is a classic symptom of a slipping power steering belt or a struggling power steering pump. Turning the wheel—especially to the extremes—puts maximum load on the pump, causing a weak belt to slip and squeal." } },
+        { "@type": "Question", "name": "Why is my car making a squeaking noise but no warning light?", "acceptedAnswer": { "@type": "Answer", "text": "Most components that squeal, like a serpentine belt, tensioner pulley, or brake pad wear indicator, are purely mechanical. They don't have electronic sensors to trigger a dashboard warning light." } }
+      ]
+    }
+  ]
 }
 </script>
 
 <style>
 :root {
-  --bg:         #0c0d0e;
-  --surface:    #131415;
-  --surface2:   #1a1b1d;
-  --surface3:   #222426;
-  --border:     rgba(255,255,255,0.08);
-  --border2:    rgba(255,255,255,0.14);
-  --text:       #f5f4f2;
-  --muted:      #a3a6a9;
-  --muted2:     #6e7275;
-  --accent:     #2f81f7;
-  --accent-dim: rgba(47,129,247,0.1);
-  --amber:      #e8a33d;
-  --amber-dim:  rgba(232,163,61,0.1);
-  --red:        #e5484d;
-  --red-dim:    rgba(229,72,77,0.1);
-  --green:      #22c55e;
-  --mono: 'JetBrains Mono', monospace;
-  --r: 12px; --r-sm: 8px;
-  color-scheme: dark;
+  --bg:         #0c0d0e;
+  --surface:    #131415;
+  --surface2:   #1a1b1d;
+  --surface3:   #222426;
+  --border:     rgba(255,255,255,0.08);
+  --border2:    rgba(255,255,255,0.14);
+  --text:       #f5f4f2;
+  --muted:      #a3a6a9;
+  --muted2:     #6e7275;
+  --accent:     #2f81f7;
+  --accent-dim: rgba(47,129,247,0.1);
+  --amber:      #e8a33d;
+  --amber-dim:  rgba(232,163,61,0.1);
+  --red:        #e5484d;
+  --red-dim:    rgba(229,72,77,0.1);
+  --green:      #22c55e;
+  --mono: 'JetBrains Mono', monospace;
+  --r: 12px; --r-sm: 8px;
+  color-scheme: dark;
 }
 * { box-sizing: border-box; scroll-behavior: smooth; }
 body { font-family: 'Inter', system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
@@ -189,12 +189,12 @@ strong { color: var(--text); }
 .toc-list a:hover { opacity: 0.7; text-decoration: underline; }
 
 /* Interactive UI Elements */
-.scenario-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; margin-bottom: 24px;}
+.scenario-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; margin-bottom: 24px; }
 .scenario-link { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); text-decoration: none; font-size: 14px; font-weight: 500; color: var(--text); transition: border-color 0.2s, background 0.2s; }
 .scenario-link:hover { border-color: var(--accent); background: var(--surface2); }
 
 /* AI Tool Embed */
-.card { background: var(--surface); padding: 26px; border-radius: var(--r); margin-top: 26px; border: 1px solid var(--border); margin-bottom: 32px;}
+.card { background: var(--surface); padding: 26px; border-radius: var(--r); margin-top: 26px; border: 1px solid var(--border); margin-bottom: 32px; }
 .card.tool { border-color: rgba(47,129,247,0.25); }
 .card.tool.tool-wide { max-width: 1100px; width: 100%; margin-left: 50%; transform: translateX(-50%); box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
 
@@ -226,17 +226,17 @@ details.faq-item .faq-content p:last-child { margin-bottom: 0; }
 /* Sticky mobile CTA bar */
 .mobile-cta-bar { display: none; }
 @media (max-width: 620px) {
-  .mobile-cta-bar {
-    display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
-    background: var(--surface); border-top: 1px solid var(--border2);
-    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
-    box-shadow: 0 -8px 24px rgba(0,0,0,0.35);
-  }
-  .mobile-cta-bar a {
-    flex: 1; text-align: center; background: var(--accent); color: #000;
-    font-weight: 700; font-size: 14.5px; padding: 12px 14px; border-radius: 10px; text-decoration: none;
-  }
-  main { padding-bottom: 90px; }
+  .mobile-cta-bar {
+    display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+    background: var(--surface); border-top: 1px solid var(--border2);
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.35);
+  }
+  .mobile-cta-bar a {
+    flex: 1; text-align: center; background: var(--accent); color: #000;
+    font-weight: 700; font-size: 14.5px; padding: 12px 14px; border-radius: 10px; text-decoration: none;
+  }
+  main { padding-bottom: 90px; }
 }
 
 /* Footer */
@@ -254,279 +254,279 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 <body>
 
 <header>
-  <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
-  <nav class="nav" aria-label="Main navigation">
-    <a href="https://carithm.vercel.app/">Home</a>
-    <a href="https://carithm.vercel.app/toyota">Toyota</a>
-    <a href="https://carithm.vercel.app/bmw">BMW</a>
-    <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
-    <a href="https://carithm.vercel.app/research">Research</a>
-    <a href="https://carithm.vercel.app/audio" class="active">Audio Diagnosis</a>
-    <a href="#try" class="cta-btn">Analyze My Car Noise</a>
-  </nav>
+  <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <a href="https://carithm.vercel.app/toyota">Toyota</a>
+    <a href="https://carithm.vercel.app/bmw">BMW</a>
+    <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
+    <a href="https://carithm.vercel.app/research">Research</a>
+    <a href="https://carithm.vercel.app/audio" class="active">Audio Diagnosis</a>
+    <a href="#try" class="cta-btn">Analyze My Car Noise</a>
+  </nav>
 </header>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
-  <a href="https://carithm.vercel.app/">Home</a>
-  <span class="sep">/</span>
-  <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
-  <span class="sep">/</span>
-  <span class="current">Squealing Noise</span>
+  <a href="https://carithm.vercel.app/">Home</a>
+  <span class="sep">/</span>
+  <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+  <span class="sep">/</span>
+  <span class="current">Squealing Noise</span>
 </nav>
 
 <main class="container">
 
 <article>
-  <div class="eyebrow">AI CAR NOISE DIAGNOSIS</div>
-  <h1>Car Squealing Noise? Upload Your Sound & Find the Possible Cause With AI</h1>
+  <div class="eyebrow">AI CAR NOISE DIAGNOSIS</div>
+  <h1>Car Squealing Noise? Upload Your Sound & Find the Possible Cause With AI</h1>
 
-  <p class="lead">
-    Hear a squealing sound from your car? Upload a short recording and Carithm AI analyzes the noise pattern to help identify possible causes like belts, pulleys, brakes, bearings, and engine components.
-  </p>
-  <p class="lead" style="margin-top: -10px;">
-    Many drivers search for answers like: <em>why is my car squealing when I start it</em>, <em>why does my car squeal when accelerating</em>, or <em>why does my engine make a high-pitched noise</em>. We built this tool to give you instant answers without the guesswork.
-  </p>
+  <p class="lead">
+    Hear a squealing sound from your car? Upload a short recording and Carithm AI analyzes the noise pattern to help identify possible causes like belts, pulleys, brakes, bearings, and engine components.
+  </p>
+  <p class="lead" style="margin-top: -10px;">
+    Many drivers search for answers like: <em>why is my car squealing when I start it</em>, <em>why does my car squeal when accelerating</em>, or <em>why does my engine make a high-pitched noise</em>. We built this tool to give you instant answers without the guesswork.
+  </p>
 
-  <!-- High-intent CTA above the fold -->
-  <section class="card tool tool-wide" id="try">
-    <h2 style="margin-top: 0; font-size: 1.8rem;">Upload Your Car's Squealing Sound</h2>
-    <p>Upload a short audio recording of your car noise from your phone while the sound is happening. Our AI car sound analyzer examines acoustic patterns linked to:</p>
-    
-    <h3 style="margin-top: 18px; margin-bottom: 8px; font-size: 1.1rem;">What Carithm Can Analyze</h3>
-    <ul>
-      <li>Serpentine belt squeal patterns</li>
-      <li>Accessory pulley bearing sounds</li>
-      <li>Brake squeal signatures</li>
-      <li>Engine accessory noises</li>
-    </ul>
+  <!-- High-intent CTA above the fold -->
+  <section class="card tool tool-wide" id="try">
+    <h2 style="margin-top: 0; font-size: 1.8rem;">Upload Your Car's Squealing Sound</h2>
+    <p>Upload a short audio recording of your car noise from your phone while the sound is happening. Our AI car sound analyzer examines acoustic patterns linked to:</p>
+    
+    <h3 style="margin-top: 18px; margin-bottom: 8px; font-size: 1.1rem;">What Carithm Can Analyze</h3>
+    <ul>
+      <li>Serpentine belt squeal patterns</li>
+      <li>Accessory pulley bearing sounds</li>
+      <li>Brake squeal signatures</li>
+      <li>Engine accessory noises</li>
+    </ul>
 
-    <div class="streamlit-embed-wrap">
-      <iframe
-        id="streamlitFrame"
-        class="streamlit-embed"
-        src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
-        title="Carithm AI Car Sound Analyzer"
-        loading="lazy"
-        allow="microphone; clipboard-write"
-      ></iframe>
-      <div class="iframe-brand-mask"></div>
-    </div>
-    <div class="cta-note">
-      <strong>✓ Free AI Car Noise Analysis</strong>
-      Get a possible cause before spending money on a diagnostic appointment.
-    </div>
-    <div class="trust-row">
-      <span>No signup</span>
-      <span>No download</span>
-      <span>No appointment</span>
-      <span>100% free</span>
-    </div>
-  </section>
+    <div class="streamlit-embed-wrap">
+      <iframe
+        id="streamlitFrame"
+        class="streamlit-embed"
+        src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
+        title="Carithm AI Car Sound Analyzer"
+        loading="lazy"
+        allow="microphone; clipboard-write"
+      ></iframe>
+      <div class="iframe-brand-mask"></div>
+    </div>
+    <div class="cta-note">
+      <strong>✓ Free AI Car Noise Analysis</strong>
+      Get a possible cause before spending money on a diagnostic appointment.
+    </div>
+    <div class="trust-row">
+      <span>No signup</span>
+      <span>No download</span>
+      <span>No appointment</span>
+      <span>100% free</span>
+    </div>
+  </section>
 
-  <div class="quickscan">
-    <span class="icon">🛑</span>
-    <p><strong>Stop driving now</strong> if you also smell burning rubber, see smoke, have a battery warning light, or your steering suddenly feels heavy. <a href="#severity">Full safety checklist ↓</a></p>
-  </div>
+  <div class="quickscan">
+    <span class="icon">🛑</span>
+    <p><strong>Stop driving now</strong> if you also smell burning rubber, see smoke, have a battery warning light, or your steering suddenly feels heavy. <a href="#severity">Full safety checklist ↓</a></p>
+  </div>
 
-  <img src="/audio/src/cardiag/web/static/belt.jpg" alt="Worn serpentine belt causing a squealing noise in a car engine bay" class="hero-img" loading="eager" decoding="async" width="1200" height="675">
+  <img src="/audio/src/cardiag/web/static/belt.jpg" alt="Worn serpentine belt causing a squealing noise in a car engine bay" class="hero-img" loading="eager" decoding="async" width="1200" height="675">
 
-  <nav class="toc" aria-label="Table of Contents">
-    <div class="toc-title">Jump to section</div>
-    <ul class="toc-list">
-      <li><a href="#try">1. Analyze the Noise with AI</a></li>
-      <li><a href="#timing">2. Why Is My Car Squealing? (Common Situations)</a></li>
-      <li><a href="#sound-examples">3. What Different Squeals Usually Mean</a></li>
-      <li><a href="#costs">4. How Much Does It Cost To Fix?</a></li>
-      <li><a href="#severity">5. Is It Safe To Keep Driving?</a></li>
-      <li><a href="#other-noises">6. Diagnosing Other Noises</a></li>
-      <li><a href="#faq">7. FAQ</a></li>
-    </ul>
-  </nav>
+  <nav class="toc" aria-label="Table of Contents">
+    <div class="toc-title">Jump to section</div>
+    <ul class="toc-list">
+      <li><a href="#try">1. Analyze the Noise with AI</a></li>
+      <li><a href="#timing">2. Why Is My Car Squealing? (Common Situations)</a></li>
+      <li><a href="#sound-examples">3. What Different Squeals Usually Mean</a></li>
+      <li><a href="#costs">4. How Much Does It Cost To Fix?</a></li>
+      <li><a href="#severity">5. Is It Safe To Keep Driving?</a></li>
+      <li><a href="#other-noises">6. Diagnosing Other Noises</a></li>
+      <li><a href="#faq">7. FAQ</a></li>
+    </ul>
+  </nav>
 
-  <section id="timing">
-    <h2>Why Is My Car Squealing?</h2>
-    
-    <h3>Why does my car squeal when starting?</h3>
-    <p>A squeal immediately after starting is commonly caused by a loose or worn serpentine belt, weak tensioner, or pulley issue. If it disappears after a few seconds, belt slip is a common suspect.</p>
-    
-    <h3>Why does my car squeal when accelerating?</h3>
-    <p>A squeal that increases with RPM may indicate belt slip, a failing pulley bearing, alternator issue, or another accessory drive component.</p>
-    
-    <h3>Why does my car squeal when braking?</h3>
-    <p>A squeal while braking often points toward brake pad wear indicators, brake dust, or brake hardware problems.</p>
-    
-    <h3>Why does my car make a high-pitched squealing noise?</h3>
-    <p>High-pitched squealing is often associated with metal-on-metal contact, such as completely worn brake pads, or a severely slipping, glazed rubber belt running over metal pulleys.</p>
+  <section id="timing">
+    <h2>Why Is My Car Squealing?</h2>
+    
+    <h3>Why does my car squeal when starting?</h3>
+    <p>A squeal immediately after starting is commonly caused by a loose or worn serpentine belt, weak tensioner, or pulley issue. If it disappears after a few seconds, belt slip is a common suspect.</p>
+    
+    <h3>Why does my car squeal when accelerating?</h3>
+    <p>A squeal that increases with RPM may indicate belt slip, a failing pulley bearing, alternator issue, or another accessory drive component.</p>
+    
+    <h3>Why does my car squeal when braking?</h3>
+    <p>A squeal while braking often points toward brake pad wear indicators, brake dust, or brake hardware problems.</p>
+    
+    <h3>Why does my car make a high-pitched squealing noise?</h3>
+    <p>High-pitched squealing is often associated with metal-on-metal contact, such as completely worn brake pads, or a severely slipping, glazed rubber belt running over metal pulleys.</p>
 
-    <h3>Why does my car squeal only when cold?</h3>
-    <p>Cold-only squealing is commonly related to belts and tension systems because rubber components are stiff and behave differently before warming up.</p>
+    <h3>Why does my car squeal only when cold?</h3>
+    <p>Cold-only squealing is commonly related to belts and tension systems because rubber components are stiff and behave differently before warming up.</p>
 
-    <div class="scenario-grid">
-      <a href="/audio/squealing-on-startup" class="scenario-link">Car Squeals When Starting</a>
-      <a href="/audio/squealing-when-accelerating" class="scenario-link">Car Squeals When Accelerating</a>
-      <a href="/audio/squealing-when-braking" class="scenario-link">Car Squeals When Braking</a>
-    </div>
-  </section>
+    <div class="scenario-grid">
+      <a href="/audio/squealing-on-startup" class="scenario-link">Car Squeals When Starting</a>
+      <a href="/audio/squealing-when-accelerating" class="scenario-link">Car Squeals When Accelerating</a>
+      <a href="/audio/squealing-when-braking" class="scenario-link">Car Squeals When Braking</a>
+    </div>
+  </section>
 
-  <section id="sound-examples">
-    <h2>What Different Car Squealing Sounds Usually Mean</h2>
-    <p><strong>Cold start squeal:</strong><br> Usually indicates a belt slip or tension issue.</p>
-    <p><strong>High pitched continuous squeal:</strong><br> Often related to a bearing or pulley failing.</p>
-    <p><strong>Squeal when braking:</strong><br> Usually the built-in brake wear indicator warning you it's time for new pads.</p>
-    <p><strong>Squeal that follows engine RPM:</strong><br> Often points to an accessory drive issue like a water pump or alternator.</p>
-  </section>
+  <section id="sound-examples">
+    <h2>What Different Car Squealing Sounds Usually Mean</h2>
+    <p><strong>Cold start squeal:</strong><br> Usually indicates a belt slip or tension issue.</p>
+    <p><strong>High pitched continuous squeal:</strong><br> Often related to a bearing or pulley failing.</p>
+    <p><strong>Squeal when braking:</strong><br> Usually the built-in brake wear indicator warning you it's time for new pads.</p>
+    <p><strong>Squeal that follows engine RPM:</strong><br> Often points to an accessory drive issue like a water pump or alternator.</p>
+  </section>
 
-  <section id="costs">
-    <h2>How Much Does It Cost To Fix a Squealing Car Noise?</h2>
-    <p>Knowing the rough price range takes some of the fear out of the "how bad is this" question. Treat these as ballpark estimates (parts and labor combined).</p>
-    <table class="seo-table">
-      <tr>
-        <th>Repair Type</th>
-        <th>Estimated Cost Range</th>
-      </tr>
-      <tr>
-        <td>Serpentine belt replacement</td>
-        <td>$50 - $250</td>
-      </tr>
-      <tr>
-        <td>Belt tensioner replacement</td>
-        <td>$150 - $500</td>
-      </tr>
-      <tr>
-        <td>Pulley bearing replacement</td>
-        <td>$150 - $600</td>
-      </tr>
-      <tr>
-        <td>Brake pad replacement</td>
-        <td>$150 - $800</td>
-      </tr>
-      <tr>
-        <td>Alternator replacement</td>
-        <td>$400 - $1000</td>
-      </tr>
-    </table>
-  </section>
+  <section id="costs">
+    <h2>How Much Does It Cost To Fix a Squealing Car Noise?</h2>
+    <p>Knowing the rough price range takes some of the fear out of the "how bad is this" question. Treat these as ballpark estimates (parts and labor combined).</p>
+    <table class="seo-table">
+      <tr>
+        <th>Repair Type</th>
+        <th>Estimated Cost Range</th>
+      </tr>
+      <tr>
+        <td>Serpentine belt replacement</td>
+        <td>$50 - $250</td>
+      </tr>
+      <tr>
+        <td>Belt tensioner replacement</td>
+        <td>$150 - $500</td>
+      </tr>
+      <tr>
+        <td>Pulley bearing replacement</td>
+        <td>$150 - $600</td>
+      </tr>
+      <tr>
+        <td>Brake pad replacement</td>
+        <td>$150 - $800</td>
+      </tr>
+      <tr>
+        <td>Alternator replacement</td>
+        <td>$400 - $1000</td>
+      </tr>
+    </table>
+  </section>
 
-  <section id="severity">
-    <h2>Can You Drive With a Squealing Car?</h2>
-    <p>It depends on the cause. Some squealing noises are minor warnings, while others can indicate a component that may fail.</p>
-    <ul>
-      <li>Stop driving if you notice smoke, burning rubber smell, overheating, battery warning light, or sudden steering difficulty.</li>
-      <li>A brief squeal during startup may be less urgent, but it should still be checked if it continues.</li>
-      <li>A loud constant squeal should be investigated before it turns into a breakdown.</li>
-    </ul>
-  </section>
+  <section id="severity">
+    <h2>Can You Drive With a Squealing Car?</h2>
+    <p>It depends on the cause. Some squealing noises are minor warnings, while others can indicate a component that may fail.</p>
+    <ul>
+      <li>Stop driving if you notice smoke, burning rubber smell, overheating, battery warning light, or sudden steering difficulty.</li>
+      <li>A brief squeal during startup may be less urgent, but it should still be checked if it continues.</li>
+      <li>A loud constant squeal should be investigated before it turns into a breakdown.</li>
+    </ul>
+  </section>
 
-  <section id="other-noises">
-    <h2>Other Car Noises You Can Diagnose</h2>
-    <p>Is your car making a different sound? Use Carithm to check these common noise patterns:</p>
-    <div class="scenario-grid">
-      <a href="/audio/clicking-noise" class="scenario-link">🔊 Clicking noise</a>
-      <a href="/audio/knocking-noise" class="scenario-link">🔊 Knocking noise</a>
-      <a href="/audio/rattling-noise" class="scenario-link">🔊 Rattling noise</a>
-      <a href="/audio/grinding-noise" class="scenario-link">🔊 Grinding noise</a>
-      <a href="/audio/whining-noise" class="scenario-link">🔊 Whining noise</a>
-    </div>
-  </section>
+  <section id="other-noises">
+    <h2>Other Car Noises You Can Diagnose</h2>
+    <p>Is your car making a different sound? Use Carithm to check these common noise patterns:</p>
+    <div class="scenario-grid">
+      <a href="/audio/clicking-noise" class="scenario-link">🔊 Clicking noise</a>
+      <a href="/audio/knocking-noise" class="scenario-link">🔊 Knocking noise</a>
+      <a href="/audio/rattling-noise" class="scenario-link">🔊 Rattling noise</a>
+      <a href="/audio/grinding-noise" class="scenario-link">🔊 Grinding noise</a>
+      <a href="/audio/whining-noise" class="scenario-link">🔊 Whining noise</a>
+    </div>
+  </section>
 
-  <section id="faq">
-    <h2>Questions People Ask When Their Car Is Squealing</h2>
+  <section id="faq">
+    <h2>Questions People Ask When Their Car Is Squealing</h2>
 
-    <details class="faq-item" open>
-      <summary>Is it dangerous to drive with a squealing belt?</summary>
-      <div class="faq-content">
-        <p>Usually not for a short trip, but a slipping belt can fail without warning and take your power steering or alternator with it. If it only squeals briefly on cold starts you likely have some time; if it's loud and constant, get it checked soon.</p>
-      </div>
-    </details>
+    <details class="faq-item" open>
+      <summary>Is it dangerous to drive with a squealing belt?</summary>
+      <div class="faq-content">
+        <p>Usually not for a short trip, but a slipping belt can fail without warning and take your power steering or alternator with it. If it only squeals briefly on cold starts you likely have some time; if it's loud and constant, get it checked soon.</p>
+      </div>
+    </details>
 
-    <details class="faq-item">
-      <summary>Can a squealing noise mean my car is about to break down?</summary>
-      <div class="faq-content">
-        <p>On its own, rarely. Squealing is usually a warning sign, not a breakdown in progress. It becomes urgent if it's paired with smoke, a burning smell, a battery warning light, or the steering suddenly feeling heavy.</p>
-      </div>
-    </details>
+    <details class="faq-item">
+      <summary>Can a squealing noise mean my car is about to break down?</summary>
+      <div class="faq-content">
+        <p>On its own, rarely. Squealing is usually a warning sign, not a breakdown in progress. It becomes urgent if it's paired with smoke, a burning smell, a battery warning light, or the steering suddenly feeling heavy.</p>
+      </div>
+    </details>
 
-    <details class="faq-item">
-      <summary>Can I still drive to a mechanic if my car is squealing?</summary>
-      <div class="faq-content">
-        <p>In most cases yes, as long as none of the stop-driving warning signs above are present. Drive gently, avoid high RPM, and get it looked at as soon as you reasonably can.</p>
-      </div>
-    </details>
+    <details class="faq-item">
+      <summary>Can I still drive to a mechanic if my car is squealing?</summary>
+      <div class="faq-content">
+        <p>In most cases yes, as long as none of the stop-driving warning signs above are present. Drive gently, avoid high RPM, and get it looked at as soon as you reasonably can.</p>
+      </div>
+    </details>
 
-    <details class="faq-item">
-      <summary>How urgent is a car squealing noise?</summary>
-      <div class="faq-content">
-        <p>It depends on when it happens. Brief squeals on cold starts are usually low urgency. Squealing that gets louder, happens constantly, or occurs while braking is higher urgency and worth checking within a day or two.</p>
-      </div>
-    </details>
+    <details class="faq-item">
+      <summary>How urgent is a car squealing noise?</summary>
+      <div class="faq-content">
+        <p>It depends on when it happens. Brief squeals on cold starts are usually low urgency. Squealing that gets louder, happens constantly, or occurs while braking is higher urgency and worth checking within a day or two.</p>
+      </div>
+    </details>
 
-    <details class="faq-item">
-      <summary>Can a squealing noise come from the engine?</summary>
-      <div class="faq-content">
-        <p>Yes. Belts, pulleys, alternators, water pumps and tensioners can all produce engine squealing sounds.</p>
-      </div>
-    </details>
+    <details class="faq-item">
+      <summary>Can a squealing noise come from the engine?</summary>
+      <div class="faq-content">
+        <p>Yes. Belts, pulleys, alternators, water pumps and tensioners can all produce engine squealing sounds.</p>
+      </div>
+    </details>
 
-    <details class="faq-item">
-      <summary>Can brakes make a squealing noise?</summary>
-      <div class="faq-content">
-        <p>Absolutely. Many brake pads include wear indicators designed to squeal when replacement is needed.</p>
-      </div>
-    </details>
+    <details class="faq-item">
+      <summary>Can brakes make a squealing noise?</summary>
+      <div class="faq-content">
+        <p>Absolutely. Many brake pads include wear indicators designed to squeal when replacement is needed.</p>
+      </div>
+    </details>
 
-    <details class="faq-item">
-      <summary>Can a low oil level cause squealing?</summary>
-      <div class="faq-content">
-        <p>Typically, no. Low engine oil usually results in ticking, knocking, or clunking sounds due to internal metal friction. Squealing almost exclusively points to belts, pulleys, or brakes.</p>
-      </div>
-    </details>
+    <details class="faq-item">
+      <summary>Can a low oil level cause squealing?</summary>
+      <div class="faq-content">
+        <p>Typically, no. Low engine oil usually results in ticking, knocking, or clunking sounds due to internal metal friction. Squealing almost exclusively points to belts, pulleys, or brakes.</p>
+      </div>
+    </details>
 
-    <details class="faq-item">
-      <summary>Why does my car squeal only in the morning?</summary>
-      <div class="faq-content">
-        <p>Morning squeals (cold starts) happen because rubber belts and metal pulleys contract when cold, and morning dew adds moisture. Once the engine warms up, the belt expands and grips better, stopping the squeal.</p>
-      </div>
-    </details>
+    <details class="faq-item">
+      <summary>Why does my car squeal only in the morning?</summary>
+      <div class="faq-content">
+        <p>Morning squeals (cold starts) happen because rubber belts and metal pulleys contract when cold, and morning dew adds moisture. Once the engine warms up, the belt expands and grips better, stopping the squeal.</p>
+      </div>
+    </details>
 
-    <details class="faq-item">
-      <summary>Why does my car squeal when I turn the steering wheel?</summary>
-      <div class="faq-content">
-        <p>This is a classic symptom of a slipping power steering belt or a struggling power steering pump. Turning the wheel—especially to the extremes—puts maximum load on the pump, causing a weak belt to slip and squeal.</p>
-      </div>
-    </details>
+    <details class="faq-item">
+      <summary>Why does my car squeal when I turn the steering wheel?</summary>
+      <div class="faq-content">
+        <p>This is a classic symptom of a slipping power steering belt or a struggling power steering pump. Turning the wheel—especially to the extremes—puts maximum load on the pump, causing a weak belt to slip and squeal.</p>
+      </div>
+    </details>
 
-    <details class="faq-item">
-      <summary>Why is my car making a squeaking noise but no warning light?</summary>
-      <div class="faq-content">
-        <p>Most components that squeal, like a serpentine belt, tensioner pulley, or brake pad wear indicator, are purely mechanical. They don't have electronic sensors to trigger a dashboard warning light.</p>
-      </div>
-    </details>
+    <details class="faq-item">
+      <summary>Why is my car making a squeaking noise but no warning light?</summary>
+      <div class="faq-content">
+        <p>Most components that squeal, like a serpentine belt, tensioner pulley, or brake pad wear indicator, are purely mechanical. They don't have electronic sensors to trigger a dashboard warning light.</p>
+      </div>
+    </details>
 
-  </section>
+  </section>
 
 </article>
 </main>
 
 <div class="mobile-cta-bar">
-  <a href="#try">🔊 Analyze My Car Noise Now</a>
+  <a href="#try">🔊 Analyze My Car Noise Now</a>
 </div>
 
 <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-links">
-      <a href="https://carithm.vercel.app/">Home</a>
-      <a href="https://carithm.vercel.app/toyota">Toyota</a>
-      <a href="https://carithm.vercel.app/bmw">BMW</a>
-      <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
-      <a href="https://carithm.vercel.app/research">Research</a>
-      <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
-      <a href="#try">Find My Noise Cause</a>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2026 Carithm. All rights reserved. Repair cost ranges are general estimates, not quotes — actual pricing varies by vehicle, region, and shop.
-    </div>
-  </div>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://carithm.vercel.app/">Home</a>
+      <a href="https://carithm.vercel.app/toyota">Toyota</a>
+      <a href="https://carithm.vercel.app/bmw">BMW</a>
+      <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
+      <a href="https://carithm.vercel.app/research">Research</a>
+      <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+      <a href="#try">Find My Noise Cause</a>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Carithm. All rights reserved. Repair cost ranges are general estimates, not quotes — actual pricing varies by vehicle, region, and shop.
+    </div>
+  </div>
 </footer>
 
 </body>
-</html> and we make car model year specific pages lets make 30 of them, target the most problem searched cars in america
+</html>
