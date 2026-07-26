@@ -28,12 +28,10 @@
 
   // 2. NEW: Iframe PostMessage Listener
   window.addEventListener('message', function(event) {
-    // Security check: Only accept messages from your specific Streamlit app domain
     if (event.origin !== 'https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app') return;
 
     const data = event.data;
 
-    // Route custom Streamlit events directly into Google Analytics
     if (data && data.type === 'streamlit_analytics') {
       if (typeof gtag === 'function') {
         gtag('event', data.eventName, {
@@ -45,15 +43,16 @@
     }
   });
 </script>
+
+<!-- Google AdSense Global Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" crossorigin="anonymous"></script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Free AI Car Sound Diagnosis App | Engine Noise Identifier</title>
-
 <meta name="description" content="Free online AI car sound diagnostic app. Record engine, brake, or transmission noises for an instant, mechanic-level diagnosis. No download required.">
-
 <meta name="robots" content="index,follow">
-
 <link rel="canonical" href="https://carithm.vercel.app/audio">
 
 <meta property="og:type" content="website">
@@ -226,6 +225,27 @@ header {
 
 main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
 
+.ad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  min-height: 100px;
+}
+.ad-container .ad-label {
+  font-size: 10px;
+  color: var(--muted2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
 .breadcrumb { font-size: 12.5px; color: var(--muted2); margin-bottom: 18px; }
 .breadcrumb a { color: var(--muted); text-decoration: none; }
 .breadcrumb a:hover { color: var(--accent); }
@@ -383,6 +403,20 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   <span class="current">AI Car Sound Analyzer</span>
 </nav>
 
+<!-- Ad Slot 1: Top Leaderboard -->
+<div class="ad-container">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5227538935323998"
+       data-ad-slot="6469714155"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
 <section>
   <div class="eyebrow">Carithm Audio Intelligence</div>
 
@@ -432,6 +466,20 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
   </noscript>
 </section>
 
+<!-- Ad Slot 2: Post-Tool / In-Feed -->
+<div class="ad-container">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5227538935323998"
+       data-ad-slot="2530469147"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
 <section>
   <h2>Engine Sound Diagnostic AI & Car Noise Identifier</h2>
   <ul>
@@ -464,6 +512,20 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 
   <h3>What causes a clicking noise when turning?</h3>
   <p>A clicking or popping sound during turns, especially at low speed or full lock, is a classic sign of a worn outer CV joint. It typically gets louder as you accelerate through the turn.</p>
+
+  <!-- Ad Slot 3: In-Content Reading Break -->
+  <div class="ad-container">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-5227538935323998"
+         data-ad-slot="5302872061"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
 
   <h3>Why is there a humming or whining noise at highway speed?</h3>
   <p>Speed-dependent humming that changes pitch with your speed (not engine RPM) usually points to a wheel bearing. Whining that tracks engine RPM instead is more often a transmission, differential, or power steering pump issue.</p>
@@ -579,6 +641,20 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
   <a href="https://carithm.vercel.app/" class="crosslink-btn">Check My Repair Quote →</a>
 </div>
 
+<!-- Ad Slot 4: Bottom Discovery -->
+<div class="ad-container">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5227538935323998"
+       data-ad-slot="2586309463"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
 <section style="margin-top: 44px;">
   <div class="eyebrow">Also on Carithm</div>
   <h2 style="margin-top: 8px;">Understand the repair before you pay for it</h2>
@@ -631,4 +707,3 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 
 </body>
 </html>
-```[cite: 1]
