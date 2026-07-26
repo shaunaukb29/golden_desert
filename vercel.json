@@ -34,10 +34,8 @@
     { "source": "/audio/squealing-while-turning", "destination": "/audio/src/cardiag/web/static/squealing-while-turning.html" },
     { "source": "/audio/squealing-only-cold", "destination": "/audio/src/cardiag/web/static/squealing-only-cold.html" },
     { "source": "/audio/squealing-all-the-time", "destination": "/audio/src/cardiag/web/static/squealing-all-the-time.html" },
-
     { "source": "/audio", "destination": "/audio/src/cardiag/web/static/app.html" },
     { "source": "/audio/:slug", "destination": "/audio/src/cardiag/web/static/:slug.html" },
-
     {
       "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)",
       "destination": "/$1/index.html"
@@ -46,7 +44,6 @@
       "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)/:model",
       "destination": "/$1/:model/index.html"
     },
-
     { "source": "/parts/:part", "destination": "/parts/:part.html" },
     { "source": "/repairs/:repair", "destination": "/repairs/:repair.html" },
     { "source": "/problems/:problem", "destination": "/problems/:problem.html" },
