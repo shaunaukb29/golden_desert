@@ -45,7 +45,7 @@
     { "source": "/audio/2015-chrysler-200-squealing-noise", "destination": "/audio/src/cardiag/web/static/2015-chrysler-200-squealing-noise.html" },
     { "source": "/audio/2016-acura-rdx-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2016-acura-rdx-squealing-brakes.html" },
     { "source": "/audio/2020-2022-kia-sorento-squealing-noise", "destination": "/audio/src/cardiag/web/static/2020-2022-kia-sorento-squealing-noise.html" },
-    { "source": "/audio/2025-chevrolet-equinox-ev-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2025-chevrolet-equinox-ev-squealing-brakes.html" }
+    { "source": "/audio/2025-chevrolet-equinox-ev-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2025-chevrolet-equinox-ev-squealing-brakes.html" },
     { "source": "/audio/:slug", "destination": "/audio/src/cardiag/web/static/:slug.html" },
     {
       "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)",
