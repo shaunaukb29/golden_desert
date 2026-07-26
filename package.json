@@ -5,8 +5,9 @@
   "main": "cars/generate-pages.js",
   "scripts": {
     "generate": "node cars/generate-pages.js",
+    "generate-audio": "python3 audio/src/cardiag/web/static/generate_pages.py",
     "sitemap": "node generate-sitemap.js",
-    "build": "npm run generate && npm run sitemap",
+    "build": "npm run generate-audio && npm run generate && npm run sitemap",
     "deploy": "npm run build"
   },
   "dependencies": {
