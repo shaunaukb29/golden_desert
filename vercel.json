@@ -36,6 +36,16 @@
     { "source": "/audio/squealing-while-turning", "destination": "/audio/src/cardiag/web/static/squealing-while-turning.html" },
     { "source": "/audio/squealing-only-cold", "destination": "/audio/src/cardiag/web/static/squealing-only-cold.html" },
     { "source": "/audio/squealing-all-the-time", "destination": "/audio/src/cardiag/web/static/squealing-all-the-time.html" },
+    { "source": "/audio/2008-dodge-grand-caravan-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2008-dodge-grand-caravan-squealing-brakes.html" },
+    { "source": "/audio/2011-ford-fiesta-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2011-ford-fiesta-squealing-brakes.html" },
+    { "source": "/audio/2013-2014-chevrolet-equinox-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2013-2014-chevrolet-equinox-squealing-brakes.html" },
+    { "source": "/audio/2013-2014-honda-crv-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2013-2014-honda-crv-squealing-brakes.html" },
+    { "source": "/audio/2013-nissan-altima-squealing-noise", "destination": "/audio/src/cardiag/web/static/2013-nissan-altima-squealing-noise.html" },
+    { "source": "/audio/2014-ford-explorer-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2014-ford-explorer-squealing-brakes.html" },
+    { "source": "/audio/2015-chrysler-200-squealing-noise", "destination": "/audio/src/cardiag/web/static/2015-chrysler-200-squealing-noise.html" },
+    { "source": "/audio/2016-acura-rdx-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2016-acura-rdx-squealing-brakes.html" },
+    { "source": "/audio/2020-2022-kia-sorento-squealing-noise", "destination": "/audio/src/cardiag/web/static/2020-2022-kia-sorento-squealing-noise.html" },
+    { "source": "/audio/2025-chevrolet-equinox-ev-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2025-chevrolet-equinox-ev-squealing-brakes.html" }
     { "source": "/audio/:slug", "destination": "/audio/src/cardiag/web/static/:slug.html" },
     {
       "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)",
