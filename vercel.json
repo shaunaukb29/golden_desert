@@ -4,6 +4,14 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/audio/src/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    }
+  ],
   "redirects": [
     { "source": "/toyota/toyota-land-cruiser-maintenance-cost-uae.html", "destination": "/toyota/land-cruiser-maintenance-cost", "permanent": true },
     { "source": "/toyota/toyota-corolla-service-cost-uae.html", "destination": "/toyota/corolla-service-cost", "permanent": true },
