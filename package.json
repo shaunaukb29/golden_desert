@@ -1,16 +1,16 @@
 {
-  "name": "carithm-seo-engine",
-  "version": "1.0.0",
-  "description": "Programmatic SEO generator for car repair cost pages",
-  "main": "cars/generate-pages.js",
-  "scripts": {
-    "generate": "node cars/generate-pages.js",
-    "sitemap": "node generate-sitemap.js",
-    "build": "npm run generate && npm run sitemap",
-    "deploy": "npm run build"
-  },
-  "dependencies": {
-    "fs-extra": "^11.1.1",
-    "handlebars": "^4.7.8"
-  }
+  "name": "carithm-seo-engine",
+  "version": "1.0.0",
+  "description": "Programmatic SEO generator for car repair cost pages",
+  "main": "cars/generate-pages.js",
+  "scripts": {
+    "generate": "node cars/generate-pages.js",
+    "sitemap": "node generate-sitemap.js",
+    "build": "npm run generate && npm run sitemap",
+    "deploy": "npm run build"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "handlebars": "^4.7.8"
+  }
 }
