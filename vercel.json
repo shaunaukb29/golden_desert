@@ -1,54 +1,55 @@
 {
-  "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": ".",
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    { "source": "/toyota/toyota-land-cruiser-maintenance-cost-uae.html", "destination": "/toyota/land-cruiser-maintenance-cost.html", "permanent": true },
-    { "source": "/toyota/toyota-corolla-service-cost-uae.html", "destination": "/toyota/corolla-service-cost.html", "permanent": true },
-    { "source": "/toyota/toyota-prado-repair-cost-uae.html", "destination": "/toyota/prado-repair-cost.html", "permanent": true },
-    { "source": "/bmw/bmw-x5-maintenance-cost-dubai.html", "destination": "/bmw/x5-maintenance-cost.html", "permanent": true },
-    { "source": "/bmw/bmw-x3-repair-cost-uae.html", "destination": "/bmw/x3-repair-cost.html", "permanent": true },
-    { "source": "/bmw/bmw-5-series-service-cost-uae.html", "destination": "/bmw/5-series-service-cost.html", "permanent": true },
-    { "source": "/bmw/bmw-3-series-repair-cost-uae.html", "destination": "/bmw/3-series-repair-cost.html", "permanent": true },
-    { "source": "/mercedes/mercedes-c200-service-cost-abu-dhabi.html", "destination": "/mercedes/c200-service-cost.html", "permanent": true },
-    { "source": "/mercedes/mercedes-e300-maintenance-cost-uae.html", "destination": "/mercedes/e300-maintenance-cost.html", "permanent": true },
-    { "source": "/mercedes/mercedes-gle-350-repair-cost-uae.html", "destination": "/mercedes/gle-350-repair-cost.html", "permanent": true },
-    { "source": "/mercedes/mercedes-s500-maintenance-cost-uae.html", "destination": "/mercedes/s500-maintenance-cost.html", "permanent": true },
-    { "source": "/nissan/nissan-patrol-maintenance-cost-uae.html", "destination": "/nissan/patrol-maintenance-cost.html", "permanent": true },
-    { "source": "/nissan/nissan-altima-service-cost-uae.html", "destination": "/nissan/altima-service-cost.html", "permanent": true },
-    { "source": "/nissan/nissan-xtrail-repair-cost-uae.html", "destination": "/nissan/xtrail-repair-cost.html", "permanent": true },
-    { "source": "/honda/honda-accord-repair-cost-uae.html", "destination": "/honda/accord-repair-cost.html", "permanent": true },
-    { "source": "/honda/honda-civic-maintenance-cost-uae.html", "destination": "/honda/civic-maintenance-cost.html", "permanent": true },
-    { "source": "/honda/honda-crv-service-cost-uae.html", "destination": "/honda/crv-service-cost.html", "permanent": true },
-    { "source": "/lexus/lexus-rx350-maintenance-cost-uae.html", "destination": "/lexus/rx350-maintenance-cost.html", "permanent": true },
-    { "source": "/lexus/lexus-lx570-repair-cost-uae.html", "destination": "/lexus/lx570-repair-cost.html", "permanent": true },
-    { "source": "/lexus/lexus-es350-service-cost-uae.html", "destination": "/lexus/es350-service-cost.html", "permanent": true }
-  ],
-  "rewrites": [
-  { "source": "/audio/squealing-noise", "destination": "/audio/src/cardiag/web/static/squealing-noise" },
-  { "source": "/audio/squealing-on-startup", "destination": "/audio/src/cardiag/web/static/squealing-on-startup" },
-  { "source": "/audio/squealing-when-accelerating", "destination": "/audio/src/cardiag/web/static/squealing-when-accelerating" },
-  { "source": "/audio/squealing-when-braking", "destination": "/audio/src/cardiag/web/static/squealing-when-braking" },
-  { "source": "/audio/squealing-while-turning", "destination": "/audio/src/cardiag/web/static/squealing-while-turning" },
-  { "source": "/audio/squealing-only-cold", "destination": "/audio/src/cardiag/web/static/squealing-only-cold" },
-  { "source": "/audio/squealing-all-the-time", "destination": "/audio/src/cardiag/web/static/squealing-all-the-time" },
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/toyota/toyota-land-cruiser-maintenance-cost-uae.html", "destination": "/toyota/land-cruiser-maintenance-cost.html", "permanent": true },
+    { "source": "/toyota/toyota-corolla-service-cost-uae.html", "destination": "/toyota/corolla-service-cost.html", "permanent": true },
+    { "source": "/toyota/toyota-prado-repair-cost-uae.html", "destination": "/toyota/prado-repair-cost.html", "permanent": true },
+    { "source": "/bmw/bmw-x5-maintenance-cost-dubai.html", "destination": "/bmw/x5-maintenance-cost.html", "permanent": true },
+    { "source": "/bmw/bmw-x3-repair-cost-uae.html", "destination": "/bmw/x3-repair-cost.html", "permanent": true },
+    { "source": "/bmw/bmw-5-series-service-cost-uae.html", "destination": "/bmw/5-series-service-cost.html", "permanent": true },
+    { "source": "/bmw/bmw-3-series-repair-cost-uae.html", "destination": "/bmw/3-series-repair-cost.html", "permanent": true },
+    { "source": "/mercedes/mercedes-c200-service-cost-abu-dhabi.html", "destination": "/mercedes/c200-service-cost.html", "permanent": true },
+    { "source": "/mercedes/mercedes-e300-maintenance-cost-uae.html", "destination": "/mercedes/e300-maintenance-cost.html", "permanent": true },
+    { "source": "/mercedes/mercedes-gle-350-repair-cost-uae.html", "destination": "/mercedes/gle-350-repair-cost.html", "permanent": true },
+    { "source": "/mercedes/mercedes-s500-maintenance-cost-uae.html", "destination": "/mercedes/s500-maintenance-cost.html", "permanent": true },
+    { "source": "/nissan/nissan-patrol-maintenance-cost-uae.html", "destination": "/nissan/patrol-maintenance-cost.html", "permanent": true },
+    { "source": "/nissan/nissan-altima-service-cost-uae.html", "destination": "/nissan/altima-service-cost.html", "permanent": true },
+    { "source": "/nissan/nissan-xtrail-repair-cost-uae.html", "destination": "/nissan/xtrail-repair-cost.html", "permanent": true },
+    { "source": "/honda/honda-accord-repair-cost-uae.html", "destination": "/honda/accord-repair-cost.html", "permanent": true },
+    { "source": "/honda/honda-civic-maintenance-cost-uae.html", "destination": "/honda/civic-maintenance-cost.html", "permanent": true },
+    { "source": "/honda/honda-crv-service-cost-uae.html", "destination": "/honda/crv-service-cost.html", "permanent": true },
+    { "source": "/lexus/lexus-rx350-maintenance-cost-uae.html", "destination": "/lexus/rx350-maintenance-cost.html", "permanent": true },
+    { "source": "/lexus/lexus-lx570-repair-cost-uae.html", "destination": "/lexus/lx570-repair-cost.html", "permanent": true },
+    { "source": "/lexus/lexus-es350-service-cost-uae.html", "destination": "/lexus/es350-service-cost.html", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/audio/squealing-noise", "destination": "/audio/src/cardiag/web/static/squealing-noise.html" },
+    { "source": "/audio/squealing-on-startup", "destination": "/audio/src/cardiag/web/static/squealing-on-startup.html" },
+    { "source": "/audio/squealing-when-accelerating", "destination": "/audio/src/cardiag/web/static/squealing-when-accelerating.html" },
+    { "source": "/audio/squealing-when-braking", "destination": "/audio/src/cardiag/web/static/squealing-when-braking.html" },
+    { "source": "/audio/squealing-while-turning", "destination": "/audio/src/cardiag/web/static/squealing-while-turning.html" },
+    { "source": "/audio/squealing-only-cold", "destination": "/audio/src/cardiag/web/static/squealing-only-cold.html" },
+    { "source": "/audio/squealing-all-the-time", "destination": "/audio/src/cardiag/web/static/squealing-all-the-time.html" },
 
-  { "source": "/audio", "destination": "/audio/src/cardiag/web/static/app" },
+    { "source": "/audio", "destination": "/audio/src/cardiag/web/static/app.html" },
+    { "source": "/audio/:slug", "destination": "/audio/src/cardiag/web/static/:slug.html" },
 
-  {
-    "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)",
-    "destination": "/$1/index.html"
-  },
-  {
-    "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)/:model",
-    "destination": "/$1/:model/index.html"
-  },
+    {
+      "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)",
+      "destination": "/$1/index.html"
+    },
+    {
+      "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)/:model",
+      "destination": "/$1/:model/index.html"
+    },
 
-  { "source": "/parts/:part", "destination": "/parts/:part.html" },
-  { "source": "/repairs/:repair", "destination": "/repairs/:repair.html" },
-  { "source": "/problems/:problem", "destination": "/problems/:problem.html" },
-  { "source": "/research/:study", "destination": "/research/:study.html" }
-]
+    { "source": "/parts/:part", "destination": "/parts/:part.html" },
+    { "source": "/repairs/:repair", "destination": "/repairs/:repair.html" },
+    { "source": "/problems/:problem", "destination": "/problems/:problem.html" },
+    { "source": "/research/:study", "destination": "/research/:study.html" }
+  ]
 }
