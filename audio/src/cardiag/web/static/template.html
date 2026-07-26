@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
+      }
+    }, interval * 1000);
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ meta_description }}">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Carithm">
+<link rel="canonical" href="https://carithm.vercel.app/audio/{{ slug }}">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ meta_description }}">
+<meta property="og:url" content="https://carithm.vercel.app/audio/{{ slug }}">
+<meta property="og:image" content="https://carithm.vercel.app/audio/src/cardiag/web/static/belt.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page_title }}">
+<meta name="twitter:description" content="{{ meta_description }}">
+<meta name="twitter:image" content="https://carithm.vercel.app/audio/src/cardiag/web/static/belt.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#09090b">
+
+<!-- Master Schema combining WebApp, Breadcrumb, Article, and FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://carithm.vercel.app/audio/{{ slug }}/#webapp",
+      "name": "Carithm AI Car Sound Analyzer - {{ year }} {{ make }} {{ model }}",
+      "about": {
+        "@type": "Thing",
+        "name": "{{ year }} {{ make }} {{ model }} squealing noise diagnosis"
+      },
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "{{ meta_description }}",
+      "url": "https://carithm.vercel.app/audio/{{ slug }}",
+      "author": { "@type": "Organization", "name": "Carithm" },
+      "publisher": { "@type": "Organization", "name": "Carithm" }
+    },
+    {
+      "@type": "Article",
+      "@headline": "{{ h1_title }}",
+      "author": { "@type": "Organization", "name": "Carithm" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Carithm",
+        "logo": { "@type": "ImageObject", "url": "https://carithm.vercel.app/favicon.png" }
+      },
+      "datePublished": "2026-07-26",
+      "dateModified": "2026-07-26"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://carithm.vercel.app/"},
+        {"@type": "ListItem", "position": 2, "name": "Audio Diagnosis", "item": "https://carithm.vercel.app/audio"},
+        {"@type": "ListItem", "position": 3, "name": "{{ year }} {{ make }} {{ model }} Squeal", "item": "https://carithm.vercel.app/audio/{{ slug }}"}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* CSS keeps exact styles provided by user */
+:root {
+  --bg: #0c0d0e; --surface: #131415; --surface2: #1a1b1d; --surface3: #222426;
+  --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14);
+  --text: #f5f4f2; --muted: #a3a6a9; --muted2: #6e7275;
+  --accent: #2f81f7; --accent-dim: rgba(47,129,247,0.1);
+  --amber: #e8a33d; --amber-dim: rgba(232,163,61,0.1);
+  --red: #e5484d; --red-dim: rgba(229,72,77,0.1);
+  --green: #22c55e; --mono: 'JetBrains Mono', monospace;
+  --r: 12px; --r-sm: 8px; color-scheme: dark;
+}
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+header { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: rgba(12,13,14,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none; }
+.nav-logo span { color: var(--accent); }
+.nav { display: flex; gap: 1.75rem; align-items: center; }
+.nav a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; transition: color .2s; }
+.nav a:hover, .nav a.active { color: #fff; }
+.nav .cta-btn { background: var(--accent-dim); border: 1px solid rgba(47,129,247,0.3); color: var(--accent); padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600; }
+.nav .cta-btn:hover { background: var(--accent); color: #000; }
+.breadcrumb { max-width: 760px; margin: 18px auto 0; padding: 0 24px; font-size: 12px; color: var(--muted2); }
+.breadcrumb a { color: var(--muted2); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb .sep { margin: 0 6px; color: var(--muted2); }
+.breadcrumb .current { color: var(--text); font-weight: 500; }
+main { max-width: 760px; margin: 0 auto; padding: 20px 24px 96px; }
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+h1 { font-size: clamp(1.8rem, 5vw, 2.3rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 14px; line-height: 1.14; }
+h2 { font-size: 1.5rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; scroll-margin-top: 80px; }
+h3 { font-size: 1.2rem; font-weight: 600; margin-top: 28px; color: #fff; }
+p { color: var(--muted); margin: 0 0 14px; }
+.lead { font-size: 1.05rem; color: var(--text); margin-bottom: 20px; }
+ul, ol { color: var(--muted); padding-left: 20px; margin-bottom: 16px; }
+li { margin-bottom: 6px; }
+strong { color: var(--text); }
+.hero-img { width: 100%; border-radius: var(--r); margin: 16px 0 24px; object-fit: cover; border: 1px solid var(--border); }
+.quickscan { display: flex; align-items: flex-start; gap: 10px; background: var(--red-dim); border: 1px solid rgba(229,72,77,.3); border-radius: var(--r-sm); padding: 14px 16px; margin-bottom: 22px; }
+.quickscan .icon { font-size: 18px; line-height: 1; }
+.quickscan p { margin: 0; font-size: 13.5px; color: var(--text); }
+.quickscan strong { color: var(--red); }
+.quickscan a { color: var(--accent); font-weight: 600; text-decoration: underline; white-space: nowrap; }
+.toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 20px; margin-bottom: 32px; }
+.toc-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); margin-bottom: 12px; }
+.toc-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.toc-list a { text-decoration: none; color: var(--accent); font-size: 14px; font-weight: 500; display: inline-block; transition: opacity 0.2s; }
+.card { background: var(--surface); padding: 26px; border-radius: var(--r); margin-top: 26px; border: 1px solid var(--border); margin-bottom: 32px;}
+.card.tool { border-color: rgba(47,129,247,0.25); }
+.card.tool.tool-wide { max-width: 1100px; width: 100%; margin-left: 50%; transform: translateX(-50%); box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+.streamlit-embed-wrap { position: relative; --streamlit-height: min(1200px, 90vh); margin-top: 18px; border: 1px solid rgba(47,129,247,0.25); border-radius: var(--r-sm); overflow: hidden; background: var(--surface2); resize: vertical; }
+.streamlit-embed { display: block; width: 100%; height: var(--streamlit-height); min-height: 640px; border: 0; background: var(--bg); }
+.iframe-brand-mask { position: absolute; bottom: 0; left: 0; right: 0; height: 44px; background: var(--surface2); z-index: 99999; pointer-events: auto; border-top: 1px solid var(--border); cursor: default; }
+.cta-note { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 16px 20px; margin-top: 24px; font-size: 13px; color: var(--muted); text-align: center; }
+.cta-note strong { color: var(--accent); display: block; margin-bottom: 4px; font-size: 14px; }
+.trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin-top: 14px; font-size: 12.5px; color: var(--muted); }
+.trust-row span::before { content: "✓"; color: var(--green); font-weight: 700; }
+table.seo-table { width: 100%; border-collapse: collapse; margin: 14px 0 24px; font-size: 13px; }
+table.seo-table th, table.seo-table td { border: 1px solid var(--border); padding: 12px 14px; text-align: left; color: var(--muted); }
+table.seo-table th { background: var(--surface); color: var(--text); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+details.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); margin-bottom: 12px; overflow: hidden; }
+details.faq-item summary { padding: 16px; font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; position: relative; padding-right: 40px; }
+details.faq-item summary::after { content: '+'; position: absolute; right: 16px; top: 16px; color: var(--accent); font-size: 18px; line-height: 1; }
+details.faq-item[open] summary::after { content: '−'; }
+details.faq-item .faq-content { padding: 0 16px 16px; font-size: 14px; color: var(--muted); }
+footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
+.footer-inner { max-width: 760px; margin: 0 auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
+.footer-links a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <a href="https://carithm.vercel.app/toyota">Toyota</a>
+    <a href="https://carithm.vercel.app/bmw">BMW</a>
+    <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
+    <a href="https://carithm.vercel.app/research">Research</a>
+    <a href="https://carithm.vercel.app/audio" class="active">Audio Diagnosis</a>
+    <a href="#try" class="cta-btn">Analyze My Car Noise</a>
+  </nav>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://carithm.vercel.app/">Home</a>
+  <span class="sep">/</span>
+  <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+  <span class="sep">/</span>
+  <span class="current">{{ year }} {{ make }} {{ model }}</span>
+</nav>
+
+<main class="container">
+
+<article>
+  <div class="eyebrow">AI CAR NOISE DIAGNOSIS — {{ year }} {{ make.upper() }} {{ model.upper() }}</div>
+  <h1>{{ h1_title }}</h1>
+
+  <p class="lead">
+    Hearing a squealing noise from your <strong>{{ year }} {{ make }} {{ model }}</strong>? Upload a quick audio recording to let Carithm AI analyze the acoustic signature and diagnose common causes like {{ common_issue_summary }}.
+  </p>
+
+  <section class="card tool tool-wide" id="try">
+    <h2 style="margin-top: 0; font-size: 1.8rem;">Upload Your {{ year }} {{ make }} {{ model }}'s Sound</h2>
+    <p>Record the noise from inside or outside your vehicle. Our AI compares your sound wave pattern against known {{ make }} fault frequencies:</p>
+    
+    <div class="streamlit-embed-wrap">
+      <iframe
+        id="streamlitFrame"
+        class="streamlit-embed"
+        src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
+        title="Carithm AI Car Sound Analyzer"
+        loading="lazy"
+        allow="microphone; clipboard-write"
+      ></iframe>
+      <div class="iframe-brand-mask"></div>
+    </div>
+    <div class="cta-note">
+      <strong>✓ Instant AI Diagnosis for {{ year }} {{ make }} {{ model }}</strong>
+      Know what's causing the squeal before paying shop diagnostic fees.
+    </div>
+  </section>
+
+  <section id="timing">
+    <h2>Common Causes of Squealing in a {{ year }} {{ make }} {{ model }}</h2>
+    <p>{{ vehicle_specific_diagnosis }}</p>
+  </section>
+
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://carithm.vercel.app/">Home</a>
+      <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Carithm. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
