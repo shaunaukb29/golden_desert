@@ -5,6 +5,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    { "source": "/audio", "destination": "/audio/src/cardiag/web/static/app", "permanent": false },
+    { "source": "/audio/", "destination": "/audio/src/cardiag/web/static/app", "permanent": false },
     { "source": "/toyota/toyota-land-cruiser-maintenance-cost-uae.html", "destination": "/toyota/land-cruiser-maintenance-cost.html", "permanent": true },
     { "source": "/toyota/toyota-corolla-service-cost-uae.html", "destination": "/toyota/corolla-service-cost.html", "permanent": true },
     { "source": "/toyota/toyota-prado-repair-cost-uae.html", "destination": "/toyota/prado-repair-cost.html", "permanent": true },
@@ -27,8 +29,6 @@
     { "source": "/lexus/lexus-es350-service-cost-uae.html", "destination": "/lexus/es350-service-cost.html", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/audio", "destination": "/audio/src/cardiag/web/static/app.html" },
-    { "source": "/audio/", "destination": "/audio/src/cardiag/web/static/app.html" },
     { "source": "/audio/squealing-noise", "destination": "/audio/src/cardiag/web/static/squealing-noise.html" },
     { "source": "/audio/squealing-on-startup", "destination": "/audio/src/cardiag/web/static/squealing-on-startup.html" },
     { "source": "/audio/squealing-when-accelerating", "destination": "/audio/src/cardiag/web/static/squealing-when-accelerating.html" },
