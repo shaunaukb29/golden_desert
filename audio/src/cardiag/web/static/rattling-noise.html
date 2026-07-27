@@ -38,7 +38,7 @@
 <meta property="og:title" content="Car Making a Rattling Noise? Causes, Fixes & AI Sound Diagnosis">
 <meta property="og:description" content="Upload a recording of your car's rattling noise and get a free AI-assisted analysis of possible causes, urgency, and cost in seconds.">
 <meta property="og:url" content="https://carithm.vercel.app/audio/rattling-noise">
-<meta property="og:image" content="https://carithm.vercel.app/rattling.jpg">
+<meta property="og:image" content="https://carithm.vercel.app/car-rattling-noise-heat-shield.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Car Making a Rattling Noise? Causes, Fixes & AI Sound Diagnosis">
@@ -70,6 +70,10 @@
       "@id": "https://carithm.vercel.app/audio/rattling-noise/#article",
       "headline": "Car Making a Rattling Noise? Find the Cause With AI",
       "description": "A scenario-by-scenario breakdown of what causes car rattling noises, how urgent each cause is, typical repair costs, and a free AI tool to analyze the sound.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://carithm.vercel.app/car-rattling-noise-heat-shield.jpg"
+      },
       "datePublished": "2026-07-27",
       "dateModified": "2026-07-27",
       "author": { "@type": "Organization", "name": "Carithm", "url": "https://carithm.vercel.app/" },
@@ -84,7 +88,10 @@
         { "@type": "Question", "name": "Is an engine rattling noise serious?", "acceptedAnswer": { "@type": "Answer", "text": "Some engine rattles are minor, while others may indicate timing or internal mechanical problems. A sound recording can help identify possible causes before inspection." } },
         { "@type": "Question", "name": "Why does my dashboard rattle while driving?", "acceptedAnswer": { "@type": "Answer", "text": "Dashboard rattling is usually caused by loose trim pieces, clips, or plastic panels vibrating, and is typically harmless." } },
         { "@type": "Question", "name": "What causes a rattling noise underneath the car?", "acceptedAnswer": { "@type": "Answer", "text": "A metallic rattle from underneath the vehicle is often caused by a loose heat shield or exhaust component, though worn suspension parts can also be responsible." } },
-        { "@type": "Question", "name": "Is it safe to keep driving with a rattling noise?", "acceptedAnswer": { "@type": "Answer", "text": "A light, occasional rattle from trim or a heat shield is usually safe to drive on short-term. A rattle paired with steering vibration, warning lights, or a noise that's getting louder should be checked before you drive further." } }
+        { "@type": "Question", "name": "Is it safe to keep driving with a rattling noise?", "acceptedAnswer": { "@type": "Answer", "text": "A light, occasional rattle from trim or a heat shield is usually safe to drive on short-term. A rattle paired with steering vibration, warning lights, or a noise that's getting louder should be checked before you drive further." } },
+        { "@type": "Question", "name": "Why is my car rattling when I accelerate but not when idling?", "acceptedAnswer": { "@type": "Answer", "text": "A rattle that only shows up under acceleration is often exhaust movement, a stressed heat shield, or a worn engine or transmission mount reacting to torque, since these parts move differently under load than they do at a steady idle." } },
+        { "@type": "Question", "name": "Why is my car making a rattling noise but no warning light?", "acceptedAnswer": { "@type": "Answer", "text": "Many rattle causes, including heat shields, exhaust hangers, and suspension components, won't trigger a warning light because that light mostly monitors emissions and engine sensors rather than physical or mechanical noise." } },
+        { "@type": "Question", "name": "Can I drive with a rattling noise?", "acceptedAnswer": { "@type": "Answer", "text": "A light, occasional rattle from trim or a heat shield is usually fine to drive on short-term. If it's paired with steering vibration, a warning light, or is getting louder, it's best to have it checked before driving further." } }
       ]
     },
     {
@@ -218,7 +225,7 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   <h1>Car Making a Rattling Noise? Find the Cause With AI</h1>
 
   <div class="byline">
-    <span>Written by the Carithm AI engineering team &middot; reviewed against OEM service documentation and automotive repair references</span>
+    <span>Reviewed by <strong>Carithm AI Automotive Research Team</strong> against OEM service documentation and automotive repair references</span>
     <span class="dot"></span>
     <span>Updated <time datetime="2026-07-27">July 27, 2026</time></span>
     <span class="dot"></span>
@@ -234,7 +241,40 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     <p><strong>Where and when it happens matters:</strong> a rattle from the dashboard, exhaust, wheels, or engine points to different problems, and whether it happens at idle, on acceleration, over bumps, or at startup narrows it further.</p>
   </div>
 
-  <h2 id="quickref" style="margin-top: 24px; scroll-margin-top: 80px;">Quick Reference: Rattle Sound vs. Likely Cause</h2>
+  <section class="card tool tool-wide" id="try">
+    <h2 style="margin-top: 0; font-size: 1.8rem;">🔊 Upload Your Car Rattling Sound</h2>
+    <p>Record the rattling noise while your car is making it. AI sound analysis can help narrow down whether the noise is coming from the engine, exhaust, suspension, or interior components.</p>
+    <p>
+      Carithm AI provides a probability-based analysis of possible causes.
+      It does not replace a professional mechanical inspection.
+    </p>
+
+    <div class="streamlit-embed-wrap">
+      <iframe
+        id="streamlitFrame"
+        class="streamlit-embed"
+        src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
+        title="Carithm AI Car Sound Analyzer"
+        loading="lazy"
+        allow="microphone; clipboard-write"
+      ></iframe>
+      <div class="iframe-brand-mask"></div>
+    </div>
+
+    <div class="cta-note">
+      <strong>✓ Record Car Sound, Diagnose Possible Causes</strong>
+      No app required. Just record and upload directly from your browser. <em>If your browser blocks the microphone, you can use the file upload option inside the tool.</em>
+    </div>
+
+    <div class="trust-row">
+      <span>No signup</span>
+      <span>No download</span>
+      <span>No appointment</span>
+      <span>100% free</span>
+    </div>
+  </section>
+
+  <h2 id="quickref">Quick Reference: Rattle Sound vs. Likely Cause</h2>
   <table class="seo-table">
     <tr>
       <th>Sound Situation</th>
@@ -277,52 +317,19 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
       <td>High</td>
     </tr>
   </table>
-  <p class="cost-note">General guidance only — record the sound below for a more specific, probability-based analysis.</p>
+  <p class="cost-note">General guidance only — record the sound above for a more specific, probability-based analysis.</p>
 
   <img
-    src="/rattling.jpg"
+    src="/car-rattling-noise-heat-shield.jpg"
     alt="Mechanic inspecting a car exhaust heat shield causing rattling noise"
     loading="lazy"
     style="width:100%; height:auto; border-radius:12px; border:1px solid var(--border); margin-bottom:8px;">
 
-  <section class="card tool tool-wide" id="try">
-    <h2 style="margin-top: 0; font-size: 1.8rem;">🔊 Upload Your Car Rattling Sound</h2>
-    <p>Record the rattling noise while your car is making it. AI sound analysis can help narrow down whether the noise is coming from the engine, exhaust, suspension, or interior components.</p>
-    <p>
-      Carithm AI provides a probability-based analysis of possible causes.
-      It does not replace a professional mechanical inspection.
-    </p>
-
-    <div class="streamlit-embed-wrap">
-      <iframe
-        id="streamlitFrame"
-        class="streamlit-embed"
-        src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
-        title="Carithm AI Car Sound Analyzer"
-        loading="lazy"
-        allow="microphone; clipboard-write"
-      ></iframe>
-      <div class="iframe-brand-mask"></div>
-    </div>
-
-    <div class="cta-note">
-      <strong>✓ Record Car Sound, Diagnose Possible Causes</strong>
-      No app required. Just record and upload directly from your browser. <em>If your browser blocks the microphone, you can use the file upload option inside the tool.</em>
-    </div>
-
-    <div class="trust-row">
-      <span>No signup</span>
-      <span>No download</span>
-      <span>No appointment</span>
-      <span>100% free</span>
-    </div>
-  </section>
-
   <nav class="toc" aria-label="Table of Contents">
     <div class="toc-title">Jump to section</div>
     <ul class="toc-list">
-      <li><a href="#quickref">1. Quick reference table</a></li>
-      <li><a href="#try">2. Record and analyze your noise</a></li>
+      <li><a href="#try">1. Record and analyze your noise</a></li>
+      <li><a href="#quickref">2. Quick reference table</a></li>
       <li><a href="#scenarios">3. Match your rattle to a scenario</a></li>
       <li><a href="#safety">4. Is it safe to keep driving?</a></li>
       <li><a href="#costs">5. What will this cost to fix?</a></li>
@@ -465,6 +472,13 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     </details>
 
     <details class="faq-item">
+      <summary>Why is my car rattling when I accelerate but not when idling?</summary>
+      <div class="faq-content">
+        <p>A rattle that only shows up under acceleration is often exhaust movement, a stressed heat shield, or a worn engine or transmission mount reacting to torque, since these parts move differently under load than they do at a steady idle.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
       <summary>Is an engine rattling noise serious?</summary>
       <div class="faq-content">
         <p>Some engine rattles are minor, while others may indicate timing or internal mechanical problems. A sound recording can help identify possible causes before inspection.</p>
@@ -486,9 +500,23 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     </details>
 
     <details class="faq-item">
+      <summary>Why is my car making a rattling noise but no warning light?</summary>
+      <div class="faq-content">
+        <p>Many rattle causes, including heat shields, exhaust hangers, and suspension components, won't trigger a warning light because that light mostly monitors emissions and engine sensors rather than physical or mechanical noise.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
       <summary>Is it safe to keep driving with a rattling noise?</summary>
       <div class="faq-content">
         <p>A light, occasional rattle from trim or a heat shield is usually safe to drive on short-term. A rattle paired with steering vibration, warning lights, or a noise that's getting louder should be checked before you drive further.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I drive with a rattling noise?</summary>
+      <div class="faq-content">
+        <p>A light, occasional rattle from trim or a heat shield is usually fine to drive on short-term. If it's paired with steering vibration, a warning light, or is getting louder, it's best to have it checked before driving further.</p>
       </div>
     </details>
 
