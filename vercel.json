@@ -48,6 +48,7 @@
     { "source": "/audio/knocking-noise", "destination": "/audio/src/cardiag/web/static/knocking-noise" },
     { "source": "/audio/grinding-noise", "destination": "/audio/src/cardiag/web/static/grinding-noise" },
     { "source": "/audio/rattling-noise", "destination": "/audio/src/cardiag/web/static/rattling-noise" },
+    { "source": "/audio/rattling-noise-no-check-engine-light", "destination": "/audio/src/cardiag/web/static/rattling-noise-no-check-engine-light" },
     { "source": "/audio/whining-noise", "destination": "/audio/src/cardiag/web/static/whining-noise" },
     { "source": "/audio/2008-dodge-grand-caravan-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2008-dodge-grand-caravan-squealing-brakes" },
     { "source": "/audio/2011-ford-fiesta-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2011-ford-fiesta-squealing-brakes" },
