@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- Styling, Flow, and JS perfectly match your provided template -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+  
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
+      }
+    }, interval * 1000);
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Car Making a Rattling Noise? AI Sound Diagnosis | Carithm</title>
+<meta name="description" content="Is your car making a rattling noise when accelerating, idling, or driving? Record your car sound and use AI diagnosis to find possible causes like exhaust, engine, or loose components.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Carithm">
+<link rel="canonical" href="https://carithm.vercel.app/audio/rattling-noise">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Car Making a Rattling Noise? AI Sound Diagnosis">
+<meta property="og:description" content="Upload a recording of your car's rattling noise and get a free AI-assisted analysis of possible causes in seconds.">
+<meta property="og:url" content="https://carithm.vercel.app/audio/rattling-noise">
+<meta property="og:image" content="https://carithm.vercel.app/rattling.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Car Making a Rattling Noise? AI Sound Diagnosis">
+<meta name="twitter:description" content="Upload a recording of your car's rattling noise and get a free AI-assisted analysis of possible causes in seconds.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#09090b">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://carithm.vercel.app/audio/rattling-noise/#webapp",
+      "name": "Carithm Car Sound Diagnostic App - Rattling Noise",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "App to help identify possible causes of car rattling noises by analyzing uploaded audio.",
+      "url": "https://carithm.vercel.app/audio/rattling-noise"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why does my car rattle when accelerating?", "acceptedAnswer": { "@type": "Answer", "text": "A rattling noise during acceleration can come from loose exhaust parts, heat shields, engine components, or drivetrain issues. The exact cause depends on the sound and vehicle conditions." } },
+        { "@type": "Question", "name": "Is an engine rattling noise serious?", "acceptedAnswer": { "@type": "Answer", "text": "Some engine rattles are minor, while others may indicate timing or internal mechanical problems. A sound recording can help identify possible causes before inspection." } },
+        { "@type": "Question", "name": "Why does my dashboard rattle while driving?", "acceptedAnswer": { "@type": "Answer", "text": "Dashboard rattling is usually caused by loose trim pieces, clips, or plastic panels vibrating, and is typically harmless." } },
+        { "@type": "Question", "name": "What causes a rattling noise underneath the car?", "acceptedAnswer": { "@type": "Answer", "text": "A metallic rattle from underneath the vehicle is often caused by a loose heat shield or exhaust component." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* Exact CSS retained from user template[cite: 1] */
+:root { --bg: #0c0d0e; --surface: #131415; --surface2: #1a1b1d; --surface3: #222426; --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14); --text: #f5f4f2; --muted: #a3a6a9; --muted2: #6e7275; --accent: #2f81f7; --accent-dim: rgba(47,129,247,0.1); --amber: #e8a33d; --amber-dim: rgba(232,163,61,0.1); --red: #e5484d; --red-dim: rgba(229,72,77,0.1); --green: #22c55e; --mono: 'JetBrains Mono', monospace; --r: 12px; --r-sm: 8px; color-scheme: dark; }
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+header { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: rgba(12,13,14,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none; }
+.nav-logo span { color: var(--accent); }
+.nav { display: flex; gap: 1.75rem; align-items: center; }
+.nav a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; transition: color .2s; }
+.nav a:hover, .nav a.active { color: #fff; }
+.nav .cta-btn { background: var(--accent-dim); border: 1px solid rgba(47,129,247,0.3); color: var(--accent); padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600; }
+.nav .cta-btn:hover { background: var(--accent); color: #000; }
+.breadcrumb { max-width: 760px; margin: 18px auto 0; padding: 0 24px; font-size: 12px; color: var(--muted2); }
+.breadcrumb a { color: var(--muted2); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb .sep { margin: 0 6px; color: var(--muted2); }
+.breadcrumb .current { color: var(--text); font-weight: 500; }
+main { max-width: 760px; margin: 0 auto; padding: 20px 24px 96px; }
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+h1 { font-size: clamp(1.8rem, 5vw, 2.3rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 14px; line-height: 1.14; }
+h2 { font-size: 1.5rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; scroll-margin-top: 80px; }
+h3 { font-size: 1.2rem; font-weight: 600; margin-top: 28px; color: #fff; }
+p { color: var(--muted); margin: 0 0 14px; }
+.lead { font-size: 1.05rem; color: var(--text); margin-bottom: 20px; }
+ul, ol { color: var(--muted); padding-left: 20px; margin-bottom: 16px; }
+li { margin-bottom: 6px; }
+strong { color: var(--text); }
+.quickscan { display: flex; align-items: flex-start; gap: 10px; background: var(--red-dim); border: 1px solid rgba(229,72,77,.3); border-radius: var(--r-sm); padding: 14px 16px; margin-bottom: 22px; }
+.quickscan .icon { font-size: 18px; line-height: 1; }
+.quickscan p { margin: 0; font-size: 13.5px; color: var(--text); }
+.quickscan strong { color: var(--red); }
+.quickscan a { color: var(--accent); font-weight: 600; text-decoration: underline; white-space: nowrap; }
+.quickscan.info { background: var(--accent-dim); border-color: rgba(47,129,247,0.3); }
+.quickscan.info strong { color: var(--accent); }
+.toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 20px; margin-bottom: 32px; }
+.toc-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); margin-bottom: 12px; }
+.toc-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.toc-list a { text-decoration: none; color: var(--accent); font-size: 14px; font-weight: 500; display: inline-block; transition: opacity 0.2s; }
+.toc-list a:hover { opacity: 0.7; text-decoration: underline; }
+.scenario-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; margin-bottom: 24px;}
+.scenario-link { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); text-decoration: none; font-size: 14px; font-weight: 500; color: var(--text); transition: border-color 0.2s, background 0.2s; }
+.scenario-link:hover { border-color: var(--accent); background: var(--surface2); }
+.scenario-link::before { content: "○"; color: var(--accent); }
+.highlight-box { background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.02)); border: 1px solid rgba(47,129,247,0.3); border-radius: var(--r-sm); padding: 20px; margin: 24px 0; }
+.highlight-box p:last-child { margin-bottom: 0; }
+.card { background: var(--surface); padding: 26px; border-radius: var(--r); margin-top: 26px; border: 1px solid var(--border); margin-bottom: 32px;}
+.card.tool { border-color: rgba(47,129,247,0.25); }
+.card.tool.tool-wide { max-width: 1100px; width: 100%; margin-left: 50%; transform: translateX(-50%); box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+.streamlit-embed-wrap { position: relative; --streamlit-height: min(1200px, 90vh); margin-top: 18px; border: 1px solid rgba(47,129,247,0.25); border-radius: var(--r-sm); overflow: hidden; background: var(--surface2); resize: vertical; }
+.streamlit-embed { display: block; width: 100%; height: var(--streamlit-height); min-height: 640px; border: 0; background: var(--bg); }
+.iframe-brand-mask { position: absolute; bottom: 0; left: 0; right: 0; height: 44px; background: var(--surface2); z-index: 99999; pointer-events: auto; border-top: 1px solid var(--border); cursor: default; }
+.cta-note { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 16px 20px; margin-top: 24px; font-size: 13px; color: var(--muted); text-align: center; }
+.cta-note strong { color: var(--accent); display: block; margin-bottom: 4px; font-size: 14px; }
+.trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin-top: 14px; font-size: 12.5px; color: var(--muted); }
+.trust-row span { display: flex; align-items: center; gap: 6px; }
+.trust-row span::before { content: "✓"; color: var(--green); font-weight: 700; }
+table.seo-table { width: 100%; border-collapse: collapse; margin: 14px 0 8px; font-size: 13px; }
+table.seo-table th, table.seo-table td { border: 1px solid var(--border); padding: 12px 14px; text-align: left; color: var(--muted); }
+table.seo-table th { background: var(--surface); color: var(--text); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+.cost-note { font-size: 12px; color: var(--muted2); margin-top: 8px; margin-bottom: 24px; }
+details.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); margin-bottom: 12px; overflow: hidden; }
+details.faq-item summary { padding: 16px; font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; position: relative; padding-right: 40px; }
+details.faq-item summary::-webkit-details-marker { display: none; }
+details.faq-item summary::after { content: '+'; position: absolute; right: 16px; top: 16px; color: var(--accent); font-size: 18px; line-height: 1; }
+details.faq-item[open] summary::after { content: '−'; }
+details.faq-item .faq-content { padding: 0 16px 16px; font-size: 14px; color: var(--muted); }
+details.faq-item .faq-content p:last-child { margin-bottom: 0; }
+.mobile-cta-bar { display: none; }
+@media (max-width: 620px) {
+  .mobile-cta-bar { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--surface); border-top: 1px solid var(--border2); padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); box-shadow: 0 -8px 24px rgba(0,0,0,0.35); }
+  .mobile-cta-bar a { flex: 1; text-align: center; background: var(--accent); color: #000; font-weight: 700; font-size: 14.5px; padding: 12px 14px; border-radius: 10px; text-decoration: none; }
+  main { padding-bottom: 90px; }
+}
+footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
+.footer-inner { max-width: 760px; margin: 0 auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
+.footer-links a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+.footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
+@media (max-width: 620px) { header { padding: 0.9rem 1.1rem; } .nav a:not(.cta-btn) { display: none; } table.seo-table { display: block; overflow-x: auto; white-space: nowrap; } }
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <a href="https://carithm.vercel.app/audio" class="active">Audio Diagnosis</a>
+    <a href="#try" class="cta-btn">Analyze My Car Noise</a>
+  </nav>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://carithm.vercel.app/">Home</a>
+  <span class="sep">/</span>
+  <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+  <span class="sep">/</span>
+  <span class="current">Rattling Noise</span>
+</nav>
+
+<main class="container">
+
+<article>
+  <div class="eyebrow">AI CAR NOISE DIAGNOSIS</div>
+  <h1>Car Making a Rattling Noise? Find the Cause With AI</h1>
+
+  <p class="lead">
+    A rattling noise from your car can come from something simple like a loose panel or heat shield, or something more serious like an engine or timing component issue. Record your sound and let Carithm AI analyze the noise pattern to find possible causes.
+  </p>
+
+  <div class="quickscan info">
+    <span class="icon">ℹ️</span>
+    <p><strong>Where the rattle happens matters:</strong> A rattle from the dashboard, exhaust, wheels, or engine can point to completely different problems. Pay attention to whether it happens during acceleration, idling, bumps, or turning.</p>
+  </div>
+
+  <section class="card tool tool-wide" id="try">
+    <h2 style="margin-top: 0; font-size: 1.8rem;">🔊 Upload Your Car Rattling Sound</h2>
+    <p>Record the rattling noise while your car is making it. AI sound analysis can help narrow down whether the noise is coming from the engine, exhaust, suspension, or interior components.</p>
+
+    <div class="streamlit-embed-wrap">
+      <iframe
+        id="streamlitFrame"
+        class="streamlit-embed"
+        src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
+        title="Carithm AI Car Sound Analyzer"
+        loading="lazy"
+        allow="microphone; clipboard-write"
+      ></iframe>
+      <div class="iframe-brand-mask"></div>
+    </div>
+
+    <div class="cta-note">
+      <strong>✓ Record Car Sound, Diagnose Possible Causes</strong>
+      No app required. Just record and upload directly from your browser. <em>If your browser blocks the microphone, you can use the file upload option inside the tool.</em>
+    </div>
+
+    <div class="trust-row">
+      <span>No signup</span>
+      <span>No download</span>
+      <span>No appointment</span>
+      <span>100% free</span>
+    </div>
+  </section>
+
+  <nav class="toc" aria-label="Table of Contents">
+    <div class="toc-title">Jump to section</div>
+    <ul class="toc-list">
+      <li><a href="#try">1. App To Diagnose Car Noise</a></li>
+      <li><a href="#causes">2. Why Does My Car Rattle When Accelerating?</a></li>
+      <li><a href="#costs">3. What Will This Cost to Fix?</a></li>
+      <li><a href="#faq">4. Common Questions</a></li>
+      <li><a href="#other-sounds">5. Other Car Sounds</a></li>
+    </ul>
+  </nav>
+
+  <section id="causes">
+    <h2>Why Does My Car Rattle When Accelerating?</h2>
+    <p>The timing and location of a rattling noise are the biggest clues. Common causes include:</p>
+    <ul>
+      <li><strong>Loose Exhaust Heat Shield:</strong> A metallic rattle from underneath the vehicle is often caused by a loose heat shield or exhaust component.</li>
+      <li><strong>Engine Rattling Noise:</strong> A rattle that follows engine RPM may be related to timing components, low oil pressure, or internal engine parts.</li>
+      <li><strong>Dashboard Rattling Noise:</strong> Usually caused by loose trim pieces, clips, or plastic panels vibrating while driving.</li>
+      <li><strong>Rattling When Going Over Bumps:</strong> May come from suspension components such as bushings, links, or loose mounting hardware.</li>
+      <li><strong>Rattling During Acceleration:</strong> Could be caused by exhaust movement, engine mounts, drivetrain components, or combustion-related issues.</li>
+    </ul>
+  </section>
+
+  <section id="costs">
+    <h2>What Will This Cost to Fix?</h2>
+    <p>Treat these as ballpark U.S. estimates, parts and labor combined[cite: 1].</p>
+    <table class="seo-table">
+      <tr>
+        <th>Likely Cause</th>
+        <th>Typical Repair Cost Range</th>
+      </tr>
+      <tr>
+        <td>Heat Shield Repair or Replacement</td>
+        <td>$50 – $250</td>
+      </tr>
+      <tr>
+        <td>Dashboard / Interior Trim Fix</td>
+        <td>$0 – $150 (often DIY)</td>
+      </tr>
+      <tr>
+        <td>Suspension Bushings or Mounts</td>
+        <td>$150 – $500 per side</td>
+      </tr>
+      <tr>
+        <td>Timing Chain / Internal Engine Component</td>
+        <td>$500 – $2,000+</td>
+      </tr>
+    </table>
+    <p class="cost-note">Actual costs vary by vehicle make, model, and labor rates in your area.</p>
+  </section>
+
+  <section id="faq">
+    <h2>Questions About Car Rattling Noises</h2>
+
+    <details class="faq-item" open>
+      <summary>Why does my car rattle when accelerating?</summary>
+      <div class="faq-content">
+        <p>A rattling noise during acceleration can come from loose exhaust parts, heat shields, engine components, or drivetrain issues. The exact cause depends on the sound and vehicle conditions.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is an engine rattling noise serious?</summary>
+      <div class="faq-content">
+        <p>Some engine rattles are minor, while others may indicate timing or internal mechanical problems. A sound recording can help identify possible causes before inspection.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Why does my dashboard rattle while driving?</summary>
+      <div class="faq-content">
+        <p>Dashboard rattling is usually caused by loose trim pieces, clips, or plastic panels vibrating, and is typically harmless.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What causes a rattling noise underneath the car?</summary>
+      <div class="faq-content">
+        <p>A metallic rattle from underneath the vehicle is often caused by a loose heat shield or exhaust component.</p>
+      </div>
+    </details>
+  </section>
+
+  <section id="other-sounds">
+    <h2>Other Car Sounds You Can Diagnose</h2>
+    <div class="scenario-grid">
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/clicking-noise">Clicking noise</a>
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/knocking-noise">Knocking noise</a>
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/grinding-noise">Grinding noise</a>
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/squealing-noise">Squealing noise</a>
+    </div>
+  </section>
+</article>
+</main>
+
+<div class="mobile-cta-bar">
+  <a href="#try">🔊 Analyze My Car Noise Now</a>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://carithm.vercel.app/">Home</a>
+      <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+      <a href="#try">Find My Noise Cause</a>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Carithm. All rights reserved. 
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
