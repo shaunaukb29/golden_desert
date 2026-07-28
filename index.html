@@ -108,7 +108,7 @@
     {
       "@type": "Question",
       "name": "Why is my car making a humming noise?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A humming or droning noise that grows with speed is a classic sign of a worn wheel bearing or uneven tire wear, and can also point to a differential or transmission issue." }
+      "acceptedAnswer": { "@type": "Answer", "text": "A humming or droning noise that increases with speed is a classic sign of a worn wheel bearing or uneven tire wear, and can also point to a differential or transmission issue." }
     },
     {
       "@type": "Question",
@@ -117,13 +117,23 @@
     },
     {
       "@type": "Question",
-      "name": "My car is making a ticking noise — why?",
+      "name": "My car is making a ticking noise — why is my engine ticking?",
       "acceptedAnswer": { "@type": "Answer", "text": "A ticking noise from the engine bay is commonly low oil pressure, a lifter or valvetrain issue, or an exhaust leak near the manifold, and urgency varies widely, so cross-referencing against a fault code helps." }
     },
     {
       "@type": "Question",
       "name": "Car making noise when turning?",
       "acceptedAnswer": { "@type": "Answer", "text": "Noise on turns usually points to CV joints, power steering, or wheel bearings. Which direction the noise is worse in is a strong clue to which side is affected." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my car squeal when I start it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A squeal right at startup, especially in cold weather, usually means a glazed or slightly loose serpentine belt, or a failing tensioner or idler pulley." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my transmission making a whistling noise?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A whistling noise tied to engine RPM often points to low transmission fluid, a failing pump, or early torque converter wear. Whistling tied to road speed instead is more likely a wheel bearing, tire, or wind noise." }
     }
   ]
 }
@@ -318,6 +328,7 @@ footer{border-top:1px solid var(--border);background:var(--surface);padding:52px
 <strong>Car making a strange noise?</strong> Upload the recording and let AI analyze possible mechanical causes.
 For a deeper diagnosis, add your OBD-II fault code and combine two signals:
 what your car sounds like and what your computer reports.</p>
+  <p class="mono" style="color:var(--teal);font-size:.82rem;letter-spacing:.02em;margin:0 0 32px;">Think "Shazam" — but for the noise your car is making.</p>
   <div class="hero-ctas">
     <a href="#diagnoser" class="btn btn-primary">Analyze My Car Sound ↓</a>
     <a href="#partners" class="btn btn-ghost">For Workshops & Partnerships</a>
@@ -409,7 +420,7 @@ what your car sounds like and what your computer reports.</p>
 
     <details>
       <summary>Why is my car making a humming noise?</summary>
-      <p>A humming or droning noise that grows with speed is a classic sign of a worn wheel bearing or uneven tire wear. Humming from the drivetrain area can also point to a differential or transmission issue, especially if it changes under acceleration versus coasting.
+      <p>A humming or droning noise that increases with speed is a classic sign of a worn wheel bearing or uneven tire wear. Humming from the drivetrain area can also point to a differential or transmission issue, especially if it changes under acceleration versus coasting.
       <br><br><a href="https://carithm.vercel.app/audio" style="color:var(--teal);font-weight:600;">Diagnose this humming noise →</a></p>
     </details>
 
@@ -420,8 +431,8 @@ what your car sounds like and what your computer reports.</p>
     </details>
 
     <details>
-      <summary>My car is making a ticking noise — why?</summary>
-      <p>A ticking noise from the engine bay is commonly low oil pressure, a lifter or valvetrain issue, or an exhaust leak near the manifold — these vary widely in urgency, from harmless to serious, which is exactly the kind of case worth cross-referencing sound against a fault code if you have one.
+      <summary>My car is making a ticking noise — why is my engine ticking?</summary>
+      <p>A ticking noise from the engine bay is commonly low oil pressure, a lifter or valvetrain tick, or an exhaust leak near the manifold — these vary widely in urgency, from harmless to serious, which is exactly the kind of case worth cross-referencing sound against a fault code if you have one.
       <br><br><a href="https://carithm.vercel.app/audio" style="color:var(--teal);font-weight:600;">Diagnose this ticking noise →</a></p>
     </details>
 
@@ -429,6 +440,18 @@ what your car sounds like and what your computer reports.</p>
       <summary>Car making noise when turning?</summary>
       <p>Noise on turns usually points to CV joints (a clicking or popping sound turning one direction), power steering (a whining sound tied to wheel angle), or wheel bearings (a growl that shifts side to side as you turn). Which direction it's worse in is a strong clue to which side is affected.
       <br><br><a href="https://carithm.vercel.app/audio" style="color:var(--teal);font-weight:600;">Diagnose this turning noise →</a></p>
+    </details>
+
+    <details>
+      <summary>Why does my car squeal when I start it?</summary>
+      <p>A squeal right at startup — especially in cold weather — usually means a glazed or slightly loose serpentine belt struggling to grip the pulleys until things warm up, or a failing tensioner or idler pulley. It's rarely urgent on its own, but a belt that's slipping enough to squeal is also a belt that's wearing faster than it should.
+      <br><br><a href="https://carithm.vercel.app/audio" style="color:var(--teal);font-weight:600;">Diagnose this startup squeal →</a></p>
+    </details>
+
+    <details>
+      <summary>Why is my transmission making a whistling noise?</summary>
+      <p>A whistling or whining noise tied to engine RPM rather than road speed often points to low or degraded transmission fluid, a failing pump, or early torque converter wear. Whistling that changes with road speed instead — even with the car in neutral — is more likely a wheel bearing, tire, or wind noise rather than the transmission itself.
+      <br><br><a href="https://carithm.vercel.app/audio" style="color:var(--teal);font-weight:600;">Diagnose this whistling noise →</a></p>
     </details>
 
   </div>
