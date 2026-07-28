@@ -12,20 +12,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>AI Car Noise Detector - Find Out What Your Engine Sound Means | Carithm</title>
-<meta name="description" content="Is your car making a strange noise? Record your engine sound and let AI identify possible causes. Combine audio analysis with OBD-II codes for smarter vehicle diagnosis.">
+<title>Car Noise Detector — AI Engine Sound Diagnoser | Carithm</title>
+<meta name="description" content="Car making a strange noise? Upload it and get AI-ranked likely causes in seconds. Add an OBD-II code for a sharper read. Free, no signup required.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://carithm.vercel.app/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="AI Car Noise Detector - Find Out What Your Engine Sound Means | Carithm">
-<meta property="og:description" content="Is your car making a strange noise? Record your engine sound and let AI identify possible causes. Combine audio analysis with OBD-II codes for smarter vehicle diagnosis.">
+<meta property="og:title" content="Car Noise Detector — AI Engine Sound Diagnoser | Carithm">
+<meta property="og:description" content="Stop guessing what that noise means. Upload the sound, add an OBD-II code if you have one, and get a ranked list of likely causes in seconds — free.">
 <meta property="og:url" content="https://carithm.vercel.app/">
-<meta property="og:image" content="https://carithm.vercel.app/car.png">
+<meta property="og:image" content="https://carithm.vercel.app/car-noise-ai-diagnoser-social.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Car Noise Detector - Find Out What Your Engine Sound Means | Carithm">
-<meta name="twitter:description" content="Is your car making a strange noise? Record your engine sound and let AI identify possible causes. Combine audio analysis with OBD-II codes for smarter vehicle diagnosis.">
-<meta name="twitter:image" content="https://carithm.vercel.app/car.png">
+<meta name="twitter:title" content="Car Noise Detector — AI Engine Sound Diagnoser | Carithm">
+<meta name="twitter:description" content="Stop guessing what that noise means. Upload the sound, add an OBD-II code if you have one, and get a ranked list of likely causes in seconds — free.">
+<meta name="twitter:image" content="https://carithm.vercel.app/car-noise-ai-diagnoser-social.jpg">
 
 <script type="application/ld+json">
 {
@@ -92,6 +94,36 @@
       "@type": "Question",
       "name": "Is there a cost for higher-volume business use?",
       "acceptedAnswer": { "@type": "Answer", "text": "The diagnoser is currently free to use. If you're looking at consistent, higher-volume use across a fleet or multiple branches, contact us directly and we'll talk through what that looks like." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my car making a buzzing noise?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A buzzing noise often points to a loose heat shield, a failing accessory belt tensioner, a worn wheel bearing, or a vibration in the dashboard trim or exhaust system. Speed-dependent buzzing usually means a rotating part; buzzing at idle more often points to a belt, engine mount, or electrical component." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my car making a rattling noise?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Rattling can come from loose heat shields, worn suspension bushings, a failing catalytic converter, loose exhaust hangers, or loose items in the cabin or trunk. Rattling that changes with engine speed usually traces to the engine or exhaust; rattling over bumps usually points to suspension." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my car making a humming noise?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A humming or droning noise that grows with speed is a classic sign of a worn wheel bearing or uneven tire wear, and can also point to a differential or transmission issue." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my car making a squeaking noise?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Squeaking is most often brakes, but can also come from a dry belt, a strut or suspension component, or a door or window seal. Squeaking only when braking usually means brakes; squeaking over bumps usually means suspension." }
+    },
+    {
+      "@type": "Question",
+      "name": "My car is making a ticking noise — why?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A ticking noise from the engine bay is commonly low oil pressure, a lifter or valvetrain issue, or an exhaust leak near the manifold, and urgency varies widely, so cross-referencing against a fault code helps." }
+    },
+    {
+      "@type": "Question",
+      "name": "Car making noise when turning?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Noise on turns usually points to CV joints, power steering, or wheel bearings. Which direction the noise is worse in is a strong clue to which side is affected." }
     }
   ]
 }
@@ -104,6 +136,16 @@
   "name": "Carithm",
   "url": "https://carithm.vercel.app/",
   "logo": "https://carithm.vercel.app/car.png"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carithm.vercel.app/" }
+  ]
 }
 </script>
 
@@ -130,6 +172,10 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.02em;margin:0;
 p{color:var(--muted);margin:0;}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 :focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
+.skip-link{position:absolute;left:-999px;top:auto;background:var(--teal);color:#03211c;padding:10px 18px;border-radius:8px;font-weight:600;font-size:.85rem;text-decoration:none;z-index:200;}
+.skip-link:focus{left:16px;top:16px;}
+.back-to-top{position:fixed;bottom:22px;right:22px;background:var(--surface2);border:1px solid var(--border2);color:var(--text);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.1rem;z-index:90;opacity:.9;}
+.back-to-top:hover{border-color:var(--teal);color:var(--teal);}
 
 /* Header */
 header{position:sticky;top:0;z-index:100;background:rgba(10,13,16,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
@@ -248,6 +294,7 @@ footer{border-top:1px solid var(--border);background:var(--surface);padding:52px
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
 
 <header>
   <div class="hdr-inner">
@@ -255,6 +302,7 @@ footer{border-top:1px solid var(--border);background:var(--surface);padding:52px
     <nav class="nav" aria-label="Main navigation">
       <a href="#how">How it works</a>
       <a href="#why">Why sound + OBD</a>
+      <a href="#noises">Common Noises</a>
       <a href="#segments">For your business</a>
       <a href="#faq">FAQ</a>
       <a href="https://carithm.vercel.app/audio" class="cta">Open Diagnoser</a>
@@ -262,11 +310,12 @@ footer{border-top:1px solid var(--border);background:var(--surface);padding:52px
   </div>
 </header>
 
+<main id="main-content">
 <section class="hero wrap">
   <div class="eyebrow">AI CAR SOUND DIAGNOSIS · SOUND + OBD-II INTELLIGENCE</div>
   <h1>Your Car Is Making A Strange Noise. <em>Find Out Why.</em></h1>
   <p class="hero-sub">
-Upload your engine noise or vehicle sound recording and let AI analyze possible mechanical causes.
+<strong>Car making a strange noise?</strong> Upload the recording and let AI analyze possible mechanical causes.
 For a deeper diagnosis, add your OBD-II fault code and combine two signals:
 what your car sounds like and what your computer reports.</p>
   <div class="hero-ctas">
@@ -330,6 +379,62 @@ what your car sounds like and what your computer reports.</p>
         <li>Ranks possible causes and checks</li>
       </ul>
     </div>
+  </div>
+  <p style="max-width:920px;margin:22px auto 0;font-size:.82rem;text-align:center;">
+    OBD-II reporting has been required on U.S. passenger vehicles since model year 1996 under
+    <a href="https://www.epa.gov/regulations-emissions-vehicles-and-engines/final-rule-control-air-pollution-motor-vehicles-and-new" target="_blank" rel="noopener" style="color:var(--teal);">EPA onboard diagnostics regulations</a>,
+    but as <a href="https://www.nhtsa.gov/recalls" target="_blank" rel="noopener" style="color:var(--teal);">NHTSA's own recall data</a> shows, a large share of mechanical issues are never electronic and so never trip a fault code at all — which is exactly why sound matters as its own signal.
+  </p>
+</section>
+
+<section id="noises" class="why wrap">
+  <div class="section-head">
+    <h2>Common Car Noises &amp; What They Usually Mean</h2>
+    <p>Not sure what to call the sound? Start here, then confirm it with the diagnoser below.</p>
+  </div>
+
+  <div class="faq-list" style="max-width:820px;">
+
+    <details>
+      <summary>Why is my car making a buzzing noise?</summary>
+      <p>A buzzing noise often points to a loose heat shield, a failing accessory belt tensioner, a worn wheel bearing, or a vibration in the dashboard trim or exhaust system. Speed-dependent buzzing usually means a rotating part; buzzing that only happens at idle more often points to a belt, engine mount, or an electrical component like a relay or blower motor.
+      <br><br><a href="https://carithm.vercel.app/audio" style="color:var(--teal);font-weight:600;">Diagnose this buzzing noise →</a></p>
+    </details>
+
+    <details>
+      <summary>Why is my car making a rattling noise?</summary>
+      <p>Rattling is one of the most common noise complaints and one of the widest in terms of possible causes — loose heat shields, worn suspension bushings, a failing catalytic converter, loose exhaust hangers, or something loose in the cabin or trunk. Rattling that changes with engine speed usually traces back to the engine or exhaust; rattling over bumps usually points to suspension or the underbody.
+      <br><br><a href="https://carithm.vercel.app/audio" style="color:var(--teal);font-weight:600;">Diagnose this rattling noise →</a></p>
+    </details>
+
+    <details>
+      <summary>Why is my car making a humming noise?</summary>
+      <p>A humming or droning noise that grows with speed is a classic sign of a worn wheel bearing or uneven tire wear. Humming from the drivetrain area can also point to a differential or transmission issue, especially if it changes under acceleration versus coasting.
+      <br><br><a href="https://carithm.vercel.app/audio" style="color:var(--teal);font-weight:600;">Diagnose this humming noise →</a></p>
+    </details>
+
+    <details>
+      <summary>Why is my car making a squeaking noise?</summary>
+      <p>Squeaking is most often brakes — either wear indicators doing their job, or glazed pads. It can also come from a dry belt, a strut or suspension component, or a door/window seal. Squeaking that only happens when braking almost always means brakes; squeaking over bumps usually means suspension.
+      <br><br><a href="https://carithm.vercel.app/audio" style="color:var(--teal);font-weight:600;">Diagnose this squeaking noise →</a></p>
+    </details>
+
+    <details>
+      <summary>My car is making a ticking noise — why?</summary>
+      <p>A ticking noise from the engine bay is commonly low oil pressure, a lifter or valvetrain issue, or an exhaust leak near the manifold — these vary widely in urgency, from harmless to serious, which is exactly the kind of case worth cross-referencing sound against a fault code if you have one.
+      <br><br><a href="https://carithm.vercel.app/audio" style="color:var(--teal);font-weight:600;">Diagnose this ticking noise →</a></p>
+    </details>
+
+    <details>
+      <summary>Car making noise when turning?</summary>
+      <p>Noise on turns usually points to CV joints (a clicking or popping sound turning one direction), power steering (a whining sound tied to wheel angle), or wheel bearings (a growl that shifts side to side as you turn). Which direction it's worse in is a strong clue to which side is affected.
+      <br><br><a href="https://carithm.vercel.app/audio" style="color:var(--teal);font-weight:600;">Diagnose this turning noise →</a></p>
+    </details>
+
+  </div>
+
+  <div style="text-align:center;margin-top:34px;">
+    <a href="https://carithm.vercel.app/audio" class="btn btn-primary">Diagnose My Noise Now →</a>
   </div>
 </section>
 
@@ -537,6 +642,9 @@ what your car sounds like and what your computer reports.</p>
        (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 </div>
+</main>
+
+<a href="#main-content" class="back-to-top" aria-label="Back to top">↑</a>
 
 <footer>
   <div class="wrap">
@@ -552,6 +660,7 @@ what your car sounds like and what your computer reports.</p>
         <ul>
           <li><a href="https://carithm.vercel.app/audio">Sound & OBD Diagnoser</a></li>
           <li><a href="#how">How it works</a></li>
+          <li><a href="#noises">Common Noises</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
