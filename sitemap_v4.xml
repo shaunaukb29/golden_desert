@@ -1,383 +1,624 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-  <loc>https://carithm.vercel.app/</loc>
-  <lastmod>2026-07-11</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>1.0</priority>
-</url>
 
-<url>
-  <loc>https://carithm.vercel.app/audio</loc>
-  <lastmod>2026-07-11</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.9</priority>
-</url>
+  <!-- ── Programmatic SEO: buzzing noise from dashboard (10) ── -->
+  <url>
+    <loc>https://carithm.vercel.app/buzzing-noise-from-the-dashboard-2013-hyundai-elantra</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/buzzing-noise-from-the-dashboard-2014-honda-accord</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/buzzing-noise-from-the-dashboard-2015-ford-f-150</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/buzzing-noise-from-the-dashboard-2016-jeep-grand-cherokee</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/buzzing-noise-from-the-dashboard-2017-nissan-altima</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/buzzing-noise-from-the-dashboard-2018-honda-civic</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/buzzing-noise-from-the-dashboard-2018-toyota-rav4</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/buzzing-noise-from-the-dashboard-2019-chevy-silverado</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/buzzing-noise-from-the-dashboard-2020-toyota-camry</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/buzzing-noise-from-the-dashboard-2021-subaru-outback</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-  <loc>https://carithm.vercel.app/blog/</loc>
-  <lastmod>2026-07-11</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.9</priority>
-</url>
+  <!-- ── Programmatic SEO: clicking sound when turning (10) ── -->
   <url>
-    <loc>https://carithm.vercel.app/predictive/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/about/</loc>
-    <lastmod>2026-07-05</lastmod>
+    <loc>https://carithm.vercel.app/clicking-sound-when-turning-2013-hyundai-elantra</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/</loc>
-    <lastmod>2026-07-05</lastmod>
+    <loc>https://carithm.vercel.app/clicking-sound-when-turning-2014-honda-accord</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/dubai/car-repairs/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/abu-dhabi/car-repairs/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clicking-sound-when-turning-2015-ford-f-150</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/sharjah/car-repairs/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clicking-sound-when-turning-2016-jeep-grand-cherokee</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/toyota/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clicking-sound-when-turning-2017-nissan-altima</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/bmw/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clicking-sound-when-turning-2018-honda-civic</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/mercedes/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clicking-sound-when-turning-2018-toyota-rav4</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/nissan/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clicking-sound-when-turning-2019-chevy-silverado</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/honda/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clicking-sound-when-turning-2020-toyota-camry</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/lexus/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clicking-sound-when-turning-2021-subaru-outback</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── Programmatic SEO: clunking noise when shifting gears (10) ── -->
+  <url>
+    <loc>https://carithm.vercel.app/clunking-noise-when-shifting-gears-2013-hyundai-elantra</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/hyundai/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clunking-noise-when-shifting-gears-2014-honda-accord</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/kia/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clunking-noise-when-shifting-gears-2015-ford-f-150</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/land-rover/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clunking-noise-when-shifting-gears-2016-jeep-grand-cherokee</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/ford/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clunking-noise-when-shifting-gears-2017-nissan-altima</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/toyota/land-cruiser-maintenance-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/toyota/corolla-service-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/toyota/prado-repair-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/toyota/fortuner-repair-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/bmw/x5-maintenance-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/bmw/x3-repair-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/bmw/5-series-service-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/bmw/3-series-repair-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/mercedes/c200-service-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/mercedes/e300-maintenance-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/mercedes/gle-350-repair-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/mercedes/s500-maintenance-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/nissan/patrol-maintenance-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/nissan/altima-service-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/nissan/xtrail-repair-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/honda/accord-repair-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/honda/civic-maintenance-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/honda/crv-service-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/lexus/rx350-maintenance-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/lexus/lx570-repair-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/lexus/es350-service-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/hyundai/tucson-service-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/kia/sportage-repair-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/land-rover/range-rover-sport-maintenance-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/ford/f150-repair-cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carithm.vercel.app/blog/battery_problems.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clunking-noise-when-shifting-gears-2018-honda-civic</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/blog/diagnosing-car-engine-problems.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clunking-noise-when-shifting-gears-2018-toyota-rav4</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/blog/how-to-fix-common-car-problems.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clunking-noise-when-shifting-gears-2019-chevy-silverado</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/blog/things-to-check-before-buying-a-used-car.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://carithm.vercel.app/clunking-noise-when-shifting-gears-2020-toyota-camry</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/ai.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/clunking-noise-when-shifting-gears-2021-subaru-outback</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── Programmatic SEO: grinding noise when accelerating (10) ── -->
+  <url>
+    <loc>https://carithm.vercel.app/grinding-noise-when-accelerating-2013-hyundai-elantra</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/battery-life-uae.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/grinding-noise-when-accelerating-2014-honda-accord</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/brake-wear-dubai.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/grinding-noise-when-accelerating-2015-ford-f-150</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/brakes.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/grinding-noise-when-accelerating-2016-jeep-grand-cherokee</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/cost.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/grinding-noise-when-accelerating-2017-nissan-altima</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/fleet.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/grinding-noise-when-accelerating-2018-honda-civic</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/heat-engine-oil.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/grinding-noise-when-accelerating-2018-toyota-rav4</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/inspection.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/grinding-noise-when-accelerating-2019-chevy-silverado</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/oil-change-myths.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/grinding-noise-when-accelerating-2020-toyota-camry</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/repair.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/grinding-noise-when-accelerating-2021-subaru-outback</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── Programmatic SEO: high-pitched squeal when braking (10) ── -->
+  <url>
+    <loc>https://carithm.vercel.app/high-pitched-squeal-when-braking-2013-hyundai-elantra</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/servicing.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/high-pitched-squeal-when-braking-2014-honda-accord</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/suspension.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/high-pitched-squeal-when-braking-2015-ford-f-150</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/timing-chain-failures.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/high-pitched-squeal-when-braking-2016-jeep-grand-cherokee</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/transmission-life-gcc.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/high-pitched-squeal-when-braking-2017-nissan-altima</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carithm.vercel.app/research/workflow.html</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://carithm.vercel.app/high-pitched-squeal-when-braking-2018-honda-civic</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://carithm.vercel.app/high-pitched-squeal-when-braking-2018-toyota-rav4</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/high-pitched-squeal-when-braking-2019-chevy-silverado</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/high-pitched-squeal-when-braking-2020-toyota-camry</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/high-pitched-squeal-when-braking-2021-subaru-outback</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── Programmatic SEO: humming noise at high speeds (10) ── -->
+  <url>
+    <loc>https://carithm.vercel.app/humming-noise-at-high-speeds-2013-hyundai-elantra</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/humming-noise-at-high-speeds-2014-honda-accord</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/humming-noise-at-high-speeds-2015-ford-f-150</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/humming-noise-at-high-speeds-2016-jeep-grand-cherokee</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/humming-noise-at-high-speeds-2017-nissan-altima</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/humming-noise-at-high-speeds-2018-honda-civic</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/humming-noise-at-high-speeds-2018-toyota-rav4</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/humming-noise-at-high-speeds-2019-chevy-silverado</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/humming-noise-at-high-speeds-2020-toyota-camry</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/humming-noise-at-high-speeds-2021-subaru-outback</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── Programmatic SEO: rattling noise under car (10) ── -->
+  <url>
+    <loc>https://carithm.vercel.app/rattling-noise-under-2013-hyundai-elantra</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/rattling-noise-under-2014-honda-accord</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/rattling-noise-under-2015-ford-f-150</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/rattling-noise-under-2016-jeep-grand-cherokee</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/rattling-noise-under-2017-nissan-altima</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/rattling-noise-under-2018-honda-civic</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/rattling-noise-under-2018-toyota-rav4</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/rattling-noise-under-2019-chevy-silverado</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/rattling-noise-under-2020-toyota-camry</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/rattling-noise-under-2021-subaru-outback</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── Programmatic SEO: squeaking noise over bumps (10) ── -->
+  <url>
+    <loc>https://carithm.vercel.app/squeaking-noise-over-bumps-2013-hyundai-elantra</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/squeaking-noise-over-bumps-2014-honda-accord</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/squeaking-noise-over-bumps-2015-ford-f-150</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/squeaking-noise-over-bumps-2016-jeep-grand-cherokee</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/squeaking-noise-over-bumps-2017-nissan-altima</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/squeaking-noise-over-bumps-2018-honda-civic</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/squeaking-noise-over-bumps-2018-toyota-rav4</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/squeaking-noise-over-bumps-2019-chevy-silverado</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/squeaking-noise-over-bumps-2020-toyota-camry</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/squeaking-noise-over-bumps-2021-subaru-outback</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── Programmatic SEO: ticking noise from engine (10) ── -->
+  <url>
+    <loc>https://carithm.vercel.app/ticking-noise-from-the-engine-2013-hyundai-elantra</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/ticking-noise-from-the-engine-2014-honda-accord</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/ticking-noise-from-the-engine-2015-ford-f-150</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/ticking-noise-from-the-engine-2016-jeep-grand-cherokee</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/ticking-noise-from-the-engine-2017-nissan-altima</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/ticking-noise-from-the-engine-2018-honda-civic</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/ticking-noise-from-the-engine-2018-toyota-rav4</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/ticking-noise-from-the-engine-2019-chevy-silverado</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/ticking-noise-from-the-engine-2020-toyota-camry</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/ticking-noise-from-the-engine-2021-subaru-outback</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── Programmatic SEO: whining noise from transmission (10) ── -->
+  <url>
+    <loc>https://carithm.vercel.app/whining-noise-from-the-transmission-2013-hyundai-elantra</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/whining-noise-from-the-transmission-2014-honda-accord</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/whining-noise-from-the-transmission-2015-ford-f-150</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/whining-noise-from-the-transmission-2016-jeep-grand-cherokee</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/whining-noise-from-the-transmission-2017-nissan-altima</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/whining-noise-from-the-transmission-2018-honda-civic</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/whining-noise-from-the-transmission-2018-toyota-rav4</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/whining-noise-from-the-transmission-2019-chevy-silverado</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/whining-noise-from-the-transmission-2020-toyota-camry</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carithm.vercel.app/whining-noise-from-the-transmission-2021-subaru-outback</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
