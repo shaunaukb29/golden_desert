@@ -76,6 +76,10 @@
     { "source": "/audio/2015-2020-subaru-outback-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2015-2020-subaru-outback-squealing-brakes" },
     { "source": "/audio/:slug", "destination": "/audio/src/cardiag/web/static/:slug" },
     {
+      "source": "/(rattling-noise-under|high-pitched-squeal-when-braking|grinding-noise-when-accelerating|ticking-noise-from-the-engine|humming-noise-at-high-speeds|clicking-sound-when-turning|buzzing-noise-from-the-dashboard|squeaking-noise-over-bumps|whining-noise-from-the-transmission|clunking-noise-when-shifting-gears)(.*)",
+      "destination": "/seo_pages/$1$2"
+    },
+    {
       "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)",
       "destination": "/$1/index"
     },
