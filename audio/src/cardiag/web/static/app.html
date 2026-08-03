@@ -51,13 +51,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Free AI Car Sound Diagnosis App | Engine Noise Identifier</title>
-<meta name="description" content="Free online AI car sound diagnostic app. Record engine, brake, or transmission noises for an instant, mechanic-level diagnosis. No download required.">
+<meta name="description" content="Free engine sound diagnostic AI app. Record or upload a car noise for instant audio diagnosis — engine, brake, suspension, transmission. No download.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://carithm.vercel.app/audio">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Free AI Car Sound Diagnosis App | Carithm">
-<meta property="og:description" content="Hear an unusual car noise? Record or upload a sound and get instant AI car sound analysis for engine, brake, suspension, transmission, and exhaust faults. Free. No signup.">
+<meta property="og:description" content="Hear an unusual car noise? This free engine sound diagnostic AI app gives you an instant audio diagnosis for engine, brake, suspension, transmission, and exhaust faults. No signup.">
 <meta property="og:url" content="https://carithm.vercel.app/audio">
 <meta property="og:image" content="https://carithm.vercel.app/car.png">
 
@@ -67,6 +67,7 @@
 <meta name="twitter:image" content="https://carithm.vercel.app/car.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
@@ -108,7 +109,9 @@
   {"@type":"Question","name":"Can I record engine audio using my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most smartphone recordings are sufficient. Hold the phone close to the noise source, reduce cabin and wind noise where possible, and the analyzer will handle the rest."}},
   {"@type":"Question","name":"Does background noise affect accuracy?","acceptedAnswer":{"@type":"Answer","text":"The system automatically reduces background noise and flags when interference is too high for a reliable result — it never invents a diagnosis when the recording is unclear."}},
   {"@type":"Question","name":"How long does the analysis take?","acceptedAnswer":{"@type":"Answer","text":"Most recordings are processed within a few seconds after upload."}},
-  {"@type":"Question","name":"Does the AI always make a prediction?","acceptedAnswer":{"@type":"Answer","text":"No. When evidence is insufficient, the platform reports uncertainty rather than generating unsupported conclusions."}}
+  {"@type":"Question","name":"Does the AI always make a prediction?","acceptedAnswer":{"@type":"Answer","text":"No. When evidence is insufficient, the platform reports uncertainty rather than generating unsupported conclusions."}},
+  {"@type":"Question","name":"Is there an engine sound diagnostic AI app to download?","acceptedAnswer":{"@type":"Answer","text":"Carithm works as a browser-based engine sound diagnostic AI app — there's nothing to install from an app store. Open it on your phone or desktop, upload or record a noise, and get an instant audio diagnosis."}},
+  {"@type":"Question","name":"Is this the same as an audio diagnosis app or engine noise analysis app?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm functions as an audio diagnosis app and engine noise analysis app in one — it listens to your recording, filters out background noise, and reports likely mechanical fault areas with a confidence score."}}
  ]
 }
 </script>
@@ -164,6 +167,8 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#09090b">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
 <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
@@ -375,7 +380,15 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 @media (max-width: 620px) {
   header { padding: 0.9rem 1.1rem; }
   .nav a:not(.cta-btn) { display: none; }
+  .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
   .trust-strip { grid-template-columns: 1fr 1fr; }
+  main { padding: 32px 16px 32px; }
+  h1 { line-height: 1.18; }
+  h2 { margin-top: 34px; }
+  .card { padding: 20px; }
+  .crosslink-banner { padding: 18px 20px; }
+  .crosslink-btn { width: 100%; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+  .footer-links a { padding: 4px 0; display: inline-block; }
 }
 </style>
 </head>
@@ -441,7 +454,7 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 <section class="card tool tool-wide" id="try">
   <h2 style="margin-top:0;">Try the AI Car Sound Analyzer</h2>
   <p>
-  Looking for a free car sound diagnosis app? There's no download required. Record a car sound from your engine, brakes, suspension, or transmission directly in your browser. Our web app's AI analyzes the recording, identifies abnormal sounds, and provides a confidence-scored car noise diagnosis in seconds. Works with phone recordings—no special equipment needed.
+  Looking for a free engine sound diagnostic AI app? There's no download required. Record a car sound from your engine, brakes, suspension, or transmission directly in your browser. Our web-based audio diagnosis app analyzes the recording, identifies abnormal sounds, and provides a confidence-scored car noise diagnosis in seconds. Works with phone recordings—no special equipment needed.
 </p>
 
   <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
@@ -482,6 +495,7 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 
 <section>
   <h2>Engine Sound Diagnostic AI & Car Noise Identifier</h2>
+  <p>As an engine noise analysis app, Carithm is trained to recognize a wide range of mechanical fault signatures. Upload a recording above and this audio diagnosis app screens it for:</p>
   <ul>
     <li>Engine knocking and detonation</li>
     <li>Engine ticking and valve train noise</li>
@@ -536,8 +550,9 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
   <h3>Why does my engine knock or tick at idle?</h3>
   <p>Light ticking at idle that fades once oil pressure builds is common in higher-mileage engines and often lifter or valve-train related. A deeper, heavier knock — especially under load or acceleration — needs urgent inspection, as it can signal detonation or rod bearing wear.</p>
 
-  <h3>Why is my car rattling?</h3>
+  <h3>Why Is My Car Making a Rattling Noise?</h3>
   <p>Rattles are the hardest noise to pin down because so many things can cause them — a loose heat shield, worn exhaust hangers, loose interior trim, or something rolling around in the trunk. A rattle that only shows up at certain RPMs usually points to the engine bay or exhaust rather than the cabin.</p>
+  <p>The exact pattern narrows it down: a car rattling when accelerating is often a heat shield vibrating against the exhaust as engine load increases, while a rattling noise when driving at a steady speed points more toward suspension bushings or something loose in the underbody. A rattle at idle that settles once you press the gas is usually a heat shield or bracket resonating at low RPM. Upload a recording above for a confidence-scored read on which of these it is.</p>
 
   <h3>Why is my car making noise but driving fine?</h3>
   <p>A noise with no change in handling or performance is often cosmetic — a heat shield, worn trim, or minor belt noise. But some serious issues, like early bearing wear or a slipping clutch, can stay quiet on performance for a while before getting worse. "Still drives fine" isn't the same as "safe to ignore indefinitely."</p>
@@ -553,6 +568,9 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 
   <h3>Why does my car grind when I shift gears?</h3>
   <p>On manual cars this usually means a worn or failing clutch, or a linkage/sync issue. On automatics, grinding during a shift is less common and worth an inspection sooner rather than later.</p>
+
+  <h3>Why Is My Car Making a Whining Noise?</h3>
+  <p>A whining or high-pitched car whining sound almost always tracks either engine RPM or road speed — telling those apart is the key diagnostic step. Whine that rises and falls with engine RPM, even in neutral, usually points to the power steering pump, alternator, or a transmission running low on fluid. Whine that only changes with road speed (not RPM) more often points to a wheel bearing or worn differential. If it's worse in a specific gear, suspect the transmission first.</p>
 
   <h3>Why is my car hissing?</h3>
   <p>Hissing from the engine bay after driving is often normal heat dissipation — but hissing while driving, especially near the radiator, can mean a coolant or vacuum leak. If you smell coolant or see steam, pull over and let the engine cool before checking.</p>
@@ -631,6 +649,12 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 
   <h3>Does the AI always make a prediction?</h3>
   <p>No. When evidence is insufficient, the platform reports uncertainty rather than generating unsupported conclusions.</p>
+
+  <h3>Is there an engine sound diagnostic AI app to download?</h3>
+  <p>Carithm works as a browser-based engine sound diagnostic AI app — there's nothing to install from an app store. Open it on your phone or desktop, upload or record a noise, and get an instant audio diagnosis.</p>
+
+  <h3>Is this the same as an audio diagnosis app or engine noise analysis app?</h3>
+  <p>Yes. Carithm functions as an audio diagnosis app and engine noise analysis app in one — it listens to your recording, filters out background noise, and reports likely mechanical fault areas with a confidence score.</p>
 </section>
 
 <div class="crosslink-banner" aria-label="Related tool">
