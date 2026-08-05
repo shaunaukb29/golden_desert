@@ -80,7 +80,7 @@
       "destination": "/seo_pages/$1$2"
     },
     {
-      "source": "/(knocking-noise-when-cold-starting|popping-noise-over-bumps|hissing-sound-under-the-hood|roaring-noise-when-accelerating|vibrating-steering-wheel-at-highway-speeds|clunking-noise-when-braking|squealing-noise-on-first-start-in-the-morning|grinding-noise-when-reversing|loud-exhaust-noise-exhaust-when-accelerating|rattling-sound-when-idle)(.*)",
+      "source": "/(when-cold-starting|over-bumps|under-the-hood|when-accelerating|at-highway-speeds|when-braking|on-first-start-in-the-morning|when-reversing|exhaust-when-accelerating|when-idle)(.*)",
       "destination": "/seo_pages_us/$1$2"
     },
     {
