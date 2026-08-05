@@ -80,6 +80,10 @@
       "destination": "/seo_pages/$1$2"
     },
     {
+      "source": "/(knocking-noise-when-cold-starting|popping-noise-over-bumps|hissing-sound-under-the-hood|roaring-noise-when-accelerating|vibrating-steering-wheel-at-highway-speeds|clunking-noise-when-braking|squealing-noise-on-first-start-in-the-morning|grinding-noise-when-reversing|loud-exhaust-noise-exhaust-when-accelerating|rattling-sound-when-idle)(.*)",
+      "destination": "/seo_pages_us/$1$2"
+    },
+    {
       "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)",
       "destination": "/$1/index"
     },
