@@ -283,7 +283,37 @@ li { margin-bottom: 6px; }
   margin-top: 26px;
   border: 1px solid var(--border);
 }
-.card.tool { border-color: rgba(47,129,247,0.25); margin-top: 64px; }
+.card.tool { border-color: rgba(47,129,247,0.25); margin-top: 40px; }
+
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--green-dim);
+  border: 1px solid rgba(34,197,94,0.3);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.live-indicator .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 0 rgba(34,197,94,0.6);
+  animation: pulse-dot 1.6s infinite;
+}
+@keyframes pulse-dot {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.55); }
+  70%  { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
 .card.tool.tool-wide {
   max-width: 1100px;
   width: 100%;
@@ -455,8 +485,40 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
   </div>
 </section>
 
+<!-- Ad Slot 2: Pre-Tool -->
+<div class="ad-container">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5227538935323998"
+       data-ad-slot="5302872061"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+<section>
+  <h2>Engine Sound Diagnostic AI & Car Noise Identifier</h2>
+  <p>As an engine noise analysis app, Carithm is trained to recognize a wide range of mechanical fault signatures. This audio diagnosis app screens recordings for:</p>
+  <ul>
+    <li>Engine knocking and detonation</li>
+    <li>Engine ticking and valve train noise</li>
+    <li>Belt squeal and pulley noise</li>
+    <li>Wheel bearing humming</li>
+    <li>Brake squealing and grinding</li>
+    <li>Suspension rattles and clunks</li>
+    <li>Transmission whining</li>
+    <li>Exhaust rattles and leaks</li>
+    <li>AC compressor noise</li>
+    <li>General mechanical anomaly detection</li>
+    <li>Preventive maintenance screening</li>
+  </ul>
+</section>
+
 <section class="card tool tool-wide" id="try">
-  <h2 style="margin-top:0;">Try the AI Car Sound Analyzer</h2>
+  <h2 style="margin-top:0;">Try the AI Car Sound Analyzer<span class="live-indicator"><span class="dot"></span>Live</span></h2>
   <p>
   Looking for a free engine sound diagnostic AI app? There's no download required. Record a car sound from your engine, brakes, suspension, or transmission directly in your browser. Our web-based audio diagnosis app analyzes the recording, identifies abnormal sounds, and provides a confidence-scored car noise diagnosis in seconds. Works with phone recordings—no special equipment needed.
 </p>
@@ -483,7 +545,7 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
   </noscript>
 </section>
 
-<!-- Ad Slot 2: Post-Tool / In-Feed -->
+<!-- Ad Slot 3: Post-Tool / In-Feed -->
 <div class="ad-container">
   <span class="ad-label">Advertisement</span>
   <ins class="adsbygoogle"
@@ -498,26 +560,9 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 </div>
 
 <section>
-  <h2>Engine Sound Diagnostic AI & Car Noise Identifier</h2>
-  <p>As an engine noise analysis app, Carithm is trained to recognize a wide range of mechanical fault signatures. Upload a recording above and this audio diagnosis app screens it for:</p>
-  <ul>
-    <li>Engine knocking and detonation</li>
-    <li>Engine ticking and valve train noise</li>
-    <li>Belt squeal and pulley noise</li>
-    <li>Wheel bearing humming</li>
-    <li>Brake squealing and grinding</li>
-    <li>Suspension rattles and clunks</li>
-    <li>Transmission whining</li>
-    <li>Exhaust rattles and leaks</li>
-    <li>AC compressor noise</li>
-    <li>General mechanical anomaly detection</li>
-    <li>Preventive maintenance screening</li>
-  </ul>
-</section>
-
-<section>
   <h2>How the AI Identifies Different Car Noises</h2>
   <p>Not sure what your noise means? These are the questions drivers search for most. Match your sound below, then upload a recording above for a confidence-scored diagnosis.</p>
+
 
   <h3>Why is my car making a noise when I accelerate?</h3>
   <p>Depends entirely on the sound. A high-pitched squeal is usually a worn serpentine belt. A whine that gets louder with speed points to the transmission, differential, or a wheel bearing. A clunk suggests worn CV joints or suspension components. A popping or backfire points to a fuel or exhaust issue. If you're not sure which one you're hearing, upload the recording above and let the analyzer sort it out.</p>
@@ -530,20 +575,6 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 
   <h3>What causes a clicking noise when turning?</h3>
   <p>A clicking or popping sound during turns, especially at low speed or full lock, is a classic sign of a worn outer CV joint. It typically gets louder as you accelerate through the turn.</p>
-
-  <!-- Ad Slot 3: In-Content Reading Break -->
-  <div class="ad-container">
-    <span class="ad-label">Advertisement</span>
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-5227538935323998"
-         data-ad-slot="5302872061"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
 
   <h3>Why is there a humming or whining noise at highway speed?</h3>
   <p>Speed-dependent humming that changes pitch with your speed (not engine RPM) usually points to a wheel bearing. Whining that tracks engine RPM instead is more often a transmission, differential, or power steering pump issue.</p>
