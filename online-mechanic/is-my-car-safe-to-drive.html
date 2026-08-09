@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+
+  // 1. Existing Dwell Time Tracker
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
+      }
+    }, interval * 1000);
+  })();
+
+  // 2. NEW: Iframe PostMessage Listener
+  window.addEventListener('message', function(event) {
+    if (event.origin !== 'https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app') return;
+
+    const data = event.data;
+
+    if (data && data.type === 'streamlit_analytics') {
+      if (typeof gtag === 'function') {
+        gtag('event', data.eventName, {
+          'event_category': data.eventCategory || 'Carithm Tool',
+          'event_label': data.eventLabel || '',
+          'value': data.eventValue || 0
+        });
+      }
+    }
+  });
+</script>
+
+<!-- Google AdSense Global Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" crossorigin="anonymous"></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Is My Car Safe to Drive With This Noise? | Free AI Check</title>
+<meta name="description" content="Terrified your car is going to break down? Upload a recording of that weird grinding, squealing, or knocking noise and let our free AI tell you if it's safe to drive.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://carithm.vercel.app/is-my-car-safe-to-drive">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Is My Car Safe to Drive With This Noise? | Free AI Check">
+<meta property="og:description" content="Wondering if your car is safe to drive with that grinding, squealing, or knocking noise? Record the sound and let our free AI evaluate the urgency of the issue.">
+<meta property="og:url" content="https://carithm.vercel.app/is-my-car-safe-to-drive">
+<meta property="og:image" content="https://carithm.vercel.app/car.png">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Is My Car Safe to Drive With This Noise? | Free AI Check">
+<meta name="twitter:description" content="Is it a harmless rattle or a dangerous grinding? Upload a recording and get an instant AI urgency assessment. Free, no signup.">
+<meta name="twitter:image" content="https://carithm.vercel.app/car.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebApplication",
+ "name":"Carithm AI Car Sound Safety Analyzer",
+ "applicationCategory":"UtilitiesApplication",
+ "operatingSystem":"Web",
+ "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
+ "description":"Free AI car sound safety checker. Record or upload a car noise to determine if your vehicle is safe to drive or requires immediate inspection.",
+ "url":"https://carithm.vercel.app/is-my-car-safe-to-drive",
+ "inLanguage":"en-US",
+ "author":{ "@type":"Organization", "name":"Carithm" },
+ "publisher":{ "@type":"Organization", "name":"Carithm" },
+ "dateModified":"2026-08-09"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"BreadcrumbList",
+ "itemListElement":[
+   {"@type":"ListItem","position":1,"name":"Home","item":"https://carithm.vercel.app/"},
+   {"@type":"ListItem","position":2,"name":"Is It Safe To Drive?","item":"https://carithm.vercel.app/is-my-car-safe-to-drive"}
+ ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"FAQPage",
+ "mainEntity":[
+  {"@type":"Question","name":"Is it safe to drive my car with a grinding noise?","acceptedAnswer":{"@type":"Answer","text":"Usually no. A harsh metallic grinding, especially when braking, means the brake pad is fully worn and metal is contacting the rotor. This significantly reduces your stopping power. Stop driving and have it towed or inspected immediately."}},
+  {"@type":"Question","name":"Is it safe to drive with an engine knocking sound?","acceptedAnswer":{"@type":"Answer","text":"A deep, heavy knocking from the engine, especially under acceleration, is a major warning sign. It can indicate rod bearing failure or detonation, which can lead to catastrophic engine failure. It is not safe to continue driving long distances."}},
+  {"@type":"Question","name":"Is a squealing belt dangerous?","acceptedAnswer":{"@type":"Answer","text":"A brief squeal on cold startup is often a loose serpentine belt and isn't immediately dangerous. However, if it squeals constantly while driving, the belt could snap, causing you to lose power steering, the alternator, and the water pump, which will cause the engine to overheat."}},
+  {"@type":"Question","name":"Can I still drive my car if it's misfiring?","acceptedAnswer":{"@type":"Answer","text":"You can limp it to a shop at low speed, but you should not drive it normally. A misfiring engine sends unburnt fuel into the catalytic converter, which can overheat and fail — turning a $200 spark plug fix into a $1,500+ catalytic converter replacement. If the check engine light is flashing, pull over immediately."}},
+  {"@type":"Question","name":"Can I still drive my car with a bad alternator?","acceptedAnswer":{"@type":"Answer","text":"Only for a very short distance. Once the alternator fails, your car runs entirely on battery power. Most batteries will last 30 minutes to 2 hours before dying completely, at which point the engine stalls and you lose power steering and power brakes. Do not take the highway."}},
+  {"@type":"Question","name":"Can I still drive my car with a coolant leak?","acceptedAnswer":{"@type":"Answer","text":"It depends on the severity. A slow drip may let you reach a shop if you top off the coolant and watch the temperature gauge closely. A fast leak or any rise in engine temperature means stop immediately — driving an overheating engine for even a few minutes can warp the cylinder head or blow the head gasket, turning a minor repair into a $2,000+ job."}},
+  {"@type":"Question","name":"Can I still drive my car with a bad transmission?","acceptedAnswer":{"@type":"Answer","text":"If the transmission is slipping, jerking, or refusing to shift, continuing to drive risks catastrophic internal damage and a complete loss of power to the wheels while in traffic. Have it towed. The cost of a tow is a fraction of a full transmission rebuild."}},
+  {"@type":"Question","name":"My car is making a noise but drives fine — should I worry?","acceptedAnswer":{"@type":"Answer","text":"Not all noises mean immediate danger — a loose heat shield or worn trim can sound alarming but is harmless. However, some serious issues like early bearing wear or a slipping belt start quiet and get worse over time. 'Drives fine' is not the same as 'safe to ignore.' Record the sound and get it checked."}},
+  {"@type":"Question","name":"Is a clunking sound over bumps safe to drive with?","acceptedAnswer":{"@type":"Answer","text":"A clunk over bumps usually points to worn suspension components like sway bar links or struts. While rarely an immediate emergency, ignoring it can lead to poor handling and uneven tire wear. Have it checked soon."}},
+  {"@type":"Question","name":"Can I still drive my car with the check engine light on?","acceptedAnswer":{"@type":"Answer","text":"If the light is steady and the car feels normal, you can usually drive to a shop within a day or two. If the light is flashing, that means an active misfire is damaging your catalytic converter in real time. Pull over and have it towed."}},
+  {"@type":"Question","name":"Can I still drive my car if it's overheating?","acceptedAnswer":{"@type":"Answer","text":"No. Pull over immediately, turn off the engine, and let it cool. Driving an overheating engine for even a few minutes can warp the cylinder head or blow the head gasket, turning a $50 thermostat fix into a $2,000-$4,000 engine repair."}},
+  {"@type":"Question","name":"Can I still drive my car with an oil leak?","acceptedAnswer":{"@type":"Answer","text":"A small seep that leaves a few drops on the driveway is usually safe for short trips if you check the dipstick regularly. A fast leak that drops the oil level quickly can starve the engine of lubrication and cause it to seize. If the oil pressure warning light comes on, stop driving immediately."}},
+  {"@type":"Question","name":"Can I still drive my car with no power steering?","acceptedAnswer":{"@type":"Answer","text":"Technically yes, but the steering wheel becomes extremely heavy, especially at low speeds and when parking. In an emergency maneuver on the highway, you may not be able to turn fast enough to avoid a collision. It is not recommended."}},
+  {"@type":"Question","name":"Can I still drive my car with the ABS light on?","acceptedAnswer":{"@type":"Answer","text":"Your standard brakes still work, so the car will stop normally under regular conditions. However, ABS prevents wheel lockup during emergency braking on slippery surfaces. Without it, a panic stop in rain or snow could cause you to skid and lose control."}},
+  {"@type":"Question","name":"Can I still drive my car with a bad catalytic converter?","acceptedAnswer":{"@type":"Answer","text":"A failing catalytic converter won't usually strand you immediately, but it can cause reduced power, poor fuel economy, and a sulfur smell. If it's clogged, it can cause the engine to overheat or stall. It will also cause you to fail emissions testing."}},
+  {"@type":"Question","name":"Can I still drive my car with a bad wheel bearing?","acceptedAnswer":{"@type":"Answer","text":"Not for long. A humming or roaring wheel bearing that gets louder with speed is actively deteriorating. If it seizes completely, the wheel can lock up or detach from the vehicle at highway speed. Have it inspected within days, not weeks."}},
+  {"@type":"Question","name":"Why use AI to check if a car noise is safe?","acceptedAnswer":{"@type":"Answer","text":"AI can quickly identify if a sound matches known dangerous fault patterns (like failing bearings or grinding brakes) versus cosmetic issues (like a rattling heat shield). It provides immediate peace of mind or a clear warning before you get to a mechanic."}}
+ ]
+}
+</script>
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#09090b">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+:root {
+  --bg:         #09090b;
+  --surface:    #111113;
+  --surface2:   #18181b;
+  --surface3:   #27272a;
+  --border:     rgba(255,255,255,0.07);
+  --border2:    rgba(255,255,255,0.13);
+  --text:       #fafafa;
+  --muted:      #a1a8b3;
+  --muted2:     #71717a;
+  --accent:     #2f81f7;
+  --accent-dim: rgba(47,129,247,0.1);
+  --accent-glow:rgba(47,129,247,0.22);
+  --green:      #22c55e;
+  --green-dim:  rgba(34,197,94,0.1);
+  --amber:      #f59e0b;
+  --amber-dim:  rgba(245,158,11,0.1);
+  --red:        #ef4444;
+  --red-dim:    rgba(239,68,68,0.1);
+  --r: 12px; --r-sm: 8px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+
+header {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(9,9,11,0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none;
+}
+.nav-logo span { color: var(--accent); }
+
+.nav { display: flex; gap: 1.75rem; align-items: center; }
+.nav a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; transition: color .2s; }
+.nav a:hover, .nav a.active { color: #fff; }
+.nav .cta-btn {
+  background: var(--accent-dim); border: 1px solid rgba(47,129,247,0.3); color: var(--accent);
+  padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600;
+}
+.nav .cta-btn:hover { background: var(--accent); color: #000; }
+
+main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
+
+.ad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  min-height: 100px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.ad-container ins, .ad-container iframe, .ad-container > div {
+  max-width: 100%;
+}
+.ad-container .ad-label {
+  font-size: 10px;
+  color: var(--muted2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.breadcrumb { font-size: 12.5px; color: var(--muted2); margin-bottom: 18px; }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb .sep { margin: 0 6px; color: var(--muted2); }
+.breadcrumb .current { color: var(--muted); }
+
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 14px; line-height: 1.12; }
+h2 { font-size: 1.3rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; }
+h3 { font-size: 1.02rem; font-weight: 600; margin-top: 22px; }
+p { color: var(--muted); margin: 0 0 8px; }
+ul, ol { color: var(--muted); padding-left: 20px; }
+li { margin-bottom: 6px; }
+
+.trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 22px 0 8px; }
+.trust-strip > div { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); }
+.trust-strip > div:last-child { border-right: none; }
+.trust-num { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+.trust-num span { color: var(--accent); }
+.trust-lbl { font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 3px; }
+
+.card {
+  background: var(--surface);
+  padding: 26px;
+  border-radius: var(--r);
+  margin-top: 26px;
+  border: 1px solid var(--border);
+}
+.card.tool {
+  border: 1px solid var(--accent);
+  margin-top: 44px;
+  background: linear-gradient(180deg, rgba(47,129,247,0.12) 0%, var(--surface) 100%);
+  box-shadow: 0 0 30px rgba(47,129,247,0.15);
+}
+.card.tool.tool-wide {
+  max-width: 1100px;
+  width: 100%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.streamlit-embed-wrap {
+  position: relative;
+  --streamlit-height: min(1200px, 90vh);
+  margin-top: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  background: var(--surface2);
+  resize: vertical;
+}
+.streamlit-embed {
+  display: block;
+  width: 100%;
+  height: var(--streamlit-height);
+  min-height: 640px;
+  border: 0;
+  background: var(--bg);
+}
+.iframe-brand-mask {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 44px;
+  background: var(--surface2);
+  z-index: 99999;
+  pointer-events: auto;
+  border-top: 1px solid var(--border);
+  cursor: default;
+}
+.iframe-fallback {
+  display: none;
+  padding: 32px 24px;
+  text-align: center;
+}
+.iframe-fallback p { margin-bottom: 14px; }
+.iframe-fallback a.crosslink-btn { display: inline-block; }
+
+@media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
+@media (max-width: 620px) {
+  .streamlit-embed-wrap { --streamlit-height: min(850px, 80vh); }
+  .streamlit-embed { min-height: 560px; }
+}
+
+.crosslink-banner {
+  background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
+  border: 1px solid rgba(47,129,247,0.25);
+  border-radius: var(--r);
+  padding: 22px 26px;
+  margin-top: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.crosslink-banner p { margin: 0; color: var(--muted); font-size: 13px; }
+.crosslink-banner strong { color: var(--text); display: block; font-size: 15px; margin-bottom: 4px; }
+.crosslink-btn {
+  background: var(--accent); color: #000; font-weight: 700;
+  padding: 10px 18px; border-radius: var(--r-sm);
+  text-decoration: none; font-size: 13px; white-space: nowrap; flex-shrink: 0;
+}
+.crosslink-btn:hover { opacity: 0.88; }
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+.related-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 14px 16px;
+  text-decoration: none;
+  display: block;
+  transition: border-color .2s, transform .2s;
+}
+.related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.related-card .rc-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); margin-bottom: 4px; }
+.related-card .rc-title { font-size: 13px; font-weight: 600; color: var(--text); }
+@media (max-width: 620px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+
+footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
+.footer-inner { max-width: 760px; margin: 0 auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
+.footer-links a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+.footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
+
+@media (max-width: 620px) {
+  header { padding: 0.9rem 1.1rem; }
+  .nav a:not(.cta-btn) { display: none; }
+  .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
+  .trust-strip { grid-template-columns: 1fr 1fr; }
+  main { padding: 32px 16px 32px; }
+  .ad-container { margin: 20px 0; padding: 8px; min-height: 80px; }
+  h1 { line-height: 1.18; }
+  h2 { margin-top: 34px; }
+  .card { padding: 20px; }
+  .crosslink-banner { padding: 18px 20px; }
+  .crosslink-btn { width: 100%; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+  .footer-links a { padding: 4px 0; display: inline-block; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <a href="https://carithm.vercel.app/toyota">Toyota</a>
+    <a href="https://carithm.vercel.app/bmw">BMW</a>
+    <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
+    <a href="https://carithm.vercel.app/is-my-car-safe-to-drive" class="active" aria-current="page">Safe to Drive?</a>
+    <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+    <a href="#try" class="cta-btn">Try It Free</a>
+  </nav>
+</header>
+
+<main>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://carithm.vercel.app/">Home</a>
+  <span class="sep">/</span>
+  <span class="current">Safety Check</span>
+</nav>
+
+<!-- Ad Slot 1: Top Leaderboard -->
+<div class="ad-container">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5227538935323998"
+       data-ad-slot="6469714155"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+<section>
+  <div class="eyebrow">Instant AI Safety Assessment</div>
+
+  <h1>Is My Car Safe to Drive With This Noise? Free AI Check</h1>
+
+  <p>
+Terrified your car is going to break down on the highway because of a weird noise? Upload a recording of that grinding, squealing, knocking, or rattling and Carithm's AI will analyze it to tell you what's likely failing.
+</p>
+
+  <p>
+    Get an instant assessment on whether it's safe to keep driving, or if you need to pull over and get an immediate inspection to prevent catastrophic failure or a loss of brakes.
+  </p>
+
+  <div class="trust-strip">
+    <div><div class="trust-num">No App</div><div class="trust-lbl">Needed</div></div>
+    <div><div class="trust-num">Free</div><div class="trust-lbl">No Signup</div></div>
+    <div><div class="trust-num">~5s</div><div class="trust-lbl">Analysis Time</div></div>
+    <div><div class="trust-num">Phone</div><div class="trust-lbl">Compatible</div></div>
+  </div>
+
+  <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; border-left: 4px solid #ef4444; padding: 16px 20px; border-radius: 8px; margin: 28px 0 10px;">
+    <strong style="color: #ef4444; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">Important Disclaimer</strong>
+    <p style="color: #fafafa; font-size: 14px; margin: 0; line-height: 1.5;">This AI tool is for informational purposes only and is <strong>not</strong> a substitute for a professional mechanic. Carithm assumes no responsibility for any damage, injury, or costs incurred. <strong>Final safety and repair decisions must always be made by a certified mechanic.</strong></p>
+  </div>
+</section>
+
+<!-- Tool moved below -->
+
+<!-- Ad Slot 2: Post-Tool / In-Feed -->
+<div class="ad-container">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5227538935323998"
+       data-ad-slot="2530469147"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+<section>
+  <h2>What Dangerous Faults Can the AI Identify?</h2>
+  <p>Some noises mean it's time to pull over, while others are just annoying. The safety checker screens your recording for critical fault signatures including:</p>
+  <ul>
+    <li>Engine knocking, detonation, and rod bearing failure</li>
+    <li>Failing brake pads (metal-on-metal grinding)</li>
+    <li>Failing wheel bearings (highway humming/roaring)</li>
+    <li>Squealing or failing drive belts</li>
+    <li>Suspension clunks indicating worn struts or sway bars</li>
+    <li>Transmission whining and slipping indicators</li>
+    <li>Exhaust leaks</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Noises That Mean You Should Stop Driving (And Noises That Can Wait)</h2>
+  <p>Not sure if that noise means danger? Here's how to interpret the most common and urgent car noises. Match your sound below, then upload a recording above to confirm.</p>
+
+  <h3>Is it safe to drive with a grinding noise when I brake?</h3>
+  <p><strong>URGENCY: HIGH.</strong> No. A harsh metallic grinding, especially when braking, usually means the brake pad is fully worn and metal is contacting the rotor. This significantly reduces your stopping power and risks complete brake failure. Stop driving and have it inspected immediately.</p>
+
+  <h3>Is it safe to drive with an engine knocking sound?</h3>
+  <p><strong>URGENCY: HIGH.</strong> A deep, heavy knocking from the engine, especially under acceleration, is a major warning sign. It can indicate rod bearing failure or detonation, which can lead to catastrophic engine failure. It is not safe to continue driving long distances; get it towed or checked instantly.</p>
+
+  <h3>Is a squealing belt dangerous to drive with?</h3>
+  <p><strong>URGENCY: MEDIUM.</strong> A brief squeal on cold startup is often a loose serpentine belt and isn't immediately dangerous. However, if it squeals constantly while driving, the belt could snap, causing you to lose power steering, the alternator, and the water pump, which will cause the engine to overheat.</p>
+
+  <h3>Is a clunking sound over bumps safe to drive with?</h3>
+  <p><strong>URGENCY: LOW-MEDIUM.</strong> A clunk over bumps usually points to worn suspension components like sway bar links, bushings, or struts. While rarely an immediate emergency, ignoring it can lead to poor handling, uneven tire wear, and eventual failure of other steering parts. Have it checked soon.</p>
+
+  <!-- Ad Slot 3: In-Content Reading Break -->
+  <div class="ad-container">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-5227538935323998"
+         data-ad-slot="5302872061"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <h3>Is it safe to drive with a humming or whining noise at highway speed?</h3>
+  <p><strong>URGENCY: MEDIUM.</strong> Speed-dependent humming that changes pitch with your speed usually points to a wheel bearing. If a wheel bearing fails completely while driving, the wheel can lock up or detach from the vehicle. Do not ignore a roaring bearing for long.</p>
+
+  <h3>Is it safe to drive with a rattling noise underneath the car?</h3>
+  <p><strong>URGENCY: LOW.</strong> A rattling noise, especially one that occurs when accelerating or idling, is very often a loose exhaust heat shield. While it sounds terrible, it is entirely cosmetic and safe to drive with. Upload a recording above—the AI can usually distinguish a heat shield rattle from an engine knock.</p>
+
+  <h3>Is a popping or backfiring noise dangerous?</h3>
+  <p><strong>URGENCY: MEDIUM.</strong> Popping during acceleration usually points to an imbalanced fuel-to-air mixture or an exhaust leak. While it won't typically cause you to crash, it can damage your catalytic converter and engine if left unchecked.</p>
+
+  <h3>My car is making a noise but drives fine — should I worry?</h3>
+  <p><strong>URGENCY: LOW-MEDIUM.</strong> A noise with no change in handling or performance is often cosmetic — a loose heat shield, worn interior trim, or minor belt noise. But some serious issues, like early wheel bearing wear or a slipping serpentine belt, won't affect how the car drives until they suddenly fail. "Still drives fine" is not the same as "safe to ignore indefinitely." Record the sound and upload it above — the AI can help tell you whether it's cosmetic or something that needs attention before it gets worse.</p>
+</section>
+
+<section>
+  <h2>Can I Still Drive My Car With These Problems?</h2>
+  <p>Beyond noises, these are the most common mechanical failures where drivers aren't sure if it's safe to keep driving. Here's what a certified mechanic would tell you — and remember, <strong>always have a professional inspect and make the final call.</strong></p>
+
+  <h3>Can I still drive my car if it's misfiring?</h3>
+  <p><strong>URGENCY: HIGH.</strong> You can limp it to a nearby shop at low speed, but you should not drive it normally. A misfiring engine sends unburnt fuel into the catalytic converter, which can overheat and fail — turning a $200 spark plug fix into a $1,500+ catalytic converter replacement. If your check engine light is flashing (not just solid), that means active damage is occurring. Pull over immediately.</p>
+
+  <h3>Can I still drive my car with a bad alternator?</h3>
+  <p><strong>URGENCY: HIGH.</strong> Only for a very short distance. Once the alternator fails, your car runs entirely on battery power. Most batteries will last 30 minutes to 2 hours before dying completely, at which point the engine stalls and you lose power steering and power brakes — extremely dangerous in traffic. Do not take the highway. Drive directly to the nearest shop or pull over and call a tow.</p>
+
+  <h3>Can I still drive my car with a coolant leak?</h3>
+  <p><strong>URGENCY: MEDIUM-HIGH.</strong> It depends on the severity. A slow drip may let you reach a shop if you top off the coolant and watch the temperature gauge like a hawk. But a fast leak or any rise in engine temperature means stop immediately — driving an overheating engine for even a few minutes can warp the cylinder head or blow the head gasket, turning a minor hose repair into a $2,000+ engine job. If you see steam or smell sweet coolant, do not keep driving.</p>
+
+  <h3>Can I still drive my car with a bad transmission?</h3>
+  <p><strong>URGENCY: HIGH.</strong> If the transmission is slipping, jerking between gears, refusing to shift, or making grinding noises, continuing to drive risks catastrophic internal damage and — more dangerously — a complete loss of power to the wheels while in traffic. Have it towed. The cost of a tow is a fraction of a full transmission rebuild ($3,000–$7,000+).</p>
+
+  <h3>How long can I drive with a grinding noise?</h3>
+  <p>There's no safe number of miles. Grinding from the brakes means metal-on-metal contact is actively destroying your rotors and reducing your ability to stop. Grinding from a wheel bearing means the bearing is failing and the wheel could eventually seize or detach. In both cases, the answer is: drive it to the nearest safe stopping point and no further. Every mile you add is increasing both the repair cost and the safety risk.</p>
+
+  <h3>Can I still drive my car with the check engine light on?</h3>
+  <p><strong>URGENCY: DEPENDS.</strong> If the check engine light is steady and the car feels normal — no shaking, no loss of power — you can usually drive to a shop within a day or two. But if the check engine light is <strong>flashing</strong>, that means an active misfire is sending unburnt fuel into the catalytic converter and damaging it in real time. Pull over and have it towed. The difference between a steady and flashing light can be a $150 sensor fix versus a $1,500+ catalytic converter replacement.</p>
+
+  <h3>Can I still drive my car if it's overheating?</h3>
+  <p><strong>URGENCY: CRITICAL.</strong> No. Pull over immediately, turn off the engine, and let it cool for at least 30 minutes before even opening the hood. Driving an overheating engine for even a few minutes can warp the cylinder head or blow the head gasket — turning a $50 thermostat or $100 hose fix into a $2,000–$4,000 engine repair. If you see steam or the temperature gauge is in the red, do not "just try to make it home."</p>
+
+  <h3>Can I still drive my car with an oil leak?</h3>
+  <p><strong>URGENCY: MEDIUM.</strong> A small seep that leaves a few drops on the driveway is usually safe for short trips if you check the dipstick regularly and top off as needed. But a fast leak that drops the oil level quickly can starve the engine of lubrication and cause it to seize — a catastrophic and usually irreversible failure. If the oil pressure warning light comes on while driving, pull over and shut the engine off immediately. Do not restart it.</p>
+
+  <h3>Can I still drive my car with no power steering?</h3>
+  <p><strong>URGENCY: MEDIUM-HIGH.</strong> Technically the car will still move, but the steering wheel becomes extremely heavy, especially at low speeds and when parking. The real danger is in an emergency situation — if you need to swerve quickly on the highway to avoid a collision, you may not be able to turn the wheel fast enough. Power steering failure can be caused by a broken belt, a leaking hose, or a failing pump. Get it fixed before your next highway drive.</p>
+
+  <h3>Can I still drive my car with the ABS light on?</h3>
+  <p><strong>URGENCY: LOW-MEDIUM.</strong> Your standard brakes still work, so the car will stop normally under regular dry conditions. However, ABS (Anti-lock Braking System) prevents wheel lockup during hard braking on wet, icy, or slippery roads. Without it, a panic stop in rain or snow could cause you to skid and lose control. If your ABS light is on and you live somewhere with bad weather, get it fixed soon. If you also see the main brake warning light, stop driving immediately — that indicates a more serious braking system failure.</p>
+
+  <h3>Can I still drive my car with a bad catalytic converter?</h3>
+  <p><strong>URGENCY: LOW-MEDIUM.</strong> A failing catalytic converter won't usually strand you immediately, but it causes reduced power, poor fuel economy, and a rotten-egg sulfur smell. If the converter is clogged rather than just failing, it can cause the engine to overheat or stall unexpectedly. You'll also fail any emissions testing. Replacement costs range from $1,000–$3,000+, so don't let a misfire destroy it — that's often how catalytic converters fail in the first place.</p>
+
+  <h3>Can I still drive my car with a bad wheel bearing?</h3>
+  <p><strong>URGENCY: HIGH.</strong> Not for long. A humming or roaring noise that gets louder with speed and changes when you sway the car side-to-side is a classic failing wheel bearing. If it seizes completely, the wheel can lock up or, in the worst case, detach from the vehicle at highway speed. This is not one to put off for weeks — have it inspected within days. Replacement typically costs $300–$800 per wheel.</p>
+</section>
+
+<section class="card tool tool-wide" id="try">
+  <h2 style="margin-top:0;">Try the AI Safety Check</h2>
+  <p>
+  Record or upload the sound your car is making and Carithm's AI will analyze it — identifying the likely failing components with a confidence score. Don't risk driving a dangerous vehicle; let the AI listen first. Works on any phone or desktop browser.
+</p>
+
+  <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
+    <iframe
+      id="streamlitFrame"
+      class="streamlit-embed"
+      src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
+      title="Carithm AI Car Sound Analyzer"
+      loading="lazy"
+      allow="microphone; clipboard-write"
+      onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
+    ></iframe>
+    <div class="iframe-brand-mask"></div>
+    <div class="iframe-fallback" id="iframeFallback">
+      <p>The analyzer tool couldn't load in this view.</p>
+      <a class="crosslink-btn" href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener">Open the Analyzer in a New Tab →</a>
+    </div>
+  </div>
+
+  <noscript>
+    <p class="note">This tool requires JavaScript to load the embedded app. <a href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener">Open it directly here.</a></p>
+  </noscript>
+</section>
+
+<section>
+  <h2>How to Check Your Car's Safety with AI (3 Steps)</h2>
+  <ol>
+    <li>Record the unusual sound using your phone — hold it close to the noise source, safely.</li>
+    <li>Upload the recording through the tool above.</li>
+    <li>The AI removes background noise and compares your recording against known dangerous fault patterns (like failing brakes or rod knock).</li>
+    <li>You get a ranked list of likely fault areas and an urgency indicator.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Can AI tell me if my car is going to break down?</h3>
+  <p>AI can recognize abnormal acoustic patterns associated with major mechanical faults — including engine knock, bearing noise, and metal-on-metal grinding. It serves as an early warning system to help you pull over before a catastrophic failure occurs. It should be used as decision support, not a replacement for a mechanic.</p>
+
+  <h3>Could this noise be a safety recall issue?</h3>
+  <p>Sometimes. If a component failure poses a safety risk, the manufacturer may issue a recall. If you're in the US, cross-check your VIN on the <a href="https://www.nhtsa.gov/recalls" target="_blank" rel="noopener">NHTSA recall lookup</a> alongside your Carithm result — a free repair under an open recall is the best-case scenario.</p>
+
+  <h3>Is this safety check free?</h3>
+  <p>Yes — Carithm's AI Car Sound Safety Analyzer is free with no signup required.</p>
+</section>
+
+<div class="crosslink-banner" aria-label="Related tool">
+  <div>
+    <strong>Heard a noise and now have a repair quote?</strong>
+    <p>Once your garage gives you an estimate, check if every line item is actually due before you approve anything — free, under 30 seconds.</p>
+  </div>
+  <a href="https://carithm.vercel.app/" class="crosslink-btn">Check My Repair Quote →</a>
+</div>
+
+<!-- Ad Slot 4: Bottom Discovery -->
+<div class="ad-container">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5227538935323998"
+       data-ad-slot="2586309463"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+<section style="margin-top: 44px;">
+  <div class="eyebrow">Also on Carithm</div>
+  <h2 style="margin-top: 8px;">Understand the repair before you pay for it</h2>
+  <p>If the sound diagnosis points to a specific issue, use these to understand costs and intervals for your exact car.</p>
+  <div class="related-grid">
+    <a class="related-card" href="https://carithm.vercel.app/toyota">
+      <div class="rc-label">Brand Guide</div>
+      <div class="rc-title">Toyota Repair Cost Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/bmw">
+      <div class="rc-label">Brand Guide</div>
+      <div class="rc-title">BMW Repair Cost Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/mercedes">
+      <div class="rc-label">Brand Guide</div>
+      <div class="rc-title">Mercedes Maintenance Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/repairs/engine.html">
+      <div class="rc-label">Repair Type</div>
+      <div class="rc-title">Engine Repair Cost Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/repairs/brakes.html">
+      <div class="rc-label">Repair Type</div>
+      <div class="rc-title">Brake Repair Cost Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/research">
+      <div class="rc-label">Research</div>
+      <div class="rc-title">Car Maintenance Data & Methodology</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://carithm.vercel.app/">Carithm Home</a>
+      <a href="https://carithm.vercel.app/audio">AI Car Sound Analyzer</a>
+      <a href="https://carithm.vercel.app/is-my-car-safe-to-drive">Is My Car Safe To Drive?</a>
+      <a href="https://carithm.vercel.app/toyota">Toyota Repair Cost Guide</a>
+      <a href="https://carithm.vercel.app/bmw">BMW Repair Cost Guide</a>
+      <a href="https://carithm.vercel.app/mercedes">Mercedes Maintenance Guide</a>
+      <a href="https://carithm.vercel.app/research">Research & Methodology</a>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Carithm. AI Engine Sound Analyzer — decision-support tool. Not a substitute for physical inspection.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
