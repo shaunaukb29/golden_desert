@@ -82,9 +82,11 @@
  "description":"Free AI car sound diagnostic app. Record or upload a car noise and get instant AI diagnosis for engine, brake, suspension, transmission, exhaust, and other mechanical faults.",
  "url":"https://carithm.vercel.app/audio",
  "inLanguage":"en-US",
- "author":{ "@type":"Organization", "name":"Carithm" },
+ "author":{ "@type":"Organization", "name":"Carithm", "url":"https://carithm.vercel.app/research" },
  "publisher":{ "@type":"Organization", "name":"Carithm" },
- "dateModified":"2026-07-19"
+ "reviewedBy":{ "@type":"Organization", "name":"Carithm Automotive Data Team" },
+ "datePublished":"2026-03-11",
+ "dateModified":"2026-08-12"
 }
 </script>
 <script type="application/ld+json">
@@ -114,7 +116,12 @@
   {"@type":"Question","name":"How long does the analysis take?","acceptedAnswer":{"@type":"Answer","text":"Most recordings are processed within a few seconds after upload."}},
   {"@type":"Question","name":"Does the AI always make a prediction?","acceptedAnswer":{"@type":"Answer","text":"No. When evidence is insufficient, the platform reports uncertainty rather than generating unsupported conclusions."}},
   {"@type":"Question","name":"Is there an engine sound diagnostic AI app to download?","acceptedAnswer":{"@type":"Answer","text":"Carithm works as a browser-based engine sound diagnostic AI app — there's nothing to install from an app store. Open it on your phone or desktop, upload or record a noise, and get an instant audio diagnosis."}},
-  {"@type":"Question","name":"Is this the same as an audio diagnosis app or engine noise analysis app?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm functions as an audio diagnosis app and engine noise analysis app in one — it listens to your recording, filters out background noise, and reports likely mechanical fault areas with a confidence score."}}
+  {"@type":"Question","name":"Is this the same as an audio diagnosis app or engine noise analysis app?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm functions as an audio diagnosis app and engine noise analysis app in one — it listens to your recording, filters out background noise, and reports likely mechanical fault areas with a confidence score."}},
+  {"@type":"Question","name":"Is there a 'Shazam for car sounds'?","acceptedAnswer":{"@type":"Answer","text":"Carithm works like a Shazam for car sounds, but instead of matching a song it matches your recording against known mechanical fault patterns. Upload or record the noise and it returns a confidence-scored diagnosis instead of a song title."}},
+  {"@type":"Question","name":"How do I check engine sound for problems?","acceptedAnswer":{"@type":"Answer","text":"To check engine sound for problems, record it close to the engine bay with your phone, then upload the clip to an engine sound diagnostic AI app like Carithm. It screens for knocking, ticking, belt squeal, and other abnormal patterns and flags which areas may need inspection."}},
+  {"@type":"Question","name":"Is Carithm the same as EngineEar AI or My Auto Sound?","acceptedAnswer":{"@type":"Answer","text":"No — Carithm is an independent car sound diagnostic tool and isn't affiliated with EngineEar AI or My Auto Sound. All three serve a similar purpose (turning a recorded car noise into a likely fault area), but Carithm is free, runs entirely in the browser with no signup, and shows a confidence score alongside every result."}},
+  {"@type":"Question","name":"Why is my car making a rattling noise from underneath or the front end?","acceptedAnswer":{"@type":"Answer","text":"A metal rattling noise from underneath usually means a loose heat shield or exhaust hanger vibrating against the body. A rattle isolated to the front end, especially over bumps or when turning, more often points to a sway bar link, strut mount, or a loose splash shield. Uploading a recording helps separate the two."}},
+  {"@type":"Question","name":"Why does my car make a whining noise when accelerating?","acceptedAnswer":{"@type":"Answer","text":"A whining noise that gets louder specifically as you accelerate — rather than just running with engine RPM at idle — usually points to the transmission, differential, or a wheel bearing under load. If it's present even in neutral, suspect the power steering pump or alternator instead."}}
  ]
 }
 </script>
@@ -195,10 +202,18 @@
   --amber-dim:  rgba(245,158,11,0.1);
   --red:        #ef4444;
   --red-dim:    rgba(239,68,68,0.1);
+  --violet:     #a78bfa;
+  --violet-dim: rgba(167,139,250,0.1);
+  --teal:       #2dd4bf;
+  --teal-dim:   rgba(45,212,191,0.1);
   --r: 12px; --r-sm: 8px;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--surface2);
+}
 body {
   font-family: 'Inter', system-ui, sans-serif;
   margin: 0;
@@ -208,6 +223,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: var(--surface2); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent), var(--violet));
+  border-radius: 999px;
+  border: 2px solid var(--surface2);
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--teal), var(--accent)); }
 
 header {
   position: sticky; top: 0; z-index: 100;
@@ -261,10 +286,16 @@ main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
 .breadcrumb .sep { margin: 0 6px; color: var(--muted2); }
 .breadcrumb .current { color: var(--muted); }
 
-.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  background: linear-gradient(90deg, var(--accent), var(--teal));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  margin-bottom: 12px; display: inline-block;
+}
 h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 14px; line-height: 1.12; }
-h2 { font-size: 1.3rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; }
-h3 { font-size: 1.02rem; font-weight: 600; margin-top: 22px; }
+h2 { font-size: 1.3rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; padding-left: 12px; border-left: 3px solid var(--accent); }
+h3 { font-size: 1.02rem; font-weight: 600; margin-top: 22px; color: var(--text); }
+h3::before { content: "»"; color: var(--teal); margin-right: 6px; font-weight: 700; }
 p { color: var(--muted); margin: 0 0 8px; }
 ul, ol { color: var(--muted); padding-left: 20px; }
 li { margin-bottom: 6px; }
@@ -274,7 +305,52 @@ li { margin-bottom: 6px; }
 .trust-strip > div:last-child { border-right: none; }
 .trust-num { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
 .trust-num span { color: var(--accent); }
+.trust-strip > div:nth-child(1) .trust-num { color: var(--accent); }
+.trust-strip > div:nth-child(2) .trust-num { color: var(--teal); }
+.trust-strip > div:nth-child(3) .trust-num { color: var(--violet); }
+.trust-strip > div:nth-child(4) .trust-num { color: var(--green); }
 .trust-lbl { font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 3px; }
+
+.byline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+}
+.byline-avatar {
+  flex-shrink: 0;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.02em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--violet), var(--teal));
+}
+.byline-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.byline-name { font-size: 12.5px; font-weight: 600; color: var(--text); }
+.byline-meta { font-size: 11.5px; color: var(--muted2); }
+.byline-meta a { color: var(--accent); text-decoration: none; }
+.byline-meta a:hover { text-decoration: underline; }
+@media (max-width: 480px) { .byline-meta { display: block; margin-top: 2px; } }
+
+section#try, main > section:first-of-type {
+  position: relative;
+}
+main > section:first-of-type::before {
+  content: "";
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 640px; height: 320px;
+  background: radial-gradient(ellipse at center, rgba(47,129,247,0.16), rgba(167,139,250,0.08) 45%, transparent 75%);
+  filter: blur(10px);
+  pointer-events: none;
+  z-index: -1;
+}
 
 .card {
   background: var(--surface);
@@ -283,7 +359,32 @@ li { margin-bottom: 6px; }
   margin-top: 26px;
   border: 1px solid var(--border);
 }
-.card.tool { border-color: rgba(47,129,247,0.25); margin-top: 40px; }
+.card.tool {
+  border-color: rgba(47,129,247,0.25);
+  margin-top: 40px;
+  box-shadow: 0 0 0 1px rgba(47,129,247,0.08), 0 12px 40px -20px rgba(47,129,247,0.35);
+  position: relative;
+}
+.card.tool::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--r);
+  padding: 1px;
+  background: linear-gradient(120deg, var(--accent), var(--violet), var(--teal), var(--accent));
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.55;
+  animation: gradient-border-shift 8s ease infinite;
+  pointer-events: none;
+}
+@keyframes gradient-border-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
 .live-indicator {
   display: inline-flex;
@@ -330,6 +431,9 @@ li { margin-bottom: 6px; }
   overflow: hidden;
   background: var(--surface2);
   resize: vertical;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--teal) var(--surface2);
 }
 .streamlit-embed {
   display: block;
@@ -393,13 +497,22 @@ li { margin-bottom: 6px; }
 .related-card {
   background: var(--surface);
   border: 1px solid var(--border);
+  border-top: 2px solid var(--accent);
   border-radius: var(--r-sm);
   padding: 14px 16px;
   text-decoration: none;
   display: block;
-  transition: border-color .2s, transform .2s;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
 }
-.related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.related-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 20px -12px rgba(47,129,247,0.5); }
+.related-card:nth-child(2) { border-top-color: var(--teal); }
+.related-card:nth-child(2):hover { border-color: var(--teal); box-shadow: 0 8px 20px -12px rgba(45,212,191,0.5); }
+.related-card:nth-child(3) { border-top-color: var(--violet); }
+.related-card:nth-child(3):hover { border-color: var(--violet); box-shadow: 0 8px 20px -12px rgba(167,139,250,0.5); }
+.related-card:nth-child(4) { border-top-color: var(--amber); }
+.related-card:nth-child(4):hover { border-color: var(--amber); box-shadow: 0 8px 20px -12px rgba(245,158,11,0.5); }
+.related-card:nth-child(5) { border-top-color: var(--green); }
+.related-card:nth-child(5):hover { border-color: var(--green); box-shadow: 0 8px 20px -12px rgba(34,197,94,0.5); }
 .related-card .rc-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); margin-bottom: 4px; }
 .related-card .rc-title { font-size: 13px; font-weight: 600; color: var(--text); }
 @media (max-width: 620px) { .related-grid { grid-template-columns: 1fr 1fr; } }
@@ -470,11 +583,11 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   <h1>Free AI Car Sound Diagnosis App: Analyze Engine & Mechanic Noises</h1>
 
   <p>
-Hear an unusual noise from your engine, brakes, suspension, or transmission? Upload a recording of the sound and Carithm's AI diagnostic tool analyzes it, identifies likely fault areas, and explains what components may need inspection before you visit a mechanic.
+Carithm is a free <strong>car noise identifier online</strong> — an engine sound diagnostic AI app that works as both an audio diagnosis app and an engine noise analysis app in one. Hear an unusual noise from your engine, brakes, suspension, or transmission? Upload a recording and this <strong>car sound identifier</strong> analyzes it, identifies likely fault areas, and explains what components may need inspection before you visit a mechanic.
 </p>
 
   <p>
-    Rather than forcing a diagnosis from limited information, the system evaluates recording quality, measures uncertainty, and explains when additional inspection is recommended.
+    Rather than forcing a diagnosis from limited information, this <strong>engine sound analyzer</strong> evaluates recording quality, measures uncertainty, and explains when additional inspection is recommended — so you get a real car sound test, not a guess.
   </p>
 
   <div class="trust-strip">
@@ -482,6 +595,14 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
     <div><div class="trust-num">Free</div><div class="trust-lbl">No Signup</div></div>
     <div><div class="trust-num">~5s</div><div class="trust-lbl">Analysis Time</div></div>
     <div><div class="trust-num">Phone</div><div class="trust-lbl">Compatible</div></div>
+  </div>
+
+  <div class="byline">
+    <div class="byline-avatar" aria-hidden="true">CA</div>
+    <div class="byline-text">
+      <span class="byline-name">Reviewed by the Carithm Automotive Data Team</span>
+      <span class="byline-meta">Fault-pattern data cross-checked against ASE-style repair categories · Last updated <time datetime="2026-08-12">August 12, 2026</time> · <a href="https://carithm.vercel.app/research">See our methodology</a></span>
+    </div>
   </div>
 </section>
 
@@ -519,6 +640,10 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 
 
 <section>
+  <h2>What Is This Car Noise? Identify Car Sounds in Seconds</h2>
+  <p>Typing "what is this car noise" or "what is this sound in my car" into a search bar only gets you generic guesses. Some people call Carithm a <strong>"Shazam for car sounds"</strong> — instead of matching a song, it listens to your recording and checks engine sound, brake sound, and suspension sound against known fault patterns to identify car sounds automatically.</p>
+  <p>Not sure which car sound is this, or want to check engine sound before a long drive? Upload the clip above and analyze engine, brake, and suspension audio in one pass — no guessing required.</p>
+
   <h2>How the AI Identifies Different Car Noises</h2>
   <p>Not sure what your noise means? These are the questions drivers search for most. Match your sound below, then upload a recording above for a confidence-scored diagnosis.</p>
 
@@ -544,19 +669,32 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
   <h3>Why does my engine knock or tick at idle?</h3>
   <p>Light ticking at idle that fades once oil pressure builds is common in higher-mileage engines and often lifter or valve-train related. A deeper, heavier knock — especially under load or acceleration — needs urgent inspection, as it can signal detonation or rod bearing wear.</p>
 
-  <h3>Why Is My Car Making a Rattling Noise?</h3>
-  <p>Rattles are the hardest noise to pin down because so many things can cause them — a loose heat shield, worn exhaust hangers, loose interior trim, or something rolling around in the trunk. A rattle that only shows up at certain RPMs usually points to the engine bay or exhaust rather than the cabin.</p>
-  <p>The exact pattern narrows it down: a car rattling when accelerating is often a heat shield vibrating against the exhaust as engine load increases, while a rattling noise when driving at a steady speed points more toward suspension bushings or something loose in the underbody. A rattle at idle that settles once you press the gas is usually a heat shield or bracket resonating at low RPM. Upload a recording above for a confidence-scored read on which of these it is.</p>
-
   <h3>Why is my car making noise but driving fine?</h3>
   <p>A noise with no change in handling or performance is often cosmetic — a heat shield, worn trim, or minor belt noise. But some serious issues, like early bearing wear or a slipping clutch, can stay quiet on performance for a while before getting worse. "Still drives fine" isn't the same as "safe to ignore indefinitely."</p>
 
 </section>
 
+<section>
+  <h2>Why Is My Car Making a Rattling Noise?</h2>
+  <p>Rattling is one of the most-searched car noises, and one of the hardest to pin down from description alone — so many things can cause it: a loose heat shield, worn exhaust hangers, loose interior trim, or something rolling around in the trunk. A rattle that only shows up at certain RPMs usually points to the engine bay or exhaust rather than the cabin. Upload a recording above and let the analyzer narrow it down instead of guessing.</p>
+
+  <h3>Car rattling noise when accelerating</h3>
+  <p>A car making a rattling noise when accelerating is most often a heat shield vibrating against the exhaust as engine load increases — cheap to fix, rarely urgent. It can also be a loose muffler bracket or a worn engine mount letting the motor shift slightly under load.</p>
+
+  <h3>Rattling noise when driving at a steady speed</h3>
+  <p>A rattling noise when driving at constant speed points more toward suspension bushings, sway bar links, or something loose in the underbody rather than the engine bay. If it tracks road speed rather than RPM, start with the suspension.</p>
+
+  <h3>Car rattling when idle</h3>
+  <p>A rattle at idle that settles once you press the gas is usually a heat shield or bracket resonating at low RPM. If it continues at all RPMs and gets worse under load, it's worth a closer listen — upload the recording for a confidence-scored read.</p>
+
+  <h3>Rattling noise from underneath or the front end when driving</h3>
+  <p>Location narrows it down fast. A metal rattling noise from underneath the car, especially over bumps, is usually a loose heat shield or exhaust hanger vibrating against the body — cheap and rarely urgent. A rattle isolated to the front driver or passenger side, particularly when turning or over rough road, more often points to a sway bar link, strut mount, or a loose splash shield. A rattle that seems to come from the muffler area specifically is almost always a heat shield or a loose baffle inside the muffler itself.</p>
+</section>
+
 <section class="card tool tool-wide" id="try">
   <h2 style="margin-top:0;">Try the AI Car Sound Analyzer<span class="live-indicator"><span class="dot"></span>Live</span></h2>
   <p>
-  Looking for a free engine sound diagnostic AI app? There's no download required. Record a car sound from your engine, brakes, suspension, or transmission directly in your browser. Our web-based audio diagnosis app analyzes the recording, identifies abnormal sounds, and provides a confidence-scored car noise diagnosis in seconds. Works with phone recordings—no special equipment needed.
+  Looking for an engine sound diagnostic AI app? There's no download required. This engine noise analysis app records a car sound from your engine, brakes, suspension, or transmission directly in your browser. Our web-based audio diagnosis app analyzes the recording, identifies abnormal sounds, and provides a confidence-scored car noise diagnosis from recording in seconds. Works with phone recordings—no special equipment needed.
 </p>
 
   <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
@@ -609,8 +747,8 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
   <h3>Why does my car grind when I shift gears?</h3>
   <p>On manual cars this usually means a worn or failing clutch, or a linkage/sync issue. On automatics, grinding during a shift is less common and worth an inspection sooner rather than later.</p>
 
-  <h3>Why Is My Car Making a Whining Noise?</h3>
-  <p>A whining or high-pitched car whining sound almost always tracks either engine RPM or road speed — telling those apart is the key diagnostic step. Whine that rises and falls with engine RPM, even in neutral, usually points to the power steering pump, alternator, or a transmission running low on fluid. Whine that only changes with road speed (not RPM) more often points to a wheel bearing or worn differential. If it's worse in a specific gear, suspect the transmission first.</p>
+  <h3>Whining Noise: Why Is My Car Making a Whining Noise?</h3>
+  <p>A whining or high-pitched car whining sound almost always tracks either engine RPM or road speed — telling those apart is the key diagnostic step. Whine that rises and falls with engine RPM, even in neutral, usually points to the power steering pump, alternator, or a transmission running low on fluid. Whine that only changes with road speed (not RPM) more often points to a wheel bearing or worn differential. If it's worse in a specific gear, suspect the transmission first. A whining noise when accelerating specifically — one that gets louder under load rather than just idling along with RPM — leans more toward the transmission, differential, or a wheel bearing straining under torque.</p>
 
   <h3>Why is my car hissing?</h3>
   <p>Hissing from the engine bay after driving is often normal heat dissipation — but hissing while driving, especially near the radiator, can mean a coolant or vacuum leak. If you smell coolant or see steam, pull over and let the engine cool before checking.</p>
@@ -630,7 +768,7 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 </section>
 
 <section>
-  <h2>How AI Car Sound Analysis Works</h2>
+  <h2>How Car Noise Diagnosis From Recording Works</h2>
   <ol>
     <li>Record the unusual sound using your phone — hold it close to the noise source.</li>
     <li>Upload the recording through the tool above.</li>
@@ -657,6 +795,9 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
   <h3>Understanding Designed Life vs. Mechanical Failure</h3>
   <p>
     Not all noises mean immediate danger. Brake pads, front and rear, have different wear rates based on your drivetrain (AWD, FWD, RWD) and vehicle type (SUV vs. sedan), which drastically affect brake biases. Our diagnostic AI helps determine if the squeal or clunk you hear is a component reaching the end of its designed life health, or if it is a sudden mechanical failure requiring immediate attention.
+  </p>
+  <p>
+    Fault categories on this page — belt squeal, bearing hum, brake grind, exhaust rattle, and the rest — are organized against the same general repair taxonomy shops use when logging a diagnosis, and every answer above is checked by our team before publishing rather than generated and posted unreviewed. See our <a href="https://carithm.vercel.app/research">data & methodology page</a> for how fault categories are defined and how confidence scores are calculated.
   </p>
 </section>
 
@@ -698,6 +839,18 @@ Hear an unusual noise from your engine, brakes, suspension, or transmission? Upl
 
   <h3>Is this the same as an audio diagnosis app or engine noise analysis app?</h3>
   <p>Yes. Carithm functions as an audio diagnosis app and engine noise analysis app in one — it listens to your recording, filters out background noise, and reports likely mechanical fault areas with a confidence score.</p>
+
+  <h3>Is there a "Shazam for car sounds"?</h3>
+  <p>Carithm works like a Shazam for car sounds, but instead of matching a song it matches your recording against known mechanical fault patterns. Upload or record the noise and it returns a confidence-scored diagnosis instead of a song title.</p>
+
+  <h3>How do I check engine sound for problems?</h3>
+  <p>To check engine sound for problems, record it close to the engine bay with your phone, then upload the clip to an engine sound diagnostic AI app like Carithm. It screens for knocking, ticking, belt squeal, and other abnormal patterns and flags which areas may need inspection.</p>
+
+  <h3>Is Carithm the same as EngineEar AI or My Auto Sound?</h3>
+  <p>No — Carithm is an independent tool and isn't affiliated with EngineEar AI or My Auto Sound. All three serve a similar purpose — turning a recorded car noise into a likely fault area — but Carithm is free, runs entirely in your browser with no signup, and shows a confidence score alongside every result.</p>
+
+  <h3>Why is my car making a rattling noise from underneath or the front end?</h3>
+  <p>A metal rattling noise from underneath usually means a loose heat shield or exhaust hanger vibrating against the body. A rattle isolated to the front end, especially over bumps or when turning, more often points to a sway bar link, strut mount, or a loose splash shield. Uploading a recording helps separate the two.</p>
 </section>
 
 <div class="crosslink-banner" aria-label="Related tool">
