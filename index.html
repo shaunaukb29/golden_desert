@@ -50,21 +50,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Car Making a Weird Noise? Free AI Sound Diagnosis | Carithm</title>
-<meta name="description" content="Car making a grinding, squealing, knocking, or rattling noise? Record it and let our free AI diagnose the sound — identifies engine, brake, suspension, and transmission faults in seconds. No download.">
+<title>Free AI Car Sound Diagnosis App | Engine Noise Identifier</title>
+<meta name="description" content="Free engine sound diagnostic AI app. Record or upload a car noise for instant audio diagnosis — engine, brake, suspension, transmission. No download.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://carithm.vercel.app/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Car Making a Weird Noise? Free AI Sound Diagnosis | Carithm">
-<meta property="og:description" content="Car making a grinding, squealing, or knocking noise? Upload a recording and our AI diagnoses the sound — identifies engine, brake, suspension, and transmission faults. Free, no signup.">
+<meta property="og:title" content="Free AI Car Sound Diagnosis App | Carithm">
+<meta property="og:description" content="Hear an unusual car noise? This free engine sound diagnostic AI app gives you an instant audio diagnosis for engine, brake, suspension, transmission, and exhaust faults. No signup.">
 <meta property="og:url" content="https://carithm.vercel.app/">
 <meta property="og:image" content="https://carithm.vercel.app/car.png">
 <meta property="og:locale" content="en_US">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Car Making a Weird Noise? Free AI Sound Diagnosis | Carithm">
-<meta name="twitter:description" content="Car making a weird noise when accelerating, braking, or turning? Upload a recording and get an instant AI diagnosis identifying likely faults. Free, no signup.">
+<meta name="twitter:title" content="Free AI Car Sound Diagnosis App | Carithm">
+<meta name="twitter:description" content="Record or upload a car sound and get instant AI diagnosis for engine, brake, suspension, transmission, and exhaust noises. Free. No signup.">
 <meta name="twitter:image" content="https://carithm.vercel.app/car.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -114,9 +114,7 @@
   {"@type":"Question","name":"How long does the analysis take?","acceptedAnswer":{"@type":"Answer","text":"Most recordings are processed within a few seconds after upload."}},
   {"@type":"Question","name":"Does the AI always make a prediction?","acceptedAnswer":{"@type":"Answer","text":"No. When evidence is insufficient, the platform reports uncertainty rather than generating unsupported conclusions."}},
   {"@type":"Question","name":"Is there an engine sound diagnostic AI app to download?","acceptedAnswer":{"@type":"Answer","text":"Carithm works as a browser-based engine sound diagnostic AI app — there's nothing to install from an app store. Open it on your phone or desktop, upload or record a noise, and get an instant audio diagnosis."}},
-  {"@type":"Question","name":"Is this the same as an audio diagnosis app or engine noise analysis app?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm functions as an audio diagnosis app and engine noise analysis app in one — it listens to your recording, filters out background noise, and reports likely mechanical fault areas with a confidence score."}},
-  {"@type":"Question","name":"Is it safe to drive my car if it's making a grinding or knocking noise?","acceptedAnswer":{"@type":"Answer","text":"It depends on the source, but both are potentially urgent. Grinding during braking usually means the brake pad is fully worn and metal is contacting the rotor. Knocking under acceleration can indicate detonation or bearing damage. Record the sound, upload it for an AI analysis, and have the vehicle inspected the same day."}},
-  {"@type":"Question","name":"Why does my car make a noise only when it's cold?","acceptedAnswer":{"@type":"Answer","text":"Cold-start noises that disappear once the engine warms up are common and often benign — thick oil, a stiff belt, or a slightly slack timing chain. If the noise persists or takes longer to go away over time, the underlying wear is progressing and worth investigating with a recording."}}
+  {"@type":"Question","name":"Is this the same as an audio diagnosis app or engine noise analysis app?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm functions as an audio diagnosis app and engine noise analysis app in one — it listens to your recording, filters out background noise, and reports likely mechanical fault areas with a confidence score."}}
  ]
 }
 </script>
@@ -158,7 +156,7 @@
 {
  "@context":"https://schema.org",
  "@type":"HowTo",
- "name":"How to Diagnose a Car Noise Online with AI",
+ "name":"How to Diagnose a Car Noise with AI",
  "description":"Use Carithm's AI Car Sound Analyzer to identify likely mechanical faults from a recorded car noise.",
  "step":[
    {"@type":"HowToStep","name":"Record the sound","text":"Record the unusual sound using your phone, holding it as close to the noise source as possible."},
@@ -248,12 +246,6 @@ main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
   border-radius: var(--r-sm);
   overflow: hidden;
   min-height: 100px;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-.ad-container ins, .ad-container iframe, .ad-container > div {
-  max-width: 100%;
 }
 .ad-container .ad-label {
   font-size: 10px;
@@ -291,7 +283,37 @@ li { margin-bottom: 6px; }
   margin-top: 26px;
   border: 1px solid var(--border);
 }
-.card.tool { border-color: rgba(47,129,247,0.25); margin-top: 44px; }
+.card.tool { border-color: rgba(47,129,247,0.25); margin-top: 40px; }
+
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--green-dim);
+  border: 1px solid rgba(34,197,94,0.3);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.live-indicator .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 0 rgba(34,197,94,0.6);
+  animation: pulse-dot 1.6s infinite;
+}
+@keyframes pulse-dot {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.55); }
+  70%  { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
 .card.tool.tool-wide {
   max-width: 1100px;
   width: 100%;
@@ -395,7 +417,6 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
   .trust-strip { grid-template-columns: 1fr 1fr; }
   main { padding: 32px 16px 32px; }
-  .ad-container { margin: 20px 0; padding: 8px; min-height: 80px; }
   h1 { line-height: 1.18; }
   h2 { margin-top: 34px; }
   .card { padding: 20px; }
@@ -446,10 +467,10 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 <section>
   <div class="eyebrow">Carithm Audio Intelligence</div>
 
-  <h1>Car Making a Weird Noise? Free AI Sound Diagnosis | Carithm</h1>
+  <h1>Free AI Car Sound Diagnosis App: Analyze Engine & Mechanic Noises</h1>
 
   <p>
-Car making a grinding, squealing, knocking, or rattling noise when you accelerate, brake, or turn? Upload a recording and Carithm's AI identifies likely fault areas — engine, brakes, suspension, transmission — and explains what to check before you visit a mechanic.
+Hear an unusual noise from your engine, brakes, suspension, or transmission? Upload a recording of the sound and Carithm's AI diagnostic tool analyzes it, identifies likely fault areas, and explains what components may need inspection before you visit a mechanic.
 </p>
 
   <p>
@@ -464,7 +485,103 @@ Car making a grinding, squealing, knocking, or rattling noise when you accelerat
   </div>
 </section>
 
-<!-- Ad Slot 2: Post-Intro / In-Feed -->
+<!-- Ad Slot 2: Pre-Tool -->
+<div class="ad-container">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5227538935323998"
+       data-ad-slot="5302872061"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+<section>
+  <h2>Engine Sound Diagnostic AI & Car Noise Identifier</h2>
+  <p>As an engine noise analysis app, Carithm is trained to recognize a wide range of mechanical fault signatures. This audio diagnosis app screens recordings for:</p>
+  <ul>
+    <li>Engine knocking and detonation</li>
+    <li>Engine ticking and valve train noise</li>
+    <li>Belt squeal and pulley noise</li>
+    <li>Wheel bearing humming</li>
+    <li>Brake squealing and grinding</li>
+    <li>Suspension rattles and clunks</li>
+    <li>Transmission whining</li>
+    <li>Exhaust rattles and leaks</li>
+    <li>AC compressor noise</li>
+    <li>General mechanical anomaly detection</li>
+    <li>Preventive maintenance screening</li>
+  </ul>
+</section>
+
+
+<section>
+  <h2>How the AI Identifies Different Car Noises</h2>
+  <p>Not sure what your noise means? These are the questions drivers search for most. Match your sound below, then upload a recording above for a confidence-scored diagnosis.</p>
+
+
+  <h3>Why is my car making a noise when I accelerate?</h3>
+  <p>Depends entirely on the sound. A high-pitched squeal is usually a worn serpentine belt. A whine that gets louder with speed points to the transmission, differential, or a wheel bearing. A clunk suggests worn CV joints or suspension components. A popping or backfire points to a fuel or exhaust issue. If you're not sure which one you're hearing, upload the recording above and let the analyzer sort it out.</p>
+
+  <h3>Why does my car make a grinding noise when I turn?</h3>
+  <p>Usually worn brake pads contacting the rotor during a turn, a failing wheel bearing, or a CV joint issue. If it only happens while turning and braking together, start with the brakes; if it happens on turns alone at speed, suspect the bearing or CV joint.</p>
+
+  <h3>Why does my car squeal when I brake?</h3>
+  <p>Most often a worn brake pad wear indicator doing exactly what it's designed to do — warning you before the pad runs out. It can also be glazed pads, surface rust after sitting overnight, or a sticking caliper. A grinding sound instead of a squeal means the pad is already gone — stop driving and get it inspected immediately.</p>
+
+  <h3>What causes a clicking noise when turning?</h3>
+  <p>A clicking or popping sound during turns, especially at low speed or full lock, is a classic sign of a worn outer CV joint. It typically gets louder as you accelerate through the turn.</p>
+
+  <h3>Why is there a humming or whining noise at highway speed?</h3>
+  <p>Speed-dependent humming that changes pitch with your speed (not engine RPM) usually points to a wheel bearing. Whining that tracks engine RPM instead is more often a transmission, differential, or power steering pump issue.</p>
+
+  <h3>Why does my car clunk over bumps?</h3>
+  <p>Clunking or knocking specifically over bumps and potholes usually means worn suspension components — sway bar links, control arm bushings, or strut mounts. It's rarely urgent but should be checked before a long road trip.</p>
+
+  <h3>Why does my engine knock or tick at idle?</h3>
+  <p>Light ticking at idle that fades once oil pressure builds is common in higher-mileage engines and often lifter or valve-train related. A deeper, heavier knock — especially under load or acceleration — needs urgent inspection, as it can signal detonation or rod bearing wear.</p>
+
+  <h3>Why Is My Car Making a Rattling Noise?</h3>
+  <p>Rattles are the hardest noise to pin down because so many things can cause them — a loose heat shield, worn exhaust hangers, loose interior trim, or something rolling around in the trunk. A rattle that only shows up at certain RPMs usually points to the engine bay or exhaust rather than the cabin.</p>
+  <p>The exact pattern narrows it down: a car rattling when accelerating is often a heat shield vibrating against the exhaust as engine load increases, while a rattling noise when driving at a steady speed points more toward suspension bushings or something loose in the underbody. A rattle at idle that settles once you press the gas is usually a heat shield or bracket resonating at low RPM. Upload a recording above for a confidence-scored read on which of these it is.</p>
+
+  <h3>Why is my car making noise but driving fine?</h3>
+  <p>A noise with no change in handling or performance is often cosmetic — a heat shield, worn trim, or minor belt noise. But some serious issues, like early bearing wear or a slipping clutch, can stay quiet on performance for a while before getting worse. "Still drives fine" isn't the same as "safe to ignore indefinitely."</p>
+
+</section>
+
+<section class="card tool tool-wide" id="try">
+  <h2 style="margin-top:0;">Try the AI Car Sound Analyzer<span class="live-indicator"><span class="dot"></span>Live</span></h2>
+  <p>
+  Looking for a free engine sound diagnostic AI app? There's no download required. Record a car sound from your engine, brakes, suspension, or transmission directly in your browser. Our web-based audio diagnosis app analyzes the recording, identifies abnormal sounds, and provides a confidence-scored car noise diagnosis in seconds. Works with phone recordings—no special equipment needed.
+</p>
+
+  <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
+    <iframe
+      id="streamlitFrame"
+      class="streamlit-embed"
+      src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
+      title="Carithm AI Car Sound Analyzer"
+      loading="lazy"
+      allow="microphone; clipboard-write"
+      onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
+    ></iframe>
+    <div class="iframe-brand-mask"></div>
+    <div class="iframe-fallback" id="iframeFallback">
+      <p>The analyzer tool couldn't load in this view.</p>
+      <a class="crosslink-btn" href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener">Open the Analyzer in a New Tab →</a>
+    </div>
+  </div>
+
+  <noscript>
+    <p class="note">This tool requires JavaScript to load the embedded app. <a href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener">Open it directly here.</a></p>
+  </noscript>
+</section>
+
+<!-- Ad Slot 3: Post-Tool / In-Feed -->
 <div class="ad-container">
   <span class="ad-label">Advertisement</span>
   <ins class="adsbygoogle"
@@ -479,97 +596,6 @@ Car making a grinding, squealing, knocking, or rattling noise when you accelerat
 </div>
 
 <section>
-  <h2>What Car Noises Can the AI Identify?</h2>
-  <p>As an engine noise analysis app, Carithm is trained to recognize a wide range of mechanical fault signatures. Upload a recording above and this audio diagnosis app screens it for:</p>
-  <ul>
-    <li>Engine knocking, detonation, and pinging under load</li>
-    <li>Engine ticking and valve train noise</li>
-    <li>Belt squeal and pulley noise</li>
-    <li>Wheel bearing humming</li>
-    <li>Brake squealing and grinding</li>
-    <li>Suspension rattles and clunks</li>
-    <li>Transmission whining</li>
-    <li>Exhaust rattles and leaks</li>
-    <li>AC compressor noise</li>
-    <li>Unusual noises when accelerating, braking, turning, or idling</li>
-    <li>Preventive maintenance screening</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Car Making a Weird Noise? Here's What It Could Mean</h2>
-  <p>Not sure what your noise means? These are the questions drivers search for most. Match your sound below, then upload a recording above for a confidence-scored diagnosis.</p>
-
-  <h3>Why is my car making a noise when I accelerate?</h3>
-  <p>Depends entirely on the sound. A high-pitched squeal is usually a worn serpentine belt. A whine that gets louder with speed points to the transmission, differential, or a wheel bearing. A clunk suggests worn CV joints or suspension components. A popping or backfire points to a fuel or exhaust issue. If you're not sure which one you're hearing, upload the recording above and let the analyzer sort it out.</p>
-
-  <h3>Why does my car make a grinding noise when I turn?</h3>
-  <p>Usually worn brake pads contacting the rotor during a turn, a failing wheel bearing, or a CV joint issue. If it only happens while turning and braking together, start with the brakes; if it happens on turns alone at speed, suspect the bearing or CV joint.</p>
-
-  <h3>Why does my car squeal when I brake?</h3>
-  <p>Most often a worn brake pad wear indicator doing exactly what it's designed to do — warning you before the pad runs out. It can also be glazed pads, surface rust after sitting overnight, or a sticking caliper. A grinding sound instead of a squeal means the pad is already gone — stop driving and get it inspected immediately.</p>
-
-  <h3>What causes a clicking noise when turning?</h3>
-  <p>A clicking or popping sound during turns, especially at low speed or full lock, is a classic sign of a worn outer CV joint. It typically gets louder as you accelerate through the turn.</p>
-
-  <!-- Ad Slot 3: In-Content Reading Break -->
-  <div class="ad-container">
-    <span class="ad-label">Advertisement</span>
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-5227538935323998"
-         data-ad-slot="5302872061"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-
-  <h3>Why is there a humming or whining noise at highway speed?</h3>
-  <p>Speed-dependent humming that changes pitch with your speed (not engine RPM) usually points to a wheel bearing. Whining that tracks engine RPM instead is more often a transmission, differential, or power steering pump issue.</p>
-
-  <!-- Streamlit App Section Moved Here -->
-  <section class="card tool tool-wide" id="try">
-    <h2 style="margin-top:0;">Try the AI Car Sound Analyzer</h2>
-    <p>
-    Hearing grinding when you brake, squealing on startup, knocking when you accelerate, or rattling over bumps? Record or upload the sound and Carithm's AI analyzes it — identifying which components likely need inspection with a confidence score. Works on any phone or desktop browser, no app download needed.
-  </p>
-
-    <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
-      <iframe
-        id="streamlitFrame"
-        class="streamlit-embed"
-        src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
-        title="Carithm AI Car Sound Analyzer"
-        loading="lazy"
-        allow="microphone; clipboard-write"
-        onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
-      ></iframe>
-      <div class="iframe-brand-mask"></div>
-      <div class="iframe-fallback" id="iframeFallback">
-        <p>The analyzer tool couldn't load in this view.</p>
-        <a class="crosslink-btn" href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener">Open the Analyzer in a New Tab →</a>
-      </div>
-    </div>
-
-    <noscript>
-      <p class="note">This tool requires JavaScript to load the embedded app. <a href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener">Open it directly here.</a></p>
-    </noscript>
-  </section>
-
-  <h3>Why does my car clunk over bumps?</h3>
-  <p>Clunking or knocking specifically over bumps and potholes usually means worn suspension components — sway bar links, control arm bushings, or strut mounts. It's rarely urgent but should be checked before a long road trip.</p>
-
-  <h3>Why does my engine knock or tick at idle?</h3>
-  <p>Light ticking at idle that fades once oil pressure builds is common in higher-mileage engines and often lifter or valve-train related. A deeper, heavier knock — especially under load or acceleration — needs urgent inspection, as it can signal detonation or rod bearing wear.</p>
-
-  <h3>Why Is My Car Making a Rattling Noise?</h3>
-  <p>Rattles are the hardest noise to pin down because so many things can cause them — a loose heat shield, worn exhaust hangers, loose interior trim, or something rolling around in the trunk. A rattle that only shows up at certain RPMs usually points to the engine bay or exhaust rather than the cabin.</p>
-  <p>The exact pattern narrows it down: a car rattling when accelerating is often a heat shield vibrating against the exhaust as engine load increases, while a rattling noise when driving at a steady speed points more toward suspension bushings or something loose in the underbody. A rattle at idle that settles once you press the gas is usually a heat shield or bracket resonating at low RPM. Upload a recording above for a confidence-scored read on which of these it is.</p>
-
-  <h3>Why is my car making noise but driving fine?</h3>
-  <p>A noise with no change in handling or performance is often cosmetic — a heat shield, worn trim, or minor belt noise. But some serious issues, like early bearing wear or a slipping clutch, can stay quiet on performance for a while before getting worse. "Still drives fine" isn't the same as "safe to ignore indefinitely."</p>
 
   <h3>What does a popping or backfiring noise mean?</h3>
   <p>Popping during acceleration usually points to an imbalanced fuel-to-air mixture — a clogged air filter, dirty fuel injector, or failing spark plug. It can also be caused by an exhaust leak upstream of the muffler.</p>
@@ -601,16 +627,10 @@ Car making a grinding, squealing, knocking, or rattling noise when you accelerat
   <h3>Why does my car rumble or thump at speed?</h3>
   <p>A steady rumble that grows with speed is a common sign of uneven or worn tires, or a wheel bearing. Thumping at a consistent interval usually points to one specific tire.</p>
 
-  <h3>Is it safe to drive with a grinding or knocking noise?</h3>
-  <p>It depends on the source, but grinding and knocking are among the most urgent noises to investigate. Grinding during braking usually means the pad is gone and metal is contacting the rotor — continuing to drive risks losing stopping power. Knocking under acceleration can indicate detonation or bearing damage. In both cases, record the sound, upload it to the AI analyzer above for an initial read, and get it professionally inspected the same day.</p>
-
-  <h3>Why does my car make a noise only when it's cold?</h3>
-  <p>Cold-start noises that go away once the engine warms up are common and often benign — thick oil, a stiff belt, or a slightly slack timing chain that tightens once oil pressure builds. If the noise persists after a few minutes of driving, or takes longer to fade each week, that suggests wear is progressing. Record a cold-start clip and upload it — the AI can help narrow down whether it's worth an inspection now or can wait.</p>
-
 </section>
 
 <section>
-  <h2>How to Diagnose a Car Noise with AI (3 Steps)</h2>
+  <h2>How AI Car Sound Analysis Works</h2>
   <ol>
     <li>Record the unusual sound using your phone — hold it close to the noise source.</li>
     <li>Upload the recording through the tool above.</li>
@@ -622,14 +642,14 @@ Car making a grinding, squealing, knocking, or rattling noise when you accelerat
 </section>
 
 <section>
-  <h2>Why Use AI to Diagnose a Car Sound Before Visiting a Mechanic?</h2>
+  <h2>Why Use an AI Car Noise Diagnostic Tool?</h2>
   <p>
     Traditional diagnostics require a mechanic to reproduce the problem. Carithm's diagnostic analyzer processes recorded sounds within seconds, identifies likely fault areas, estimates confidence, and highlights when additional inspection is needed. It doesn't replace a mechanic — it helps drivers understand what they're hearing before visiting one.
   </p>
 </section>
 
 <section>
-  <h2>Can You Trust an AI Car Sound Diagnosis?</h2>
+  <h2>How Accurate Is AI Car Sound Diagnosis?</h2>
   <p>
     Real-world recordings contain wind, traffic, and cabin noise that make diagnosis harder. The Audio Analyzer is designed to work with these imperfect recordings by separating meaningful acoustic information from background interference — and it clearly flags when confidence is too low to make a reliable call, rather than guessing.
   </p>
@@ -678,12 +698,6 @@ Car making a grinding, squealing, knocking, or rattling noise when you accelerat
 
   <h3>Is this the same as an audio diagnosis app or engine noise analysis app?</h3>
   <p>Yes. Carithm functions as an audio diagnosis app and engine noise analysis app in one — it listens to your recording, filters out background noise, and reports likely mechanical fault areas with a confidence score.</p>
-
-  <h3>Is it safe to drive my car if it's making a grinding or knocking noise?</h3>
-  <p>It depends on the source, but both are potentially urgent. Grinding during braking usually means the brake pad is fully worn and metal is contacting the rotor. Knocking under acceleration can indicate detonation or bearing damage. Record the sound, upload it for an AI analysis, and have the vehicle inspected the same day.</p>
-
-  <h3>Why does my car make a noise only when it's cold?</h3>
-  <p>Cold-start noises that disappear once the engine warms up are common and often benign — thick oil, a stiff belt, or a slightly slack timing chain. If the noise persists or takes longer to go away over time, the underlying wear is progressing and worth investigating with a recording.</p>
 </section>
 
 <div class="crosslink-banner" aria-label="Related tool">
@@ -745,7 +759,7 @@ Car making a grinding, squealing, knocking, or rattling noise when you accelerat
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-links">
-      <a href="https://carithm.vercel.app/">Carithm Home</a>
+      <a href="https://carithm.vercel.app/">Carithm Home — Repair Quote Checker</a>
       <a href="https://carithm.vercel.app/">AI Car Sound Analyzer</a>
       <a href="https://carithm.vercel.app/toyota">Toyota Repair Cost Guide</a>
       <a href="https://carithm.vercel.app/bmw">BMW Repair Cost Guide</a>
