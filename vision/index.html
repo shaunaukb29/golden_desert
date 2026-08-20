@@ -29,8 +29,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Free AI Auto Body Damage Estimator & Collision Detector | Carithm</title>
-<meta name="description" content="Get an instant auto body repair estimate. Upload a photo of your car to detect dents, scratches, fender benders, and broken glass. Free AI tool for US drivers and insurance claims.">
+<title>Free AI Car Damage Estimator & Detection Tool | Carithm</title>
+<meta name="description" content="Free AI car damage estimator and detection tool. Upload a photo to instantly detect dents, scratches, fender benders, and broken glass, plus get a repair cost estimate. No signup, built for US drivers, insurance claims, and rental car returns.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://carithm.vercel.app/damage">
 
@@ -82,7 +82,9 @@
   {"@type":"Question","name":"Does it detect fender benders and scratches?","acceptedAnswer":{"@type":"Answer","text":"Yes, it detects visible collision damage including dents, deep scratches, cracked bumpers, broken taillights, and flat tires."}},
   {"@type":"Question","name":"How much does it cost to fix a dented car door?","acceptedAnswer":{"@type":"Answer","text":"A minor door dent typically runs $75 to $250 with paintless dent repair, while a dent that has cracked the paint can run $300 to $700 at a body shop."}},
   {"@type":"Question","name":"Should I file an insurance claim for a small dent or scratch?","acceptedAnswer":{"@type":"Answer","text":"If the repair estimate is close to or below your deductible, paying out of pocket is usually cheaper long-term since a claim can raise your premium for several years."}},
-  {"@type":"Question","name":"How can I check for hidden damage before buying a used car?","acceptedAnswer":{"@type":"Answer","text":"Photograph the body panels, bumpers, and glass in good light and run them through an AI damage scanner, then follow up with a mechanic's pre-purchase inspection for anything structural."}}
+  {"@type":"Question","name":"How can I check for hidden damage before buying a used car?","acceptedAnswer":{"@type":"Answer","text":"Photograph the body panels, bumpers, and glass in good light and run them through an AI damage scanner, then follow up with a mechanic's pre-purchase inspection for anything structural."}},
+  {"@type":"Question","name":"What happens if you damage a rental car?","acceptedAnswer":{"@type":"Answer","text":"Most rental agreements bill you directly for the repair cost of any new damage found at return, unless you bought a damage waiver or your personal auto insurance or credit card provides rental coverage."}},
+  {"@type":"Question","name":"Do rental car companies really use AI to scan for damage?","acceptedAnswer":{"@type":"Answer","text":"Yes, companies like Hertz have piloted AI-powered scanners at return that automatically flag dents, scratches, and curb damage."}}
  ]
 }
 </script>
@@ -349,14 +351,18 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 <section>
   <div class="eyebrow">Carithm Visual Intelligence</div>
 
-  <h1>Free AI Auto Body Damage Estimator</h1>
+  <h1>Free AI Car Damage Estimator &amp; Detection Tool</h1>
 
   <p>
-    Upload a photo of your vehicle and Carithm's AI scans the body panels for visible collision damage — dents, deep scratches, cracked bumpers, broken taillights, and flat tires — providing an instant repair cost estimate.
+    Got a new door ding, a mystery scratch, or a bumper that's seen better days? Upload a photo and Carithm's AI scans the body panels &mdash; dents, deep scratches, cracked bumpers, broken taillights, flat tires &mdash; and hands you a repair cost estimate before you've even found your keys.
   </p>
 
   <p>
-    Perfect for US drivers looking to check repair costs before visiting an auto body shop, deciding whether to file an insurance claim, or assessing a used car before purchase.
+    Handy for sizing up repair costs before a body shop visit, figuring out if a claim is even worth the insurance hike, or quietly investigating whether that "barely used" listing has a body-filler situation nobody mentioned.
+  </p>
+
+  <p style="font-size: 13px; color: var(--muted2);">
+    One honest heads-up before you scroll further: this is an AI's best guess from a photo, not a certified inspection. Treat it as a smart starting point, not a verdict &mdash; full disclaimer below.
   </p>
 
   <ul class="checks">
@@ -416,20 +422,21 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   </noscript>
 
   <div class="important" style="max-width: 800px; margin: 24px auto 0;">
-    <strong>Important Disclaimer</strong>
-    This estimate is based only on visible damage in the uploaded image. Hidden structural damage (e.g., bent frame, sensor damage) cannot be determined from a single photograph. Actual auto body shop quotes may vary by state and local labor rates.
+    <strong>Important Disclaimer &mdash; Read Before You Act on This</strong>
+    This is an AI's best guess based on a photo, not a certified mechanic's inspection, an insurance adjuster's appraisal, or your uncle's opinion just because he "used to work on cars." It only sees what's visible in the image &mdash; hidden structural damage like a bent frame, airbag sensor faults, or issues just out of frame won't show up here, and estimates can be off for cars with unusual paint, trim, or aftermarket parts. Treat this number as a useful starting point for a conversation, not a final decision. Always get a real inspection before filing an insurance claim, buying a used car, or agreeing to a repair.
   </div>
 </section>
 
 <section>
   <h2>What Collision Damage Can the AI Detect?</h2>
+  <p>Wondering how much it costs to fix a dent in a car door, or whether that scratch is a $40 buff-out or a $400 paint job? Here's what the AI is actually looking for in your photo:</p>
   <ul>
-    <li><strong>How much to fix a dent in car door?</strong> Detects door dings and hail damage.</li>
-    <li><strong>Car scratch repair cost estimator:</strong> Finds deep paint scratches, key marks, and scuffs.</li>
-    <li><strong>Windshield replacement check:</strong> Spots cracked or shattered windshields and glass.</li>
-    <li><strong>Broken headlight and taillight replacement:</strong> Identifies shattered light housings.</li>
-    <li><strong>Fender bender repair cost:</strong> Scans for cracked bumpers and bent quarter panels.</li>
-    <li><strong>Flat tire and rim damage:</strong> Detects deflated tires and curbed wheels.</li>
+    <li><strong>Door dings and hail damage:</strong> everything from a shopping-cart love tap to a full hailstorm reenactment.</li>
+    <li><strong>Deep scratches, key marks, and scuffs:</strong> because someone, somewhere, had strong feelings about your parking job.</li>
+    <li><strong>Cracked or shattered windshields:</strong> catches the chip before it turns into the crack that becomes a $500 problem.</li>
+    <li><strong>Broken headlight and taillight housings:</strong> whether it's from a fender bender or a rogue shopping cart, we don't judge.</li>
+    <li><strong>Cracked bumpers and bent quarter panels:</strong> the classic fingerprints of a fender bender, minor or otherwise.</li>
+    <li><strong>Flat tires and curbed rims:</strong> that curb definitely won this round.</li>
   </ul>
 </section>
 
@@ -465,9 +472,21 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 <section>
   <h2>Free Online Auto Body Estimate from Pictures</h2>
   <ul>
-    <li><strong>Avoid Insurance Rate Hikes:</strong> Check if the repair cost is lower than your deductible before filing a claim.</li>
-    <li><strong>Auto Body Shop Estimate Check:</strong> Get an independent baseline so you don't get overcharged by mechanics for a minor bumper scratch.</li>
-    <li><strong>Car Damage Scanner App Alternative:</strong> No app download required, just instant online AI analysis right from your phone browser.</li>
+    <li><strong>Avoid an insurance rate hike over pocket change:</strong> filing a claim for a $180 scratch can end up costing more over three years of higher premiums than just paying for it yourself.</li>
+    <li><strong>Sanity-check a body shop quote:</strong> get an independent number first, so you know whether $1,200 is a fair price or someone rounded up because you looked like you wouldn't ask questions.</li>
+    <li><strong>Skip the app store entirely:</strong> no download, no account, no five-star-review pop-up begging you to rate it before you've even seen a result &mdash; just upload a photo and go.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Things Nobody Tells You About Car Repair Estimates</h2>
+  <p>A few things the body shop probably won't volunteer unless you ask:</p>
+  <ul>
+    <li><strong>Cash price and insurance price aren't always the same number.</strong> Some shops quote differently depending on who's paying &mdash; it never hurts to ask what the out-of-pocket rate looks like.</li>
+    <li><strong>The dent is rarely the expensive part &mdash; the paint is.</strong> Matching modern metallic or pearl paint often means blending into the panel next door, which is where most of the bill quietly comes from.</li>
+    <li><strong>OEM vs. aftermarket parts can double the price of the "same" repair.</strong> A factory bumper and a compatible aftermarket one can differ by hundreds of dollars for an identical-looking fix.</li>
+    <li><strong>"Totaled" doesn't always mean unsafe to drive.</strong> Insurers typically total a car once repair costs cross roughly 70&ndash;80% of its value &mdash; a financial call, not a mechanical one.</li>
+    <li><strong>You don't have to use the shop that gave you the free estimate.</strong> Most states require a written estimate before work begins, and you're free to shop it around.</li>
   </ul>
 </section>
 
@@ -497,6 +516,12 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 
   <h3>How can I check for hidden damage before buying a used car?</h3>
   <p>Photograph the body panels, bumpers, and glass in good light and run them through Carithm's AI damage scanner, then follow up with a mechanic's pre-purchase inspection for anything structural the AI can't see, like frame or sensor damage.</p>
+
+  <h3>What happens if you damage a rental car?</h3>
+  <p>Most rental agreements bill you directly for the repair cost of any new damage found at return, unless you bought a damage waiver or your personal auto insurance or credit card provides rental coverage. Scanning the car with an AI tool before you return it helps you document its condition and dispute charges for damage you didn't cause.</p>
+
+  <h3>Do rental car companies really use AI to scan for damage?</h3>
+  <p>Yes, companies like Hertz have piloted AI-powered scanners at return that automatically flag dents, scratches, and curb damage, sometimes charging renters before they've even left the lot.</p>
 </section>
 
 <!-- Ad Slot 3 -->
@@ -512,6 +537,18 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
        (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 </div>
+
+<section>
+  <h2>Returning a Rental Car? Scan It for Damage First</h2>
+  <p>
+    Hertz, Enterprise, and other rental companies increasingly use AI scanners at drop-off to flag new dents, scratches, and curbed rims &mdash; and renters are often surprised by a damage charge they didn't know about. Before you return a rental, upload a photo through Carithm's free AI car damage detection tool to see what an AI scan would flag, so you can document the vehicle's condition yourself and dispute any charge that wasn't actually caused during your rental.
+  </p>
+  <ul>
+    <li><strong>What happens if you damage a rental car:</strong> most rental agreements bill you directly for repair cost unless you purchased a damage waiver or your own auto insurance/credit card covers rentals.</li>
+    <li><strong>Rental car hail damage:</strong> often the most disputed charge type, since hail dents can be pre-existing or from a different storm entirely.</li>
+    <li><strong>Rental car tire and rim damage:</strong> curb rash and flat tires are commonly flagged at return &mdash; check before you drop the keys off.</li>
+  </ul>
+</section>
 
 <div class="crosslink-banner" aria-label="Related tool">
   <div>
