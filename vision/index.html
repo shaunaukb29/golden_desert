@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-TCCEJ6DCM1');
+
+  // 1. Existing Dwell Time Tracker
   (function() {
     let activeSeconds = 0;
     const interval = 10;
@@ -23,43 +25,66 @@
       }
     }, interval * 1000);
   })();
+
+  // 2. NEW: Iframe PostMessage Listener
+  window.addEventListener('message', function(event) {
+    if (event.origin !== 'https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app') return;
+
+    const data = event.data;
+
+    if (data && data.type === 'streamlit_analytics') {
+      if (typeof gtag === 'function') {
+        gtag('event', data.eventName, {
+          'event_category': data.eventCategory || 'Carithm Tool',
+          'event_label': data.eventLabel || '',
+          'value': data.eventValue || 0
+        });
+      }
+    }
+  });
 </script>
+
+<!-- Google AdSense Global Script (Required for Auto Ads) -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" crossorigin="anonymous"></script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Free AI Car Damage Estimator & Detection Tool | Carithm</title>
-<meta name="description" content="Free AI car damage estimator and detection tool. Upload a photo to instantly detect dents, scratches, fender benders, and broken glass, plus get a repair cost estimate. No signup, built for US drivers, insurance claims, and rental car returns.">
+<title>Free AI Car Sound Diagnosis App | Engine Noise Identifier</title>
+<meta name="description" content="Free engine sound diagnostic AI app. Record or upload a car noise for instant audio diagnosis — engine, brake, suspension, transmission. No download.">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://carithm.vercel.app/damage">
+<link rel="canonical" href="https://carithm.vercel.app/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Free AI Auto Body Damage Estimator & Detector | Carithm">
-<meta property="og:description" content="Get an instant auto body repair estimate. Upload a photo of your car to detect dents, scratches, fender benders, and broken glass. Free AI tool for US drivers and insurance claims.">
-<meta property="og:url" content="https://carithm.vercel.app/damage">
+<meta property="og:title" content="Free AI Car Sound Diagnosis App | Carithm">
+<meta property="og:description" content="Hear an unusual car noise? This free engine sound diagnostic AI app gives you an instant audio diagnosis for engine, brake, suspension, transmission, and exhaust faults. No signup.">
+<meta property="og:url" content="https://carithm.vercel.app/">
 <meta property="og:image" content="https://carithm.vercel.app/car.png">
+<meta property="og:locale" content="en_US">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free AI Auto Body Damage Estimator & Detector | Carithm">
-<meta name="twitter:description" content="Upload a photo to instantly detect auto body damage and get repair cost estimates. Free tool for US car owners.">
+<meta name="twitter:title" content="Free AI Car Sound Diagnosis App | Carithm">
+<meta name="twitter:description" content="Record or upload a car sound and get instant AI diagnosis for engine, brake, suspension, transmission, and exhaust noises. Free. No signup.">
 <meta name="twitter:image" content="https://carithm.vercel.app/car.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
  "@context":"https://schema.org",
  "@type":"WebApplication",
- "name":"Carithm AI Auto Body Damage Estimator",
+ "name":"Carithm AI Car Sound Analyzer",
  "applicationCategory":"UtilitiesApplication",
  "operatingSystem":"Web",
  "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
- "description":"Free AI auto body damage detector. Upload a photo of your vehicle for instant detection of dents, scratches, collision damage, and flat tires. Get repair cost estimates.",
- "url":"https://carithm.vercel.app/damage",
+ "description":"Free AI car sound diagnostic app. Record or upload a car noise and get instant AI diagnosis for engine, brake, suspension, transmission, exhaust, and other mechanical faults.",
+ "url":"https://carithm.vercel.app/",
+ "inLanguage":"en-US",
  "author":{ "@type":"Organization", "name":"Carithm" },
- "publisher":{ "@type":"Organization", "name":"Carithm" }
+ "publisher":{ "@type":"Organization", "name":"Carithm" },
+ "dateModified":"2026-08-21"
 }
 </script>
 <script type="application/ld+json">
@@ -68,23 +93,67 @@
  "@type":"BreadcrumbList",
  "itemListElement":[
    {"@type":"ListItem","position":1,"name":"Home","item":"https://carithm.vercel.app/"},
-   {"@type":"ListItem","position":2,"name":"AI Auto Damage Detector","item":"https://carithm.vercel.app/damage"}
+   {"@type":"ListItem","position":2,"name":"AI Car Sound Analyzer","item":"https://carithm.vercel.app/"}
  ]
 }
 </script>
+
 <script type="application/ld+json">
 {
  "@context":"https://schema.org",
  "@type":"FAQPage",
  "mainEntity":[
-  {"@type":"Question","name":"Is this repair estimate tool free?","acceptedAnswer":{"@type":"Answer","text":"Yes, it is completely free with no account or signup required."}},
-  {"@type":"Question","name":"Can I use this for my auto insurance claim?","acceptedAnswer":{"@type":"Answer","text":"This AI assessment is a great visual aid and baseline for understanding repair costs before visiting an auto body shop, but it is not a certified mechanic's inspection."}},
-  {"@type":"Question","name":"Does it detect fender benders and scratches?","acceptedAnswer":{"@type":"Answer","text":"Yes, it detects visible collision damage including dents, deep scratches, cracked bumpers, broken taillights, and flat tires."}},
-  {"@type":"Question","name":"How much does it cost to fix a dented car door?","acceptedAnswer":{"@type":"Answer","text":"A minor door dent typically runs $75 to $250 with paintless dent repair, while a dent that has cracked the paint can run $300 to $700 at a body shop."}},
-  {"@type":"Question","name":"Should I file an insurance claim for a small dent or scratch?","acceptedAnswer":{"@type":"Answer","text":"If the repair estimate is close to or below your deductible, paying out of pocket is usually cheaper long-term since a claim can raise your premium for several years."}},
-  {"@type":"Question","name":"How can I check for hidden damage before buying a used car?","acceptedAnswer":{"@type":"Answer","text":"Photograph the body panels, bumpers, and glass in good light and run them through an AI damage scanner, then follow up with a mechanic's pre-purchase inspection for anything structural."}},
-  {"@type":"Question","name":"What happens if you damage a rental car?","acceptedAnswer":{"@type":"Answer","text":"Most rental agreements bill you directly for the repair cost of any new damage found at return, unless you bought a damage waiver or your personal auto insurance or credit card provides rental coverage."}},
-  {"@type":"Question","name":"Do rental car companies really use AI to scan for damage?","acceptedAnswer":{"@type":"Answer","text":"Yes, companies like Hertz have piloted AI-powered scanners at return that automatically flag dents, scratches, and curb damage."}}
+  {"@type":"Question","name":"Can AI diagnose engine problems?","acceptedAnswer":{"@type":"Answer","text":"Yes, our engine sound diagnostic AI identifies abnormal acoustic patterns associated with common mechanical faults, such as engine knock, bearing noise, and belt squeal, to pinpoint likely inspection areas."}},
+  {"@type":"Question","name":"How do I diagnose a car noise myself?","acceptedAnswer":{"@type":"Answer","text":"Record the unusual noise using your smartphone near the source (engine bay, wheel, or exhaust), upload the audio file to our free car noise identifier, and review the instant diagnostic report."}},
+  {"@type":"Question","name":"Is there an engine sound diagnostic AI app to download?","acceptedAnswer":{"@type":"Answer","text":"Carithm runs entirely in your web browser. There is no app to download or install. Open it on your phone or desktop, upload a noise, and get an instant audio diagnosis."}},
+  {"@type":"Question","name":"Is this the same as an audio diagnosis app or engine noise analysis app?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm functions as an audio diagnosis app and engine noise analysis app. It listens to your recording, filters background interference, and reports likely mechanical faults with a confidence score."}}
+ ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"SoftwareApplication",
+ "name":"Carithm AI Car Sound Analyzer",
+ "applicationCategory":"UtilitiesApplication",
+ "operatingSystem":"Web",
+ "browserRequirements":"Requires JavaScript. Microphone access optional for in-browser recording.",
+ "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
+ "url":"https://carithm.vercel.app/",
+ "inLanguage":"en-US",
+ "description":"Free AI car sound diagnosis app. Record or upload a car noise and get instant AI diagnosis for engine, brake, suspension, transmission, exhaust, and other mechanical faults.",
+ "featureList":[
+   "Record or upload car sound recordings",
+   "AI-based detection of abnormal mechanical noises",
+   "Confidence-scored fault area predictions",
+   "Automatic background noise reduction"
+ ],
+ "publisher":{ "@type":"Organization", "name":"Carithm" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Organization",
+ "name":"Carithm",
+ "url":"https://carithm.vercel.app/",
+ "logo":"https://carithm.vercel.app/car.png"
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"HowTo",
+ "name":"How to Diagnose a Car Noise with AI",
+ "description":"Use Carithm's AI Car Sound Analyzer to identify likely mechanical faults from a recorded car noise.",
+ "step":[
+   {"@type":"HowToStep","name":"Record the sound","text":"Record the unusual sound using your phone, holding it as close to the noise source as possible."},
+   {"@type":"HowToStep","name":"Upload the recording","text":"Upload the recording through the AI Car Sound Analyzer tool."},
+   {"@type":"HowToStep","name":"Receive AI analysis","text":"The AI filters background noise and compares the audio against known mechanical fault patterns."},
+   {"@type":"HowToStep","name":"Review results","text":"Get a clear list of likely fault areas and a confidence score indicating the diagnosis."}
  ]
 }
 </script>
@@ -93,6 +162,8 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#09090b">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
 <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
@@ -152,7 +223,7 @@ header {
 }
 .nav .cta-btn:hover { background: var(--accent); color: #000; }
 
-main { max-width: 900px; margin: 0 auto; padding: 48px 24px 40px; }
+main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
 
 .breadcrumb { font-size: 12.5px; color: var(--muted2); margin-bottom: 18px; }
 .breadcrumb a { color: var(--muted); text-decoration: none; }
@@ -168,10 +239,6 @@ p { color: var(--muted); margin: 0 0 8px; }
 ul, ol { color: var(--muted); padding-left: 20px; }
 li { margin-bottom: 6px; }
 
-.checks { list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 14px 0 0; }
-.checks li { position: relative; padding-left: 20px; font-size: 13px; color: var(--muted); }
-.checks li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
-
 .trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 22px 0 8px; }
 .trust-strip > div { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); }
 .trust-strip > div:last-child { border-right: none; }
@@ -186,22 +253,48 @@ li { margin-bottom: 6px; }
   margin-top: 26px;
   border: 1px solid var(--border);
 }
-.card.tool { border-color: rgba(47,129,247,0.25); }
+.card.tool { border-color: rgba(47,129,247,0.25); margin-top: 40px; }
+
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--green-dim);
+  border: 1px solid rgba(34,197,94,0.3);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.live-indicator .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 0 rgba(34,197,94,0.6);
+  animation: pulse-dot 1.6s infinite;
+}
+@keyframes pulse-dot {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.55); }
+  70%  { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
 .card.tool.tool-wide {
-  max-width: 100%;
-  width: 100vw;
+  max-width: 1100px;
+  width: 100%;
   margin-left: 50%;
   transform: translateX(-50%);
-  border-radius: 0;
-  border-left: none;
-  border-right: none;
-  padding: 40px 5%;
 }
 
 .streamlit-embed-wrap {
   position: relative;
-  --streamlit-height: 90vh; /* Maximized space */
-  margin-top: 24px;
+  --streamlit-height: min(1200px, 90vh);
+  margin-top: 18px;
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
   overflow: hidden;
@@ -212,7 +305,7 @@ li { margin-bottom: 6px; }
   display: block;
   width: 100%;
   height: var(--streamlit-height);
-  min-height: 800px;
+  min-height: 640px;
   border: 0;
   background: var(--bg);
 }
@@ -220,7 +313,7 @@ li { margin-bottom: 6px; }
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 44px;
-  background: var(--bg); /* Blends better */
+  background: var(--surface2);
   z-index: 99999;
   pointer-events: auto;
   border-top: 1px solid var(--border);
@@ -234,24 +327,10 @@ li { margin-bottom: 6px; }
 .iframe-fallback p { margin-bottom: 14px; }
 .iframe-fallback a.crosslink-btn { display: inline-block; }
 
-/* Example output */
-.example-shot {
-  margin-top: 18px;
-  border: 1px solid var(--border);
-  border-radius: var(--r-sm);
-  overflow: hidden;
-  background: var(--surface2);
-}
-.example-shot img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.example-shot .example-caption {
-  padding: 12px 16px;
-  font-size: 12.5px;
-  color: var(--muted2);
-  border-top: 1px solid var(--border);
+@media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
+@media (max-width: 620px) {
+  .streamlit-embed-wrap { --streamlit-height: min(850px, 80vh); }
+  .streamlit-embed { min-height: 560px; }
 }
 
 .crosslink-banner {
@@ -295,20 +374,6 @@ li { margin-bottom: 6px; }
 .related-card .rc-title { font-size: 13px; font-weight: 600; color: var(--text); }
 @media (max-width: 620px) { .related-grid { grid-template-columns: 1fr 1fr; } }
 
-.important {
-  margin-top: 16px;
-  background: var(--amber-dim);
-  border: 1px solid rgba(245,158,11,0.25);
-  border-radius: var(--r-sm);
-  padding: 14px 16px;
-  font-size: 12.5px;
-  color: var(--muted);
-}
-.important strong { display: block; color: var(--amber); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
-
-.ad-slot { margin: 40px 0; text-align: center; }
-.ad-slot .ad-label { font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
-
 footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
 .footer-inner { max-width: 760px; margin: 0 auto; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
@@ -319,7 +384,15 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 @media (max-width: 620px) {
   header { padding: 0.9rem 1.1rem; }
   .nav a:not(.cta-btn) { display: none; }
+  .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
   .trust-strip { grid-template-columns: 1fr 1fr; }
+  main { padding: 32px 16px 32px; }
+  h1 { line-height: 1.18; }
+  h2 { margin-top: 34px; }
+  .card { padding: 20px; }
+  .crosslink-banner { padding: 18px 20px; }
+  .crosslink-btn { width: 100%; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+  .footer-links a { padding: 4px 0; display: inline-block; }
 }
 </style>
 </head>
@@ -334,8 +407,7 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     <a href="https://carithm.vercel.app/bmw">BMW</a>
     <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
     <a href="https://carithm.vercel.app/research">Research</a>
-    <a href="https://carithm.vercel.app/damage" class="active" aria-current="page">Auto Damage Estimator</a>
-    <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+    <a href="https://carithm.vercel.app/" class="active" aria-current="page">Audio Diagnosis</a>
     <a href="#try" class="cta-btn">Try It Free</a>
   </nav>
 </header>
@@ -345,222 +417,123 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <a href="https://carithm.vercel.app/">Home</a>
   <span class="sep">/</span>
-  <span class="current">AI Auto Body Damage Estimator</span>
+  <span class="current">AI Car Sound Analyzer</span>
 </nav>
 
 <section>
-  <div class="eyebrow">Carithm Visual Intelligence</div>
+  <div class="eyebrow">Carithm Audio Intelligence</div>
 
-  <h1>Free AI Car Damage Estimator &amp; Detection Tool</h1>
-
-  <p>
-    Got a new door ding, a mystery scratch, or a bumper that's seen better days? Upload a photo and Carithm's AI scans the body panels &mdash; dents, deep scratches, cracked bumpers, broken taillights, flat tires &mdash; and hands you a repair cost estimate before you've even found your keys.
-  </p>
+  <h1>Free AI Car Sound Diagnosis App: Identify Engine & Mechanical Noises</h1>
 
   <p>
-    Handy for sizing up repair costs before a body shop visit, figuring out if a claim is even worth the insurance hike, or quietly investigating whether that "barely used" listing has a body-filler situation nobody mentioned.
+    Hear a strange noise from your engine, brakes, suspension, or transmission? Upload a quick recording. Our audio diagnosis app instantly identifies the fault so you know what's wrong before visiting the mechanic.
   </p>
 
-  <p style="font-size: 13px; color: var(--muted2);">
-    One honest heads-up before you scroll further: this is an AI's best guess from a photo, not a certified inspection. Treat it as a smart starting point, not a verdict &mdash; full disclaimer below.
+  <p>
+    Just hit record on your phone, upload the file, and let the car noise identifier do the rest.
   </p>
-
-  <ul class="checks">
-    <li>100% Free & No Sign-up</li>
-    <li>Built for US auto repair estimates</li>
-    <li>AI-powered visual collision assessment</li>
-  </ul>
 
   <div class="trust-strip">
-    <div><div class="trust-num">7</div><div class="trust-lbl">Damage Types</div></div>
+    <div><div class="trust-num">No App</div><div class="trust-lbl">Needed</div></div>
     <div><div class="trust-num">Free</div><div class="trust-lbl">No Signup</div></div>
     <div><div class="trust-num">~5s</div><div class="trust-lbl">Analysis Time</div></div>
-    <div><div class="trust-num">Mobile</div><div class="trust-lbl">Camera Ready</div></div>
+    <div><div class="trust-num">Phone</div><div class="trust-lbl">Compatible</div></div>
   </div>
 </section>
 
-<!-- Ad Slot 1 -->
-<div class="ad-slot">
-  <div class="ad-label">Advertisement</div>
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-5227538935323998"
-       data-ad-slot="6469714155"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
-
 <section class="card tool tool-wide" id="try">
-  <h2 style="margin-top:0; text-align: center;">Try the AI Auto Damage Estimator</h2>
-  <p style="text-align: center; max-width: 800px; margin: 0 auto;">
-    Upload a clear photo of your car or take one with your phone. Carithm's AI analyzes it, highlights every area of visible collision damage, and calculates an estimated repair cost range in USD.
+  <h2 style="margin-top:0;">Try the AI Car Sound Analyzer<span class="live-indicator"><span class="dot"></span>Live</span></h2>
+  <p>
+  Record a car sound from your engine, brakes, suspension, or transmission directly in your browser. Our web-based engine sound diagnostic AI app analyzes the audio and provides a clear fault diagnosis in seconds. 
   </p>
 
-  <!-- MAXIMISED STREAMLIT EMBED -->
   <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
     <iframe
       id="streamlitFrame"
       class="streamlit-embed"
-      src="https://share.streamlit.io/shaunaukb29/tet_2351/main/streamlit_app.py?embed=true"
-      title="Carithm AI Auto Body Damage Estimator"
+      src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
+      title="Carithm AI Car Sound Analyzer"
       loading="lazy"
-      allow="clipboard-write; camera"
+      allow="microphone; clipboard-write"
       onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
     ></iframe>
     <div class="iframe-brand-mask"></div>
     <div class="iframe-fallback" id="iframeFallback">
-      <p>The estimator tool couldn't load in this view.</p>
-      <a class="crosslink-btn" href="https://share.streamlit.io/shaunaukb29/tet_2351/main/streamlit_app.py" target="_blank" rel="noopener">Open the Estimator in a New Tab →</a>
+      <p>The analyzer tool couldn't load in this view.</p>
+      <a class="crosslink-btn" href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener">Open the Analyzer in a New Tab →</a>
     </div>
   </div>
 
   <noscript>
-    <p class="note">This tool requires JavaScript to load the embedded app. <a href="https://share.streamlit.io/shaunaukb29/tet_2351/main/streamlit_app.py" target="_blank" rel="noopener">Open it directly here.</a></p>
+    <p class="note">This tool requires JavaScript to load the embedded app. <a href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener">Open it directly here.</a></p>
   </noscript>
-
-  <div class="important" style="max-width: 800px; margin: 24px auto 0;">
-    <strong>Important Disclaimer &mdash; Read Before You Act on This</strong>
-    This is an AI's best guess based on a photo, not a certified mechanic's inspection, an insurance adjuster's appraisal, or your uncle's opinion just because he "used to work on cars." It only sees what's visible in the image &mdash; hidden structural damage like a bent frame, airbag sensor faults, or issues just out of frame won't show up here, and estimates can be off for cars with unusual paint, trim, or aftermarket parts. Treat this number as a useful starting point for a conversation, not a final decision. Always get a real inspection before filing an insurance claim, buying a used car, or agreeing to a repair.
-  </div>
 </section>
 
 <section>
-  <h2>What Collision Damage Can the AI Detect?</h2>
-  <p>Wondering how much it costs to fix a dent in a car door, or whether that scratch is a $40 buff-out or a $400 paint job? Here's what the AI is actually looking for in your photo:</p>
+  <h2>What Our Engine Noise Analysis App Detects</h2>
+  <p>Carithm acts as your personal audio diagnosis app, trained on thousands of fault signatures. We instantly screen for:</p>
   <ul>
-    <li><strong>Door dings and hail damage:</strong> everything from a shopping-cart love tap to a full hailstorm reenactment.</li>
-    <li><strong>Deep scratches, key marks, and scuffs:</strong> because someone, somewhere, had strong feelings about your parking job.</li>
-    <li><strong>Cracked or shattered windshields:</strong> catches the chip before it turns into the crack that becomes a $500 problem.</li>
-    <li><strong>Broken headlight and taillight housings:</strong> whether it's from a fender bender or a rogue shopping cart, we don't judge.</li>
-    <li><strong>Cracked bumpers and bent quarter panels:</strong> the classic fingerprints of a fender bender, minor or otherwise.</li>
-    <li><strong>Flat tires and curbed rims:</strong> that curb definitely won this round.</li>
+    <li>Engine knocking, ticking, and detonation</li>
+    <li>Belt squeal and tensioner pulley noise</li>
+    <li>Wheel bearing humming and grinding</li>
+    <li>Brake squealing and metal-on-metal grinding</li>
+    <li>Suspension rattles, clunks, and popping</li>
+    <li>Transmission and power steering whine</li>
+    <li>Exhaust leaks and loose heat shields</li>
   </ul>
 </section>
 
 <section>
-  <h2>Average Car Damage Repair Costs (2026 US Estimates)</h2>
-  <p>Wondering how much it costs to fix a dented car door, a cracked windshield, or a fender bender before you upload a photo? Here's a general cost range for the most common visible damage types our AI detects. Actual auto body shop quotes vary by state, labor rate, and vehicle make.</p>
-  <ul>
-    <li><strong>Door ding or minor dent (paintless dent repair):</strong> $75&ndash;$250</li>
-    <li><strong>Dent with cracked or chipped paint:</strong> $300&ndash;$700</li>
-    <li><strong>Deep scratch or key mark repair:</strong> $150&ndash;$900 depending on panel size</li>
-    <li><strong>Cracked bumper repair or replacement:</strong> $200&ndash;$1,500</li>
-    <li><strong>Broken headlight or taillight replacement:</strong> $150&ndash;$800 including labor</li>
-    <li><strong>Windshield crack or chip repair:</strong> $60&ndash;$400; full replacement $250&ndash;$1,000+</li>
-    <li><strong>Flat tire or curbed rim repair:</strong> $20&ndash;$150 for a flat, $100&ndash;$500+ for a bent or curbed rim</li>
-  </ul>
-  <p>If your estimated repair cost is close to or below your insurance deductible, it's often cheaper to pay out of pocket rather than file a claim, since a claim can raise your premium for several years. Use Carithm's free auto body estimate calculator above to get a baseline before deciding whether to file with your insurer or visit a shop.</p>
-</section>
+  <h2>How to Identify Common Car Noises</h2>
+  
+  <h3>Why is my car making a noise when I accelerate?</h3>
+  <p>A high-pitched squeal is usually a worn serpentine belt. A whine that gets louder with speed points to the transmission or a wheel bearing. A clunk suggests worn suspension components. If you're not sure, upload the recording above.</p>
 
-<!-- Ad Slot 2 -->
-<div class="ad-slot">
-  <div class="ad-label">Advertisement</div>
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-5227538935323998"
-       data-ad-slot="5302872061"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
+  <h3>Why does my car squeal when I brake?</h3>
+  <p>This is often a worn brake pad wear indicator doing its job—warning you before the pad runs out. A grinding sound instead of a squeal means the pad is completely gone, which requires immediate attention.</p>
 
-<section>
-  <h2>Free Online Auto Body Estimate from Pictures</h2>
-  <ul>
-    <li><strong>Avoid an insurance rate hike over pocket change:</strong> filing a claim for a $180 scratch can end up costing more over three years of higher premiums than just paying for it yourself.</li>
-    <li><strong>Sanity-check a body shop quote:</strong> get an independent number first, so you know whether $1,200 is a fair price or someone rounded up because you looked like you wouldn't ask questions.</li>
-    <li><strong>Skip the app store entirely:</strong> no download, no account, no five-star-review pop-up begging you to rate it before you've even seen a result &mdash; just upload a photo and go.</li>
-  </ul>
+  <h3>Why is there a humming or whining noise at highway speed?</h3>
+  <p>Speed-dependent humming that changes pitch with your speed (not engine RPM) usually points to a wheel bearing. Whining that tracks engine RPM instead is more often a transmission, differential, or power steering pump issue.</p>
+
+  <h3>Why does my engine knock or tick at idle?</h3>
+  <p>Light ticking at idle that fades once oil pressure builds is common and often related to the valve train. A deeper, heavier knock under load or acceleration needs urgent inspection, as it can signal serious engine wear.</p>
 </section>
 
 <section>
-  <h2>Things Nobody Tells You About Car Repair Estimates</h2>
-  <p>A few things the body shop probably won't volunteer unless you ask:</p>
-  <ul>
-    <li><strong>Cash price and insurance price aren't always the same number.</strong> Some shops quote differently depending on who's paying &mdash; it never hurts to ask what the out-of-pocket rate looks like.</li>
-    <li><strong>The dent is rarely the expensive part &mdash; the paint is.</strong> Matching modern metallic or pearl paint often means blending into the panel next door, which is where most of the bill quietly comes from.</li>
-    <li><strong>OEM vs. aftermarket parts can double the price of the "same" repair.</strong> A factory bumper and a compatible aftermarket one can differ by hundreds of dollars for an identical-looking fix.</li>
-    <li><strong>"Totaled" doesn't always mean unsafe to drive.</strong> Insurers typically total a car once repair costs cross roughly 70&ndash;80% of its value &mdash; a financial call, not a mechanical one.</li>
-    <li><strong>You don't have to use the shop that gave you the free estimate.</strong> Most states require a written estimate before work begins, and you're free to shop it around.</li>
-  </ul>
+  <h2>Understanding Designed Life vs. Mechanical Failure</h2>
+  <p>
+    Not all noises mean immediate danger. For example, front and rear brake pads have different wear rates based on your drivetrain (AWD, FWD, or RWD) and vehicle type (SUV vs. sedan), which affect brake biases. Our diagnostic AI helps determine if the squeal or clunk you hear is simply a component reaching the end of its designed life health, or if it is a sudden mechanical failure that requires a tow.
+  </p>
 </section>
 
 <section>
   <h2>Frequently Asked Questions</h2>
 
-  <h3>Is there a free online auto body repair estimate tool?</h3>
-  <p>Yes, Carithm is a completely free online auto body estimate tool that works from pictures with no account required.</p>
+  <h3>Can AI diagnose engine problems?</h3>
+  <p>Yes. Our engine sound diagnostic AI identifies abnormal acoustic patterns associated with common mechanical faults—such as engine knock, bearing noise, and belt squeal—to pinpoint likely inspection areas.</p>
 
-  <h3>Can I get a car damage repair cost calculator from a photo?</h3>
-  <p>Yes, simply upload a photo or use your camera, and the AI will act as a car damage repair cost calculator, providing estimated USD ranges for the detected damage.</p>
+  <h3>How do I diagnose a car noise myself?</h3>
+  <p>Record the unusual noise using your smartphone near the source (engine bay, wheel, or exhaust), upload the audio file to our free car noise identifier, and review the instant diagnostic report.</p>
 
-  <h3>Can I use this for my auto insurance claim?</h3>
-  <p>The assessment is intended as an informational visual aid to help you understand baseline costs. It is not a certified mechanic's or insurance adjuster's inspection.</p>
+  <h3>Is there an engine sound diagnostic AI app to download?</h3>
+  <p>Carithm runs entirely in your web browser. There is no app to download or install. Open it on your phone or desktop, upload a noise, and get an instant audio diagnosis.</p>
 
-  <h3>Does it detect fender benders and bumper damage?</h3>
-  <p>Yes, it detects visible collision damage including dents, deep scratches, cracked bumpers, and broken lights common in minor parking lot accidents and fender benders.</p>
-
-  <h3>What photos work best for the car damage scanner?</h3>
-  <p>Clear, well-lit images taken close to the damaged area during daylight work best for the AI car damage scanner.</p>
-
-  <h3>How much does it cost to fix a dented car door?</h3>
-  <p>A minor door dent typically runs $75 to $250 with paintless dent repair, while a dent that has cracked the paint can run $300 to $700 at a body shop. Upload a photo above for a specific estimate.</p>
-
-  <h3>Should I file an insurance claim for a small dent or scratch?</h3>
-  <p>If the repair estimate is close to or below your deductible, paying out of pocket is usually cheaper long-term since filing a claim can raise your premium for several years, even for minor damage.</p>
-
-  <h3>How can I check for hidden damage before buying a used car?</h3>
-  <p>Photograph the body panels, bumpers, and glass in good light and run them through Carithm's AI damage scanner, then follow up with a mechanic's pre-purchase inspection for anything structural the AI can't see, like frame or sensor damage.</p>
-
-  <h3>What happens if you damage a rental car?</h3>
-  <p>Most rental agreements bill you directly for the repair cost of any new damage found at return, unless you bought a damage waiver or your personal auto insurance or credit card provides rental coverage. Scanning the car with an AI tool before you return it helps you document its condition and dispute charges for damage you didn't cause.</p>
-
-  <h3>Do rental car companies really use AI to scan for damage?</h3>
-  <p>Yes, companies like Hertz have piloted AI-powered scanners at return that automatically flag dents, scratches, and curb damage, sometimes charging renters before they've even left the lot.</p>
-</section>
-
-<!-- Ad Slot 3 -->
-<div class="ad-slot">
-  <div class="ad-label">Advertisement</div>
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-5227538935323998"
-       data-ad-slot="2530469147"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
-
-<section>
-  <h2>Returning a Rental Car? Scan It for Damage First</h2>
-  <p>
-    Hertz, Enterprise, and other rental companies increasingly use AI scanners at drop-off to flag new dents, scratches, and curbed rims &mdash; and renters are often surprised by a damage charge they didn't know about. Before you return a rental, upload a photo through Carithm's free AI car damage detection tool to see what an AI scan would flag, so you can document the vehicle's condition yourself and dispute any charge that wasn't actually caused during your rental.
-  </p>
-  <ul>
-    <li><strong>What happens if you damage a rental car:</strong> most rental agreements bill you directly for repair cost unless you purchased a damage waiver or your own auto insurance/credit card covers rentals.</li>
-    <li><strong>Rental car hail damage:</strong> often the most disputed charge type, since hail dents can be pre-existing or from a different storm entirely.</li>
-    <li><strong>Rental car tire and rim damage:</strong> curb rash and flat tires are commonly flagged at return &mdash; check before you drop the keys off.</li>
-  </ul>
+  <h3>Is this the same as an audio diagnosis app or engine noise analysis app?</h3>
+  <p>Yes. Carithm functions as an audio diagnosis app and engine noise analysis app. It listens to your recording, filters background interference, and reports likely mechanical faults with a confidence score.</p>
 </section>
 
 <div class="crosslink-banner" aria-label="Related tool">
   <div>
-    <strong>Hearing a strange noise under the hood?</strong>
-    <p>Record the sound and get an instant AI diagnosis for engine, brake, and suspension faults — free.</p>
+    <strong>Heard a noise and now have a repair quote?</strong>
+    <p>Once your garage gives you an estimate, check if every line item is actually due before you approve anything — free, under 30 seconds.</p>
   </div>
-  <a href="https://carithm.vercel.app/audio" class="crosslink-btn">Try the Sound Analyzer →</a>
+  <a href="https://carithm.vercel.app/" class="crosslink-btn">Check My Repair Quote →</a>
 </div>
 
 <section style="margin-top: 44px;">
   <div class="eyebrow">Also on Carithm</div>
   <h2 style="margin-top: 8px;">Understand the repair before you pay for it</h2>
+  <p>If the sound diagnosis points to a specific issue, use these to understand costs and intervals for your exact car.</p>
   <div class="related-grid">
     <a class="related-card" href="https://carithm.vercel.app/toyota">
       <div class="rc-label">Brand Guide</div>
@@ -574,6 +547,18 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
       <div class="rc-label">Brand Guide</div>
       <div class="rc-title">Mercedes Maintenance Guide</div>
     </a>
+    <a class="related-card" href="https://carithm.vercel.app/repairs/engine.html">
+      <div class="rc-label">Repair Type</div>
+      <div class="rc-title">Engine Repair Cost Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/repairs/brakes.html">
+      <div class="rc-label">Repair Type</div>
+      <div class="rc-title">Brake Repair Cost Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/research">
+      <div class="rc-label">Research</div>
+      <div class="rc-title">Car Maintenance Data & Methodology</div>
+    </a>
   </div>
 </section>
 
@@ -582,15 +567,15 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-links">
-      <a href="https://carithm.vercel.app/">Carithm Home</a>
-      <a href="https://carithm.vercel.app/damage">Auto Damage Estimator</a>
-      <a href="https://carithm.vercel.app/audio">AI Car Sound Analyzer</a>
-      <a href="https://carithm.vercel.app/toyota">Toyota Repair Costs</a>
-      <a href="https://carithm.vercel.app/bmw">BMW Repair Costs</a>
-      <a href="https://carithm.vercel.app/research">Research</a>
+      <a href="https://carithm.vercel.app/">Carithm Home — Repair Quote Checker</a>
+      <a href="https://carithm.vercel.app/">AI Car Sound Analyzer</a>
+      <a href="https://carithm.vercel.app/toyota">Toyota Repair Cost Guide</a>
+      <a href="https://carithm.vercel.app/bmw">BMW Repair Cost Guide</a>
+      <a href="https://carithm.vercel.app/mercedes">Mercedes Maintenance Guide</a>
+      <a href="https://carithm.vercel.app/research">Research & Methodology</a>
     </div>
     <div class="footer-bottom">
-      © 2026 Carithm. AI Auto Body Damage Estimator — automated visual assessment tool. Not a certified inspection.
+      © 2026 Carithm. AI Engine Sound Analyzer.
     </div>
   </div>
 </footer>
