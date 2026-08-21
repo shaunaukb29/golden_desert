@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
+      }
+    }, interval * 1000);
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Engine Ticking But No Check Engine Light? Causes &amp; Free AI Sound Test</title>
+<meta name="description" content="Engine ticking but the check engine light is off? Record the sound and get a free AI-assisted breakdown of likely causes — the light doesn&#x27;t monitor most mechanical noises.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Carithm">
+<link rel="canonical" href="https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light">
+<link rel="alternate" hreflang="en" href="https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light">
+<link rel="alternate" hreflang="en-us" href="https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light">
+<link rel="alternate" hreflang="en-ca" href="https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light">
+<link rel="alternate" hreflang="en-gb" href="https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light">
+<link rel="alternate" hreflang="en-ie" href="https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light">
+<link rel="alternate" hreflang="x-default" href="https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Engine Ticking But No Check Engine Light? Causes &amp; Free AI Sound Test">
+<meta property="og:description" content="Upload a recording of your engine ticking noise and get a free AI-assisted analysis of possible causes, urgency, and cost in seconds — even with no warning light on.">
+<meta property="og:url" content="https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light">
+<meta property="og:image" content="https://carithm.vercel.app/engine-ticking-no-check-engine-light.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Car dashboard with no warning lights illuminated while the engine runs">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="en_CA">
+<meta property="og:locale:alternate" content="en_IE">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Engine Ticking But No Check Engine Light? Causes &amp; Free AI Sound Test">
+<meta name="twitter:description" content="Upload a recording of your engine ticking noise and get a free AI-assisted analysis of possible causes, urgency, and cost in seconds — even with no warning light on.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#09090b">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light/#webapp",
+      "name": "Carithm Car Sound Diagnostic App - Ticking With No Check Engine Light",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "App to help identify possible causes of an engine ticking noise that occurs without triggering the check engine light, by analyzing uploaded audio.",
+      "url": "https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light/#article",
+      "headline": "Engine Ticking But No Check Engine Light? Here's What's Usually Behind It",
+      "description": "Why an engine can tick without the check engine light coming on, what the light actually monitors versus what it doesn't, urgency signals, repair costs, and a free AI tool to analyze the sound.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://carithm.vercel.app/engine-ticking-no-check-engine-light.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "datePublished": "2026-08-21",
+      "dateModified": "2026-08-21",
+      "author": {
+        "@type": "Organization",
+        "name": "Carithm",
+        "url": "https://carithm.vercel.app/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Carithm",
+        "url": "https://carithm.vercel.app/"
+      },
+      "mainEntityOfPage": "https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".lead",
+          ".faq-content"
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is my engine ticking with no check engine light on?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most mechanical noises \u2014 worn lifters, an exhaust leak, a belt or pulley, early bearing wear \u2014 don't directly affect the specific emissions or sensor circuits the check engine light is designed to monitor, so they often never trigger it at all."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a check engine light always come on for engine noises?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The light is built around OBD-II standards focused on emissions and certain sensor or misfire conditions, not general mechanical noise, so plenty of genuine issues \u2014 including serious ones \u2014 can exist without ever lighting the dashboard."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a check engine light stay off even with a serious problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Internal wear such as early rod or bearing damage frequently outpaces the specific conditions OBD-II needs to confirm a fault, meaning a serious mechanical issue can develop well before, or even without, ever triggering the light."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I still get a diagnostic scan if the light is off?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, it's worth it. A scan can reveal pending codes that haven't yet met the criteria to illuminate the dashboard, giving you an earlier signal than waiting for the light to eventually come on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What noises typically never trigger a check engine light?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Accessory-related noises \u2014 belts, pulleys, tensioners, alternators \u2014 are mechanically isolated from the sensors OBD-II monitors and essentially never trigger the light regardless of how worn they become."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to ignore engine ticking just because there's no warning light?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The absence of a light says very little about mechanical noise specifically. How the engine actually runs, and whether the noise is stable or worsening, are much more reliable indicators than dashboard status alone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a pending code exist without the check engine light being on?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A pending code is stored once the vehicle's computer detects something out of range, but it typically needs to reoccur across additional drive cycles before the check engine light actually illuminates."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://carithm.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Audio Diagnosis",
+          "item": "https://carithm.vercel.app/audio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Engine Ticking Noise",
+          "item": "https://carithm.vercel.app/audio/engine-ticking-noise"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "No Check Engine Light",
+          "item": "https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root { --bg: #0c0d0e; --surface: #131415; --surface2: #1a1b1d; --surface3: #222426; --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14); --text: #f5f4f2; --muted: #a3a6a9; --muted2: #6e7275; --accent: #f0553f; --accent-dim: rgba(240,85,63,0.1); --amber: #e8a33d; --amber-dim: rgba(232,163,61,0.1); --red: #e5484d; --red-dim: rgba(229,72,77,0.1); --green: #22c55e; --green-dim: rgba(34,197,94,0.1); --mono: 'JetBrains Mono', monospace; --r: 12px; --r-sm: 8px; color-scheme: dark; }
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+header { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: rgba(12,13,14,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none; }
+.nav-logo span { color: var(--accent); }
+.nav { display: flex; gap: 1.75rem; align-items: center; }
+.nav a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; transition: color .2s; }
+.nav a:hover, .nav a.active { color: #fff; }
+.nav .cta-btn { background: var(--accent-dim); border: 1px solid rgba(240,85,63,0.3); color: var(--accent); padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600; }
+.nav .cta-btn:hover { background: var(--accent); color: #000; }
+.breadcrumb { max-width: 760px; margin: 18px auto 0; padding: 0 24px; font-size: 12px; color: var(--muted2); }
+.breadcrumb a { color: var(--muted2); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb .sep { margin: 0 6px; color: var(--muted2); }
+.breadcrumb .current { color: var(--text); font-weight: 500; }
+main { max-width: 760px; margin: 0 auto; padding: 20px 24px 96px; }
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+h1 { font-size: clamp(1.8rem, 5vw, 2.3rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 14px; line-height: 1.14; }
+h2 { font-size: 1.5rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; scroll-margin-top: 80px; }
+h3 { font-size: 1.2rem; font-weight: 600; margin-top: 28px; color: #fff; }
+p { color: var(--muted); margin: 0 0 14px; }
+.lead { font-size: 1.05rem; color: var(--text); margin-bottom: 20px; }
+ul, ol { color: var(--muted); padding-left: 20px; margin-bottom: 16px; }
+li { margin-bottom: 6px; }
+strong { color: var(--text); }
+.byline { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--muted2); margin-bottom: 22px; flex-wrap: wrap; }
+.byline .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted2); }
+.byline strong { color: var(--muted); font-weight: 600; }
+.quickscan { display: flex; align-items: flex-start; gap: 10px; background: var(--red-dim); border: 1px solid rgba(229,72,77,.3); border-radius: var(--r-sm); padding: 14px 16px; margin-bottom: 22px; }
+.quickscan .icon { font-size: 18px; line-height: 1; }
+.quickscan p { margin: 0; font-size: 13.5px; color: var(--text); }
+.quickscan strong { color: var(--red); }
+.quickscan a { color: var(--accent); font-weight: 600; text-decoration: underline; white-space: nowrap; }
+.quickscan.info { background: var(--accent-dim); border-color: rgba(240,85,63,0.3); }
+.quickscan.info strong { color: var(--accent); }
+.searchfor { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 20px 22px; margin-bottom: 28px; }
+.searchfor h2 { margin-top: 0; font-size: 1.15rem; }
+.searchfor ul { columns: 2; -webkit-columns: 2; column-gap: 24px; margin-bottom: 0; }
+.searchfor li { break-inside: avoid; }
+@media (max-width: 560px) { .searchfor ul { columns: 1; } }
+.toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 20px; margin-bottom: 32px; }
+.toc-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); margin-bottom: 12px; }
+.toc-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.toc-list a { text-decoration: none; color: var(--accent); font-size: 14px; font-weight: 500; display: inline-block; transition: opacity 0.2s; }
+.toc-list a:hover { opacity: 0.7; text-decoration: underline; }
+.scenario-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; margin-bottom: 24px;}
+.scenario-link { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); text-decoration: none; font-size: 14px; font-weight: 500; color: var(--text); transition: border-color 0.2s, background 0.2s; }
+.scenario-link:hover { border-color: var(--accent); background: var(--surface2); }
+.scenario-link::before { content: "○"; color: var(--accent); }
+.highlight-box { background: linear-gradient(135deg, rgba(240,85,63,0.08), rgba(240,85,63,0.02)); border: 1px solid rgba(240,85,63,0.3); border-radius: var(--r-sm); padding: 20px; margin: 24px 0; }
+.highlight-box p:last-child { margin-bottom: 0; }
+.card { background: var(--surface); padding: 26px; border-radius: var(--r); margin-top: 26px; border: 1px solid var(--border); margin-bottom: 32px;}
+.card.tool { border-color: rgba(240,85,63,0.25); }
+.card.tool.tool-wide { max-width: 1100px; width: 100%; margin-left: 50%; transform: translateX(-50%); box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+.streamlit-embed-wrap { position: relative; --streamlit-height: min(1200px, 90vh); margin-top: 18px; border: 1px solid rgba(240,85,63,0.25); border-radius: var(--r-sm); overflow: hidden; background: var(--surface2); resize: vertical; }
+.streamlit-embed { display: block; width: 100%; height: var(--streamlit-height); min-height: 640px; border: 0; background: var(--bg); }
+.iframe-brand-mask { position: absolute; bottom: 0; left: 0; right: 0; height: 44px; background: var(--surface2); z-index: 99999; pointer-events: auto; border-top: 1px solid var(--border); cursor: default; }
+.cta-note { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 16px 20px; margin-top: 24px; font-size: 13px; color: var(--muted); text-align: center; }
+.cta-note strong { color: var(--accent); display: block; margin-bottom: 4px; font-size: 14px; }
+.trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin-top: 14px; font-size: 12.5px; color: var(--muted); }
+.trust-row span { display: flex; align-items: center; gap: 6px; }
+.trust-row span::before { content: "✓"; color: var(--green); font-weight: 700; }
+.scenario-block { border: 1px solid var(--border); border-radius: var(--r-sm); padding: 18px 20px; margin-bottom: 14px; background: var(--surface); }
+.scenario-block h3 { margin-top: 0; font-size: 1.05rem; }
+.urgency { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 999px; margin-bottom: 10px; }
+.urgency.low { background: var(--green-dim); color: var(--green); }
+.urgency.medium { background: var(--amber-dim); color: var(--amber); }
+.urgency.high { background: var(--red-dim); color: var(--red); }
+table.seo-table { width: 100%; border-collapse: collapse; margin: 14px 0 8px; font-size: 13px; }
+table.seo-table th, table.seo-table td { border: 1px solid var(--border); padding: 12px 14px; text-align: left; color: var(--muted); }
+table.seo-table th { background: var(--surface); color: var(--text); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+.cost-note { font-size: 12px; color: var(--muted2); margin-top: 8px; margin-bottom: 24px; }
+details.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); margin-bottom: 12px; overflow: hidden; }
+details.faq-item summary { padding: 16px; font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; position: relative; padding-right: 40px; }
+details.faq-item summary::-webkit-details-marker { display: none; }
+details.faq-item summary::after { content: '+'; position: absolute; right: 16px; top: 16px; color: var(--accent); font-size: 18px; line-height: 1; }
+details.faq-item[open] summary::after { content: '−'; }
+details.faq-item .faq-content { padding: 0 16px 16px; font-size: 14px; color: var(--muted); }
+details.faq-item .faq-content p:last-child { margin-bottom: 0; }
+.mobile-cta-bar { display: none; }
+@media (max-width: 620px) {
+  .mobile-cta-bar { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--surface); border-top: 1px solid var(--border2); padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); box-shadow: 0 -8px 24px rgba(0,0,0,0.35); }
+  .mobile-cta-bar a { flex: 1; text-align: center; background: var(--accent); color: #000; font-weight: 700; font-size: 14.5px; padding: 12px 14px; border-radius: 10px; text-decoration: none; }
+  main { padding-bottom: 90px; }
+}
+footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
+.footer-inner { max-width: 760px; margin: 0 auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
+.footer-links a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+.footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
+.decision-tree { border: 1px solid var(--border); border-radius: var(--r-sm); background: var(--surface); padding: 4px 20px; margin-bottom: 18px; }
+.decision-step { padding: 16px 0; border-bottom: 1px solid var(--border); }
+.decision-step:last-child { border-bottom: none; }
+.decision-step .q { color: var(--text); font-weight: 600; font-size: 14.5px; margin-bottom: 6px; }
+.decision-step .branch { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+.decision-step .branch span { font-size: 12.5px; background: var(--surface2); border: 1px solid var(--border); border-radius: 999px; padding: 4px 11px; color: var(--muted); }
+.decision-step .branch span strong { color: var(--accent); }
+.checklist { list-style: none; padding: 0; margin: 0 0 16px; counter-reset: step; }
+.checklist li { counter-increment: step; position: relative; padding: 12px 14px 12px 44px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); margin-bottom: 8px; color: var(--muted); }
+.checklist li::before { content: counter(step); position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; border-radius: 50%; background: var(--accent-dim); color: var(--accent); font-size: 11.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.checklist li strong { color: var(--text); }
+.drive-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 18px 0 8px; }
+@media (min-width: 620px) { .drive-grid { grid-template-columns: 1fr 1fr; } }
+.drive-card { border-radius: var(--r-sm); padding: 18px 20px; border: 1px solid var(--border); }
+.drive-card.ok { background: var(--green-dim); border-color: rgba(34,197,94,.3); }
+.drive-card.stop { background: var(--red-dim); border-color: rgba(229,72,77,.3); }
+.drive-card h3 { margin-top: 0; font-size: 1rem; }
+.drive-card.ok h3 { color: var(--green); }
+.drive-card.stop h3 { color: var(--red); }
+.drive-card ul { margin-bottom: 0; }
+@media (max-width: 620px) { header { padding: 0.9rem 1.1rem; } .nav a:not(.cta-btn) { display: none; } table.seo-table { display: block; overflow-x: auto; white-space: nowrap; } }
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <a href="https://carithm.vercel.app/audio" class="active">Audio Diagnosis</a>
+    <a href="#try" class="cta-btn">Analyze My Car Noise</a>
+  </nav>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://carithm.vercel.app/">Home</a>
+  <span class="sep">/</span>
+  <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+  <span class="sep">/</span>
+  <a href="https://carithm.vercel.app/audio/engine-ticking-noise">Engine Ticking Noise</a>
+  <span class="sep">/</span>
+  <span class="current">No Check Engine Light</span>
+</nav>
+
+<main class="container">
+
+<article>
+  <div class="eyebrow">AI CAR NOISE DIAGNOSIS</div>
+  <h1>Engine Ticking But No Check Engine Light? Here&#x27;s What&#x27;s Usually Behind It</h1>
+
+  <div class="byline">
+    <span>Reviewed by <strong>Carithm AI Automotive Research Team</strong> against OEM service documentation and automotive repair references</span>
+    <span class="dot"></span>
+    <span>Updated <time datetime="2026-08-21">August 21, 2026</time></span>
+    <span class="dot"></span>
+    <span>6 min read</span>
+  </div>
+
+  <p class="lead">
+    A clear dashboard is easy to read as "nothing's wrong," but the check engine light was designed to catch emissions-related faults and a specific set of sensor or misfire conditions — it was never built to catch general mechanical noise. A ticking engine with no light can range from a completely harmless accessory noise to a developing internal issue that simply doesn't cross the threshold OBD-II monitors for. Record the sound below and let Carithm AI analyze it, or read on to see what each pattern usually means.
+  </p>
+
+  <div class="quickscan info">
+    <span class="icon">ℹ️</span>
+    <p><strong>Don&#x27;t rely on the light alone:</strong> the check engine light monitors emissions and certain sensor circuits, not general mechanical wear — a scan for pending codes (not just confirmed ones) can surface something the dashboard hasn't shown yet.</p>
+  </div>
+
+  <section class="searchfor" aria-label="Common related searches">
+    <h2>Related Things People Search</h2>
+    <ul>
+      <li>Engine ticking no check engine light</li>
+      <li>Car makes noise but no warning light</li>
+      <li>Ticking noise no codes</li>
+      <li>Is it bad if there&#x27;s no check engine light</li>
+      <li>Engine noise but dashboard is clear</li>
+      <li>Pending code no check engine light</li>
+    </ul>
+  </section>
+
+  <section class="card tool tool-wide" id="try">
+    <h2 style="margin-top: 0; font-size: 1.8rem;">🔊 Upload Your Ticking Sound (No Light On)</h2>
+    <p>Record the noise at idle and under light acceleration. AI sound analysis works from the sound itself, independent of whether a warning light is on, and can help narrow down whether this is an accessory noise, a valvetrain issue, or something that deserves a scan for pending codes.</p>
+    <p>
+      Carithm AI provides a probability-based analysis of possible causes.
+      It does not replace a professional mechanical inspection.
+    </p>
+
+    <div class="streamlit-embed-wrap">
+      <iframe
+        id="streamlitFrame"
+        class="streamlit-embed"
+        src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
+        title="Carithm AI Car Sound Analyzer"
+        loading="lazy"
+        allow="microphone; clipboard-write"
+        fetchpriority="high"
+      ></iframe>
+      <div class="iframe-brand-mask"></div>
+    </div>
+
+    <div class="cta-note">
+      <strong>✓ Record Car Sound, Diagnose Possible Causes</strong>
+      No app required. Just record and upload directly from your browser. <em>If your browser blocks the microphone, you can use the file upload option inside the tool.</em>
+    </div>
+
+    <div class="trust-row">
+      <span>No signup</span>
+      <span>No download</span>
+      <span>No appointment</span>
+      <span>100% free</span>
+    </div>
+  </section>
+
+  <h2 id="quickref">Quick Reference: Noise Pattern vs. Likely Cause</h2>
+  <p>The check engine light status doesn't change what's actually making the noise — the sound pattern still does.</p>
+  <table class="seo-table">
+    <tr>
+      <th>When It Happens</th>
+      <th>Typical Cause</th>
+      <th>Urgency</th>
+    </tr>
+    <tr>
+      <td>Light, consistent tick unrelated to RPM changes, no light</td>
+      <td>Accessory noise (belt, pulley) or a loose heat shield</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <td>Rhythmic tick tied to engine speed, no light</td>
+      <td>Valvetrain wear (lifters, rocker arms)</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>Tick that gets louder under load, no light</td>
+      <td>Exhaust manifold leak</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>Deeper knock developing, still no light</td>
+      <td>Early rod or bearing wear</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Tick plus an occasional light stumble, but no light yet</td>
+      <td>Developing misfire-related issue — a code may not have set yet</td>
+      <td>Medium–High</td>
+    </tr>
+  </table>
+  <p class="cost-note">General guidance only — record the sound above for a more specific, probability-based analysis.</p>
+
+  <nav class="toc" aria-label="Table of Contents">
+    <div class="toc-title">Jump to section</div>
+    <ul class="toc-list">
+      <li><a href="#try">1. Record and analyze your noise</a></li>
+      <li><a href="#quickref">2. Quick reference table</a></li>
+      <li><a href="#soundcheck">3. What does the ticking sound like?</a></li>
+      <li><a href="#situations">4. Does it happen in these situations?</a></li>
+      <li><a href="#checklist">5. What should I check first?</a></li>
+      <li><a href="#safety">6. Can you drive with this noise?</a></li>
+      <li><a href="#costs">7. What will this cost to fix?</a></li>
+      <li><a href="#faq">8. Common questions</a></li>
+      <li><a href="#other-sounds">9. Other car sounds</a></li>
+    </ul>
+  </nav>
+
+  <section id="soundcheck">
+    <h2>What Does the Ticking Sound Like?</h2>
+    <p>The check engine light doesn't factor into this decision tree at all — only the sound and how the engine runs do.</p>
+    <div class="decision-tree">
+    <div class="decision-step">
+      <div class="q">Has the engine ever run rough, hesitated, or stumbled, even briefly, alongside the tick?</div>
+      <div class="branch">
+        <span><strong>Yes, even briefly</strong> — treat more seriously — a light can genuinely lag behind the underlying problem</span>
+        <span><strong>No, runs perfectly smooth otherwise</strong> — more likely a purely mechanical noise unrelated to emissions or sensor circuits</span>
+      </div>
+    </div>
+    <div class="decision-step">
+      <div class="q">Is the noise coming from an accessory area (belts, pulleys) or from inside the engine?</div>
+      <div class="branch">
+        <span><strong>Accessory area</strong> — essentially never triggers a check engine light, regardless of how worn it gets</span>
+        <span><strong>Internal engine area</strong> — still often won&#x27;t trigger a light unless it affects a specifically monitored sensor</span>
+      </div>
+    </div>
+    <div class="decision-step">
+      <div class="q">Would a scan tool likely show anything, even with the light off?</div>
+      <div class="branch">
+        <span><strong>Possibly a pending code not yet illuminated</strong> — worth a scan regardless of whether the light is currently on</span>
+        <span><strong>Unlikely to show anything</strong> — the noise is probably entirely outside what OBD-II monitors</span>
+      </div>
+    </div>
+    <div class="decision-step">
+      <div class="q">Is the noise getting worse over time even with no light appearing?</div>
+      <div class="branch">
+        <span><strong>Yes, worsening</strong> — mechanical wear is progressing — don&#x27;t wait for a light that may never come</span>
+        <span><strong>Stable, unchanged for a long time</strong> — lower urgency, but still worth a proper listen</span>
+      </div>
+    </div>
+    </div>
+    <div class="highlight-box">
+      <p><strong>Why this matters:</strong> The check engine light is built to catch emissions-related faults and specific sensor or misfire conditions defined by OBD-II standards — it was never designed to catch general mechanical noise like a worn lifter, an exhaust leak, or early bearing wear, so a dark dashboard tells you very little about whether a ticking noise is serious. A written description can only narrow things down so far — Carithm AI listens to the actual waveform, timing, and frequency pattern of your recording to weigh these possibilities against each other.</p>
+      <p><a href="#try" style="color: var(--accent); font-weight: 600; text-decoration: underline;">Let the AI listen to it →</a></p>
+    </div>
+  </section>
+
+  <section id="situations">
+    <h2>Does It Happen in These Situations?</h2>
+    <p>A couple of specific "light stayed off" situations worth knowing about.</p>
+    <div class="scenario-block">
+      <span class="urgency low">Lower concern</span>
+      <h3>Light, steady tick tied to an accessory (belt, pulley, alternator) with the engine otherwise running smoothly</h3>
+      <p>Accessory noises are mechanically isolated from the powertrain sensors OBD-II monitors, so it's expected and normal for these to never trigger a check engine light no matter how worn the component becomes.</p>
+    </div>
+    <div class="scenario-block">
+      <span class="urgency medium">Worth checking soon</span>
+      <h3>Rhythmic tick tied to engine RPM with normal power and no rough running</h3>
+      <p>Valvetrain and exhaust-related ticks frequently don't affect any monitored sensor directly, which is why they can persist for a long time — sometimes indefinitely — without ever illuminating the dashboard.</p>
+    </div>
+    <div class="scenario-block">
+      <span class="urgency high">Get it checked promptly</span>
+      <h3>Ticking that&#x27;s progressively deepening into more of a knock, even with the dashboard clear</h3>
+      <p>A worsening trend toward a knock is a mechanical signal that should be weighted more heavily than the absence of a light, since internal wear frequently outpaces the specific conditions needed to trigger an OBD-II fault.</p>
+    </div>
+    <h3>Other ticking patterns worth knowing</h3>
+    <h3>No check engine light, but a pending code shows up on a scan tool</h3>
+    <p>A pending code means the vehicle's computer has detected something out of range but hasn't confirmed it across enough drive cycles to light the dashboard yet — it's a genuinely useful early signal that a light-only check will miss entirely.</p>
+    <h3>No light, but a faint smell of exhaust or burning oil alongside the tick</h3>
+    <p>Smell is a symptom the check engine light has no way to detect at all, and combined with a tick, is worth investigating on its own regardless of what the dashboard shows.</p>
+  </section>
+
+  <section id="checklist">
+    <h2>What Should I Check First?</h2>
+    <p>Work through these in order rather than waiting on the dashboard to confirm anything.</p>
+    <ol class="checklist">
+      <li><strong>Have the vehicle scanned for pending codes</strong>, not just confirmed or stored ones — a pending code won't light the dashboard yet but can point to a developing issue.</li>
+      <li><strong>Confirm whether the noise is coming from an accessory</strong> (belt, pulley) or from inside the engine itself.</li>
+      <li><strong>Check oil level and condition regardless of the light status</strong>, since oil-related issues rarely trigger a check engine light.</li>
+      <li><strong>Visually inspect the exhaust manifold area</strong> for soot staining that would indicate a leak.</li>
+      <li><strong>Track whether the noise is stable or getting worse</strong> week to week, independent of whether a light ever appears.</li>
+      <li><strong>Record the sound</strong> so a specific pattern can be matched, rather than waiting for a warning light that may never come for a purely mechanical noise.</li>
+    </ol>
+    <div class="highlight-box">
+      <p><strong>Have a check-engine code?</strong> If a light is on, note the stored code(s) before you clear anything. Entering the code alongside your recording gives Carithm AI more context and a more specific analysis.</p>
+    </div>
+  </section>
+
+  <section id="safety">
+    <h2>Can You Drive With This Noise?</h2>
+    <p>The absence of a check engine light should not be read as reassurance on its own — how the engine actually runs, and whether the noise is stable or worsening, are far more informative than dashboard status.</p>
+    <div class="drive-grid">
+      <div class="drive-card ok">
+        <h3>Generally lower concern</h3>
+        <ul>
+        <li>Light, stable tick with the engine running smoothly otherwise</li>
+        <li>No other symptoms — no hesitation, rough running, or unusual smells</li>
+        <li>Sound unchanged for a long period of time</li>
+        <li>Scan for pending codes comes back clean</li>
+        </ul>
+      </div>
+      <div class="drive-card stop">
+        <h3>Stop driving and investigate promptly</h3>
+        <ul>
+        <li>Sound is deepening or getting louder over time</li>
+        <li>Any hesitation, rough running, or loss of power, even briefly</li>
+        <li>An oil pressure light does appear, even without the check engine light</li>
+        <li>Any burning smell, or vibration felt through the pedals or seat</li>
+        </ul>
+      </div>
+    </div>
+    <p class="cost-note">This is diagnostic guidance, not a safety guarantee — when in doubt, have it looked at rather than assuming it's fine.</p>
+  </section>
+
+  <section id="costs">
+    <h2>What Will This Cost to Fix?</h2>
+    <p>Treat these as ballpark North America / Western Europe estimates in USD, parts and labor combined.</p>
+    <table class="seo-table">
+      <tr>
+        <th>Possible Issue</th>
+        <th>Typical Repair Cost Range</th>
+      </tr>
+      <tr>
+        <td>Diagnostic scan (including pending codes) plus inspection</td>
+        <td>$50 – $150</td>
+      </tr>
+      <tr>
+        <td>Accessory belt, pulley, or tensioner repair</td>
+        <td>$150 – $400</td>
+      </tr>
+      <tr>
+        <td>Exhaust manifold leak repair</td>
+        <td>$150 – $500</td>
+      </tr>
+      <tr>
+        <td>Valvetrain component replacement</td>
+        <td>$300 – $900</td>
+      </tr>
+      <tr>
+        <td>Internal engine repair (rod/bearing)</td>
+        <td>$1,500 – $4,000+</td>
+      </tr>
+    </table>
+    <p class="cost-note">Actual costs vary substantially by vehicle make, model, engine layout, and labor rates in your area. Treat these as ballpark North America / Western Europe estimates in USD, parts and labor combined.</p>
+  </section>
+
+  <section class="card tool" id="try2">
+    <h2 style="margin-top: 0; font-size: 1.4rem;">Still Can't Identify the Noise?</h2>
+    <p>A written description can only go so far. Record the sound and let Carithm AI analyze the audio for likely mechanical causes — including how it compares to the patterns described above.</p>
+    <p style="margin-bottom: 0;"><a href="#try" style="color: var(--accent); font-weight: 600; text-decoration: underline;">Get a second opinion from the sound itself →</a></p>
+  </section>
+
+  <section id="faq">
+    <h2>Questions About Ticking With No Check Engine Light</h2>
+    <details class="faq-item" open>
+      <summary>Why is my engine ticking with no check engine light on?</summary>
+      <div class="faq-content">
+        <p>Most mechanical noises — worn lifters, an exhaust leak, a belt or pulley, early bearing wear — don't directly affect the specific emissions or sensor circuits the check engine light is designed to monitor, so they often never trigger it at all.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Does a check engine light always come on for engine noises?</summary>
+      <div class="faq-content">
+        <p>No. The light is built around OBD-II standards focused on emissions and certain sensor or misfire conditions, not general mechanical noise, so plenty of genuine issues — including serious ones — can exist without ever lighting the dashboard.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Can a check engine light stay off even with a serious problem?</summary>
+      <div class="faq-content">
+        <p>Yes. Internal wear such as early rod or bearing damage frequently outpaces the specific conditions OBD-II needs to confirm a fault, meaning a serious mechanical issue can develop well before, or even without, ever triggering the light.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Should I still get a diagnostic scan if the light is off?</summary>
+      <div class="faq-content">
+        <p>Yes, it's worth it. A scan can reveal pending codes that haven't yet met the criteria to illuminate the dashboard, giving you an earlier signal than waiting for the light to eventually come on.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>What noises typically never trigger a check engine light?</summary>
+      <div class="faq-content">
+        <p>Accessory-related noises — belts, pulleys, tensioners, alternators — are mechanically isolated from the sensors OBD-II monitors and essentially never trigger the light regardless of how worn they become.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Is it safe to ignore engine ticking just because there&#x27;s no warning light?</summary>
+      <div class="faq-content">
+        <p>No. The absence of a light says very little about mechanical noise specifically. How the engine actually runs, and whether the noise is stable or worsening, are much more reliable indicators than dashboard status alone.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Can a pending code exist without the check engine light being on?</summary>
+      <div class="faq-content">
+        <p>Yes. A pending code is stored once the vehicle's computer detects something out of range, but it typically needs to reoccur across additional drive cycles before the check engine light actually illuminates.</p>
+      </div>
+    </details>
+  </section>
+
+  <section id="other-sounds">
+    <h2>Other Car Sounds You Can Diagnose</h2>
+    <div class="scenario-grid">
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/engine-ticking-when-accelerating">Ticking when accelerating</a>
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/engine-ticking-at-idle">Ticking at idle</a>
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/engine-ticking-cold-start">Ticking on cold start</a>
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/engine-ticking-when-warm">Ticking when warm</a>
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/engine-ticking-after-oil-change">Ticking after an oil change</a>
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/engine-ticking-noise">Engine ticking noise (all scenarios)</a>
+    </div>
+    <p>
+      Ticking happening in a different situation instead? See the full breakdown of <a href="https://carithm.vercel.app/audio/engine-ticking-noise">engine ticking noise scenarios</a>, or visit the main <a href="https://carithm.vercel.app/audio">audio diagnosis hub</a> to browse all sound types.
+    </p>
+  </section>
+</article>
+</main>
+
+<div class="mobile-cta-bar">
+  <a href="#try">🔊 Analyze My Car Noise Now</a>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://carithm.vercel.app/">Home</a>
+      <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+      <a href="#try">Find My Noise Cause</a>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Carithm. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
