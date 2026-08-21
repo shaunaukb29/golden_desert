@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
+      }
+    }, interval * 1000);
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Engine Ticking on Cold Startup? Causes &amp; Free AI Sound Test</title>
+<meta name="description" content="Engine ticks or rattles for a few seconds on cold startup? Record the sound and get a free AI-assisted breakdown of likely causes — from normal lifter priming to timing chain wear.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Carithm">
+<link rel="canonical" href="https://carithm.vercel.app/audio/engine-ticking-cold-start">
+<link rel="alternate" hreflang="en" href="https://carithm.vercel.app/audio/engine-ticking-cold-start">
+<link rel="alternate" hreflang="en-us" href="https://carithm.vercel.app/audio/engine-ticking-cold-start">
+<link rel="alternate" hreflang="en-ca" href="https://carithm.vercel.app/audio/engine-ticking-cold-start">
+<link rel="alternate" hreflang="en-gb" href="https://carithm.vercel.app/audio/engine-ticking-cold-start">
+<link rel="alternate" hreflang="en-ie" href="https://carithm.vercel.app/audio/engine-ticking-cold-start">
+<link rel="alternate" hreflang="x-default" href="https://carithm.vercel.app/audio/engine-ticking-cold-start">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Engine Ticking on Cold Startup? Causes &amp; Free AI Sound Test">
+<meta property="og:description" content="Upload a recording of your engine&#x27;s cold start noise and get a free AI-assisted analysis of possible causes, urgency, and cost in seconds.">
+<meta property="og:url" content="https://carithm.vercel.app/audio/engine-ticking-cold-start">
+<meta property="og:image" content="https://carithm.vercel.app/engine-ticking-cold-start.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A car&#x27;s dashboard and engine bay in cold, frosty morning conditions">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="en_CA">
+<meta property="og:locale:alternate" content="en_IE">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Engine Ticking on Cold Startup? Causes &amp; Free AI Sound Test">
+<meta name="twitter:description" content="Upload a recording of your engine&#x27;s cold start noise and get a free AI-assisted analysis of possible causes, urgency, and cost in seconds.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#09090b">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://carithm.vercel.app/audio/engine-ticking-cold-start/#webapp",
+      "name": "Carithm Car Sound Diagnostic App - Ticking On Cold Start",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "App to help identify possible causes of an engine ticking or rattling noise on cold startup, by analyzing uploaded audio.",
+      "url": "https://carithm.vercel.app/audio/engine-ticking-cold-start"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://carithm.vercel.app/audio/engine-ticking-cold-start/#article",
+      "headline": "Engine Ticking on Cold Startup? Here's What's Usually Behind It",
+      "description": "Why an engine ticks or rattles on cold startup and how long that should normally last, which patterns are routine versus a sign of timing chain or lifter wear, urgency signals, repair costs, and a free AI tool to analyze the sound.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://carithm.vercel.app/engine-ticking-cold-start.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "datePublished": "2026-08-21",
+      "dateModified": "2026-08-21",
+      "author": {
+        "@type": "Organization",
+        "name": "Carithm",
+        "url": "https://carithm.vercel.app/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Carithm",
+        "url": "https://carithm.vercel.app/"
+      },
+      "mainEntityOfPage": "https://carithm.vercel.app/audio/engine-ticking-cold-start",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".lead",
+          ".faq-content"
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does my engine tick for a few seconds on cold start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This is most often oil taking a brief moment to fully reach and pressurize hydraulic lifters or lash adjusters after the engine has sat, which is a normal, well-documented characteristic on many engines as long as it's brief and consistent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a cold start tick normal or a sign of a problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends mainly on duration and trend. A tick under 30 seconds that's been stable for a long time is often normal. A rattle lasting a minute or more, or a duration that keeps growing, is more likely a sign of timing chain or lifter wear."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my engine rattle on cold start but not once it's running?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A rattle that's specific to the first moments after startup and clears quickly is often tied to oil pressure not yet being fully established, or a timing chain tensioner momentarily losing tension before hydraulic pressure builds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the wrong oil viscosity cause a cold start tick?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Oil that's too thick for the climate can be slow to reach the top of the engine when cold, and oil that doesn't meet the manufacturer's specification can also contribute to a longer or louder cold-start tick than normal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long should a cold start tick normally last?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As a general guideline, many engines with a normal, benign cold-start tick will quiet down within 10 to 30 seconds. A noise that consistently lasts a minute or longer is worth having checked rather than assumed normal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a cold start timing chain rattle serious?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can become serious if left unaddressed, since a worn tensioner or stretched chain will typically continue to wear and can eventually affect valve timing. It's worth having inspected promptly rather than waiting for it to worsen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is my cold start ticking getting longer over time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A duration that keeps increasing points to progressing wear rather than a stable characteristic \u2014 commonly worn lifters, a weakening timing chain tensioner, or oil that's overdue for a change."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://carithm.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Audio Diagnosis",
+          "item": "https://carithm.vercel.app/audio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Engine Ticking Noise",
+          "item": "https://carithm.vercel.app/audio/engine-ticking-noise"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "On Cold Startup",
+          "item": "https://carithm.vercel.app/audio/engine-ticking-cold-start"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root { --bg: #0c0d0e; --surface: #131415; --surface2: #1a1b1d; --surface3: #222426; --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14); --text: #f5f4f2; --muted: #a3a6a9; --muted2: #6e7275; --accent: #f0553f; --accent-dim: rgba(240,85,63,0.1); --amber: #e8a33d; --amber-dim: rgba(232,163,61,0.1); --red: #e5484d; --red-dim: rgba(229,72,77,0.1); --green: #22c55e; --green-dim: rgba(34,197,94,0.1); --mono: 'JetBrains Mono', monospace; --r: 12px; --r-sm: 8px; color-scheme: dark; }
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+header { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: rgba(12,13,14,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none; }
+.nav-logo span { color: var(--accent); }
+.nav { display: flex; gap: 1.75rem; align-items: center; }
+.nav a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; transition: color .2s; }
+.nav a:hover, .nav a.active { color: #fff; }
+.nav .cta-btn { background: var(--accent-dim); border: 1px solid rgba(240,85,63,0.3); color: var(--accent); padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600; }
+.nav .cta-btn:hover { background: var(--accent); color: #000; }
+.breadcrumb { max-width: 760px; margin: 18px auto 0; padding: 0 24px; font-size: 12px; color: var(--muted2); }
+.breadcrumb a { color: var(--muted2); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb .sep { margin: 0 6px; color: var(--muted2); }
+.breadcrumb .current { color: var(--text); font-weight: 500; }
+main { max-width: 760px; margin: 0 auto; padding: 20px 24px 96px; }
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+h1 { font-size: clamp(1.8rem, 5vw, 2.3rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 14px; line-height: 1.14; }
+h2 { font-size: 1.5rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; scroll-margin-top: 80px; }
+h3 { font-size: 1.2rem; font-weight: 600; margin-top: 28px; color: #fff; }
+p { color: var(--muted); margin: 0 0 14px; }
+.lead { font-size: 1.05rem; color: var(--text); margin-bottom: 20px; }
+ul, ol { color: var(--muted); padding-left: 20px; margin-bottom: 16px; }
+li { margin-bottom: 6px; }
+strong { color: var(--text); }
+.byline { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--muted2); margin-bottom: 22px; flex-wrap: wrap; }
+.byline .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted2); }
+.byline strong { color: var(--muted); font-weight: 600; }
+.quickscan { display: flex; align-items: flex-start; gap: 10px; background: var(--red-dim); border: 1px solid rgba(229,72,77,.3); border-radius: var(--r-sm); padding: 14px 16px; margin-bottom: 22px; }
+.quickscan .icon { font-size: 18px; line-height: 1; }
+.quickscan p { margin: 0; font-size: 13.5px; color: var(--text); }
+.quickscan strong { color: var(--red); }
+.quickscan a { color: var(--accent); font-weight: 600; text-decoration: underline; white-space: nowrap; }
+.quickscan.info { background: var(--accent-dim); border-color: rgba(240,85,63,0.3); }
+.quickscan.info strong { color: var(--accent); }
+.searchfor { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 20px 22px; margin-bottom: 28px; }
+.searchfor h2 { margin-top: 0; font-size: 1.15rem; }
+.searchfor ul { columns: 2; -webkit-columns: 2; column-gap: 24px; margin-bottom: 0; }
+.searchfor li { break-inside: avoid; }
+@media (max-width: 560px) { .searchfor ul { columns: 1; } }
+.toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 20px; margin-bottom: 32px; }
+.toc-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); margin-bottom: 12px; }
+.toc-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.toc-list a { text-decoration: none; color: var(--accent); font-size: 14px; font-weight: 500; display: inline-block; transition: opacity 0.2s; }
+.toc-list a:hover { opacity: 0.7; text-decoration: underline; }
+.scenario-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; margin-bottom: 24px;}
+.scenario-link { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); text-decoration: none; font-size: 14px; font-weight: 500; color: var(--text); transition: border-color 0.2s, background 0.2s; }
+.scenario-link:hover { border-color: var(--accent); background: var(--surface2); }
+.scenario-link::before { content: "○"; color: var(--accent); }
+.highlight-box { background: linear-gradient(135deg, rgba(240,85,63,0.08), rgba(240,85,63,0.02)); border: 1px solid rgba(240,85,63,0.3); border-radius: var(--r-sm); padding: 20px; margin: 24px 0; }
+.highlight-box p:last-child { margin-bottom: 0; }
+.card { background: var(--surface); padding: 26px; border-radius: var(--r); margin-top: 26px; border: 1px solid var(--border); margin-bottom: 32px;}
+.card.tool { border-color: rgba(240,85,63,0.25); }
+.card.tool.tool-wide { max-width: 1100px; width: 100%; margin-left: 50%; transform: translateX(-50%); box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+.streamlit-embed-wrap { position: relative; --streamlit-height: min(1200px, 90vh); margin-top: 18px; border: 1px solid rgba(240,85,63,0.25); border-radius: var(--r-sm); overflow: hidden; background: var(--surface2); resize: vertical; }
+.streamlit-embed { display: block; width: 100%; height: var(--streamlit-height); min-height: 640px; border: 0; background: var(--bg); }
+.iframe-brand-mask { position: absolute; bottom: 0; left: 0; right: 0; height: 44px; background: var(--surface2); z-index: 99999; pointer-events: auto; border-top: 1px solid var(--border); cursor: default; }
+.cta-note { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 16px 20px; margin-top: 24px; font-size: 13px; color: var(--muted); text-align: center; }
+.cta-note strong { color: var(--accent); display: block; margin-bottom: 4px; font-size: 14px; }
+.trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin-top: 14px; font-size: 12.5px; color: var(--muted); }
+.trust-row span { display: flex; align-items: center; gap: 6px; }
+.trust-row span::before { content: "✓"; color: var(--green); font-weight: 700; }
+.scenario-block { border: 1px solid var(--border); border-radius: var(--r-sm); padding: 18px 20px; margin-bottom: 14px; background: var(--surface); }
+.scenario-block h3 { margin-top: 0; font-size: 1.05rem; }
+.urgency { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 999px; margin-bottom: 10px; }
+.urgency.low { background: var(--green-dim); color: var(--green); }
+.urgency.medium { background: var(--amber-dim); color: var(--amber); }
+.urgency.high { background: var(--red-dim); color: var(--red); }
+table.seo-table { width: 100%; border-collapse: collapse; margin: 14px 0 8px; font-size: 13px; }
+table.seo-table th, table.seo-table td { border: 1px solid var(--border); padding: 12px 14px; text-align: left; color: var(--muted); }
+table.seo-table th { background: var(--surface); color: var(--text); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+.cost-note { font-size: 12px; color: var(--muted2); margin-top: 8px; margin-bottom: 24px; }
+details.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); margin-bottom: 12px; overflow: hidden; }
+details.faq-item summary { padding: 16px; font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; position: relative; padding-right: 40px; }
+details.faq-item summary::-webkit-details-marker { display: none; }
+details.faq-item summary::after { content: '+'; position: absolute; right: 16px; top: 16px; color: var(--accent); font-size: 18px; line-height: 1; }
+details.faq-item[open] summary::after { content: '−'; }
+details.faq-item .faq-content { padding: 0 16px 16px; font-size: 14px; color: var(--muted); }
+details.faq-item .faq-content p:last-child { margin-bottom: 0; }
+.mobile-cta-bar { display: none; }
+@media (max-width: 620px) {
+  .mobile-cta-bar { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--surface); border-top: 1px solid var(--border2); padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); box-shadow: 0 -8px 24px rgba(0,0,0,0.35); }
+  .mobile-cta-bar a { flex: 1; text-align: center; background: var(--accent); color: #000; font-weight: 700; font-size: 14.5px; padding: 12px 14px; border-radius: 10px; text-decoration: none; }
+  main { padding-bottom: 90px; }
+}
+footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
+.footer-inner { max-width: 760px; margin: 0 auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
+.footer-links a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+.footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
+.decision-tree { border: 1px solid var(--border); border-radius: var(--r-sm); background: var(--surface); padding: 4px 20px; margin-bottom: 18px; }
+.decision-step { padding: 16px 0; border-bottom: 1px solid var(--border); }
+.decision-step:last-child { border-bottom: none; }
+.decision-step .q { color: var(--text); font-weight: 600; font-size: 14.5px; margin-bottom: 6px; }
+.decision-step .branch { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+.decision-step .branch span { font-size: 12.5px; background: var(--surface2); border: 1px solid var(--border); border-radius: 999px; padding: 4px 11px; color: var(--muted); }
+.decision-step .branch span strong { color: var(--accent); }
+.checklist { list-style: none; padding: 0; margin: 0 0 16px; counter-reset: step; }
+.checklist li { counter-increment: step; position: relative; padding: 12px 14px 12px 44px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); margin-bottom: 8px; color: var(--muted); }
+.checklist li::before { content: counter(step); position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; border-radius: 50%; background: var(--accent-dim); color: var(--accent); font-size: 11.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.checklist li strong { color: var(--text); }
+.drive-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 18px 0 8px; }
+@media (min-width: 620px) { .drive-grid { grid-template-columns: 1fr 1fr; } }
+.drive-card { border-radius: var(--r-sm); padding: 18px 20px; border: 1px solid var(--border); }
+.drive-card.ok { background: var(--green-dim); border-color: rgba(34,197,94,.3); }
+.drive-card.stop { background: var(--red-dim); border-color: rgba(229,72,77,.3); }
+.drive-card h3 { margin-top: 0; font-size: 1rem; }
+.drive-card.ok h3 { color: var(--green); }
+.drive-card.stop h3 { color: var(--red); }
+.drive-card ul { margin-bottom: 0; }
+@media (max-width: 620px) { header { padding: 0.9rem 1.1rem; } .nav a:not(.cta-btn) { display: none; } table.seo-table { display: block; overflow-x: auto; white-space: nowrap; } }
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <a href="https://carithm.vercel.app/audio" class="active">Audio Diagnosis</a>
+    <a href="#try" class="cta-btn">Analyze My Car Noise</a>
+  </nav>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://carithm.vercel.app/">Home</a>
+  <span class="sep">/</span>
+  <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+  <span class="sep">/</span>
+  <a href="https://carithm.vercel.app/audio/engine-ticking-noise">Engine Ticking Noise</a>
+  <span class="sep">/</span>
+  <span class="current">On Cold Startup</span>
+</nav>
+
+<main class="container">
+
+<article>
+  <div class="eyebrow">AI CAR NOISE DIAGNOSIS</div>
+  <h1>Engine Ticking on Cold Startup? Here&#x27;s What&#x27;s Usually Behind It</h1>
+
+  <div class="byline">
+    <span>Reviewed by <strong>Carithm AI Automotive Research Team</strong> against OEM service documentation and automotive repair references</span>
+    <span class="dot"></span>
+    <span>Updated <time datetime="2026-08-21">August 21, 2026</time></span>
+    <span class="dot"></span>
+    <span>7 min read</span>
+  </div>
+
+  <p class="lead">
+    A tick or rattle that appears the moment you start the engine cold, and fades within a short time, is one of the most common — and most misunderstood — engine noise complaints. Some of it is genuinely normal, caused by oil taking a moment to reach the top of the engine after sitting. Some of it is a timing chain or worn component that deserves attention before it gets worse. The duration of the noise and whether that duration is changing over time are what actually separate the two. Record the sound below and let Carithm AI analyze it, or read on to see what each pattern usually means.
+  </p>
+
+  <div class="quickscan info">
+    <span class="icon">ℹ️</span>
+    <p><strong>The pattern matters most:</strong> how long does the noise actually last? A tick gone within 20-30 seconds behaves very differently than a rattle that lasts a minute or more, or one that's been getting longer over recent weeks.</p>
+  </div>
+
+  <section class="searchfor" aria-label="Common related searches">
+    <h2>Related Things People Search</h2>
+    <ul>
+      <li>Engine ticking noise on cold start</li>
+      <li>Car rattles for a few seconds when starting cold</li>
+      <li>Timing chain rattle on startup</li>
+      <li>Cold start tick normal or bad</li>
+      <li>Engine noise first few seconds of starting</li>
+      <li>Lifter tick on cold start</li>
+    </ul>
+  </section>
+
+  <section class="card tool tool-wide" id="try">
+    <h2 style="margin-top: 0; font-size: 1.8rem;">🔊 Upload Your Cold Start Noise</h2>
+    <p>Record from the moment you turn the key through the first 30-60 seconds of idle, ideally after the car has sat overnight or for several hours. AI sound analysis can help narrow down whether it's normal oil priming, a timing chain tensioner, or piston-related wear.</p>
+    <p>
+      Carithm AI provides a probability-based analysis of possible causes.
+      It does not replace a professional mechanical inspection.
+    </p>
+
+    <div class="streamlit-embed-wrap">
+      <iframe
+        id="streamlitFrame"
+        class="streamlit-embed"
+        src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
+        title="Carithm AI Car Sound Analyzer"
+        loading="lazy"
+        allow="microphone; clipboard-write"
+        fetchpriority="high"
+      ></iframe>
+      <div class="iframe-brand-mask"></div>
+    </div>
+
+    <div class="cta-note">
+      <strong>✓ Record Car Sound, Diagnose Possible Causes</strong>
+      No app required. Just record and upload directly from your browser. <em>If your browser blocks the microphone, you can use the file upload option inside the tool.</em>
+    </div>
+
+    <div class="trust-row">
+      <span>No signup</span>
+      <span>No download</span>
+      <span>No appointment</span>
+      <span>100% free</span>
+    </div>
+  </section>
+
+  <h2 id="quickref">Quick Reference: Duration vs. Likely Cause</h2>
+  <p>How long the noise lasts, and whether that's changing over time, is more useful here than the sound alone.</p>
+  <table class="seo-table">
+    <tr>
+      <th>When It Happens</th>
+      <th>Typical Cause</th>
+      <th>Urgency</th>
+    </tr>
+    <tr>
+      <td>Rapid tick for a few seconds after startup, gone within 10-30 sec</td>
+      <td>Normal oil drain-back / lifters re-priming</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <td>Tick or rattle lasting 1-3 minutes on cold start, fades as engine warms</td>
+      <td>Timing chain tensioner or early chain wear</td>
+      <td>Medium–High</td>
+    </tr>
+    <tr>
+      <td>Light metallic &quot;tinking&quot; as the engine warms, from underneath</td>
+      <td>Exhaust manifold or header thermal expansion</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <td>Muffled slapping sound on cold start, quiets within seconds, higher mileage engine</td>
+      <td>Piston slap from cold clearance</td>
+      <td>Low–Medium</td>
+    </tr>
+    <tr>
+      <td>Cold start tick that&#x27;s louder or longer than usual, or getting longer over weeks</td>
+      <td>Worn lifters, low oil, or wrong oil viscosity</td>
+      <td>Medium–High</td>
+    </tr>
+  </table>
+  <p class="cost-note">General guidance only — record the sound above for a more specific, probability-based analysis.</p>
+
+  <nav class="toc" aria-label="Table of Contents">
+    <div class="toc-title">Jump to section</div>
+    <ul class="toc-list">
+      <li><a href="#try">1. Record and analyze your noise</a></li>
+      <li><a href="#quickref">2. Quick reference table</a></li>
+      <li><a href="#soundcheck">3. What does the ticking sound like?</a></li>
+      <li><a href="#situations">4. Does it happen in these situations?</a></li>
+      <li><a href="#checklist">5. What should I check first?</a></li>
+      <li><a href="#safety">6. Can you drive with this noise?</a></li>
+      <li><a href="#costs">7. What will this cost to fix?</a></li>
+      <li><a href="#faq">8. Common questions</a></li>
+      <li><a href="#other-sounds">9. Other car sounds</a></li>
+    </ul>
+  </nav>
+
+  <section id="soundcheck">
+    <h2>What Does the Ticking Sound Like?</h2>
+    <p>Cold start noises are diagnosed largely by duration and trend — use these questions in order.</p>
+    <div class="decision-tree">
+    <div class="decision-step">
+      <div class="q">Does the noise disappear within the first 20-30 seconds?</div>
+      <div class="branch">
+        <span><strong>Yes, gone quickly</strong> — often normal oil drain-back or lifters re-priming after sitting</span>
+        <span><strong>No, lasts a minute or more</strong> — more likely a timing chain tensioner or a worn component</span>
+      </div>
+    </div>
+    <div class="decision-step">
+      <div class="q">Is it a light, even tick or more of a rattle/chain-like sound?</div>
+      <div class="branch">
+        <span><strong>Light, even tick</strong> — leans toward lifters or valvetrain</span>
+        <span><strong>Rattly, chain-like sound</strong> — leans toward the timing chain tensioner — worth checking sooner</span>
+      </div>
+    </div>
+    <div class="decision-step">
+      <div class="q">Does it happen only after the car sits overnight, or even after short stops?</div>
+      <div class="branch">
+        <span><strong>Only after long sits (overnight)</strong> — more consistent with normal oil drain-back</span>
+        <span><strong>Even after short stops (an hour or two)</strong> — points more toward a genuine mechanical wear issue</span>
+      </div>
+    </div>
+    <div class="decision-step">
+      <div class="q">Has the duration been getting longer over recent weeks or months?</div>
+      <div class="branch">
+        <span><strong>Yes, getting longer</strong> — increasing wear — worth inspecting soon</span>
+        <span><strong>No, the same as always</strong> — likely a stable, known characteristic of this engine</span>
+      </div>
+    </div>
+    </div>
+    <div class="highlight-box">
+      <p><strong>Why this matters:</strong> Many engines have a brief, well-documented cold-start tick from lifters or lash adjusters that simply take a moment to fill with oil after sitting — the real diagnostic question isn't whether there's a noise on cold start, but how long it lasts and whether that duration is changing over time. A written description can only narrow things down so far — Carithm AI listens to the actual waveform, timing, and frequency pattern of your recording to weigh these possibilities against each other.</p>
+      <p><a href="#try" style="color: var(--accent); font-weight: 600; text-decoration: underline;">Let the AI listen to it →</a></p>
+    </div>
+  </section>
+
+  <section id="situations">
+    <h2>Does It Happen in These Situations?</h2>
+    <p>A couple of additional conditions worth checking alongside how long the noise lasts.</p>
+    <div class="scenario-block">
+      <span class="urgency low">Lower concern</span>
+      <h3>Tick lasts under 30 seconds and disappears completely</h3>
+      <p>This is the most common and least concerning cold-start pattern, generally attributed to oil taking a brief moment to circulate fully after the car has sat.</p>
+    </div>
+    <div class="scenario-block">
+      <span class="urgency medium">Worth checking soon</span>
+      <h3>Rattly, chain-like noise lasting a minute or more on cold start</h3>
+      <p>This duration and character point more specifically toward the timing chain tensioner losing its ability to keep tension on the chain immediately after startup, before oil pressure fully builds.</p>
+    </div>
+    <div class="scenario-block">
+      <span class="urgency high">Get it checked promptly</span>
+      <h3>Cold start noise duration has been getting longer over recent weeks, or now happens even after short stops</h3>
+      <p>A noise that used to last a few seconds and now lasts much longer — or that used to only appear after overnight sits and now happens after short stops too — indicates progressing wear rather than a stable, benign characteristic.</p>
+    </div>
+    <h3>Other ticking patterns worth knowing</h3>
+    <h3>Cold start tick that&#x27;s noticeably worse in cold weather</h3>
+    <p>Cold ambient temperatures thicken engine oil further, slowing how quickly it reaches the top of the engine, which is why many cold-start ticks are seasonally worse in winter even without any change in the engine itself.</p>
+    <h3>Cold start noise paired with a puff of blue-tinted exhaust smoke</h3>
+    <p>Blue-tinted smoke specifically on startup points toward worn valve seals or piston rings allowing oil into the combustion chamber overnight, which is a different issue from a timing chain or lifter tick and is worth mentioning separately to a mechanic.</p>
+  </section>
+
+  <section id="checklist">
+    <h2>What Should I Check First?</h2>
+    <p>Work through these in order before assuming the worst.</p>
+    <ol class="checklist">
+      <li><strong>Time how long the noise actually lasts</strong>, from key-on to the point it disappears.</li>
+      <li><strong>Check oil level and confirm the correct viscosity</strong> is installed for your climate and vehicle.</li>
+      <li><strong>Note whether it's a light tick or a heavier rattle/chain sound.</strong></li>
+      <li><strong>Check for an oil change record or reminder sticker</strong> — significantly overdue oil is a common contributor.</li>
+      <li><strong>Watch for a puff of blue-tinted smoke on startup</strong>, which points toward valve seals or piston rings rather than the timing chain.</li>
+      <li><strong>Track whether the duration is stable or increasing</strong> from week to week.</li>
+    </ol>
+    <div class="highlight-box">
+      <p><strong>Have a check-engine code?</strong> If a light is on, note the stored code(s) before you clear anything. Entering the code alongside your recording gives Carithm AI more context and a more specific analysis.</p>
+    </div>
+  </section>
+
+  <section id="safety">
+    <h2>Can You Drive With This Noise?</h2>
+    <p>A brief, stable cold-start tick is one of the lower-urgency automotive noises overall, but duration that keeps growing, or a noise that starts happening even after short stops, both point to progressing wear worth addressing before it becomes a bigger repair.</p>
+    <div class="drive-grid">
+      <div class="drive-card ok">
+        <h3>Generally lower concern</h3>
+        <ul>
+        <li>Noise consistently lasts under 30 seconds and is stable over time</li>
+        <li>No blue-tinted smoke on startup</li>
+        <li>No oil pressure warning light</li>
+        <li>Only happens after the car sits overnight, not after short stops</li>
+        </ul>
+      </div>
+      <div class="drive-card stop">
+        <h3>Stop driving and investigate promptly</h3>
+        <ul>
+        <li>Noise lasting well over a minute on cold start</li>
+        <li>Duration has been getting noticeably longer over recent weeks</li>
+        <li>Accompanied by an oil pressure warning light</li>
+        <li>Blue-tinted smoke on startup, or a check engine light for timing-related codes</li>
+        </ul>
+      </div>
+    </div>
+    <p class="cost-note">This is diagnostic guidance, not a safety guarantee — when in doubt, have it looked at rather than assuming it's fine.</p>
+  </section>
+
+  <section id="costs">
+    <h2>What Will This Cost to Fix?</h2>
+    <p>Treat these as ballpark North America / Western Europe estimates in USD, parts and labor combined.</p>
+    <table class="seo-table">
+      <tr>
+        <th>Possible Issue</th>
+        <th>Typical Repair Cost Range</th>
+      </tr>
+      <tr>
+        <td>Oil change with correct viscosity</td>
+        <td>$50 – $150</td>
+      </tr>
+      <tr>
+        <td>Timing chain tensioner replacement</td>
+        <td>$300 – $900</td>
+      </tr>
+      <tr>
+        <td>Timing chain and guides (full kit)</td>
+        <td>$1,000 – $2,500</td>
+      </tr>
+      <tr>
+        <td>Valve seal replacement</td>
+        <td>$600 – $1,200</td>
+      </tr>
+      <tr>
+        <td>Lifter or lash adjuster replacement</td>
+        <td>$250 – $800</td>
+      </tr>
+    </table>
+    <p class="cost-note">Actual costs vary substantially by vehicle make, model, engine layout, and labor rates in your area. Treat these as ballpark North America / Western Europe estimates in USD, parts and labor combined.</p>
+  </section>
+
+  <section class="card tool" id="try2">
+    <h2 style="margin-top: 0; font-size: 1.4rem;">Still Can't Identify the Noise?</h2>
+    <p>A written description can only go so far. Record the sound and let Carithm AI analyze the audio for likely mechanical causes — including how it compares to the patterns described above.</p>
+    <p style="margin-bottom: 0;"><a href="#try" style="color: var(--accent); font-weight: 600; text-decoration: underline;">Get a second opinion from the sound itself →</a></p>
+  </section>
+
+  <section id="faq">
+    <h2>Questions About Cold Start Ticking</h2>
+    <details class="faq-item" open>
+      <summary>Why does my engine tick for a few seconds on cold start?</summary>
+      <div class="faq-content">
+        <p>This is most often oil taking a brief moment to fully reach and pressurize hydraulic lifters or lash adjusters after the engine has sat, which is a normal, well-documented characteristic on many engines as long as it's brief and consistent.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Is a cold start tick normal or a sign of a problem?</summary>
+      <div class="faq-content">
+        <p>It depends mainly on duration and trend. A tick under 30 seconds that's been stable for a long time is often normal. A rattle lasting a minute or more, or a duration that keeps growing, is more likely a sign of timing chain or lifter wear.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Why does my engine rattle on cold start but not once it&#x27;s running?</summary>
+      <div class="faq-content">
+        <p>A rattle that's specific to the first moments after startup and clears quickly is often tied to oil pressure not yet being fully established, or a timing chain tensioner momentarily losing tension before hydraulic pressure builds.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Can the wrong oil viscosity cause a cold start tick?</summary>
+      <div class="faq-content">
+        <p>Yes. Oil that's too thick for the climate can be slow to reach the top of the engine when cold, and oil that doesn't meet the manufacturer's specification can also contribute to a longer or louder cold-start tick than normal.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>How long should a cold start tick normally last?</summary>
+      <div class="faq-content">
+        <p>As a general guideline, many engines with a normal, benign cold-start tick will quiet down within 10 to 30 seconds. A noise that consistently lasts a minute or longer is worth having checked rather than assumed normal.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Is a cold start timing chain rattle serious?</summary>
+      <div class="faq-content">
+        <p>It can become serious if left unaddressed, since a worn tensioner or stretched chain will typically continue to wear and can eventually affect valve timing. It's worth having inspected promptly rather than waiting for it to worsen.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Why is my cold start ticking getting longer over time?</summary>
+      <div class="faq-content">
+        <p>A duration that keeps increasing points to progressing wear rather than a stable characteristic — commonly worn lifters, a weakening timing chain tensioner, or oil that's overdue for a change.</p>
+      </div>
+    </details>
+  </section>
+
+  <section id="other-sounds">
+    <h2>Other Car Sounds You Can Diagnose</h2>
+    <div class="scenario-grid">
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/engine-ticking-when-accelerating">Ticking when accelerating</a>
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/engine-ticking-at-idle">Ticking at idle</a>
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/engine-ticking-when-warm">Ticking when warm</a>
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/engine-ticking-after-oil-change">Ticking after an oil change</a>
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light">Ticking with no check engine light</a>
+      <a class="scenario-link" href="https://carithm.vercel.app/audio/engine-ticking-noise">Engine ticking noise (all scenarios)</a>
+    </div>
+    <p>
+      Ticking happening in a different situation instead? See the full breakdown of <a href="https://carithm.vercel.app/audio/engine-ticking-noise">engine ticking noise scenarios</a>, or visit the main <a href="https://carithm.vercel.app/audio">audio diagnosis hub</a> to browse all sound types.
+    </p>
+  </section>
+</article>
+</main>
+
+<div class="mobile-cta-bar">
+  <a href="#try">🔊 Analyze My Car Noise Now</a>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://carithm.vercel.app/">Home</a>
+      <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+      <a href="#try">Find My Noise Cause</a>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Carithm. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
