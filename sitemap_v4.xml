@@ -8,6 +8,28 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <url>
+    <loc>https://carithm.vercel.app/vision</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/cost-calculator</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://carithm.vercel.app/acoustic</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
   <url>
     <loc>https://carithm.vercel.app/audio</loc>
     <lastmod>2026-07-11</lastmod>
