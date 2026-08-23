@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+
+  // 1. Dwell Time Tracker
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
+      }
+    }, interval * 1000);
+  })();
+
+  // 2. Iframe PostMessage Listener
+  window.addEventListener('message', function(event) {
+    if (event.origin !== 'https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app') return;
+
+    const data = event.data;
+
+    if (data && data.type === 'streamlit_analytics') {
+      if (typeof gtag === 'function') {
+        gtag('event', data.eventName, {
+          'event_category': data.eventCategory || 'Carithm Tool',
+          'event_label': data.eventLabel || '',
+          'value': data.eventValue || 0
+        });
+      }
+    }
+  });
+</script>
+
+<!-- Google AdSense Global Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" crossorigin="anonymous"></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Pre-Purchase Car Inspection AI — Test Drive Sound Check Before You Buy</title>
+<meta name="description" content="Free AI used car inspection tool: record your test drive and flag hidden transmission, engine, or accident-repair noise before you buy. No signup.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://carithm.vercel.app/acoustic">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pre-Purchase Car Inspection AI — Test Drive Sound Check Before You Buy">
+<meta property="og:description" content="Don't sign until you've listened properly. Record three short clips on your test drive and get an instant AI read on hidden transmission, engine, and accident-repair noise.">
+<meta property="og:url" content="https://carithm.vercel.app/acoustic">
+<meta property="og:image" content="https://carithm.vercel.app/car.png">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pre-Purchase Car Inspection AI — Test Drive Sound Check">
+<meta name="twitter:description" content="A free AI tool that listens to a used car's cold start, idle, and test drive so you catch hidden problems before you buy — not after.">
+<meta name="twitter:image" content="https://carithm.vercel.app/car.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebApplication",
+ "name":"Carithm Pre-Purchase Inspection AI",
+ "applicationCategory":"UtilitiesApplication",
+ "operatingSystem":"Web",
+ "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
+ "description":"Free AI tool for used-car buyers. Upload cold-start, idle, and test-drive audio to screen for hidden transmission, engine, and accident-repair noise before purchase.",
+ "url":"https://carithm.vercel.app/acoustic",
+ "inLanguage":"en-US",
+ "author":{ "@type":"Organization", "name":"Carithm", "url":"https://carithm.vercel.app/research" },
+ "publisher":{ "@type":"Organization", "name":"Carithm" },
+ "reviewedBy":{ "@type":"Organization", "name":"Carithm Automotive Data Team" },
+ "datePublished":"2026-08-23",
+ "dateModified":"2026-08-23"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"BreadcrumbList",
+ "itemListElement":[
+   {"@type":"ListItem","position":1,"name":"Home","item":"https://carithm.vercel.app/"},
+   {"@type":"ListItem","position":2,"name":"Pre-Purchase Inspection Check","item":"https://carithm.vercel.app/acoustic"}
+ ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"FAQPage",
+ "mainEntity":[
+  {"@type":"Question","name":"What should I listen for when test driving a used car?","acceptedAnswer":{"@type":"Answer","text":"Listen through four phases separately: the cold start (first 10 seconds), idle in park, low-speed driving with turns, and highway acceleration. A problem that only shows up in one phase — like a shudder that appears solely under load — is far more diagnostic than noise you notice the whole drive."}},
+  {"@type":"Question","name":"Can AI tell if a used car has a hidden transmission problem?","acceptedAnswer":{"@type":"Answer","text":"A recording of a shift point, a shudder under light acceleration, or a delayed engagement from park to drive can be screened against known transmission-fault acoustic patterns. It flags likelihood and confidence, not a certified diagnosis — a transmission-specific inspection is still worth it before you commit to a car with a flagged result."}},
+  {"@type":"Question","name":"Is a pre-purchase inspection still worth it if I already test drove the car?","acceptedAnswer":{"@type":"Answer","text":"Yes. A test drive with a salesperson in the car, on their preferred route, in a car that was likely warmed up before you arrived, is not the same as a dedicated inspection. Use a sound check as a fast first filter, then book a paid mechanical PPI if anything gets flagged or the car is a serious contender."}},
+  {"@type":"Question","name":"How can sound reveal accident damage that a seller didn't disclose?","acceptedAnswer":{"@type":"Answer","text":"Poorly repaired collision damage often produces wind noise from misaligned panels, a rattling exhaust from a bent hanger or replaced section, or a faint rubbing sound from a wheel that's slightly out of alignment after suspension work. None of that shows up on a vehicle history report if the repair was paid for out of pocket."}},
+  {"@type":"Question","name":"What noises should make me walk away from a used car deal?","acceptedAnswer":{"@type":"Answer","text":"A heavy metallic knock that scales with RPM, a clunk from the transmission when shifting into drive or reverse, grinding when braking, or any clicking that changes with electrical load (headlights, wipers, AC) are strong reasons to walk or renegotiate hard. These point to engine, transmission, brake, or flood-damage issues rather than routine wear."}},
+  {"@type":"Question","name":"Can this replace a mechanic's pre-purchase inspection?","acceptedAnswer":{"@type":"Answer","text":"No. It's a free first-pass filter you can run in the driveway or parking lot before you decide whether a car is worth paying $100-200 for a proper mechanical PPI. Think of it as deciding which cars deserve that spend, not as a replacement for it."}},
+  {"@type":"Question","name":"Does a private-seller car need the same sound check as a dealership car?","acceptedAnswer":{"@type":"Answer","text":"If anything, more. Dealerships typically run a reconditioning pass before listing a car; private sellers usually don't. Run the cold-start clip first with a private-sale car specifically, since that's the stage most likely to have been skipped."}},
+  {"@type":"Question","name":"How do I record test drive audio without it being awkward with the seller?","acceptedAnswer":{"@type":"Answer","text":"Just prop your phone in the cupholder or door pocket with the voice memo app running before you start the engine — no need to announce it. Most sellers assume you're checking directions or on a call, and a phone quietly recording ambient cabin audio isn't unusual behavior during a test drive."}},
+  {"@type":"Question","name":"Can AI detect a flood-damaged car from engine sound?","acceptedAnswer":{"@type":"Answer","text":"Flood damage often produces electrical symptoms before mechanical ones — relay clicking, an inconsistent idle, or accessories cycling oddly. A cold-start and idle recording can pick up some of these acoustic irregularities, though a full flood-damage screen should also include a visual check for water lines, corrosion, and musty odor."}},
+  {"@type":"Question","name":"What's the difference between normal wear noise and a dealbreaker noise?","acceptedAnswer":{"@type":"Answer","text":"Normal wear tends to be consistent, mild, and load-independent — a faint belt chirp on a cold morning, light brake dust squeal. Dealbreaker noise is usually load-dependent, gets worse over the drive, or is new relative to the car's mileage and service history — a knock that appears only under acceleration, or a shudder that starts at highway speed."}},
+  {"@type":"Question","name":"Should I record at low speed and highway speed separately?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wheel bearing hum and CV joint clicking often only appear at speed or while turning, while transmission shudder and engine knock are more noticeable at lower speeds under load. Two separate clips give the analyzer cleaner signal than one long mixed recording."}},
+  {"@type":"Question","name":"Is this the same as a CarFax or AutoCheck vehicle history report?","acceptedAnswer":{"@type":"Answer","text":"No, and the two are complementary rather than overlapping. A vehicle history report checks paperwork — title status, reported accidents, odometer records. This tool checks the car's actual current mechanical condition by sound, which catches undisclosed or out-of-pocket repairs that never made it into any database."}}
+ ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"SoftwareApplication",
+ "name":"Carithm Pre-Purchase Inspection AI",
+ "applicationCategory":"UtilitiesApplication",
+ "operatingSystem":"Web",
+ "browserRequirements":"Requires JavaScript. Microphone access optional for in-browser recording.",
+ "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
+ "url":"https://carithm.vercel.app/acoustic",
+ "inLanguage":"en-US",
+ "description":"Free AI pre-purchase inspection tool for used-car buyers. Screens cold-start, idle, and test-drive recordings for transmission, engine, and accident-repair acoustic red flags before purchase.",
+ "featureList":[
+   "Cold-start, idle, and driving noise capture guidance",
+   "Acoustic screening for accident-repair and flood-damage signatures",
+   "Confidence-scored pre-purchase report",
+   "Comparison against known used-vehicle fault patterns",
+   "No installation — usable from the dealership lot or driveway"
+ ],
+ "publisher":{ "@type":"Organization", "name":"Carithm" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Organization",
+ "name":"Carithm",
+ "url":"https://carithm.vercel.app/",
+ "logo":"https://carithm.vercel.app/car.png"
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"HowTo",
+ "name":"How to Sound-Check a Used Car Before Buying",
+ "description":"Use Carithm's Pre-Purchase Inspection AI to screen a used car's cold start, idle, and test drive for hidden mechanical or accident-repair issues before you buy.",
+ "step":[
+   {"@type":"HowToStep","name":"Capture the cold start","text":"Arrive before the seller has started the car if possible, or ask them not to warm it up. Record the first 10 seconds from key-on — this is when knock, ticking, and cold-only rattles are most audible."},
+   {"@type":"HowToStep","name":"Record an idle baseline","text":"With the engine running in park or neutral, record 15-20 seconds of idle. This gives a clean baseline free of road and wind noise."},
+   {"@type":"HowToStep","name":"Record the full test drive","text":"Capture acceleration, braking, low-speed turns, and a stretch of highway speed if possible. Split into two clips — city-speed and highway-speed — for cleaner results."},
+   {"@type":"HowToStep","name":"Upload each clip separately","text":"Upload the cold-start, idle, and driving clips to the Pre-Purchase Inspection AI one at a time."},
+   {"@type":"HowToStep","name":"Compare results across phases","text":"Check whether an issue appears in only one phase (e.g. cold-start only, or load-only) or across all three — that pattern narrows down the likely cause and how serious it is."}
+ ]
+}
+</script>
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#09090b">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+:root {
+  --bg:         #09090b;
+  --surface:    #111113;
+  --surface2:   #18181b;
+  --surface3:   #27272a;
+  --border:     rgba(255,255,255,0.07);
+  --border2:    rgba(255,255,255,0.13);
+  --text:       #fafafa;
+  --muted:      #a1a8b3;
+  --muted2:     #71717a;
+  --accent:     #2f81f7;
+  --accent-dim: rgba(47,129,247,0.1);
+  --accent-glow:rgba(47,129,247,0.22);
+  --green:      #22c55e;
+  --green-dim:  rgba(34,197,94,0.1);
+  --amber:      #f59e0b;
+  --amber-dim:  rgba(245,158,11,0.1);
+  --red:        #ef4444;
+  --red-dim:    rgba(239,68,68,0.1);
+  --violet:     #a78bfa;
+  --violet-dim: rgba(167,139,250,0.1);
+  --teal:       #2dd4bf;
+  --teal-dim:   rgba(45,212,191,0.1);
+  --r: 12px; --r-sm: 8px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--surface2);
+}
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: var(--surface2); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent), var(--violet));
+  border-radius: 999px;
+  border: 2px solid var(--surface2);
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--teal), var(--accent)); }
+
+header {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(9,9,11,0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none;
+}
+.nav-logo span { color: var(--accent); }
+
+.nav { display: flex; gap: 1.75rem; align-items: center; }
+.nav a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; transition: color .2s; }
+.nav a:hover, .nav a.active { color: #fff; }
+.nav .cta-btn {
+  background: var(--accent-dim); border: 1px solid rgba(47,129,247,0.3); color: var(--accent);
+  padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600;
+}
+.nav .cta-btn:hover { background: var(--accent); color: #000; }
+
+main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
+
+.breadcrumb { font-size: 12.5px; color: var(--muted2); margin-bottom: 18px; }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb .sep { margin: 0 6px; color: var(--muted2); }
+.breadcrumb .current { color: var(--muted); }
+
+.eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  background: linear-gradient(90deg, var(--accent), var(--teal));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  margin-bottom: 12px; display: inline-block;
+}
+h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 14px; line-height: 1.12; }
+h2 { font-size: 1.3rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; padding-left: 12px; border-left: 3px solid var(--accent); }
+h3 { font-size: 1.02rem; font-weight: 600; margin-top: 22px; color: var(--text); }
+h3::before { content: "»"; color: var(--teal); margin-right: 6px; font-weight: 700; }
+p { color: var(--muted); margin: 0 0 8px; }
+ul, ol { color: var(--muted); padding-left: 20px; }
+li { margin-bottom: 6px; }
+
+.trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 22px 0 8px; }
+.trust-strip > div { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); }
+.trust-strip > div:last-child { border-right: none; }
+.trust-num { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+.trust-strip > div:nth-child(1) .trust-num { color: var(--accent); }
+.trust-strip > div:nth-child(2) .trust-num { color: var(--teal); }
+.trust-strip > div:nth-child(3) .trust-num { color: var(--violet); }
+.trust-strip > div:nth-child(4) .trust-num { color: var(--green); }
+.trust-lbl { font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 3px; }
+
+.byline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+}
+.byline-avatar {
+  flex-shrink: 0;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.02em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--violet), var(--teal));
+}
+.byline-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.byline-name { font-size: 12.5px; font-weight: 600; color: var(--text); }
+.byline-meta { font-size: 11.5px; color: var(--muted2); }
+.byline-meta a { color: var(--accent); text-decoration: none; }
+.byline-meta a:hover { text-decoration: underline; }
+@media (max-width: 480px) { .byline-meta { display: block; margin-top: 2px; } }
+
+section#try, main > section:first-of-type { position: relative; }
+main > section:first-of-type::before {
+  content: "";
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 640px; height: 320px;
+  background: radial-gradient(ellipse at center, rgba(47,129,247,0.16), rgba(167,139,250,0.08) 45%, transparent 75%);
+  filter: blur(10px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.card { background: var(--surface); padding: 26px; border-radius: var(--r); margin-top: 26px; border: 1px solid var(--border); }
+.card.tool {
+  border-color: rgba(47,129,247,0.25);
+  margin-top: 64px;
+  box-shadow: 0 0 0 1px rgba(47,129,247,0.08), 0 12px 40px -20px rgba(47,129,247,0.35);
+  position: relative;
+}
+.card.tool::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--r);
+  padding: 1px;
+  background: linear-gradient(120deg, var(--accent), var(--violet), var(--teal), var(--accent));
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.55;
+  animation: gradient-border-shift 8s ease infinite;
+  pointer-events: none;
+}
+@keyframes gradient-border-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.live-indicator {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--green-dim); border: 1px solid rgba(34,197,94,0.3); color: var(--green);
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+  padding: 4px 10px; border-radius: 999px; margin-left: 10px; vertical-align: middle;
+}
+.live-indicator .dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--green);
+  box-shadow: 0 0 0 0 rgba(34,197,94,0.6); animation: pulse-dot 1.6s infinite;
+}
+@keyframes pulse-dot {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.55); }
+  70%  { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+.card.tool.tool-wide { max-width: 1100px; width: 100%; margin-left: 50%; transform: translateX(-50%); }
+
+.streamlit-embed-wrap {
+  position: relative;
+  --streamlit-height: min(1200px, 90vh);
+  margin-top: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  background: var(--surface2);
+  resize: vertical;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--teal) var(--surface2);
+}
+.streamlit-embed { display: block; width: 100%; height: var(--streamlit-height); min-height: 640px; border: 0; background: var(--bg); }
+.iframe-brand-mask { position: absolute; bottom: 0; left: 0; right: 0; height: 44px; background: var(--surface2); z-index: 99999; pointer-events: auto; border-top: 1px solid var(--border); cursor: default; }
+.iframe-fallback { display: none; padding: 32px 24px; text-align: center; }
+.iframe-fallback p { margin-bottom: 14px; }
+.iframe-fallback a.crosslink-btn { display: inline-block; }
+
+@media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
+@media (max-width: 620px) {
+  .streamlit-embed-wrap { --streamlit-height: min(850px, 80vh); }
+  .streamlit-embed { min-height: 560px; }
+}
+
+.crosslink-banner {
+  background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
+  border: 1px solid rgba(47,129,247,0.25);
+  border-radius: var(--r);
+  padding: 22px 26px; margin-top: 44px;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.crosslink-banner p { margin: 0; color: var(--muted); font-size: 13px; }
+.crosslink-banner strong { color: var(--text); display: block; font-size: 15px; margin-bottom: 4px; }
+.crosslink-btn { background: var(--accent); color: #000; font-weight: 700; padding: 10px 18px; border-radius: var(--r-sm); text-decoration: none; font-size: 13px; white-space: nowrap; flex-shrink: 0; }
+.crosslink-btn:hover { opacity: 0.88; }
+
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+.compare-col { border-radius: var(--r-sm); padding: 18px; border: 1px solid var(--border); }
+.compare-col.walk { background: var(--red-dim); border-color: rgba(239,68,68,0.3); }
+.compare-col.ok { background: var(--green-dim); border-color: rgba(34,197,94,0.3); }
+.compare-col h4 { margin: 0 0 10px; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.04em; }
+.compare-col.walk h4 { color: var(--red); }
+.compare-col.ok h4 { color: var(--green); }
+.compare-col ul { margin: 0; padding-left: 18px; font-size: 13.5px; }
+.compare-col li { margin-bottom: 8px; color: var(--text); }
+@media (max-width: 620px) { .compare-grid { grid-template-columns: 1fr; } }
+
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+.related-card { background: var(--surface); border: 1px solid var(--border); border-top: 2px solid var(--accent); border-radius: var(--r-sm); padding: 14px 16px; text-decoration: none; display: block; transition: border-color .2s, transform .2s, box-shadow .2s; }
+.related-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 20px -12px rgba(47,129,247,0.5); }
+.related-card:nth-child(2) { border-top-color: var(--teal); }
+.related-card:nth-child(2):hover { border-color: var(--teal); box-shadow: 0 8px 20px -12px rgba(45,212,191,0.5); }
+.related-card:nth-child(3) { border-top-color: var(--violet); }
+.related-card:nth-child(3):hover { border-color: var(--violet); box-shadow: 0 8px 20px -12px rgba(167,139,250,0.5); }
+.related-card:nth-child(4) { border-top-color: var(--amber); }
+.related-card:nth-child(4):hover { border-color: var(--amber); box-shadow: 0 8px 20px -12px rgba(245,158,11,0.5); }
+.related-card:nth-child(5) { border-top-color: var(--green); }
+.related-card:nth-child(5):hover { border-color: var(--green); box-shadow: 0 8px 20px -12px rgba(34,197,94,0.5); }
+.related-card .rc-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); margin-bottom: 4px; }
+.related-card .rc-title { font-size: 13px; font-weight: 600; color: var(--text); }
+@media (max-width: 620px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+
+.cost-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 13.5px; }
+.cost-table th, .cost-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.cost-table th { color: var(--muted2); text-transform: uppercase; font-size: 10.5px; letter-spacing: 0.05em; font-weight: 700; }
+.cost-table td { color: var(--text); }
+.cost-table td.range { color: var(--teal); font-weight: 600; }
+
+footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
+.footer-inner { max-width: 760px; margin: 0 auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
+.footer-links a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+.footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
+
+@media (max-width: 620px) {
+  header { padding: 0.9rem 1.1rem; }
+  .nav a:not(.cta-btn) { display: none; }
+  .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
+  .trust-strip { grid-template-columns: 1fr 1fr; }
+  main { padding: 32px 16px 32px; }
+  h1 { line-height: 1.18; }
+  h2 { margin-top: 34px; }
+  .card { padding: 20px; }
+  .crosslink-banner { padding: 18px 20px; }
+  .crosslink-btn { width: 100%; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+  .footer-links a { padding: 4px 0; display: inline-block; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <a href="https://carithm.vercel.app/audio">Sound Diagnoser</a>
+    <a href="https://carithm.vercel.app/acoustic" class="active" aria-current="page">Test Drive Check</a>
+    <a href="https://carithm.vercel.app/toyota">Toyota</a>
+    <a href="https://carithm.vercel.app/research">Research</a>
+    <a href="#try" class="cta-btn">Run It Free</a>
+  </nav>
+</header>
+
+<main>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://carithm.vercel.app/">Home</a>
+  <span class="sep">/</span>
+  <span class="current">Pre-Purchase Inspection Check</span>
+</nav>
+
+<section>
+  <div class="eyebrow">Carithm Pre-Purchase Intelligence</div>
+
+  <h1>Pre-Purchase Car Inspection AI: Test Drive Sound Check Before You Buy</h1>
+
+  <p>
+    A test drive with a salesperson chatting beside you, on their route, in a car that was probably warmed up before you arrived, is not the same as actually listening to it. Carithm's <strong>Pre-Purchase Inspection AI</strong> gives you a free, second set of ears — record the cold start, the idle, and the drive, and get an instant read on whether something's being hidden before you sign anything.
+  </p>
+  <p>
+    This isn't the sound diagnoser for a car you already own — it's built specifically for the moment before you commit: catching a shuddering transmission, a poorly repaired accident, or a rushed flood-damage cleanup that a seller has every incentive not to mention.
+  </p>
+
+  <div class="trust-strip">
+    <div><div class="trust-num">Free</div><div class="trust-lbl">No Signup</div></div>
+    <div><div class="trust-num">3-Stage</div><div class="trust-lbl">Cold / Idle / Drive</div></div>
+    <div><div class="trust-num">~5s</div><div class="trust-lbl">Per Clip</div></div>
+    <div><div class="trust-num">Before</div><div class="trust-lbl">You Sign</div></div>
+  </div>
+
+  <div class="byline">
+    <div class="byline-avatar" aria-hidden="true">CA</div>
+    <div class="byline-text">
+      <span class="byline-name">Reviewed by the Carithm Automotive Data Team</span>
+      <span class="byline-meta">Acoustic patterns cross-checked against used-vehicle accident, flood, and transmission fault records · Last updated <time datetime="2026-08-23">August 23, 2026</time> · <a href="https://carithm.vercel.app/research">See our methodology</a></span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Why a Test Drive Alone Won't Catch a Bad Car</h2>
+  <p>Sellers know that a warm engine hides more than a cold one does. A ticking lifter, a knock from carbon buildup, a rough cold idle — most of that quiets down after ten minutes of driving, which is usually exactly how long a car's been running before you get in it. On top of that, you're nervous, excited, and half-listening to a sales pitch instead of the engine bay.</p>
+  <p>Separating the drive into distinct phases — and actually reviewing a recording instead of relying on memory — closes most of that gap without costing you anything or requiring you to know what a bad wheel bearing sounds like.</p>
+  <p>It also protects you from a subtler problem: selective hearing. Buyers who've already fallen for a car tend to unconsciously explain away a noise ("that's probably normal for this model") rather than flag it. A recording doesn't have that bias — it gets scored the same way whether you love the car or not.</p>
+</section>
+
+<section>
+  <h2>What the Pre-Purchase Sound Check Screens For</h2>
+  <p>Point your phone at the source and this AI screens the recording against fault patterns specific to used-car buying decisions, not general wear-and-tear:</p>
+  <ul>
+    <li>Automatic or CVT transmission shudder, flare, or delayed engagement into drive</li>
+    <li>Cold-start ticking consistent with low oil pressure or a developing head-gasket issue</li>
+    <li>Rattles from misaligned panels or a replaced exhaust section, common after unreported collision repair</li>
+    <li>Irregular idle or relay clicking that can point to flood or water-intrusion damage</li>
+    <li>Wheel bearing hum or CV joint clicking that only appears while turning or at speed</li>
+    <li>Brake grind or pulsation suggesting deferred maintenance the seller priced around</li>
+  </ul>
+  <p>Each of these gets compared against a library of known used-vehicle fault recordings rather than judged in isolation, which is why a short, well-placed clip is usually enough — you don't need a professional-grade microphone or a long recording for the pattern to show up clearly.</p>
+</section>
+
+<section>
+  <h2>Before You Hit Record</h2>
+  <p>A few minutes of setup makes the difference between a clean, usable recording and one the analyzer can't confidently score:</p>
+  <ul>
+    <li>Silence the radio and ask for a quiet cabin — background chatter is the single biggest cause of an inconclusive result</li>
+    <li>Crack a window slightly on a hot day rather than running the AC on high, since fan noise can mask a faint knock or click</li>
+    <li>Keep the phone still — resting it in a cupholder or door pocket beats holding it, since handling noise reads as interference</li>
+    <li>If you can, ask to see the car before it's pulled out of a garage or lot, so you catch the true cold start rather than one the seller already used to greet you</li>
+  </ul>
+</section>
+
+<section class="card tool tool-wide" id="try">
+  <h2 style="margin-top:0;">Run the Pre-Purchase Sound Check<span class="live-indicator"><span class="dot"></span>Live</span></h2>
+  <p>
+    Upload your cold-start, idle, or test-drive recording below. No download, no account — works from your phone in the dealership lot or a private seller's driveway. You'll get a ranked list of likely issues with a confidence score, or a clear "inconclusive" if the recording isn't clean enough to call.
+  </p>
+
+  <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
+    <iframe
+      id="streamlitFrame"
+      class="streamlit-embed"
+      src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
+      title="Carithm Pre-Purchase Inspection AI"
+      loading="lazy"
+      allow="microphone; clipboard-write"
+      onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
+    ></iframe>
+    <div class="iframe-brand-mask"></div>
+    <div class="iframe-fallback" id="iframeFallback">
+      <p>The analyzer tool couldn't load in this view.</p>
+      <a class="crosslink-btn" href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener">Open the Analyzer in a New Tab →</a>
+    </div>
+  </div>
+
+  <noscript>
+    <p class="note">This tool requires JavaScript to load the embedded app. <a href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener">Open it directly here.</a></p>
+  </noscript>
+</section>
+
+<section>
+  <h2>Used Car Test Drive Checklist: The 3-Stage Recording Method</h2>
+  <p>Think of this as your used car inspection checklist, minus the guesswork — three short, distinct recordings instead of one long clip. Don't record the whole drive as a single take; the phase where a noise shows up tells you a lot on its own.</p>
+
+  <h3>Stage 1: Cold Start Capture</h3>
+  <p>Try to arrive before the car's been started, or politely ask the seller not to warm it up for you. Record the first 10 seconds from key-on. Ticking, knocking, or a rough idle that only exists here and disappears once warm is one of the most reliable tells of an issue a seller hoped you wouldn't catch.</p>
+
+  <h3>Stage 2: Idle Baseline</h3>
+  <p>With the engine idling in park or neutral, record 15-20 seconds. This is your clean baseline — no road noise, no wind — useful for catching electrical clicking, rough idle, or an exhaust leak you'd otherwise miss under driving noise.</p>
+
+  <h3>Stage 3: The Actual Test Drive</h3>
+  <p>Record acceleration, braking, a few low-speed turns, and — if the seller allows it — a stretch at highway speed. Split this into a city-speed clip and a highway-speed clip if you can; transmission and engine issues tend to show up at lower speeds under load, while bearing and CV joint noise often only appears once you're moving fast or turning.</p>
+
+  <p>Upload each stage separately. If an issue only appears in one phase, that pattern alone helps narrow down whether you're looking at something minor or something to walk away from.</p>
+</section>
+
+<section>
+  <h2>Red Flags When Buying a Used Car: Dealbreakers vs. Normal Wear</h2>
+  <p>Not every noise means the same thing on a car you're about to buy versus one you already own. Context matters more here — a noise the seller can explain and price into the deal is different from a genuine red flag that suggests something was hidden.</p>
+
+  <div class="compare-grid">
+    <div class="compare-col walk">
+      <h4>Walk Away or Renegotiate Hard</h4>
+      <ul>
+        <li>Metallic knock that gets worse with RPM</li>
+        <li>Clunk shifting into drive or reverse</li>
+        <li>Grinding when braking</li>
+        <li>Clicking that changes with electrical load</li>
+        <li>Shudder or flare during gear changes</li>
+      </ul>
+    </div>
+    <div class="compare-col ok">
+      <h4>Normal Wear, Negotiable</h4>
+      <ul>
+        <li>Light belt chirp on a cold morning</li>
+        <li>Faint brake dust squeal at low speed</li>
+        <li>Minor wiper or blower motor hum</li>
+        <li>Slight road noise from older tires</li>
+        <li>Occasional cold-start rattle that clears in seconds</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>How Much Does a Pre-Purchase Inspection Cost?</h2>
+  <p>
+    Pricing for a professional mechanical PPI varies by country and by how deep the check goes, which is exactly why running a free AI sound check first is worth doing before you book one:
+  </p>
+  <table class="cost-table">
+    <thead>
+      <tr><th>Region</th><th>Typical Mechanic PPI Cost</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>United States / Canada</td><td class="range">$100 – $200</td><td>Independent mechanic or mobile inspection service</td></tr>
+      <tr><td>United Kingdom</td><td class="range">£90 – £270</td><td>AA, RAC, and independent mobile inspectors, by tier</td></tr>
+      <tr><td>Germany / EU</td><td class="range">€75 – €180</td><td>ADAC, TÜV, or Dekra Gebrauchtwagenuntersuchung</td></tr>
+    </tbody>
+  </table>
+  <p>
+    A free sound check won't replace any of these, but it answers the question that usually comes right before you book one: is this specific car even worth spending $100-200 (or £90-270, or €75-180) to have someone check in person? Run the cold-start, idle, and test-drive clips first, and save the paid inspection for cars that pass this first filter or that you're seriously close to buying.
+  </p>
+</section>
+
+<section>
+  <h2>Pre-Purchase Inspection AI vs. a Vehicle History Report</h2>
+  <p>
+    A CarFax or AutoCheck report tells you what's on paper — title status, reported accidents, odometer history. It says nothing about a repair the previous owner paid for out of pocket, or how the car actually runs today. This tool checks the opposite side of that coin: the car's current mechanical condition, by listening to it, right now, in front of you.
+  </p>
+  <p>
+    Used together with a paid mechanical PPI for any car you're seriously considering, a sound check like this is a free way to decide which cars are even worth that spend in the first place.
+  </p>
+</section>
+
+<section>
+  <h2>Pre-Purchase Sound Check — FAQ</h2>
+
+  <h3>What should I listen for when test driving a used car?</h3>
+  <p>Treat the cold start, idle, low-speed driving, and highway speed as four separate listening windows rather than one continuous impression. A noise confined to a single phase is usually more informative than something you hear the whole time.</p>
+
+  <h3>Can AI tell if a used car has a hidden transmission problem?</h3>
+  <p>A recording of a shift point, a shudder under light acceleration, or a delayed engagement from park to drive can be screened against known transmission-fault acoustic patterns. It flags likelihood and confidence, not a certified diagnosis — a transmission-specific inspection is still worth it before you commit to a car with a flagged result.</p>
+
+  <h3>Is a pre-purchase inspection still worth it if I already test drove the car?</h3>
+  <p>Yes. A test drive with a salesperson in the car, on their preferred route, in a car that was likely warmed up before you arrived, is not the same as a dedicated inspection. Use a sound check as a fast first filter, then book a paid mechanical PPI if anything gets flagged or the car is a serious contender.</p>
+
+  <h3>How can sound reveal accident damage that a seller didn't disclose?</h3>
+  <p>Poorly repaired collision damage often produces wind noise from misaligned panels, a rattling exhaust from a bent hanger or replaced section, or a faint rubbing sound from a wheel that's slightly out of alignment after suspension work. None of that shows up on a vehicle history report if the repair was paid for out of pocket.</p>
+
+  <h3>What noises should make me walk away from a used car deal?</h3>
+  <p>A heavy metallic knock that scales with RPM, a clunk from the transmission when shifting into drive or reverse, grinding when braking, or any clicking that changes with electrical load (headlights, wipers, AC) are strong reasons to walk or renegotiate hard. These point to engine, transmission, brake, or flood-damage issues rather than routine wear.</p>
+
+  <h3>Can this replace a mechanic's pre-purchase inspection?</h3>
+  <p>No. It's a free first-pass filter you can run in the driveway or parking lot before you decide whether a car is worth paying $100-200 (or the local equivalent) for a proper mechanical PPI. Think of it as deciding which cars deserve that spend, not as a replacement for it.</p>
+
+  <h3>Does a private-seller car need the same sound check as a dealership car?</h3>
+  <p>If anything, more. Dealerships typically run a reconditioning pass before listing a car; private sellers usually don't. Run the cold-start clip first with a private-sale car specifically, since that's the stage most likely to have been skipped.</p>
+
+  <h3>How do I record test drive audio without it being awkward with the seller?</h3>
+  <p>Prop your phone in the cupholder or door pocket with the voice memo app running before you start the engine — no need to announce it. Most sellers assume you're checking directions or on a call, and a phone quietly recording ambient cabin audio isn't unusual behavior during a test drive.</p>
+
+  <h3>Can AI detect a flood-damaged car from engine sound?</h3>
+  <p>Flood damage often produces electrical symptoms before mechanical ones — relay clicking, an inconsistent idle, or accessories cycling oddly. A cold-start and idle recording can pick up some of these acoustic irregularities, though a full flood-damage screen should also include a visual check for water lines, corrosion, and musty odor.</p>
+
+  <h3>What's the difference between normal wear noise and a dealbreaker noise?</h3>
+  <p>Normal wear tends to be consistent, mild, and load-independent — a faint belt chirp on a cold morning, light brake dust squeal. Dealbreaker noise is usually load-dependent, gets worse over the drive, or is new relative to the car's mileage and service history — a knock that appears only under acceleration, or a shudder that starts at highway speed.</p>
+
+  <h3>Should I record at low speed and highway speed separately?</h3>
+  <p>Yes. Wheel bearing hum and CV joint clicking often only appear at speed or while turning, while transmission shudder and engine knock are more noticeable at lower speeds under load. Two separate clips give the analyzer cleaner signal than one long mixed recording.</p>
+
+  <h3>Is this the same as a CarFax or AutoCheck vehicle history report?</h3>
+  <p>No, and the two are complementary rather than overlapping. A vehicle history report checks paperwork — title status, reported accidents, odometer records. This tool checks the car's actual current mechanical condition by sound, which catches undisclosed or out-of-pocket repairs that never made it into any database.</p>
+</section>
+
+<div class="crosslink-banner" aria-label="Related tool">
+  <div>
+    <strong>Already bought the car and something new started making noise?</strong>
+    <p>Use our full Sound Diagnoser for ongoing ownership issues — same AI, built for troubleshooting a car you already own.</p>
+  </div>
+  <a href="https://carithm.vercel.app/audio" class="crosslink-btn">Diagnose an Existing Noise →</a>
+</div>
+
+<section style="margin-top: 44px;">
+  <div class="eyebrow">Also on Carithm</div>
+  <h2 style="margin-top: 8px;">Bought it? Here's what to check next</h2>
+  <p>Once you own the car, these help you plan for maintenance and sanity-check any repair estimate you get.</p>
+  <div class="related-grid">
+    <a class="related-card" href="https://carithm.vercel.app/">
+      <div class="rc-label">Free Tool</div>
+      <div class="rc-title">Repair Quote Checker</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/toyota">
+      <div class="rc-label">Brand Guide</div>
+      <div class="rc-title">Toyota Repair Cost Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/bmw">
+      <div class="rc-label">Brand Guide</div>
+      <div class="rc-title">BMW Repair Cost Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/mercedes">
+      <div class="rc-label">Brand Guide</div>
+      <div class="rc-title">Mercedes Maintenance Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/repairs/brakes.html">
+      <div class="rc-label">Repair Type</div>
+      <div class="rc-title">Brake Repair Cost Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/research">
+      <div class="rc-label">Research</div>
+      <div class="rc-title">Car Maintenance Data & Methodology</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://carithm.vercel.app/">Carithm Home — Repair Quote Checker</a>
+      <a href="https://carithm.vercel.app/audio">AI Car Sound Analyzer</a>
+      <a href="https://carithm.vercel.app/acoustic">Pre-Purchase Inspection Check</a>
+      <a href="https://carithm.vercel.app/toyota">Toyota Repair Cost Guide</a>
+      <a href="https://carithm.vercel.app/bmw">BMW Repair Cost Guide</a>
+      <a href="https://carithm.vercel.app/research">Research & Methodology</a>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Carithm. Pre-Purchase Inspection AI — decision-support tool. Not a substitute for a certified mechanical inspection.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
