@@ -10,6 +10,13 @@
   </url>
 
   <url>
+    <loc>https://carithm.vercel.app/app</loc>
+    <lastmod>2026-09-3</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
     <loc>https://carithm.vercel.app/what-is-that-sound-in-my-car</loc>
     <lastmod>2026-09-3</lastmod>
     <changefreq>daily</changefreq>
