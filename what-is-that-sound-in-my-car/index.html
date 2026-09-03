@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-
   function gtag(){dataLayer.push(arguments);}
-
   gtag('js', new Date());
   gtag('config', 'G-TCCEJ6DCM1');
 
@@ -15,11 +12,9 @@
   (function() {
     let activeSeconds = 0;
     const interval = 10;
-
     setInterval(() => {
       if (!document.hidden) {
         activeSeconds += interval;
-
         if (typeof gtag === 'function') {
           gtag('event', 'true_dwell_time', {
             'event_category': 'Engagement',
@@ -33,29 +28,19 @@
 
   // Iframe PostMessage Listener
   window.addEventListener('message', function(event) {
-
-    if (
-      event.origin !==
-      'https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app'
-    ) return;
-
+    if (event.origin !== 'https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app') return;
     const data = event.data;
-
     if (data && data.type === 'streamlit_analytics') {
-
       if (typeof gtag === 'function') {
-
         gtag('event', data.eventName, {
           'event_category': data.eventCategory || 'Carithm Tool',
           'event_label': data.eventLabel || '',
           'value': data.eventValue || 0
         });
-
       }
     }
   });
 </script>
-
 
 <!-- Google AdSense Global Script -->
 <script
@@ -64,101 +49,29 @@
   crossorigin="anonymous">
 </script>
 
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine Sound Diagnostic AI Web App | Carithm</title>
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1"
->
-
-
-<title>
-  Engine Sound Diagnostic AI Web App | Carithm
-</title>
-
-
-<meta
-  name="description"
-  content="A free engine sound diagnostic AI web app — record or upload the noise right in your browser and get an instant AI diagnosis. No download, no signup."
->
-
-
-<meta
-  name="robots"
-  content="index,follow"
->
-
-
-<link
-  rel="canonical"
-  href="https://carithm.vercel.app/audio/app"
->
-
+<meta name="description" content="A free engine sound diagnostic AI web app — record or upload the noise right in your browser and get an instant AI diagnosis. No download, no signup.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://carithm.vercel.app/audio/app">
 
 <meta property="og:type" content="website">
-
-<meta
-  property="og:title"
-  content="Engine Sound Diagnostic AI Web App | Carithm"
->
-
-<meta
-  property="og:description"
-  content="A free engine sound diagnostic AI web app that runs instantly in your phone or desktop browser — no app store, no install, no signup."
->
-
-<meta
-  property="og:url"
-  content="https://carithm.vercel.app/audio/app"
->
-
-<meta
-  property="og:image"
-  content="https://carithm.vercel.app/car.png"
->
-
+<meta property="og:title" content="Engine Sound Diagnostic AI Web App | Carithm">
+<meta property="og:description" content="A free engine sound diagnostic AI web app that runs instantly in your phone or desktop browser — no app store, no install, no signup.">
+<meta property="og:url" content="https://carithm.vercel.app/audio/app">
+<meta property="og:image" content="https://carithm.vercel.app/car.png">
 <meta property="og:locale" content="en_US">
 
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Engine Sound Diagnostic AI Web App | Carithm">
+<meta name="twitter:description" content="Upload or record your engine noise and get an instant AI diagnosis — a free web app, no download required.">
+<meta name="twitter:image" content="https://carithm.vercel.app/car.png">
 
-<meta
-  name="twitter:card"
-  content="summary_large_image"
->
-
-<meta
-  name="twitter:title"
-  content="Engine Sound Diagnostic AI Web App | Carithm"
->
-
-<meta
-  name="twitter:description"
-  content="Upload or record your engine noise and get an instant AI diagnosis — a free web app, no download required."
->
-
-<meta
-  name="twitter:image"
-  content="https://carithm.vercel.app/car.png"
->
-
-
-<link
-  rel="preconnect"
-  href="https://fonts.googleapis.com"
-  crossorigin
->
-
-<link
-  rel="preconnect"
-  href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app"
->
-
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap"
-  rel="stylesheet"
->
-
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- WebApplication Schema -->
 <script type="application/ld+json">
@@ -186,7 +99,6 @@
   "dateModified":"2026-08-06"
 }
 </script>
-
 
 <!-- Breadcrumb Schema -->
 <script type="application/ld+json">
@@ -216,14 +128,12 @@
 }
 </script>
 
-
 <!-- FAQ Schema -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
-
     {
       "@type":"Question",
       "name":"Is there an engine sound diagnostic AI app I can download?",
@@ -232,7 +142,6 @@
         "text":"There's nothing to download from an app store. Carithm works as a browser-based engine sound diagnostic AI app — open it on your phone or desktop, upload or record a noise, and get an instant diagnosis. No install, no update prompts, no storage used."
       }
     },
-
     {
       "@type":"Question",
       "name":"Is this the same as an audio diagnosis app or engine noise analysis app?",
@@ -241,7 +150,6 @@
         "text":"Yes. Carithm functions as an audio diagnosis app and engine noise analysis app in one — it listens to your recording, filters out background noise, and reports likely mechanical fault areas with a confidence score."
       }
     },
-
     {
       "@type":"Question",
       "name":"Does it work on iPhone and Android?",
@@ -250,7 +158,6 @@
         "text":"Yes. Since it runs entirely in the browser, it works on iPhone, Android, tablet, or desktop."
       }
     },
-
     {
       "@type":"Question",
       "name":"Why isn't there a native app version?",
@@ -259,7 +166,6 @@
         "text":"A browser-based tool means no download size, no OS-specific updates, and no app store approval delays."
       }
     },
-
     {
       "@type":"Question",
       "name":"Is the engine sound diagnosis app free?",
@@ -268,7 +174,6 @@
         "text":"Yes. There's no signup, subscription, or in-app purchase. Upload or record the sound and get an AI-ranked diagnosis at no cost."
       }
     },
-
     {
       "@type":"Question",
       "name":"What can the AI diagnose from an engine sound recording?",
@@ -277,53 +182,22 @@
         "text":"Common engine acoustic faults including ticking, knocking, rattling, whining, and squealing, along with likely component-level causes and a confidence score."
       }
     }
-
   ]
 }
 </script>
 
-
 <link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-<link
-  rel="icon"
-  href="/favicon.svg"
-  type="image/svg+xml"
->
+<meta name="theme-color" content="#09090b">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
 
-<link
-  rel="apple-touch-icon"
-  href="/apple-touch-icon.png"
->
-
-<meta
-  name="theme-color"
-  content="#09090b"
->
-
-<meta
-  name="format-detection"
-  content="telephone=no"
->
-
-<meta
-  name="mobile-web-app-capable"
-  content="yes"
->
-
-<link
-  rel="preload"
-  href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
->
-
+<link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
-
 :root {
-
   --bg: #09090b;
   --surface: #111113;
   --surface2: #18181b;
@@ -333,7 +207,6 @@
   --border2: rgba(255,255,255,0.13);
 
   --text: #fafafa;
-
   --muted: #a1a8b3;
   --muted2: #71717a;
 
@@ -356,1205 +229,670 @@
   color-scheme: dark;
 }
 
-
 * {
   box-sizing: border-box;
 }
 
-
 body {
-
   font-family: 'Inter', system-ui, sans-serif;
-
   margin: 0;
-
   background: var(--bg);
-
   color: var(--text);
-
   line-height: 1.6;
-
   -webkit-font-smoothing: antialiased;
 }
-
 
 a {
   color: inherit;
 }
 
-
 header {
-
   position: sticky;
   top: 0;
   z-index: 100;
-
   display: flex;
-
   justify-content: space-between;
   align-items: center;
-
   padding: 1rem 2rem;
-
   background: rgba(9,9,11,0.75);
-
   backdrop-filter: blur(12px);
-
   border-bottom: 1px solid var(--border);
 }
 
-
 .nav-logo {
-
   font-family: 'Bebas Neue', sans-serif;
-
   font-size: 1.4rem;
-
   letter-spacing: 0.05em;
-
   color: #fff;
-
   text-decoration: none;
 }
-
 
 .nav-logo span {
   color: var(--accent);
 }
 
-
 .nav {
-
   display: flex;
-
   gap: 1.75rem;
-
   align-items: center;
 }
 
-
 .nav a {
-
   text-decoration: none;
-
   color: var(--muted);
-
   font-size: 0.85rem;
-
   font-weight: 500;
-
   transition: color .2s;
 }
-
 
 .nav a:hover,
 .nav a.active {
   color: #fff;
 }
 
-
 .nav .cta-btn {
-
   background: var(--accent-dim);
-
   border: 1px solid rgba(47,129,247,0.3);
-
   color: var(--accent);
-
   padding: 0.5rem 1.1rem;
-
   border-radius: 8px;
-
   font-weight: 600;
 }
 
-
 .nav .cta-btn:hover {
-
   background: var(--accent);
-
   color: #000;
 }
 
-
 main {
-
   max-width: 760px;
-
   margin: 0 auto;
-
   padding: 48px 24px 40px;
 }
 
-
 .ad-container {
-
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
-
   margin: 32px 0;
-
   padding: 12px;
-
   background: var(--surface);
-
   border: 1px solid var(--border);
-
   border-radius: var(--r-sm);
-
   overflow: hidden;
-
   min-height: 100px;
 }
 
-
 .ad-container .ad-label {
-
   font-size: 10px;
-
   color: var(--muted2);
-
   text-transform: uppercase;
-
   letter-spacing: 0.05em;
-
   margin-bottom: 8px;
 }
 
-
 .breadcrumb {
-
   font-size: 12.5px;
-
   color: var(--muted2);
-
   margin-bottom: 18px;
 }
 
-
 .breadcrumb a {
-
   color: var(--muted);
-
   text-decoration: none;
 }
-
 
 .breadcrumb a:hover {
   color: var(--accent);
 }
 
-
 .breadcrumb .sep {
-
   margin: 0 6px;
-
   color: var(--muted2);
 }
-
 
 .breadcrumb .current {
   color: var(--muted);
 }
 
-
 .eyebrow {
-
   font-size: 11px;
-
   font-weight: 600;
-
   letter-spacing: 0.1em;
-
   text-transform: uppercase;
-
   color: var(--accent);
-
   margin-bottom: 12px;
 }
 
-
 h1 {
-
   font-size: clamp(1.9rem, 5vw, 2.4rem);
-
   font-weight: 700;
-
   letter-spacing: -0.03em;
-
   margin: 0 0 14px;
-
   line-height: 1.12;
 }
 
-
 h2 {
-
   font-size: 1.3rem;
-
   font-weight: 600;
-
   margin-top: 44px;
-
   letter-spacing: -0.01em;
 }
 
-
 h3 {
-
   font-size: 1.02rem;
-
   font-weight: 600;
-
   margin-top: 22px;
 }
 
-
 p {
-
   color: var(--muted);
-
   margin: 0 0 8px;
 }
 
-
 ul,
 ol {
-
   color: var(--muted);
-
   padding-left: 20px;
 }
-
 
 li {
   margin-bottom: 6px;
 }
 
-
 .trust-strip {
-
   display: grid;
-
   grid-template-columns: repeat(4,1fr);
-
   gap: 0;
-
   background: var(--surface);
-
   border: 1px solid var(--border);
-
   border-radius: var(--r);
-
   overflow: hidden;
-
   margin: 22px 0 8px;
 }
 
-
 .trust-strip > div {
-
   padding: 16px 10px;
-
   text-align: center;
-
   border-right: 1px solid var(--border);
 }
-
 
 .trust-strip > div:last-child {
   border-right: none;
 }
 
-
 .trust-num {
-
   font-size: 18px;
-
   font-weight: 700;
-
   letter-spacing: -0.02em;
 }
-
 
 .trust-num span {
   color: var(--accent);
 }
 
-
 .trust-lbl {
-
   font-size: 10px;
-
   color: var(--muted2);
-
   text-transform: uppercase;
-
   letter-spacing: 0.05em;
-
   margin-top: 3px;
 }
 
-
 /* NORMAL CARD SPACING */
-
 .card {
-
   background: var(--surface);
-
   padding: 26px;
-
   border-radius: var(--r);
-
   margin-top: 44px;
-
   border: 1px solid var(--border);
 }
 
-
 .card.tool {
-
   border-color: rgba(47,129,247,0.25);
 }
 
-
 .card.tool.tool-wide {
-
   max-width: 1100px;
-
   width: 100%;
-
   margin-left: 50%;
-
   transform: translateX(-50%);
 }
 
-
 /* STREAMLIT */
-
 .streamlit-embed-wrap {
-
   position: relative;
-
   --streamlit-height: min(1200px, 90vh);
-
   margin-top: 18px;
-
   border: 1px solid var(--border);
-
   border-radius: var(--r-sm);
-
   overflow: hidden;
-
   background: var(--surface2);
-
   resize: vertical;
 }
 
-
 .streamlit-embed {
-
   display: block;
-
   width: 100%;
-
   height: var(--streamlit-height);
-
   min-height: 640px;
-
   border: 0;
-
   background: var(--bg);
 }
-
 
 /*
   RESTORED BLACK STREAMLIT BOTTOM BAR
 */
-
 .iframe-brand-mask {
-
   position: absolute;
-
   bottom: 0;
-
   left: 0;
-
   right: 0;
-
   height: 44px;
-
   background: var(--surface2);
-
   z-index: 99999;
-
   pointer-events: auto;
-
   border-top: 1px solid var(--border);
-
   cursor: default;
 }
 
-
 .iframe-fallback {
-
   display: none;
-
   padding: 32px 24px;
-
   text-align: center;
 }
-
 
 .iframe-fallback p {
   margin-bottom: 14px;
 }
 
-
 .iframe-fallback a.crosslink-btn {
   display: inline-block;
 }
 
-
 .compare-strip {
-
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 12px;
-
   margin-top: 18px;
 }
 
-
 .compare-col {
-
   background: var(--surface);
-
   border: 1px solid var(--border);
-
   border-radius: var(--r);
-
   padding: 18px 20px;
 }
 
-
 .compare-col.win {
-
   border-color: rgba(34,197,94,0.3);
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(34,197,94,0.06),
-      var(--surface)
-    );
+  background: linear-gradient(135deg, rgba(34,197,94,0.06), var(--surface));
 }
-
 
 .compare-col h4 {
-
   margin: 0 0 10px;
-
   font-size: 13px;
-
   text-transform: uppercase;
-
   letter-spacing: 0.05em;
-
   color: var(--muted2);
 }
-
 
 .compare-col.win h4 {
   color: var(--green);
 }
 
-
 .compare-col ul {
-
   padding-left: 18px;
-
   margin: 0;
 }
 
-
 .compare-col li {
-
   font-size: 13.5px;
-
   margin-bottom: 8px;
 }
 
-
 .crosslink-banner {
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(47,129,247,0.08),
-      rgba(47,129,247,0.03)
-    );
-
+  background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
   border: 1px solid rgba(47,129,247,0.25);
-
   border-radius: var(--r);
-
   padding: 22px 26px;
-
   margin-top: 44px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 20px;
-
   flex-wrap: wrap;
 }
 
-
 .crosslink-banner p {
-
   margin: 0;
-
   color: var(--muted);
-
   font-size: 13px;
 }
 
-
 .crosslink-banner strong {
-
   color: var(--text);
-
   display: block;
-
   font-size: 15px;
-
   margin-bottom: 4px;
 }
 
-
 .crosslink-btn {
-
   background: var(--accent);
-
   color: #000;
-
   font-weight: 700;
-
   padding: 10px 18px;
-
   border-radius: var(--r-sm);
-
   text-decoration: none;
-
   font-size: 13px;
-
   white-space: nowrap;
-
   flex-shrink: 0;
 }
-
 
 .crosslink-btn:hover {
   opacity: 0.88;
 }
 
-
 .related-grid {
-
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 10px;
-
   margin-top: 16px;
 }
 
-
 .related-card {
-
   background: var(--surface);
-
   border: 1px solid var(--border);
-
   border-radius: var(--r-sm);
-
   padding: 14px 16px;
-
   text-decoration: none;
-
   display: block;
-
-  transition:
-    border-color .2s,
-    transform .2s;
+  transition: border-color .2s, transform .2s;
 }
 
-
 .related-card:hover {
-
   border-color: var(--accent);
-
   transform: translateY(-2px);
 }
 
-
 .related-card .rc-label {
-
   font-size: 10px;
-
   text-transform: uppercase;
-
   letter-spacing: 0.06em;
-
   color: var(--muted2);
-
   margin-bottom: 4px;
 }
 
-
 .related-card .rc-title {
-
   font-size: 13px;
-
   font-weight: 600;
-
   color: var(--text);
 }
 
-
 footer.site-footer {
-
   border-top: 1px solid var(--border);
-
   padding: 40px 24px 24px;
-
   margin-top: 60px;
-
   background: var(--surface);
 }
 
-
 .footer-inner {
-
   max-width: 760px;
-
   margin: 0 auto;
 }
 
-
 .footer-links {
-
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 18px;
-
   margin-bottom: 18px;
 }
 
-
 .footer-links a {
-
   font-size: 12.5px;
-
   color: var(--muted);
-
   text-decoration: none;
 }
-
 
 .footer-links a:hover {
   color: var(--accent);
 }
 
-
 .footer-bottom {
-
   font-size: 11.5px;
-
   color: var(--muted2);
-
   border-top: 1px solid var(--border);
-
   padding-top: 16px;
 }
 
-
 @media (max-width: 900px) {
-
   .streamlit-embed-wrap {
     --streamlit-height: min(1000px, 85vh);
   }
-
 }
 
-
 @media (max-width: 620px) {
-
   header {
     padding: 0.9rem 1.1rem;
   }
-
 
   .nav a:not(.cta-btn) {
     display: none;
   }
 
-
   .nav .cta-btn {
-
     padding: 0.65rem 1.1rem;
-
     min-height: 44px;
-
     display: flex;
-
     align-items: center;
   }
-
 
   .trust-strip {
     grid-template-columns: 1fr 1fr;
   }
 
-
   main {
     padding: 32px 16px 32px;
   }
-
 
   h1 {
     line-height: 1.18;
   }
 
-
   h2 {
     margin-top: 34px;
   }
 
-
   .card {
     padding: 20px;
-
     margin-top: 44px;
   }
-
 
   .compare-strip {
     grid-template-columns: 1fr;
   }
 
-
   .related-grid {
     grid-template-columns: 1fr 1fr;
   }
-
 
   .crosslink-banner {
     padding: 18px 20px;
   }
 
-
   .crosslink-btn {
-
     width: 100%;
-
     text-align: center;
-
     min-height: 44px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
   }
 
-
   .footer-links a {
-
     padding: 4px 0;
-
     display: inline-block;
   }
-
 }
-
 </style>
 </head>
-
-
 <body>
 
-
 <header>
-
-  <a
-    href="https://carithm.vercel.app/"
-    class="nav-logo"
-  >
+  <a href="https://carithm.vercel.app/" class="nav-logo">
     Carithm<span>AI</span>
   </a>
 
-
-  <nav
-    class="nav"
-    aria-label="Main navigation"
-  >
-
-    <a href="https://carithm.vercel.app/">
-      Home
-    </a>
-
-    <a href="https://carithm.vercel.app/toyota">
-      Toyota
-    </a>
-
-    <a href="https://carithm.vercel.app/bmw">
-      BMW
-    </a>
-
-    <a href="https://carithm.vercel.app/mercedes">
-      Mercedes
-    </a>
-
-    <a href="https://carithm.vercel.app/research">
-      Research
-    </a>
-
-    <a href="https://carithm.vercel.app/audio">
-      Audio Diagnosis
-    </a>
-
-    <a href="#try" class="cta-btn">
-      Try It Free
-    </a>
-
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <a href="https://carithm.vercel.app/toyota">Toyota</a>
+    <a href="https://carithm.vercel.app/bmw">BMW</a>
+    <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
+    <a href="https://carithm.vercel.app/research">Research</a>
+    <a href="https://carithm.vercel.app/audio">Audio Diagnosis</a>
+    <a href="#try" class="cta-btn">Try It Free</a>
   </nav>
-
 </header>
-
 
 <main>
 
-
 <!-- BREADCRUMB -->
-
-<nav
-  class="breadcrumb"
-  aria-label="Breadcrumb"
->
-
-  <a href="https://carithm.vercel.app/">
-    Home
-  </a>
-
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://carithm.vercel.app/">Home</a>
   <span class="sep">/</span>
-
-  <a href="https://carithm.vercel.app/audio">
-    AI Car Sound Analyzer
-  </a>
-
+  <a href="https://carithm.vercel.app/audio">AI Car Sound Analyzer</a>
   <span class="sep">/</span>
-
-  <span class="current">
-    Engine Sound Diagnostic AI Web App
-  </span>
-
+  <span class="current">Engine Sound Diagnostic AI Web App</span>
 </nav>
 
-
 <!-- TOP AD -->
-
 <div class="ad-container">
-
-  <span class="ad-label">
-    Advertisement
-  </span>
-
-  <ins
-    class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-5227538935323998"
-    data-ad-slot="6469714155"
-    data-ad-format="auto"
-    data-full-width-responsive="true">
-  </ins>
-
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5227538935323998"
+       data-ad-slot="6469714155"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
-
 </div>
 
-
 <!-- HERO -->
-
 <section>
-
-  <div class="eyebrow">
-    Carithm Audio Intelligence
-  </div>
-
-
-  <h1>
-    Engine Sound Diagnostic AI App:
-    Diagnose Noises Instantly, No Download
-  </h1>
-
-
+  <div class="eyebrow">Carithm Audio Intelligence</div>
+  <h1>Engine Sound Diagnostic AI App: Diagnose Noises Instantly, No Download</h1>
+  
   <p>
-    Searching for an engine sound diagnostic AI app?
-    You don't need to find one in the App Store or Play Store.
-    Carithm runs entirely in your phone or desktop browser —
-    open the page, upload or record the noise, and get an
+    Searching for an engine sound diagnostic AI app? You don't need to find one in the App Store or Play Store.
+    Carithm runs entirely in your phone or desktop browser — open the page, upload or record the noise, and get an
     instant AI diagnosis. Nothing to install, nothing to update.
   </p>
 
-
   <p>
-    It works exactly like the app you were picturing —
-    record the sound, get a ranked breakdown of likely causes —
+    It works exactly like the app you were picturing — record the sound, get a ranked breakdown of likely causes —
     just without the download step.
   </p>
 
-
   <div class="trust-strip">
-
     <div>
       <div class="trust-num">0MB</div>
       <div class="trust-lbl">To Download</div>
     </div>
-
     <div>
       <div class="trust-num">Free</div>
       <div class="trust-lbl">No Signup</div>
     </div>
-
     <div>
       <div class="trust-num">~5s</div>
       <div class="trust-lbl">Analysis Time</div>
     </div>
-
     <div>
       <div class="trust-num">iOS + Android</div>
       <div class="trust-lbl">Same Experience</div>
     </div>
-
   </div>
-
 </section>
-
 
 <!-- CONTENT BEFORE TOOL #1 -->
-
 <section>
-
-  <h2>
-    What Is That Sound Coming From Your Car?
-  </h2>
-
-
+  <h2>What Is That Sound Coming From Your Car?</h2>
   <p>
-    A strange car sound can be difficult to identify just by listening
-    to it. A ticking noise, whining sound, rattle, squeal, or knock can
-    come from completely different parts of the vehicle depending on
-    when the sound happens and how it changes with engine speed.
+    A strange car sound can be difficult to identify just by listening to it. A ticking noise, whining sound, rattle, squeal, or knock can
+    come from completely different parts of the vehicle depending on when the sound happens and how it changes with engine speed.
   </p>
-
-
   <p>
-    That's why recording the sound can be useful. Instead of trying to
-    describe the noise with words like "weird," "loud," or "metallic,"
-    you can let an acoustic analysis system examine the actual recording
-    and look for patterns associated with common mechanical problems.
+    That's why recording the sound can be useful. Instead of trying to describe the noise with words like "weird," "loud," or "metallic,"
+    you can let an acoustic analysis system examine the actual recording and look for patterns associated with common mechanical problems.
   </p>
-
 </section>
 
-
 <!-- CONTENT BEFORE TOOL #2 -->
-
 <section>
-
-  <h2>
-    Common Car Sounds You May Be Hearing
-  </h2>
-
-
+  <h2>Common Car Sounds You May Be Hearing</h2>
   <p>
-    The sound you're hearing may fall into one of several common
-    categories. Identifying the general type of noise is a useful
+    The sound you're hearing may fall into one of several common categories. Identifying the general type of noise is a useful
     first step before investigating the underlying cause.
   </p>
 
-
   <div class="compare-strip">
-
-
     <div class="compare-col">
-
-      <h4>
-        Engine & Mechanical Sounds
-      </h4>
-
+      <h4>Engine & Mechanical Sounds</h4>
       <ul>
-
-        <li>
-          <strong>Ticking</strong> —
-          may be related to valvetrain or injector activity
-        </li>
-
-        <li>
-          <strong>Knocking</strong> —
-          can indicate a more serious internal engine issue
-        </li>
-
-        <li>
-          <strong>Rattling</strong> —
-          may come from loose components or heat shields
-        </li>
-
-        <li>
-          <strong>Whining</strong> —
-          can be associated with rotating components
-        </li>
-
+        <li><strong>Ticking</strong> — may be related to valvetrain or injector activity</li>
+        <li><strong>Knocking</strong> — can indicate a more serious internal engine issue</li>
+        <li><strong>Rattling</strong> — may come from loose components or heat shields</li>
+        <li><strong>Whining</strong> — can be associated with rotating components</li>
       </ul>
-
     </div>
-
-
+    
     <div class="compare-col">
-
-      <h4>
-        Other Vehicle Sounds
-      </h4>
-
+      <h4>Other Vehicle Sounds</h4>
       <ul>
-
-        <li>
-          <strong>Squealing</strong> —
-          commonly associated with belts or pulleys
-        </li>
-
-        <li>
-          <strong>Grinding</strong> —
-          may involve brakes or other mechanical components
-        </li>
-
-        <li>
-          <strong>Humming</strong> —
-          can change with vehicle speed
-        </li>
-
-        <li>
-          <strong>Clicking</strong> —
-          may become more noticeable while turning
-        </li>
-
+        <li><strong>Squealing</strong> — commonly associated with belts or pulleys</li>
+        <li><strong>Grinding</strong> — may involve brakes or other mechanical components</li>
+        <li><strong>Humming</strong> — can change with vehicle speed</li>
+        <li><strong>Clicking</strong> — may become more noticeable while turning</li>
       </ul>
-
     </div>
-
   </div>
-
 </section>
-
 
 <!-- CONTENT BEFORE TOOL #3 -->
-
 <section>
-
-  <h2>
-    How to Record a Car Noise for Diagnosis
-  </h2>
-
-
+  <h2>How to Record a Car Noise for Diagnosis</h2>
   <p>
-    For the best result, make a recording where the unusual sound is
-    clearly audible. Try to avoid music, conversations, heavy wind,
+    For the best result, make a recording where the unusual sound is clearly audible. Try to avoid music, conversations, heavy wind,
     or other background noise covering the vehicle sound.
   </p>
-
-
+  
   <ol>
-
-    <li>
-      Park somewhere relatively quiet and safe.
-    </li>
-
-    <li>
-      Record several seconds before the unusual sound occurs.
-    </li>
-
-    <li>
-      Capture the sound at the moment it becomes noticeable.
-    </li>
-
-    <li>
-      If safe to do so, record how the sound changes with engine RPM
-      or vehicle movement.
-    </li>
-
-    <li>
-      Don't place your phone near moving belts, fans, wheels,
-      or other dangerous components.
-    </li>
-
+    <li>Park somewhere relatively quiet and safe.</li>
+    <li>Record several seconds before the unusual sound occurs.</li>
+    <li>Capture the sound at the moment it becomes noticeable.</li>
+    <li>If safe to do so, record how the sound changes with engine RPM or vehicle movement.</li>
+    <li>Don't place your phone near moving belts, fans, wheels, or other dangerous components.</li>
   </ol>
-
-
+  
   <p>
-    A longer recording isn't necessarily better. What matters most
-    is that the unusual sound is clearly captured without excessive
+    A longer recording isn't necessarily better. What matters most is that the unusual sound is clearly captured without excessive
     background noise.
   </p>
-
 </section>
-
 
 <!-- ========================= -->
 <!-- STREAMLIT TOOL -->
 <!-- ========================= -->
-
-<section
-  class="card tool tool-wide"
-  id="try"
->
-
-  <h2 style="margin-top:0;">
-    Try the Engine Sound Diagnostic AI App
-  </h2>
-
-
+<section class="card tool tool-wide" id="try">
+  <h2 style="margin-top:0;">Try the Engine Sound Diagnostic AI App</h2>
   <p>
-    Ready to identify the sound? Record the noise directly in your
-    browser or upload an existing recording. Carithm analyzes the
+    Ready to identify the sound? Record the noise directly in your browser or upload an existing recording. Carithm analyzes the
     audio and returns AI-ranked possible causes with a confidence score.
   </p>
 
-
-  <div
-    class="streamlit-embed-wrap"
-    id="streamlitEmbedWrap"
-  >
-
-
+  <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
     <iframe
       id="streamlitFrame"
       class="streamlit-embed"
@@ -1565,575 +903,1229 @@ footer.site-footer {
       onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
     ></iframe>
 
-
     <!-- BLACK BOTTOM BAR -->
-
     <div class="iframe-brand-mask"></div>
 
-
     <!-- FALLBACK -->
-
-    <div
-      class="iframe-fallback"
-      id="iframeFallback"
-    >
-
-      <p>
-        The analyzer tool couldn't load in this view.
-      </p>
-
-
-      <a
-        class="crosslink-btn"
-        href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/"
-        target="_blank"
-        rel="noopener"
-      >
+    <div class="iframe-fallback" id="iframeFallback">
+      <p>The analyzer tool couldn't load in this view.</p>
+      <a class="crosslink-btn" href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/" target="_blank" rel="noopener">
         Open the Analyzer in a New Tab →
       </a>
-
     </div>
-
-
   </div>
-
 
   <noscript>
-
     <p class="note">
-
       This tool requires JavaScript to load the embedded app.
-
-      <a
-        href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/"
-        target="_blank"
-        rel="noopener"
-      >
+      <a href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/" target="_blank" rel="noopener">
         Open it directly here.
       </a>
-
     </p>
-
   </noscript>
-
 </section>
-
 
 <!-- POST TOOL CONTENT -->
-
 <section>
-
-  <h2>
-    What Can an Engine Sound Diagnostic AI Analyze?
-  </h2>
-
-
+  <h2>What Can an Engine Sound Diagnostic AI Analyze?</h2>
   <p>
-    Carithm is designed to analyze audible patterns in vehicle
-    recordings and identify areas that may deserve further investigation.
+    Carithm is designed to analyze audible patterns in vehicle recordings and identify areas that may deserve further investigation.
     Depending on the recording, this can include sounds such as:
   </p>
-
-
   <ul>
-
-    <li>
-      Ticking and tapping
-    </li>
-
-    <li>
-      Knocking
-    </li>
-
-    <li>
-      Rattling
-    </li>
-
-    <li>
-      Whining
-    </li>
-
-    <li>
-      Squealing
-    </li>
-
-    <li>
-      Grinding
-    </li>
-
-    <li>
-      Clicking
-    </li>
-
-    <li>
-      Humming and droning
-    </li>
-
+    <li>Ticking and tapping</li>
+    <li>Knocking</li>
+    <li>Rattling</li>
+    <li>Whining</li>
+    <li>Squealing</li>
+    <li>Grinding</li>
+    <li>Clicking</li>
+    <li>Humming and droning</li>
   </ul>
-
-
   <p>
-    An audio diagnosis is a starting point rather than a replacement
-    for a physical inspection. If a sound is severe, suddenly appears,
-    or is accompanied by warning lights, loss of power, smoke,
-    overheating, or other symptoms, stop driving when it is safe to do so
+    An audio diagnosis is a starting point rather than a replacement for a physical inspection. If a sound is severe, suddenly appears,
+    or is accompanied by warning lights, loss of power, smoke, overheating, or other symptoms, stop driving when it is safe to do so
     and have the vehicle inspected.
   </p>
-
 </section>
-
 
 <!-- WHY BROWSER APP -->
-
 <section>
-
-  <h2>
-    Why Isn't There a Native App to Download?
-  </h2>
-
-
+  <h2>Why Isn't There a Native App to Download?</h2>
   <p>
-    Most people searching for an engine sound diagnostic AI app expect
-    to open an app store, tap install, wait for it to download, then
-    open it. Carithm skips all of that — the browser version gives you
-    the same core function without the overhead.
+    Most people searching for an engine sound diagnostic AI app expect to open an app store, tap install, wait for it to download, then
+    open it. Carithm skips all of that — the browser version gives you the same core function without the overhead.
   </p>
-
-
+  
   <div class="compare-strip">
-
-
     <div class="compare-col">
-
-      <h4>
-        Native App
-      </h4>
-
+      <h4>Native App</h4>
       <ul>
-
-        <li>
-          Download and install first
-        </li>
-
-        <li>
-          Uses storage space on your phone
-        </li>
-
-        <li>
-          Waits on app store review for updates
-        </li>
-
-        <li>
-          iOS and Android need separate versions
-        </li>
-
+        <li>Download and install first</li>
+        <li>Uses storage space on your phone</li>
+        <li>Waits on app store review for updates</li>
+        <li>iOS and Android need separate versions</li>
       </ul>
-
     </div>
-
-
+    
     <div class="compare-col win">
-
-      <h4>
-        Carithm (Browser)
-      </h4>
-
+      <h4>Carithm (Browser)</h4>
       <ul>
-
-        <li>
-          Open the page, start recording immediately
-        </li>
-
-        <li>
-          Zero storage used
-        </li>
-
-        <li>
-          Updates instantly, no app store wait
-        </li>
-
-        <li>
-          Identical experience on iPhone, Android, or desktop
-        </li>
-
+        <li>Open the page, start recording immediately</li>
+        <li>Zero storage used</li>
+        <li>Updates instantly, no app store wait</li>
+        <li>Identical experience on iPhone, Android, or desktop</li>
       </ul>
-
     </div>
-
   </div>
-
 </section>
 
-
 <!-- WHAT IT DETECTS -->
-
 <section>
-
-  <h2>
-    What Can This Engine Sound Diagnostic AI App Detect?
-  </h2>
-
-
+  <h2>What Can This Engine Sound Diagnostic AI App Detect?</h2>
   <p>
-    The system looks at acoustic patterns associated with common
-    vehicle noises and can help narrow down areas worth investigating.
+    The system looks at acoustic patterns associated with common vehicle noises and can help narrow down areas worth investigating.
   </p>
-
-
+  
   <ul>
-
-    <li>
-      <strong>Ticking or tapping</strong> —
-      often lifter, valvetrain, or injector-related
-    </li>
-
-    <li>
-      <strong>Knocking</strong> —
-      commonly associated with internal engine problems
-    </li>
-
-    <li>
-      <strong>Rattling</strong> —
-      loose heat shields, brackets, or other components
-    </li>
-
-    <li>
-      <strong>Whining</strong> —
-      rotating components such as pumps, alternators, or bearings
-    </li>
-
-    <li>
-      <strong>Squealing</strong> —
-      belts, tensioners, or pulleys
-    </li>
-
-    <li>
-      <strong>Grinding</strong> —
-      brakes or other mechanical components
-    </li>
-
+    <li><strong>Ticking or tapping</strong> — often lifter, valvetrain, or injector-related</li>
+    <li><strong>Knocking</strong> — commonly associated with internal engine problems</li>
+    <li><strong>Rattling</strong> — loose heat shields, brackets, or other components</li>
+    <li><strong>Whining</strong> — rotating components such as pumps, alternators, or bearings</li>
+    <li><strong>Squealing</strong> — belts, tensioners, or pulleys</li>
+    <li><strong>Grinding</strong> — brakes or other mechanical components</li>
   </ul>
-
-
+  
   <p>
     Not sure which one you're hearing?
-
-    <a
-      href="https://carithm.vercel.app/audio"
-      style="color:var(--accent);font-weight:600;"
-    >
+    <a href="https://carithm.vercel.app/audio" style="color:var(--accent);font-weight:600;">
       Open the full AI Car Sound Analyzer
     </a>
     for more detailed noise-specific information.
   </p>
-
 </section>
-
 
 <!-- FAQ -->
-
 <section>
-
-  <h2 id="faq">
-    Frequently Asked Questions
-  </h2>
-
-
-  <h3>
-    Is there an engine sound diagnostic AI app I can download?
-  </h3>
-
+  <h2 id="faq">Frequently Asked Questions</h2>
+  
+  <h3>Is there an engine sound diagnostic AI app I can download?</h3>
   <p>
-    There's nothing to download from an app store. Carithm works as
-    a browser-based engine sound diagnostic AI app — open it on your
-    phone or desktop, upload or record a noise, and get an instant
-    diagnosis. No install, no update prompts, no storage used.
+    There's nothing to download from an app store. Carithm works as a browser-based engine sound diagnostic AI app — open it on your
+    phone or desktop, upload or record a noise, and get an instant diagnosis. No install, no update prompts, no storage used.
   </p>
-
-
-  <h3>
-    Is this the same as an audio diagnosis app or engine noise analysis app?
-  </h3>
-
+  
+  <h3>Is this the same as an audio diagnosis app or engine noise analysis app?</h3>
   <p>
-    Yes. Carithm functions as an audio diagnosis app and engine noise
-    analysis app in one — it listens to your recording and reports
+    Yes. Carithm functions as an audio diagnosis app and engine noise analysis app in one — it listens to your recording and reports
     likely mechanical fault areas with a confidence score.
   </p>
-
-
-  <h3>
-    Does it work on iPhone and Android?
-  </h3>
-
+  
+  <h3>Does it work on iPhone and Android?</h3>
   <p>
-    Yes. Since it runs entirely in the browser, it works on iPhone,
-    Android, tablet, or desktop.
+    Yes. Since it runs entirely in the browser, it works on iPhone, Android, tablet, or desktop.
   </p>
-
-
-  <h3>
-    Why isn't there a native app version?
-  </h3>
-
+  
+  <h3>Why isn't there a native app version?</h3>
   <p>
-    A browser-based tool means no download size, no OS-specific updates,
-    and no app store approval delays — you get the AI diagnosis directly
+    A browser-based tool means no download size, no OS-specific updates, and no app store approval delays — you get the AI diagnosis directly
     from your browser.
   </p>
-
-
-  <h3>
-    Is the engine sound diagnosis app free?
-  </h3>
-
+  
+  <h3>Is the engine sound diagnosis app free?</h3>
   <p>
-    Yes. There's no signup, subscription, or in-app purchase.
-    Upload or record the sound and get an AI-ranked diagnosis at no cost.
+    Yes. There's no signup, subscription, or in-app purchase. Upload or record the sound and get an AI-ranked diagnosis at no cost.
   </p>
-
-
-  <h3>
-    What can the AI diagnose from an engine sound recording?
-  </h3>
-
+  
+  <h3>What can the AI diagnose from an engine sound recording?</h3>
   <p>
-    Common engine acoustic faults including ticking, knocking,
-    rattling, whining, and squealing, along with likely component-level
+    Common engine acoustic faults including ticking, knocking, rattling, whining, and squealing, along with likely component-level
     causes and a confidence score.
   </p>
-
 </section>
 
-
 <!-- CROSS LINK -->
-
-<div
-  class="crosslink-banner"
-  aria-label="Related tool"
->
-
+<div class="crosslink-banner" aria-label="Related tool">
   <div>
-
-    <strong>
-      Not sure which noise you're hearing?
-    </strong>
-
-    <p>
-      The full sound analyzer breaks down different noise types
-      with dedicated diagnostic pages.
-    </p>
-
+    <strong>Not sure which noise you're hearing?</strong>
+    <p>The full sound analyzer breaks down different noise types with dedicated diagnostic pages.</p>
   </div>
-
-
-  <a
-    href="https://carithm.vercel.app/audio"
-    class="crosslink-btn"
-  >
+  <a href="https://carithm.vercel.app/audio" class="crosslink-btn">
     Open Full Sound Analyzer →
   </a>
-
 </div>
 
+<!-- BOTTOM AD -->
+<div class="ad-container">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5227538935323998"
+       data-ad-slot="2586309463"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <Here is the complete and corrected HTML. The Streamlit iframe mask (the black bottom bar) is perfectly integrated to hide the Streamlit branding/footer. 
+
+I also noticed that your code was cut off at the very end (missing the closing tags for the footer, body, and HTML), so I have completed the structure for you.
+
+```html
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<script async src="[https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1](https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+
+  // Dwell Time Tracker
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
+      }
+    }, interval * 1000);
+  })();
+
+  // Iframe PostMessage Listener
+  window.addEventListener('message', function(event) {
+    if (event.origin !== '[https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app](https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app)') return;
+    const data = event.data;
+    if (data && data.type === 'streamlit_analytics') {
+      if (typeof gtag === 'function') {
+        gtag('event', data.eventName, {
+          'event_category': data.eventCategory || 'Carithm Tool',
+          'event_label': data.eventLabel || '',
+          'value': data.eventValue || 0
+        });
+      }
+    }
+  });
+</script>
+
+<!-- Google AdSense Global Script -->
+<script
+  async
+  src="[https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998](https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998)"
+  crossorigin="anonymous">
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine Sound Diagnostic AI Web App | Carithm</title>
+
+<meta name="description" content="A free engine sound diagnostic AI web app — record or upload the noise right in your browser and get an instant AI diagnosis. No download, no signup.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="[https://carithm.vercel.app/audio/app](https://carithm.vercel.app/audio/app)">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Engine Sound Diagnostic AI Web App | Carithm">
+<meta property="og:description" content="A free engine sound diagnostic AI web app that runs instantly in your phone or desktop browser — no app store, no install, no signup.">
+<meta property="og:url" content="[https://carithm.vercel.app/audio/app](https://carithm.vercel.app/audio/app)">
+<meta property="og:image" content="[https://carithm.vercel.app/car.png](https://carithm.vercel.app/car.png)">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Engine Sound Diagnostic AI Web App | Carithm">
+<meta name="twitter:description" content="Upload or record your engine noise and get an instant AI diagnosis — a free web app, no download required.">
+<meta name="twitter:image" content="[https://carithm.vercel.app/car.png](https://carithm.vercel.app/car.png)">
+
+<link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)" crossorigin>
+<link rel="preconnect" href="[https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app](https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app)">
+<link href="[https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
+
+<!-- WebApplication Schema -->
+<script type="application/ld+json">
+{
+  "@context":"[https://schema.org](https://schema.org)",
+  "@type":"WebApplication",
+  "name":"Carithm Engine Sound Diagnostic AI Web App",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Web",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"USD"
+  },
+  "description":"Free engine sound diagnostic AI app that runs in any browser. Record or upload an engine noise and get an instant AI diagnosis — no download or signup required.",
+  "url":"[https://carithm.vercel.app/audio/app](https://carithm.vercel.app/audio/app)",
+  "author":{
+    "@type":"Organization",
+    "name":"Carithm"
+  },
+  "publisher":{
+    "@type":"Organization",
+    "name":"Carithm"
+  },
+  "dateModified":"2026-08-06"
+}
+</script>
+
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+  "@context":"[https://schema.org](https://schema.org)",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Home",
+      "item":"[https://carithm.vercel.app/](https://carithm.vercel.app/)"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"AI Car Sound Analyzer",
+      "item":"[https://carithm.vercel.app/audio](https://carithm.vercel.app/audio)"
+    },
+    {
+      "@type":"ListItem",
+      "position":3,
+      "name":"Engine Sound Diagnostic AI Web App",
+      "item":"[https://carithm.vercel.app/audio/app](https://carithm.vercel.app/audio/app)"
+    }
+  ]
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context":"[https://schema.org](https://schema.org)",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Is there an engine sound diagnostic AI app I can download?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"There's nothing to download from an app store. Carithm works as a browser-based engine sound diagnostic AI app — open it on your phone or desktop, upload or record a noise, and get an instant diagnosis. No install, no update prompts, no storage used."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Is this the same as an audio diagnosis app or engine noise analysis app?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. Carithm functions as an audio diagnosis app and engine noise analysis app in one — it listens to your recording, filters out background noise, and reports likely mechanical fault areas with a confidence score."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Does it work on iPhone and Android?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. Since it runs entirely in the browser, it works on iPhone, Android, tablet, or desktop."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Why isn't there a native app version?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"A browser-based tool means no download size, no OS-specific updates, and no app store approval delays."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Is the engine sound diagnosis app free?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. There's no signup, subscription, or in-app purchase. Upload or record the sound and get an AI-ranked diagnosis at no cost."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"What can the AI diagnose from an engine sound recording?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Common engine acoustic faults including ticking, knocking, rattling, whining, and squealing, along with likely component-level causes and a confidence score."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#09090b">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="preload" href="[https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2](https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)" as="font" type="font/woff2" crossorigin>
+
+<style>
+:root {
+  --bg: #09090b;
+  --surface: #111113;
+  --surface2: #18181b;
+  --surface3: #27272a;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.13);
+  --text: #fafafa;
+  --muted: #a1a8b3;
+  --muted2: #71717a;
+  --accent: #2f81f7;
+  --accent-dim: rgba(47,129,247,0.1);
+  --accent-glow: rgba(47,129,247,0.22);
+  --green: #22c55e;
+  --green-dim: rgba(34,197,94,0.1);
+  --amber: #f59e0b;
+  --amber-dim: rgba(245,158,11,0.1);
+  --red: #ef4444;
+  --red-dim: rgba(239,68,68,0.1);
+  --r: 12px;
+  --r-sm: 8px;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(9,9,11,0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-logo span {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color .2s;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #fff;
+}
+
+.nav .cta-btn {
+  background: var(--accent-dim);
+  border: 1px solid rgba(47,129,247,0.3);
+  color: var(--accent);
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.nav .cta-btn:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 24px 40px;
+}
+
+.ad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  min-height: 100px;
+}
+
+.ad-container .ad-label {
+  font-size: 10px;
+  color: var(--muted2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.breadcrumb {
+  font-size: 12.5px;
+  color: var(--muted2);
+  margin-bottom: 18px;
+}
+
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent);
+}
+
+.breadcrumb .sep {
+  margin: 0 6px;
+  color: var(--muted2);
+}
+
+.breadcrumb .current {
+  color: var(--muted);
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 5vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 14px;
+  line-height: 1.12;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 44px;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  margin-top: 22px;
+}
+
+p {
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+ul, ol {
+  color: var(--muted);
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin: 22px 0 8px;
+}
+
+.trust-strip > div {
+  padding: 16px 10px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+
+.trust-strip > div:last-child {
+  border-right: none;
+}
+
+.trust-num {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.trust-num span {
+  color: var(--accent);
+}
+
+.trust-lbl {
+  font-size: 10px;
+  color: var(--muted2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 3px;
+}
+
+/* NORMAL CARD SPACING */
+.card {
+  background: var(--surface);
+  padding: 26px;
+  border-radius: var(--r);
+  margin-top: 44px;
+  border: 1px solid var(--border);
+}
+
+.card.tool {
+  border-color: rgba(47,129,247,0.25);
+}
+
+.card.tool.tool-wide {
+  max-width: 1100px;
+  width: 100%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* STREAMLIT */
+.streamlit-embed-wrap {
+  position: relative;
+  --streamlit-height: min(1200px, 90vh);
+  margin-top: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  background: var(--surface2);
+  resize: vertical;
+}
+
+.streamlit-embed {
+  display: block;
+  width: 100%;
+  height: var(--streamlit-height);
+  min-height: 640px;
+  border: 0;
+  background: var(--bg);
+}
+
+/* RESTORED BLACK STREAMLIT BOTTOM BAR */
+.iframe-brand-mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  background: var(--surface2);
+  z-index: 99999;
+  pointer-events: auto;
+  border-top: 1px solid var(--border);
+  cursor: default;
+}
+
+.iframe-fallback {
+  display: none;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.iframe-fallback p {
+  margin-bottom: 14px;
+}
+
+.iframe-fallback a.crosslink-btn {
+  display: inline-block;
+}
+
+.compare-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.compare-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 18px 20px;
+}
+
+.compare-col.win {
+  border-color: rgba(34,197,94,0.3);
+  background: linear-gradient(135deg, rgba(34,197,94,0.06), var(--surface));
+}
+
+.compare-col h4 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted2);
+}
+
+.compare-col.win h4 {
+  color: var(--green);
+}
+
+.compare-col ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.compare-col li {
+  font-size: 13.5px;
+  margin-bottom: 8px;
+}
+
+.crosslink-banner {
+  background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
+  border: 1px solid rgba(47,129,247,0.25);
+  border-radius: var(--r);
+  padding: 22px 26px;
+  margin-top: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.crosslink-banner p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.crosslink-banner strong {
+  color: var(--text);
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.crosslink-btn {
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: var(--r-sm);
+  text-decoration: none;
+  font-size: 13px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.crosslink-btn:hover {
+  opacity: 0.88;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.related-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 14px 16px;
+  text-decoration: none;
+  display: block;
+  transition: border-color .2s, transform .2s;
+}
+
+.related-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.related-card .rc-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted2);
+  margin-bottom: 4px;
+}
+
+.related-card .rc-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+footer.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 24px 24px;
+  margin-top: 60px;
+  background: var(--surface);
+}
+
+.footer-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.footer-links a {
+  font-size: 12.5px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  font-size: 11.5px;
+  color: var(--muted2);
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+@media (max-width: 900px) {
+  .streamlit-embed-wrap {
+    --streamlit-height: min(1000px, 85vh);
+  }
+}
+
+@media (max-width: 620px) {
+  header {
+    padding: 0.9rem 1.1rem;
+  }
+  .nav a:not(.cta-btn) {
+    display: none;
+  }
+  .nav .cta-btn {
+    padding: 0.65rem 1.1rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .trust-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+  main {
+    padding: 32px 16px 32px;
+  }
+  h1 {
+    line-height: 1.18;
+  }
+  h2 {
+    margin-top: 34px;
+  }
+  .card {
+    padding: 20px;
+    margin-top: 44px;
+  }
+  .compare-strip {
+    grid-template-columns: 1fr;
+  }
+  .related-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .crosslink-banner {
+    padding: 18px 20px;
+  }
+  .crosslink-btn {
+    width: 100%;
+    text-align: center;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-links a {
+    padding: 4px 0;
+    display: inline-block;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="[https://carithm.vercel.app/](https://carithm.vercel.app/)" class="nav-logo">
+    Carithm<span>AI</span>
+  </a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="[https://carithm.vercel.app/](https://carithm.vercel.app/)">Home</a>
+    <a href="[https://carithm.vercel.app/toyota](https://carithm.vercel.app/toyota)">Toyota</a>
+    <a href="[https://carithm.vercel.app/bmw](https://carithm.vercel.app/bmw)">BMW</a>
+    <a href="[https://carithm.vercel.app/mercedes](https://carithm.vercel.app/mercedes)">Mercedes</a>
+    <a href="[https://carithm.vercel.app/research](https://carithm.vercel.app/research)">Research</a>
+    <a href="[https://carithm.vercel.app/audio](https://carithm.vercel.app/audio)">Audio Diagnosis</a>
+    <a href="#try" class="cta-btn">Try It Free</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="[https://carithm.vercel.app/](https://carithm.vercel.app/)">Home</a>
+  <span class="sep">/</span>
+  <a href="[https://carithm.vercel.app/audio](https://carithm.vercel.app/audio)">AI Car Sound Analyzer</a>
+  <span class="sep">/</span>
+  <span class="current">Engine Sound Diagnostic AI Web App</span>
+</nav>
+
+<!-- TOP AD -->
+<div class="ad-container">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-5227538935323998"
+    data-ad-slot="6469714155"
+    data-ad-format="auto"
+    data-full-width-responsive="true">
+  </ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+<!-- HERO -->
+<section>
+  <div class="eyebrow">Carithm Audio Intelligence</div>
+  <h1>Engine Sound Diagnostic AI App: Diagnose Noises Instantly, No Download</h1>
+  <p>
+    Searching for an engine sound diagnostic AI app? You don't need to find one in the App Store or Play Store. Carithm runs entirely in your phone or desktop browser — open the page, upload or record the noise, and get an instant AI diagnosis. Nothing to install, nothing to update.
+  </p>
+  <p>
+    It works exactly like the app you were picturing — record the sound, get a ranked breakdown of likely causes — just without the download step.
+  </p>
+  <div class="trust-strip">
+    <div>
+      <div class="trust-num">0MB</div>
+      <div class="trust-lbl">To Download</div>
+    </div>
+    <div>
+      <div class="trust-num">Free</div>
+      <div class="trust-lbl">No Signup</div>
+    </div>
+    <div>
+      <div class="trust-num">~5s</div>
+      <div class="trust-lbl">Analysis Time</div>
+    </div>
+    <div>
+      <div class="trust-num">iOS + Android</div>
+      <div class="trust-lbl">Same Experience</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT BEFORE TOOL #1 -->
+<section>
+  <h2>What Is That Sound Coming From Your Car?</h2>
+  <p>
+    A strange car sound can be difficult to identify just by listening to it. A ticking noise, whining sound, rattle, squeal, or knock can come from completely different parts of the vehicle depending on when the sound happens and how it changes with engine speed.
+  </p>
+  <p>
+    That's why recording the sound can be useful. Instead of trying to describe the noise with words like "weird," "loud," or "metallic," you can let an acoustic analysis system examine the actual recording and look for patterns associated with common mechanical problems.
+  </p>
+</section>
+
+<!-- CONTENT BEFORE TOOL #2 -->
+<section>
+  <h2>Common Car Sounds You May Be Hearing</h2>
+  <p>
+    The sound you're hearing may fall into one of several common categories. Identifying the general type of noise is a useful first step before investigating the underlying cause.
+  </p>
+  <div class="compare-strip">
+    <div class="compare-col">
+      <h4>Engine & Mechanical Sounds</h4>
+      <ul>
+        <li><strong>Ticking</strong> — may be related to valvetrain or injector activity</li>
+        <li><strong>Knocking</strong> — can indicate a more serious internal engine issue</li>
+        <li><strong>Rattling</strong> — may come from loose components or heat shields</li>
+        <li><strong>Whining</strong> — can be associated with rotating components</li>
+      </ul>
+    </div>
+    <div class="compare-col">
+      <h4>Other Vehicle Sounds</h4>
+      <ul>
+        <li><strong>Squealing</strong> — commonly associated with belts or pulleys</li>
+        <li><strong>Grinding</strong> — may involve brakes or other mechanical components</li>
+        <li><strong>Humming</strong> — can change with vehicle speed</li>
+        <li><strong>Clicking</strong> — may become more noticeable while turning</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT BEFORE TOOL #3 -->
+<section>
+  <h2>How to Record a Car Noise for Diagnosis</h2>
+  <p>
+    For the best result, make a recording where the unusual sound is clearly audible. Try to avoid music, conversations, heavy wind, or other background noise covering the vehicle sound.
+  </p>
+  <ol>
+    <li>Park somewhere relatively quiet and safe.</li>
+    <li>Record several seconds before the unusual sound occurs.</li>
+    <li>Capture the sound at the moment it becomes noticeable.</li>
+    <li>If safe to do so, record how the sound changes with engine RPM or vehicle movement.</li>
+    <li>Don't place your phone near moving belts, fans, wheels, or other dangerous components.</li>
+  </ol>
+  <p>
+    A longer recording isn't necessarily better. What matters most is that the unusual sound is clearly captured without excessive background noise.
+  </p>
+</section>
+
+<!-- ========================= -->
+<!-- STREAMLIT TOOL            -->
+<!-- ========================= -->
+<section class="card tool tool-wide" id="try">
+  <h2 style="margin-top:0;">Try the Engine Sound Diagnostic AI App</h2>
+  <p>
+    Ready to identify the sound? Record the noise directly in your browser or upload an existing recording. Carithm analyzes the audio and returns AI-ranked possible causes with a confidence score.
+  </p>
+
+  <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
+    <iframe
+      id="streamlitFrame"
+      class="streamlit-embed"
+      src="[https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/?embed=true](https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/?embed=true)"
+      title="Carithm Engine Sound Diagnostic AI App"
+      loading="lazy"
+      allow="microphone; clipboard-write"
+      onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';">
+    </iframe>
+
+    <!-- BLACK BOTTOM BAR -->
+    <div class="iframe-brand-mask"></div>
+
+    <!-- FALLBACK -->
+    <div class="iframe-fallback" id="iframeFallback">
+      <p>The analyzer tool couldn't load in this view.</p>
+      <a class="crosslink-btn" href="[https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/](https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/)" target="_blank" rel="noopener">
+        Open the Analyzer in a New Tab →
+      </a>
+    </div>
+  </div>
+
+  <noscript>
+    <p class="note">
+      This tool requires JavaScript to load the embedded app.
+      <a href="[https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/](https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/)" target="_blank" rel="noopener">
+        Open it directly here.
+      </a>
+    </p>
+  </noscript>
+</section>
+
+<!-- POST TOOL CONTENT -->
+<section>
+  <h2>What Can an Engine Sound Diagnostic AI Analyze?</h2>
+  <p>
+    Carithm is designed to analyze audible patterns in vehicle recordings and identify areas that may deserve further investigation. Depending on the recording, this can include sounds such as:
+  </p>
+  <ul>
+    <li>Ticking and tapping</li>
+    <li>Knocking</li>
+    <li>Rattling</li>
+    <li>Whining</li>
+    <li>Squealing</li>
+    <li>Grinding</li>
+    <li>Clicking</li>
+    <li>Humming and droning</li>
+  </ul>
+  <p>
+    An audio diagnosis is a starting point rather than a replacement for a physical inspection. If a sound is severe, suddenly appears, or is accompanied by warning lights, loss of power, smoke, overheating, or other symptoms, stop driving when it is safe to do so and have the vehicle inspected.
+  </p>
+</section>
+
+<!-- WHY BROWSER APP -->
+<section>
+  <h2>Why Isn't There a Native App to Download?</h2>
+  <p>
+    Most people searching for an engine sound diagnostic AI app expect to open an app store, tap install, wait for it to download, then open it. Carithm skips all of that — the browser version gives you the same core function without the overhead.
+  </p>
+  <div class="compare-strip">
+    <div class="compare-col">
+      <h4>Native App</h4>
+      <ul>
+        <li>Download and install first</li>
+        <li>Uses storage space on your phone</li>
+        <li>Waits on app store review for updates</li>
+        <li>iOS and Android need separate versions</li>
+      </ul>
+    </div>
+    <div class="compare-col win">
+      <h4>Carithm (Browser)</h4>
+      <ul>
+        <li>Open the page, start recording immediately</li>
+        <li>Zero storage used</li>
+        <li>Updates instantly, no app store wait</li>
+        <li>Identical experience on iPhone, Android, or desktop</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IT DETECTS -->
+<section>
+  <h2>What Can This Engine Sound Diagnostic AI App Detect?</h2>
+  <p>
+    The system looks at acoustic patterns associated with common vehicle noises and can help narrow down areas worth investigating.
+  </p>
+  <ul>
+    <li><strong>Ticking or tapping</strong> — often lifter, valvetrain, or injector-related</li>
+    <li><strong>Knocking</strong> — commonly associated with internal engine problems</li>
+    <li><strong>Rattling</strong> — loose heat shields, brackets, or other components</li>
+    <li><strong>Whining</strong> — rotating components such as pumps, alternators, or bearings</li>
+    <li><strong>Squealing</strong> — belts, tensioners, or pulleys</li>
+    <li><strong>Grinding</strong> — brakes or other mechanical components</li>
+  </ul>
+  <p>
+    Not sure which one you're hearing?
+    <a href="[https://carithm.vercel.app/audio](https://carithm.vercel.app/audio)" style="color:var(--accent);font-weight:600;">
+      Open the full AI Car Sound Analyzer
+    </a>
+    for more detailed noise-specific information.
+  </p>
+</section>
+
+<!-- FAQ -->
+<section>
+  <h2 id="faq">Frequently Asked Questions</h2>
+  <h3>Is there an engine sound diagnostic AI app I can download?</h3>
+  <p>
+    There's nothing to download from an app store. Carithm works as a browser-based engine sound diagnostic AI app — open it on your phone or desktop, upload or record a noise, and get an instant diagnosis. No install, no update prompts, no storage used.
+  </p>
+  <h3>Is this the same as an audio diagnosis app or engine noise analysis app?</h3>
+  <p>
+    Yes. Carithm functions as an audio diagnosis app and engine noise analysis app in one — it listens to your recording and reports likely mechanical fault areas with a confidence score.
+  </p>
+  <h3>Does it work on iPhone and Android?</h3>
+  <p>
+    Yes. Since it runs entirely in the browser, it works on iPhone, Android, tablet, or desktop.
+  </p>
+  <h3>Why isn't there a native app version?</h3>
+  <p>
+    A browser-based tool means no download size, no OS-specific updates, and no app store approval delays — you get the AI diagnosis directly from your browser.
+  </p>
+  <h3>Is the engine sound diagnosis app free?</h3>
+  <p>
+    Yes. There's no signup, subscription, or in-app purchase. Upload or record the sound and get an AI-ranked diagnosis at no cost.
+  </p>
+  <h3>What can the AI diagnose from an engine sound recording?</h3>
+  <p>
+    Common engine acoustic faults including ticking, knocking, rattling, whining, and squealing, along with likely component-level causes and a confidence score.
+  </p>
+</section>
+
+<!-- CROSS LINK -->
+<div class="crosslink-banner" aria-label="Related tool">
+  <div>
+    <strong>Not sure which noise you're hearing?</strong>
+    <p>The full sound analyzer breaks down different noise types with dedicated diagnostic pages.</p>
+  </div>
+  <a href="[https://carithm.vercel.app/audio](https://carithm.vercel.app/audio)" class="crosslink-btn">
+    Open Full Sound Analyzer →
+  </a>
+</div>
 
 <!-- BOTTOM AD -->
-
 <div class="ad-container">
-
-  <span class="ad-label">
-    Advertisement
-  </span>
-
-  <ins
-    class="adsbygoogle"
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle"
     style="display:block"
     data-ad-client="ca-pub-5227538935323998"
     data-ad-slot="2586309463"
     data-ad-format="auto"
     data-full-width-responsive="true">
   </ins>
-
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
-
 </div>
 
-
 <!-- RELATED PAGES -->
-
 <section style="margin-top:44px;">
-
-  <div class="eyebrow">
-    Also on Carithm
-  </div>
-
-
-  <h2 style="margin-top:8px;">
-    Diagnose a Specific Noise
-  </h2>
-
-
-  <p>
-    Match your exact sound to a dedicated breakdown of likely causes.
-  </p>
-
-
+  <div class="eyebrow">Also on Carithm</div>
+  <h2 style="margin-top:8px;">Diagnose a Specific Noise</h2>
+  <p>Match your exact sound to a dedicated breakdown of likely causes.</p>
   <div class="related-grid">
-
-
-    <a
-      class="related-card"
-      href="https://carithm.vercel.app/audio/rattling-noise"
-    >
-
-      <div class="rc-label">
-        Noise Type
-      </div>
-
-      <div class="rc-title">
-        Rattling Noise
-      </div>
-
+    <a class="related-card" href="[https://carithm.vercel.app/audio/rattling-noise](https://carithm.vercel.app/audio/rattling-noise)">
+      <div class="rc-label">Noise Type</div>
+      <div class="rc-title">Rattling Noise</div>
     </a>
-
-
-    <a
-      class="related-card"
-      href="https://carithm.vercel.app/audio/whining-noise"
-    >
-
-      <div class="rc-label">
-        Noise Type
-      </div>
-
-      <div class="rc-title">
-        Whining Noise
-      </div>
-
+    <a class="related-card" href="[https://carithm.vercel.app/audio/whining-noise](https://carithm.vercel.app/audio/whining-noise)">
+      <div class="rc-label">Noise Type</div>
+      <div class="rc-title">Whining Noise</div>
     </a>
-
-
-    <a
-      class="related-card"
-      href="https://carithm.vercel.app/audio/knocking-noise"
-    >
-
-      <div class="rc-label">
-        Noise Type
-      </div>
-
-      <div class="rc-title">
-        Knocking Noise
-      </div>
-
+    <a class="related-card" href="[https://carithm.vercel.app/audio/knocking-noise](https://carithm.vercel.app/audio/knocking-noise)">
+      <div class="rc-label">Noise Type</div>
+      <div class="rc-title">Knocking Noise</div>
     </a>
-
-
-    <a
-      class="related-card"
-      href="https://carithm.vercel.app/audio/grinding-noise"
-    >
-
-      <div class="rc-label">
-        Noise Type
-      </div>
-
-      <div class="rc-title">
-        Grinding Noise
-      </div>
-
+    <a class="related-card" href="[https://carithm.vercel.app/audio/grinding-noise](https://carithm.vercel.app/audio/grinding-noise)">
+      <div class="rc-label">Noise Type</div>
+      <div class="rc-title">Grinding Noise</div>
     </a>
-
-
-    <a
-      class="related-card"
-      href="https://carithm.vercel.app/audio/squealing-noise"
-    >
-
-      <div class="rc-label">
-        Noise Type
-      </div>
-
-      <div class="rc-title">
-        Squealing Noise
-      </div>
-
+    <a class="related-card" href="[https://carithm.vercel.app/audio/squealing-noise](https://carithm.vercel.app/audio/squealing-noise)">
+      <div class="rc-label">Noise Type</div>
+      <div class="rc-title">Squealing Noise</div>
     </a>
-
-
-    <a
-      class="related-card"
-      href="https://carithm.vercel.app/audio/clicking-noise"
-    >
-
-      <div class="rc-label">
-        Noise Type
-      </div>
-
-      <div class="rc-title">
-        Clicking Noise
-      </div>
-
+    <a class="related-card" href="[https://carithm.vercel.app/audio/clicking-noise](https://carithm.vercel.app/audio/clicking-noise)">
+      <div class="rc-label">Noise Type</div>
+      <div class="rc-title">Clicking Noise</div>
     </a>
-
   </div>
-
 </section>
-
-
 </main>
 
-
 <!-- FOOTER -->
-
 <footer class="site-footer">
-
   <div class="footer-inner">
-
     <div class="footer-links">
-
-      <a href="https://carithm.vercel.app/">
-        Carithm Home
-      </a>
-
-      <a href="https://carithm.vercel.app/audio">
-        AI Car Sound Analyzer
-      </a>
-
-      <a href="https://carithm.vercel.app/toyota">
-        Toyota Repair Cost Guide
-      </a>
-
-      <a href="https://carithm.vercel.app/bmw">
-        BMW Repair Cost Guide
-      </a>
-
-      <a href="https://carithm.vercel.app/mercedes">
-        Mercedes Maintenance Guide
-      </a>
-
-      <a href="https://carithm.vercel.app/research">
-        Research & Methodology
-      </a>
-
+      <a href="[https://carithm.vercel.app/](https://carithm.vercel.app/)">Carithm Home</a>
+      <a href="[https://carithm.vercel.app/audio](https://carithm.vercel.app/audio)">AI Car Sound Analyzer</a>
     </div>
-
-
-    <div class="footer-bottom">
-
-      © 2026 Carithm.
-      Engine Sound Diagnostic AI App —
-      decision-support tool.
-      Not a substitute for physical inspection.
-
-    </div>
-
   </div>
-
 </footer>
-
 
 </body>
 </html>
