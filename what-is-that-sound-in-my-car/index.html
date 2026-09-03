@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>What Is That Sound in My Car? | Identify Car Noises</title>
+  <meta
+    name="description"
+    content="What is that sound in your car? Record or upload a strange car noise and use Carithm AI to identify possible causes, from rattles and squeals to ticking, knocking and whining sounds."
+  />
+
+  <link
+    rel="canonical"
+    href="https://carithm.vercel.app/what-is-that-sound-in-my-car"
+  />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="What Is That Sound in My Car? | Carithm AI" />
+  <meta
+    property="og:description"
+    content="Hear a strange noise from your car? Record it and use AI to investigate possible causes."
+  />
+  <meta
+    property="og:url"
+    content="https://carithm.vercel.app/what-is-that-sound-in-my-car"
+  />
+
+  <meta name="twitter:card" content="summary" />
+  <meta
+    name="twitter:title"
+    content="What Is That Sound in My Car? | Carithm AI"
+  />
+  <meta
+    name="twitter:description"
+    content="Record or upload a strange car noise and investigate possible causes with Carithm AI."
+  />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TCCEJ6DCM1');
+  </script>
+
+  <!-- Google AdSense / Auto Ads -->
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998"
+    crossorigin="anonymous"
+  ></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Carithm AI Car Sound Diagnoser",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "url": "https://carithm.vercel.app/what-is-that-sound-in-my-car",
+    "description": "AI-powered car sound diagnosis tool that analyzes recorded vehicle noises and provides possible mechanical causes.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Carithm AI"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Carithm AI",
+        "item": "https://carithm.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "What Is That Sound in My Car?",
+        "item": "https://carithm.vercel.app/what-is-that-sound-in-my-car"
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let start = Date.now();
+
+      window.addEventListener("beforeunload", function () {
+        let seconds = Math.round((Date.now() - start) / 1000);
+        if (typeof gtag === "function") {
+          gtag("event", "page_dwell", {
+            dwell_seconds: seconds,
+            page_path: window.location.pathname
+          });
+        }
+      });
+
+      window.addEventListener("message", function (event) {
+        if (
+          event.origin !==
+          "https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app"
+        ) return;
+
+        if (event.data && event.data.height) {
+          const frame = document.getElementById("streamlitFrame");
+          if (frame) {
+            frame.style.height = Math.max(700, event.data.height) + "px";
+          }
+        }
+      });
+    });
+  </script>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --surface2: #f1f5f9;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --green: #15803d;
+      --max: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: auto;
+      padding: 24px 20px 70px;
+    }
+
+    .ad-container {
+      width: 100%;
+      min-height: 90px;
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .breadcrumb {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 7vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin: 0 0 20px;
+    }
+
+    h2 {
+      font-size: 27px;
+      line-height: 1.2;
+      letter-spacing: -0.7px;
+      margin: 48px 0 16px;
+    }
+
+    h3 {
+      font-size: 19px;
+      line-height: 1.3;
+      margin: 28px 0 10px;
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    ul,
+    ol {
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .hero-copy {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 24px 0 10px;
+    }
+
+    .trust-strip span {
+      padding: 7px 11px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+      padding: 24px;
+      margin-top: 24px;
+    }
+
+    .card.tool {
+      background: var(--bg);
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .card.tool.tool-wide {
+      width: 100%;
+    }
+
+    .tool-heading {
+      padding: 26px 24px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tool-heading h2 {
+      margin: 0 0 8px;
+    }
+
+    .tool-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .streamlit-embed-wrap {
+      position: relative;
+      width: 100%;
+      min-height: 760px;
+      overflow: hidden;
+      background: var(--surface2);
+    }
+
+    .streamlit-embed {
+      display: block;
+      width: 100%;
+      height: 820px;
+      border: 0;
+      background: var(--surface2);
+    }
+
+    .iframe-brand-mask {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 44px;
+      background: var(--surface2);
+      z-index: 99999;
+      pointer-events: auto;
+      border-top: 1px solid var(--border);
+      cursor: default;
+    }
+
+    .iframe-fallback {
+      display: none;
+      padding: 40px 24px;
+      text-align: center;
+      background: var(--surface2);
+    }
+
+    .crosslink-banner {
+      margin: 50px 0 20px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+    }
+
+    .crosslink-btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 11px 16px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+    }
+
+    .crosslink-btn:hover {
+      background: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    .compare-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .compare-col {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .compare-col.win {
+      border-color: #bfdbfe;
+      background: #eff6ff;
+    }
+
+    .compare-col strong {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .related-card {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .related-card strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a:nth-child(n+3) {
+        display: none;
+      }
+
+      main {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .compare-strip,
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .card.tool {
+        padding: 0;
+      }
+
+      .streamlit-embed {
+        height: 850px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="/">Carithm AI</a>
+
+    <div class="nav-links">
+      <a href="/audio">Car Sound Diagnoser</a>
+      <a href="/audio/app">Engine Sound AI</a>
+      <a href="/research">Research</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <div class="breadcrumb">
+    <a href="/">Carithm AI</a> /
+    <span>What Is That Sound in My Car?</span>
+  </div>
+
+  <section>
+    <div class="eyebrow">AI CAR SOUND DIAGNOSIS</div>
+
+    <h1>WHAT IS THAT SOUND IN MY CAR?</h1>
+
+    <p class="hero-copy">
+      Hearing a strange noise from your car and have no idea what it means?
+      Record or upload the sound and use Carithm AI to investigate possible
+      causes. It can help analyze noises such as ticking, tapping, rattling,
+      squealing, whining, grinding, clicking and knocking.
+    </p>
+
+    <div class="trust-strip">
+      <span>Record a sound</span>
+      <span>Upload audio</span>
+      <span>AI analysis</span>
+      <span>Possible causes</span>
+      <span>No download required</span>
+    </div>
+  </section>
+
+
+  <!-- CONTENT BEFORE TOOL -->
+
+  <section>
+    <h2>What Is That Sound in My Car?</h2>
+
+    <p>
+      A new car noise can be difficult to identify because several mechanical
+      problems can produce similar sounds. A high-pitched squeal might come
+      from a belt or pulley, while a repetitive ticking noise could have a
+      completely different source.
+    </p>
+
+    <p>
+      Instead of trying to describe the noise with words alone, you can use an
+      actual recording as an additional source of information. Carithm analyzes
+      the sound and ranks possible mechanical causes based on the audio and
+      other information you provide.
+    </p>
+
+    <p>
+      The result is intended as a diagnostic starting point — not a replacement
+      for a professional inspection.
+    </p>
+  </section>
+
+
+  <section>
+    <h2>What Kind of Car Noises Can You Identify?</h2>
+
+    <p>
+      Different noises can point toward different areas of a vehicle. The exact
+      cause depends on the vehicle, when the noise occurs, engine speed,
+      driving conditions and other symptoms.
+    </p>
+
+    <div class="compare-strip">
+      <div class="compare-col win">
+        <strong>Engine &amp; mechanical sounds</strong>
+        <ul>
+          <li>Ticking and tapping</li>
+          <li>Knocking sounds</li>
+          <li>Rattling</li>
+          <li>Whining</li>
+          <li>Clicking</li>
+        </ul>
+      </div>
+
+      <div class="compare-col">
+        <strong>Other common noises</strong>
+        <ul>
+          <li>Squealing</li>
+          <li>Grinding</li>
+          <li>Humming or droning</li>
+          <li>Scraping</li>
+          <li>Unusual vibration-related sounds</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      If you already know what type of noise you are hearing, you can also
+      explore our dedicated guides for
+      <a href="/audio/squealing-noise">squealing</a>,
+      <a href="/audio/rattling-noise">rattling</a>,
+      <a href="/audio/whining-noise">whining</a>, and
+      <a href="/audio/knocking-noise">knocking</a>.
+    </p>
+  </section>
+
+
+  <section>
+    <h2>How to Record a Car Noise for Diagnosis</h2>
+
+    <p>
+      A useful recording can make it easier to investigate an unusual sound.
+      You do not need professional recording equipment — a phone recording can
+      provide useful acoustic information.
+    </p>
+
+    <ol>
+      <li>
+        <strong>Record in a relatively quiet location.</strong>
+        Reduce wind, traffic and background noise when possible.
+      </li>
+
+      <li>
+        <strong>Capture the noise while it is actually happening.</strong>
+        If the sound only occurs during startup, acceleration, braking,
+        steering or driving, try to capture that condition.
+      </li>
+
+      <li>
+        <strong>Keep the phone secure.</strong>
+        Do not place yourself or the recording device near belts, fans,
+        pulleys or other moving components.
+      </li>
+
+      <li>
+        <strong>Describe the symptom.</strong>
+        Mention when the sound happens, whether it changes with RPM or speed,
+        and whether any warning lights are present.
+      </li>
+    </ol>
+  </section>
+
+
+  <section>
+    <h2>Before You Try to Identify the Noise</h2>
+
+    <div class="card">
+      <p>
+        Think about <strong>when</strong> the sound occurs. Does it happen only
+        when the engine is cold? Does it increase with engine RPM? Does it
+        happen while turning, braking, accelerating or going over bumps?
+      </p>
+
+      <p>
+        These details can be just as important as the sound itself because they
+        help narrow down which components could be involved.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- TOOL IS INTENTIONALLY AFTER SUBSTANTIAL CONTENT -->
+
+  <section id="try">
+    <div class="card tool tool-wide">
+
+      <div class="tool-heading">
+        <h2>Try the Car Sound Diagnoser</h2>
+
+        <p>
+          Record or upload the strange sound from your vehicle and let Carithm
+          AI analyze it for possible causes.
+        </p>
+      </div>
+
+      <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
+
+        <iframe
+          id="streamlitFrame"
+          class="streamlit-embed"
+          src="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/?embed=true"
+          title="Carithm AI Car Sound Diagnoser"
+          loading="lazy"
+          allow="microphone; clipboard-write"
+          onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
+        ></iframe>
+
+        <div class="iframe-brand-mask"></div>
+
+        <div class="iframe-fallback" id="iframeFallback">
+          <p>The analyzer tool couldn't load in this view.</p>
+
+          <a
+            class="crosslink-btn"
+            href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/"
+            target="_blank"
+            rel="noopener"
+          >
+            Open the Analyzer in a New Tab →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- POST-TOOL CONTENT -->
+
+  <section>
+    <h2>What Can Car Sound AI Help Investigate?</h2>
+
+    <p>
+      Carithm is designed to help investigate unusual vehicle sounds using
+      recorded audio. Depending on the sound and available information, the
+      analysis may point toward areas such as belts, pulleys, bearings,
+      valvetrain components, exhaust components or other mechanical systems.
+    </p>
+
+    <ul>
+      <li>Engine ticking or tapping</li>
+      <li>Knocking or repetitive mechanical sounds</li>
+      <li>Accessory belt and pulley noises</li>
+      <li>Rattling and vibration-related sounds</li>
+      <li>Whining or humming noises</li>
+      <li>Squealing sounds</li>
+      <li>Grinding or scraping noises</li>
+      <li>Other unusual engine or vehicle sounds</li>
+    </ul>
+  </section>
+
+
+  <section>
+    <h2>Why Use an AI Car Noise Identifier?</h2>
+
+    <div class="compare-strip">
+      <div class="compare-col win">
+        <strong>Start with the actual sound</strong>
+        <p>
+          Instead of relying entirely on a written description such as
+          "weird clicking noise," you can provide an audio recording of what
+          your vehicle is actually doing.
+        </p>
+      </div>
+
+      <div class="compare-col">
+        <strong>Add more context</strong>
+        <p>
+          Vehicle details and symptom descriptions can provide additional
+          context when investigating possible mechanical causes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <h2>Is That Car Noise Serious?</h2>
+
+    <p>
+      The sound alone cannot reliably determine whether a vehicle is safe to
+      drive. Some noises may be relatively minor, while others can indicate a
+      problem that should be inspected quickly.
+    </p>
+
+    <p>
+      If a noise is accompanied by a warning light, loss of power, overheating,
+      smoke, fluid leakage, severe vibration or a sudden change in vehicle
+      behavior, stop driving when it is safe to do so and seek professional
+      assistance.
+    </p>
+
+    <p>
+      Carithm's analysis should be treated as a way to generate possible
+      explanations and questions for further investigation, rather than a
+      definitive mechanical diagnosis.
+    </p>
+  </section>
+
+
+  <section>
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is that sound in my car?</h3>
+    <p>
+      The cause depends on when the sound occurs, how it changes with engine
+      speed or vehicle movement, and what the sound actually sounds like.
+      Recording the noise can provide useful information when investigating
+      possible causes.
+    </p>
+
+    <h3>Can AI identify a car noise?</h3>
+    <p>
+      AI can analyze an audio recording and identify patterns that may be
+      associated with different types of mechanical sounds. Carithm uses this
+      approach to rank possible causes of unusual vehicle noises.
+    </p>
+
+    <h3>Can I diagnose a car problem from a recording?</h3>
+    <p>
+      An audio recording can help narrow down possible causes, but it cannot
+      confirm a mechanical failure on its own. A physical inspection may still
+      be required.
+    </p>
+
+    <h3>What should I record when my car makes a noise?</h3>
+    <p>
+      Try to capture the noise clearly and, when safe, include the condition
+      under which it occurs — such as startup, idle, acceleration, braking,
+      turning or driving over bumps.
+    </p>
+
+    <h3>Do I need to download an app?</h3>
+    <p>
+      No. Carithm's car sound diagnoser runs in your browser, so you can use it
+      without installing a separate application.
+    </p>
+  </section>
+
+
+  <div class="crosslink-banner">
+    <strong>Want a more detailed car sound diagnosis?</strong>
+
+    <p>
+      Use the main Carithm AI car sound diagnostic tool to analyze a recording
+      and provide additional information about the vehicle and symptoms.
+    </p>
+
+    <a class="crosslink-btn" href="/audio">
+      Open the Car Sound Diagnoser →
+    </a>
+  </div>
+
+
+  <section>
+    <h2>Explore Common Car Noises</h2>
+
+    <div class="related-grid">
+
+      <a class="related-card" href="/audio/squealing-noise">
+        <strong>Squealing Noise</strong>
+        <span>Learn about possible causes of a high-pitched squeal.</span>
+      </a>
+
+      <a class="related-card" href="/audio/rattling-noise">
+        <strong>Rattling Noise</strong>
+        <span>Investigate common causes of rattling sounds.</span>
+      </a>
+
+      <a class="related-card" href="/audio/whining-noise">
+        <strong>Whining Noise</strong>
+        <span>Explore possible causes of a whining car sound.</span>
+      </a>
+
+      <a class="related-card" href="/audio/knocking-noise">
+        <strong>Knocking Noise</strong>
+        <span>Learn what different knocking sounds can indicate.</span>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+  <div>
+    © 2026 Carithm AI · AI-powered car sound diagnosis
+  </div>
+</footer>
+
+</body>
+</html>
