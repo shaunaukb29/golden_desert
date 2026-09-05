@@ -119,6 +119,10 @@
   ],
   "rewrites": [
     {
+      "source": "/audio/all-models",
+      "destination": "/audio/src/cardiag/web/static/all-models"
+    },
+    {
       "source": "/audio/gmc-sierra-ticking-noise",
       "destination": "/audio/src/cardiag/web/static/gmc-sierra-ticking-noise"
     },
