@@ -8,80 +8,784 @@
     {
       "source": "/audio/src/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     }
   ],
   "redirects": [
-    { "source": "/toyota/toyota-land-cruiser-maintenance-cost-uae.html", "destination": "/toyota/land-cruiser-maintenance-cost", "permanent": true },
-    { "source": "/toyota/toyota-corolla-service-cost-uae.html", "destination": "/toyota/corolla-service-cost", "permanent": true },
-    { "source": "/toyota/toyota-prado-repair-cost-uae.html", "destination": "/toyota/prado-repair-cost", "permanent": true },
-    { "source": "/bmw/bmw-x5-maintenance-cost-dubai.html", "destination": "/bmw/x5-maintenance-cost", "permanent": true },
-    { "source": "/bmw/bmw-x3-repair-cost-uae.html", "destination": "/bmw/x3-repair-cost", "permanent": true },
-    { "source": "/bmw/bmw-5-series-service-cost-uae.html", "destination": "/bmw/5-series-service-cost", "permanent": true },
-    { "source": "/bmw/bmw-3-series-repair-cost-uae.html", "destination": "/bmw/3-series-repair-cost", "permanent": true },
-    { "source": "/mercedes/mercedes-c200-service-cost-abu-dhabi.html", "destination": "/mercedes/c200-service-cost", "permanent": true },
-    { "source": "/mercedes/mercedes-e300-maintenance-cost-uae.html", "destination": "/mercedes/e300-maintenance-cost", "permanent": true },
-    { "source": "/mercedes/mercedes-gle-350-repair-cost-uae.html", "destination": "/mercedes/gle-350-repair-cost", "permanent": true },
-    { "source": "/mercedes/mercedes-s500-maintenance-cost-uae.html", "destination": "/mercedes/s500-maintenance-cost", "permanent": true },
-    { "source": "/nissan/nissan-patrol-maintenance-cost-uae.html", "destination": "/nissan/patrol-maintenance-cost", "permanent": true },
-    { "source": "/nissan/nissan-altima-service-cost-uae.html", "destination": "/nissan/altima-service-cost", "permanent": true },
-    { "source": "/nissan/nissan-xtrail-repair-cost-uae.html", "destination": "/nissan/xtrail-repair-cost", "permanent": true },
-    { "source": "/honda/honda-accord-repair-cost-uae.html", "destination": "/honda/accord-repair-cost", "permanent": true },
-    { "source": "/honda/honda-civic-maintenance-cost-uae.html", "destination": "/honda/civic-maintenance-cost", "permanent": true },
-    { "source": "/honda/honda-crv-service-cost-uae.html", "destination": "/honda/crv-service-cost", "permanent": true },
-    { "source": "/lexus/lexus-rx350-maintenance-cost-uae.html", "destination": "/lexus/rx350-maintenance-cost", "permanent": true },
-    { "source": "/lexus/lexus-lx570-repair-cost-uae.html", "destination": "/lexus/lx570-repair-cost", "permanent": true },
-    { "source": "/lexus/lexus-es350-service-cost-uae.html", "destination": "/lexus/es350-service-cost", "permanent": true }
+    {
+      "source": "/toyota/toyota-land-cruiser-maintenance-cost-uae.html",
+      "destination": "/toyota/land-cruiser-maintenance-cost",
+      "permanent": true
+    },
+    {
+      "source": "/toyota/toyota-corolla-service-cost-uae.html",
+      "destination": "/toyota/corolla-service-cost",
+      "permanent": true
+    },
+    {
+      "source": "/toyota/toyota-prado-repair-cost-uae.html",
+      "destination": "/toyota/prado-repair-cost",
+      "permanent": true
+    },
+    {
+      "source": "/bmw/bmw-x5-maintenance-cost-dubai.html",
+      "destination": "/bmw/x5-maintenance-cost",
+      "permanent": true
+    },
+    {
+      "source": "/bmw/bmw-x3-repair-cost-uae.html",
+      "destination": "/bmw/x3-repair-cost",
+      "permanent": true
+    },
+    {
+      "source": "/bmw/bmw-5-series-service-cost-uae.html",
+      "destination": "/bmw/5-series-service-cost",
+      "permanent": true
+    },
+    {
+      "source": "/bmw/bmw-3-series-repair-cost-uae.html",
+      "destination": "/bmw/3-series-repair-cost",
+      "permanent": true
+    },
+    {
+      "source": "/mercedes/mercedes-c200-service-cost-abu-dhabi.html",
+      "destination": "/mercedes/c200-service-cost",
+      "permanent": true
+    },
+    {
+      "source": "/mercedes/mercedes-e300-maintenance-cost-uae.html",
+      "destination": "/mercedes/e300-maintenance-cost",
+      "permanent": true
+    },
+    {
+      "source": "/mercedes/mercedes-gle-350-repair-cost-uae.html",
+      "destination": "/mercedes/gle-350-repair-cost",
+      "permanent": true
+    },
+    {
+      "source": "/mercedes/mercedes-s500-maintenance-cost-uae.html",
+      "destination": "/mercedes/s500-maintenance-cost",
+      "permanent": true
+    },
+    {
+      "source": "/nissan/nissan-patrol-maintenance-cost-uae.html",
+      "destination": "/nissan/patrol-maintenance-cost",
+      "permanent": true
+    },
+    {
+      "source": "/nissan/nissan-altima-service-cost-uae.html",
+      "destination": "/nissan/altima-service-cost",
+      "permanent": true
+    },
+    {
+      "source": "/nissan/nissan-xtrail-repair-cost-uae.html",
+      "destination": "/nissan/xtrail-repair-cost",
+      "permanent": true
+    },
+    {
+      "source": "/honda/honda-accord-repair-cost-uae.html",
+      "destination": "/honda/accord-repair-cost",
+      "permanent": true
+    },
+    {
+      "source": "/honda/honda-civic-maintenance-cost-uae.html",
+      "destination": "/honda/civic-maintenance-cost",
+      "permanent": true
+    },
+    {
+      "source": "/honda/honda-crv-service-cost-uae.html",
+      "destination": "/honda/crv-service-cost",
+      "permanent": true
+    },
+    {
+      "source": "/lexus/lexus-rx350-maintenance-cost-uae.html",
+      "destination": "/lexus/rx350-maintenance-cost",
+      "permanent": true
+    },
+    {
+      "source": "/lexus/lexus-lx570-repair-cost-uae.html",
+      "destination": "/lexus/lx570-repair-cost",
+      "permanent": true
+    },
+    {
+      "source": "/lexus/lexus-es350-service-cost-uae.html",
+      "destination": "/lexus/es350-service-cost",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/audio", "destination": "/audio/src/cardiag/web/static/app" },
-    { "source": "/audio/", "destination": "/audio/src/cardiag/web/static/app" },
-    { "source": "/audio/squealing-noise", "destination": "/audio/src/cardiag/web/static/squealing-noise" },
-    { "source": "/audio/squealing-on-startup", "destination": "/audio/src/cardiag/web/static/squealing-on-startup" },
-    { "source": "/audio/squealing-when-accelerating", "destination": "/audio/src/cardiag/web/static/squealing-when-accelerating" },
-    { "source": "/audio/squealing-when-braking", "destination": "/audio/src/cardiag/web/static/squealing-when-braking" },
-    { "source": "/audio/squealing-while-turning", "destination": "/audio/src/cardiag/web/static/squealing-while-turning" },
-    { "source": "/audio/squealing-only-cold", "destination": "/audio/src/cardiag/web/static/squealing-only-cold" },
-    { "source": "/audio/squealing-all-the-time", "destination": "/audio/src/cardiag/web/static/squealing-all-the-time" },
-    { "source": "/audio/clicking-noise", "destination": "/audio/src/cardiag/web/static/clicking-noise" },
-    { "source": "/audio/knocking-noise", "destination": "/audio/src/cardiag/web/static/knocking-noise" },
-    { "source": "/audio/grinding-noise", "destination": "/audio/src/cardiag/web/static/grinding-noise" },
-    { "source": "/audio/rattling-noise", "destination": "/audio/src/cardiag/web/static/rattling-noise" },
-    { "source": "/audio/rattling-noise-no-check-engine-light", "destination": "/audio/src/cardiag/web/static/rattling-noise-no-check-engine-light" },
-    { "source": "/audio/rattling-noise-when-pressing-clutch", "destination": "/audio/src/cardiag/web/static/rattling-noise-when-pressing-clutch" },
-    { "source": "/audio/car-rattling-when-accelerating", "destination": "/audio/src/cardiag/web/static/car-rattling-when-accelerating" },
-    { "source": "/audio/car-rattling-when-idle", "destination": "/audio/src/cardiag/web/static/car-rattling-when-idle" },
-    { "source": "/audio/why-is-my-car-rattling", "destination": "/audio/src/cardiag/web/static/why-is-my-car-rattling" },
-    { "source": "/audio/whining-noise", "destination": "/audio/src/cardiag/web/static/whining-noise" },
-    { "source": "/audio/engine-ticking-noise", "destination": "/audio/src/cardiag/web/static/engine-ticking-noise" },
-    { "source": "/audio/engine-ticking-when-accelerating", "destination": "/audio/src/cardiag/web/static/engine-ticking-when-accelerating" },
-    { "source": "/audio/engine-ticking-at-idle", "destination": "/audio/src/cardiag/web/static/engine-ticking-at-idle" },
-    { "source": "/audio/engine-ticking-cold-start", "destination": "/audio/src/cardiag/web/static/engine-ticking-cold-start" },
-    { "source": "/audio/engine-ticking-when-warm", "destination": "/audio/src/cardiag/web/static/engine-ticking-when-warm" },
-    { "source": "/audio/engine-ticking-after-oil-change", "destination": "/audio/src/cardiag/web/static/engine-ticking-after-oil-change" },
-    { "source": "/audio/engine-ticking-no-check-engine-light", "destination": "/audio/src/cardiag/web/static/engine-ticking-no-check-engine-light" },
-    { "source": "/audio/2008-dodge-grand-caravan-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2008-dodge-grand-caravan-squealing-brakes" },
-    { "source": "/audio/2011-ford-fiesta-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2011-ford-fiesta-squealing-brakes" },
-    { "source": "/audio/2013-2014-chevrolet-equinox-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2013-2014-chevrolet-equinox-squealing-brakes" },
-    { "source": "/audio/2013-2014-honda-crv-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2013-2014-honda-crv-squealing-brakes" },
-    { "source": "/audio/2013-nissan-altima-squealing-noise", "destination": "/audio/src/cardiag/web/static/2013-nissan-altima-squealing-noise" },
-    { "source": "/audio/2014-ford-explorer-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2014-ford-explorer-squealing-brakes" },
-    { "source": "/audio/2015-chrysler-200-squealing-noise", "destination": "/audio/src/cardiag/web/static/2015-chrysler-200-squealing-noise" },
-    { "source": "/audio/2016-acura-rdx-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2016-acura-rdx-squealing-brakes" },
-    { "source": "/audio/2020-2022-kia-sorento-squealing-noise", "destination": "/audio/src/cardiag/web/static/2020-2022-kia-sorento-squealing-noise" },
-    { "source": "/audio/2025-chevrolet-equinox-ev-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2025-chevrolet-equinox-ev-squealing-brakes" },
-    { "source": "/audio/2007-2011-toyota-camry-squealing-belt-noise", "destination": "/audio/src/cardiag/web/static/2007-2011-toyota-camry-squealing-belt-noise" },
-    { "source": "/audio/2011-2014-ford-f150-squealing-belt-noise", "destination": "/audio/src/cardiag/web/static/2011-2014-ford-f150-squealing-belt-noise" },
-    { "source": "/audio/2012-2015-honda-civic-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2012-2015-honda-civic-squealing-brakes" },
-    { "source": "/audio/2011-2016-chevrolet-cruze-squealing-belt-noise", "destination": "/audio/src/cardiag/web/static/2011-2016-chevrolet-cruze-squealing-belt-noise" },
-    { "source": "/audio/2013-2018-nissan-altima-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2013-2018-nissan-altima-squealing-brakes" },
-    { "source": "/audio/2011-2017-jeep-grand-cherokee-squealing-belt-noise", "destination": "/audio/src/cardiag/web/static/2011-2017-jeep-grand-cherokee-squealing-belt-noise" },
-    { "source": "/audio/2007-2013-chevrolet-silverado-squealing-belt-noise", "destination": "/audio/src/cardiag/web/static/2007-2013-chevrolet-silverado-squealing-belt-noise" },
-    { "source": "/audio/2013-2019-ford-escape-squealing-belt-noise", "destination": "/audio/src/cardiag/web/static/2013-2019-ford-escape-squealing-belt-noise" },
-    { "source": "/audio/2010-2013-toyota-corolla-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2010-2013-toyota-corolla-squealing-brakes" },
-    { "source": "/audio/2015-2020-subaru-outback-squealing-brakes", "destination": "/audio/src/cardiag/web/static/2015-2020-subaru-outback-squealing-brakes" },
-    { "source": "/audio/:slug", "destination": "/audio/src/cardiag/web/static/:slug" },
+    {
+      "source": "/audio/gmc-sierra-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/gmc-sierra-ticking-noise"
+    },
+    {
+      "source": "/audio/toyota-corolla-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-corolla-squealing-noise"
+    },
+    {
+      "source": "/audio/tesla-model-y-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/tesla-model-y-ticking-noise"
+    },
+    {
+      "source": "/audio/ram-1500-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/ram-1500-knocking-noise"
+    },
+    {
+      "source": "/audio/jeep-grand-cherokee-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/jeep-grand-cherokee-squealing-noise"
+    },
+    {
+      "source": "/audio/audi-a8-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/audi-a8-rattling-noise"
+    },
+    {
+      "source": "/audio/nissan-altima-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/nissan-altima-whining-noise"
+    },
+    {
+      "source": "/audio/toyota-rav4-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-rav4-squealing-noise"
+    },
+    {
+      "source": "/audio/tesla-model-y-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/tesla-model-y-whining-noise"
+    },
+    {
+      "source": "/audio/landing",
+      "destination": "/audio/src/cardiag/web/static/landing"
+    },
+    {
+      "source": "/audio/gmc-sierra-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/gmc-sierra-whining-noise"
+    },
+    {
+      "source": "/audio/app",
+      "destination": "/audio/src/cardiag/web/static/app"
+    },
+    {
+      "source": "/audio/heat-shield-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/heat-shield-rattling-noise"
+    },
+    {
+      "source": "/audio/lifter-tick-sound",
+      "destination": "/audio/src/cardiag/web/static/lifter-tick-sound"
+    },
+    {
+      "source": "/audio/nissan-altima-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/nissan-altima-ticking-noise"
+    },
+    {
+      "source": "/audio/honda-cr-v-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/honda-cr-v-squealing-noise"
+    },
+    {
+      "source": "/audio/ford-f-150-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/ford-f-150-knocking-noise"
+    },
+    {
+      "source": "/audio/ford-fiesta-rattling-noise-when-accelerating",
+      "destination": "/audio/src/cardiag/web/static/ford-fiesta-rattling-noise-when-accelerating"
+    },
+    {
+      "source": "/audio/nissan-altima-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/nissan-altima-rattling-noise"
+    },
+    {
+      "source": "/audio/toyota-rav4-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-rav4-grinding-noise"
+    },
+    {
+      "source": "/audio/ford-f-150-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/ford-f-150-whining-noise"
+    },
+    {
+      "source": "/audio/honda-civic-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/honda-civic-knocking-noise"
+    },
+    {
+      "source": "/audio/exhaust-rattling-at-idle",
+      "destination": "/audio/src/cardiag/web/static/exhaust-rattling-at-idle"
+    },
+    {
+      "source": "/audio/nissan-rogue-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/nissan-rogue-squealing-noise"
+    },
+    {
+      "source": "/audio/toyota-rav4-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-rav4-rattling-noise"
+    },
+    {
+      "source": "/audio/valvetrain-tick-noise",
+      "destination": "/audio/src/cardiag/web/static/valvetrain-tick-noise"
+    },
+    {
+      "source": "/audio/nissan-altima-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/nissan-altima-grinding-noise"
+    },
+    {
+      "source": "/audio/nissan-rogue-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/nissan-rogue-whining-noise"
+    },
+    {
+      "source": "/audio/ford-explorer-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/ford-explorer-rattling-noise"
+    },
+    {
+      "source": "/audio/tesla-model-y-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/tesla-model-y-rattling-noise"
+    },
+    {
+      "source": "/audio/subaru-outback-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/subaru-outback-knocking-noise"
+    },
+    {
+      "source": "/audio/honda-civic-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/honda-civic-squealing-noise"
+    },
+    {
+      "source": "/audio/honda-cr-v-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/honda-cr-v-rattling-noise"
+    },
+    {
+      "source": "/audio/car-making-rattling-noise-when-driving-slow",
+      "destination": "/audio/src/cardiag/web/static/car-making-rattling-noise-when-driving-slow"
+    },
+    {
+      "source": "/audio/muffler-rattling-when-accelerating",
+      "destination": "/audio/src/cardiag/web/static/muffler-rattling-when-accelerating"
+    },
+    {
+      "source": "/audio/jeep-grand-cherokee-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/jeep-grand-cherokee-knocking-noise"
+    },
+    {
+      "source": "/audio/engine-rattling-noise-when-accelerating",
+      "destination": "/audio/src/cardiag/web/static/engine-rattling-noise-when-accelerating"
+    },
+    {
+      "source": "/audio/honda-cr-v-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/honda-cr-v-grinding-noise"
+    },
+    {
+      "source": "/audio/hyundai-tucson-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/hyundai-tucson-knocking-noise"
+    },
+    {
+      "source": "/audio/ford-explorer-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/ford-explorer-grinding-noise"
+    },
+    {
+      "source": "/audio/tesla-model-y-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/tesla-model-y-grinding-noise"
+    },
+    {
+      "source": "/audio/tesla-model-y-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/tesla-model-y-squealing-noise"
+    },
+    {
+      "source": "/audio/toyota-corolla-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-corolla-knocking-noise"
+    },
+    {
+      "source": "/audio/nissan-rogue-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/nissan-rogue-grinding-noise"
+    },
+    {
+      "source": "/audio/ford-f-150-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/ford-f-150-ticking-noise"
+    },
+    {
+      "source": "/audio/gmc-sierra-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/gmc-sierra-knocking-noise"
+    },
+    {
+      "source": "/audio/chevrolet-silverado-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/chevrolet-silverado-rattling-noise"
+    },
+    {
+      "source": "/audio/direct-injection-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/direct-injection-ticking-noise"
+    },
+    {
+      "source": "/audio/chevrolet-silverado-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/chevrolet-silverado-grinding-noise"
+    },
+    {
+      "source": "/audio/honda-odyssey-wheel-bearing-noise",
+      "destination": "/audio/src/cardiag/web/static/honda-odyssey-wheel-bearing-noise"
+    },
+    {
+      "source": "/audio/nissan-rogue-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/nissan-rogue-rattling-noise"
+    },
+    {
+      "source": "/audio/hyundai-tucson-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/hyundai-tucson-squealing-noise"
+    },
+    {
+      "source": "/audio/toyota-camry-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-camry-knocking-noise"
+    },
+    {
+      "source": "/audio/nissan-rogue-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/nissan-rogue-ticking-noise"
+    },
+    {
+      "source": "/audio/gmc-sierra-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/gmc-sierra-squealing-noise"
+    },
+    {
+      "source": "/audio/ram-1500-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/ram-1500-grinding-noise"
+    },
+    {
+      "source": "/audio/ram-1500-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/ram-1500-rattling-noise"
+    },
+    {
+      "source": "/audio/toyota-camry-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-camry-squealing-noise"
+    },
+    {
+      "source": "/audio/jeep-grand-cherokee-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/jeep-grand-cherokee-whining-noise"
+    },
+    {
+      "source": "/audio/honda-cr-v-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/honda-cr-v-ticking-noise"
+    },
+    {
+      "source": "/audio/engine-rattling-when-idle",
+      "destination": "/audio/src/cardiag/web/static/engine-rattling-when-idle"
+    },
+    {
+      "source": "/audio/ford-explorer-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/ford-explorer-squealing-noise"
+    },
+    {
+      "source": "/audio/high-pitched-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/high-pitched-ticking-noise"
+    },
+    {
+      "source": "/audio/renault-kwid-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/renault-kwid-rattling-noise"
+    },
+    {
+      "source": "/audio/ford-f-150-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/ford-f-150-grinding-noise"
+    },
+    {
+      "source": "/audio/fiat-egea-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/fiat-egea-ticking-noise"
+    },
+    {
+      "source": "/audio/subaru-outback-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/subaru-outback-squealing-noise"
+    },
+    {
+      "source": "/audio/jeep-grand-cherokee-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/jeep-grand-cherokee-ticking-noise"
+    },
+    {
+      "source": "/audio/honda-cr-v-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/honda-cr-v-whining-noise"
+    },
+    {
+      "source": "/audio/ford-f-150-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/ford-f-150-squealing-noise"
+    },
+    {
+      "source": "/audio/metallic-rattle-noise",
+      "destination": "/audio/src/cardiag/web/static/metallic-rattle-noise"
+    },
+    {
+      "source": "/audio/ford-f-150-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/ford-f-150-rattling-noise"
+    },
+    {
+      "source": "/audio/vw-caddy-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/vw-caddy-rattling-noise"
+    },
+    {
+      "source": "/audio/toyota-camry-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-camry-whining-noise"
+    },
+    {
+      "source": "/audio/honda-civic-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/honda-civic-grinding-noise"
+    },
+    {
+      "source": "/audio/nissan-altima-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/nissan-altima-knocking-noise"
+    },
+    {
+      "source": "/audio/honda-civic-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/honda-civic-ticking-noise"
+    },
+    {
+      "source": "/audio/toyota-corolla-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-corolla-ticking-noise"
+    },
+    {
+      "source": "/audio/toyota-rav4-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-rav4-knocking-noise"
+    },
+    {
+      "source": "/audio/ram-1500-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/ram-1500-ticking-noise"
+    },
+    {
+      "source": "/audio/engine-tick-at-idle",
+      "destination": "/audio/src/cardiag/web/static/engine-tick-at-idle"
+    },
+    {
+      "source": "/audio/chevrolet-silverado-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/chevrolet-silverado-ticking-noise"
+    },
+    {
+      "source": "/audio/honda-civic-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/honda-civic-rattling-noise"
+    },
+    {
+      "source": "/audio/subaru-outback-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/subaru-outback-whining-noise"
+    },
+    {
+      "source": "/audio/ram-1500-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/ram-1500-squealing-noise"
+    },
+    {
+      "source": "/audio/jeep-grand-cherokee-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/jeep-grand-cherokee-grinding-noise"
+    },
+    {
+      "source": "/audio/tesla-model-y-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/tesla-model-y-knocking-noise"
+    },
+    {
+      "source": "/audio/subaru-outback-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/subaru-outback-rattling-noise"
+    },
+    {
+      "source": "/audio/ford-explorer-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/ford-explorer-whining-noise"
+    },
+    {
+      "source": "/audio/ford-explorer-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/ford-explorer-knocking-noise"
+    },
+    {
+      "source": "/audio/honda-cr-v-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/honda-cr-v-knocking-noise"
+    },
+    {
+      "source": "/audio/hyundai-tucson-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/hyundai-tucson-grinding-noise"
+    },
+    {
+      "source": "/audio/hyundai-tucson-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/hyundai-tucson-rattling-noise"
+    },
+    {
+      "source": "/audio/toyota-rav4-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-rav4-whining-noise"
+    },
+    {
+      "source": "/audio/subaru-outback-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/subaru-outback-grinding-noise"
+    },
+    {
+      "source": "/audio/honda-civic-rattling-at-idle",
+      "destination": "/audio/src/cardiag/web/static/honda-civic-rattling-at-idle"
+    },
+    {
+      "source": "/audio/hyundai-tucson-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/hyundai-tucson-whining-noise"
+    },
+    {
+      "source": "/audio/jeep-grand-cherokee-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/jeep-grand-cherokee-rattling-noise"
+    },
+    {
+      "source": "/audio/nissan-altima-humming-noise-when-accelerating",
+      "destination": "/audio/src/cardiag/web/static/nissan-altima-humming-noise-when-accelerating"
+    },
+    {
+      "source": "/audio/rattling-noise-underneath-car",
+      "destination": "/audio/src/cardiag/web/static/rattling-noise-underneath-car"
+    },
+    {
+      "source": "/audio/chevrolet-silverado-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/chevrolet-silverado-whining-noise"
+    },
+    {
+      "source": "/audio/ram-1500-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/ram-1500-whining-noise"
+    },
+    {
+      "source": "/audio/jeep-compass-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/jeep-compass-rattling-noise"
+    },
+    {
+      "source": "/audio/chevrolet-silverado-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/chevrolet-silverado-knocking-noise"
+    },
+    {
+      "source": "/audio/gmc-sierra-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/gmc-sierra-rattling-noise"
+    },
+    {
+      "source": "/audio/toyota-corolla-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-corolla-rattling-noise"
+    },
+    {
+      "source": "/audio/subaru-outback-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/subaru-outback-ticking-noise"
+    },
+    {
+      "source": "/audio/nissan-rogue-knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/nissan-rogue-knocking-noise"
+    },
+    {
+      "source": "/audio/toyota-corolla-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-corolla-grinding-noise"
+    },
+    {
+      "source": "/audio/toyota-camry-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-camry-ticking-noise"
+    },
+    {
+      "source": "/audio/toyota-corolla-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-corolla-whining-noise"
+    },
+    {
+      "source": "/audio/gmc-sierra-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/gmc-sierra-grinding-noise"
+    },
+    {
+      "source": "/audio/honda-civic-whining-noise",
+      "destination": "/audio/src/cardiag/web/static/honda-civic-whining-noise"
+    },
+    {
+      "source": "/audio/hyundai-tucson-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/hyundai-tucson-ticking-noise"
+    },
+    {
+      "source": "/audio/toyota-rav4-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-rav4-ticking-noise"
+    },
+    {
+      "source": "/audio/toyota-camry-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-camry-rattling-noise"
+    },
+    {
+      "source": "/audio/nissan-altima-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/nissan-altima-squealing-noise"
+    },
+    {
+      "source": "/audio/chevrolet-silverado-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/chevrolet-silverado-squealing-noise"
+    },
+    {
+      "source": "/audio/toyota-camry-grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/toyota-camry-grinding-noise"
+    },
+    {
+      "source": "/audio/ford-explorer-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/ford-explorer-ticking-noise"
+    },
+    {
+      "source": "/audio",
+      "destination": "/audio/src/cardiag/web/static/app"
+    },
+    {
+      "source": "/audio/",
+      "destination": "/audio/src/cardiag/web/static/app"
+    },
+    {
+      "source": "/audio/squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/squealing-noise"
+    },
+    {
+      "source": "/audio/squealing-on-startup",
+      "destination": "/audio/src/cardiag/web/static/squealing-on-startup"
+    },
+    {
+      "source": "/audio/squealing-when-accelerating",
+      "destination": "/audio/src/cardiag/web/static/squealing-when-accelerating"
+    },
+    {
+      "source": "/audio/squealing-when-braking",
+      "destination": "/audio/src/cardiag/web/static/squealing-when-braking"
+    },
+    {
+      "source": "/audio/squealing-while-turning",
+      "destination": "/audio/src/cardiag/web/static/squealing-while-turning"
+    },
+    {
+      "source": "/audio/squealing-only-cold",
+      "destination": "/audio/src/cardiag/web/static/squealing-only-cold"
+    },
+    {
+      "source": "/audio/squealing-all-the-time",
+      "destination": "/audio/src/cardiag/web/static/squealing-all-the-time"
+    },
+    {
+      "source": "/audio/clicking-noise",
+      "destination": "/audio/src/cardiag/web/static/clicking-noise"
+    },
+    {
+      "source": "/audio/knocking-noise",
+      "destination": "/audio/src/cardiag/web/static/knocking-noise"
+    },
+    {
+      "source": "/audio/grinding-noise",
+      "destination": "/audio/src/cardiag/web/static/grinding-noise"
+    },
+    {
+      "source": "/audio/rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/rattling-noise"
+    },
+    {
+      "source": "/audio/rattling-noise-no-check-engine-light",
+      "destination": "/audio/src/cardiag/web/static/rattling-noise-no-check-engine-light"
+    },
+    {
+      "source": "/audio/rattling-noise-when-pressing-clutch",
+      "destination": "/audio/src/cardiag/web/static/rattling-noise-when-pressing-clutch"
+    },
+    {
+      "source": "/audio/car-rattling-when-accelerating",
+      "destination": "/audio/src/cardiag/web/static/car-rattling-when-accelerating"
+    },
+    {
+      "source": "/audio/car-rattling-when-idle",
+      "destination": "/audio/src/cardiag/web/static/car-rattling-when-idle"
+    },
+    {
+      "source": "/audio/why-is-my-car-rattling",
+      "destination": "/audio/src/cardiag/web/static/why-is-my-car-rattling"
+    },
+    {
+      "source": "/audio/whining-noise",
+      "destination": "/audio/src/cardiag/web/static/whining-noise"
+    },
+    {
+      "source": "/audio/engine-ticking-noise",
+      "destination": "/audio/src/cardiag/web/static/engine-ticking-noise"
+    },
+    {
+      "source": "/audio/engine-ticking-when-accelerating",
+      "destination": "/audio/src/cardiag/web/static/engine-ticking-when-accelerating"
+    },
+    {
+      "source": "/audio/engine-ticking-at-idle",
+      "destination": "/audio/src/cardiag/web/static/engine-ticking-at-idle"
+    },
+    {
+      "source": "/audio/engine-ticking-cold-start",
+      "destination": "/audio/src/cardiag/web/static/engine-ticking-cold-start"
+    },
+    {
+      "source": "/audio/engine-ticking-when-warm",
+      "destination": "/audio/src/cardiag/web/static/engine-ticking-when-warm"
+    },
+    {
+      "source": "/audio/engine-ticking-after-oil-change",
+      "destination": "/audio/src/cardiag/web/static/engine-ticking-after-oil-change"
+    },
+    {
+      "source": "/audio/engine-ticking-no-check-engine-light",
+      "destination": "/audio/src/cardiag/web/static/engine-ticking-no-check-engine-light"
+    },
+    {
+      "source": "/audio/2008-dodge-grand-caravan-squealing-brakes",
+      "destination": "/audio/src/cardiag/web/static/2008-dodge-grand-caravan-squealing-brakes"
+    },
+    {
+      "source": "/audio/2011-ford-fiesta-squealing-brakes",
+      "destination": "/audio/src/cardiag/web/static/2011-ford-fiesta-squealing-brakes"
+    },
+    {
+      "source": "/audio/2013-2014-chevrolet-equinox-squealing-brakes",
+      "destination": "/audio/src/cardiag/web/static/2013-2014-chevrolet-equinox-squealing-brakes"
+    },
+    {
+      "source": "/audio/2013-2014-honda-crv-squealing-brakes",
+      "destination": "/audio/src/cardiag/web/static/2013-2014-honda-crv-squealing-brakes"
+    },
+    {
+      "source": "/audio/2013-nissan-altima-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/2013-nissan-altima-squealing-noise"
+    },
+    {
+      "source": "/audio/2014-ford-explorer-squealing-brakes",
+      "destination": "/audio/src/cardiag/web/static/2014-ford-explorer-squealing-brakes"
+    },
+    {
+      "source": "/audio/2015-chrysler-200-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/2015-chrysler-200-squealing-noise"
+    },
+    {
+      "source": "/audio/2016-acura-rdx-squealing-brakes",
+      "destination": "/audio/src/cardiag/web/static/2016-acura-rdx-squealing-brakes"
+    },
+    {
+      "source": "/audio/2020-2022-kia-sorento-squealing-noise",
+      "destination": "/audio/src/cardiag/web/static/2020-2022-kia-sorento-squealing-noise"
+    },
+    {
+      "source": "/audio/2025-chevrolet-equinox-ev-squealing-brakes",
+      "destination": "/audio/src/cardiag/web/static/2025-chevrolet-equinox-ev-squealing-brakes"
+    },
+    {
+      "source": "/audio/2007-2011-toyota-camry-squealing-belt-noise",
+      "destination": "/audio/src/cardiag/web/static/2007-2011-toyota-camry-squealing-belt-noise"
+    },
+    {
+      "source": "/audio/2011-2014-ford-f150-squealing-belt-noise",
+      "destination": "/audio/src/cardiag/web/static/2011-2014-ford-f150-squealing-belt-noise"
+    },
+    {
+      "source": "/audio/2012-2015-honda-civic-squealing-brakes",
+      "destination": "/audio/src/cardiag/web/static/2012-2015-honda-civic-squealing-brakes"
+    },
+    {
+      "source": "/audio/2011-2016-chevrolet-cruze-squealing-belt-noise",
+      "destination": "/audio/src/cardiag/web/static/2011-2016-chevrolet-cruze-squealing-belt-noise"
+    },
+    {
+      "source": "/audio/2013-2018-nissan-altima-squealing-brakes",
+      "destination": "/audio/src/cardiag/web/static/2013-2018-nissan-altima-squealing-brakes"
+    },
+    {
+      "source": "/audio/2011-2017-jeep-grand-cherokee-squealing-belt-noise",
+      "destination": "/audio/src/cardiag/web/static/2011-2017-jeep-grand-cherokee-squealing-belt-noise"
+    },
+    {
+      "source": "/audio/2007-2013-chevrolet-silverado-squealing-belt-noise",
+      "destination": "/audio/src/cardiag/web/static/2007-2013-chevrolet-silverado-squealing-belt-noise"
+    },
+    {
+      "source": "/audio/2013-2019-ford-escape-squealing-belt-noise",
+      "destination": "/audio/src/cardiag/web/static/2013-2019-ford-escape-squealing-belt-noise"
+    },
+    {
+      "source": "/audio/2010-2013-toyota-corolla-squealing-brakes",
+      "destination": "/audio/src/cardiag/web/static/2010-2013-toyota-corolla-squealing-brakes"
+    },
+    {
+      "source": "/audio/2015-2020-subaru-outback-squealing-brakes",
+      "destination": "/audio/src/cardiag/web/static/2015-2020-subaru-outback-squealing-brakes"
+    },
+    {
+      "source": "/audio/:slug",
+      "destination": "/audio/src/cardiag/web/static/:slug"
+    },
     {
       "source": "/(rattling-noise-under|high-pitched-squeal-when-braking|grinding-noise-when-accelerating|ticking-noise-from-the-engine|humming-noise-at-high-speeds|clicking-sound-when-turning|buzzing-noise-from-the-dashboard|squeaking-noise-over-bumps|whining-noise-from-the-transmission|clunking-noise-when-shifting-gears)(.*)",
       "destination": "/seo_pages/$1$2"
