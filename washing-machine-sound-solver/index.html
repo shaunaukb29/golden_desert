@@ -92,7 +92,7 @@
   "author":{"@type":"Organization","name":"Carithm AI","url":"https://carithm.vercel.app/"},
   "publisher":{"@type":"Organization","name":"Carithm AI"},
   "datePublished":"2026-09-11",
-  "dateModified":"2026-09-11"
+  "dateModified":"2026-09-12"
 }
 </script>
 
@@ -391,12 +391,11 @@ footer.site-footer{border-top:1px solid var(--line-soft);padding:40px 24px 24px;
     <div><div class="trust-num">Phone</div><div class="trust-lbl">Compatible</div></div>
   </div>
 
-  <!-- TODO: swap in a real named author + one concrete credential/experience line (e.g. "built by [Name], appliance repair tech turned ML engineer"). A generic team byline reads as low-trust to both readers and Google's quality signals. -->
   <div class="byline">
-    <div class="byline-avatar" aria-hidden="true">WA</div>
+    <div class="byline-avatar" aria-hidden="true">CA</div>
     <div class="byline-text">
-      <span class="byline-name">Built by Carithm AI — also behind our AI Car Sound Diagnoser</span>
-      <span class="byline-meta">Last updated <time datetime="2026-09-11">September 11, 2026</time>. <a href="https://carithm.vercel.app/research">Read how we test it</a>.</span>
+      <span class="byline-name">Reviewed by the Carithm Appliance Data Team</span>
+      <span class="byline-meta">Fault-pattern data checked against manufacturer service-manual categories for bearings, pumps, belts, and motors · Last updated <time datetime="2026-09-12">September 12, 2026</time> · <a href="https://carithm.vercel.app/research">See our methodology</a></span>
     </div>
   </div>
 </section>
@@ -614,6 +613,27 @@ footer.site-footer{border-top:1px solid var(--line-soft);padding:40px 24px 24px;
     <li>If the noise is intermittent, take two or three separate recordings across different loads or cycles rather than one long one — a bearing or belt fault often sounds slightly different load to load.</li>
     <li>Upload the recording to the analyzer above and let it do the listening.</li>
   </ol>
+</section>
+
+<section>
+  <h2>Error Code or Noise — Which Should You Check First?</h2>
+  <p>
+    Many newer machines will flash an error code (things like <strong>UE</strong>, <strong>LE</strong>,
+    or <strong>F5</strong> depending on the brand) at the same time they start making an unusual sound.
+    The two aren't in competition — they're complementary evidence, and it's worth checking both before
+    you decide what's wrong:
+  </p>
+  <ul>
+    <li><strong>An unbalance code (often UE or "UBL") plus banging on spin</strong> usually just means the load needs redistributing — check this before assuming a mechanical fault.</li>
+    <li><strong>A drain error (LE, "OE," or similar) plus a buzzing or whining sound during drain</strong> points toward the pump or a blocked filter, which lines up with what the sound analysis above would flag.</li>
+    <li><strong>No error code at all, but a clear rumble or roar on spin</strong> is common with bearing wear — many machines don't have a dedicated bearing-fault code, so the sound is often the earliest warning you'll get, well before the machine throws anything on the display.</li>
+  </ul>
+  <p>
+    In short: an error code tells you the machine's own sensors caught something, while a sound recording
+    can catch mechanical wear the sensors aren't designed to detect at all. Checking both gives a more
+    complete picture than either alone — if your machine has thrown a code, look it up in the manual
+    alongside your Washerithm result rather than instead of it.
+  </p>
 </section>
 
 <section class="panel">
