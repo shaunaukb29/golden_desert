@@ -375,6 +375,11 @@ footer.site-footer{border-top:1px solid var(--line-soft);padding:40px 24px 24px;
     or something rattling around in the drum that really shouldn't be there.
   </p>
   <p>
+    In short: Washerithm is a washing machine fault sound identifier. It listens to a recording
+    of your machine and tells you which part — bearing, pump, belt, motor, or something else —
+    is most likely causing the noise.
+  </p>
+  <p>
     Think of it as <strong>Shazam for washing machine noises</strong>. Except instead of naming a song,
     it names a diagnosis — and hopefully saves you a callout fee.
   </p>
@@ -386,6 +391,7 @@ footer.site-footer{border-top:1px solid var(--line-soft);padding:40px 24px 24px;
     <div><div class="trust-num">Phone</div><div class="trust-lbl">Compatible</div></div>
   </div>
 
+  <!-- TODO: swap in a real named author + one concrete credential/experience line (e.g. "built by [Name], appliance repair tech turned ML engineer"). A generic team byline reads as low-trust to both readers and Google's quality signals. -->
   <div class="byline">
     <div class="byline-avatar" aria-hidden="true">WA</div>
     <div class="byline-text">
@@ -444,6 +450,40 @@ footer.site-footer{border-top:1px solid var(--line-soft);padding:40px 24px 24px;
         chain isn't cooperating.
       </p>
     </div>
+    <div class="qa-item">
+      <h3>Why is my washing machine making a clicking or rattling noise?</h3>
+      <p>
+        Clicking is frequently a water inlet valve doing its job — normal during fill. A metallic rattle
+        during spin is different and often means a coin, button, or bit of underwire has slipped past the
+        pockets and is bouncing around the drum or, worse, stuck in the drain pump, where it can also cause
+        a blockage.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What a Diagnosis Looks Like</h2>
+  <p>
+    Here's the kind of ranked result Washerithm returns — this example is from a 14-second
+    recording of a top-load washer roaring loudly through its spin cycle:
+  </p>
+  <div class="panel" style="margin-top:16px;">
+    <p style="font-size:11px;color:var(--muted2);margin:0 0 14px;text-transform:uppercase;letter-spacing:.06em;">Example result — for illustration, not live output</p>
+    <div class="qa-list">
+      <div class="qa-item" style="padding:12px 0;">
+        <h3 style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">Worn drum bearings <span style="color:var(--teal);white-space:nowrap;">High confidence</span></h3>
+        <p>Deep rumbling that intensifies sharply as spin speed increases — the signature pattern of bearing wear.</p>
+      </div>
+      <div class="qa-item" style="padding:12px 0;">
+        <h3 style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">Unbalanced load <span style="color:var(--muted2);white-space:nowrap;">Low confidence</span></h3>
+        <p>Some rhythmic thumping is present, but it isn't the dominant pattern in this recording.</p>
+      </div>
+      <div class="qa-item" style="padding:12px 0;border-bottom:none;">
+        <h3 style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">Motor fault <span style="color:var(--muted2);white-space:nowrap;">Low confidence</span></h3>
+        <p>No humming or stalling pattern detected in the recording.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -498,37 +538,80 @@ footer.site-footer{border-top:1px solid var(--line-soft);padding:40px 24px 24px;
 <section>
   <h2>Why Use an AI Washing Machine Diagnostic Tool?</h2>
   <p>
-    "It's making a weird noise" isn't much for a repair technician to work with. A recording gives you
-    something more specific — an actual sound pattern the AI can compare against known fault signatures,
-    so you have a rough idea what you're dealing with before anyone shows up with a toolbox.
+    "It's making a weird noise" isn't much for a repair technician to work with, and it isn't much for you
+    to work with either when you're trying to decide whether to panic, wait it out, or start Googling
+    replacement machines. A recording turns a vague complaint into something specific — an actual sound
+    pattern that can be compared against known fault signatures for bearings, pumps, belts, motors, and
+    suspension parts — so you have a rough idea what you're dealing with before anyone shows up with a
+    toolbox, and before you spend money on a diagnosis a phone recording could have given you for free.
+  </p>
+  <p>
+    This matters because washing machine noise almost never shows up out of nowhere. A machine that's been
+    quiet for years and suddenly starts roaring, banging, or squealing during the spin cycle is usually
+    telling you something specific has worn out or shifted — not that the whole unit is failing at once.
+    Being able to tell "this is a $60 belt" from "this is a $400 motor" before you call anyone is the
+    entire point of a washing machine noise diagnosis tool like this one.
   </p>
 
   <h3>Get a Second Opinion Before Calling a Technician</h3>
   <p>
     A likely fault helps you decide on the next step. Sometimes that's a two-minute fix, like
-    redistributing an uneven load or clearing a blocked filter. Other times it's a sign to call in a
-    professional before the problem — and the repair bill — gets bigger. If you do end up with a quote in hand,
-    Carithm's <a href="https://carithm.vercel.app/">Repair Quote Checker</a> can help you sanity-check it.
+    redistributing an uneven load, clearing a blocked filter, or checking that the machine is sitting level
+    on the floor — vibration and banging on spin are surprisingly often just an unlevel machine, not a
+    mechanical fault at all. Other times a diagnosis is a sign to call in a professional before the problem
+    — and the repair bill — gets bigger. If you do end up with a quote in hand, Carithm's
+    <a href="https://carithm.vercel.app/">Repair Quote Checker</a> can help you sanity-check it against
+    typical rates for the same job.
   </p>
 
   <h3>Typical Washing Machine Repair Costs</h3>
-  <p>Repair prices vary by brand, model, location, and labor rates. Rough US-market ranges include:</p>
+  <p>
+    Repair prices vary by brand, model, location, and local labor rates, but these rough US-market ranges
+    (parts plus labor) are a reasonable starting point for budgeting once you know the likely fault:
+  </p>
   <ul>
-    <li><strong>Bearings:</strong> $150–$350</li>
+    <li><strong>Bearings:</strong> $150–$350 — often more on front-load machines, where the drum has to come apart to reach them</li>
     <li><strong>Drain pump:</strong> $120–$250</li>
-    <li><strong>Drive belt:</strong> $50–$150</li>
-    <li><strong>Shock absorbers:</strong> $100–$250</li>
+    <li><strong>Drive belt:</strong> $50–$150 — one of the cheaper and faster fixes on this list</li>
+    <li><strong>Shock absorbers / suspension:</strong> $100–$250</li>
     <li><strong>Motor:</strong> $250–$500</li>
+    <li><strong>Control board / electronics:</strong> $200–$450, more common on newer machines with digital controls</li>
   </ul>
+  <p>
+    As a rule of thumb, most appliance technicians consider a repair worth doing if it costs less than
+    roughly half of what a comparable new machine would cost. A $180 bearing repair on a machine that's
+    otherwise in good shape is usually worth it; a $450 motor repair on a ten-year-old budget model is
+    a closer call, and knowing which fault you're actually looking at — rather than guessing — is what
+    makes that decision easier.
+  </p>
+
+  <h3>Front-Load vs. Top-Load: The Same Noise Doesn't Always Mean the Same Fault</h3>
+  <p>
+    Front-load and top-load washing machines fail in slightly different ways, which is part of why a
+    generic "washing machine troubleshooting" checklist can send you down the wrong path. Front-load
+    machines spin much faster and rely on a sealed drum bearing assembly, so bearing wear tends to show
+    up as a loud, deep roar that gets worse the faster the drum spins. Many front-load machines are also
+    direct-drive, with no belt at all, so a squealing noise on those models is more likely a bearing or
+    motor issue than a belt problem. Top-load machines, especially older belt-driven ones, are the more
+    common source of belt squeal, and their agitator or impeller mechanism adds its own set of possible
+    noise sources — like a worn agitator dog or a loose pulley — that front loaders simply don't have.
+  </p>
 </section>
 
 <section>
   <h2>How to Record Your Washing Machine</h2>
+  <p>
+    Audio quality matters more than audio length. A clean, focused 15-second clip of the actual fault
+    noise is far more useful than a muffled two-minute recording of an entire cycle. A few minutes of
+    care here makes a real difference to the diagnosis:
+  </p>
   <ol>
-    <li>Wait for the noisiest part of the cycle, usually spin or drain.</li>
-    <li>Hold your phone roughly 1–2 feet from the machine. Closer isn't better — nobody needs audio from inside the drum.</li>
+    <li>Note which part of the cycle the noise happens in — fill, main wash, drain, or spin — before you start recording. Timing alone is a useful clue: a noise that only appears during spin points toward bearings, balance, or suspension; a noise during drain points toward the pump.</li>
+    <li>Wait for the noisiest part of the cycle, usually spin or drain, rather than recording from the start and hoping to catch it.</li>
+    <li>Hold your phone roughly 1–2 feet from the machine. Closer isn't better — nobody needs audio from inside the drum, and phone mics can distort or clip at very close range.</li>
     <li>Record 10–30 seconds. You don't need the whole cycle, just the highlight reel.</li>
-    <li>Turn down the TV and pause the conversation — background noise makes the AI's job harder.</li>
+    <li>Turn down the TV, close the door, and pause the conversation — background chatter, a running dishwasher, or a nearby dryer all make the AI's job harder and can lower confidence in the result.</li>
+    <li>If the noise is intermittent, take two or three separate recordings across different loads or cycles rather than one long one — a bearing or belt fault often sounds slightly different load to load.</li>
     <li>Upload the recording to the analyzer above and let it do the listening.</li>
   </ol>
 </section>
@@ -576,6 +659,42 @@ footer.site-footer{border-top:1px solid var(--line-soft);padding:40px 24px 24px;
     <div class="qa-item">
       <h3>Does background noise affect accuracy?</h3>
       <p>It can. For the best result, quiet the room and keep the recording focused on the washing machine itself.</p>
+    </div>
+    <div class="qa-item">
+      <h3>Is it safe to keep using a washing machine that's making noise?</h3>
+      <p>
+        For a short time, usually yes — a squealing belt or a mild hum won't strand you overnight. But
+        running a machine with worn bearings or shock absorbers for too long can let the drum knock against
+        the cabinet hard enough to damage the tub, hoses, or electronics, turning a $200 repair into a
+        $500+ one. A loud or new noise is worth diagnosing promptly rather than ignoring for months.
+      </p>
+    </div>
+    <div class="qa-item">
+      <h3>Why is my washing machine vibrating badly during the spin cycle?</h3>
+      <p>
+        Start with the simple explanations: an unlevel machine, an unbalanced load, or shipping bolts that
+        were never removed after delivery on a newer unit. If the machine is level and the load is balanced
+        and it's still shaking hard, worn shock absorbers, suspension springs, or drum bearings are the more
+        likely cause.
+      </p>
+    </div>
+    <div class="qa-item">
+      <h3>My new washing machine is making noise — is that normal?</h3>
+      <p>
+        Some noise is normal on a brand-new machine: water valves clicking, a whoosh of water on a front
+        loader, or a brief hum as the motor ramps up. It's not normal if you hear grinding, loud banging, or
+        a noise that gets progressively worse over the first few weeks — that usually points to a shipping
+        bolt still in place, a leveling issue, or in rarer cases a manufacturing defect covered under warranty.
+      </p>
+    </div>
+    <div class="qa-item">
+      <h3>How long do washing machines usually last?</h3>
+      <p>
+        Most washing machines last around 8–12 years with normal use, though front-load machines with
+        sealed bearing assemblies sometimes fall on the lower end of that range if the bearings fail. Age is
+        one factor in the repair-vs-replace decision, but the size of the specific repair matters more —
+        a cheap belt fix is worth doing at almost any machine age.
+      </p>
     </div>
   </div>
 </section>
