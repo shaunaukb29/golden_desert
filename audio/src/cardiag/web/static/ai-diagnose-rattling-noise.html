@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+
+  // 1. Existing Dwell Time Tracker
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
+      }
+    }, interval * 1000);
+  })();
+
+  // 2. NEW: Iframe PostMessage Listener
+  window.addEventListener('message', function(event) {
+    if (event.origin !== 'https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/') return;
+
+    const data = event.data;
+
+    if (data && data.type === 'streamlit_analytics') {
+      if (typeof gtag === 'function') {
+        gtag('event', data.eventName, {
+          'event_category': data.eventCategory || 'Carithm Tool',
+          'event_label': data.eventLabel || '',
+          'value': data.eventValue || 0
+        });
+      }
+    }
+  });
+</script>
+
+<!-- Google AdSense Global Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" crossorigin="anonymous"></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>AI Diagnose Rattling Noise | Engine Sound Analyzer</title>
+<meta name="description" content="Is your car making a rattling noise when accelerating or idling? Use our AI to diagnose your rattling car sound. Upload a clip for an instant audio diagnosis.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://carithm.vercel.app/audio/ai-diagnose-rattling-noise">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Diagnose Rattling Noise | Car Sound Analyzer">
+<meta property="og:description" content="Got a rattling noise under your car or from the engine? Upload a recording and let our AI diagnose your car problem by sound.">
+<meta property="og:url" content="https://carithm.vercel.app/audio/ai-diagnose-rattling-noise">
+<meta property="og:image" content="https://carithm.vercel.app/car.png">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free AI Car Diagnoser — Car Sound Diagnosis App Free | Car Noise Identifier">
+<meta name="twitter:description" content="Use this free car noise identifier online to diagnose car problems by sound. Our car sound diagnosis app identifies engine, brake, and transmission faults in seconds.">
+<meta name="twitter:image" content="https://carithm.vercel.app/car.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebApplication",
+ "name":"Carithm AI Car Sound Analyzer",
+ "applicationCategory":"UtilitiesApplication",
+ "operatingSystem":"Web",
+ "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
+ "description":"Free AI car sound diagnostic app. Record or upload a car noise and get instant AI diagnosis for engine, brake, suspension, transmission, exhaust, and other mechanical faults.",
+ "url":"https://carithm.vercel.app/audio",
+ "inLanguage":"en-US",
+ "author":{ "@type":"Organization", "name":"Carithm", "url":"https://carithm.vercel.app/research" },
+ "publisher":{ "@type":"Organization", "name":"Carithm" },
+ "reviewedBy":{ "@type":"Organization", "name":"Carithm Automotive Data Team" },
+ "datePublished":"2026-03-11",
+ "dateModified":"2026-08-12"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"BreadcrumbList",
+ "itemListElement":[
+   {"@type":"ListItem","position":1,"name":"Home","item":"https://carithm.vercel.app/"},
+   {"@type":"ListItem","position":2,"name":"AI Car Sound Analyzer","item":"https://carithm.vercel.app/audio"}
+ ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"FAQPage",
+ "mainEntity":[
+  {"@type":"Question","name":"Can AI diagnose engine problems?","acceptedAnswer":{"@type":"Answer","text":"AI can recognize abnormal acoustic patterns associated with common mechanical faults — including engine knock, bearing noise, and belt squeal — and estimate likely inspection areas. It should be used as decision support alongside professional inspection, not as a replacement."}},
+  {"@type":"Question","name":"Could this noise be a recall issue?","acceptedAnswer":{"@type":"Answer","text":"Sometimes. A handful of recurring noise complaints — certain belt squeals, timing chain rattles, and power steering whines — turn out to be open manufacturer recalls rather than wear and tear. US drivers can cross-check their VIN on the NHTSA recall lookup (nhtsa.gov/recalls) alongside their Carithm result before paying for diagnosis at a shop."}},
+  {"@type":"Question","name":"Is this free?","acceptedAnswer":{"@type":"Answer","text":"Yes — Carithm's AI Car Sound Analyzer is free with no signup required. Upload any unusual car noise recording and get an instant AI analysis identifying likely fault areas."}},
+  {"@type":"Question","name":"Is there an app to download, or does it work in the browser?","acceptedAnswer":{"@type":"Answer","text":"There's nothing to install. Carithm's car sound diagnostic tool runs directly in your browser on phone or desktop, so you get an AI diagnosis the moment you upload a recording."}},
+  {"@type":"Question","name":"Can the system detect engine knocking?","acceptedAnswer":{"@type":"Answer","text":"Yes. Engine knock, detonation, ticking, rattling, squealing, and many other abnormal mechanical sounds can often be identified depending on recording quality."}},
+  {"@type":"Question","name":"How do I diagnose a car noise myself?","acceptedAnswer":{"@type":"Answer","text":"To diagnose a car by sound, follow these 3 steps: 1. Record the unusual noise using your smartphone near the source (engine bay, wheel, or exhaust). 2. Upload the audio file to our free car noise identifier online. 3. Review the instant AI diagnostic report to see which components require inspection."}},
+  {"@type":"Question","name":"Can I record engine audio using my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most smartphone recordings are sufficient. Hold the phone close to the noise source, reduce cabin and wind noise where possible, and the analyzer will handle the rest."}},
+  {"@type":"Question","name":"Does background noise affect accuracy?","acceptedAnswer":{"@type":"Answer","text":"The system automatically reduces background noise and flags when interference is too high for a reliable result — it never invents a diagnosis when the recording is unclear."}},
+  {"@type":"Question","name":"How long does the analysis take?","acceptedAnswer":{"@type":"Answer","text":"Most recordings are processed within a few seconds after upload."}},
+  {"@type":"Question","name":"Does the AI always make a prediction?","acceptedAnswer":{"@type":"Answer","text":"No. When evidence is insufficient, the platform reports uncertainty rather than generating unsupported conclusions."}},
+  {"@type":"Question","name":"Is there an engine sound diagnostic AI app to download?","acceptedAnswer":{"@type":"Answer","text":"Carithm works as a browser-based engine sound diagnostic AI app — there's nothing to install from an app store. Open it on your phone or desktop, upload or record a noise, and get an instant audio diagnosis."}},
+  {"@type":"Question","name":"Is this the same as an audio diagnosis app or engine noise analysis app?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm functions as an audio diagnosis app and engine noise analysis app in one — it listens to your recording, filters out background noise, and reports likely mechanical fault areas with a confidence score."}},
+  {"@type":"Question","name":"Is there a 'Shazam for car sounds'?","acceptedAnswer":{"@type":"Answer","text":"Carithm works like a Shazam for car sounds, but instead of matching a song it matches your recording against known mechanical fault patterns. Upload or record the noise and it returns a confidence-scored diagnosis instead of a song title."}},
+  {"@type":"Question","name":"How do I check engine sound for problems?","acceptedAnswer":{"@type":"Answer","text":"To check engine sound for problems, record it close to the engine bay with your phone, then upload the clip to an engine sound diagnostic AI app like Carithm. It screens for knocking, ticking, belt squeal, and other abnormal patterns and flags which areas may need inspection."}},
+  {"@type":"Question","name":"Is Carithm the same as EngineEar AI or My Auto Sound?","acceptedAnswer":{"@type":"Answer","text":"No — Carithm is an independent car sound diagnostic tool and isn't affiliated with EngineEar AI or My Auto Sound. All three serve a similar purpose (turning a recorded car noise into a likely fault area), but Carithm is free, runs entirely in the browser with no signup, and shows a confidence score alongside every result."}},
+  {"@type":"Question","name":"Why is my car making a rattling noise from underneath or the front end?","acceptedAnswer":{"@type":"Answer","text":"A metal rattling noise from underneath usually means a loose heat shield or exhaust hanger vibrating against the body. A rattle isolated to the front end, especially over bumps or when turning, more often points to a sway bar link, strut mount, or a loose splash shield. Uploading a recording helps separate the two."}},
+  {"@type":"Question","name":"Why does my car make a whining noise when accelerating?","acceptedAnswer":{"@type":"Answer","text":"A whining noise that gets louder specifically as you accelerate — rather than just running with engine RPM at idle — usually points to the transmission, differential, or a wheel bearing under load. If it's present even in neutral, suspect the power steering pump or alternator instead."}}
+ ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"SoftwareApplication",
+ "name":"Carithm AI Car Sound Analyzer",
+ "applicationCategory":"UtilitiesApplication",
+ "operatingSystem":"Web",
+ "browserRequirements":"Requires JavaScript. Microphone access optional for in-browser recording.",
+ "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
+ "url":"https://carithm.vercel.app/audio",
+ "inLanguage":"en-US",
+ "description":"Free AI car sound diagnosis app. Record or upload a car noise and get instant AI diagnosis for engine, brake, suspension, transmission, exhaust, and other mechanical faults.",
+ "featureList":[
+   "Record or upload car sound recordings",
+   "AI-based detection of abnormal mechanical noises",
+   "Confidence-scored fault area predictions",
+   "Automatic background noise reduction",
+   "Uncertainty reporting when recording quality is insufficient"
+ ],
+ "publisher":{ "@type":"Organization", "name":"Carithm" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Organization",
+ "name":"Carithm",
+ "url":"https://carithm.vercel.app/",
+ "logo":"https://carithm.vercel.app/car.png"
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"HowTo",
+ "name":"How to Diagnose a Car Noise with AI",
+ "description":"Use Carithm's AI Car Sound Analyzer to identify likely mechanical faults from a recorded car noise.",
+ "step":[
+   {"@type":"HowToStep","name":"Record the sound","text":"Record the unusual sound using your phone, holding it as close to the noise source as possible."},
+   {"@type":"HowToStep","name":"Upload the recording","text":"Upload the recording through the AI Car Sound Analyzer tool."},
+   {"@type":"HowToStep","name":"Receive AI analysis","text":"The AI reduces background noise, analyzes the recording, and compares it against known mechanical fault patterns."},
+   {"@type":"HowToStep","name":"Review results","text":"Get a ranked list of likely fault areas with confidence scores, or an uncertainty notice if the recording quality is insufficient."}
+ ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there a Shazam for car noises?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, many users describe Carithm as a Shazam for car noises or a Shazam for car engine sounds. Instead of identifying a song, you upload an audio clip of your vehicle, and the AI compares it to known mechanical fault signatures to tell you exactly what the issue might be."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know what is this car noise?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you are wondering 'what is this car noise?', the best way to find out without immediately going to a mechanic is to use a car noise identifier online. By recording the sound and uploading it, our AI can separate background noise from mechanical frequencies to give you a ranked list of likely causes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is this sound in my car?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you're asking 'what is this sound in my car?' — that's exactly what Carithm is built for. Record 5–10 seconds of the noise from inside or outside the car, upload the clip, and the AI will return a ranked list of likely causes with urgency levels. Common results include worn brake pads, a loose heat shield, a failing serpentine belt, low oil causing a valve tick, or a wheel bearing starting to fail."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Carithm the same as MyAutoSound or EngineEar AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — Carithm, MyAutoSound, and EngineEar AI are separate tools. Carithm is a free, browser-based engine sound diagnostic AI app that runs on any device with no download or signup required. Unlike some alternatives, it doesn't require an OBD2 dongle and works purely from an audio recording, making it the most accessible option for a quick car noise diagnosis from recording."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a Stellantis audio diagnosis app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stellantis has an internal audio diagnosis tool used by dealership technicians, but it isn't publicly available. Carithm is the closest free consumer alternative — it accepts any audio recording from any vehicle make and model, including Stellantis brands like Jeep, Ram, Dodge, Chrysler, Fiat, and Alfa Romeo, and returns a diagnosis within seconds."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#09090b">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+:root {
+  --bg:         #09090b;
+  --surface:    #111113;
+  --surface2:   #18181b;
+  --surface3:   #27272a;
+  --border:     rgba(255,255,255,0.07);
+  --border2:    rgba(255,255,255,0.13);
+  --text:       #fafafa;
+  --muted:      #a1a8b3;
+  --muted2:     #71717a;
+  --accent:     #2f81f7;
+  --accent-dim: rgba(47,129,247,0.1);
+  --accent-glow:rgba(47,129,247,0.22);
+  --green:      #22c55e;
+  --green-dim:  rgba(34,197,94,0.1);
+  --amber:      #f59e0b;
+  --amber-dim:  rgba(245,158,11,0.1);
+  --red:        #ef4444;
+  --red-dim:    rgba(239,68,68,0.1);
+  --violet:     #a78bfa;
+  --violet-dim: rgba(167,139,250,0.1);
+  --teal:       #2dd4bf;
+  --teal-dim:   rgba(45,212,191,0.1);
+  --r: 12px; --r-sm: 8px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--surface2);
+}
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: var(--surface2); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent), var(--violet));
+  border-radius: 999px;
+  border: 2px solid var(--surface2);
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--teal), var(--accent)); }
+
+header {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(9,9,11,0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none;
+}
+.nav-logo span { color: var(--accent); }
+
+.nav { display: flex; gap: 1.75rem; align-items: center; }
+.nav a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; transition: color .2s; }
+.nav a:hover, .nav a.active { color: #fff; }
+.nav .cta-btn {
+  background: var(--accent-dim); border: 1px solid rgba(47,129,247,0.3); color: var(--accent);
+  padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600;
+}
+.nav .cta-btn:hover { background: var(--accent); color: #000; }
+
+main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
+
+.ad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  min-height: 100px;
+}
+.ad-container .ad-label {
+  font-size: 10px;
+  color: var(--muted2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.breadcrumb { font-size: 12.5px; color: var(--muted2); margin-bottom: 18px; }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb .sep { margin: 0 6px; color: var(--muted2); }
+.breadcrumb .current { color: var(--muted); }
+
+.eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  background: linear-gradient(90deg, var(--accent), var(--teal));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  margin-bottom: 12px; display: inline-block;
+}
+h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 14px; line-height: 1.12; }
+h2 { font-size: 1.3rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; padding-left: 12px; border-left: 3px solid var(--accent); }
+h3 { font-size: 1.02rem; font-weight: 600; margin-top: 22px; color: var(--text); }
+h3::before { content: "»"; color: var(--teal); margin-right: 6px; font-weight: 700; }
+p { color: var(--muted); margin: 0 0 8px; }
+ul, ol { color: var(--muted); padding-left: 20px; }
+li { margin-bottom: 6px; }
+
+.trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 22px 0 8px; }
+.trust-strip > div { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); }
+.trust-strip > div:last-child { border-right: none; }
+.trust-num { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+.trust-num span { color: var(--accent); }
+.trust-strip > div:nth-child(1) .trust-num { color: var(--accent); }
+.trust-strip > div:nth-child(2) .trust-num { color: var(--teal); }
+.trust-strip > div:nth-child(3) .trust-num { color: var(--violet); }
+.trust-strip > div:nth-child(4) .trust-num { color: var(--green); }
+.trust-lbl { font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 3px; }
+
+.byline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+}
+.byline-avatar {
+  flex-shrink: 0;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.02em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--violet), var(--teal));
+}
+.byline-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.byline-name { font-size: 12.5px; font-weight: 600; color: var(--text); }
+.byline-meta { font-size: 11.5px; color: var(--muted2); }
+.byline-meta a { color: var(--accent); text-decoration: none; }
+.byline-meta a:hover { text-decoration: underline; }
+@media (max-width: 480px) { .byline-meta { display: block; margin-top: 2px; } }
+
+section#try, main > section:first-of-type {
+  position: relative;
+}
+main > section:first-of-type::before {
+  content: "";
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 640px; height: 320px;
+  background: radial-gradient(ellipse at center, rgba(47,129,247,0.16), rgba(167,139,250,0.08) 45%, transparent 75%);
+  filter: blur(10px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.card {
+  background: var(--surface);
+  padding: 26px;
+  border-radius: var(--r);
+  margin-top: 26px;
+  border: 1px solid var(--border);
+}
+.card.tool {
+  border-color: rgba(47,129,247,0.25);
+  margin-top: 40px;
+  box-shadow: 0 0 0 1px rgba(47,129,247,0.08), 0 12px 40px -20px rgba(47,129,247,0.35);
+  position: relative;
+}
+.card.tool::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--r);
+  padding: 1px;
+  background: linear-gradient(120deg, var(--accent), var(--violet), var(--teal), var(--accent));
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.55;
+  animation: gradient-border-shift 8s ease infinite;
+  pointer-events: none;
+}
+@keyframes gradient-border-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--green-dim);
+  border: 1px solid rgba(34,197,94,0.3);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.live-indicator .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 0 rgba(34,197,94,0.6);
+  animation: pulse-dot 1.6s infinite;
+}
+@keyframes pulse-dot {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.55); }
+  70%  { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+.card.tool.tool-wide {
+  max-width: 1100px;
+  width: 100%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.streamlit-embed-wrap {
+  position: relative;
+  --streamlit-height: min(1200px, 90vh);
+  margin-top: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  background: var(--surface2);
+  resize: vertical;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--teal) var(--surface2);
+}
+.streamlit-embed {
+  display: block;
+  width: 100%;
+  height: var(--streamlit-height);
+  min-height: 640px;
+  border: 0;
+  background: var(--bg);
+}
+.iframe-brand-mask {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 44px;
+  background: var(--surface2);
+  z-index: 99999;
+  pointer-events: auto;
+  border-top: 1px solid var(--border);
+  cursor: default;
+}
+.iframe-fallback {
+  display: none;
+  padding: 32px 24px;
+  text-align: center;
+}
+.iframe-fallback p { margin-bottom: 14px; }
+.iframe-fallback a.crosslink-btn { display: inline-block; }
+
+@media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
+@media (max-width: 620px) {
+  .streamlit-embed-wrap { --streamlit-height: min(850px, 80vh); }
+  .streamlit-embed { min-height: 560px; }
+}
+
+.crosslink-banner {
+  background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
+  border: 1px solid rgba(47,129,247,0.25);
+  border-radius: var(--r);
+  padding: 22px 26px;
+  margin-top: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.crosslink-banner p { margin: 0; color: var(--muted); font-size: 13px; }
+.crosslink-banner strong { color: var(--text); display: block; font-size: 15px; margin-bottom: 4px; }
+.crosslink-btn {
+  background: var(--accent); color: #000; font-weight: 700;
+  padding: 10px 18px; border-radius: var(--r-sm);
+  text-decoration: none; font-size: 13px; white-space: nowrap; flex-shrink: 0;
+}
+.crosslink-btn:hover { opacity: 0.88; }
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+.related-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--accent);
+  border-radius: var(--r-sm);
+  padding: 14px 16px;
+  text-decoration: none;
+  display: block;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+.related-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 20px -12px rgba(47,129,247,0.5); }
+.related-card:nth-child(2) { border-top-color: var(--teal); }
+.related-card:nth-child(2):hover { border-color: var(--teal); box-shadow: 0 8px 20px -12px rgba(45,212,191,0.5); }
+.related-card:nth-child(3) { border-top-color: var(--violet); }
+.related-card:nth-child(3):hover { border-color: var(--violet); box-shadow: 0 8px 20px -12px rgba(167,139,250,0.5); }
+.related-card:nth-child(4) { border-top-color: var(--amber); }
+.related-card:nth-child(4):hover { border-color: var(--amber); box-shadow: 0 8px 20px -12px rgba(245,158,11,0.5); }
+.related-card:nth-child(5) { border-top-color: var(--green); }
+.related-card:nth-child(5):hover { border-color: var(--green); box-shadow: 0 8px 20px -12px rgba(34,197,94,0.5); }
+.related-card .rc-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); margin-bottom: 4px; }
+.related-card .rc-title { font-size: 13px; font-weight: 600; color: var(--text); }
+@media (max-width: 620px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+
+footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
+.footer-inner { max-width: 760px; margin: 0 auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
+.footer-links a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+.footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
+
+@media (max-width: 620px) {
+  header { padding: 0.9rem 1.1rem; }
+  .nav a:not(.cta-btn) { display: none; }
+  .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
+  .trust-strip { grid-template-columns: 1fr 1fr; }
+  main { padding: 32px 16px 32px; }
+  h1 { line-height: 1.18; }
+  h2 { margin-top: 34px; }
+  .card { padding: 20px; }
+  .crosslink-banner { padding: 18px 20px; }
+  .crosslink-btn { width: 100%; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+  .footer-links a { padding: 4px 0; display: inline-block; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <a href="https://carithm.vercel.app/toyota">Toyota</a>
+    <a href="https://carithm.vercel.app/bmw">BMW</a>
+    <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
+    <a href="https://carithm.vercel.app/research">Research</a>
+    <a href="https://carithm.vercel.app/audio" class="active" aria-current="page">Audio Diagnosis</a>
+    <a href="#try" class="cta-btn">Try It Free</a>
+  </nav>
+</header>
+
+<main>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://carithm.vercel.app/">Home</a>
+  <span class="sep">/</span>
+  <span class="current">AI Car Sound Analyzer</span>
+</nav>
+
+<section>
+  <div class="eyebrow">Carithm Audio Intelligence</div>
+
+  <h1>AI Diagnose Rattling Noise — Find Out What That Sound Is</h1>
+
+  <p>
+    "Why is my car making a rattling noise?" It's one of the most common questions mechanics get. Now, you can use <strong>AI to diagnose a rattling noise</strong>. Whether it happens when idling, accelerating, or driving over bumps, our AI isolates the specific frequency of the rattle.
+    </p>
+    <p>
+    A rattle can be a loose heat shield, a failing catalytic converter, or internal engine wear. Don't guess—use our <strong>AI engine noise diagnosis</strong> tool. Upload your audio clip below, and the AI will analyze the <strong>car rattling sound</strong> to tell you exactly where to look.
+    </p>
+
+  <div class="trust-strip">
+    <div><div class="trust-num">No App</div><div class="trust-lbl">Needed</div></div>
+    <div><div class="trust-num">Free</div><div class="trust-lbl">No Signup</div></div>
+    <div><div class="trust-num">~5s</div><div class="trust-lbl">Analysis Time</div></div>
+    <div><div class="trust-num">Phone</div><div class="trust-lbl">Compatible</div></div>
+  </div>
+
+  <div class="byline">
+    <div class="byline-avatar" aria-hidden="true">CA</div>
+    <div class="byline-text">
+      <span class="byline-name">Reviewed by the Carithm Automotive Data Team</span>
+      <span class="byline-meta">Fault-pattern data cross-checked against ASE-style repair categories · Last updated <time datetime="2026-08-12">August 12, 2026</time> · <a href="https://carithm.vercel.app/research">See our methodology</a></span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Car Noise Identifier: What This App Can Detect</h2>
+  <p>As an AI-powered <strong>car noise identifier</strong>, Carithm's <strong>car sound diagnosis app</strong> helps you <strong>identify car noises</strong> across every major vehicle system. Here's what the app is capable of pinpointing:</p>
+  <ul>
+    <li>Worn serpentine belts and misaligned pulleys</li>
+    <li>Failing wheel bearings and CV joints</li>
+    <li>Suspension wear, including struts and sway bars</li>
+    <li>Brake pad depletion and rotor scoring</li>
+    <li>Internal engine wear like rod knocks</li>
+    <li>Exhaust system leaks and loose heat shields</li>
+    <li>Transmission sync issues or low fluid indicators</li>
+  </ul>
+</section>
+
+<section>
+  <h2>How to Diagnose Car Problems by Sound Using AI</h2>
+  <p>Mechanics rely on their ears to make initial calls. Our <strong>car noise identifier online</strong> tool does the same thing — but it compares your uploaded clip against thousands of recorded anomalies simultaneously, helping you <strong>diagnose car problems by sound</strong> before stepping into a shop.</p>
+  <p>Whether you're <strong>identifying car noises</strong> like a mysterious hum on the highway or an annoying rattle at idle, this <strong>car sound diagnosis app free</strong> tool eliminates the guesswork and helps you communicate the exact issue to your local repair shop.</p>
+
+  <h2>Understanding Common Diagnostic Results</h2>
+  <p>If you're wondering what the AI might find, here's a breakdown of the acoustic signatures our <strong>car noise identifier</strong> looks for when assessing your car.</p>
+
+  <h3>The Meaning Behind High-Pitched Squeals</h3>
+  <p>A sharp squeal during a cold start or heavy acceleration usually indicates a rubber component failing to grip a metal pulley — typically a serpentine or accessory belt. If the squeal occurs when applying the brake pedal, it's almost certainly the acoustic wear indicator on your brake pads warning you that it's time for a replacement.</p>
+
+  <h3>Decoding Heavy Knocks and Clunks</h3>
+  <p>Low-frequency knocking sounds require immediate attention. An engine knock that increases with RPM can signal dangerous detonation or worn internal bearings. On the other hand, if a clunk only happens when you hit a pothole, the diagnoser will likely point to your suspension system, such as a worn strut mount or control arm bushing.</p>
+
+  <h3>Identifying Whines and Hums</h3>
+  <p>A steady hum that grows louder as you accelerate often points to a wheel bearing approaching failure. If the sound is more of a high-pitched whine that changes with engine speed (even in park), the AI will usually flag power steering pumps, alternators, or a stressed transmission.</p>
+
+  <h3>Tracking Down Rattles and Vibrations</h3>
+  <p>Rattling sounds are notoriously difficult for humans to locate because they echo underneath the chassis. The AI Car Diagnoser can distinguish between the light metallic rattle of a loose exhaust heat shield and the deeper rattle of a failing catalytic converter honeycomb.</p>
+</section>
+
+<section class="card tool tool-wide" id="try">
+  <h2 style="margin-top:0;">Try the Free Car Sound Diagnosis App<span class="live-indicator"><span class="dot"></span>Live</span></h2>
+  <p>
+  This is the <strong>car sound diagnosis app free</strong> tool — no download required. Record or upload a car sound from your engine, brakes, suspension, or transmission directly in your browser. Our <strong>car noise identifier online</strong> analyzes the recording, helps you <strong>identify car noises</strong>, and provides a confidence-scored diagnosis in seconds. Works with phone recordings — no special equipment needed.
+</p>
+
+  <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
+    <iframe
+      id="streamlitFrame"
+      class="streamlit-embed"
+      src="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app//?embed=true"
+      title="Carithm AI Car Sound Analyzer"
+      loading="lazy"
+      allow="microphone; clipboard-write"
+      onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
+    ></iframe>
+    <div class="iframe-brand-mask"></div>
+    <div class="iframe-fallback" id="iframeFallback">
+      <p>The analyzer tool couldn't load in this view.</p>
+      <a class="crosslink-btn" href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app//" target="_blank" rel="noopener">Open the Analyzer in a New Tab →</a>
+    </div>
+  </div>
+
+  <noscript>
+    <p class="note">This tool requires JavaScript to load the embedded app. <a href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app//" target="_blank" rel="noopener">Open it directly here.</a></p>
+  </noscript>
+</section>
+
+<section>
+  <h2>Why Use a Car Sound Diagnosis App Instead of Googling?</h2>
+  <p>Searching for "my car is making a popping noise" yields thousands of forum posts with conflicting answers. When you use an actual <strong>car sound diagnosis app</strong> to <strong>diagnose car problems by sound</strong>, you bypass subjective descriptions and analyze the actual acoustic data from your specific vehicle.</p>
+  
+  <h3>Accurate, Unbiased Car Noise Identification</h3>
+  <p>Our <strong>car noise identifier</strong> doesn't upsell you on repairs. It provides an objective evaluation of the audio clip you provide. If the sound clearly indicates a failing AC compressor clutch rather than a more expensive engine issue, that is exactly what the report will say.</p>
+  
+  <h3>Peace of Mind for Daily Drivers</h3>
+  <p>Hearing a new noise on your morning commute can be stressful. This <strong>car noise identifier online free</strong> tool gives you a quick, confidence-scored assessment right from your driveway — helping you decide whether it's safe to drive to work or if you need to call a tow truck immediately.</p>
+</section>
+
+<section>
+  <h2>How to Identify Car Noises From a Recording</h2>
+  <ol>
+    <li>Record the unusual sound using your phone — hold it close to the noise source.</li>
+    <li>Upload the recording through the tool above.</li>
+    <li>The AI listens to the recording, removes background noise, analyzes the sound, identifies abnormal patterns, and identifies likely mechanical fault areas.</li>
+    <li>The system compares your recording against known mechanical fault patterns.</li>
+    <li>You get a ranked list of likely fault areas and a confidence score.</li>
+    <li>If recording quality is insufficient, the system says so — it never invents a diagnosis.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Why Use an AI Car Noise Diagnostic Tool?</h2>
+  <p>
+    Traditional diagnostics require a mechanic to reproduce the problem. Carithm's diagnostic analyzer processes recorded sounds within seconds, identifies likely fault areas, estimates confidence, and highlights when additional inspection is needed. It doesn't replace a mechanic — it helps drivers understand what they're hearing before visiting one.
+  </p>
+</section>
+
+<section>
+  <h2>How Accurate Is AI Car Sound Diagnosis?</h2>
+  <p>
+    Real-world recordings contain wind, traffic, and cabin noise that make diagnosis harder. The Audio Analyzer is designed to work with these imperfect recordings by separating meaningful acoustic information from background interference — and it clearly flags when confidence is too low to make a reliable call, rather than guessing.
+  </p>
+  
+  <h3>Understanding Designed Life vs. Mechanical Failure</h3>
+  <p>
+    Not all noises mean immediate danger. Brake pads, front and rear, have different wear rates based on your drivetrain (AWD, FWD, RWD) and vehicle type (SUV vs. sedan), which drastically affect brake biases. Our diagnostic AI helps determine if the squeal or clunk you hear is a component reaching the end of its designed life health, or if it is a sudden mechanical failure requiring immediate attention.
+  </p>
+  <p>
+    Fault categories on this page — belt squeal, bearing hum, brake grind, exhaust rattle, and the rest — are organized against the same general repair taxonomy shops use when logging a diagnosis, and every answer above is checked by our team before publishing rather than generated and posted unreviewed. See our <a href="https://carithm.vercel.app/research">data & methodology page</a> for how fault categories are defined and how confidence scores are calculated.
+  </p>
+</section>
+
+<section>
+  <h2>Car Sound Diagnosis App — Features and FAQ</h2>
+
+  <h3>Is there a Shazam for car noises?</h3>
+  <p>Yes, many users describe Carithm as a Shazam for car noises or a Shazam for car engine sounds. Instead of identifying a song, you upload an audio clip of your vehicle, and the AI compares it to known mechanical fault signatures to tell you exactly what the issue might be.</p>
+
+  <h3>How do I know what is this car noise?</h3>
+  <p>If you are wondering "what is this car noise?", the best way to find out without immediately going to a mechanic is to use a car noise identifier online. By recording the sound and uploading it, our AI can separate background noise from mechanical frequencies to give you a ranked list of likely causes.</p>
+
+  <h3>Do I need to download a car noise identifier app?</h3>
+  <p>No. This <strong>car sound diagnosis app free</strong> tool runs entirely in your mobile or desktop browser. There's nothing to install, and it requires no registration — it works as a <strong>car noise identifier online</strong> right in your browser.</p>
+
+  <h3>Can I use my standard smartphone microphone?</h3>
+  <p>Absolutely. Modern smartphones have excellent microphones that are more than capable of capturing the necessary acoustic data. For the best results, point your phone's microphone directly at the source of the sound.</p>
+
+  <h3>How does the app handle background noise?</h3>
+  <p>Our audio processing engine includes advanced noise-cancellation algorithms. It filters out wind noise, traffic sounds, and generic background hums to isolate the specific mechanical frequency of your vehicle.</p>
+
+  <h3>Will it guarantee a correct fix?</h3>
+  <p>While the AI provides a highly accurate starting point and narrows down the possibilities significantly, you should always have a certified mechanic physically verify the issue before purchasing replacement parts.</p>
+
+  <h3>What is this sound in my car?</h3>
+  <p>If you're asking "what is this sound in my car?" — that's exactly what Carithm is built for. Record 5–10 seconds of the noise from inside or outside the car, upload the clip, and the AI will return a ranked list of likely causes with urgency levels. Common results include worn brake pads, a loose heat shield, a failing serpentine belt, low oil causing a valve tick, or a wheel bearing starting to fail.</p>
+
+  <h3>Is Carithm the same as MyAutoSound or EngineEar AI?</h3>
+  <p>No — Carithm, MyAutoSound, and EngineEar AI are separate tools. Carithm is a free, browser-based engine sound diagnostic AI app that runs on any device with no download or signup required. Unlike some alternatives, it doesn't require an OBD2 dongle and works purely from an audio recording, making it the most accessible option for a quick car noise diagnosis from recording.</p>
+
+  <h3>Is there a Stellantis audio diagnosis app?</h3>
+  <p>Stellantis has an internal audio diagnosis tool used by dealership technicians, but it isn't publicly available. Carithm is the closest free consumer alternative — it accepts any audio recording from any vehicle make and model, including Stellantis brands like Jeep, Ram, Dodge, Chrysler, Fiat, and Alfa Romeo, and returns a diagnosis within seconds.</p>
+</section>
+
+<div class="crosslink-banner" aria-label="Related tool">
+  <div>
+    <strong>Heard a noise and now have a repair quote?</strong>
+    <p>Once your garage gives you an estimate, check if every line item is actually due before you approve anything — free, under 30 seconds.</p>
+  </div>
+  <a href="https://carithm.vercel.app/" class="crosslink-btn">Check My Repair Quote →</a>
+</div>
+
+<section style="margin-top: 44px;">
+  <div class="eyebrow">Also on Carithm</div>
+  <h2 style="margin-top: 8px;">Understand the repair before you pay for it</h2>
+  <p>If the sound diagnosis points to a specific issue, use these to understand costs and intervals for your exact car.</p>
+  <div class="related-grid">
+    <a class="related-card" href="https://carithm.vercel.app/toyota">
+      <div class="rc-label">Brand Guide</div>
+      <div class="rc-title">Toyota Repair Cost Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/bmw">
+      <div class="rc-label">Brand Guide</div>
+      <div class="rc-title">BMW Repair Cost Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/mercedes">
+      <div class="rc-label">Brand Guide</div>
+      <div class="rc-title">Mercedes Maintenance Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/repairs/engine.html">
+      <div class="rc-label">Repair Type</div>
+      <div class="rc-title">Engine Repair Cost Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/repairs/brakes.html">
+      <div class="rc-label">Repair Type</div>
+      <div class="rc-title">Brake Repair Cost Guide</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/research">
+      <div class="rc-label">Research</div>
+      <div class="rc-title">Car Maintenance Data & Methodology</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://carithm.vercel.app/">Carithm Home — Repair Quote Checker</a>
+      <a href="https://carithm.vercel.app/audio">AI Car Sound Analyzer</a>
+      <a href="https://carithm.vercel.app/toyota">Toyota Repair Cost Guide</a>
+      <a href="https://carithm.vercel.app/bmw">BMW Repair Cost Guide</a>
+      <a href="https://carithm.vercel.app/mercedes">Mercedes Maintenance Guide</a>
+      <a href="https://carithm.vercel.app/research">Research & Methodology</a>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Carithm. AI Engine Sound Analyzer — decision-support tool. Not a substitute for physical inspection.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
