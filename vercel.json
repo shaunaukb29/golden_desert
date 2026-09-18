@@ -123,6 +123,26 @@
       "destination": "/audio/src/cardiag/web/static/all-models"
     },
     {
+      "source": "/audio/upload-car-sound-for-diagnosis",
+      "destination": "/audio/src/cardiag/web/static/upload-car-sound-for-diagnosis"
+    },
+    {
+      "source": "/audio/can-chatgpt-diagnose-car-sound",
+      "destination": "/audio/src/cardiag/web/static/can-chatgpt-diagnose-car-sound"
+    },
+    {
+      "source": "/audio/ai-that-listens-to-engine-noise",
+      "destination": "/audio/src/cardiag/web/static/ai-that-listens-to-engine-noise"
+    },
+    {
+      "source": "/audio/free-ai-car-sound-diagnosis",
+      "destination": "/audio/src/cardiag/web/static/free-ai-car-sound-diagnosis"
+    },
+    {
+      "source": "/audio/ai-diagnose-rattling-noise",
+      "destination": "/audio/src/cardiag/web/static/ai-diagnose-rattling-noise"
+    },
+    {
       "source": "/audio/gmc-sierra-ticking-noise",
       "destination": "/audio/src/cardiag/web/static/gmc-sierra-ticking-noise"
     },
@@ -603,14 +623,6 @@
       "destination": "/audio/src/cardiag/web/static/ford-explorer-ticking-noise"
     },
     {
-      "source": "/audio",
-      "destination": "/audio/src/cardiag/web/static/app"
-    },
-    {
-      "source": "/audio/",
-      "destination": "/audio/src/cardiag/web/static/app"
-    },
-    {
       "source": "/audio/squealing-noise",
       "destination": "/audio/src/cardiag/web/static/squealing-noise"
     },
@@ -789,6 +801,14 @@
     {
       "source": "/audio/:slug",
       "destination": "/audio/src/cardiag/web/static/:slug"
+    },
+    {
+      "source": "/audio",
+      "destination": "/audio/src/cardiag/web/static/app"
+    },
+    {
+      "source": "/audio/",
+      "destination": "/audio/src/cardiag/web/static/app"
     },
     {
       "source": "/(rattling-noise-under|high-pitched-squeal-when-braking|grinding-noise-when-accelerating|ticking-noise-from-the-engine|humming-noise-at-high-speeds|clicking-sound-when-turning|buzzing-noise-from-the-dashboard|squeaking-noise-over-bumps|whining-noise-from-the-transmission|clunking-noise-when-shifting-gears)(.*)",
