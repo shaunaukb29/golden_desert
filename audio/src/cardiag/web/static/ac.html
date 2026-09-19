@@ -458,6 +458,10 @@
 
     /* PER-NOISE FACTS */
     .noise { scroll-margin-top: 16px; }
+    .quip {
+      font-style: italic; color: var(--accent); max-width: 68ch;
+      margin: -4px 0 14px; font-size: 0.98rem;
+    }
     dl.facts {
       display: grid; grid-template-columns: 10rem 1fr; gap: 10px 22px;
       max-width: 780px; margin: 0 0 8px; padding-left: 18px; border-left: 2px solid var(--line);
@@ -543,9 +547,11 @@
     <header class="hero">
       <h1>AI AC Sound Diagnosis: Identify Your Air Conditioner's Noise</h1>
       <p class="lede">
-        Record or upload a short clip of the sound your AC is making. The analyzer suggests
-        possible compressor, fan, refrigerant, electrical and mechanical causes, so you know
-        what to check first and when to call a technician.
+        Your AC is trying to tell you something, and unfortunately it doesn't speak fluent
+        human. Record or upload a clip of that noise and the analyzer will take a stab at
+        translating it, flagging possible compressor, fan, refrigerant, electrical or
+        mechanical causes, so you know what to check yourself and when to actually call
+        someone.
       </p>
       <p class="meta">
         <span>By the Carithm AI team</span>
@@ -640,25 +646,28 @@
 
       <h2 id="how-to-record">How to record your AC for a useful result</h2>
       <p>
-        The analysis is only as good as the recording. A clear 10 to 30 second clip of the
-        actual problem sound gives the analyzer, and any technician you send it to, far more
-        to work with than a general impression.
+        Garbage in, garbage out, and that goes for AC noises too. A clean 10 to 30 second clip
+        of the actual problem sound gives the analyzer, and any technician you eventually call,
+        something real to work with, instead of you doing your best compressor impression over
+        the phone.
       </p>
       <ol class="steps">
         <li><strong>Pick the source.</strong> Decide whether the noise comes from the indoor unit, the vents, the outdoor unit or a window unit. If you cannot tell, record each separately.</li>
         <li><strong>Record while it is happening.</strong> Include the start-up and a stretch of steady running. If the noise only appears at shutdown, capture that instead.</li>
         <li><strong>Keep a safe distance.</strong> About an arm's length from an indoor unit or vent is fine. Stay a few feet back from an outdoor unit's fan grille, and never reach into or lean over a running unit.</li>
         <li><strong>Cut background noise.</strong> Turn off the TV, other fans and conversation. Outdoors, shield the microphone from wind or record during a calm moment.</li>
-        <li><strong>Use a plain voice recorder.</strong> Video-call and meeting apps often filter out steady sounds, which can remove the very noise you are trying to capture.</li>
-        <li><strong>Write down the context.</strong> Note when it happens, how long it lasts, the type and age of the system, and the last time the filter or unit was serviced. A technician will ask.</li>
+        <li><strong>Use a plain voice recorder.</strong> Video-call and meeting apps are very good at filtering out steady background noise, which is great for hiding your dog's barking and terrible for hiding the exact sound you're trying to capture.</li>
+        <li><strong>Write down the context.</strong> Note when it happens, how long it lasts, the type and age of the system, and the last time the filter or unit was serviced. A technician will ask, and "it's been doing a thing, kind of a whoosh, I dunno" is not a diagnosis.</li>
       </ol>
 
       <h2 id="noise-guide">AC noises and what they usually mean</h2>
       <p>
-        There is no single sound a broken AC unit makes. What you hear depends on which part is
-        failing, and most sounds have more than one possible cause. This guide lists the common
-        ones, what you can safely check yourself, and when to stop and call a technician. It is
-        general guidance and cannot confirm a fault in your particular unit.
+        Unhelpfully, air conditioners don't come with subtitles. There is no single sound a
+        broken unit makes; what you hear depends on which part is failing, and most sounds
+        have more than one possible cause. This guide lists the common ones, what you can
+        safely check yourself, and when to stop and hand the problem to someone with a
+        multimeter. Think of it as WebMD, but for machines, and with better odds it isn't
+        fatal. It is general guidance and cannot confirm a fault in your particular unit.
       </p>
 
       <div class="table-wrap">
@@ -684,6 +693,7 @@
 
       <section class="noise" id="rattling" aria-labelledby="rattling-h">
         <h3 id="rattling-h">Rattling or vibrating AC noise</h3>
+        <p class="quip">Sounds like: loose change in a dryer, or a maraca having an existential crisis.</p>
         <dl class="facts">
           <dt>Common causes</dt><dd>Loose access panels or screws, leaves or small debris in the outdoor unit, a loose fan blade or motor mount, or copper lines and ducts touching the frame or each other. On a window unit, a loose mounting bracket or window frame is the usual suspect.</dd>
           <dt>Safe checks</dt><dd>Switch the unit off at the thermostat and at the outdoor disconnect or breaker, then look for debris and visibly loose panels. Check that the unit sits level and that nothing is touching the refrigerant lines.</dd>
@@ -693,6 +703,7 @@
 
       <section class="noise" id="buzzing" aria-labelledby="buzzing-h">
         <h3 id="buzzing-h">Buzzing AC noise</h3>
+        <p class="quip">Sounds like: an angry mosquito that's been wired into your electrical panel.</p>
         <dl class="facts">
           <dt>Common causes</dt><dd>A weak or failing capacitor, a worn or chattering contactor, loose electrical connections, debris touching the fan, or a compressor that is struggling to start.</dd>
           <dt>Safe checks</dt><dd>Replace a dirty filter, since restricted airflow strains the blower, and look for debris around the outdoor fan grille. Do not open electrical panels: capacitors can hold a dangerous charge even with the power off.</dd>
@@ -702,6 +713,7 @@
 
       <section class="noise" id="humming" aria-labelledby="humming-h">
         <h3 id="humming-h">Humming AC noise</h3>
+        <p class="quip">Sounds like: a monk meditating, right up until it isn't.</p>
         <dl class="facts">
           <dt>Common causes</dt><dd>A soft, steady hum from the compressor and fan is normal. A louder or new hum, especially when the outdoor fan is not spinning, often points to a failing capacitor or motor. Loose parts can also turn a normal hum into a drone.</dd>
           <dt>Safe checks</dt><dd>Note whether the outdoor fan is turning. Never try to spin it by hand or with a stick, and do not touch anything inside the unit.</dd>
@@ -711,6 +723,7 @@
 
       <section class="noise" id="clicking" aria-labelledby="clicking-h">
         <h3 id="clicking-h">Clicking AC noise</h3>
+        <p class="quip">Sounds like: a clock that only ever learned the "tick," never the "tock."</p>
         <dl class="facts">
           <dt>Common causes</dt><dd>One click when the system starts or stops is normal. Repeated clicking can come from a failing thermostat, relay, control board or contactor. A steady tick with each fan rotation usually means debris or a bent blade touching the fan, while ticking from ducts as they warm and cool is harmless.</dd>
           <dt>Safe checks</dt><dd>Replace the thermostat batteries, confirm the thermostat is set to cool and below room temperature, and look for debris near the fan.</dd>
@@ -720,6 +733,7 @@
 
       <section class="noise" id="hissing" aria-labelledby="hissing-h">
         <h3 id="hissing-h">Hissing AC noise</h3>
+        <p class="quip">Sounds like: a small, disgruntled snake has taken up residence in your ductwork.</p>
         <dl class="facts">
           <dt>Common causes</dt><dd>A short hiss when the compressor stops is usually refrigerant pressures equalizing. A hiss that continues, especially with weak cooling or ice on the coil or refrigerant lines, can point to a refrigerant leak. Leaky ductwork also hisses, and a heat pump in defrost mode whooshes and may steam.</dd>
           <dt>Safe checks</dt><dd>Note whether the hiss stops soon after the unit shuts off, and check for ice on the indoor coil or the outdoor lines. Replace a dirty filter and open all vents.</dd>
@@ -729,6 +743,7 @@
 
       <section class="noise" id="squealing" aria-labelledby="squealing-h">
         <h3 id="squealing-h">Squealing or screeching AC noise</h3>
+        <p class="quip">Sounds like: a dolphin that really, truly does not want to be in your ceiling.</p>
         <dl class="facts">
           <dt>Common causes</dt><dd>Dry or worn motor or blower bearings, a slipping belt on older belt-driven blowers, or a fan blade rubbing its housing. A sharp screech from the outdoor unit when the compressor starts can signal serious compressor trouble.</dd>
           <dt>Safe checks</dt><dd>Work out whether the sound comes from the indoor or outdoor unit, and replace a dirty filter. If it is a screech from the outdoor unit, leave the system off.</dd>
@@ -738,6 +753,7 @@
 
       <section class="noise" id="grinding" aria-labelledby="grinding-h">
         <h3 id="grinding-h">Grinding AC noise</h3>
+        <p class="quip">Sounds like: a coffee grinder that swallowed a fork. Not a good sign in either machine.</p>
         <dl class="facts">
           <dt>Common causes</dt><dd>Failed motor or blower bearings, a blower wheel rubbing its housing, or wear inside the compressor.</dd>
           <dt>Safe checks</dt><dd>Switch the system off. Grinding means metal is contacting metal, so there is no safe do-it-yourself test while it runs.</dd>
@@ -747,6 +763,7 @@
 
       <section class="noise" id="banging" aria-labelledby="banging-h">
         <h3 id="banging-h">Banging, knocking or clanking AC noise</h3>
+        <p class="quip">Sounds like: someone's trying to get your attention. They are. It's your compressor.</p>
         <dl class="facts">
           <dt>Common causes</dt><dd>A loose or unbalanced blower wheel, a broken fan blade or motor mount, or loose parts inside the compressor. A single pop or bang from ductwork as it warms or cools is usually harmless.</dd>
           <dt>Safe checks</dt><dd>Switch the system off and note whether the bang repeats with each fan rotation or only at start and stop. A one-off duct pop at start or stop is common.</dd>
@@ -756,6 +773,7 @@
 
       <section class="noise" id="whistling" aria-labelledby="whistling-h">
         <h3 id="whistling-h">Whistling AC noise</h3>
+        <p class="quip">Sounds like: a tea kettle that never got the memo about turning itself off.</p>
         <dl class="facts">
           <dt>Common causes</dt><dd>Restricted airflow is the most common cause: a clogged filter, closed or blocked vents, or undersized return grilles. Duct leaks also whistle, and occasionally so does a refrigerant leak.</dd>
           <dt>Safe checks</dt><dd>Replace or clean the filter, open every vent and clear furniture away from return grilles.</dd>
@@ -765,6 +783,7 @@
 
       <section class="noise" id="gurgling" aria-labelledby="gurgling-h">
         <h3 id="gurgling-h">Gurgling or bubbling AC noise</h3>
+        <p class="quip">Sounds like: your AC clearing its throat before it says something important.</p>
         <dl class="facts">
           <dt>Common causes</dt><dd>A partially blocked condensate drain, air in the drain line, or normal refrigerant flow, which is common for a few moments when a mini-split starts.</dd>
           <dt>Safe checks</dt><dd>Look for water backing up in the drain pan or dripping from the indoor unit, and check that the drain outlet is not blocked.</dd>
@@ -774,9 +793,10 @@
 
       <h2 id="compressor">What does a broken AC compressor sound like?</h2>
       <p>
-        The compressor is the pump at the heart of the system, and it sits in the outdoor unit
-        of a central or split AC. A healthy one makes a steady, low hum. When it is failing,
-        the sound usually falls into one of these patterns:
+        Think of the compressor as your AC's heart: it sits in the outdoor unit of a central
+        or split system, quietly pumping away, and a healthy one makes little more than a
+        steady, low hum. When it starts failing, though, it tends to make its feelings known.
+        The sound usually falls into one of these patterns:
       </p>
       <dl class="facts types">
         <dt>Grinding or screeching</dt>
@@ -801,8 +821,9 @@
 
       <h2 id="timing">Why is my AC making noise when it starts, runs or stops?</h2>
       <p>
-        When a noise happens is often as useful as what it sounds like. Use this table to
-        narrow down the likely area, then read the matching sound above.
+        A little detective work goes a long way here: when a noise happens is often just as
+        telling as what it sounds like. Use this table to narrow down the likely culprit, then
+        go read the matching sound above for the full story.
       </p>
       <div class="table-wrap">
         <table>
@@ -822,7 +843,7 @@
       </div>
 
       <h2 id="normal-sounds">Is it normal for an AC to make noise?</h2>
-      <p>Some sounds are part of normal operation. These are usually nothing to worry about:</p>
+      <p>Before you spiral: your AC is a machine, not a librarian, so it's allowed to make some noise while it works. These sounds are usually nothing to worry about:</p>
       <ul>
         <li>The whoosh of moving air and a soft fan and compressor hum while running</li>
         <li>A single click when the system starts or stops</li>
@@ -834,10 +855,15 @@
       <p>
         A sound that is new, louder, more frequent, or that comes with weaker cooling, a smell
         or a tripped breaker is worth checking even if it resembles something on this list.
+        When in doubt, trust your gut: if it makes you go "huh, that's new," it's new.
       </p>
 
       <h2 id="ac-types">AC noises by type of unit</h2>
-      <p>The same sound can mean different things depending on the kind of air conditioner.</p>
+      <p>
+        The same sound can mean very different things depending on the kind of air
+        conditioner making it. A rattle from a window unit and a rattle from a central AC's
+        outdoor unit are basically distant cousins: related, but living very different lives.
+      </p>
       <dl class="facts types">
         <dt>Central (split) AC</dt>
         <dd>Indoor noises (blower, ducts, filter, drain) and outdoor noises (compressor, fan, contactor, capacitor) have different causes. Decide which side the sound comes from first and record each side separately.</dd>
@@ -861,12 +887,13 @@
 
       <h2 id="how-it-works">How the analyzer works and what it cannot do</h2>
       <p>
-        You record or upload a clip. The AI analyzes the acoustic characteristics of the
-        recording, such as pitch and rhythm, and suggests possible causes for the sound.
-        It is designed as a fast first opinion that helps you decide what to check and what
-        to tell a technician.
+        No magic, no crystal ball, just pattern matching. You record or upload a clip, the AI
+        listens for pitch, rhythm and other acoustic fingerprints, and hands back a shortlist
+        of likely culprits. Think of it as a very fast, slightly tired-sounding first opinion:
+        useful for deciding what to check yourself and what to tell a technician, not a
+        replacement for either.
       </p>
-      <p>Know its limits before relying on a result:</p>
+      <p>It's not psychic, though. Keep these limits in mind before treating a result as gospel:</p>
       <ul>
         <li>It cannot measure refrigerant pressure, electrical readings or airflow, which are the measurements a technician uses to confirm a fault.</li>
         <li>Wind, echo and other appliances in the recording reduce accuracy.</li>
@@ -881,12 +908,13 @@
 
       <div class="crosslink">
         <p><strong>Looking to diagnose a car or engine noise?</strong></p>
-        <p>Carithm AI also analyzes car and engine sounds to help identify possible mechanical problems.</p>
+        <p>Turns out weird noises aren't just an AC thing. Carithm AI also analyzes car and engine sounds to help identify possible mechanical problems.</p>
         <p><a href="https://carithm.vercel.app/">Try Carithm AI car sound diagnosis</a></p>
       </div>
 
       <section class="faq" id="faq" aria-labelledby="faq-heading">
         <h2 id="faq-heading">AC sound diagnosis FAQ</h2>
+        <p>The questions everyone asks, answered without the upsell.</p>
       <details>
         <summary><h3>Can AI diagnose an AC problem by sound?</h3></summary>
         <p>AI can analyze the acoustic patterns in a recording and suggest causes that commonly produce that kind of sound. It cannot measure pressure, voltage or airflow, so treat the result as a starting point and have a qualified HVAC technician confirm anything involving electrical parts, refrigerant or the compressor.</p>
@@ -942,12 +970,14 @@
       <section class="about" id="about" aria-labelledby="about-heading">
         <h2 id="about-heading">About this page</h2>
         <p>
-          <strong>Who:</strong> Carithm AI builds AI tools that analyze mechanical sounds,
-          starting with cars and engines and now air conditioners and HVAC equipment.
+          <strong>Who:</strong> Carithm AI builds AI tools that analyze mechanical sounds. We
+          started with cars and engines, because those complain loudly too, and have since
+          branched out into air conditioners and HVAC equipment.
         </p>
         <p>
-          <strong>Why:</strong> To help people understand what an unusual noise might mean and
-          whether it is a quick check or a job for a technician.
+          <strong>Why:</strong> Because "it's making a weird noise" is one of the least useful
+          sentences in the English language, and we wanted to help turn it into something
+          actionable.
         </p>
         <p>
           <strong>How:</strong> The analyzer is described above, including its limits. This page
@@ -970,7 +1000,7 @@
 
   <footer class="site-footer">
     <div class="inner">
-      <div><strong>Carithm AI</strong><br>AI sound diagnosis for cars, engines and air conditioners.</div>
+      <div><strong>Carithm AI</strong><br>AI sound diagnosis for cars, engines and air conditioners — because machines complain in their own weird language.</div>
       <ul>
         <li><a href="https://carithm.vercel.app/">Car sound diagnosis</a></li>
         <li><a href="/about">About</a></li>
