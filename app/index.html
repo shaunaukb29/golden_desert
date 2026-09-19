@@ -155,6 +155,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 a { color: inherit; }
 
@@ -278,7 +279,17 @@ li { margin-bottom: 6px; }
 
 @media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
 @media (max-width: 620px) {
-  .streamlit-embed-wrap { --streamlit-height: min(850px, 80vh); }
+  .streamlit-embed-wrap { 
+    --streamlit-height: min(850px, 80vh); 
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .streamlit-embed { min-height: 560px; }
+  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
+}
   .streamlit-embed { min-height: 560px; }
 }
 
@@ -299,7 +310,18 @@ li { margin-bottom: 6px; }
 .compare-col.win h4 { color: var(--green); }
 .compare-col ul { padding-left: 18px; margin: 0; }
 .compare-col li { font-size: 13.5px; margin-bottom: 8px; }
-@media (max-width: 620px) { .compare-strip { grid-template-columns: 1fr; } }
+@media (max-width: 620px) {
+  .streamlit-embed-wrap { 
+    --streamlit-height: min(850px, 80vh); 
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .streamlit-embed { min-height: 560px; }
+  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
+} }
 
 .crosslink-banner {
   background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
@@ -340,7 +362,18 @@ li { margin-bottom: 6px; }
 .related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
 .related-card .rc-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); margin-bottom: 4px; }
 .related-card .rc-title { font-size: 13px; font-weight: 600; color: var(--text); }
-@media (max-width: 620px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) {
+  .streamlit-embed-wrap { 
+    --streamlit-height: min(850px, 80vh); 
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .streamlit-embed { min-height: 560px; }
+  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
+} }
 
 footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
 .footer-inner { max-width: 760px; margin: 0 auto; }
@@ -350,7 +383,17 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 .footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
 
 @media (max-width: 620px) {
-  header { padding: 0.9rem 1.1rem; }
+  .streamlit-embed-wrap { 
+    --streamlit-height: min(850px, 80vh); 
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .streamlit-embed { min-height: 560px; }
+  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
+}
   .nav a:not(.cta-btn) { display: none; }
   .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
   .trust-strip { grid-template-columns: 1fr 1fr; }
@@ -451,6 +494,13 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   <noscript>
     <p class="note">This tool requires JavaScript to load the embedded app. <a href="https://hadi10973-nmanvbz9onaxzbwzdmnjku.streamlit.app/" target="_blank" rel="noopener">Open it directly here.</a></p>
   </noscript>
+</section>
+
+<section>
+  <div class="card" style="margin-bottom: 32px; background: #fdfdfd; border-left: 4px solid var(--primary);">
+    <h3>Advanced Engine Sound Diagnostic AI App</h3>
+    <p>Carithm is the ultimate <strong>engine sound diagnostic AI app</strong>. No app store downloads required—just hit record in your browser. Whether it's a clicking sound on startup or a loud rattle at highway speeds, our <strong>AI engine sound diagnosis</strong> acts like a digital ASE-certified mechanic in your pocket, giving you the confidence to talk dollars and cents at the dealership.</p>
+  </div>
 </section>
 
 <section>
