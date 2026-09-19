@@ -807,8 +807,8 @@
       "destination": "/audio/src/cardiag/web/static/app"
     },
     {
-      "source": "/audio/ac.html",
-      "destination": "/audio/src/cardiag/web/static/app"
+      "source": "/audio/ac",
+      "destination": "/audio/src/cardiag/web/static/ac"
     },
     {
       "source": "/audio/",
