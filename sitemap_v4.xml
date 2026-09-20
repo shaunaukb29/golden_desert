@@ -13,14 +13,14 @@
     <loc>https://carithm.vercel.app/audio/ac/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/washer/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>1.0</priority>
   </url>
 
   <url>
