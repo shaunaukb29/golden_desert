@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Carithm Online Sound Meter: Free Decibel (dB) & Pro Audio Analyzer</title>
+<meta name="description" content="The most advanced free online sound meter and decibel (dB) reader. Measure noise levels, true peak, LUFS, and spectral analysis live from your microphone. No download or signup.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://carithm.vercel.app/sound-meter">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Carithm">
+<meta property="og:title" content="Carithm Online Sound Meter: Free Decibel (dB) & Pro Audio Analyzer">
+<meta property="og:description" content="Measure noise in decibels with your microphone. Live dB level, LUFS, Spectrograms, and AI Diagnostics. Free, in your browser, no signup.">
+<meta property="og:url" content="https://carithm.vercel.app/sound-meter">
+<meta property="og:image" content="https://carithm.vercel.app/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Carithm Online Sound Meter: Free Decibel (dB) & Pro Audio Analyzer">
+<meta name="twitter:description" content="Measure noise in decibels with your microphone. Live dB level, LUFS, Spectrograms, and AI Diagnostics. Free, in your browser, no signup.">
+<meta name="twitter:image" content="https://carithm.vercel.app/og-image.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#09090b">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "Carithm Online Sound Meter",
+ "url": "https://carithm.vercel.app/sound-meter",
+ "applicationCategory": "UtilitiesApplication",
+ "operatingSystem": "Any (web browser)",
+ "browserRequirements": "Requires JavaScript, HTTPS and microphone access",
+ "inLanguage": "en",
+ "isAccessibleForFree": true,
+ "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+ "description": "Advanced free online sound level meter and acoustic analyzer. Measures noise in decibels (dB), LUFS loudness, True Peak, and provides spectral visualizations directly from your device microphone.",
+ "featureList": [
+  "Live decibel (dB) reading from your microphone",
+  "Professional ITU-R BS.1770-4 LUFS measurement",
+  "Live Spectrum, Spectrogram, and 1/3-Octave RTA",
+  "True-peak detection with 4x oversampling",
+  "AI Acoustic Diagnostics for Cars, ACs, and Washers",
+  "Works in the browser on phone, tablet and desktop"
+ ],
+ "dateModified": "2026-09-20",
+ "publisher": { "@type": "Organization", "name": "Carithm", "url": "https://carithm.vercel.app/" }
+}
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebSite", "name": "Carithm", "url": "https://carithm.vercel.app/" }
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How does an online sound meter work?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Your browser asks permission to use your microphone. Once allowed, our advanced Web Audio DSP engine measures the incoming sound quantum many times per second, converting it to precise decibel (dB) and LUFS readings, alongside rich spectral charts."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What makes Carithm's sound meter better than others?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Unlike basic dB readers, Carithm includes professional-grade acoustic analysis: ITU-R BS.1770 LUFS K-weighting, 4x polyphase oversampled True Peak detection, 1/3-octave RTAs, and spectrograms. We also link these metrics directly to our AI acoustic diagnostic engines for machinery."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can this app diagnose my car or washing machine?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes! Carithm specializes in Acoustic AI Diagnostics. Alongside measuring the decibel level, our broader platform analyzes the frequency signature of car engines, HVAC systems, and washing machines to detect belt squeals, bearing wear, and imbalances."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How many decibels is normal conversation?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Normal conversation measures about 60 dB at a distance of one metre. A whisper is around 30 dB and a vacuum cleaner is around 70 dB."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does the sound meter work on iPhone and Android?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. It runs entirely in modern browsers (Safari, Chrome, Edge). No app store download is required."
+   }
+  }
+ ]
+}
+</script>
+
+<style>
+:root {
+  --bg: #09090b;
+  --surface: #111113;
+  --surface2: #18181b;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.13);
+  --text: #fafafa;
+  --muted: #a1a8b3;
+  --muted2: #8a8f9a;
+  --accent: #2f81f7;
+  --accent-glow: rgba(47, 129, 247, 0.4);
+  --green: #22c55e;
+  --amber: #f59e0b;
+  --red: #ef4444;
+  --r: 12px;
+  --r-sm: 8px;
+  --container: 1480px;
+  --gutter: clamp(20px, 4.5vw, 72px);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); }
+a:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+.skip { position: absolute; left: -9999px; top: 8px; background: var(--accent); color: #000; padding: 8px 14px; border-radius: var(--r-sm); z-index: 200; font-weight: 600; }
+.skip:focus { left: var(--gutter); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Header */
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(9,9,11,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.site-header .wrap { display: flex; justify-content: space-between; align-items: center; min-height: 64px; gap: 24px; }
+.logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.05em; color: #fff; text-decoration: none; }
+.logo span { color: var(--accent); }
+.nav { display: flex; align-items: center; gap: 28px; }
+.nav-links { display: none; gap: clamp(16px, 2.4vw, 36px); }
+.nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+.nav a:hover, .nav a[aria-current="page"] { color: #fff; }
+.btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: var(--r-sm); background: var(--accent); color: #000; font-weight: 700; font-size: 0.9rem; text-decoration: none; }
+.nav a.btn, .nav a.btn:hover { color: #000; }
+.btn:hover { opacity: 0.9; }
+@media (min-width: 860px) { .nav-links { display: flex; } }
+
+/* Hero */
+.hero { display: grid; gap: 28px; padding-block: clamp(36px, 6vw, 80px) clamp(24px, 3vw, 40px); }
+.hero h1 { font-size: clamp(2.2rem, 4.8vw, 4.25rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; margin: 0; max-width: 15em; }
+.hero h1 span { color: var(--accent); }
+.hero-side p { color: var(--muted); font-size: 1.1rem; margin: 0 0 20px; max-width: 58ch; }
+.facts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border2); max-width: 58ch; }
+.facts li { padding: 11px 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+@media (min-width: 1000px) {
+  .hero { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 72px; align-items: end; }
+}
+
+/* Tool */
+.tool { background: var(--surface); border: 1px solid rgba(47,129,247,0.28); border-radius: var(--r); padding: clamp(14px, 2.4vw, 32px); box-shadow: 0 12px 48px -24px var(--accent-glow); }
+.tool h2 { margin: 0 0 16px; font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
+.tool-mount { min-height: clamp(420px, 58vh, 800px); border-radius: var(--r-sm); background: var(--surface2); border: 1px solid var(--border); overflow: hidden; }
+.tool-placeholder { display: grid; place-items: center; min-height: inherit; text-align: center; padding: 32px; color: var(--muted2); border: 1px dashed var(--border2); border-radius: var(--r-sm); }
+.tool-note { font-size: 0.85rem; color: var(--muted2); margin: 14px 0 0; }
+
+/* Sections */
+.section { padding-block: clamp(52px, 7vw, 104px) 0; }
+.section h2 { font-size: clamp(1.5rem, 2.6vw, 2.25rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; margin: 0 0 16px; }
+.section h3 { font-size: 1.05rem; font-weight: 600; margin: 0 0 6px; color: #fff; }
+.section p { color: var(--muted); margin: 0 0 14px; max-width: 70ch; }
+
+/* Feature Grid */
+.features-grid { display: grid; gap: 24px; margin-top: 32px; }
+@media (min-width: 768px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .features-grid { grid-template-columns: repeat(3, 1fr); } }
+.feature-card { background: var(--surface); padding: 24px; border: 1px solid var(--border); border-radius: var(--r-sm); transition: border-color 0.2s; }
+.feature-card:hover { border-color: var(--accent); }
+.feature-card h3 { margin-top: 0; color: var(--accent); font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.05em; }
+.feature-card p { font-size: 0.9rem; margin-bottom: 0; }
+
+/* AI Diagnostics Banner */
+.ai-banner { margin-top: 64px; background: linear-gradient(135deg, rgba(47,129,247,0.1) 0%, rgba(34,197,94,0.1) 100%); border: 1px solid var(--accent); border-radius: var(--r); padding: 40px; text-align: center; }
+.ai-banner h2 { font-size: 2.5rem; margin-bottom: 16px; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em; }
+.ai-banner p { font-size: 1.1rem; color: #fff; max-width: 800px; margin: 0 auto 32px auto; }
+.ai-cards { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); text-align: left; }
+.ai-card { background: rgba(0,0,0,0.4); padding: 20px; border-radius: var(--r-sm); border: 1px solid var(--border); }
+.ai-card h4 { color: var(--accent); margin: 0 0 8px 0; font-size: 1.1rem; }
+.ai-card p { font-size: 0.9rem; color: var(--muted); margin: 0; }
+
+/* Steps */
+.steps { list-style: none; margin: 28px 0 0; padding: 0; display: grid; counter-reset: step; }
+.steps li { position: relative; padding: 20px 0 22px 60px; border-top: 1px solid var(--border2); color: var(--muted); }
+.steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 14px; font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; line-height: 1; color: var(--accent); }
+.steps strong { display: block; color: var(--text); font-size: 1.05rem; margin-bottom: 4px; }
+@media (min-width: 900px) { .steps { grid-template-columns: repeat(3, 1fr); column-gap: 56px; } }
+
+/* Decibel scale */
+.ruler { display: none; position: relative; height: 178px; margin: 40px 0 8px; }
+.ruler-bar { position: absolute; left: 0; right: 0; top: 78px; height: 14px; border-radius: 999px; background: linear-gradient(90deg, var(--green) 0, var(--green) 48%, var(--amber) 60%, var(--amber) 66%, var(--red) 72%, var(--red) 100%); }
+.ruler ul { list-style: none; margin: 0; padding: 0; }
+.mark { position: absolute; left: var(--p); width: 120px; margin-left: -60px; text-align: center; font-size: 0.8rem; color: var(--muted); line-height: 1.3; display: flex; flex-direction: column; align-items: center; }
+.mark b { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 2rem; letter-spacing: 0.02em; line-height: 1; color: var(--text); }
+.mark.up { top: 0; height: 78px; justify-content: flex-end; }
+.mark.up::after { content: ""; width: 1px; height: 8px; background: var(--border2); margin-top: 4px; }
+.mark.down { top: 92px; }
+.mark.down::before { content: ""; width: 1px; height: 8px; background: var(--border2); margin-bottom: 4px; }
+.mark.end { margin-left: -120px; align-items: flex-end; text-align: right; }
+.mark.end::after { align-self: flex-end; }
+@media (min-width: 860px) { .ruler { display: block; } }
+
+.table-scroll { overflow-x: auto; margin-top: 28px; border: 1px solid var(--border); border-radius: var(--r); }
+table { width: 100%; border-collapse: collapse; min-width: 620px; }
+th { font-size: 0.82rem; font-weight: 600; color: var(--muted2); text-align: left; padding: 14px 20px; background: var(--surface); border-bottom: 1px solid var(--border2); }
+td { padding: 13px 20px; border-bottom: 1px solid var(--border); color: var(--muted); vertical-align: middle; }
+tr:last-child td { border-bottom: 0; }
+tr.g { --c: var(--green); }
+tr.a { --c: var(--amber); }
+tr.r { --c: var(--red); }
+td.db { width: 130px; font-family: 'Bebas Neue', sans-serif; font-size: 2rem; line-height: 1; color: var(--text); border-left: 4px solid var(--c); }
+td.db small { font-family: 'Inter', system-ui, sans-serif; font-size: 0.75rem; color: var(--muted2); margin-left: 5px; }
+td strong { color: var(--text); font-weight: 600; }
+.table-note { font-size: 0.85rem; margin-top: 16px; }
+
+/* FAQ */
+.faq { margin-top: 28px; }
+.faq-item { break-inside: avoid; padding: 18px 0 20px; border-top: 1px solid var(--border2); }
+.faq-item p { margin: 0; max-width: none; }
+@media (min-width: 960px) { .faq { column-count: 2; column-gap: 80px; } }
+
+/* Footer */
+.site-footer { margin-top: clamp(64px, 8vw, 112px); border-top: 1px solid var(--border); background: var(--surface); padding: 40px 0 28px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-bottom: 20px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; padding: 4px 0; }
+.footer-links a:hover { color: var(--accent); }
+.footer-note { border-top: 1px solid var(--border); padding-top: 18px; margin: 0; color: var(--muted2); font-size: 0.82rem; }
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="https://carithm.vercel.app/">CARITHM<span>.</span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav-links">
+        <a href="https://carithm.vercel.app/sound-meter" aria-current="page">Pro Sound Meter</a>
+        <a href="https://carithm.vercel.app/car-diagnostics">Car Diagnostics</a>
+        <a href="https://carithm.vercel.app/hvac">HVAC & AC</a>
+        <a href="https://carithm.vercel.app/appliances">Washing Machines</a>
+      </div>
+      <a class="btn" href="#meter">Launch Analyzer</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="wrap hero">
+    <h1>The Ultimate <span>Online Sound Meter</span> & Acoustic Analyzer</h1>
+    <div class="hero-side">
+      <p>Stop settling for basic decibel readers. Carithm brings a professional-grade acoustic laboratory directly to your browser. Measure live dB levels, LUFS, True Peak, and visualize frequency spectrums—completely free.</p>
+      <ul class="facts">
+        <li><strong>No downloads, no signup:</strong> Runs instantly in Chrome, Safari, and Edge.</li>
+        <li><strong>Pro-Grade DSP:</strong> True peak oversampling, 1/3-Octave RTA, and ITU-R BS.1770 LUFS.</li>
+        <li><strong>100% Private:</strong> Audio is processed locally on your device and never uploaded.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap" id="meter" aria-labelledby="meter-heading">
+    <div class="tool">
+      <h2 id="meter-heading">Carithm Pro Acoustic Analyzer</h2>
+      <div class="tool-mount" id="sound-meter-app">
+        <!-- Streamlit Iframe Embedding -->
+        <iframe 
+            src="https://hastings2918-jj7mhxbtrrtia3jxufrytu.streamlit.app/" 
+            width="100%" 
+            height="100%" 
+            style="border: none; background: transparent; min-height: 800px;" 
+            allow="microphone">
+        </iframe>
+      </div>
+      <p class="tool-note">Requires microphone permission. Powered by Carithm's advanced Web Audio DSP engine.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="features-heading">
+    <div class="wrap">
+      <h2 id="features-heading">More Than Just a Noise Level Meter</h2>
+      <p>Our online sound level meter extracts deep acoustic intelligence from a standard microphone. Here is the information our recording software reveals about your audio environment:</p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>LUFS & Loudness</h3>
+          <p>We implement the exact ITU-R BS.1770-4 standard used by Netflix and Spotify. View Momentary, Short-term, and Integrated LUFS with K-weighted precision.</p>
+        </div>
+        <div class="feature-card">
+          <h3>True Peak Detection</h3>
+          <p>Digital peaks can hide between samples. Our engine uses 4x polyphase sinc interpolation to catch inter-sample clipping (dBTP) that standard meters miss.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Spectral Analysis & RTA</h3>
+          <p>Visualize the frequency domain live. See the Spectral Centroid (brightness), Spectral Flatness (tonality), and a 31-band 1/3-Octave Real-Time Analyzer.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Live Spectrogram</h3>
+          <p>Map time, frequency, and amplitude on a stunning heatmap. Perfect for spotting resonant hums, mechanical whine, or intermittent squeals.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Signal Health</h3>
+          <p>Monitor your acoustic environment's Crest Factor, Peak-to-Loudness Ratio (PLR), Loudness Range (LRA), and automatically estimate the background noise floor.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Stereo Goniometer</h3>
+          <p>If you connect a stereo microphone, visualize the phase correlation and L/R energy balance in real-time to check for mono compatibility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="ai-banner">
+      <h2>Carithm AI Diagnostics: Beyond Sound Measurement</h2>
+      <p>Why just measure noise when you can understand it? Carithm is pioneering the field of Acoustic AI. We use the same advanced DSP engine powering our sound meter to diagnose mechanical faults simply by listening to them.</p>
+      
+      <div class="ai-cards">
+        <div class="ai-card">
+          <h4>🚗 Car Sound Diagnostics</h4>
+          <p>Upload a recording of your engine. Carithm analyzes the acoustic signature to detect worn serpentine belts, failing alternator bearings, exhaust leaks, and rod knock before they cause a breakdown.</p>
+        </div>
+        <div class="ai-card">
+          <h4>❄️ AC & HVAC Diagnostics</h4>
+          <p>Air conditioners have distinct harmonic profiles. Our AI listens for compressor cavitation, fan motor imbalance, and refrigerant flow anomalies to diagnose HVAC issues instantly.</p>
+        </div>
+        <div class="ai-card">
+          <h4>🧺 Washing Machine Diagnostics</h4>
+          <p>Is that spin cycle too loud? We analyze the vibratory frequency and acoustic rhythm to pinpoint worn drum bearings, loose counterweights, and faulty drain pumps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="decibel-chart" aria-labelledby="chart-heading">
+    <div class="wrap">
+      <h2 id="chart-heading">Decibel Chart: How Loud Is It?</h2>
+      <p>Use this scale to put your online decibel meter reading in context. Remember that every 3 dB doubles the sound energy.</p>
+
+      <div class="ruler" aria-hidden="true">
+        <div class="ruler-bar"></div>
+        <ul>
+        <li class="mark up" style="--p:21.43%"><b>30</b>Whisper</li>
+        <li class="mark down" style="--p:42.86%"><b>60</b>Conversation</li>
+        <li class="mark up" style="--p:50.00%"><b>70</b>Vacuum cleaner</li>
+        <li class="mark down" style="--p:60.71%"><b>85</b>Hearing risk begins</li>
+        <li class="mark up" style="--p:71.43%"><b>100</b>Nightclub</li>
+        <li class="mark down" style="--p:85.71%"><b>120</b>Siren, close up</li>
+        <li class="mark up end" style="--p:100.00%"><b>140</b>Jet engine</li>
+        </ul>
+      </div>
+
+      <div class="table-scroll">
+        <table>
+          <caption class="sr-only">Common sounds and their typical decibel levels</caption>
+          <thead><tr><th scope="col">Level</th><th scope="col">Sounds like</th><th scope="col">What it means</th></tr></thead>
+          <tbody>
+          <tr class="g"><td class="db">30<small>dB</small></td><td><strong>Quiet library, bedroom at night</strong></td><td>Very quiet. A good target for sleeping.</td></tr>
+          <tr class="g"><td class="db">60<small>dB</small></td><td><strong>Normal conversation, background music</strong></td><td>Comfortable. No risk to hearing.</td></tr>
+          <tr class="g"><td class="db">70<small>dB</small></td><td><strong>Vacuum cleaner, noisy restaurant</strong></td><td>Loud enough to be annoying but safe.</td></tr>
+          <tr class="a"><td class="db">85<small>dB</small></td><td><strong>Heavy city traffic, leaf blower</strong></td><td>Hearing damage can begin after about 8 hours.</td></tr>
+          <tr class="a"><td class="db">95<small>dB</small></td><td><strong>Motorcycle, power tools</strong></td><td>Damage possible in an hour. Wear hearing protection.</td></tr>
+          <tr class="r"><td class="db">110<small>dB</small></td><td><strong>Rock concert, chainsaw</strong></td><td>Damage possible in a minute or two.</td></tr>
+          <tr class="r"><td class="db">140<small>dB</small></td><td><strong>Firearm, jet engine</strong></td><td>Immediate, permanent damage is possible.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <div class="wrap">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+      <div class="faq">
+      <div class="faq-item">
+        <h3>How does an online sound meter work?</h3>
+        <p>Your browser asks permission to use your microphone. Once allowed, our advanced Web Audio DSP engine measures the incoming sound many times per second, converting it to precise decibel (dB) and LUFS readings, alongside rich spectral charts.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is this online decibel meter accurate?</h3>
+        <p>It is highly accurate for relative comparisons, acoustic diagnostics, and general environmental awareness. However, because built-in device microphones are not factory-calibrated, absolute dB values may vary. For strict legal compliance, a Class 1 meter is required.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can this app diagnose my car or washing machine?</h3>
+        <p>Yes! Carithm specializes in Acoustic AI Diagnostics. Alongside measuring the decibel level, our broader platform analyzes the frequency signature of car engines, HVAC systems, and washing machines to detect mechanical faults.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does the sound meter record or store my audio?</h3>
+        <p>No. Sound is measured live in your browser and nothing is recorded, uploaded to our servers, or saved. Closing the tab immediately clears the readings.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="https://carithm.vercel.app/sound-meter">Pro Sound Meter</a>
+      <a href="https://carithm.vercel.app">Car Engine Diagnostics</a>
+      <a href="https://carithm.vercel.app/audio/ac">AC & HVAC Check</a>
+      <a href="https://carithm.vercel.app/audio/washer">Appliance Diagnostics</a>
+    </nav>
+    <p class="footer-note">&copy; 2026 Carithm. AI-Powered Acoustic Diagnostics and Pro Audio Tools.</p>
+  </div>
+</footer>
+
+</body>
+</html>
