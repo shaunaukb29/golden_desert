@@ -45,7 +45,7 @@
 </script>
 
 <!-- Google AdSense Global Script -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" data-overlays="bottom" crossorigin="anonymous"></script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -268,7 +268,8 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  font-size: 17.5px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -307,7 +308,7 @@ header {
 }
 .nav .cta-btn:hover { background: var(--accent); color: #000; }
 
-main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
+main { max-width: 820px; margin: 0 auto; padding: 56px 24px 48px; }
 
 .ad-container {
   display: flex;
@@ -342,24 +343,24 @@ main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
   -webkit-background-clip: text; background-clip: text; color: transparent;
   margin-bottom: 12px; display: inline-block;
 }
-h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 14px; line-height: 1.12; }
-h2 { font-size: 1.3rem; font-weight: 600; margin-top: 44px; letter-spacing: -0.01em; padding-left: 12px; border-left: 3px solid var(--accent); }
-h3 { font-size: 1.02rem; font-weight: 600; margin-top: 22px; color: var(--text); }
+h1 { font-size: clamp(2.1rem, 6vw, 2.75rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 18px; line-height: 1.14; }
+h2 { font-size: 1.55rem; font-weight: 600; margin-top: 58px; margin-bottom: 4px; letter-spacing: -0.01em; padding-left: 14px; border-left: 3px solid var(--accent); }
+h3 { font-size: 1.18rem; font-weight: 600; margin-top: 28px; color: var(--text); }
 h3::before { content: "»"; color: var(--teal); margin-right: 6px; font-weight: 700; }
-p { color: var(--muted); margin: 0 0 8px; }
-ul, ol { color: var(--muted); padding-left: 20px; }
-li { margin-bottom: 6px; }
+p { color: var(--muted); margin: 0 0 14px; font-size: 1.02em; }
+ul, ol { color: var(--muted); padding-left: 22px; }
+li { margin-bottom: 10px; font-size: 1.02em; }
 
-.trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 22px 0 8px; }
-.trust-strip > div { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); }
+.trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 28px 0 12px; }
+.trust-strip > div { padding: 22px 10px; text-align: center; border-right: 1px solid var(--border); }
 .trust-strip > div:last-child { border-right: none; }
-.trust-num { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+.trust-num { font-size: 23px; font-weight: 700; letter-spacing: -0.02em; }
 .trust-num span { color: var(--accent); }
 .trust-strip > div:nth-child(1) .trust-num { color: var(--accent); }
 .trust-strip > div:nth-child(2) .trust-num { color: var(--teal); }
 .trust-strip > div:nth-child(3) .trust-num { color: var(--violet); }
 .trust-strip > div:nth-child(4) .trust-num { color: var(--green); }
-.trust-lbl { font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 3px; }
+.trust-lbl { font-size: 11.5px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 5px; }
 
 .byline {
   display: flex;
@@ -404,9 +405,9 @@ main > section:first-of-type::before {
 
 .card {
   background: var(--surface);
-  padding: 26px;
+  padding: 32px;
   border-radius: var(--r);
-  margin-top: 26px;
+  margin-top: 32px;
   border: 1px solid var(--border);
 }
 .card.tool {
@@ -522,10 +523,19 @@ main > section:first-of-type::before {
     border-right: none;
   }
   .streamlit-embed { min-height: 560px; }
-  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
+  main { padding: 32px 12px 32px; } /* Increase side padding for narrower text on mobile */
 }
   .streamlit-embed { min-height: 560px; }
 }
+
+.step-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 20px 0 8px; }
+.step-flow-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 24px 18px; }
+.step-flow-num { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--accent-dim); color: var(--accent); font-weight: 700; font-size: 17px; margin-bottom: 14px; }
+.step-flow-item:nth-child(2) .step-flow-num { background: var(--teal-dim); color: var(--teal); }
+.step-flow-item:nth-child(3) .step-flow-num { background: var(--violet-dim); color: var(--violet); }
+.step-flow-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.step-flow-item p { font-size: 14px; margin: 0; }
+@media (max-width: 620px) { .step-flow { grid-template-columns: 1fr; } }
 
 .crosslink-banner {
   background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
@@ -585,7 +595,7 @@ main > section:first-of-type::before {
     border-right: none;
   }
   .streamlit-embed { min-height: 560px; }
-  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
+  main { padding: 32px 12px 32px; } /* Increase side padding for narrower text on mobile */
 } }
 
 footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
@@ -605,15 +615,16 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     border-right: none;
   }
   .streamlit-embed { min-height: 560px; }
-  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
+  main { padding: 32px 12px 32px; } /* Increase side padding for narrower text on mobile */
 }
   .nav a:not(.cta-btn) { display: none; }
   .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
   .trust-strip { grid-template-columns: 1fr 1fr; }
-  main { padding: 32px 16px 32px; }
-  h1 { line-height: 1.18; }
-  h2 { margin-top: 34px; }
-  .card { padding: 20px; }
+  main { padding: 40px 16px 40px; }
+  body { font-size: 17px; }
+  h1 { line-height: 1.2; }
+  h2 { margin-top: 46px; font-size: 1.4rem; }
+  .card { padding: 24px; }
   .crosslink-banner { padding: 18px 20px; }
   .crosslink-btn { width: 100%; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
   .footer-links a { padding: 4px 0; display: inline-block; }
@@ -669,6 +680,27 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
     <div class="byline-text">
       <span class="byline-name">Reviewed by the Carithm Automotive Data Team</span>
       <span class="byline-meta">Fault-pattern data cross-checked against ASE-style repair categories · Last updated <time datetime="2026-08-12">August 12, 2026</time> · <a href="https://carithm.vercel.app/research">See our methodology</a></span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 style="margin-top: 38px;">How It Works, In Three Steps</h2>
+  <div class="step-flow">
+    <div class="step-flow-item">
+      <div class="step-flow-num">1</div>
+      <div class="step-flow-title">Record or Upload</div>
+      <p>Hold your phone near the noise — engine bay, wheel well, or exhaust — and capture 5–10 seconds of clean audio, or upload a clip you already have.</p>
+    </div>
+    <div class="step-flow-item">
+      <div class="step-flow-num">2</div>
+      <div class="step-flow-title">AI Analyzes the Clip</div>
+      <p>The analyzer strips out wind and road noise, isolates the mechanical frequency signature, and compares it against known fault patterns.</p>
+    </div>
+    <div class="step-flow-item">
+      <div class="step-flow-num">3</div>
+      <div class="step-flow-title">Get a Ranked Diagnosis</div>
+      <p>You receive a confidence-scored list of likely fault areas — so you know what to ask (or watch out for) before booking a repair.</p>
     </div>
   </div>
 </section>
