@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="0.5" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- ── Core pages ── -->
   <url>
     <loc>https://carithm.vercel.app/</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
@@ -13,7 +13,7 @@
       <loc>https://carithm.vercel.app/contact</loc>
       <lastmod>2026-10-05</lastmod>
       <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
+      <priority>0.5</priority>
     </url>
   
   <url>
@@ -27,14 +27,14 @@
     <loc>https://carithm.vercel.app/audio/ac/</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <priority>0.2</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/washer/</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.2</priority>
   </url>
 
   <url>
@@ -48,7 +48,7 @@
     <loc>https://carithm.vercel.app/audio/rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
@@ -69,14 +69,14 @@
     <loc>https://carithm.vercel.app/vision/</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/cost-calculator</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
@@ -97,7 +97,7 @@
     <loc>https://carithm.vercel.app/founder</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -1702,3532 +1702,3532 @@
     <loc>https://carithm.vercel.app/audio/ford-explorer-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-camry-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-silverado-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2013-nissan-altima-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2025-chevrolet-equinox-ev-squealing-brakes</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-altima-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-camry-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-rav4-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-tucson-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/engine-ticking-after-oil-change</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/honda-civic-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/gmc-sierra-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-corolla-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-camry-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-corolla-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2013-2018-nissan-altima-squealing-brakes</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-rogue-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2011-2017-jeep-grand-cherokee-squealing-belt-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-outback-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-corolla-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/gmc-sierra-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-silverado-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-compass-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ram-1500-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/squealing-all-the-time</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-silverado-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/rattling-noise-underneath-car</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-altima-humming-noise-when-accelerating</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-grand-cherokee-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2013-2014-honda-crv-squealing-brakes</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-tucson-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/honda-civic-rattling-at-idle</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-outback-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2014-ford-explorer-squealing-brakes</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-rav4-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-tucson-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-tucson-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/honda-cr-v-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ford-explorer-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2010-2013-toyota-corolla-squealing-brakes</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ford-explorer-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-outback-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-y-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-grand-cherokee-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ram-1500-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2013-2014-chevrolet-equinox-squealing-brakes</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-outback-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/honda-civic-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/engine-ticking-when-accelerating</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-silverado-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/engine-tick-at-idle</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ram-1500-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-rav4-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-corolla-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/honda-civic-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-altima-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/honda-civic-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-camry-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/vw-caddy-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2013-2019-ford-escape-squealing-belt-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ford-f-150-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2011-2016-chevrolet-cruze-squealing-belt-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2011-2014-ford-f150-squealing-belt-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/metallic-rattle-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ford-f-150-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/honda-cr-v-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-grand-cherokee-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-outback-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/fiat-egea-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ford-f-150-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/engine-ticking-cold-start</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/renault-kwid-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2016-acura-rdx-squealing-brakes</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2007-2013-chevrolet-silverado-squealing-belt-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/squealing-when-braking</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/squealing-on-startup</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/high-pitched-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ford-explorer-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/engine-rattling-when-idle</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/honda-cr-v-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-grand-cherokee-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/car-rattling-when-accelerating</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-camry-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/squealing-only-cold</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2008-dodge-grand-caravan-squealing-brakes</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ram-1500-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ram-1500-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2015-2020-subaru-outback-squealing-brakes</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/gmc-sierra-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2011-ford-fiesta-squealing-brakes</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-rogue-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2007-2011-toyota-camry-squealing-belt-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/squealing-while-turning</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-camry-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/engine-ticking-no-check-engine-light</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/squealing-when-accelerating</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-tucson-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-rogue-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/honda-odyssey-wheel-bearing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2020-2022-kia-sorento-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/engine-ticking-when-warm</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-silverado-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/direct-injection-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-silverado-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/gmc-sierra-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ford-f-150-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-rogue-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-corolla-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-y-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-y-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ford-explorer-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/rattling-noise-no-check-engine-light</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-tucson-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/honda-cr-v-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/engine-rattling-noise-when-accelerating</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-grand-cherokee-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/muffler-rattling-when-accelerating</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/car-making-rattling-noise-when-driving-slow</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/honda-cr-v-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/honda-civic-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-outback-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-y-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ford-explorer-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-rogue-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-altima-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/valvetrain-tick-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-rav4-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-rogue-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/exhaust-rattling-at-idle</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/honda-civic-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ford-f-150-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-rav4-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-altima-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ford-fiesta-rattling-noise-when-accelerating</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/rattling-noise-when-pressing-clutch</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ford-f-150-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/honda-cr-v-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-altima-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/lifter-tick-sound</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/heat-shield-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/app</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/gmc-sierra-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2012-2015-honda-civic-squealing-brakes</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/landing</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-y-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-rav4-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/2015-chrysler-200-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/why-is-my-car-rattling</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-altima-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/audi-a8-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/car-rattling-when-idle</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-grand-cherokee-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ram-1500-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-y-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-corolla-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/gmc-sierra-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/engine-ticking-at-idle</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/all-models</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/upload-car-sound-for-diagnosis</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/can-chatgpt-diagnose-car-sound</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ai-that-listens-to-engine-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/free-ai-car-sound-diagnosis</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://carithm.vercel.app/audio/ai-diagnose-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   
 
 
-  <!-- ── Programmatic SEO: Car-Specific Symptom Pages (mass generated, priority 1.0) ── -->
+  <!-- ── Programmatic SEO: Car-Specific Symptom Pages (mass generated, priority 0.5) ── -->
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x3-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x3-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x3-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x3-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x3-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x3-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x3-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x3-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x3-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x3-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x5-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x5-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x5-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x5-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x5-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x5-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x5-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x5-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x5-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/bmw-x5-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-colorado-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-colorado-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-colorado-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-colorado-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-colorado-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-colorado-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-colorado-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-colorado-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-colorado-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-colorado-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-equinox-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-equinox-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-equinox-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-equinox-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-equinox-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-equinox-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-equinox-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-equinox-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-equinox-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-equinox-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-malibu-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-malibu-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-malibu-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-malibu-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-malibu-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-malibu-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-malibu-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-malibu-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-malibu-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-malibu-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-silverado-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-silverado-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-silverado-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-silverado-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-traverse-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-traverse-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-traverse-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-traverse-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-traverse-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-traverse-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-traverse-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-traverse-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-traverse-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/chevrolet-traverse-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/dodge-charger-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/dodge-charger-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/dodge-charger-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/dodge-charger-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/dodge-charger-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/dodge-charger-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/dodge-charger-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/dodge-charger-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/dodge-charger-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/dodge-charger-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-bronco-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-bronco-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-bronco-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-bronco-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-bronco-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-bronco-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-bronco-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-bronco-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-bronco-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-bronco-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-escape-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-escape-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-escape-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-escape-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-escape-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-escape-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-escape-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-escape-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-escape-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-escape-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-explorer-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-explorer-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-explorer-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-explorer-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-f-150-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-f-150-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-f-150-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ford-f-150-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/gmc-sierra-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/gmc-sierra-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/gmc-sierra-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/gmc-sierra-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-accord-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-accord-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-accord-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-accord-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-accord-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-accord-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-accord-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-accord-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-accord-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-accord-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-civic-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-civic-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-civic-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-civic-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-cr-v-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-cr-v-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-cr-v-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-cr-v-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-hr-v-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-hr-v-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-hr-v-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-hr-v-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-hr-v-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-hr-v-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-hr-v-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-hr-v-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-hr-v-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-hr-v-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-pilot-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-pilot-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-pilot-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-pilot-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-pilot-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-pilot-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-pilot-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-pilot-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-pilot-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/honda-pilot-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-elantra-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-elantra-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-elantra-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-elantra-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-elantra-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-elantra-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-elantra-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-elantra-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-elantra-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-elantra-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-palisade-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-palisade-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-palisade-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-palisade-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-palisade-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-palisade-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-palisade-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-palisade-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-palisade-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-palisade-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-santa-fe-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-santa-fe-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-santa-fe-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-santa-fe-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-santa-fe-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-santa-fe-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-santa-fe-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-santa-fe-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-santa-fe-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-santa-fe-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-tucson-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-tucson-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-tucson-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/hyundai-tucson-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-compass-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-compass-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-compass-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-compass-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-compass-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-compass-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-compass-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-compass-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-compass-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-grand-cherokee-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-grand-cherokee-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-grand-cherokee-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-grand-cherokee-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-wrangler-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-wrangler-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-wrangler-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-wrangler-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-wrangler-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-wrangler-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-wrangler-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-wrangler-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-wrangler-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/jeep-wrangler-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-forte-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-forte-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-forte-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-forte-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-forte-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-forte-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-forte-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-forte-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-forte-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-forte-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-sportage-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-sportage-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-sportage-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-sportage-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-sportage-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-sportage-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-sportage-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-sportage-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-sportage-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-sportage-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-telluride-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-telluride-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-telluride-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-telluride-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-telluride-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-telluride-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-telluride-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-telluride-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-telluride-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/kia-telluride-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/lexus-rx-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/lexus-rx-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/lexus-rx-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/lexus-rx-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/lexus-rx-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/lexus-rx-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/lexus-rx-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/lexus-rx-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/lexus-rx-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/lexus-rx-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mazda-cx-5-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mazda-cx-5-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mazda-cx-5-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mazda-cx-5-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mazda-cx-5-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mazda-cx-5-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mazda-cx-5-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mazda-cx-5-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mazda-cx-5-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mazda-cx-5-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mercedes-benz-gle-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mercedes-benz-gle-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mercedes-benz-gle-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mercedes-benz-gle-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mercedes-benz-gle-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mercedes-benz-gle-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mercedes-benz-gle-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mercedes-benz-gle-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mercedes-benz-gle-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/mercedes-benz-gle-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-altima-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-altima-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-altima-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-frontier-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-frontier-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-frontier-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-frontier-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-frontier-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-frontier-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-frontier-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-frontier-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-frontier-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-frontier-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-rogue-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-rogue-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-rogue-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-rogue-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-sentra-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-sentra-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-sentra-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-sentra-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-sentra-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-sentra-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-sentra-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-sentra-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-sentra-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/nissan-sentra-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ram-1500-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ram-1500-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ram-1500-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/ram-1500-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-ascent-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-ascent-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-ascent-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-ascent-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-ascent-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-ascent-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-ascent-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-ascent-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-ascent-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-ascent-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-crosstrek-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-crosstrek-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-crosstrek-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-crosstrek-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-crosstrek-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-crosstrek-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-crosstrek-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-crosstrek-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-crosstrek-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-crosstrek-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-forester-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-forester-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-forester-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-forester-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-forester-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-forester-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-forester-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-forester-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-forester-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-forester-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-outback-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-outback-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-outback-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/subaru-outback-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-3-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-3-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-3-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-3-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-3-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-3-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-3-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-3-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-3-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-3-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-y-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-y-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-y-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/tesla-model-y-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-camry-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-camry-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-camry-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-camry-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-corolla-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-corolla-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-corolla-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-corolla-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-highlander-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-highlander-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-highlander-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-highlander-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-highlander-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-highlander-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-highlander-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-highlander-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-highlander-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-highlander-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-rav4-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-rav4-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-rav4-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-rav4-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tacoma-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tacoma-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tacoma-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tacoma-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tacoma-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tacoma-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tacoma-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tacoma-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tacoma-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tacoma-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tundra-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tundra-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tundra-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tundra-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tundra-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tundra-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tundra-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tundra-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tundra-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/toyota-tundra-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/volkswagen-tiguan-clicking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/volkswagen-tiguan-clunking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/volkswagen-tiguan-grinding-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/volkswagen-tiguan-hissing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/volkswagen-tiguan-humming-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/volkswagen-tiguan-knocking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/volkswagen-tiguan-rattling-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/volkswagen-tiguan-squealing-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/volkswagen-tiguan-ticking-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/volkswagen-tiguan-whining-noise</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 
 </urlset>
