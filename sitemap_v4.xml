@@ -5,7 +5,7 @@
   <url>
     <loc>https://carithm.vercel.app/</loc>
     <lastmod>2026-10-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   
@@ -19,14 +19,14 @@
   <url>
     <loc>https://carithm.vercel.app/sound-meter/</loc>
     <lastmod>2026-09-21</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://carithm.vercel.app/audio/ac/</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
 
@@ -5234,19 +5234,19 @@
   <url>
     <loc>https://carithm.vercel.app/audio/shazam-for-cars</loc>
     <lastmod>2026-10-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/engine-noise-analysis-app</loc>
     <lastmod>2026-10-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://carithm.vercel.app/audio/car-noise-detector</loc>
     <lastmod>2026-10-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 </urlset>
