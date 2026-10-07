@@ -121,8 +121,7 @@
   {"@type":"Question","name":"How do I check engine sound for problems?","acceptedAnswer":{"@type":"Answer","text":"To check engine sound for problems, record it close to the engine bay with your phone, then upload the clip to an engine sound diagnostic AI app like Carithm. It screens for knocking, ticking, belt squeal, and other abnormal patterns and flags which areas may need inspection."}},
   {"@type":"Question","name":"Is Carithm the same as EngineEar AI or My Auto Sound?","acceptedAnswer":{"@type":"Answer","text":"No — Carithm is an independent car sound diagnostic tool and isn't affiliated with EngineEar AI or My Auto Sound. All three serve a similar purpose (turning a recorded car noise into a likely fault area), but Carithm is free, runs entirely in the browser with no signup, and shows a confidence score alongside every result."}},
   {"@type":"Question","name":"Why is my car making a rattling noise from underneath or the front end?","acceptedAnswer":{"@type":"Answer","text":"A metal rattling noise from underneath usually means a loose heat shield or exhaust hanger vibrating against the body. A rattle isolated to the front end, especially over bumps or when turning, more often points to a sway bar link, strut mount, or a loose splash shield. Uploading a recording helps separate the two."}},
-  {"@type":"Question","name":"Why does my car make a whining noise when accelerating?","acceptedAnswer":{"@type":"Answer","text":"A whining noise that gets louder specifically as you accelerate — rather than just running with engine RPM at idle — usually points to the transmission, differential, or a wheel bearing under load. If it's present even in neutral, suspect the power steering pump or alternator instead."}},
-  {"@type":"Question","name":"Which car sound is this?","acceptedAnswer":{"@type":"Answer","text":"If you are wondering what is making that noise, our automotive noise finder and car diagnoser tool can help you hear and identify the exact mechanical fault—whether it's the engine, brakes, or suspension."}}
+  {"@type":"Question","name":"Why does my car make a whining noise when accelerating?","acceptedAnswer":{"@type":"Answer","text":"A whining noise that gets louder specifically as you accelerate — rather than just running with engine RPM at idle — usually points to the transmission, differential, or a wheel bearing under load. If it's present even in neutral, suspect the power steering pump or alternator instead."}}
  ]
 }
 </script>
@@ -307,8 +306,6 @@ header {
   padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600;
 }
 .nav .cta-btn:hover { background: var(--accent); color: #000; }
-/* Show only Founder, Contact Us and Try It Free in the header */
-.nav a:not(.cta-btn):not([href$="/founder"]):not([href$="/contact"]) { display: none; }
 
 main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
 
@@ -527,6 +524,8 @@ main > section:first-of-type::before {
   .streamlit-embed { min-height: 560px; }
   main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
 }
+  .streamlit-embed { min-height: 560px; }
+}
 
 .crosslink-banner {
   background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
@@ -587,7 +586,7 @@ main > section:first-of-type::before {
   }
   .streamlit-embed { min-height: 560px; }
   main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
-}
+} }
 
 footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
 .footer-inner { max-width: 760px; margin: 0 auto; }
@@ -607,8 +606,8 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   }
   .streamlit-embed { min-height: 560px; }
   main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
-  .nav { gap: 0.9rem; }
-  .nav a { font-size: 0.8rem; }
+}
+  .nav a:not(.cta-btn) { display: none; }
   .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
   .trust-strip { grid-template-columns: 1fr 1fr; }
   main { padding: 32px 16px 32px; }
@@ -620,9 +619,6 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   .footer-links a { padding: 4px 0; display: inline-block; }
 }
 </style>
-
-<meta property="article:published_time" content="2026-10-06T08:00:00+00:00" />
-<meta property="article:modified_time" content="2026-10-06T08:00:00+00:00" />
 </head>
 
 <body>
@@ -631,8 +627,9 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
   <nav class="nav" aria-label="Main navigation">
     <a href="https://carithm.vercel.app/">Home</a>
-    <a href="https://carithm.vercel.app/founder">Founder</a>
-    <a href="https://carithm.vercel.app/contact">Contact Us</a>
+    <a href="https://carithm.vercel.app/toyota">Toyota</a>
+    <a href="https://carithm.vercel.app/bmw">BMW</a>
+    <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
     <a href="https://carithm.vercel.app/research">Research</a>
     <a href="https://carithm.vercel.app/audio" class="active" aria-current="page">Audio Diagnosis</a>
     <a href="#try" class="cta-btn">Try It Free</a>
@@ -728,25 +725,12 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
     <iframe
       id="streamlitFrame"
       class="streamlit-embed"
-      src="about:blank"
+      src="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app//?embed=true"
       title="Carithm AI Car Sound Analyzer"
       loading="lazy"
       allow="microphone; clipboard-write"
       onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
     ></iframe>
-<script>
-  (function() {
-    var links = [
-      "https://hadi10973-nmanvbz9onaxzbwzdmnjku.streamlit.app/?embed=true",
-      "https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/?embed=true",
-      "https://heimi34505-3aue9zwjqykkgwxjwnemcy.streamlit.app/?embed=true"
-    ];
-    var iframe = document.getElementById("streamlitFrame") || document.querySelector("iframe.streamlit-embed");
-    if (iframe) {
-      iframe.src = links[Math.floor(Math.random() * links.length)];
-    }
-  })();
-</script>
     <div class="iframe-brand-mask"></div>
     <div class="iframe-fallback" id="iframeFallback">
       <p>The analyzer tool couldn't load in this view.</p>
