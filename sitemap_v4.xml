@@ -4,7 +4,7 @@
   <!-- ── Core pages ── -->
   <url>
     <loc>https://carithm.vercel.app/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -46,7 +46,7 @@
 
   <url>
     <loc>https://carithm.vercel.app/app</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -81,7 +81,7 @@
   
   <url>
     <loc>https://carithm.vercel.app/audio</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
