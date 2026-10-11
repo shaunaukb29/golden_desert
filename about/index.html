@@ -1,6 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>  
+<head> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TCCEJ6DCM1');
+
+  // 1. Existing Dwell Time Tracker
+  (function() {
+    let activeSeconds = 0;
+    const interval = 10;
+    setInterval(() => {
+      if (!document.hidden) {
+        activeSeconds += interval;
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
+      }
+    }, interval * 1000);
+  })();
+
+  // 2. NEW: Iframe PostMessage Listener
+  window.addEventListener('message', function(event) {
+    if (event.origin !== 'https://heimi34505-3aue9zwjqykkgwxjwnemcy.streamlit.app') return;
+
+    const data = event.data;
+
+    if (data && data.type === 'streamlit_analytics') {
+      if (typeof gtag === 'function') {
+        gtag('event', data.eventName, {
+          'event_category': data.eventCategory || 'Carithm Tool',
+          'event_label': data.eventLabel || '',
+          'value': data.eventValue || 0
+        });
+      }
+    }
+  });
+</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>About Carithm — Independent AI Car Diagnostics, Built in the UAE</title>
