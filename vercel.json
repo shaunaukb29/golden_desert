@@ -6,11 +6,20 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/audio/src/(.*)",
+      "source": "/audio/src/cardiag/audio/(.*)",
       "headers": [
         {
           "key": "X-Robots-Tag",
           "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/audio/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
         }
       ]
     }
@@ -810,12 +819,10 @@
       "source": "/audio/ac",
       "destination": "/audio/src/cardiag/web/static/ac"
     },
-
     {
       "source": "/audio/washer",
       "destination": "/audio/src/cardiag/web/static/washer"
     },
-    
     {
       "source": "/audio/",
       "destination": "/audio/src/cardiag/web/static/app"
