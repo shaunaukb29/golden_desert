@@ -18,6 +18,26 @@
         }
       }, interval * 1000);
     })();
+
+  // Iframe PostMessage Listener (mirrors master pages)
+  window.addEventListener('message', function(event) {
+    var allowed = [
+      'https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app',
+      'https://heimi34505-3aue9zwjqykkgwxjwnemcy.streamlit.app',
+      'https://hadi10973-nmanvbz9onaxzbwzdmnjku.streamlit.app'
+    ];
+    if (allowed.indexOf(event.origin) === -1) return;
+    var data = event.data;
+    if (data && data.type === 'streamlit_analytics') {
+      if (typeof gtag === 'function') {
+        gtag('event', data.eventName, {
+          'event_category': data.eventCategory || 'Carithm Tool',
+          'event_label': data.eventLabel || '',
+          'value': data.eventValue || 0
+        });
+      }
+    }
+  });
   </script>
 
   <!-- Google AdSense Auto Ads -->
@@ -35,6 +55,10 @@
   <meta property="og:description" content="Why is your Ford Falcon (BA / BF / FG / FG-X) making a ticking noise? Common cause: Hydraulic valve lifter tick or cracked exhaust manifold studs on rear cylinders. Repair costs in AUD and free in-browser AI acoustic diagnosis.">
   <meta property="og:url" content="https://carithm.vercel.app/audio/ford-falcon-ticking-noise">
   <meta property="og:image" content="https://carithm.vercel.app/car.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ford Falcon (BA / BF / FG / FG-X) Ticking Noise? Causes, Repair Cost & Free AI Diagnosis">
+  <meta name="twitter:description" content="Why is your Ford Falcon (BA / BF / FG / FG-X) making a ticking noise? Common cause: Hydraulic valve lifter tick or cracked exhaust manifold studs on rear cylinders. Repair costs in AUD and free in-browser AI acoustic diagnosis.">
+  <meta name="twitter:image" content="https://carithm.vercel.app/car.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/">
@@ -78,6 +102,48 @@
     }
     </script>
     
+
+      <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://carithm.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI Car Sound Analyzer",
+          "item": "https://carithm.vercel.app/audio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Australia Hub",
+          "item": "https://carithm.vercel.app/australia"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Ford Falcon Ticking Noise",
+          "item": "https://carithm.vercel.app/audio/ford-falcon-ticking-noise"
+        }
+      ]
+    }
+    </script>
+
+  
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#09090b">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
 
   <style>
     
