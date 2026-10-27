@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_v4.xml</loc>
+    <lastmod>2026-10-27</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_audio.xml</loc>
+    <lastmod>2026-10-27</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_older_cars.xml</loc>
+    <lastmod>2026-10-27</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_obd.xml</loc>
+    <lastmod>2026-10-27</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_repair.xml</loc>
+    <lastmod>2026-10-27</lastmod>
+  </sitemap>
+</sitemapindex>
