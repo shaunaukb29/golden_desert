@@ -431,6 +431,107 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
       }
     }
 
+  
+  /* Carithm About & Contact Section */
+  .carithm-about-contact {
+    margin: 48px auto 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+    border: 1px solid var(--border, rgba(255,255,255,0.08));
+    border-radius: var(--r, 12px);
+    padding: 32px 28px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  }
+  .ac-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .ac-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .ac-tag {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+  .ac-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text, #f5f4f2);
+    margin: 0 0 10px;
+    line-height: 1.3;
+  }
+  .ac-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--muted, #a1a8b3);
+    margin: 0 0 18px;
+  }
+  .ac-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #38bdf8;
+    font-size: 0.86rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.2s, color 0.2s;
+  }
+  .ac-link:hover {
+    color: #7dd3fc;
+    gap: 10px;
+  }
+  .ac-email-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: #38bdf8;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+  }
+  .ac-email-btn:hover {
+    background: rgba(56, 189, 248, 0.22);
+    border-color: #38bdf8;
+    color: #fff;
+    transform: translateY(-1px);
+  }
+  .ac-subtext {
+    font-size: 0.74rem;
+    color: var(--muted2, #71717a);
+    margin-top: 10px;
+  }
+  @media (max-width: 640px) {
+    .ac-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .carithm-about-contact {
+      padding: 24px 20px;
+      margin: 36px 0 16px;
+    }
+    .ac-email-btn {
+      width: 100%;
+    }
+  }
+
   </style>
 </head>
 
@@ -441,6 +542,7 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   <nav class="nav" aria-label="Main navigation">
     <a href="https://carithm.vercel.app/">Home</a>
     <a href="https://carithm.vercel.app/audio" class="active">Audio Diagnosis</a>
+    <a href="https://carithm.vercel.app/about">About Us</a>
     <a href="#try" class="cta-btn">Analyze My Car Noise</a>
   </nav>
 </header>
@@ -781,6 +883,36 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     </p>
   </section>
 </article>
+
+  <!-- Carithm About & Contact Section -->
+  <section class="carithm-about-contact">
+    <div class="ac-grid">
+      <div class="ac-col">
+        <div class="ac-tag">ABOUT CARITHM</div>
+        <h3 class="ac-title">Independent AI Automotive Diagnostics</h3>
+        <p class="ac-desc">
+          Carithm is an independent engineering initiative founded in the UAE, built to provide free, transparent, and accurate acoustic and OBD vehicle diagnostics for drivers worldwide.
+        </p>
+        <a href="https://carithm.vercel.app/about" class="ac-link">
+          <span>Read our founder story &amp; technical mission</span>
+          <span class="ac-arrow">&rarr;</span>
+        </a>
+      </div>
+      <div class="ac-col ac-contact-col">
+        <div class="ac-tag">GET IN TOUCH</div>
+        <h3 class="ac-title">Have Questions or Need Help?</h3>
+        <p class="ac-desc">
+          Whether you have feedback on a diagnosis, spotted an error, want to suggest a vehicle model, or need workshop partnership details &mdash; we're here to help.
+        </p>
+        <a href="mailto:carithmai29@gmail.com" class="ac-email-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>carithmai29@gmail.com</span>
+        </a>
+        <div class="ac-subtext">Direct engineering &amp; founder inbox &bull; Fast response</div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <div class="mobile-cta-bar">
