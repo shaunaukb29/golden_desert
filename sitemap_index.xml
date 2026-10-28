@@ -20,4 +20,12 @@
     <loc>https://carithm.vercel.app/sitemap_repair.xml</loc>
     <lastmod>2026-10-27</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_australia_2000s.xml</loc>
+    <lastmod>2026-10-28</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_us_2000s.xml</loc>
+    <lastmod>2026-10-28</lastmod>
+  </sitemap>
 </sitemapindex>
