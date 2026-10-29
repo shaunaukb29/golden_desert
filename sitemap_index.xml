@@ -40,4 +40,28 @@
     <loc>https://carithm.vercel.app/sitemap_au_modern.xml</loc>
     <lastmod>2026-10-29</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_us_fleet2.xml</loc>
+    <lastmod>2026-10-29</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_canada_modern.xml</loc>
+    <lastmod>2026-10-29</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_uk_fleet2.xml</loc>
+    <lastmod>2026-10-29</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_westeu_modern.xml</loc>
+    <lastmod>2026-10-29</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_au_fleet2.xml</loc>
+    <lastmod>2026-10-29</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_uae_modern.xml</loc>
+    <lastmod>2026-10-29</lastmod>
+  </sitemap>
 </sitemapindex>
