@@ -105,6 +105,11 @@
  "@context":"https://schema.org",
  "@type":"FAQPage",
  "mainEntity":[
+  {"@type":"Question","name":"What is this sound my car is making?","acceptedAnswer":{"@type":"Answer","text":"If you are wondering what sound your car is making, record 5 to 10 seconds of the noise and upload it to Carithm. The AI analyzes acoustic frequency patterns to identify whether it is an engine knock, belt squeal, exhaust rattle, wheel bearing hum, or transmission whine, and provides a ranked diagnosis."}},
+  {"@type":"Question","name":"What is this sound in my car?","acceptedAnswer":{"@type":"Answer","text":"If you're asking 'what is this sound in my car?' — record 5–10 seconds of the noise from inside or outside the car, upload the clip, and Carithm returns a ranked list of likely causes with urgency levels. Common results include worn brake pads, loose heat shields, failing serpentine belts, low oil valve tick, or failing wheel bearings."}},
+  {"@type":"Question","name":"How do I know what is this car noise?","acceptedAnswer":{"@type":"Answer","text":"If you are wondering 'what is this car noise?', the best way to find out without immediately going to a mechanic is to use a car noise identifier online. By recording the sound and uploading it, our AI separates background noise from mechanical frequencies to give you a ranked list of likely causes."}},
+  {"@type":"Question","name":"Is Carithm free without downloading an app or signing up?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm is 100% free with no sign-up, no account creation, and no app store download required. It operates entirely within your web browser on iPhone (iOS), Android, tablet, or desktop."}},
+  {"@type":"Question","name":"Is there a Stellantis audio diagnosis app?","acceptedAnswer":{"@type":"Answer","text":"Stellantis has an internal audio diagnosis system used by dealership service technicians, but it is not available to the public. Carithm provides a free, universal browser-based alternative that diagnoses sounds across all Stellantis vehicles (Jeep, Ram, Dodge, Chrysler, Fiat) and all other major brands."}},
   {"@type":"Question","name":"Can AI diagnose engine problems?","acceptedAnswer":{"@type":"Answer","text":"AI can recognize abnormal acoustic patterns associated with common mechanical faults — including engine knock, bearing noise, and belt squeal — and estimate likely inspection areas. It should be used as decision support alongside professional inspection, not as a replacement."}},
   {"@type":"Question","name":"Could this noise be a recall issue?","acceptedAnswer":{"@type":"Answer","text":"Sometimes. A handful of recurring noise complaints — certain belt squeals, timing chain rattles, and power steering whines — turn out to be open manufacturer recalls rather than wear and tear. US drivers can cross-check their VIN on the NHTSA recall lookup (nhtsa.gov/recalls) alongside their Carithm result before paying for diagnosis at a shop."}},
   {"@type":"Question","name":"Is this free?","acceptedAnswer":{"@type":"Answer","text":"Yes — Carithm's AI Car Sound Analyzer is free with no signup required. Upload any unusual car noise recording and get an instant AI analysis identifying likely fault areas."}},
@@ -174,54 +179,7 @@
 }
 </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is there a Shazam for car noises?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, many users describe Carithm as a Shazam for car noises or a Shazam for car engine sounds. Instead of identifying a song, you upload an audio clip of your vehicle, and the AI compares it to known mechanical fault signatures to tell you exactly what the issue might be."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I know what is this car noise?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "If you are wondering 'what is this car noise?', the best way to find out without immediately going to a mechanic is to use a car noise identifier online. By recording the sound and uploading it, our AI can separate background noise from mechanical frequencies to give you a ranked list of likely causes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is this sound in my car?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "If you're asking 'what is this sound in my car?' — that's exactly what Carithm is built for. Record 5–10 seconds of the noise from inside or outside the car, upload the clip, and the AI will return a ranked list of likely causes with urgency levels. Common results include worn brake pads, a loose heat shield, a failing serpentine belt, low oil causing a valve tick, or a wheel bearing starting to fail."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Carithm the same as MyAutoSound or EngineEar AI?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No — Carithm, MyAutoSound, and EngineEar AI are separate tools. Carithm is a free, browser-based engine sound diagnostic AI app that runs on any device with no download or signup required. Unlike some alternatives, it doesn't require an OBD2 dongle and works purely from an audio recording, making it the most accessible option for a quick car noise diagnosis from recording."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is there a Stellantis audio diagnosis app?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Stellantis has an internal audio diagnosis tool used by dealership technicians, but it isn't publicly available. Carithm is the closest free consumer alternative — it accepts any audio recording from any vehicle make and model, including Stellantis brands like Jeep, Ram, Dodge, Chrysler, Fiat, and Alfa Romeo, and returns a diagnosis within seconds."
-      }
-    }
-  ]
-}
-</script>
+
 
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -575,18 +533,6 @@ main > section:first-of-type::before {
 .related-card:nth-child(5):hover { border-color: var(--green); box-shadow: 0 8px 20px -12px rgba(34,197,94,0.5); }
 .related-card .rc-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); margin-bottom: 4px; }
 .related-card .rc-title { font-size: 13px; font-weight: 600; color: var(--text); }
-@media (max-width: 620px) {
-  .streamlit-embed-wrap { 
-    --streamlit-height: min(850px, 80vh); 
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-  }
-  .streamlit-embed { min-height: 560px; }
-  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
-} }
 
 footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
 .footer-inner { max-width: 760px; margin: 0 auto; }
@@ -605,12 +551,10 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     border-right: none;
   }
   .streamlit-embed { min-height: 560px; }
-  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
-}
-  .nav a:not(.cta-btn) { display: none; }
+  main { padding: 32px 16px 32px; }
+  .nav a:not(.cta-btn):not(.about-link) { display: none; }
   .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
   .trust-strip { grid-template-columns: 1fr 1fr; }
-  main { padding: 32px 16px 32px; }
   h1 { line-height: 1.18; }
   h2 { margin-top: 34px; }
   .card { padding: 20px; }
@@ -632,6 +576,7 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     <a href="https://carithm.vercel.app/mercedes">Mercedes</a>
     <a href="https://carithm.vercel.app/research">Research</a>
     <a href="https://carithm.vercel.app/audio" class="active" aria-current="page">Audio Diagnosis</a>
+    <a href="https://carithm.vercel.app/about" class="about-link">About us</a>
     <a href="#try" class="cta-btn">Try It Free</a>
   </nav>
 </header>
@@ -725,7 +670,7 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
     <iframe
       id="streamlitFrame"
       class="streamlit-embed"
-      src="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app//?embed=true"
+      src="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/?embed=true"
       title="Carithm AI Car Sound Analyzer"
       loading="lazy"
       allow="microphone; clipboard-write"
@@ -734,7 +679,7 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
     <div class="iframe-brand-mask"></div>
     <div class="iframe-fallback" id="iframeFallback">
       <p>The analyzer tool couldn't load in this view.</p>
-      <a class="crosslink-btn" href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app//" target="_blank" rel="noopener">Open the Analyzer in a New Tab →</a>
+      <a class="crosslink-btn" href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/" target="_blank" rel="noopener">Open the Analyzer in a New Tab →</a>
     </div>
   </div>
 
