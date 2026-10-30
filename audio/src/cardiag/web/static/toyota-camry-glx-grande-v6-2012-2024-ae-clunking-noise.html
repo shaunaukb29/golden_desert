@@ -206,14 +206,36 @@
     <p style="color: #cbd5e1; font-size: 15px; line-height: 1.6; margin: 0 0 18px 0;">
       Do not guess or risk catastrophic engine damage. Record a 5-second audio clip of your car while idling or revving, and our AI Acoustic Diagnoser will isolate the sound frequencies to verify the fault instantly.
     </p>
-    <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
-      <a href="https://carithm.vercel.app/audio?ref=funnel" class="btn-diag" style="display: inline-flex; align-items: center; gap: 8px; background: #0284c7; background: linear-gradient(to right, #0284c7, #2563eb); color: #ffffff; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 8px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);">
-        <span>Record / Upload Audio Diagnosis</span>
-        <span style="font-size: 18px;">&rarr;</span>
-      </a>
-      <span style="color: #94a3b8; font-size: 13px;">✓ 100% Free · No App Download Required</span>
+        <div id="recorderDefault">
+      <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+        <button type="button" class="btn-diag" onclick="startVehicleRecording()" style="display: inline-flex; align-items: center; gap: 10px; background: #ef4444; color: #ffffff; font-weight: 700; font-size: 15px; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease; box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);">
+          <span style="display: inline-block; width: 10px; height: 10px; background: #fff; border-radius: 50%;"></span>
+          <span>Tap to Record Noise (5s Live)</span>
+          <span style="font-size: 18px;">&rarr;</span>
+        </button>
+        <a href="https://carithm.vercel.app/app?ref=funnel#try" style="color: #38bdf8; font-size: 13px; text-decoration: underline;">Have an audio file ready? Upload to Hub →</a>
+      </div>
+      <div style="margin-top: 10px; color: #94a3b8; font-size: 12.5px;">✓ 100% Free • No Login Required • Runs in Any Browser</div>
     </div>
-  </div>
+
+    <!-- Active Recording State -->
+    <div id="recorderActive" style="display: none; padding: 16px; background: rgba(239,68,68,0.12); border: 1.5px solid #ef4444; border-radius: 10px; margin: 12px 0; text-align: center;">
+      <div style="color: #ef4444; font-size: 16px; font-weight: 700; margin-bottom: 6px;">
+        🎙️ Listening to Vehicle Frequencies... (<span id="recCountdown">5</span>s)
+      </div>
+      <p style="color: #cbd5e1; font-size: 13px; margin: 0 0 10px 0;">Hold phone near engine or cabin while noise is occurring.</p>
+      <div style="width: 100%; max-width: 300px; height: 8px; background: #1e293b; border-radius: 4px; margin: 0 auto; overflow: hidden;">
+        <div id="recProgress" style="width: 0%; height: 100%; background: #ef4444; transition: width 1s linear;"></div>
+      </div>
+    </div>
+
+    <!-- Transferring State -->
+    <div id="recorderTransferring" style="display: none; padding: 18px; background: rgba(34,197,94,0.15); border: 1.5px solid #22c55e; border-radius: 10px; margin: 12px 0; text-align: center;">
+      <div style="color: #22c55e; font-size: 16px; font-weight: 700;">
+        ✓ Sound Captured! Transferring to Carithm Web Diagnostic App...
+      </div>
+      <p style="color: #cbd5e1; font-size: 13px; margin: 6px 0 0 0;">Preparing frequency waveform at #try...</p>
+    </div>
 
 
   <article>
@@ -315,5 +337,66 @@
 </div>
 
 
+<script>
+let mediaRecorder;
+let audioChunks = [];
+
+async function startVehicleRecording() {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    mediaRecorder = new MediaRecorder(stream);
+    audioChunks = [];
+
+    const defEl = document.getElementById('recorderDefault');
+    const actEl = document.getElementById('recorderActive');
+    if (defEl) defEl.style.display = 'none';
+    if (actEl) actEl.style.display = 'block';
+
+    mediaRecorder.ondataavailable = e => {
+      if (e.data.size > 0) audioChunks.push(e.data);
+    };
+
+    mediaRecorder.onstop = () => {
+      const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        try {
+          sessionStorage.setItem('carithm_recorded_audio', reader.result);
+          sessionStorage.setItem('carithm_recorded_name', 'vehicle_noise_recording.wav');
+        } catch(e) {}
+        
+        const act = document.getElementById('recorderActive');
+        const trans = document.getElementById('recorderTransferring');
+        if (act) act.style.display = 'none';
+        if (trans) trans.style.display = 'block';
+
+        setTimeout(() => {
+          window.location.href = 'https://carithm.vercel.app/app?ref=funnel&transferred=1#try';
+        }, 700);
+      };
+      reader.readAsDataURL(audioBlob);
+    };
+
+    mediaRecorder.start();
+
+    let timeLeft = 5;
+    const progress = document.getElementById('recProgress');
+    const timer = setInterval(() => {
+      timeLeft--;
+      const cd = document.getElementById('recCountdown');
+      if (cd) cd.innerText = timeLeft;
+      if (progress) progress.style.width = ((5 - timeLeft) / 5 * 100) + '%';
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        try { mediaRecorder.stop(); } catch(e) {}
+        stream.getTracks().forEach(track => track.stop());
+      }
+    }, 1000);
+
+  } catch (err) {
+    window.location.href = 'https://carithm.vercel.app/app?ref=funnel#try';
+  }
+}
+</script>
 </body>
 </html>

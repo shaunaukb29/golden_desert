@@ -607,7 +607,7 @@
         <div class="ai-arrow-icon" style="color: #ef4444; font-weight: 700; font-size: 13px;">● REC</div>
       </button>
       <div style="text-align: center; margin-top: 12px;">
-        <a href="https://carithm.vercel.app/audio?ref=funnel#try" style="color: #60a5fa; font-size: 13px; text-decoration: underline;">Have an audio file ready? Upload directly to Hub →</a>
+        <a href="https://carithm.vercel.app/?ref=funnel#try" style="color: #60a5fa; font-size: 13px; text-decoration: underline;">Have an audio file ready? Upload directly to Hub →</a>
       </div>
     </div>
 
@@ -799,7 +799,7 @@ async function startVehicleRecording() {
         if (trans) trans.style.display = 'block';
 
         setTimeout(() => {
-          window.location.href = 'https://carithm.vercel.app/audio?ref=funnel&transferred=1#try';
+          window.location.href = 'https://carithm.vercel.app/?ref=funnel&transferred=1#try';
         }, 700);
       };
       reader.readAsDataURL(audioBlob);
@@ -823,7 +823,7 @@ async function startVehicleRecording() {
 
   } catch (err) {
     // If mic denied or unavailable, smoothly jump to hub
-    window.location.href = 'https://carithm.vercel.app/audio?ref=funnel#try';
+    window.location.href = 'https://carithm.vercel.app/?ref=funnel#try';
   }
 }
 </script>
