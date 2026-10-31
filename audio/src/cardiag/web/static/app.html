@@ -19,7 +19,8 @@
           gtag('event', 'true_dwell_time', {
             'event_category': 'Engagement',
             'event_label': activeSeconds + 's_active',
-            'value': activeSeconds
+            'value': activeSeconds,
+            'engagement_time_msec': interval * 1000
           });
         }
       }
@@ -28,7 +29,7 @@
 
   // 2. NEW: Iframe PostMessage Listener
   window.addEventListener('message', function(event) {
-    if (event.origin !== 'https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/') return;
+    if (event.origin !== 'https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app') return;
 
     const data = event.data;
 
@@ -682,7 +683,6 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
       class="streamlit-embed"
       src="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/?embed=true"
       title="Carithm AI Car Sound Analyzer"
-      loading="lazy"
       allow="microphone; clipboard-write"
       onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
     ></iframe>

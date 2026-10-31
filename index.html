@@ -19,7 +19,8 @@
           gtag('event', 'true_dwell_time', {
             'event_category': 'Engagement',
             'event_label': activeSeconds + 's_active',
-            'value': activeSeconds
+            'value': activeSeconds,
+            'engagement_time_msec': interval * 1000
           });
         }
       }
@@ -587,7 +588,6 @@ Wondering "<strong>what sound is my car making</strong>?" Upload a recording and
       class="streamlit-embed"
       src="https://heimi34505-3aue9zwjqykkgwxjwnemcy.streamlit.app/?embed=true"
       title="Carithm AI Car Sound Analyzer"
-      loading="lazy"
       allow="microphone; clipboard-write"
       onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
     ></iframe>
