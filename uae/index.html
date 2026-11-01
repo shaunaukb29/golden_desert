@@ -12,9 +12,13 @@
       setInterval(() => {
         if (!document.hidden) {
           activeSeconds += interval;
-          if (typeof gtag === 'function') {
-            gtag('event', 'true_dwell_time', {'event_category': 'Engagement', 'event_label': activeSeconds + 's_active', 'value': activeSeconds});
-          }
+          (typeof requestIdleCallback === 'function'
+            ? requestIdleCallback
+            : (fn) => setTimeout(fn, 0))(() => {
+            if (typeof gtag === 'function') {
+              gtag('event', 'true_dwell_time', {'event_category': 'Engagement', 'event_label': activeSeconds + 's_active', 'value': activeSeconds, 'non_interaction': true});
+            }
+          });
         }
       }, interval * 1000);
     })();
@@ -44,7 +48,7 @@
   
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.88">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Free AI Car Sound Diagnosis UAE &amp; Middle East | Gulf Spec Engine Noise Identifier</title>
   <meta name="description" content="Hear an unusual car noise in Dubai, Abu Dhabi, or the GCC? Free AI audio diagnostic app for desert heat AC failure, Land Cruiser, Patrol, G-Wagon, and RTA inspection noise check.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
@@ -62,7 +66,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://heimi34505-3aue9zwjqykkgwxjwnemcy.streamlit.app/">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
 
   
     <script type="application/ld+json">
@@ -246,7 +250,10 @@ details p { margin-top: 10px; color: var(--muted); font-size: 0.93rem; }
 
 footer { border-top: 1px solid var(--border); padding: 30px 20px; text-align: center; color: var(--muted2); font-size: 0.82rem; }
 
-  </style>
+  
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
+</style>
 </head>
 <body>
 

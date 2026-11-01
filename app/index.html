@@ -15,14 +15,19 @@
     setInterval(() => {
       if (!document.hidden) {
         activeSeconds += interval;
-        if (typeof gtag === 'function') {
-          gtag('event', 'true_dwell_time', {
-            'event_category': 'Engagement',
-            'event_label': activeSeconds + 's_active',
-            'value': activeSeconds,
-            'engagement_time_msec': interval * 1000
-          });
-        }
+        (typeof requestIdleCallback === 'function'
+          ? requestIdleCallback
+          : (fn) => setTimeout(fn, 0))(() => {
+          if (typeof gtag === 'function') {
+            gtag('event', 'true_dwell_time', {
+              'event_category': 'Engagement',
+              'event_label': activeSeconds + 's_active',
+              'value': activeSeconds,
+              'engagement_time_msec': interval * 1000,
+              'non_interaction': true
+            });
+          }
+        });
       }
     }, interval * 1000);
   })();
@@ -47,7 +52,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" crossorigin="anonymous"></script>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=0.88">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Free Engine Sound Diagnostic AI App | Carithm</title>
 <meta name="description" content="Free engine sound diagnostic AI app — no download required. Upload your recording to our engine noise analysis app and get an instant AI diagnosis on iPhone, Android, or desktop.">
@@ -68,7 +73,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://hadi10973-nmanvbz9onaxzbwzdmnjku.streamlit.app">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -406,6 +411,9 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   .crosslink-btn { width: 100%; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
   .footer-links a { padding: 4px 0; display: inline-block; }
 }
+
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
 </style>
 </head>
 

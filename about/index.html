@@ -16,13 +16,18 @@
     setInterval(() => {
       if (!document.hidden) {
         activeSeconds += interval;
-        if (typeof gtag === 'function') {
-          gtag('event', 'true_dwell_time', {
-            'event_category': 'Engagement',
-            'event_label': activeSeconds + 's_active',
-            'value': activeSeconds
-          });
-        }
+        (typeof requestIdleCallback === 'function'
+          ? requestIdleCallback
+          : (fn) => setTimeout(fn, 0))(() => {
+          if (typeof gtag === 'function') {
+            gtag('event', 'true_dwell_time', {
+              'event_category': 'Engagement',
+              'event_label': activeSeconds + 's_active',
+              'value': activeSeconds,
+              'non_interaction': true
+            });
+          }
+        });
       }
     }, interval * 1000);
   })();
@@ -54,7 +59,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700&display=optional" rel="stylesheet" />
 <style>
 /* ============= Carithm editorial design system ============= */
 :root {
@@ -269,6 +274,9 @@ p { color: var(--muted-foreground); font-size: 15px; line-height: 1.8; }
 }
 @media (max-width: 360px) { h1 > .hero-line, h1 > em { font-size: 37px; } .founder-copy h2 { font-size: 38px; } .header-actions { gap: 4px; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *:before, *:after { animation: none !important; transition: none !important; } }
+
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
 </style>
 </head>
 <body>

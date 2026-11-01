@@ -164,6 +164,9 @@
     h1 { font-size: 22px; }
     .nav-links { display: none; }
   }
+
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
 </style>
 </head>
 <body>

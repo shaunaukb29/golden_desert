@@ -30,7 +30,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=optional" rel="stylesheet">
 
     <style>
         :root {
@@ -667,7 +667,10 @@
             .data-table th, .data-table td { padding: 10px 12px; }
             .to-top { right: 14px; bottom: 14px; }
         }
-    </style>
+    
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
+</style>
 </head>
 <body>
 

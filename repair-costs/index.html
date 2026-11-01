@@ -11,6 +11,9 @@ body{font-family:system-ui,sans-serif;background:#0b0f14;color:#fff;margin:0;pad
 .container{max-width:850px;margin:auto}
 a{color:#4ade80}
 ul{padding-left:18px}
+
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
 </style>
 </head>
 <body>

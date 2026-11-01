@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.88">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>2006-2010 Volkswagen Passat (B6) Knocking Noise Diagnosis &amp; Causes | Carithm AI</title>
   <meta name="description" content="Is your 2006-2010 Volkswagen Passat (B6) making a knocking noise? Discover common mechanical causes, DIY inspection checklist, repair costs (USD), and free AI sound diagnosis.">
   <link rel="canonical" href="https://carithm.vercel.app/audio/volkswagen-passat-b6-2006-2010-knocking-noise">
@@ -24,13 +24,18 @@
       setInterval(() => {
         if (!document.hidden) {
           activeSeconds += 10;
-          if (typeof gtag === 'function') {
-            gtag('event', 'true_dwell_time', {
-              'event_category': 'Engagement',
-              'event_label': activeSeconds + 's_active',
-              'value': activeSeconds
-            });
-          }
+          (typeof requestIdleCallback === 'function'
+            ? requestIdleCallback
+            : (fn) => setTimeout(fn, 0))(() => {
+            if (typeof gtag === 'function') {
+              gtag('event', 'true_dwell_time', {
+                'event_category': 'Engagement',
+                'event_label': activeSeconds + 's_active',
+                'value': activeSeconds,
+                'non_interaction': true
+              });
+            }
+          });
         }
       }, 10000);
     })();
@@ -538,7 +543,10 @@
       }
     }
 
-  </style>
+  
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
+</style>
 </head>
 <body>
 

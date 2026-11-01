@@ -32,11 +32,11 @@
   <meta name="twitter:image" content="https://carithm.vercel.app/ac-og.png">
   <meta name="twitter:image:alt" content="Carithm AI AC sound diagnosis: record an air conditioner noise and get possible causes">
 
-  <!-- FONTS (display=swap, fewer weights, gstatic preconnect) -->
+  <!-- FONTS (display=optional, fewer weights, gstatic preconnect) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://hemiv8-gm7khvxquq87t5nadl7icq.streamlit.app">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@400;600;700&amp;display=optional" rel="stylesheet">
 
   <!-- STRUCTURED DATA (generated from the same source as the visible FAQ) -->
   <script type="application/ld+json">
@@ -254,13 +254,18 @@
         if (!document.hidden) {
           activeSeconds += interval;
 
-          if (typeof gtag === 'function') {
-            gtag('event', 'true_dwell_time', {
-              event_category: 'Engagement',
-              event_label: activeSeconds + 's_active',
-              value: activeSeconds
-            });
-          }
+          (typeof requestIdleCallback === 'function'
+            ? requestIdleCallback
+            : (fn) => setTimeout(fn, 0))(() => {
+            if (typeof gtag === 'function') {
+              gtag('event', 'true_dwell_time', {
+                event_category: 'Engagement',
+                event_label: activeSeconds + 's_active',
+                value: activeSeconds,
+                non_interaction: true
+              });
+            }
+          });
         }
       }, interval * 1000);
     })();
@@ -513,7 +518,10 @@
       dl.facts dd { margin-bottom: 12px; }
       .stop, .crosslink, .about { padding: 18px; }
     }
-  </style>
+  
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
+</style>
 </head>
 
 <body>

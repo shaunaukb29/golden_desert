@@ -14,13 +14,18 @@
     setInterval(() => {
       if (!document.hidden) {
         activeSeconds += interval;
-        if (typeof gtag === 'function') {
-          gtag('event', 'true_dwell_time', {
-            'event_category': 'Engagement',
-            'event_label': activeSeconds + 's_active',
-            'value': activeSeconds
-          });
-        }
+        (typeof requestIdleCallback === 'function'
+          ? requestIdleCallback
+          : (fn) => setTimeout(fn, 0))(() => {
+          if (typeof gtag === 'function') {
+            gtag('event', 'true_dwell_time', {
+              'event_category': 'Engagement',
+              'event_label': activeSeconds + 's_active',
+              'value': activeSeconds,
+              'non_interaction': true
+            });
+          }
+        });
       }
     }, interval * 1000);
   })();
@@ -48,7 +53,7 @@
 <meta name="twitter:description" content="Upload a recording of your Chevrolet Traverse&#x27;s scraping noise and get a free AI-assisted analysis of possible causes, urgency, and cost.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -538,7 +543,10 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     }
   }
 
-  </style>
+  
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
+</style>
 </head>
 
 <body>

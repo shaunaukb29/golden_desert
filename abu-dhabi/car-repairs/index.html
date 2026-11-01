@@ -13,13 +13,18 @@
     setInterval(() => {
       if (!document.hidden) {
         activeSeconds += interval;
-        if (typeof gtag === 'function') {
-          gtag('event', 'true_dwell_time', {
-            'event_category': 'Engagement',
-            'event_label': activeSeconds + 's_active',
-            'value': activeSeconds
-          });
-        }
+        (typeof requestIdleCallback === 'function'
+          ? requestIdleCallback
+          : (fn) => setTimeout(fn, 0))(() => {
+          if (typeof gtag === 'function') {
+            gtag('event', 'true_dwell_time', {
+              'event_category': 'Engagement',
+              'event_label': activeSeconds + 's_active',
+              'value': activeSeconds,
+              'non_interaction': true
+            });
+          }
+        });
       }
     }, interval * 1000);
   })();
@@ -67,7 +72,10 @@
       font-weight:600;
     }
     h1 { font-size:2rem; }
-  </style>
+  
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
+</style>
 </head>
 
 <body>

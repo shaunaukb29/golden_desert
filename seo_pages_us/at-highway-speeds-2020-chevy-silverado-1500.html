@@ -85,7 +85,7 @@
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=optional" rel="stylesheet">
 
 <style>
 :root{
@@ -227,6 +227,9 @@ footer{border-top:1px solid var(--border);background:var(--surface);padding:44px
 .foot-bottom{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);text-align:center;font-size:.7rem;color:var(--muted2);}
 @media(max-width:700px){.foot-grid{grid-template-columns:1fr 1fr;}.foot-brand{grid-column:span 2;}}
 @media(max-width:460px){.foot-grid{grid-template-columns:1fr;}.foot-brand{grid-column:span 1;}}
+
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
 </style>
 </head>
 <body>

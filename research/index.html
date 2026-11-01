@@ -124,7 +124,10 @@ gtag('config', 'G-TCCEJ6DCM1');
       border:1px solid rgba(255,255,255,.08);
       background:rgba(255,255,255,.03);
     }
-  </style>
+  
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
+</style>
 </head>
 
 <body>

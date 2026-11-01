@@ -59,7 +59,10 @@
     li { margin-bottom:10px; }
     a { color:#4ade80; }
     .box { margin:18px 0; padding:16px; border:1px solid #334155; border-radius:10px; background:rgba(255,255,255,0.03); }
-  </style>
+  
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
+</style>
 </head>
 
 <body>

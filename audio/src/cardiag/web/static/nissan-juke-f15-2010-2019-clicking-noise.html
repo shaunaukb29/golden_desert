@@ -295,7 +295,10 @@ footer {
   body { padding-bottom: 0; }
 }
 
-  </style>
+  
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
+</style>
 </head>
 <body>
 

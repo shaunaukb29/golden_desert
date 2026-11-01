@@ -15,13 +15,18 @@
       setInterval(() => {
         if (!document.hidden) {
           activeSeconds += interval;
-          if (typeof gtag === 'function') {
-            gtag('event', 'true_dwell_time', {
-              'event_category': 'Engagement',
-              'event_label': activeSeconds + 's_active',
-              'value': activeSeconds
-            });
-          }
+          (typeof requestIdleCallback === 'function'
+            ? requestIdleCallback
+            : (fn) => setTimeout(fn, 0))(() => {
+            if (typeof gtag === 'function') {
+              gtag('event', 'true_dwell_time', {
+                'event_category': 'Engagement',
+                'event_label': activeSeconds + 's_active',
+                'value': activeSeconds,
+                'non_interaction': true
+              });
+            }
+          });
         }
       }, interval * 1000);
     })();
@@ -71,7 +76,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=optional" rel="stylesheet">
   <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- JSON-LD Structured Data Schema -->
@@ -451,7 +456,10 @@
     .footer-links a:hover { color: var(--accent-orange); }
     .footer-bottom { font-size: 11.5px; color: var(--text-muted2); border-top: 1px solid var(--card-border); padding-top: 16px; }
     @media (max-width: 620px) { .footer-links a { padding: 4px 0; display: inline-block; } }
-  </style>
+  
+/* Eliminate 300ms tap delay — INP fix */
+a, button, input, label, [role="button"] { touch-action: manipulation; }
+</style>
 </head>
 <body>
 

@@ -15,14 +15,19 @@
     setInterval(() => {
       if (!document.hidden) {
         activeSeconds += interval;
-        if (typeof gtag === 'function') {
-          gtag('event', 'true_dwell_time', {
-            'event_category': 'Engagement',
-            'event_label': activeSeconds + 's_active',
-            'value': activeSeconds,
-            'engagement_time_msec': interval * 1000
-          });
-        }
+        (typeof requestIdleCallback === 'function'
+          ? requestIdleCallback
+          : (fn) => setTimeout(fn, 0))(() => {
+          if (typeof gtag === 'function') {
+            gtag('event', 'true_dwell_time', {
+              'event_category': 'Engagement',
+              'event_label': activeSeconds + 's_active',
+              'value': activeSeconds,
+              'engagement_time_msec': interval * 1000,
+              'non_interaction': true
+            });
+          }
+        });
       }
     }, interval * 1000);
   })();
@@ -49,7 +54,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" crossorigin="anonymous"></script>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=0.88">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Free AI Car Diagnoser — Car Sound Diagnosis App Free | Car Noise Identifier Online</title>
 <meta name="description" content="Free engine sound diagnostic AI app & car noise identifier online. Upload your recording to check engine sound. Works on all brands as a universal audio diagnosis app (Stellantis, Ford, Toyota). No download.">
@@ -69,8 +74,8 @@
 <meta name="twitter:image" content="https://carithm.vercel.app/car.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -218,12 +223,34 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
+
+/* Prevent 300ms tap-delay on mobile — INP fix */
+a, button, input, label, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* Font-fallback size adjustments to prevent CLS while custom fonts load */
+@font-face {
+  font-family: 'Inter-fallback';
+  src: local('Arial');
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'BebasNeue-fallback';
+  src: local('Arial Narrow Bold'), local('Arial Bold'), local('Impact');
+  size-adjust: 86%;
+  ascent-override: 112%;
+  descent-override: 14%;
+}
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--accent) var(--surface2);
 }
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', 'Inter-fallback', system-ui, sans-serif;
   margin: 0;
   background: var(--bg);
   color: var(--text);
@@ -247,12 +274,15 @@ header {
   position: sticky; top: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
   padding: 1rem 2rem;
+  min-height: 64px; /* prevent CLS as fonts/icons load */
   background: rgba(9,9,11,0.75);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
+  /* Tell browser this is a contain: layout element to isolate reflow */
+  contain: layout style;
 }
 .nav-logo {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Bebas Neue', 'BebasNeue-fallback', sans-serif;
   font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none;
 }
 .nav-logo span { color: var(--accent); }
@@ -310,7 +340,7 @@ ul, ol { color: var(--muted); padding-left: 20px; }
 li { margin-bottom: 6px; }
 
 .trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 22px 0 8px; }
-.trust-strip > div { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); }
+.trust-strip > div { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); min-height: 72px; /* prevent CLS */ }
 .trust-strip > div:last-child { border-right: none; }
 .trust-num { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
 .trust-num span { color: var(--accent); }
@@ -483,8 +513,6 @@ main > section:first-of-type::before {
   .streamlit-embed { min-height: 560px; }
   main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
 }
-  .streamlit-embed { min-height: 560px; }
-}
 
 .crosslink-banner {
   background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
@@ -556,12 +584,15 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   .nav a:not(.cta-btn):not(.about-link) { display: none; }
   .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
   .trust-strip { grid-template-columns: 1fr 1fr; }
+  .trust-strip > div { min-height: 72px; } /* explicit height prevents reflow on mobile */
   h1 { line-height: 1.18; }
   h2 { margin-top: 34px; }
   .card { padding: 20px; }
   .crosslink-banner { padding: 18px 20px; }
   .crosslink-btn { width: 100%; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
   .footer-links a { padding: 4px 0; display: inline-block; }
+  /* related-grid: 1 col on mobile so cards don't reflow */
+  .related-grid { grid-template-columns: 1fr 1fr; }
 }
 </style>
 </head>
