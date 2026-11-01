@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Subaru Forester SJ XT Turbo (2013–2018) Whining Noise Diagnosis, Causes &amp; Fix | Carithm</title>
@@ -221,7 +222,7 @@
     <!-- Active Recording State -->
     <div id="recorderActive" style="display: none; padding: 16px; background: rgba(239,68,68,0.12); border: 1.5px solid #ef4444; border-radius: 10px; margin: 12px 0; text-align: center;">
       <div style="color: #ef4444; font-size: 16px; font-weight: 700; margin-bottom: 6px;">
-        🎙️ Listening to Vehicle Frequencies... (<span id="recCountdown">5</span>s)
+        🎙️ Listening to Vehicle Frequencies... (<span id="recCountdown">20</span>s)
       </div>
       <p style="color: #cbd5e1; font-size: 13px; margin: 0 0 10px 0;">Hold phone near engine or cabin while noise is occurring.</p>
       <div style="width: 100%; max-width: 300px; height: 8px; background: #1e293b; border-radius: 4px; margin: 0 auto; overflow: hidden;">
@@ -379,13 +380,13 @@ async function startVehicleRecording() {
 
     mediaRecorder.start();
 
-    let timeLeft = 5;
+    let timeLeft = 20;
     const progress = document.getElementById('recProgress');
     const timer = setInterval(() => {
       timeLeft--;
       const cd = document.getElementById('recCountdown');
       if (cd) cd.innerText = timeLeft;
-      if (progress) progress.style.width = ((5 - timeLeft) / 5 * 100) + '%';
+      if (progress) progress.style.width = ((20 - timeLeft) / 20 * 100) + '%';
       if (timeLeft <= 0) {
         clearInterval(timer);
         try { mediaRecorder.stop(); } catch(e) {}
