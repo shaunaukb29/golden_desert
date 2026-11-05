@@ -553,16 +553,6 @@ Wondering "<strong>what sound is my car making</strong>?" Upload a recording and
   Looking for a free engine sound diagnostic AI app? There's no download required. Record a car sound from your engine, brakes, suspension, or transmission directly in your browser. Our web-based audio diagnosis app analyzes the recording, identifies abnormal sounds, and provides a confidence-scored car noise diagnosis in seconds. Works with phone recordings—no special equipment needed.
 </p>
 
-  <div id="transferBanner" style="display:none; background: rgba(34,197,94,0.15); border: 1.5px solid #22c55e; border-radius: 10px; padding: 14px 18px; margin: 16px 0; color: #f0fdf4;">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <span style="font-size: 24px;">🎙️</span>
-      <div>
-        <strong style="color: #4ade80; display: block; font-size: 15px;">Live 5-Second Recording Received</strong>
-        <span style="color: #cbd5e1; font-size: 13px;">Your audio sample has been transferred from the diagnostic tool. Run your acoustic evaluation using the analyzer below.</span>
-      </div>
-    </div>
-  </div>
-
   <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
     <iframe
       id="streamlitFrame"
@@ -582,6 +572,18 @@ Wondering "<strong>what sound is my car making</strong>?" Upload a recording and
   <noscript>
     <p class="note">This tool requires JavaScript to load the embedded app. <a href="https://heimi34505-3aue9zwjqykkgwxjwnemcy.streamlit.app/" target="_blank" rel="noopener">Open it directly here.</a></p>
   </noscript>
+  <!-- High-Viewability In-Content Ad Slot (Directly below AI Analyzer) -->
+  <div class="ad-viewability-container" style="margin: 28px auto; text-align: center; min-height: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255,255,255,0.02); border: 1px dashed rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 0;">
+    <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted2); margin-bottom: 8px; display: block;">Advertisement</span>
+    <ins class="adsbygoogle"
+         style="display:block; min-width: 300px; max-width: 728px; width: 100%;"
+         data-ad-client="ca-pub-5227538935323998"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
 </section>
 
 <section>
@@ -771,11 +773,5 @@ Wondering "<strong>what sound is my car making</strong>?" Upload a recording and
   </div>
 </footer>
 
-<script>
-  if (window.location.search.includes('transferred=1') || (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('carithm_recorded_audio'))) {
-    const banner = document.getElementById('transferBanner');
-    if (banner) banner.style.display = 'block';
-  }
-</script>
 </body>
 </html>
