@@ -74,7 +74,8 @@
 <meta name="twitter:description" content="Record or upload a car sound and get instant AI diagnosis for engine, brake, suspension, transmission, and exhaust noises. Free. No signup.">
 <meta name="twitter:image" content="https://carithm.vercel.app/car.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://heimi34505-3aue9zwjqykkgwxjwnemcy.streamlit.app">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
 
@@ -180,7 +181,6 @@
 <meta name="theme-color" content="#09090b">
 <meta name="format-detection" content="telephone=no">
 <meta name="mobile-web-app-capable" content="yes">
-<link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
 :root {
@@ -332,6 +332,9 @@ li { margin-bottom: 6px; }
 .streamlit-embed-wrap {
   position: relative;
   --streamlit-height: min(1200px, 90vh);
+  height: var(--streamlit-height);
+  min-height: 640px;
+  contain: layout;
   margin-top: 18px;
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
@@ -342,7 +345,7 @@ li { margin-bottom: 6px; }
 .streamlit-embed {
   display: block;
   width: 100%;
-  height: var(--streamlit-height);
+  height: 100%;
   min-height: 640px;
   border: 0;
   background: var(--bg);
@@ -416,14 +419,19 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 
 @media (max-width: 620px) {
   .streamlit-embed-wrap { 
-    --streamlit-height: min(850px, 80vh); 
+    --streamlit-height: 640px;
+    height: 640px;
+    min-height: 640px;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     border-radius: 0;
     border-left: none;
     border-right: none;
   }
-  .streamlit-embed { min-height: 560px; }
+  .streamlit-embed { 
+    height: 100%;
+    min-height: 640px; 
+  }
   main { padding: 32px 16px 32px; }
   .nav a:not(.cta-btn):not(.about-link) { display: none; }
   .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
@@ -487,7 +495,7 @@ Wondering "<strong>what sound is my car making</strong>?" Upload a recording and
 </section>
 
 <section>
-  <div class="card" style="margin-bottom: 32px; background: #fdfdfd; border-left: 4px solid var(--primary);">
+  <div class="card" style="margin-bottom: 32px; border-left: 4px solid var(--accent);">
     <h3>The Smart Mechanic Quote Analyzer</h3>
     <p>If you've been searching for an <strong>AI tool that recognizes car sounds</strong>, you've found the most advanced <strong>engine scan AI</strong> available online. Use Carithm as a free <strong>mechanic quote analyzer</strong> before you visit a repair shop. When your check engine light is on, knowing exactly what that noise means can save you thousands of dollars at the dealership.</p>
   </div>

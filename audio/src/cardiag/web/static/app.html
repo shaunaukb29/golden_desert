@@ -73,7 +73,8 @@
 <meta name="twitter:description" content="Use this free car noise identifier online to diagnose car problems by sound. Our car sound diagnosis app identifies engine, brake, and transmission faults in seconds.">
 <meta name="twitter:image" content="https://carithm.vercel.app/car.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
 
@@ -193,7 +194,6 @@
 <meta name="theme-color" content="#09090b">
 <meta name="format-detection" content="telephone=no">
 <meta name="mobile-web-app-capable" content="yes">
-<link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
 :root {
@@ -464,6 +464,9 @@ main > section:first-of-type::before {
 .streamlit-embed-wrap {
   position: relative;
   --streamlit-height: min(1200px, 90vh);
+  height: var(--streamlit-height);
+  min-height: 640px;
+  contain: layout;
   margin-top: 18px;
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
@@ -477,7 +480,7 @@ main > section:first-of-type::before {
 .streamlit-embed {
   display: block;
   width: 100%;
-  height: var(--streamlit-height);
+  height: 100%;
   min-height: 640px;
   border: 0;
   background: var(--bg);
@@ -500,18 +503,11 @@ main > section:first-of-type::before {
 .iframe-fallback p { margin-bottom: 14px; }
 .iframe-fallback a.crosslink-btn { display: inline-block; }
 
-@media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
-@media (max-width: 620px) {
-  .streamlit-embed-wrap { 
-    --streamlit-height: min(850px, 80vh); 
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
+@media (max-width: 900px) {
+  .streamlit-embed-wrap {
+    --streamlit-height: min(1000px, 85vh);
+    height: var(--streamlit-height);
   }
-  .streamlit-embed { min-height: 560px; }
-  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
 }
 
 .crosslink-banner {
@@ -572,14 +568,19 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 
 @media (max-width: 620px) {
   .streamlit-embed-wrap { 
-    --streamlit-height: min(850px, 80vh); 
+    --streamlit-height: 640px;
+    height: 640px;
+    min-height: 640px;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     border-radius: 0;
     border-left: none;
     border-right: none;
   }
-  .streamlit-embed { min-height: 560px; }
+  .streamlit-embed {
+    height: 100%;
+    min-height: 640px;
+  }
   main { padding: 32px 16px 32px; }
   .nav a:not(.cta-btn):not(.about-link) { display: none; }
   .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
@@ -651,7 +652,7 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
 </section>
 
 <section>
-  <div class="card" style="margin-bottom: 32px; background: #fdfdfd; border-left: 4px solid var(--primary);">
+  <div class="card" style="margin-bottom: 32px; border-left: 4px solid var(--accent);">
     <h3>Dealership-Level Diagnostics From a Recording</h3>
     <p>Whether your check engine light just came on, or you're hearing a strange noise at highway speeds, our <strong>car noise diagnosis from recording</strong> works across all major American and imported brands—including <strong>Stellantis</strong>, Ford, GM, Toyota, and more. Don't walk into a dealership blind; run a diagnostic audio check first to get ASE-certified level insights and avoid paying hundreds of dollars for unnecessary teardowns.</p>
   </div>
