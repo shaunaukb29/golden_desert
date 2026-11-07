@@ -73,7 +73,8 @@
   });
 </script>
 
-<!-- Google AdSense Global Script (Explicit units only to protect Core Web Vitals) -->
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" crossorigin="anonymous"></script>
 
 
 <title>Free AI Car Diagnoser — Car Sound Diagnosis App Free | Car Noise Identifier Online</title>
@@ -829,7 +830,7 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
     <p class="note">This tool requires JavaScript to load the embedded app. <a href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app//" target="_blank" rel="noopener">Open it directly here.</a></p>
   </noscript>
   <!-- High-Viewability In-Content Ad Slot (Directly below AI Analyzer) -->
-  <div class="ad-viewability-container" style="margin: 28px auto; text-align: center; width: 100%; max-width: 728px; height: 280px; min-height: 280px; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255,255,255,0.02); border-radius: 8px; padding: 12px 0; contain: strict; content-visibility: auto; contain-intrinsic-size: 280px;">
+  <div class="ad-viewability-container" style="margin: 28px auto; text-align: center; width: 100%; max-width: 728px; height: 280px; min-height: 280px; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255,255,255,0.02); border-radius: 8px; padding: 12px 0;">
     <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted2); margin-bottom: 8px; display: block;">Advertisement</span>
     <ins class="adsbygoogle"
          style="display:block; width: 100%; height: 250px;"
@@ -837,31 +838,7 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
     <script>
-      // Load AdSense only when this slot is about to be seen (saves ~1.5 s of main-thread work for everyone else)
-      (function() {
-        var slot = document.querySelector('.ad-viewability-container ins.adsbygoogle');
-        var started = false;
-        function loadAds() {
-          if (started) return;
-          started = true;
-          var a = document.createElement('script');
-          a.async = true;
-          a.crossOrigin = 'anonymous';
-          a.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-          a.onload = function() {
-            try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
-          };
-          document.head.appendChild(a);
-        }
-        if ('IntersectionObserver' in window && slot) {
-          var io = new IntersectionObserver(function(entries) {
-            if (entries[0].isIntersecting) { io.disconnect(); loadAds(); }
-          }, { rootMargin: '400px 0px' });
-          io.observe(slot);
-        } else {
-          window.addEventListener('load', function() { setTimeout(loadAds, 3000); });
-        }
-      })();
+         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   </div>
 </section>
