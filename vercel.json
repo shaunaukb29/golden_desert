@@ -824,6 +824,18 @@
       "destination": "/audio/src/cardiag/web/static/toyota"
     },
     {
+      "source": "/audio/honda",
+      "destination": "/audio/src/cardiag/web/static/honda"
+    },
+    {
+      "source": "/audio/mazda",
+      "destination": "/audio/src/cardiag/web/static/mazda"
+    },
+    {
+      "source": "/audio/chevrolet",
+      "destination": "/audio/src/cardiag/web/static/chevrolet"
+    },
+    {
       "source": "/audio/ac",
       "destination": "/audio/src/cardiag/web/static/ac"
     },

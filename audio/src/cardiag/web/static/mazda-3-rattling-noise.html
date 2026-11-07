@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mazda 3 Rattling Noise: Dashboard Trim Buzz vs Exhaust Heat Shield</title>
+  <meta name="description" content="Diagnose Mazda 3 (2014–2024) rattling sound. Review confirmed factory root causes, DIY inspection checklist, repair cost ranges, and acoustic analysis.">
+  <link rel="canonical" href="https://carithm.vercel.app/audio/mazda-3-rattling-noise">
+  <meta name="robots" content="index, follow">
+
+  <!-- Schema Graph: TechArticle & BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": "Mazda 3 Cabin & Undercarriage Rattle Guide",
+        "description": "Diagnostic and troubleshooting guide for Mazda 3 (2014–2024) rattling noise.",
+        "url": "https://carithm.vercel.app/audio/mazda-3-rattling-noise",
+        "datePublished": "2026-11-07",
+        "dateModified": "2026-11-07",
+        "author": {
+          "@type": "Organization",
+          "name": "Carithm Automotive Research",
+          "url": "https://carithm.vercel.app"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Carithm",
+          "url": "https://carithm.vercel.app"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://carithm.vercel.app"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Acoustic Diagnostics",
+            "item": "https://carithm.vercel.app/audio"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Mazda Noise Hub",
+            "item": "https://carithm.vercel.app/audio/mazda"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Mazda 3 Rattling",
+            "item": "https://carithm.vercel.app/audio/mazda-3-rattling-noise"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #090a0f;
+      --surface: #10131a;
+      --surface2: #161b24;
+      --border: rgba(255,255,255,0.08);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --muted2: #64748b;
+      --accent: #38bdf8;
+      --teal: #2dd4bf;
+      --r: 10px;
+    }
+    * { box-sizing: border-box; }
+    html {
+      overflow-x: hidden;
+      max-width: 100%;
+      width: 100%;
+      touch-action: pan-y;
+      background: var(--bg);
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      max-width: 100%;
+      width: 100%;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .brand span { color: var(--accent); }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      margin-left: 16px;
+    }
+    nav a:hover { color: #fff; }
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 32px 18px 48px;
+    }
+    .breadcrumb {
+      font-size: 0.82rem;
+      color: var(--muted2);
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: #fff; }
+    .badge-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .badge-accent { background: rgba(56,189,248,0.12); color: var(--accent); border: 1px solid rgba(56,189,248,0.25); }
+    .badge-severity { background: rgba(245,158,11,0.12); color: #fbbf24; border: 1px solid rgba(245,158,11,0.25); }
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 16px;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 14px;
+      letter-spacing: -0.01em;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted2);
+      background: var(--surface);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: #fff; }
+    .disclaimer-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 0.8rem;
+      color: var(--muted2);
+      line-height: 1.5;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="https://carithm.vercel.app/" class="brand">Carithm<span>AI</span></a>
+  <nav>
+    <a href="https://carithm.vercel.app/audio">Audio Diagnoser</a>
+    <a href="https://carithm.vercel.app/audio/mazda" style="color: #fff;">Mazda Hub</a>
+    <a href="https://carithm.vercel.app/audio/toyota">Toyota Hub</a>
+    <a href="https://carithm.vercel.app/audio/honda">Honda Hub</a>
+    <a href="https://carithm.vercel.app/audio/ford">Ford Hub</a>
+    <a href="https://carithm.vercel.app/about">About</a>
+  </nav>
+</header>
+
+<main>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="https://carithm.vercel.app/">Home</a>
+    <span>&rsaquo;</span>
+    <a href="https://carithm.vercel.app/audio">Acoustic Diagnostics</a>
+    <span>&rsaquo;</span>
+    <a href="https://carithm.vercel.app/audio/mazda">Mazda</a>
+    <span>&rsaquo;</span>
+    <span style="color: #fff;">Mazda 3 Rattling</span>
+  </nav>
+
+  <div class="badge-bar">
+    <span class="badge badge-accent">Mazda 3 (2014–2024)</span>
+    <span class="badge badge-severity">🟢 Low Risk (Nuisance)</span>
+    <span class="badge" style="background: rgba(45,212,191,0.12); color: var(--teal); border: 1px solid rgba(45,212,191,0.25);">Dashboard Trim / Exhaust Heat Shields</span>
+  </div>
+
+  <h1>Mazda 3 Cabin & Undercarriage Rattle Guide</h1>
+
+  <p style="font-size: 1.05rem; color: #cbd5e1; margin-bottom: 24px; line-height: 1.6;">
+    If your <strong>Mazda 3 (2014–2024)</strong> is producing an abnormal <strong>rattling sound</strong>, this diagnostic overview outlines verified mechanical causes, DIY inspection steps, estimated repair costs, and acoustic verification options.
+  </p>
+
+  <!-- Technical Briefing Card -->
+  <section class="card">
+    <h2>Verified Mechanical Context &amp; Root Causes</h2>
+    <div style="background: var(--surface2); border-left: 3px solid var(--accent); padding: 14px 16px; border-radius: 0 8px 8px 0; margin-bottom: 18px;">
+      <strong style="color: #fff; font-size: 0.92rem;">Factory Technical Note:</strong>
+      <p style="margin: 4px 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.55;">A thin metallic buzz around 2,000 RPM is typically a cracked catalytic converter heat shield clamp. Interior rattling over rough roads is often the center dashboard speaker grille or A-pillar trim clips.</p>
+    </div>
+    <p style="color: #cbd5e1; font-size: 0.93rem; margin: 0 0 12px 0;"><strong>Primary Causes Identified:</strong> Catalytic converter heat shield clamp corrosion, dashboard center speaker grille vibration, loose undertray clips, or sunglasses holder rattle.</p>
+  </section>
+
+  <!-- Driveway Inspection Steps -->
+  <section class="card">
+    <h2>DIY Driveway Diagnostic Checklist</h2>
+    <p style="color: var(--muted); font-size: 0.88rem; margin: 0 0 14px;">Follow these non-invasive steps before booking a shop inspection:</p>
+    <ul style="list-style: none; padding: 0; margin: 0;">
+      
+        <li style="padding: 10px 0; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 10px;">
+          <span style="color: var(--teal); font-weight: 700;">&#10003;</span>
+          <span style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.5;">Tap catalytic converter heat shield when cold: broken weld clamps will rattle distinctly against the pipe.</span>
+        </li>
+        <li style="padding: 10px 0; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 10px;">
+          <span style="color: var(--teal); font-weight: 700;">&#10003;</span>
+          <span style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.5;">Press firmly on dashboard center speaker grille: if cabin buzzing stops on coarse pavement, apply felt tape.</span>
+        </li>
+        <li style="padding: 10px 0; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 10px;">
+          <span style="color: var(--teal); font-weight: 700;">&#10003;</span>
+          <span style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.5;">Inspect underside plastic undertray: missing nylon fasteners allow shield to flap at speed.</span>
+        </li>
+        <li style="padding: 10px 0; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 10px;">
+          <span style="color: var(--teal); font-weight: 700;">&#10003;</span>
+          <span style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.5;">Empty overhead sunglasses console: verify rattle is not personal items.</span>
+        </li>
+    </ul>
+  </section>
+
+  
+    <!-- Contextual In-Content Diagnostic CTA (Placed where intent is highest) -->
+    <section class="contextual-cta-card" style="margin: 32px 0; background: linear-gradient(135deg, rgba(14,27,42,0.95) 0%, rgba(9,19,30,0.98) 100%); border: 1.5px solid rgba(56,189,248,0.35); border-radius: 12px; padding: 24px; position: relative; overflow: hidden;">
+      <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(56,189,248,0.12); border: 1px solid rgba(56,189,248,0.25); padding: 3px 10px; border-radius: 16px; font-size: 0.75rem; font-weight: 600; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 12px;">
+        <span>Acoustic Frequency Verification</span>
+      </div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.25rem; color: #ffffff; font-weight: 700;">Can't isolate the sound with your eyes alone?</h3>
+      <p style="margin: 0 0 16px 0; color: #94a3b8; font-size: 0.9rem; line-height: 1.55;">
+        Acoustic symptoms can closely mimic each other. If you have an audio recording or can capture 5 seconds under the hood, Carithm's free browser tool analyzes frequency peaks to identify ranked possibilities.
+      </p>
+      <a href="https://carithm.vercel.app/audio?ref=inline_mazda" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #0284c7; color: #ffffff; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-weight: 600; font-size: 0.92rem; transition: background 0.2s ease;">
+        <span>Analyze Your Sound in Browser (Free)</span>
+        <span style="font-size: 1.1rem;">&rarr;</span>
+      </a>
+      <span style="display: block; margin-top: 8px; font-size: 0.78rem; color: #64748b;">No download, login, or personal info required. Runs instantly on mobile or desktop.</span>
+    </section>
+
+  <!-- Estimated Repair Cost Card -->
+  <section class="card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
+      <h2 style="margin: 0;">Typical Repair Costs (USD)</h2>
+      <span style="font-size: 0.82rem; color: var(--teal); background: rgba(45,212,191,0.1); padding: 4px 10px; border-radius: 6px; font-weight: 600;">Est. Range: $25 – $240 (USD)</span>
+    </div>
+    <p style="color: var(--muted); font-size: 0.86rem; margin: 0 0 14px;">Independent shop averages across parts &amp; labor:</p>
+    
+      <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 8px;">
+        <div>
+          <strong style="color: #fff; font-size: 0.95rem;">Stainless Steel Exhaust Shield Clamp</strong>
+          <p style="margin: 3px 0 0; font-size: 0.85rem; color: var(--muted);">Permanent DIY or shop clamp securing loose shield.</p>
+        </div>
+        <span style="font-weight: 700; color: #22c55e; font-size: 0.95rem; white-space: nowrap;">$25 – $65</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 8px;">
+        <div>
+          <strong style="color: #fff; font-size: 0.95rem;">Felt Anti-Rattle Tape Interior Kit</strong>
+          <p style="margin: 3px 0 0; font-size: 0.85rem; color: var(--muted);">Eliminates dashboard and pillar trim buzz.</p>
+        </div>
+        <span style="font-weight: 700; color: #22c55e; font-size: 0.95rem; white-space: nowrap;">$15 – $35</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 8px;">
+        <div>
+          <strong style="color: #fff; font-size: 0.95rem;">Undertray Push-Pin Clip Kit</strong>
+          <p style="margin: 3px 0 0; font-size: 0.85rem; color: var(--muted);">Secures sagging plastic splash covers.</p>
+        </div>
+        <span style="font-weight: 700; color: #22c55e; font-size: 0.95rem; white-space: nowrap;">$20 – $40</span>
+      </div>
+  </section>
+
+  <!-- Related Mazda Acoustic Guides -->
+  <section class="card" style="margin-bottom: 16px;">
+    <h2>More Mazda Diagnostic Guides</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
+      <a href="https://carithm.vercel.app/audio/mazda-cx-5-rattling-noise" style="background: var(--surface2); border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; font-size: 0.82rem; color: var(--muted); text-decoration: none;">CX-5 Rattling</a>
+      <a href="https://carithm.vercel.app/audio/mazda-cx-5-ticking-noise" style="background: var(--surface2); border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; font-size: 0.82rem; color: var(--muted); text-decoration: none;">CX-5 Ticking</a>
+      <a href="https://carithm.vercel.app/audio/mazda-cx-5-humming-noise" style="background: var(--surface2); border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; font-size: 0.82rem; color: var(--muted); text-decoration: none;">CX-5 Humming</a>
+      <a href="https://carithm.vercel.app/audio/mazda-cx-5-clunking-noise" style="background: var(--surface2); border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; font-size: 0.82rem; color: var(--muted); text-decoration: none;">CX-5 Clunking</a>
+      <a href="https://carithm.vercel.app/audio/mazda-3-humming-noise" style="background: var(--surface2); border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; font-size: 0.82rem; color: var(--muted); text-decoration: none;">Mazda 3 Humming</a>
+      <a href="https://carithm.vercel.app/audio/mazda-6-humming-noise" style="background: var(--surface2); border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; font-size: 0.82rem; color: var(--muted); text-decoration: none;">Mazda 6 Humming</a>
+      <a href="https://carithm.vercel.app/audio/mazda" style="background: rgba(56,189,248,0.15); border: 1px solid rgba(56,189,248,0.3); padding: 6px 12px; border-radius: 6px; font-size: 0.82rem; color: var(--accent); text-decoration: none; font-weight: 600;">View All Mazda Models &rarr;</a>
+    </div>
+  </section>
+
+  <div class="disclaimer-box">
+    <strong>Technical Disclaimer:</strong> Acoustic diagnostics provide preliminary pattern matching and should be verified with an ASE-certified technician or factory scan tool. Never drive a vehicle exhibiting severe braking degradation or sudden oil pressure loss.
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Carithm. Autonomous Automotive Acoustic Research.</p>
+  <p style="margin-top: 4px;"><a href="https://carithm.vercel.app/audio">Acoustic Diagnoser</a> &bull; <a href="https://carithm.vercel.app/audio/mazda">Mazda Directory</a> &bull; <a href="https://carithm.vercel.app/audio/toyota">Toyota Directory</a> &bull; <a href="https://carithm.vercel.app/audio/honda">Honda Directory</a> &bull; <a href="https://carithm.vercel.app/audio/ford">Ford Directory</a> &bull; <a href="https://carithm.vercel.app/about">About Carithm</a></p>
+</footer>
+
+
+
+</body>
+</html>
