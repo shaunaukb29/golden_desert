@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-TCCEJ6DCM1');
+
+  // Load gtag.js after the page is idle (queued events are sent once it loads)
+  (function() {
+    var loaded = false;
+    function loadGtag() {
+      if (loaded) return;
+      loaded = true;
+      var g = document.createElement('script');
+      g.async = true;
+      g.src = 'https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1';
+      document.head.appendChild(g);
+    }
+    function schedule() {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGtag, { timeout: 3000 });
+      } else {
+        setTimeout(loadGtag, 2000);
+      }
+    }
+    if (document.readyState === 'complete') schedule();
+    else window.addEventListener('load', schedule);
+  })();
 
   // 1. Existing Dwell Time Tracker
   (function() {
@@ -51,10 +74,7 @@
 </script>
 
 <!-- Google AdSense Global Script (Explicit units only to protect Core Web Vitals) -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" crossorigin="anonymous"></script>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Free AI Car Diagnoser — Car Sound Diagnosis App Free | Car Noise Identifier Online</title>
 <meta name="description" content="Free engine sound diagnostic AI app & car noise identifier online. Upload your recording to check engine sound. Works on all brands as a universal audio diagnosis app (Stellantis, Ford, Toyota). No download.">
@@ -817,14 +837,29 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
     <script>
+      // Load AdSense only when this slot is about to be seen (saves ~1.5 s of main-thread work for everyone else)
       (function() {
-        function initAd() {
-          (adsbygoogle = window.adsbygoogle || []).push({});
+        var slot = document.querySelector('.ad-viewability-container ins.adsbygoogle');
+        var started = false;
+        function loadAds() {
+          if (started) return;
+          started = true;
+          var a = document.createElement('script');
+          a.async = true;
+          a.crossOrigin = 'anonymous';
+          a.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+          a.onload = function() {
+            try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+          };
+          document.head.appendChild(a);
         }
-        if (window.requestIdleCallback) {
-          requestIdleCallback(initAd);
+        if ('IntersectionObserver' in window && slot) {
+          var io = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting) { io.disconnect(); loadAds(); }
+          }, { rootMargin: '400px 0px' });
+          io.observe(slot);
         } else {
-          window.addEventListener('load', initAd);
+          window.addEventListener('load', function() { setTimeout(loadAds, 3000); });
         }
       })();
     </script>
