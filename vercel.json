@@ -816,6 +816,10 @@
       "destination": "/audio/src/cardiag/web/static/app"
     },
     {
+      "source": "/audio/ford",
+      "destination": "/audio/src/cardiag/web/static/ford"
+    },
+    {
       "source": "/audio/ac",
       "destination": "/audio/src/cardiag/web/static/ac"
     },
