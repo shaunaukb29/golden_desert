@@ -820,6 +820,10 @@
       "destination": "/audio/src/cardiag/web/static/ford"
     },
     {
+      "source": "/audio/toyota",
+      "destination": "/audio/src/cardiag/web/static/toyota"
+    },
+    {
       "source": "/audio/ac",
       "destination": "/audio/src/cardiag/web/static/ac"
     },
