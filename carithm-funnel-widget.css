@@ -7,17 +7,28 @@
   touch-action: manipulation;
 }
 .carithm-funnel-widget {
-  background: linear-gradient(180deg, #121216 0%, #0a0a0d 100%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: radial-gradient(circle at 75% 45%, rgba(245, 158, 11, 0.22) 0%, rgba(17, 24, 39, 0.95) 55%, #0a0d14 100%);
+  border: 2px solid rgba(245, 158, 11, 0.7);
   border-radius: 14px;
   padding: 26px 22px;
   margin: 36px 0;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 45px rgba(245, 158, 11, 0.22), 0 20px 50px rgba(0, 0, 0, 0.75);
   position: relative;
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color-scheme: dark;
   contain: layout style;
+  animation: cfOuterAmberPulse 3.2s infinite alternate;
+}
+@keyframes cfOuterAmberPulse {
+  0% {
+    border-color: rgba(245, 158, 11, 0.45);
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.16), 0 16px 40px rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    border-color: #f59e0b;
+    box-shadow: 0 0 50px rgba(245, 158, 11, 0.4), 0 20px 55px rgba(0, 0, 0, 0.8);
+  }
 }
 .carithm-funnel-widget::before {
   content: '';
@@ -30,9 +41,9 @@
 .cf-banner { text-align: center; margin-bottom: 22px; }
 .cf-pill {
   display: inline-flex; align-items: center; gap: 6px;
-  font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
-  text-transform: uppercase; color: #60a5fa;
-  background: rgba(47, 129, 247, 0.12); border: 1px solid rgba(47, 129, 247, 0.35);
+  font-size: 11px; font-weight: 800; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #fbbf24;
+  background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.45);
   padding: 5px 12px; border-radius: 999px; margin-bottom: 12px;
 }
 .cf-banner h2 {
@@ -83,15 +94,20 @@
   transform: translateY(-2px);
 }
 .cf-action-grid .cf-card:last-child {
-  background: linear-gradient(180deg, rgba(16, 185, 129, 0.12) 0%, rgba(5, 150, 105, 0.05) 50%, #161922 100%) !important;
-  border: 1px solid rgba(52, 211, 153, 0.45) !important;
-  box-shadow: 0 0 25px rgba(16, 185, 129, 0.18), inset 0 1px 0 rgba(110, 231, 183, 0.3) !important;
+  background: linear-gradient(180deg, rgba(146, 64, 14, 0.45) 0%, rgba(45, 20, 4, 0.9) 100%) !important;
+  border: 2px solid #f59e0b !important;
+  border-radius: 12px;
+  box-shadow: 0 0 35px rgba(245, 158, 11, 0.4), inset 0 0 20px rgba(245, 158, 11, 0.18) !important;
   position: relative;
+  transition: all 0.25s ease;
 }
 .cf-action-grid .cf-card:last-child:hover {
-  border-color: rgba(52, 211, 153, 0.8) !important;
-  box-shadow: 0 4px 30px rgba(16, 185, 129, 0.35), inset 0 1px 0 rgba(110, 231, 183, 0.5) !important;
+  border-color: #fbbf24 !important;
+  box-shadow: 0 0 48px rgba(245, 158, 11, 0.6), inset 0 0 25px rgba(245, 158, 11, 0.28) !important;
   transform: translateY(-2px);
+}
+.cf-action-grid .cf-card:last-child .cf-desc {
+  color: #fde68a !important;
 }
 .cf-tag {
   display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
@@ -99,7 +115,20 @@
   border: 1px solid rgba(59, 130, 246, 0.3);
   padding: 3px 8px; border-radius: 4px; margin-bottom: 8px; align-self: flex-start;
 }
-.cf-tag.green { color: #86efac; background: rgba(34, 197, 94, 0.18); border-color: rgba(34, 197, 94, 0.35); }
+.cf-tag.green {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: #fbbf24; background: rgba(245, 158, 11, 0.22);
+  border: 1px solid #f59e0b; border-radius: 999px; padding: 4px 10px; font-weight: 800;
+}
+.cf-tag.green::before {
+  content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: #fbbf24; box-shadow: 0 0 8px #fbbf24;
+  animation: cfAmberDotPing 1.6s infinite;
+}
+@keyframes cfAmberDotPing {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
 .cf-card h3 { font-size: 16.5px; font-weight: 700; margin-bottom: 6px; color: #fff; }
 .cf-desc { font-size: 12.5px; color: #cbd5e1; line-height: 1.45; margin-bottom: 16px; }
 
@@ -151,17 +180,17 @@
 .cf-record-btn {
   display: flex; align-items: center; gap: 12px; padding: 13px 18px;
   background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  border: 1px solid #f87171; border-radius: 8px; color: #ffffff !important;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.45);
+  border: 1px solid #fca5a5; border-radius: 8px; color: #ffffff !important;
+  text-decoration: none; font-weight: 800;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.65);
   touch-action: manipulation;
   transition: all 0.2s ease;
   will-change: transform;
 }
 .cf-record-btn:hover {
   background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-  border-color: #fca5a5; transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.6);
+  border-color: #fecaca; transform: translateY(-2px);
+  box-shadow: 0 6px 26px rgba(239, 68, 68, 0.85);
 }
 .cf-rec-icon {
   display: inline-block; width: 12px; height: 12px; border-radius: 50%;
