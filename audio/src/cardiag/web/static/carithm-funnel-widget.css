@@ -301,3 +301,74 @@
 .cf-link-main { font-size: 12.5px; font-weight: 600; color: #60a5fa; text-decoration: none; touch-action: manipulation; }
 .cf-link-main:hover { text-decoration: underline; }
 .cf-link-home { display: none !important; }
+
+
+/* === GLOBAL MOBILE RESPONSIVENESS FIXES FOR SUBPAGES === */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 14px !important;
+    height: auto !important;
+    min-height: 52px !important;
+    flex-wrap: wrap !important;
+    gap: 8px 12px !important;
+    overflow-x: hidden !important;
+  }
+  .nav-logo {
+    font-size: 1.25rem !important;
+    flex-shrink: 0 !important;
+  }
+  .nav-links {
+    display: flex !important;
+    gap: 8px 14px !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+  }
+  .nav-links a {
+    font-size: 0.78rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* Prevent table blowout and enable clean horizontal swipe */
+  table, table.cost-table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    white-space: nowrap !important;
+    border-collapse: collapse !important;
+  }
+  table th, table td, table.cost-table th, table.cost-table td {
+    padding: 8px 12px !important;
+    font-size: 0.82rem !important;
+  }
+  
+  /* Ensure main body container never causes horizontal scroll */
+  body, html {
+    overflow-x: hidden !important;
+  }
+  main {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    overflow-x: hidden !important;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 8px 12px !important;
+  }
+  .nav-logo {
+    font-size: 1.15rem !important;
+  }
+  .nav-links {
+    gap: 6px 10px !important;
+  }
+  .nav-links a {
+    font-size: 0.72rem !important;
+  }
+  /* Optional: hide redundant 'Home' link on ultra-compact mobile header since Logo links to Home */
+  .nav-links a[href="https://carithm.vercel.app/"],
+  .nav-links a[href="/"] {
+    display: none !important;
+  }
+}
