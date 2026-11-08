@@ -11,6 +11,5 @@ Disallow: /test/
 Disallow: /*?utm_*
 Disallow: /*?ref_*
 
-# Sitemap location
+# Master Sitemap Index
 Sitemap: https://carithm.vercel.app/sitemap_index.xml
-Sitemap: https://carithm.vercel.app/sitemap_v4.xml
