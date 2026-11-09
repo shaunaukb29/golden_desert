@@ -659,6 +659,24 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 
 <main>
 
+
+<!-- Dynamic Preselect & Deep Handoff Banner -->
+<div id="handoffBanner" style="display: none; margin: 20px 0 24px; padding: 18px 22px; background: linear-gradient(135deg, rgba(239,68,68,0.12) 0%, rgba(220,38,38,0.06) 100%); border: 1.5px solid rgba(239,68,68,0.4); border-radius: 12px;">
+  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 26px;">🎙️</span>
+      <div>
+        <div id="handoffTitle" style="font-weight: 700; font-size: 1.15rem; color: #fff;">Ready to record your vehicle's noise</div>
+        <div id="handoffSub" style="font-size: 0.88rem; color: #cbd5e1; margin-top: 2px;">Acoustic neural model calibrated for instant fault isolation &bull; 100% Free</div>
+      </div>
+    </div>
+    <a href="#try" onclick="window.cfActivateAndFocus && window.cfActivateAndFocus()" style="display: inline-flex; align-items: center; gap: 6px; background: #ef4444; color: #fff; text-decoration: none; font-weight: 700; font-size: 0.9rem; padding: 10px 18px; border-radius: 8px; box-shadow: 0 2px 10px rgba(239,68,68,0.4);">
+      <span>Tap to Record Now</span>
+      <span>&darr;</span>
+    </a>
+  </div>
+</div>
+
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <a href="https://carithm.vercel.app/">Home</a>
   <span class="sep">/</span>
@@ -985,6 +1003,61 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
     </div>
   </div>
 </footer>
+
+
+<script>
+  (function() {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const make = params.get('make');
+      const model = params.get('model');
+      const year = params.get('year');
+      const symptom = params.get('symptom');
+      const src = params.get('src');
+
+      if (make || model || symptom) {
+        const banner = document.getElementById('handoffBanner');
+        const title = document.getElementById('handoffTitle');
+        const sub = document.getElementById('handoffSub');
+
+        let vehicleName = [year, make, model].filter(Boolean).map(function(s) {
+          return s.charAt(0).toUpperCase() + s.slice(1);
+        }).join(' ');
+        if (!vehicleName) vehicleName = 'your car';
+
+        let symptomName = symptom ? symptom.replace(/-/g, ' ') : 'abnormal noise';
+
+        if (title) title.innerHTML = 'Ready to record your ' + vehicleName + '\'s ' + symptomName;
+        if (sub) sub.innerHTML = 'Holding your phone near the source isolates ' + symptomName + ' in 5 seconds.';
+        if (banner) banner.style.display = 'block';
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'handoff_landing', {
+            'event_category': 'Funnel',
+            'event_label': (make || '') + '_' + (model || '') + '_' + (symptom || ''),
+            'funnel_source': src || 'direct'
+          });
+        }
+
+        window.cfActivateAndFocus = function() {
+          const btn = document.getElementById('activateStreamlitBtn');
+          if (btn) btn.click();
+          const targetEl = document.getElementById('try');
+          if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+
+        // If arrived via one of the primary CTAs, auto scroll towards tool
+        if (src) {
+          setTimeout(function() {
+            window.cfActivateAndFocus();
+          }, 350);
+        }
+      }
+    } catch(e) {
+      console.warn('Handoff error:', e);
+    }
+  })();
+</script>
 
 </body>
 </html>

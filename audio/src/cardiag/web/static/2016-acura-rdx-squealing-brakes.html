@@ -556,165 +556,101 @@ a, button, input, label, [role="button"] { touch-action: manipulation; }
     <p><strong>Quick answer:</strong> This is the single most-reported problem for the 2016 RDX in owner complaint databases: a high-pitched squeal under light, low-speed braking that dealers often attribute to brake dust rather than fixing outright. Skip the guesswork — <a href="#try">upload the sound here</a> for an instant AI read, or explore the full <a href="https://carithm.vercel.app/audio">Audio Diagnosis hub</a> for every supported vehicle.</p>
   </div>
 
-  <nav class="toc" aria-label="Table of contents">
-    <div class="toc-title">On this page</div>
-    <ul class="toc-list">
-      <li><a href="#try">Upload &amp; analyze your RDX's noise</a></li>
-      <li><a href="#causes">Common causes of Acura RDX squealing</a></li>
-      <li><a href="#costs">Estimated repair cost table</a></li>
-      <li><a href="#faq">FAQ: 2016 Acura RDX noises</a></li>
-      <li><a href="#related">Other vehicles on Carithm</a></li>
-    </ul>
-  </nav>
+  
 
-  <section class="card tool tool-wide" id="try">
-    <h2 style="margin-top: 0; font-size: 1.8rem;">Upload Your 2016 Acura RDX's Sound</h2>
-    <p>Record the noise from inside or outside your vehicle. Our AI compares your sound wave pattern against known Acura fault frequencies:</p>
-
-    
-  <!-- SECTION: INTERACTIVE AI SOUND ANALYZER & LIVE DIAGNOSTIC FUNNEL -->
-    <section class="ai-cta-block carithm-funnel-widget" id="acoustic-analyzer">
-      <div class="cf-banner">
-        <span class="cf-pill">⚡ LIVE AI ACOUSTIC SCANNER</span>
-        <h2>Hear an abnormal noise coming from your car?</h2>
-        <p class="cf-sub">
-          Test our neural acoustic model with a real calibrated BMW M3 rod knock sample below, or record your engine live for instant component diagnosis.
-        </p>
+  
+  <!-- THE BLUEPRINT: PAGE -> RECORD FUNNEL (SECTIONS 1, 2, 3) -->
+  <section class="bp-funnel-container" id="bp-analyzer">
+    <!-- SECTION 1: HERO -->
+    <div class="bp-hero">
+      <div class="bp-eyebrow">2016 Acura Rdx &bull; Squealing Brakes</div>
+      <h2 class="bp-h1">Squealing Brakes on your Rdx? Find out what it is in 10 seconds.</h2>
+      <p class="bp-sub">Record 5 seconds of the noise. Get the likely cause, how urgent it is, and what a fair repair costs.</p>
+      
+      <div class="bp-cta-box">
+        <a href="https://carithm.vercel.app/audio?make=acura&model=rdx&year=2016&symptom=squealing-brakes&src=hero" class="bp-btn bp-btn-hero">
+          <span>🎙️ Record my brakes now</span>
+          <span class="bp-arrow">&rarr;</span>
+        </a>
+        <div class="bp-micro">5 seconds &bull; Free &bull; No signup &bull; Works on your phone</div>
+        <div class="bp-upload"><a href="https://carithm.vercel.app/audio?make=acura&model=rdx&year=2016&symptom=squealing-brakes&src=hero_upload">Already have a recording? Upload it</a></div>
       </div>
-
-      <div class="cf-status-bar">
-        <div class="cf-status">
-          <span class="cf-dot"></span>
-          <span>NEURAL ACOUSTIC MODEL: CALIBRATED (V2.4)</span>
-        </div>
-        <div class="cf-badge">90% BENCHMARK ACCURACY</div>
-      </div>
-
-      <div class="cf-action-grid">
-        <!-- Sample Test Card -->
-        <div class="cf-card">
-          <div>
-            <div class="cf-tag">REAL BENCHMARK AUDIO</div>
-            <h3>BMW M3 (S65 V8) Rod Knock</h3>
-            <p class="cf-desc">Authentic connecting rod bearing failure recorded at idle. Listen to the distinct combustion stroke rap.</p>
-          </div>
-          <div>
-            <div class="cf-btn-row">
-              <button type="button" class="cf-play-btn" id="cfPlayBtn" onclick="cfToggleSample()">
-                <span id="cfPlayIcon">▶</span>
-                <span id="cfPlayText">Play Sample (4.5s)</span>
-              </button>
-              <button type="button" class="cf-analyze-btn" id="cfAnalyzeBtn" onclick="cfRunDiagnosis()">
-                <span>⚡</span>
-                <span id="cfAnalyzeText">Diagnose Sample</span>
-              </button>
-            </div>
-            <div class="cf-waveform">
-              <div class="cf-bars" id="cfBars">
-                <span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span>
-                <span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span>
-                <span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span>
-                <span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span>
-                <span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span>
-              </div>
-              <span class="cf-timer" id="cfTimerText">0:00 / 0:04</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Live Record Card -->
-        <div class="cf-card">
-          <div>
-            <div class="cf-tag green">LIVE CAPTURE</div>
-            <h3>Diagnose Your Actual Engine</h3>
-            <p class="cf-desc">Sit in the driver's seat or pop the hood. Record 5 seconds to isolate pulleys, bearings, or valvetrain faults.</p>
-          </div>
-          <div>
-            <a href="https://carithm.vercel.app/audio" class="cf-record-btn">
-              <span class="cf-rec-icon">🔴</span>
-              <span class="cf-rec-text">
-                <strong>Record Engine Live (5s)</strong>
-                <small>Auto-stops • Instant Neural Analysis</small>
-              </span>
-              <span class="cf-arrow">→</span>
-            </a>
-            <a href="https://carithm.vercel.app/audio" class="cf-upload-link">
-              📁 Or upload an existing audio / video file
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Live Diagnosis Output Simulation Box -->
-      <div class="cf-output-box" id="cfOutputBox" style="display: none;">
-        <div class="cf-out-header">
-          <div class="cf-verdict">⚠️ FAULT IDENTIFIED &bull; CRITICAL</div>
-          <div class="cf-conf">91.4% Acoustic Correlation</div>
-        </div>
-        <div class="cf-fault-body">
-          <h4>Connecting Rod Bearing Failure (Rod Knock)</h4>
-          <p>Deep harmonic transient spike detected at 120–280 Hz locked to engine RPM. Acoustic signature indicates critical clearance gap in lower rod journal.</p>
-        </div>
-        <div class="cf-metrics">
-          <div class="cf-m-item">
-            <span class="cf-m-label">Estimated Repair:</span>
-            <span class="cf-m-val">,200 – ,800</span>
-          </div>
-          <div class="cf-m-item">
-            <span class="cf-m-label">Potential Savings:</span>
-            <span class="cf-m-val green">,000+ Engine Saved</span>
-          </div>
-          <div class="cf-m-item">
-            <span class="cf-m-label">Recommendation:</span>
-            <span class="cf-m-val red">Do Not Drive</span>
-          </div>
-        </div>
-        
-        <div class="cf-funnel-footer">
-          <p class="cf-prompt">Got a sound coming from <strong>your car</strong>? Diagnose your exact audio with Carithm Core:</p>
-          <div class="cf-btn-group">
-            <a href="https://carithm.vercel.app/audio" class="cf-btn-pri">
-              🎙️ Start Free Diagnosis &rarr;
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Persistent Bridge -->
-      <div class="cf-bottom-bridge">
-        <div class="cf-b-left">
-          <strong>Carithm AI Diagnostics Core</strong>
-          <span>Empowering over 80,000 drivers globally &bull; Built independently</span>
-        </div>
-        <div class="cf-b-right">
-          <a href="https://carithm.vercel.app/audio" class="cf-primary-funnel-btn">Diagnose Fault Now &rarr;</a>
-        </div>
-      </div>
-    </section>
-
     </div>
-    <div class="cta-note">
-      <strong>✓ Instant AI Diagnosis for 2016 Acura RDX</strong>
-      Know what's causing the squeal before paying shop diagnostic fees.
-      <div class="trust-row">
-        <span>Free to use</span>
-        <span>No signup</span>
-        <span>Works on mobile</span>
+
+    <!-- SECTION 2: PAYOFF PREVIEW -->
+    <div class="bp-payoff-card">
+      <div class="bp-payoff-badge">EXAMPLE RESULT &bull; ACOUSTIC BENCHMARK</div>
+      <div class="bp-result-header">
+        <div class="bp-result-title">Pad wear indicator contact</div>
+        <div class="bp-result-match">91% match</div>
+      </div>
+      <div class="bp-result-details">
+        <div class="bp-detail-item">🟢 Safe to drive short-term</div>
+        <div class="bp-detail-item">⏱ Replace pads within 2-3 weeks</div>
+        <div class="bp-detail-item">💲 Typical cost: $130-220 per axle</div>
+      </div>
+      
+      <!-- Audio Sample Player (Clean Synthesized/Audio clip) -->
+      <div class="bp-audio-player">
+        <button type="button" class="bp-play-btn" onclick="bpToggleSample(this, 'brakes')">
+          <span class="bp-p-icon">▶</span>
+          <span class="bp-p-text">Play the sample this result came from (real brakes audio)</span>
+        </button>
+        <div class="bp-timer" id="bpTimerText">0:00 / 0:05</div>
+      </div>
+
+      <div class="bp-card-cta">
+        <a href="https://carithm.vercel.app/audio?make=acura&model=rdx&year=2016&symptom=squealing-brakes&src=example" class="bp-btn bp-btn-sub">
+          <span>Get this for your car</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- SECTION 3: THREE-STEP HOW IT WORKS -->
+    <div class="bp-steps-card">
+      <h3 class="bp-steps-title">How It Works in 3 Simple Steps</h3>
+      <div class="bp-steps-grid">
+        <div class="bp-step">
+          <div class="bp-step-num">1</div>
+          <div class="bp-step-text"><strong>Park &amp; hold phone</strong> near the brakes or wheel area</div>
+        </div>
+        <div class="bp-step">
+          <div class="bp-step-num">2</div>
+          <div class="bp-step-text"><strong>Press record</strong> for 5 seconds while noise occurs</div>
+        </div>
+        <div class="bp-step">
+          <div class="bp-step-num">3</div>
+          <div class="bp-step-text"><strong>Get your cause,</strong> urgency level, and fair repair cost</div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 20px;">
+        <a href="https://carithm.vercel.app/audio?make=acura&model=rdx&year=2016&symptom=squealing-brakes&src=steps" class="bp-btn bp-btn-secondary">
+          <span>🎙️ Record my brakes now</span>
+          <span>&rarr;</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <section id="causes">
-    <h2>Common Causes of Squealing in a 2016 Acura RDX</h2>
-    <p>Owner complaint archives consistently rank front brake squeal as the top reported issue for the 2016 RDX, typically starting well before the pads are actually worn out. Many owners report the noise persists even after a fresh set of pads and rotors, pointing to a pad compound or rotor finish that's simply more prone to noise than most.</p>
-    <ul>
-      <li><strong>Factory pad compound sensitive to glazing:</strong> Squeal under light, low-speed braking, present even on newer pads.</li>
-      <li><strong>Rotor surface finish/rust film:</strong> Squeal that's worse first thing in the morning or after rain.</li>
-      <li><strong>Missing or worn anti-rattle shims:</strong> Squeal returns shortly after a pad replacement.</li>
-      <li><strong>Genuine pad wear indicator:</strong> Progressive squeal that gets steadily louder over weeks.</li>
+
+  
+  <!-- SECTION 4: CAUSE LIST WITH SOFT CTAs -->
+  <section class="bp-section" id="causes">
+    <h2>Common Causes of Squealing Brakes on a 2016 Acura Rdx</h2>
+    <p>Drivers of the 2016 Acura Rdx encounter these primary mechanical root causes. See which acoustic behavior matches yours:</p>
+    <ul class="bp-cause-list">
+      <li><strong>Pad wear indicator contact:</strong> Squeal on every stop → wear indicator contact. <a href='https://carithm.vercel.app/audio?make=acura&model=rdx&year=2016&symptom=squealing-brakes&src=causes' class='bp-soft-cta'>Test yours &rarr;</a></li>
+      <li><strong>Glazed pad surface from light driving:</strong> Squeal only at low speed, fades when braking hard → glazed friction surface. <a href='https://carithm.vercel.app/audio?make=acura&model=rdx&year=2016&symptom=squealing-brakes&src=causes' class='bp-soft-cta'>Test yours &rarr;</a></li>
+      <li><strong>Dust, road grit, or moisture:</strong> Squeal on damp mornings or after unpaved roads → surface contamination. <a href='https://carithm.vercel.app/audio?make=acura&model=rdx&year=2016&symptom=squealing-brakes&src=causes' class='bp-soft-cta'>Test yours &rarr;</a></li>
+      <li><strong>Loose anti-rattle clips or shims:</strong> Squeal + light rattle over bumps → worn or missing hardware kit. <a href='https://carithm.vercel.app/audio?make=acura&model=rdx&year=2016&symptom=squealing-brakes&src=causes' class='bp-soft-cta'>Test yours &rarr;</a></li>
     </ul>
-    <p>Not sure which of these matches what you're hearing? The fastest way to narrow it down is to <a href="#try">run your recording through the analyzer above</a> rather than guessing from a text description.</p>
+    <div class="bp-cant-tell-banner">
+      <p><strong>Can't tell which? You don't have to.</strong> Just record it.</p>
+      <a href="https://carithm.vercel.app/audio?make=acura&model=rdx&year=2016&symptom=squealing-brakes&src=causes" class="bp-btn bp-btn-sm">🎙️ Record my brakes now &rarr;</a>
+    </div>
   </section>
+
 
   <section id="costs">
     <h2>Estimated Repair Costs</h2>
@@ -729,9 +665,27 @@ a, button, input, label, [role="button"] { touch-action: manipulation; }
         <tr><td>OEM pad upgrade</td><td>Squeal that survives a standard aftermarket pad swap</td><td>$180 – $350 (per axle)</td></tr>
       </tbody>
     </table>
+
+    <div class="bp-cost-hook">
+      <p><strong>Don't pay for a guess.</strong> Know what's wrong before the shop quotes you.</p>
+      <a href="https://carithm.vercel.app/audio?make=acura&model=rdx&year=2016&symptom=squealing-brakes&src=costs" class="bp-btn bp-btn-primary">🎙️ Record my brakes now &rarr;</a>
+    </div>
+
+
   </section>
 
-  <section id="faq">
+  
+  <!-- SECTION 6: HONEST URGENCY -->
+  <section class="bp-section bp-urgency-card">
+    <div class="bp-urgency-badge">MECHANICAL RISK NOTICE</div>
+    <h3>Why You Shouldn't Wait</h3>
+    <p>Wear-indicator squeal on your 2016 Acura Rdx doesn't go away on its own. It steadily worsens until the pad backing plate gouges into the rotor face, turning an affordable $130–$220 pad replacement into an expensive $350+ pad-and-rotor job. Check it now before rotor damage occurs.</p>
+    <div style="margin-top: 16px;">
+      <a href="https://carithm.vercel.app/audio?make=acura&model=rdx&year=2016&symptom=squealing-brakes&src=urgency" class="bp-btn bp-btn-urgency">🎙️ Check it now before damage occurs &rarr;</a>
+    </div>
+  </section>
+
+<section id="faq">
     <h2>FAQ: 2016 Acura RDX Squealing Noise</h2>
     <details class="faq-item" open>
       <summary>Why does my RDX still squeal after I got new brake pads?</summary>
@@ -750,6 +704,16 @@ a, button, input, label, [role="button"] { touch-action: manipulation; }
       <div class="faq-content"><p>Not inherently — it's usually a noise complaint rather than a braking-performance problem, but it's still worth confirming the pads have adequate remaining material rather than assuming it's cosmetic.</p></div>
     </details>
   </section>
+
+  <!-- SECTION 7: CLOSING CTA -->
+  <div class="bp-closing-cta">
+    <h3>Ready to diagnose your 2016 Acura Rdx?</h3>
+    <p>Upload or record 5 seconds from your phone to isolate squealing brakes causes instantly.</p>
+    <a href="https://carithm.vercel.app/audio?make=acura&model=rdx&year=2016&symptom=squealing-brakes&src=closing" class="bp-btn bp-btn-hero">🎙️ Record my brakes now &rarr;</a>
+    <div class="bp-micro">5 seconds &bull; Free &bull; No download required</div>
+  </div>
+
+
 
   <div class="hub-callout">
     Own a different vehicle? Carithm's AI sound analyzer isn't limited to the Acura RDX — visit the <a href="https://carithm.vercel.app/audio">main Audio Diagnosis hub</a> to upload a recording for any make or model.
@@ -820,6 +784,15 @@ a, button, input, label, [role="button"] { touch-action: manipulation; }
   </div>
 </footer>
 
+
+
+  <!-- STICKY MOBILE CONVERSION BAR -->
+  <div class="bp-sticky-bar" id="bpStickyBar">
+    <a href="https://carithm.vercel.app/audio?make=acura&model=rdx&year=2016&symptom=squealing-brakes&src=sticky" class="bp-sticky-btn">
+      <span>🎙️ Record my brakes (5s)</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
 
 </body>
 </html>

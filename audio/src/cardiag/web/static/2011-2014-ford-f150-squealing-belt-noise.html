@@ -612,165 +612,101 @@ a, button, input, label, [role="button"] { touch-action: manipulation; }
     <p><strong>Quick answer:</strong> F-150 owners from this generation frequently report a loud squeal on cold starts, especially in damp or cold weather, that goes away once the truck has been running a few minutes — commonly tied to the serpentine belt or tensioner. Skip the guesswork — <a href="#try">upload the sound here</a> for an instant AI read, or explore the full <a href="https://carithm.vercel.app/audio">Audio Diagnosis hub</a> for every supported vehicle.</p>
   </div>
 
-  <nav class="toc" aria-label="Table of contents">
-    <div class="toc-title">On this page</div>
-    <ul class="toc-list">
-      <li><a href="#try">Upload &amp; analyze your 2011-2014 Ford F-150's noise</a></li>
-      <li><a href="#causes">Common causes of 2011-2014 Ford F-150 squealing</a></li>
-      <li><a href="#costs">Estimated repair cost table</a></li>
-      <li><a href="#faq">FAQ: 2011-2014 Ford F-150 noises</a></li>
-      <li><a href="#related">Other vehicles on Carithm</a></li>
-    </ul>
-  </nav>
+  
 
-  <section class="card tool tool-wide" id="try">
-    <h2 style="margin-top: 0; font-size: 1.8rem;">Upload Your 2011-2014 Ford F-150's Sound</h2>
-    <p>Record the noise from inside or outside your vehicle. Our AI compares your sound wave pattern against known fault frequencies:</p>
-
-    
-  <!-- SECTION: INTERACTIVE AI SOUND ANALYZER & LIVE DIAGNOSTIC FUNNEL -->
-    <section class="ai-cta-block carithm-funnel-widget" id="acoustic-analyzer">
-      <div class="cf-banner">
-        <span class="cf-pill">⚡ LIVE AI ACOUSTIC SCANNER</span>
-        <h2>Hear an abnormal noise coming from your car?</h2>
-        <p class="cf-sub">
-          Test our neural acoustic model with a real calibrated BMW M3 rod knock sample below, or record your engine live for instant component diagnosis.
-        </p>
+  
+  <!-- THE BLUEPRINT: PAGE -> RECORD FUNNEL (SECTIONS 1, 2, 3) -->
+  <section class="bp-funnel-container" id="bp-analyzer">
+    <!-- SECTION 1: HERO -->
+    <div class="bp-hero">
+      <div class="bp-eyebrow">2011-2014 Ford F150 &bull; Squealing Belt</div>
+      <h2 class="bp-h1">Squealing Belt on your F150? Find out what it is in 10 seconds.</h2>
+      <p class="bp-sub">Record 5 seconds of the noise. Get the likely cause, how urgent it is, and what a fair repair costs.</p>
+      
+      <div class="bp-cta-box">
+        <a href="https://carithm.vercel.app/audio?make=ford&model=f150&year=2011-2014&symptom=squealing-belt-noise&src=hero" class="bp-btn bp-btn-hero">
+          <span>🎙️ Record my belt now</span>
+          <span class="bp-arrow">&rarr;</span>
+        </a>
+        <div class="bp-micro">5 seconds &bull; Free &bull; No signup &bull; Works on your phone</div>
+        <div class="bp-upload"><a href="https://carithm.vercel.app/audio?make=ford&model=f150&year=2011-2014&symptom=squealing-belt-noise&src=hero_upload">Already have a recording? Upload it</a></div>
       </div>
-
-      <div class="cf-status-bar">
-        <div class="cf-status">
-          <span class="cf-dot"></span>
-          <span>NEURAL ACOUSTIC MODEL: CALIBRATED (V2.4)</span>
-        </div>
-        <div class="cf-badge">90% BENCHMARK ACCURACY</div>
-      </div>
-
-      <div class="cf-action-grid">
-        <!-- Sample Test Card -->
-        <div class="cf-card">
-          <div>
-            <div class="cf-tag">REAL BENCHMARK AUDIO</div>
-            <h3>BMW M3 (S65 V8) Rod Knock</h3>
-            <p class="cf-desc">Authentic connecting rod bearing failure recorded at idle. Listen to the distinct combustion stroke rap.</p>
-          </div>
-          <div>
-            <div class="cf-btn-row">
-              <button type="button" class="cf-play-btn" id="cfPlayBtn" onclick="cfToggleSample()">
-                <span id="cfPlayIcon">▶</span>
-                <span id="cfPlayText">Play Sample (4.5s)</span>
-              </button>
-              <button type="button" class="cf-analyze-btn" id="cfAnalyzeBtn" onclick="cfRunDiagnosis()">
-                <span>⚡</span>
-                <span id="cfAnalyzeText">Diagnose Sample</span>
-              </button>
-            </div>
-            <div class="cf-waveform">
-              <div class="cf-bars" id="cfBars">
-                <span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span>
-                <span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span>
-                <span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span>
-                <span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span>
-                <span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span><span class="cf-bar"></span>
-              </div>
-              <span class="cf-timer" id="cfTimerText">0:00 / 0:04</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Live Record Card -->
-        <div class="cf-card">
-          <div>
-            <div class="cf-tag green">LIVE CAPTURE</div>
-            <h3>Diagnose Your Actual Engine</h3>
-            <p class="cf-desc">Sit in the driver's seat or pop the hood. Record 5 seconds to isolate pulleys, bearings, or valvetrain faults.</p>
-          </div>
-          <div>
-            <a href="https://carithm.vercel.app/audio" class="cf-record-btn">
-              <span class="cf-rec-icon">🔴</span>
-              <span class="cf-rec-text">
-                <strong>Record Engine Live (5s)</strong>
-                <small>Auto-stops • Instant Neural Analysis</small>
-              </span>
-              <span class="cf-arrow">→</span>
-            </a>
-            <a href="https://carithm.vercel.app/audio" class="cf-upload-link">
-              📁 Or upload an existing audio / video file
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Live Diagnosis Output Simulation Box -->
-      <div class="cf-output-box" id="cfOutputBox" style="display: none;">
-        <div class="cf-out-header">
-          <div class="cf-verdict">⚠️ FAULT IDENTIFIED &bull; CRITICAL</div>
-          <div class="cf-conf">91.4% Acoustic Correlation</div>
-        </div>
-        <div class="cf-fault-body">
-          <h4>Connecting Rod Bearing Failure (Rod Knock)</h4>
-          <p>Deep harmonic transient spike detected at 120–280 Hz locked to engine RPM. Acoustic signature indicates critical clearance gap in lower rod journal.</p>
-        </div>
-        <div class="cf-metrics">
-          <div class="cf-m-item">
-            <span class="cf-m-label">Estimated Repair:</span>
-            <span class="cf-m-val">,200 – ,800</span>
-          </div>
-          <div class="cf-m-item">
-            <span class="cf-m-label">Potential Savings:</span>
-            <span class="cf-m-val green">,000+ Engine Saved</span>
-          </div>
-          <div class="cf-m-item">
-            <span class="cf-m-label">Recommendation:</span>
-            <span class="cf-m-val red">Do Not Drive</span>
-          </div>
-        </div>
-        
-        <div class="cf-funnel-footer">
-          <p class="cf-prompt">Got a sound coming from <strong>your car</strong>? Diagnose your exact audio with Carithm Core:</p>
-          <div class="cf-btn-group">
-            <a href="https://carithm.vercel.app/audio" class="cf-btn-pri">
-              🎙️ Start Free Diagnosis &rarr;
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Persistent Bridge -->
-      <div class="cf-bottom-bridge">
-        <div class="cf-b-left">
-          <strong>Carithm AI Diagnostics Core</strong>
-          <span>Empowering over 80,000 drivers globally &bull; Built independently</span>
-        </div>
-        <div class="cf-b-right">
-          <a href="https://carithm.vercel.app/audio" class="cf-primary-funnel-btn">Diagnose Fault Now &rarr;</a>
-        </div>
-      </div>
-    </section>
-
     </div>
-    <div class="cta-note">
-      <strong>✓ Instant AI Diagnosis for 2011-2014 Ford F-150</strong>
-      Know what's causing the squeal before paying shop diagnostic fees.
-      <div class="trust-row">
-        <span>Free to use</span>
-        <span>No signup</span>
-        <span>Works on mobile</span>
+
+    <!-- SECTION 2: PAYOFF PREVIEW -->
+    <div class="bp-payoff-card">
+      <div class="bp-payoff-badge">EXAMPLE RESULT &bull; ACOUSTIC BENCHMARK</div>
+      <div class="bp-result-header">
+        <div class="bp-result-title">Accessory drive belt slippage</div>
+        <div class="bp-result-match">93% match</div>
+      </div>
+      <div class="bp-result-details">
+        <div class="bp-detail-item">🟢 Safe to drive short-term</div>
+        <div class="bp-detail-item">⏱ Inspect tensioner / belt within 1-2 weeks</div>
+        <div class="bp-detail-item">💲 Typical cost: $90-180 installed</div>
+      </div>
+      
+      <!-- Audio Sample Player (Clean Synthesized/Audio clip) -->
+      <div class="bp-audio-player">
+        <button type="button" class="bp-play-btn" onclick="bpToggleSample(this, 'belt')">
+          <span class="bp-p-icon">▶</span>
+          <span class="bp-p-text">Play the sample this result came from (real belt audio)</span>
+        </button>
+        <div class="bp-timer" id="bpTimerText">0:00 / 0:05</div>
+      </div>
+
+      <div class="bp-card-cta">
+        <a href="https://carithm.vercel.app/audio?make=ford&model=f150&year=2011-2014&symptom=squealing-belt-noise&src=example" class="bp-btn bp-btn-sub">
+          <span>Get this for your car</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- SECTION 3: THREE-STEP HOW IT WORKS -->
+    <div class="bp-steps-card">
+      <h3 class="bp-steps-title">How It Works in 3 Simple Steps</h3>
+      <div class="bp-steps-grid">
+        <div class="bp-step">
+          <div class="bp-step-num">1</div>
+          <div class="bp-step-text"><strong>Park &amp; hold phone</strong> near the belt or wheel area</div>
+        </div>
+        <div class="bp-step">
+          <div class="bp-step-num">2</div>
+          <div class="bp-step-text"><strong>Press record</strong> for 5 seconds while noise occurs</div>
+        </div>
+        <div class="bp-step">
+          <div class="bp-step-num">3</div>
+          <div class="bp-step-text"><strong>Get your cause,</strong> urgency level, and fair repair cost</div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 20px;">
+        <a href="https://carithm.vercel.app/audio?make=ford&model=f150&year=2011-2014&symptom=squealing-belt-noise&src=steps" class="bp-btn bp-btn-secondary">
+          <span>🎙️ Record my belt now</span>
+          <span>&rarr;</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <section id="causes">
-    <h2>Common Causes of Squealing in a 2011-2014 Ford F-150</h2>
-    <p>Owners of this generation frequently report squealing noises tied to the belt system. Here's what's most commonly behind it:</p>
-    <ul>
-      <li><strong>Serpentine belt glazing from moisture:</strong> A squeal that's much louder in damp, humid, or cold morning conditions and quiets down once dry.</li>
-      <li><strong>Worn tensioner assembly:</strong> A rattling squeal that continues at idle even after the engine is fully warm.</li>
-      <li><strong>Accessory pulley misalignment:</strong> A squeal localized to one accessory (alternator, A/C compressor, power steering pump) under load.</li>
-      <li><strong>Debris or water on the belt:</strong> A short-lived squeal right after driving through water or a car wash that disappears once the belt dries.</li>
+
+  
+  <!-- SECTION 4: CAUSE LIST WITH SOFT CTAs -->
+  <section class="bp-section" id="causes">
+    <h2>Common Causes of Squealing Belt on a 2011-2014 Ford F150</h2>
+    <p>Drivers of the 2011-2014 Ford F150 encounter these primary mechanical root causes. See which acoustic behavior matches yours:</p>
+    <ul class="bp-cause-list">
+      <li><strong>Glazed or cracked serpentine belt:</strong> Squeal on cold start or full steering lock → belt glazing. <a href='https://carithm.vercel.app/audio?make=ford&model=f150&year=2011-2014&symptom=squealing-belt-noise&src=causes' class='bp-soft-cta'>Test yours &rarr;</a></li>
+      <li><strong>Worn belt tensioner pulley:</strong> Squeal + chirping that fluctuates with RPM → failing tensioner. <a href='https://carithm.vercel.app/audio?make=ford&model=f150&year=2011-2014&symptom=squealing-belt-noise&src=causes' class='bp-soft-cta'>Test yours &rarr;</a></li>
+      <li><strong>Misaligned idler pulley bearing:</strong> Persistent dry bearing whine and squeal → misaligned pulley. <a href='https://carithm.vercel.app/audio?make=ford&model=f150&year=2011-2014&symptom=squealing-belt-noise&src=causes' class='bp-soft-cta'>Test yours &rarr;</a></li>
+      <li><strong>A/C compressor clutch drag:</strong> Squeal occurs specifically when A/C turns on → clutch bearing drag. <a href='https://carithm.vercel.app/audio?make=ford&model=f150&year=2011-2014&symptom=squealing-belt-noise&src=causes' class='bp-soft-cta'>Test yours &rarr;</a></li>
     </ul>
-    <p>Not sure which of these matches what you're hearing? The fastest way to narrow it down is to <a href="#try">run your recording through the analyzer above</a> rather than guessing from a text description.</p>
+    <div class="bp-cant-tell-banner">
+      <p><strong>Can't tell which? You don't have to.</strong> Just record it.</p>
+      <a href="https://carithm.vercel.app/audio?make=ford&model=f150&year=2011-2014&symptom=squealing-belt-noise&src=causes" class="bp-btn bp-btn-sm">🎙️ Record my belt now &rarr;</a>
+    </div>
   </section>
+
 
   <section id="costs">
     <h2>Estimated Repair Costs</h2>
@@ -785,9 +721,27 @@ a, button, input, label, [role="button"] { touch-action: manipulation; }
         <tr><td>Pulley alignment/inspection</td><td>Squeal tied to one accessory</td><td>$60 – $150</td></tr>
       </tbody>
     </table>
+
+    <div class="bp-cost-hook">
+      <p><strong>Don't pay for a guess.</strong> Know what's wrong before the shop quotes you.</p>
+      <a href="https://carithm.vercel.app/audio?make=ford&model=f150&year=2011-2014&symptom=squealing-belt-noise&src=costs" class="bp-btn bp-btn-primary">🎙️ Record my belt now &rarr;</a>
+    </div>
+
+
   </section>
 
-  <section id="faq">
+  
+  <!-- SECTION 6: HONEST URGENCY -->
+  <section class="bp-section bp-urgency-card">
+    <div class="bp-urgency-badge">MECHANICAL RISK NOTICE</div>
+    <h3>Why You Shouldn't Wait</h3>
+    <p>A squealing drive belt on your 2011-2014 Ford F150 indicates friction loss or failing tension. If the belt snaps while driving, you instantly lose battery charging, power steering assist, and water pump coolant flow — leading to immediate overheating. Test it now before getting stranded.</p>
+    <div style="margin-top: 16px;">
+      <a href="https://carithm.vercel.app/audio?make=ford&model=f150&year=2011-2014&symptom=squealing-belt-noise&src=urgency" class="bp-btn bp-btn-urgency">🎙️ Check it now before damage occurs &rarr;</a>
+    </div>
+  </section>
+
+<section id="faq">
     <h2>FAQ: 2011-2014 Ford F-150 Squealing Noise</h2>
     <details class="faq-item" open>
       <summary>Why is my F-150's squeal worse in the rain or cold?</summary>
@@ -806,6 +760,16 @@ a, button, input, label, [role="button"] { touch-action: manipulation; }
       <div class="faq-content"><p>Coverage depends on the vehicle's remaining factory or powertrain warranty terms, so it's worth checking your specific warranty documentation or asking the dealer directly.</p></div>
     </details>
   </section>
+
+  <!-- SECTION 7: CLOSING CTA -->
+  <div class="bp-closing-cta">
+    <h3>Ready to diagnose your 2011-2014 Ford F150?</h3>
+    <p>Upload or record 5 seconds from your phone to isolate squealing belt causes instantly.</p>
+    <a href="https://carithm.vercel.app/audio?make=ford&model=f150&year=2011-2014&symptom=squealing-belt-noise&src=closing" class="bp-btn bp-btn-hero">🎙️ Record my belt now &rarr;</a>
+    <div class="bp-micro">5 seconds &bull; Free &bull; No download required</div>
+  </div>
+
+
 
   <div class="hub-callout">
     Own a different vehicle? Carithm's AI sound analyzer isn't limited to the 2011-2014 Ford F-150 — visit the <a href="https://carithm.vercel.app/audio">main Audio Diagnosis hub</a> to upload a recording for any make or model.
@@ -876,6 +840,15 @@ a, button, input, label, [role="button"] { touch-action: manipulation; }
   </div>
 </footer>
 
+
+
+  <!-- STICKY MOBILE CONVERSION BAR -->
+  <div class="bp-sticky-bar" id="bpStickyBar">
+    <a href="https://carithm.vercel.app/audio?make=ford&model=f150&year=2011-2014&symptom=squealing-belt-noise&src=sticky" class="bp-sticky-btn">
+      <span>🎙️ Record my belt (5s)</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
 
 </body>
 </html>
