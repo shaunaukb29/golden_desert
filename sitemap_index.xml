@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://carithm.vercel.app/sitemap_core.xml</loc>
+    <loc>https://carithm.vercel.app/sitemap_au_fleet2.xml</loc>
     <lastmod>2026-11-10</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://carithm.vercel.app/sitemap_research.xml</loc>
+    <loc>https://carithm.vercel.app/sitemap_au_modern.xml</loc>
     <lastmod>2026-11-10</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://carithm.vercel.app/sitemap_symptoms.xml</loc>
+    <loc>https://carithm.vercel.app/sitemap_audio.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_audio_au.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_audio_ca.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_audio_general.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_audio_obd_repair.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_audio_uae.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_audio_uk_eu.xml</loc>
     <lastmod>2026-11-10</lastmod>
   </sitemap>
   <sitemap>
@@ -25,27 +49,87 @@
     <lastmod>2026-11-10</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://carithm.vercel.app/sitemap_audio_uk_eu.xml</loc>
+    <loc>https://carithm.vercel.app/sitemap_australia_2000s.xml</loc>
     <lastmod>2026-11-10</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://carithm.vercel.app/sitemap_audio_au.xml</loc>
+    <loc>https://carithm.vercel.app/sitemap_canada_modern.xml</loc>
     <lastmod>2026-11-10</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://carithm.vercel.app/sitemap_audio_ca.xml</loc>
+    <loc>https://carithm.vercel.app/sitemap_core.xml</loc>
     <lastmod>2026-11-10</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://carithm.vercel.app/sitemap_audio_uae.xml</loc>
+    <loc>https://carithm.vercel.app/sitemap_obd.xml</loc>
     <lastmod>2026-11-10</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://carithm.vercel.app/sitemap_audio_obd_repair.xml</loc>
+    <loc>https://carithm.vercel.app/sitemap_older_cars.xml</loc>
     <lastmod>2026-11-10</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://carithm.vercel.app/sitemap_audio_general.xml</loc>
+    <loc>https://carithm.vercel.app/sitemap_pilot_chevrolet.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_pilot_ford.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_pilot_honda.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_pilot_mazda.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_pilot_toyota.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_repair.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_research.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_symptoms.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_uae_modern.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_uk_fleet2.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_uk_modern.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_us_2000s.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_us_fleet2.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_us_modern.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_v4.xml</loc>
+    <lastmod>2026-11-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://carithm.vercel.app/sitemap_westeu_modern.xml</loc>
     <lastmod>2026-11-10</lastmod>
   </sitemap>
 </sitemapindex>
