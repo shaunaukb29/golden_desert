@@ -1,4 +1,4 @@
-# Allow all search engines to crawl the main site
+# Allow all search engines (Googlebot, Bingbot, etc.) to crawl all programmatic SEO pages
 User-agent: *
 Allow: /
 
@@ -10,6 +10,28 @@ Disallow: /test/
 # Block URLs with tracking parameters to prevent duplicate content
 Disallow: /*?utm_*
 Disallow: /*?ref_*
+
+# Isolate AdSense crawler: Focus exclusively on monetized money pages (/, /audio, /app, /vision, /cost-calculator)
+# Prevents Mediapartners-Google from evaluating domain quality on 12,700+ ad-free programmatic funnel subpages
+User-agent: Mediapartners-Google
+Allow: /$
+Allow: /audio$
+Allow: /audio/$
+Allow: /app$
+Allow: /app/$
+Allow: /vision$
+Allow: /vision/$
+Allow: /cost-calculator$
+Allow: /cost-calculator/$
+Disallow: /audio/*
+Disallow: /bmw/*
+Disallow: /toyota/*
+Disallow: /mercedes/*
+Disallow: /chevrolet/*
+Disallow: /honda/*
+Disallow: /ford/*
+Disallow: /nissan/*
+Disallow: /audi/*
 
 # Master Sitemap Index
 Sitemap: https://carithm.vercel.app/sitemap_index.xml
