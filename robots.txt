@@ -32,18 +32,6 @@ Disallow: /honda/*
 Disallow: /ford/*
 Disallow: /nissan/*
 Disallow: /audi/*
-Disallow: /volkswagen/*
-Disallow: /hyundai/*
-Disallow: /kia/*
-Disallow: /mazda/*
-Disallow: /lexus/*
-Disallow: /porsche/*
-Disallow: /land-rover/*
-Disallow: /range-rover/*
-Disallow: /tesla/*
-Disallow: /volvo/*
-Disallow: /infiniti/*
-Disallow: /mitsubishi/*
 
 # Master Sitemap Index
 Sitemap: https://carithm.vercel.app/sitemap_index.xml
