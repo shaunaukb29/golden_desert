@@ -121,18 +121,6 @@
 
   // GA4 Non-Negotiable Tracking Events
   document.addEventListener('DOMContentLoaded', function() {
-    // Inline Curiosity Gap Injection: adds a CTA inside .quick-answer to drive /audio clicks
-    try {
-      const quickAns = document.querySelector(".quick-answer");
-      if (quickAns && !document.querySelector(".bp-inline-hook")) {
-        const hook = document.createElement("div");
-        hook.className = "bp-inline-hook";
-        hook.style.cssText = "margin: 14px 0 6px; padding: 10px 14px; background: rgba(16,185,129,0.08); border-left: 3px solid #10b981; border-radius: 6px; display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 0.92rem;";
-        hook.innerHTML = "<span>⚡ <strong>Not sure?</strong> Test your car sound in 5 seconds</span><a href='https://carithm.vercel.app/audio?src=inline_quick' style='background:#10b981; color:#fff; padding:6px 14px; border-radius:6px; font-weight:700; text-decoration:none; white-space:nowrap; font-size:0.86rem;'>Test Sound &rarr;</a>";
-        quickAns.appendChild(hook);
-      }
-    } catch(e) {}
-
     // 1. CTA Click Tracking
     document.querySelectorAll('.bp-btn, .bp-sticky-btn, .bp-soft-cta, .bp-upload a').forEach(function(el) {
       el.addEventListener('click', function() {
