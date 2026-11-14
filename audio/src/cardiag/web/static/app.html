@@ -250,13 +250,16 @@ html {
   scrollbar-color: var(--accent) var(--surface2);
 }
 body {
-  font-family: 'Inter', 'Inter-fallback', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   margin: 0;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
 }
 a { color: inherit; }
 
@@ -296,7 +299,7 @@ header {
 }
 .nav .cta-btn:hover { background: var(--accent); color: #000; }
 
-main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
+main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; box-sizing: border-box; width: 100%; }
 
 .ad-container {
   display: flex;
@@ -457,30 +460,33 @@ main > section:first-of-type::before {
 .card.tool.tool-wide {
   max-width: 1100px;
   width: 100%;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  box-sizing: border-box;
 }
 
 .streamlit-embed-wrap {
   position: relative;
   --streamlit-height: min(1200px, 90vh);
+  height: var(--streamlit-height);
+  min-height: 640px;
+  contain: layout;
   margin-top: 18px;
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
   overflow: hidden;
   background: var(--surface2);
-  resize: vertical;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--teal) var(--surface2);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .streamlit-embed {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: var(--streamlit-height);
   min-height: 640px;
   border: 0;
   background: var(--bg);
+  box-sizing: border-box;
 }
 .iframe-brand-mask {
   position: absolute;
@@ -500,100 +506,22 @@ main > section:first-of-type::before {
 .iframe-fallback p { margin-bottom: 14px; }
 .iframe-fallback a.crosslink-btn { display: inline-block; }
 
-@media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
-@media (max-width: 620px) {
-  .streamlit-embed-wrap { 
-    --streamlit-height: min(850px, 80vh); 
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-  }
-  .streamlit-embed { min-height: 560px; }
-  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
-}
-
-.crosslink-banner {
-  background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
-  border: 1px solid rgba(47,129,247,0.25);
-  border-radius: var(--r);
-  padding: 22px 26px;
-  margin-top: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.crosslink-banner p { margin: 0; color: var(--muted); font-size: 13px; }
-.crosslink-banner strong { color: var(--text); display: block; font-size: 15px; margin-bottom: 4px; }
-.crosslink-btn {
-  background: var(--accent); color: #000; font-weight: 700;
-  padding: 10px 18px; border-radius: var(--r-sm);
-  text-decoration: none; font-size: 13px; white-space: nowrap; flex-shrink: 0;
-}
-.crosslink-btn:hover { opacity: 0.88; }
-
-.related-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-top: 16px;
-}
-.related-card {
-  background: var(--surface);
+@media (max-width: 900px) { .streamlit-embed-wrap {
+  position: relative;
+  --streamlit-height: min(1200px, 90vh);
+  height: var(--streamlit-height);
+  min-height: 640px;
+  contain: layout;
+  margin-top: 18px;
   border: 1px solid var(--border);
-  border-top: 2px solid var(--accent);
   border-radius: var(--r-sm);
-  padding: 14px 16px;
-  text-decoration: none;
-  display: block;
-  transition: border-color .2s, transform .2s, box-shadow .2s;
-}
-.related-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 20px -12px rgba(47,129,247,0.5); }
-.related-card:nth-child(2) { border-top-color: var(--teal); }
-.related-card:nth-child(2):hover { border-color: var(--teal); box-shadow: 0 8px 20px -12px rgba(45,212,191,0.5); }
-.related-card:nth-child(3) { border-top-color: var(--violet); }
-.related-card:nth-child(3):hover { border-color: var(--violet); box-shadow: 0 8px 20px -12px rgba(167,139,250,0.5); }
-.related-card:nth-child(4) { border-top-color: var(--amber); }
-.related-card:nth-child(4):hover { border-color: var(--amber); box-shadow: 0 8px 20px -12px rgba(245,158,11,0.5); }
-.related-card:nth-child(5) { border-top-color: var(--green); }
-.related-card:nth-child(5):hover { border-color: var(--green); box-shadow: 0 8px 20px -12px rgba(34,197,94,0.5); }
-.related-card .rc-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); margin-bottom: 4px; }
-.related-card .rc-title { font-size: 13px; font-weight: 600; color: var(--text); }
+  overflow: hidden;
+  background: var(--surface2);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+} }
 
-footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
-.footer-inner { max-width: 760px; margin: 0 auto; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
-.footer-links a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
-.footer-links a:hover { color: var(--accent); }
-.footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
-
-@media (max-width: 620px) {
-  .streamlit-embed-wrap { 
-    --streamlit-height: min(850px, 80vh); 
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-  }
-  .streamlit-embed { min-height: 560px; }
-  main { padding: 32px 16px 32px; }
-  .nav a:not(.cta-btn):not(.about-link) { display: none; }
-  .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
-  .trust-strip { grid-template-columns: 1fr 1fr; }
-  .trust-strip > div { min-height: 72px; } /* explicit height prevents reflow on mobile */
-  h1 { line-height: 1.18; }
-  h2 { margin-top: 34px; }
-  .card { padding: 20px; }
-  .crosslink-banner { padding: 18px 20px; }
-  .crosslink-btn { width: 100%; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
-  .footer-links a { padding: 4px 0; display: inline-block; }
-  /* related-grid: 1 col on mobile so cards don't reflow */
-  .related-grid { grid-template-columns: 1fr 1fr; }
-}
 </style>
 </head>
 

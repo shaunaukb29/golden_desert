@@ -206,6 +206,12 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  touch-action: pan-y;
+}
 body {
   font-family: 'Inter', system-ui, sans-serif;
   margin: 0;
@@ -214,6 +220,9 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
 }
 a { color: inherit; }
 
@@ -240,7 +249,7 @@ header {
 }
 .nav .cta-btn:hover { background: var(--accent); color: #000; }
 
-main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
+main { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; box-sizing: border-box; width: 100%; }
 
 .ad-container {
   display: flex;
@@ -325,27 +334,33 @@ li { margin-bottom: 6px; }
 .card.tool.tool-wide {
   max-width: 1100px;
   width: 100%;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  box-sizing: border-box;
 }
 
 .streamlit-embed-wrap {
   position: relative;
   --streamlit-height: min(1200px, 90vh);
+  height: var(--streamlit-height);
+  min-height: 640px;
+  contain: layout;
   margin-top: 18px;
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
   overflow: hidden;
   background: var(--surface2);
-  resize: vertical;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .streamlit-embed {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: var(--streamlit-height);
   min-height: 640px;
   border: 0;
   background: var(--bg);
+  box-sizing: border-box;
 }
 .iframe-brand-mask {
   position: absolute;
@@ -365,7 +380,21 @@ li { margin-bottom: 6px; }
 .iframe-fallback p { margin-bottom: 14px; }
 .iframe-fallback a.crosslink-btn { display: inline-block; }
 
-@media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
+@media (max-width: 900px) { .streamlit-embed-wrap {
+  position: relative;
+  --streamlit-height: min(1200px, 90vh);
+  height: var(--streamlit-height);
+  min-height: 640px;
+  contain: layout;
+  margin-top: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  background: var(--surface2);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+} }
 
 .crosslink-banner {
   background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
@@ -415,27 +444,51 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 .footer-bottom { font-size: 11.5px; color: var(--muted2); border-top: 1px solid var(--border); padding-top: 16px; }
 
 @media (max-width: 620px) {
-  .streamlit-embed-wrap { 
-    --streamlit-height: min(850px, 80vh); 
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
+  header {
+    padding: 0.75rem 1rem;
+    box-sizing: border-box;
   }
-  .streamlit-embed { min-height: 560px; }
-  main { padding: 32px 16px 32px; }
+  .nav {
+    gap: 0.75rem;
+  }
+  .card.tool.tool-wide {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    transform: none;
+    padding: 16px 12px;
+    box-sizing: border-box;
+  }
+  .streamlit-embed-wrap { 
+    --streamlit-height: 640px;
+    height: 640px;
+    min-height: 640px;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    border-radius: var(--r-sm);
+    resize: none;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .streamlit-embed { 
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 640px; 
+    box-sizing: border-box;
+  }
+  main { padding: 24px 16px 32px; box-sizing: border-box; width: 100%; max-width: 100%; }
   .nav a:not(.cta-btn):not(.about-link) { display: none; }
   .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
   .trust-strip { grid-template-columns: 1fr 1fr; }
   h1 { line-height: 1.18; }
   h2 { margin-top: 34px; }
-  .card { padding: 20px; }
+  .card { padding: 20px; box-sizing: border-box; }
   .crosslink-banner { padding: 18px 20px; }
   .crosslink-btn { width: 100%; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
   .footer-links a { padding: 4px 0; display: inline-block; }
 }
-
 /* Eliminate 300ms tap delay — INP fix */
 a, button, input, label, [role="button"] { touch-action: manipulation; }
 </style>
