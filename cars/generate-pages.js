@@ -259,6 +259,83 @@ function renderCarPage(template, car, allCars) {
   return { output, url };
 }
 
+function buildBrandDiagnosticsBlock(makeLower, makeName) {
+  const staticDir = path.join(ROOT_DIR, "audio", "src", "cardiag", "web", "static");
+  if (!fs.existsSync(staticDir)) return "";
+
+  const files = fs.readdirSync(staticDir).filter(f => f.endsWith(".html"));
+
+  const brandPrefixMap = {
+    "toyota": ["toyota-"],
+    "bmw": ["bmw-"],
+    "mercedes": ["mercedes-", "mercedes-benz-"],
+    "nissan": ["nissan-"],
+    "honda": ["honda-"],
+    "lexus": ["lexus-"],
+    "hyundai": ["hyundai-"],
+    "kia": ["kia-"],
+    "land-rover": ["land-rover-", "range-rover-"],
+    "ford": ["ford-"],
+    "audi": ["audi-"],
+    "volkswagen": ["volkswagen-"],
+    "chevrolet": ["chevrolet-"]
+  };
+
+  const prefixes = brandPrefixMap[makeLower] || [makeLower + "-"];
+  const matchingFiles = files.filter(f => prefixes.some(p => f.startsWith(p)));
+  if (!matchingFiles.length) return "";
+
+  const formatTitle = (slug) => {
+    return slug
+      .replace(".html", "")
+      .split("-")
+      .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(" ");
+  };
+
+  const clusters = {};
+  for (const f of matchingFiles) {
+    const slug = f.replace(".html", "");
+    const matchedPrefix = prefixes.find(p => f.startsWith(p));
+    const rest = slug.slice(matchedPrefix.length);
+    const parts = rest.split("-");
+    let model = parts[0];
+    if (model) {
+      model = model.charAt(0).toUpperCase() + model.slice(1);
+      if (!clusters[model]) clusters[model] = [];
+      clusters[model].push(slug);
+    }
+  }
+
+  const sortedModels = Object.keys(clusters).sort((a, b) => clusters[b].length - clusters[a].length).slice(0, 8);
+  let clustersHtml = "";
+  for (const m of sortedModels) {
+    const topGuides = clusters[m].slice(0, 5);
+    const listItems = topGuides.map(slug => `      <li><a href="/audio/${slug}">${formatTitle(slug)}</a></li>`).join("\n");
+    clustersHtml += `
+    <div style="margin-bottom: 16px;">
+      <h3 style="font-size: 1.1rem; color: #60a5fa; margin-bottom: 6px;">${makeName} ${m} (${clusters[m].length} Guides)</h3>
+      <ul style="margin: 0; padding-left: 20px;">
+${listItems}
+      </ul>
+    </div>`;
+  }
+
+  return `
+  <h2>${makeName} Acoustic Noise Diagnostics &amp; Sound Library</h2>
+  <div class="box" style="border-color: rgba(47, 129, 247, 0.35);">
+    <p style="margin-top: 0; color: #94a3b8; font-size: 14px;">
+      Explore verified acoustic fault diagnostic guides across ${makeName} models. Each guide details frequency patterns, component risk levels, and repair estimates.
+    </p>
+    ${clustersHtml}
+    <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid #334155;">
+      <a href="/audio" style="display: inline-flex; align-items: center; gap: 8px; background: #2563eb; color: #fff; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">
+        <span>🎙️ Open Universal AI Sound Diagnoser for All ${makeName} Models →</span>
+      </a>
+    </div>
+  </div>`;
+}
+
 /**
  * Brand hub page — uses the real brand-hub-template.html.
  */
@@ -278,6 +355,7 @@ function renderBrandHub(brandHubTemplate, make, carsForMake) {
     "{{MAKE_LOWER}}": makeLower,
     "{{MODEL_COUNT}}": String(carsForMake.length),
     "{{MODEL_LIST}}": modelList,
+    "{{DIAGNOSTICS_SECTION}}": buildBrandDiagnosticsBlock(makeLower, make),
     "{{YEAR}}": String(year)
   };
 
