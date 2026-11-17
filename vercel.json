@@ -6,7 +6,25 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/audio/src/cardiag/audio/(.*)",
+      "source": "/audio",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    },
+    {
+      "source": "/audio/",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    },
+    {
+      "source": "/audio/(.*-.*)",
       "headers": [
         {
           "key": "X-Robots-Tag",
@@ -15,11 +33,20 @@
       ]
     },
     {
-      "source": "/audio/(.*)",
+      "source": "/audio/(all-models|upload-car-sound-for-diagnosis|can-chatgpt-diagnose-car-sound|ai-that-listens-to-engine-noise|free-ai-car-sound-diagnosis)",
       "headers": [
         {
           "key": "X-Robots-Tag",
           "value": "index, follow"
+        }
+      ]
+    },
+    {
+      "source": "/audio/src/cardiag/audio/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
         }
       ]
     }
