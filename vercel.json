@@ -71,6 +71,18 @@
   ],
   "redirects": [
     {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(Bytespider|PetalBot|Baiduspider|Sogou|YisouSpider|SemrushBot|AhrefsBot|DotBot).*"
+        }
+      ],
+      "destination": "https://carithm.vercel.app/404",
+      "statusCode": 403
+    },
+    {
       "source": "/toyota/toyota-land-cruiser-maintenance-cost-uae.html",
       "destination": "/toyota/land-cruiser-maintenance-cost",
       "permanent": true

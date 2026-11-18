@@ -1,18 +1,40 @@
-# Allow all search engines (Googlebot, Bingbot, etc.) to crawl all programmatic SEO pages
+# Block aggressive scrapers and botnets
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: Sogou
+Disallow: /
+
+User-agent: YisouSpider
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# General search engines
 User-agent: *
 Allow: /
 
-# Block sensitive or unnecessary paths
+# Block sensitive paths
 Disallow: /api/
 Disallow: /admin/
 Disallow: /test/
-
-# Block URLs with tracking parameters to prevent duplicate content
 Disallow: /*?utm_*
 Disallow: /*?ref_*
 
-# Isolate AdSense crawler: Focus exclusively on monetized money pages (/, /audio, /app, /vision, /cost-calculator)
-# Prevents Mediapartners-Google from evaluating domain quality on 12,700+ ad-free programmatic funnel subpages
+# Isolate AdSense crawler: Focus exclusively on monetized money pages
 User-agent: Mediapartners-Google
 Allow: /$
 Allow: /audio$
