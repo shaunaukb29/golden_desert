@@ -103,12 +103,6 @@
     <ns0:priority>1.0</ns0:priority>
   </ns0:url>
   <ns0:url>
-    <ns0:loc>https://carithm.vercel.app/car-noise-identifier</ns0:loc>
-    <ns0:lastmod>2026-11-10</ns0:lastmod>
-    <ns0:changefreq>daily</ns0:changefreq>
-    <ns0:priority>1.0</ns0:priority>
-  </ns0:url>
-  <ns0:url>
     <ns0:loc>https://carithm.vercel.app/chevrolet/</ns0:loc>
     <ns0:lastmod>2026-11-10</ns0:lastmod>
     <ns0:changefreq>daily</ns0:changefreq>

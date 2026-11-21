@@ -83,6 +83,11 @@
       "statusCode": 403
     },
     {
+      "source": "/car-noise-identifier(.*)",
+      "destination": "/audio",
+      "permanent": true
+    },
+    {
       "source": "/toyota/toyota-land-cruiser-maintenance-cost-uae.html",
       "destination": "/toyota/land-cruiser-maintenance-cost",
       "permanent": true
