@@ -15,20 +15,26 @@
     setInterval(() => {
       if (!document.hidden) {
         activeSeconds += interval;
-        if (typeof gtag === 'function') {
-          gtag('event', 'true_dwell_time', {
-            'event_category': 'Engagement',
-            'event_label': activeSeconds + 's_active',
-            'value': activeSeconds
-          });
-        }
+        (typeof requestIdleCallback === 'function'
+          ? requestIdleCallback
+          : (fn) => setTimeout(fn, 0))(() => {
+          if (typeof gtag === 'function') {
+            gtag('event', 'true_dwell_time', {
+              'event_category': 'Engagement',
+              'event_label': activeSeconds + 's_active',
+              'value': activeSeconds,
+              'engagement_time_msec': interval * 1000,
+              'non_interaction': true
+            });
+          }
+        });
       }
     }, interval * 1000);
   })();
 
   // 2. NEW: Iframe PostMessage Listener
   window.addEventListener('message', function(event) {
-    if (event.origin !== 'https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/') return;
+    if (event.origin !== 'https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app') return;
 
     const data = event.data;
 
@@ -50,43 +56,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Car Noise Identifier Online — Free AI Car Sound Diagnosis App | Carithm</title>
-<meta name="description" content="Record or upload any car sound for an instant AI diagnosis. Free car noise identifier online detects engine knocks, lifter ticks, belt squeals & rattles. No app download or signup.">
+<title>Free AI Car Diagnoser — Car Sound Diagnosis App Free | Car Noise Identifier Online</title>
+<meta name="description" content="Free engine sound diagnostic AI app & car noise identifier online. Upload your recording to check engine sound. Works on all brands as a universal audio diagnosis app (Stellantis, Ford, Toyota). No download.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://carithm.vercel.app/audio">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Car Noise Identifier Online — Free AI Car Sound Diagnosis App | Carithm">
-<meta property="og:description" content="Record or upload any unusual car noise to identify the problem in seconds. 100% free AI sound diagnosis — no download, no signup. Works on iPhone & Android.">
+<meta property="og:title" content="Free AI Car Diagnoser — Car Sound Diagnosis App Free | Car Noise Identifier Online">
+<meta property="og:description" content="Identify car noises instantly with this free car sound diagnosis app. Upload a recording and our AI car noise identifier diagnoses engine, brake, and suspension faults — no download needed.">
 <meta property="og:url" content="https://carithm.vercel.app/audio">
 <meta property="og:image" content="https://carithm.vercel.app/car.png">
 <meta property="og:locale" content="en_US">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Car Noise Identifier Online — Free AI Car Sound Diagnosis App | Carithm">
-<meta name="twitter:description" content="Use this free car noise identifier online to diagnose car problems by sound. Instant AI diagnosis for engine, brake, and transmission faults in seconds.">
+<meta name="twitter:title" content="Free AI Car Diagnoser — Car Sound Diagnosis App Free | Car Noise Identifier">
+<meta name="twitter:description" content="Use this free car noise identifier online to diagnose car problems by sound. Our car sound diagnosis app identifies engine, brake, and transmission faults in seconds.">
 <meta name="twitter:image" content="https://carithm.vercel.app/car.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
 
 <script type="application/ld+json">
 {
  "@context":"https://schema.org",
  "@type":"WebApplication",
- "name":"Carithm Car Noise Identifier Online",
+ "name":"Carithm AI Car Sound Analyzer",
  "applicationCategory":"UtilitiesApplication",
  "operatingSystem":"Web",
  "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
- "description":"Free car noise identifier online. Record or upload unusual automotive sounds for instant AI diagnosis of rod knocks, lifter ticks, belt squeal, brake noise, and exhaust rattles. No download or signup.",
+ "description":"Free AI car sound diagnostic app. Record or upload a car noise and get instant AI diagnosis for engine, brake, suspension, transmission, exhaust, and other mechanical faults.",
  "url":"https://carithm.vercel.app/audio",
  "inLanguage":"en-US",
  "author":{ "@type":"Organization", "name":"Carithm", "url":"https://carithm.vercel.app/research" },
  "publisher":{ "@type":"Organization", "name":"Carithm" },
  "reviewedBy":{ "@type":"Organization", "name":"Carithm Automotive Data Team" },
  "datePublished":"2026-03-11",
- "dateModified":"2026-11-20"
+ "dateModified":"2026-11-21"
 }
 </script>
 <script type="application/ld+json">
@@ -95,7 +101,7 @@
  "@type":"BreadcrumbList",
  "itemListElement":[
    {"@type":"ListItem","position":1,"name":"Home","item":"https://carithm.vercel.app/"},
-   {"@type":"ListItem","position":2,"name":"Car Noise Identifier Online","item":"https://carithm.vercel.app/audio"}
+   {"@type":"ListItem","position":2,"name":"AI Car Sound Analyzer","item":"https://carithm.vercel.app/audio"}
  ]
 }
 </script>
@@ -105,14 +111,28 @@
  "@context":"https://schema.org",
  "@type":"FAQPage",
  "mainEntity":[
-  {"@type":"Question","name":"Is there a Shazam for car noises?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many mechanics and drivers refer to Carithm as a Shazam for car noises or a Shazam for car engine sounds. Just as Shazam listens to a microphone clip to identify a song, Carithm listens to your car's acoustic recording and matches it against thousands of verified vehicle fault signatures to identify the mechanical problem in seconds."}},
-  {"@type":"Question","name":"What is this noise my car is making?","acceptedAnswer":{"@type":"Answer","text":"If you're asking 'what is this noise my car is making?', the fastest answer is to record 5 to 10 seconds of the sound and upload it to our car noise identifier online. The AI isolates mechanical vibration patterns from background traffic to determine whether you're hearing an engine rod knock, valve tick, loose heat shield rattle, worn brake pad squeal, or failing wheel bearing hum."}},
-  {"@type":"Question","name":"Is this car sound diagnosis app free with no signup or download?","acceptedAnswer":{"@type":"Answer","text":"Yes. Unlike competitors like MyAutoSound (which paywalls audio files with paid credits) or AI Mechanic (which forces a mobile app store download), Carithm is 100% free with no account creation, no subscriptions, and no app store installation required. It runs straight inside Chrome, Safari, and other mobile browsers on iPhone (iOS) and Android."}},
-  {"@type":"Question","name":"Can I diagnose my car by sound from my phone microphone?","acceptedAnswer":{"@type":"Answer","text":"Yes. Modern iPhone and Android microphones have high acoustic fidelity. For best accuracy, open Carithm on your mobile browser, stand 2 to 3 feet from the sound source (e.g. near the wheel well for brake squeals, or near the front grille for engine noises), and hit record while the vehicle is idling or revving."}},
-  {"@type":"Question","name":"How does the AI engine sound check work?","acceptedAnswer":{"@type":"Answer","text":"Our acoustic analyzer uses deep-learning audio classification models trained on real-world automotive audio recordings. It applies fast Fourier transform (FFT) spectrogram filtering to remove ambient wind and road noise, then cross-references abnormal harmonic peaks against known mechanical failure frequencies."}},
-  {"@type":"Question","name":"Is Carithm the same as MyAutoSound or CheckEngine / AI Mechanic?","acceptedAnswer":{"@type":"Answer","text":"No — Carithm is an independent, free browser-based diagnostic platform. MyAutoSound limits users to paid credits for audio analysis, while CheckEngine.space funnels visitors to a paid Android app. Carithm provides immediate, browser-based audio diagnosis at zero cost with no paywalls."}},
-  {"@type":"Question","name":"Can this diagnose motorcycle or bike engine noises too?","acceptedAnswer":{"@type":"Answer","text":"Yes. While Carithm is optimized for automotive engines (passenger cars, trucks, and SUVs), its acoustic frequency models can identify general mechanical combustion anomalies like valve lash, loose timing chains, and exhaust header leaks on motorcycles, scooters, and small engines."}},
-  {"@type":"Question","name":"Will it tell me if it's safe to drive?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every diagnostic breakdown highlights component urgency. For example, a loose exhaust heat shield is safe for temporary driving, while a heavy rhythmic engine knock or severe brake grinding indicates an urgent safety hazard requiring immediate inspection."}}
+  {"@type":"Question","name":"What is this sound my car is making?","acceptedAnswer":{"@type":"Answer","text":"If you are wondering what sound your car is making, record 5 to 10 seconds of the noise and upload it to Carithm. The AI analyzes acoustic frequency patterns to identify whether it is an engine knock, belt squeal, exhaust rattle, wheel bearing hum, or transmission whine, and provides a ranked diagnosis."}},
+  {"@type":"Question","name":"What is this sound in my car?","acceptedAnswer":{"@type":"Answer","text":"If you're asking 'what is this sound in my car?' — record 5–10 seconds of the noise from inside or outside the car, upload the clip, and Carithm returns a ranked list of likely causes with urgency levels. Common results include worn brake pads, loose heat shields, failing serpentine belts, low oil valve tick, or failing wheel bearings."}},
+  {"@type":"Question","name":"How do I know what is this car noise?","acceptedAnswer":{"@type":"Answer","text":"If you are wondering 'what is this car noise?', the best way to find out without immediately going to a mechanic is to use a car noise identifier online. By recording the sound and uploading it, our AI separates background noise from mechanical frequencies to give you a ranked list of likely causes."}},
+  {"@type":"Question","name":"Is Carithm free without downloading an app or signing up?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm is 100% free with no sign-up, no account creation, and no app store download required. It operates entirely within your web browser on iPhone (iOS), Android, tablet, or desktop."}},
+  {"@type":"Question","name":"Is there a Stellantis audio diagnosis app?","acceptedAnswer":{"@type":"Answer","text":"Stellantis has an internal audio diagnosis system used by dealership service technicians, but it is not available to the public. Carithm provides a free, universal browser-based alternative that diagnoses sounds across all Stellantis vehicles (Jeep, Ram, Dodge, Chrysler, Fiat) and all other major brands."}},
+  {"@type":"Question","name":"Can AI diagnose engine problems?","acceptedAnswer":{"@type":"Answer","text":"AI can recognize abnormal acoustic patterns associated with common mechanical faults — including engine knock, bearing noise, and belt squeal — and estimate likely inspection areas. It should be used as decision support alongside professional inspection, not as a replacement."}},
+  {"@type":"Question","name":"Could this noise be a recall issue?","acceptedAnswer":{"@type":"Answer","text":"Sometimes. A handful of recurring noise complaints — certain belt squeals, timing chain rattles, and power steering whines — turn out to be open manufacturer recalls rather than wear and tear. US drivers can cross-check their VIN on the NHTSA recall lookup (nhtsa.gov/recalls) alongside their Carithm result before paying for diagnosis at a shop."}},
+  {"@type":"Question","name":"Is this free?","acceptedAnswer":{"@type":"Answer","text":"Yes — Carithm's AI Car Sound Analyzer is free with no signup required. Upload any unusual car noise recording and get an instant AI analysis identifying likely fault areas."}},
+  {"@type":"Question","name":"Is there an app to download, or does it work in the browser?","acceptedAnswer":{"@type":"Answer","text":"There's nothing to install. Carithm's car sound diagnostic tool runs directly in your browser on phone or desktop, so you get an AI diagnosis the moment you upload a recording."}},
+  {"@type":"Question","name":"Can the system detect engine knocking?","acceptedAnswer":{"@type":"Answer","text":"Yes. Engine knock, detonation, ticking, rattling, squealing, and many other abnormal mechanical sounds can often be identified depending on recording quality."}},
+  {"@type":"Question","name":"How do I diagnose a car noise myself?","acceptedAnswer":{"@type":"Answer","text":"To diagnose a car by sound, follow these 3 steps: 1. Record the unusual noise using your smartphone near the source (engine bay, wheel, or exhaust). 2. Upload the audio file to our free car noise identifier online. 3. Review the instant AI diagnostic report to see which components require inspection."}},
+  {"@type":"Question","name":"Can I record engine audio using my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most smartphone recordings are sufficient. Hold the phone close to the noise source, reduce cabin and wind noise where possible, and the analyzer will handle the rest."}},
+  {"@type":"Question","name":"Does background noise affect accuracy?","acceptedAnswer":{"@type":"Answer","text":"The system automatically reduces background noise and flags when interference is too high for a reliable result — it never invents a diagnosis when the recording is unclear."}},
+  {"@type":"Question","name":"How long does the analysis take?","acceptedAnswer":{"@type":"Answer","text":"Most recordings are processed within a few seconds after upload."}},
+  {"@type":"Question","name":"Does the AI always make a prediction?","acceptedAnswer":{"@type":"Answer","text":"No. When evidence is insufficient, the platform reports uncertainty rather than generating unsupported conclusions."}},
+  {"@type":"Question","name":"Is there an engine sound diagnostic AI app to download?","acceptedAnswer":{"@type":"Answer","text":"Carithm works as a browser-based engine sound diagnostic AI app — there's nothing to install from an app store. Open it on your phone or desktop, upload or record a noise, and get an instant audio diagnosis."}},
+  {"@type":"Question","name":"Is this the same as an audio diagnosis app or engine noise analysis app?","acceptedAnswer":{"@type":"Answer","text":"Yes. Carithm functions as an audio diagnosis app and engine noise analysis app in one — it listens to your recording, filters out background noise, and reports likely mechanical fault areas with a confidence score."}},
+  {"@type":"Question","name":"Is there a 'Shazam for car sounds'?","acceptedAnswer":{"@type":"Answer","text":"Carithm works like a Shazam for car sounds, but instead of matching a song it matches your recording against known mechanical fault patterns. Upload or record the noise and it returns a confidence-scored diagnosis instead of a song title."}},
+  {"@type":"Question","name":"How do I check engine sound for problems?","acceptedAnswer":{"@type":"Answer","text":"To check engine sound for problems, record it close to the engine bay with your phone, then upload the clip to an engine sound diagnostic AI app like Carithm. It screens for knocking, ticking, belt squeal, and other abnormal patterns and flags which areas may need inspection."}},
+  {"@type":"Question","name":"Is Carithm the same as EngineEar AI or My Auto Sound?","acceptedAnswer":{"@type":"Answer","text":"No — Carithm is an independent car sound diagnostic tool and isn't affiliated with EngineEar AI or My Auto Sound. All three serve a similar purpose (turning a recorded car noise into a likely fault area), but Carithm is free, runs entirely in the browser with no signup, and shows a confidence score alongside every result."}},
+  {"@type":"Question","name":"Why is my car making a rattling noise from underneath or the front end?","acceptedAnswer":{"@type":"Answer","text":"A metal rattling noise from underneath usually means a loose heat shield or exhaust hanger vibrating against the body. A rattle isolated to the front end, especially over bumps or when turning, more often points to a sway bar link, strut mount, or a loose splash shield. Uploading a recording helps separate the two."}},
+  {"@type":"Question","name":"Why does my car make a whining noise when accelerating?","acceptedAnswer":{"@type":"Answer","text":"A whining noise that gets louder specifically as you accelerate — rather than just running with engine RPM at idle — usually points to the transmission, differential, or a wheel bearing under load. If it's present even in neutral, suspect the power steering pump or alternator instead."}}
  ]
 }
 </script>
@@ -121,20 +141,20 @@
 {
  "@context":"https://schema.org",
  "@type":"SoftwareApplication",
- "name":"Carithm Car Noise Identifier Online",
+ "name":"Carithm AI Car Sound Analyzer",
  "applicationCategory":"UtilitiesApplication",
  "operatingSystem":"Web",
  "browserRequirements":"Requires JavaScript. Microphone access optional for in-browser recording.",
  "offers":{ "@type":"Offer", "price":"0", "priceCurrency":"USD" },
  "url":"https://carithm.vercel.app/audio",
  "inLanguage":"en-US",
- "description":"Free car noise identifier online tool. Record or upload car noise to identify mechanical faults with acoustic AI models.",
+ "description":"Free AI car sound diagnosis app. Record or upload a car noise and get instant AI diagnosis for engine, brake, suspension, transmission, exhaust, and other mechanical faults.",
  "featureList":[
-   "Record or upload vehicle noise recordings online",
-   "Instant AI detection of mechanical fault sounds",
-   "Identifies rod knock, lifter tick, belt squeal, brake noise, and exhaust rattles",
-   "No app download or user registration required",
-   "Confidence-scored diagnosis with component repair urgency"
+   "Record or upload car sound recordings",
+   "AI-based detection of abnormal mechanical noises",
+   "Confidence-scored fault area predictions",
+   "Automatic background noise reduction",
+   "Uncertainty reporting when recording quality is insufficient"
  ],
  "publisher":{ "@type":"Organization", "name":"Carithm" }
 }
@@ -154,12 +174,13 @@
 {
  "@context":"https://schema.org",
  "@type":"HowTo",
- "name":"How to Identify a Car Noise Online with AI",
- "description":"Use Carithm's free car noise identifier online to diagnose unusual automotive sounds in 3 simple steps.",
+ "name":"How to Diagnose a Car Noise with AI",
+ "description":"Use Carithm's AI Car Sound Analyzer to identify likely mechanical faults from a recorded car noise.",
  "step":[
-   {"@type":"HowToStep","name":"Record the car noise","text":"Record 5 to 10 seconds of the unusual noise using your smartphone microphone near the engine, wheel, or exhaust."},
-   {"@type":"HowToStep","name":"Upload to Car Noise Identifier","text":"Upload or record the audio clip into the Carithm free web tool."},
-   {"@type":"HowToStep","name":"Get Instant AI Fault Report","text":"Review the ranked diagnosis, confidence score, and urgency status for immediate guidance before visiting a mechanic."}
+   {"@type":"HowToStep","name":"Record the sound","text":"Record the unusual sound using your phone, holding it as close to the noise source as possible."},
+   {"@type":"HowToStep","name":"Upload the recording","text":"Upload the recording through the AI Car Sound Analyzer tool."},
+   {"@type":"HowToStep","name":"Receive AI analysis","text":"The AI reduces background noise, analyzes the recording, and compares it against known mechanical fault patterns."},
+   {"@type":"HowToStep","name":"Review results","text":"Get a ranked list of likely fault areas with confidence scores, or an uncertainty notice if the recording quality is insufficient."}
  ]
 }
 </script>
@@ -202,12 +223,34 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
+
+/* Prevent 300ms tap-delay on mobile — INP fix */
+a, button, input, label, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* Font-fallback size adjustments to prevent CLS while custom fonts load */
+@font-face {
+  font-family: 'Inter-fallback';
+  src: local('Arial');
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'BebasNeue-fallback';
+  src: local('Arial Narrow Bold'), local('Arial Bold'), local('Impact');
+  size-adjust: 86%;
+  ascent-override: 112%;
+  descent-override: 14%;
+}
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--accent) var(--surface2);
 }
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', 'Inter-fallback', system-ui, sans-serif;
   margin: 0;
   background: var(--bg);
   color: var(--text);
@@ -231,12 +274,15 @@ header {
   position: sticky; top: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
   padding: 1rem 2rem;
+  min-height: 64px; /* prevent CLS as fonts/icons load */
   background: rgba(9,9,11,0.75);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
+  /* Tell browser this is a contain: layout element to isolate reflow */
+  contain: layout style;
 }
 .nav-logo {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Bebas Neue', 'BebasNeue-fallback', sans-serif;
   font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none;
 }
 .nav-logo span { color: var(--accent); }
@@ -294,7 +340,7 @@ ul, ol { color: var(--muted); padding-left: 20px; }
 li { margin-bottom: 6px; }
 
 .trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 22px 0 8px; }
-.trust-strip > div { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); }
+.trust-strip > div { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); min-height: 72px; /* prevent CLS */ }
 .trust-strip > div:last-child { border-right: none; }
 .trust-num { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
 .trust-num span { color: var(--accent); }
@@ -467,8 +513,6 @@ main > section:first-of-type::before {
   .streamlit-embed { min-height: 560px; }
   main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
 }
-  .streamlit-embed { min-height: 560px; }
-}
 
 .crosslink-banner {
   background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
@@ -540,12 +584,15 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   .nav a:not(.cta-btn):not(.about-link) { display: none; }
   .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
   .trust-strip { grid-template-columns: 1fr 1fr; }
+  .trust-strip > div { min-height: 72px; } /* explicit height prevents reflow on mobile */
   h1 { line-height: 1.18; }
   h2 { margin-top: 34px; }
   .card { padding: 20px; }
   .crosslink-banner { padding: 18px 20px; }
   .crosslink-btn { width: 100%; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
   .footer-links a { padding: 4px 0; display: inline-block; }
+  /* related-grid: 1 col on mobile so cards don't reflow */
+  .related-grid { grid-template-columns: 1fr 1fr; }
 }
 </style>
 </head>
@@ -577,28 +624,28 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
 <section>
   <div class="eyebrow">Carithm Audio Intelligence</div>
 
-  <h1>Car Noise Identifier: Free AI Car Sound Diagnosis App Online</h1>
+  <h1>Free AI Car Diagnoser — Car Sound Diagnosis App Free Online</h1>
 
   <p>
-Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <strong>Car Noise Identifier Online</strong> is a 100% free web-based <strong>car noise detector app</strong> and <strong>car sound diagnosis app</strong>. Simply upload or record any unusual vehicle sound directly from your phone or computer. Our AI performs an instant <strong>car noise diagnosis from recording</strong> to pinpoint what's failing — from an engine knock or lifter tick to brake squeals and suspension clunks.
+Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <strong>Free AI Car Diagnoser</strong> is a web-based <strong>car noise detector app</strong> that works as a <strong>car noise identifier online</strong>. Upload or record any unusual vehicle sound and this tool will perform a <strong>car noise diagnosis from recording</strong> to tell you what's likely causing it. Whether it's a squeal from the engine bay or a rattle underneath, our AI analyzes the audio profile to highlight which components need inspection.
 </p>
 
   <p>
-    Need to run an <strong>engine sound check</strong> or <strong>diagnose car problems by sound</strong> before visiting a mechanic? Think of Carithm as a <strong>Shazam for car noises</strong> — instead of identifying a song, it listens to your vehicle's acoustic signature and matches it against thousands of verified mechanic cases. It works entirely in your browser with <strong>no app download</strong>, <strong>no credits to buy</strong>, and <strong>no account signup</strong>.
+    Need to run an <strong>engine sound check</strong> or <strong>diagnose car problems by sound</strong> before visiting a mechanic? Think of it as a <strong>Shazam for car sounds</strong> — instead of identifying a song, it identifies your car fault. Unlike forum guesswork, this <strong>car sound diagnosis app free</strong> tool evaluates acoustic frequency patterns against thousands of verified mechanic cases, giving you an objective, data-backed report you can trust.
   </p>
 
   <div class="trust-strip">
-    <div><div class="trust-num">100% Free</div><div class="trust-lbl">No Signup / No Paywall</div></div>
-    <div><div class="trust-num">No App</div><div class="trust-lbl">Runs in Browser</div></div>
-    <div><div class="trust-num">~5 Sec</div><div class="trust-lbl">Instant Analysis</div></div>
-    <div><div class="trust-num">iOS & Android</div><div class="trust-lbl">Phone Microphone Ready</div></div>
+    <div><div class="trust-num">No App</div><div class="trust-lbl">Needed</div></div>
+    <div><div class="trust-num">Free</div><div class="trust-lbl">No Signup</div></div>
+    <div><div class="trust-num">~5s</div><div class="trust-lbl">Analysis Time</div></div>
+    <div><div class="trust-num">Phone</div><div class="trust-lbl">Compatible</div></div>
   </div>
 
   <div class="byline">
     <div class="byline-avatar" aria-hidden="true">CA</div>
     <div class="byline-text">
       <span class="byline-name">Reviewed by the Carithm Automotive Data Team</span>
-      <span class="byline-meta">Acoustic diagnostic models cross-referenced against ASE mechanical standards · Last updated <time datetime="2026-11-20">November 20, 2026</time> · <a href="https://carithm.vercel.app/research">See our methodology</a></span>
+      <span class="byline-meta">Fault-pattern data cross-checked against ASE-style repair categories · Last updated <time datetime="2026-08-12">August 12, 2026</time> · <a href="https://carithm.vercel.app/research">See our methodology</a></span>
     </div>
   </div>
 </section>
@@ -611,15 +658,16 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
 </section>
 
 <section>
-  <h2>Car Noise Identifier: What Sounds Can Our AI Detect?</h2>
-  <p>As a specialized <strong>car noise identifier</strong> and <strong>engine sound analyzer</strong>, Carithm's <strong>car sound diagnosis app</strong> screens across every mechanical system in your vehicle. Here are the acoustic fault patterns our model identifies:</p>
+  <h2>Car Noise Identifier: What This App Can Detect</h2>
+  <p>As an AI-powered <strong>car noise identifier</strong>, Carithm's <strong>car sound diagnosis app</strong> helps you <strong>identify car noises</strong> across every major vehicle system. Here's what the app is capable of pinpointing:</p>
   <ul>
-    <li><strong>Engine Bay & Valvetrain:</strong> Rod knock, lifter tick, piston slap, loose timing chain, noisy direct injectors, exhaust manifold leaks.</li>
-    <li><strong>Belts & Accessories:</strong> High-pitched serpentine belt squeal, bad alternator bearing whine, failing A/C compressor clutch grind, power steering pump groaning.</li>
-    <li><strong>Brakes & Wheel Assemblies:</strong> Worn brake pad squeal, grinding metal-on-metal rotor friction, failing wheel bearing humming or roaring at speed.</li>
-    <li><strong>Suspension & Steering:</strong> Clunking sway bar links over bumps, popping CV joints on tight turns, creaking ball joints and worn strut bushings.</li>
-    <li><strong>Exhaust & Undercarriage:</strong> Metallic heat shield rattling, catalytic converter core rattle, deep muffler exhaust leaks under acceleration.</li>
-    <li><strong>Drivetrain & Transmission:</strong> Planetary gear whine, manual transmission throwout bearing chatter when pressing clutch, differential roaring under load.</li>
+    <li>Worn serpentine belts and misaligned pulleys</li>
+    <li>Failing wheel bearings and CV joints</li>
+    <li>Suspension wear, including struts and sway bars</li>
+    <li>Brake pad depletion and rotor scoring</li>
+    <li>Internal engine wear like rod knocks</li>
+    <li>Exhaust system leaks and loose heat shields</li>
+    <li>Transmission sync issues or low fluid indicators</li>
   </ul>
 </section>
 
@@ -645,25 +693,34 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
 </section>
 
 <section class="card tool tool-wide" id="try">
-  <h2 style="margin-top:0;">Car Noise Identifier Online — Record or Upload Noise <span class="live-indicator"><span class="dot"></span>Live</span></h2>
+  <h2 style="margin-top:0;">Try the Free Car Sound Diagnosis App<span class="live-indicator"><span class="dot"></span>Live</span></h2>
   <p>
-  This is the official <strong>car noise identifier online</strong> and <strong>car sound diagnosis app free</strong> tool. Record 5–10 seconds of your vehicle's engine, brakes, or chassis noise, or upload an audio file (MP3, WAV, M4A, WebM) directly in your browser. Our AI evaluates the recording, isolates mechanical frequencies from background wind, and delivers a confidence-scored diagnosis in seconds — 100% free with no app download required.
+  This is the <strong>car sound diagnosis app free</strong> tool — no download required. Record or upload a car sound from your engine, brakes, suspension, or transmission directly in your browser. Our <strong>car noise identifier online</strong> analyzes the recording, helps you <strong>identify car noises</strong>, and provides a confidence-scored diagnosis in seconds. Works with phone recordings — no special equipment needed.
 </p>
+
+  <div id="transferBanner" style="display:none; background: rgba(34,197,94,0.15); border: 1.5px solid #22c55e; border-radius: 10px; padding: 14px 18px; margin: 16px 0; color: #f0fdf4;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 24px;">🎙️</span>
+      <div>
+        <strong style="color: #4ade80; display: block; font-size: 15px;">Live 5-Second Recording Received</strong>
+        <span style="color: #cbd5e1; font-size: 13px;">Your audio sample has been transferred from the diagnostic tool. Run your acoustic evaluation using the analyzer below.</span>
+      </div>
+    </div>
+  </div>
 
   <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
     <iframe
       id="streamlitFrame"
       class="streamlit-embed"
-      src="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app//?embed=true"
+      src="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/?embed=true"
       title="Carithm AI Car Sound Analyzer"
-      loading="lazy"
       allow="microphone; clipboard-write"
       onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
     ></iframe>
     <div class="iframe-brand-mask"></div>
     <div class="iframe-fallback" id="iframeFallback">
       <p>The analyzer tool couldn't load in this view.</p>
-      <a class="crosslink-btn" href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app//" target="_blank" rel="noopener">Open the Analyzer in a New Tab →</a>
+      <a class="crosslink-btn" href="https://heidi23982-5vovybvpxghzdhuduaairo.streamlit.app/" target="_blank" rel="noopener">Open the Analyzer in a New Tab →</a>
     </div>
   </div>
 
@@ -718,31 +775,34 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
 </section>
 
 <section>
-  <h2>Car Noise Identifier & Sound Diagnosis App — FAQ</h2>
+  <h2>Car Sound Diagnosis App — Features and FAQ</h2>
 
   <h3>Is there a Shazam for car noises?</h3>
-  <p>Yes. Many mechanics and drivers refer to Carithm as a <strong>Shazam for car noises</strong> or a <strong>Shazam for car engine sounds</strong>. Just as Shazam listens to a microphone clip to identify a song, Carithm listens to your car's acoustic recording and matches it against thousands of verified vehicle fault signatures to identify the mechanical problem in seconds.</p>
+  <p>Yes, many users describe Carithm as a Shazam for car noises or a Shazam for car engine sounds. Instead of identifying a song, you upload an audio clip of your vehicle, and the AI compares it to known mechanical fault signatures to tell you exactly what the issue might be.</p>
 
-  <h3>What is this noise my car is making?</h3>
-  <p>If you're asking "what is this noise my car is making?", the fastest answer is to record 5 to 10 seconds of the sound and upload it to our <strong>car noise identifier online</strong>. The AI isolates mechanical vibration patterns from background traffic to determine whether you're hearing an engine rod knock, valve tick, loose heat shield rattle, worn brake pad squeal, or failing wheel bearing hum.</p>
+  <h3>How do I know what is this car noise?</h3>
+  <p>If you are wondering "what is this car noise?", the best way to find out without immediately going to a mechanic is to use a car noise identifier online. By recording the sound and uploading it, our AI can separate background noise from mechanical frequencies to give you a ranked list of likely causes.</p>
 
-  <h3>Is this car sound diagnosis app free with no signup or download?</h3>
-  <p>Yes. Unlike competitors like MyAutoSound (which paywalls audio files with paid credits) or AI Mechanic (which forces a mobile app store download), Carithm is 100% free with no account creation, no subscriptions, and no app store installation required. It runs straight inside Chrome, Safari, and other mobile browsers on iPhone (iOS) and Android.</p>
+  <h3>Do I need to download a car noise identifier app?</h3>
+  <p>No. This <strong>car sound diagnosis app free</strong> tool runs entirely in your mobile or desktop browser. There's nothing to install, and it requires no registration — it works as a <strong>car noise identifier online</strong> right in your browser.</p>
 
-  <h3>Can I diagnose my car by sound from my phone microphone?</h3>
-  <p>Yes. Modern iPhone and Android microphones have high acoustic fidelity. For best accuracy, open Carithm on your mobile browser, stand 2 to 3 feet from the sound source (e.g. near the wheel well for brake squeals, or near the front grille for engine noises), and hit record while the vehicle is idling or revving.</p>
+  <h3>Can I use my standard smartphone microphone?</h3>
+  <p>Absolutely. Modern smartphones have excellent microphones that are more than capable of capturing the necessary acoustic data. For the best results, point your phone's microphone directly at the source of the sound.</p>
 
-  <h3>How does the AI engine sound check work?</h3>
-  <p>Our acoustic analyzer uses deep-learning audio classification models trained on real-world automotive audio recordings. It applies fast Fourier transform (FFT) spectrogram filtering to remove ambient wind and road noise, then cross-references abnormal harmonic peaks against known mechanical failure frequencies.</p>
+  <h3>How does the app handle background noise?</h3>
+  <p>Our audio processing engine includes advanced noise-cancellation algorithms. It filters out wind noise, traffic sounds, and generic background hums to isolate the specific mechanical frequency of your vehicle.</p>
 
-  <h3>Is Carithm the same as MyAutoSound or CheckEngine / AI Mechanic?</h3>
-  <p>No — Carithm is an independent, free browser-based diagnostic platform. MyAutoSound limits users to paid credits for audio analysis, while CheckEngine.space funnels visitors to a paid Android app. Carithm provides immediate, browser-based audio diagnosis at zero cost with no paywalls.</p>
+  <h3>Will it guarantee a correct fix?</h3>
+  <p>While the AI provides a highly accurate starting point and narrows down the possibilities significantly, you should always have a certified mechanic physically verify the issue before purchasing replacement parts.</p>
 
-  <h3>Can this diagnose motorcycle or bike engine noises too?</h3>
-  <p>Yes. While Carithm is optimized for automotive engines (passenger cars, trucks, and SUVs), its acoustic frequency models can identify general mechanical combustion anomalies like valve lash, loose timing chains, and exhaust header leaks on motorcycles, scooters, and small engines.</p>
+  <h3>What is this sound in my car?</h3>
+  <p>If you're asking "what is this sound in my car?" — that's exactly what Carithm is built for. Record 5–10 seconds of the noise from inside or outside the car, upload the clip, and the AI will return a ranked list of likely causes with urgency levels. Common results include worn brake pads, a loose heat shield, a failing serpentine belt, low oil causing a valve tick, or a wheel bearing starting to fail.</p>
 
-  <h3>Will it tell me if it's safe to drive?</h3>
-  <p>Yes. Every diagnostic breakdown highlights component urgency. For example, a loose exhaust heat shield is safe for temporary driving, while a heavy rhythmic engine knock or severe brake grinding indicates an urgent safety hazard requiring immediate inspection.</p>
+  <h3>Is Carithm the same as MyAutoSound or EngineEar AI?</h3>
+  <p>No — Carithm, MyAutoSound, and EngineEar AI are separate tools. Carithm is a free, browser-based engine sound diagnostic AI app that runs on any device with no download or signup required. Unlike some alternatives, it doesn't require an OBD2 dongle and works purely from an audio recording, making it the most accessible option for a quick car noise diagnosis from recording.</p>
+
+  <h3>Is there a Stellantis audio diagnosis app?</h3>
+  <p>Stellantis has an internal audio diagnosis tool used by dealership technicians, but it isn't publicly available. Carithm is the closest free consumer alternative — it accepts any audio recording from any vehicle make and model, including Stellantis brands like Jeep, Ram, Dodge, Chrysler, Fiat, and Alfa Romeo, and returns a diagnosis within seconds.</p>
 </section>
 
 <div class="crosslink-banner" aria-label="Related tool">
@@ -819,5 +879,11 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
   </div>
 </footer>
 
+<script>
+  if (window.location.search.includes('transferred=1') || (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('carithm_recorded_audio'))) {
+    const banner = document.getElementById('transferBanner');
+    if (banner) banner.style.display = 'block';
+  }
+</script>
 </body>
 </html>
