@@ -69,5 +69,8 @@ Disallow: /volvo/*
 Disallow: /infiniti/*
 Disallow: /mitsubishi/*
 
-# Master Sitemap Index
+# Master Sitemap Index and Dedicated Priority Sitemaps
 Sitemap: https://carithm.vercel.app/sitemap_index.xml
+Sitemap: https://carithm.vercel.app/sitemap_home.xml
+Sitemap: https://carithm.vercel.app/sitemap_audio.xml
+Sitemap: https://carithm.vercel.app/sitemap_app.xml
