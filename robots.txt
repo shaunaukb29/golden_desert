@@ -41,6 +41,8 @@ Allow: /audio$
 Allow: /audio/$
 Allow: /app$
 Allow: /app/$
+Allow: /about
+Allow: /about/$
 Allow: /vision$
 Allow: /vision/$
 Allow: /cost-calculator$
