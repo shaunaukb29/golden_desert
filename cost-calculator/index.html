@@ -13,18 +13,13 @@
     setInterval(() => {
       if (!document.hidden) {
         activeSeconds += interval;
-        (typeof requestIdleCallback === 'function'
-          ? requestIdleCallback
-          : (fn) => setTimeout(fn, 0))(() => {
-          if (typeof gtag === 'function') {
-            gtag('event', 'true_dwell_time', {
-              'event_category': 'Engagement',
-              'event_label': activeSeconds + 's_active',
-              'value': activeSeconds,
-              'non_interaction': true
-            });
-          }
-        });
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
       }
     }, interval * 1000);
   })();
@@ -51,7 +46,7 @@
 <meta name="twitter:image" content="https://carithm.vercel.app/car.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -475,9 +470,6 @@ table.cost-table tfoot td { padding: 10px 14px; font-size: 11.5px; color: var(--
 
 .updated-line { font-size: 12px; color: var(--muted2); margin-top: 6px; }
 .updated-line strong { color: var(--muted); }
-
-/* Eliminate 300ms tap delay — INP fix */
-a, button, input, label, [role="button"] { touch-action: manipulation; }
 </style>
 </head>
 
@@ -554,6 +546,20 @@ a, button, input, label, [role="button"] { touch-action: manipulation; }
   </div>
 </section>
 
+<!-- Ad Slot 1 -->
+<div class="ad-slot">
+  <div class="ad-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5227538935323998"
+       data-ad-slot="6469714155"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
 <section>
   <h2>How to Get an Estimate on Your Car Damage</h2>
   <p>Three steps, no waiting room, no "we'll call you back" &mdash; this is how the calculator turns a photo into a number.</p>
@@ -624,6 +630,20 @@ a, button, input, label, [role="button"] { touch-action: manipulation; }
   </div>
 </section>
 
+<!-- Ad Slot 2 -->
+<div class="ad-slot">
+  <div class="ad-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5227538935323998"
+       data-ad-slot="5302872061"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
 <section>
   <h2>Estimate Car Damage Repair Costs by Type</h2>
   <p>Typical U.S. ranges for the damage types above, alongside a rough sense of what the same repair tends to run in the UK or Western Europe once higher labor rates and VAT are factored in. Treat the international column as directional, not a quote &mdash; get a local estimate for anything precise.</p>
@@ -671,6 +691,20 @@ a, button, input, label, [role="button"] { touch-action: manipulation; }
     <li><strong>Nothing locks you into the first quote.</strong> A second estimate is free and can reveal a surprisingly wide spread for the identical repair.</li>
   </ul>
 </section>
+
+<!-- Ad Slot 3 -->
+<div class="ad-slot">
+  <div class="ad-label">Advertisement</div>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5227538935323998"
+       data-ad-slot="2530469147"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
 <section>
   <h2>Why Repair Costs Differ: US vs Canada vs UK vs EU</h2>

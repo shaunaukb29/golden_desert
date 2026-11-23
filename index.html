@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta name='impact-site-verification' value='be9722b2-3a6f-47f5-ac3a-2b14653dd14d'>
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -16,19 +15,13 @@
     setInterval(() => {
       if (!document.hidden) {
         activeSeconds += interval;
-        (typeof requestIdleCallback === 'function'
-          ? requestIdleCallback
-          : (fn) => setTimeout(fn, 0))(() => {
-          if (typeof gtag === 'function') {
-            gtag('event', 'true_dwell_time', {
-              'event_category': 'Engagement',
-              'event_label': activeSeconds + 's_active',
-              'value': activeSeconds,
-              'engagement_time_msec': interval * 1000,
-              'non_interaction': true
-            });
-          }
-        });
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
       }
     }, interval * 1000);
   })();
@@ -76,7 +69,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://heimi34505-3aue9zwjqykkgwxjwnemcy.streamlit.app">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -91,7 +84,7 @@
  "inLanguage":"en-US",
  "author":{ "@type":"Organization", "name":"Carithm" },
  "publisher":{ "@type":"Organization", "name":"Carithm" },
- "dateModified":"2026-11-21"
+ "dateModified":"2026-07-19"
 }
 </script>
 <script type="application/ld+json">
@@ -366,6 +359,20 @@ li { margin-bottom: 6px; }
 .iframe-fallback a.crosslink-btn { display: inline-block; }
 
 @media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
+@media (max-width: 620px) {
+  .streamlit-embed-wrap { 
+    --streamlit-height: min(850px, 80vh); 
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .streamlit-embed { min-height: 560px; }
+  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
+}
+  .streamlit-embed { min-height: 560px; }
+}
 
 .crosslink-banner {
   background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
@@ -406,6 +413,18 @@ li { margin-bottom: 6px; }
 .related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
 .related-card .rc-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); margin-bottom: 4px; }
 .related-card .rc-title { font-size: 13px; font-weight: 600; color: var(--text); }
+@media (max-width: 620px) {
+  .streamlit-embed-wrap { 
+    --streamlit-height: min(850px, 80vh); 
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .streamlit-embed { min-height: 560px; }
+  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
+} }
 
 footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24px; margin-top: 60px; background: var(--surface); }
 .footer-inner { max-width: 760px; margin: 0 auto; }
@@ -424,10 +443,12 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     border-right: none;
   }
   .streamlit-embed { min-height: 560px; }
-  main { padding: 32px 16px 32px; }
+  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
+}
   .nav a:not(.cta-btn):not(.about-link) { display: none; }
   .nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
   .trust-strip { grid-template-columns: 1fr 1fr; }
+  main { padding: 32px 16px 32px; }
   h1 { line-height: 1.18; }
   h2 { margin-top: 34px; }
   .card { padding: 20px; }
@@ -435,9 +456,6 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   .crosslink-btn { width: 100%; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
   .footer-links a { padding: 4px 0; display: inline-block; }
 }
-
-/* Eliminate 300ms tap delay — INP fix */
-a, button, input, label, [role="button"] { touch-action: manipulation; }
 </style>
 </head>
 
@@ -553,22 +571,13 @@ Wondering "<strong>what sound is my car making</strong>?" Upload a recording and
   Looking for a free engine sound diagnostic AI app? There's no download required. Record a car sound from your engine, brakes, suspension, or transmission directly in your browser. Our web-based audio diagnosis app analyzes the recording, identifies abnormal sounds, and provides a confidence-scored car noise diagnosis in seconds. Works with phone recordings—no special equipment needed.
 </p>
 
-  <div id="transferBanner" style="display:none; background: rgba(34,197,94,0.15); border: 1.5px solid #22c55e; border-radius: 10px; padding: 14px 18px; margin: 16px 0; color: #f0fdf4;">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <span style="font-size: 24px;">🎙️</span>
-      <div>
-        <strong style="color: #4ade80; display: block; font-size: 15px;">Live 5-Second Recording Received</strong>
-        <span style="color: #cbd5e1; font-size: 13px;">Your audio sample has been transferred from the diagnostic tool. Run your acoustic evaluation using the analyzer below.</span>
-      </div>
-    </div>
-  </div>
-
   <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
     <iframe
       id="streamlitFrame"
       class="streamlit-embed"
       src="https://heimi34505-3aue9zwjqykkgwxjwnemcy.streamlit.app/?embed=true"
       title="Carithm AI Car Sound Analyzer"
+      loading="lazy"
       allow="microphone; clipboard-write"
       onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
     ></iframe>
@@ -755,11 +764,12 @@ Wondering "<strong>what sound is my car making</strong>?" Upload a recording and
   <div class="footer-inner">
     <div class="footer-links">
       <a href="https://carithm.vercel.app/">Carithm Home — Repair Quote Checker</a>
-      <a href="https://carithm.vercel.app/audio">AI Car Sound Analyzer</a>
+      <a href="https://carithm.vercel.app/">AI Car Sound Analyzer</a>
       <a href="https://carithm.vercel.app/toyota">Toyota Repair Cost Guide</a>
       <a href="https://carithm.vercel.app/bmw">BMW Repair Cost Guide</a>
       <a href="https://carithm.vercel.app/mercedes">Mercedes Maintenance Guide</a>
       <a href="https://carithm.vercel.app/research">Research & Methodology</a>
+      <a href="https://carithm.vercel.app/audio/all-models">All Supported Vehicles & Noises</a>
       <a href="https://carithm.vercel.app/audio/ac">AI Air Conditioning Sound Analyzer</a>
       <a href="https://carithm.vercel.app/audio/washer">AI Washing Machine Sound Analyzer</a>
       <a href="https://carithm.vercel.app/sound-meter">Sound Level Measurement</a>
@@ -770,11 +780,5 @@ Wondering "<strong>what sound is my car making</strong>?" Upload a recording and
   </div>
 </footer>
 
-<script>
-  if (window.location.search.includes('transferred=1') || (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('carithm_recorded_audio'))) {
-    const banner = document.getElementById('transferBanner');
-    if (banner) banner.style.display = 'block';
-  }
-</script>
 </body>
 </html>

@@ -6,7 +6,7 @@
   "scripts": {
     "generate": "node cars/generate-pages.js",
     "sitemap": "node generate-sitemap.js",
-    "build": "npm run generate",
+    "build": "npm run generate && npm run sitemap",
     "deploy": "npm run build"
   },
   "dependencies": {

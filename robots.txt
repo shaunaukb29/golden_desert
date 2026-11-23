@@ -1,78 +1,15 @@
-# Block aggressive scrapers and botnets
-User-agent: Bytespider
-Disallow: /
-
-User-agent: PetalBot
-Disallow: /
-
-User-agent: Baiduspider
-Disallow: /
-
-User-agent: Sogou
-Disallow: /
-
-User-agent: YisouSpider
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
-
-# General search engines
+# Allow all search engines to crawl the main site
 User-agent: *
 Allow: /
 
-# Block sensitive paths
+# Block sensitive or unnecessary paths
 Disallow: /api/
 Disallow: /admin/
 Disallow: /test/
+
+# Block URLs with tracking parameters to prevent duplicate content
 Disallow: /*?utm_*
 Disallow: /*?ref_*
 
-# Isolate AdSense crawler: Focus exclusively on monetized money pages
-User-agent: Mediapartners-Google
-Allow: /$
-Allow: /audio$
-Allow: /audio/$
-Allow: /app$
-Allow: /app/$
-Allow: /about
-Allow: /about/$
-Allow: /vision$
-Allow: /vision/$
-Allow: /cost-calculator$
-Allow: /cost-calculator/$
-Disallow: /audio/*
-Disallow: /seo_pages/*
-Disallow: /seo_pages_us/*
-Disallow: /toyota/*
-Disallow: /nissan/*
-Disallow: /honda/*
-Disallow: /bmw/*
-Disallow: /mercedes/*
-Disallow: /audi/*
-Disallow: /volkswagen/*
-Disallow: /hyundai/*
-Disallow: /kia/*
-Disallow: /mazda/*
-Disallow: /ford/*
-Disallow: /chevrolet/*
-Disallow: /lexus/*
-Disallow: /porsche/*
-Disallow: /land-rover/*
-Disallow: /range-rover/*
-Disallow: /tesla/*
-Disallow: /volvo/*
-Disallow: /infiniti/*
-Disallow: /mitsubishi/*
-
-# Master Sitemap Index and Dedicated Priority Sitemaps
+# Sitemap location
 Sitemap: https://carithm.vercel.app/sitemap_index.xml
-Sitemap: https://carithm.vercel.app/sitemap_home.xml
-Sitemap: https://carithm.vercel.app/sitemap_audio.xml
-Sitemap: https://carithm.vercel.app/sitemap_app.xml

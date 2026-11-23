@@ -1,33 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
 <script>
-  // Flag a transferred recording before first paint so the banner never shifts layout
-  try {
-    if (location.search.indexOf('transferred=1') > -1 || sessionStorage.getItem('carithm_recorded_audio')) {
-      document.documentElement.classList.add('transferred');
-    }
-  } catch (e) {}
-</script>
-<script>
-  // Load gtag.js when the browser is idle (queued events are sent once it loads)
-  (function() {
-    var loaded = false;
-    function loadGtag() {
-      if (loaded) return;
-      loaded = true;
-      var g = document.createElement('script');
-      g.async = true;
-      g.src = 'https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1';
-      document.head.appendChild(g);
-    }
-    function schedule() {
-      if ('requestIdleCallback' in window) requestIdleCallback(loadGtag, { timeout: 3000 });
-      else setTimeout(loadGtag, 2000);
-    }
-    if (document.readyState === 'complete') schedule();
-    else window.addEventListener('load', schedule);
-  })();
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -40,26 +15,20 @@
     setInterval(() => {
       if (!document.hidden) {
         activeSeconds += interval;
-        (typeof requestIdleCallback === 'function'
-          ? requestIdleCallback
-          : (fn) => setTimeout(fn, 0))(() => {
-          if (typeof gtag === 'function') {
-            gtag('event', 'true_dwell_time', {
-              'event_category': 'Engagement',
-              'event_label': activeSeconds + 's_active',
-              'value': activeSeconds,
-              'engagement_time_msec': interval * 1000,
-              'non_interaction': true
-            });
-          }
-        });
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
       }
     }, interval * 1000);
   })();
 
   // Iframe PostMessage Listener
   window.addEventListener('message', function(event) {
-    if (event.origin !== 'https://hadi10973-nmanvbz9onaxzbwzdmnjku.streamlit.app') return;
+    if (event.origin !== 'https://hadi10973-nmanvbz9onaxzbwzdmnjku.streamlit.app/') return;
     const data = event.data;
     if (data && data.type === 'streamlit_analytics') {
       if (typeof gtag === 'function') {
@@ -77,7 +46,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" crossorigin="anonymous"></script>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=0.88">
 
 <title>Free Engine Sound Diagnostic AI App | Carithm</title>
 <meta name="description" content="Free engine sound diagnostic AI app — no download required. Upload your recording to our engine noise analysis app and get an instant AI diagnosis on iPhone, Android, or desktop.">
@@ -98,7 +67,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://hadi10973-nmanvbz9onaxzbwzdmnjku.streamlit.app">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -113,7 +82,7 @@
  "url":"https://carithm.vercel.app/app",
  "author":{ "@type":"Organization", "name":"Carithm" },
  "publisher":{ "@type":"Organization", "name":"Carithm" },
- "dateModified":"2026-11-21"
+ "dateModified":"2026-09-17"
 }
 </script>
 <script type="application/ld+json">
@@ -153,23 +122,9 @@
 <meta name="theme-color" content="#09090b">
 <meta name="format-detection" content="telephone=no">
 <meta name="mobile-web-app-capable" content="yes">
+<link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
-#transferBanner { display: none; }
-.transferred #transferBanner { display: block; }
-.streamlit-facade {
-  position: absolute; inset: 0 0 44px 0; z-index: 5;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 24px; background: var(--surface2);
-  transition: opacity .25s ease;
-}
-.streamlit-facade h3 { font-size: 1.25rem; font-weight: 700; color: #fff; margin: 0 0 8px; }
-.streamlit-facade p { color: var(--muted); font-size: .95rem; max-width: 460px; margin: 0 0 20px; line-height: 1.5; }
-.streamlit-facade button {
-  background: var(--accent); color: #000; font-weight: 700; font-size: .95rem;
-  padding: 13px 28px; border-radius: 8px; border: none; cursor: pointer;
-  box-shadow: 0 4px 16px rgba(47,129,247,.35); touch-action: manipulation; min-height: 44px;
-}
 :root {
   --bg:         #09090b;
   --surface:    #111113;
@@ -289,9 +244,6 @@ li { margin-bottom: 6px; }
 .streamlit-embed-wrap {
   position: relative;
   --streamlit-height: min(1200px, 90vh);
-  height: var(--streamlit-height);
-  min-height: 640px;
-  contain: layout;
   margin-top: 18px;
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
@@ -302,7 +254,7 @@ li { margin-bottom: 6px; }
 .streamlit-embed {
   display: block;
   width: 100%;
-  height: 100%;
+  height: var(--streamlit-height);
   min-height: 640px;
   border: 0;
   background: var(--bg);
@@ -335,10 +287,10 @@ li { margin-bottom: 6px; }
     border-left: none;
     border-right: none;
   }
-  .streamlit-embed-wrap { min-height: 560px; } .streamlit-embed { min-height: 560px; }
+  .streamlit-embed { min-height: 560px; }
   main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
 }
-  .streamlit-embed-wrap { min-height: 560px; } .streamlit-embed { min-height: 560px; }
+  .streamlit-embed { min-height: 560px; }
 }
 
 .compare-strip {
@@ -367,7 +319,7 @@ li { margin-bottom: 6px; }
     border-left: none;
     border-right: none;
   }
-  .streamlit-embed-wrap { min-height: 560px; } .streamlit-embed { min-height: 560px; }
+  .streamlit-embed { min-height: 560px; }
   main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
 } }
 
@@ -419,7 +371,7 @@ li { margin-bottom: 6px; }
     border-left: none;
     border-right: none;
   }
-  .streamlit-embed-wrap { min-height: 560px; } .streamlit-embed { min-height: 560px; }
+  .streamlit-embed { min-height: 560px; }
   main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
 } }
 
@@ -439,7 +391,7 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
     border-left: none;
     border-right: none;
   }
-  .streamlit-embed-wrap { min-height: 560px; } .streamlit-embed { min-height: 560px; }
+  .streamlit-embed { min-height: 560px; }
   main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
 }
   .nav a:not(.cta-btn) { display: none; }
@@ -453,9 +405,6 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 40px 24px 24p
   .crosslink-btn { width: 100%; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
   .footer-links a { padding: 4px 0; display: inline-block; }
 }
-
-/* Eliminate 300ms tap delay — INP fix */
-a, button, input, label, [role="button"] { touch-action: manipulation; }
 </style>
 </head>
 
@@ -525,27 +474,13 @@ a, button, input, label, [role="button"] { touch-action: manipulation; }
     No download required. Record the engine, brake, suspension, or transmission noise directly in your browser, or upload an existing recording. The AI analyzes the audio and returns a confidence-scored diagnosis in seconds — the same result a native app would give, running from a page instead of an icon on your home screen.
   </p>
 
-  <div id="transferBanner" style="background: rgba(34,197,94,0.15); border: 1.5px solid #22c55e; border-radius: 10px; padding: 14px 18px; margin: 16px 0; color: #f0fdf4;">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <span style="font-size: 24px;">🎙️</span>
-      <div>
-        <strong style="color: #4ade80; display: block; font-size: 15px;">Live 5-Second Recording Received</strong>
-        <span style="color: #cbd5e1; font-size: 13px;">Your audio sample has been transferred from the diagnostic tool. Run your acoustic evaluation using the analyzer below.</span>
-      </div>
-    </div>
-  </div>
-
   <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
-    <div class="streamlit-facade" id="streamlitFacade">
-      <h3>Carithm Engine Sound Diagnostic AI</h3>
-      <p>Record or upload an engine, brake, suspension, or transmission sound and get a ranked diagnosis in seconds.</p>
-      <button id="activateStreamlitBtn" type="button">Launch Audio Diagnoser →</button>
-    </div>
     <iframe
       id="streamlitFrame"
       class="streamlit-embed"
-      data-src="https://hadi10973-nmanvbz9onaxzbwzdmnjku.streamlit.app/?embed=true"
+      src="https://hadi10973-nmanvbz9onaxzbwzdmnjku.streamlit.app/?embed=true"
       title="Carithm Engine Sound Diagnostic AI App"
+      loading="lazy"
       allow="microphone; clipboard-write"
       onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
     ></iframe>
@@ -659,6 +594,38 @@ a, button, input, label, [role="button"] { touch-action: manipulation; }
   <a href="https://carithm.vercel.app/audio" class="crosslink-btn">Open Full Sound Analyzer →</a>
 </div>
 
+<section style="margin-top: 44px;">
+  <div class="eyebrow">Also on Carithm</div>
+  <h2 style="margin-top: 8px;">Diagnose a Specific Noise</h2>
+  <p>Match your exact sound to a dedicated breakdown of likely causes.</p>
+  <div class="related-grid">
+    <a class="related-card" href="https://carithm.vercel.app/audio/rattling-noise">
+      <div class="rc-label">Noise Type</div>
+      <div class="rc-title">Rattling Noise</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/audio/whining-noise">
+      <div class="rc-label">Noise Type</div>
+      <div class="rc-title">Whining Noise</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/audio/knocking-noise">
+      <div class="rc-label">Noise Type</div>
+      <div class="rc-title">Knocking Noise</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/audio/grinding-noise">
+      <div class="rc-label">Noise Type</div>
+      <div class="rc-title">Grinding Noise</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/audio/squealing-noise">
+      <div class="rc-label">Noise Type</div>
+      <div class="rc-title">Squealing Noise</div>
+    </a>
+    <a class="related-card" href="https://carithm.vercel.app/audio/clicking-noise">
+      <div class="rc-label">Noise Type</div>
+      <div class="rc-title">Clicking Noise</div>
+    </a>
+  </div>
+</section>
+
 </main>
 
 <footer class="site-footer">
@@ -677,39 +644,5 @@ a, button, input, label, [role="button"] { touch-action: manipulation; }
   </div>
 </footer>
 
-<script>
-  (function () {
-    var frame = document.getElementById('streamlitFrame');
-    var facade = document.getElementById('streamlitFacade');
-    var btn = document.getElementById('activateStreamlitBtn');
-    var loaded = false;
-
-    function activate() {
-      if (loaded || !frame) return;
-      loaded = true;
-      frame.onload = function () {
-        if (!facade) return;
-        facade.style.opacity = '0';
-        facade.style.pointerEvents = 'none';
-        setTimeout(function () { facade.style.display = 'none'; }, 250);
-      };
-      frame.src = frame.dataset.src;
-    }
-
-    if (btn) {
-      btn.addEventListener('click', activate, { passive: true });
-      btn.addEventListener('pointerenter', activate, { passive: true });
-      btn.addEventListener('touchstart', activate, { passive: true });
-    }
-    document.querySelectorAll('a[href="#try"]').forEach(function (el) {
-      el.addEventListener('click', activate, { passive: true });
-    });
-
-    // Auto-load for users arriving with a transferred recording or a #try link
-    if (document.documentElement.classList.contains('transferred') || location.hash === '#try') {
-      activate();
-    }
-  })();
-</script>
 </body>
 </html>

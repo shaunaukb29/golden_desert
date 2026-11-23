@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCCEJ6DCM1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TCCEJ6DCM1');
+
+    // 1. Dwell Time Tracker
+    (function() {
+      let activeSeconds = 0;
+      const interval = 10;
+      setInterval(() => {
+        if (!document.hidden) {
+          activeSeconds += interval;
+          if (typeof gtag === 'function') {
+            gtag('event', 'true_dwell_time', {
+              'event_category': 'Engagement',
+              'event_label': activeSeconds + 's_active',
+              'value': activeSeconds
+            });
+          }
+        }
+      }, interval * 1000);
+    })();
+
+    // 2. Iframe PostMessage Listener
+    window.addEventListener('message', function(event) {
+      if (event.origin !== 'https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app') return;
+
+      const data = event.data;
+
+      if (data && data.type === 'streamlit_analytics') {
+        if (typeof gtag === 'function') {
+          gtag('event', data.eventName, {
+            'event_category': data.eventCategory || 'Carithm Tool',
+            'event_label': data.eventLabel || '',
+            'value': data.eventValue || 0
+          });
+        }
+      }
+    });
+  </script>
+
+  <!-- Google AdSense Global Script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5227538935323998" crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI Car Noise Identifier — Free Acoustic Vehicle Diagnostic Tool</title>
+  <meta name="description" content="Identify unusual vehicle sounds instantly in your browser with our free AI car noise identifier. Record or upload engine, brake, or suspension audio for immediate acoustic diagnostics.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://carithm.vercel.app/car-noise-identifier">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Car Noise Identifier — Free Acoustic Vehicle Diagnostic Tool">
+  <meta property="og:description" content="Identify unusual vehicle sounds instantly in your browser with our free AI car noise identifier. Record or upload engine, brake, or suspension audio for immediate acoustic diagnostics.">
+  <meta property="og:url" content="https://carithm.vercel.app/car-noise-identifier">
+  <meta property="og:image" content="https://carithm.vercel.app/car.png">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Car Noise Identifier — Free Acoustic Vehicle Diagnostic Tool">
+  <meta name="twitter:description" content="Record or upload engine, brake, or suspension audio and get immediate AI-powered acoustic diagnostics — free, in your browser.">
+  <meta name="twitter:image" content="https://carithm.vercel.app/car.png">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- JSON-LD Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AI Car Noise Identifier",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "url": "https://carithm.vercel.app/car-noise-identifier",
+        "inLanguage": "en-US",
+        "description": "Free AI tool that identifies vehicle noises from audio. Record or upload engine, brake, or suspension sound for instant acoustic diagnostics.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": { "@type": "Organization", "name": "Carithm", "url": "https://carithm.vercel.app/research" },
+        "publisher": { "@type": "Organization", "name": "Carithm" },
+        "reviewedBy": { "@type": "Organization", "name": "Carithm Automotive Data Team" },
+        "datePublished": "2026-08-24",
+        "dateModified": "2026-08-24"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "AI Car Noise Identifier",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web",
+        "browserRequirements": "Requires JavaScript. Microphone access optional for in-browser recording.",
+        "url": "https://carithm.vercel.app/car-noise-identifier",
+        "inLanguage": "en-US",
+        "description": "Free AI acoustic diagnostic tool. Upload or record engine, brake, or suspension audio to identify likely mechanical faults.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": [
+          "In-browser audio recording or file upload",
+          "Acoustic pattern matching against known fault signatures",
+          "Confidence-scored diagnostic output",
+          "No installation required"
+        ],
+        "publisher": { "@type": "Organization", "name": "Carithm" }
+      },
+      {
+        "@type": "Organization",
+        "name": "Carithm",
+        "url": "https://carithm.vercel.app/",
+        "logo": "https://carithm.vercel.app/car.png"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carithm.vercel.app/" },
+          { "@type": "ListItem", "position": 2, "name": "AI Car Noise Identifier", "item": "https://carithm.vercel.app/car-noise-identifier" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does an online car noise identifier detect vehicle problems?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The tool analyzes the frequency, amplitude, and repetition rate of recorded vehicle audio, matching acoustic signatures against known mechanical component faults."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#0B0F17">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <style>
+    :root {
+      --bg-dark: #0B0F17;
+      --card-bg: #161C28;
+      --card-border: #232D3F;
+      --accent-orange: #FF5E1A;
+      --accent-orange-hover: #E04D0C;
+      --accent-orange-dim: rgba(255, 94, 26, 0.1);
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --text-muted2: #64748B;
+      --severity-low: #10B981;
+      --severity-moderate: #F59E0B;
+      --severity-urgent: #EF4444;
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-orange) var(--card-bg);
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    /* Site Header / Nav */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(11,15,23,0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem; letter-spacing: 0.05em; color: #fff; text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent-orange); }
+    .site-nav { display: flex; gap: 1.75rem; align-items: center; }
+    .site-nav a { text-decoration: none; color: var(--text-muted); font-size: 0.85rem; font-weight: 500; transition: color .2s; }
+    .site-nav a:hover, .site-nav a.active { color: #fff; }
+    .site-nav .cta-btn {
+      background: var(--accent-orange-dim); border: 1px solid rgba(255,94,26,0.35); color: var(--accent-orange);
+      padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600;
+    }
+    .site-nav .cta-btn:hover { background: var(--accent-orange); color: #000; }
+
+    @media (max-width: 700px) {
+      .site-header { padding: 0.9rem 1.1rem; }
+      .site-nav a:not(.cta-btn) { display: none; }
+      .site-nav .cta-btn { padding: 0.65rem 1.1rem; min-height: 44px; display: flex; align-items: center; }
+    }
+
+    /* Breadcrumb */
+    .breadcrumb { font-size: 12.5px; color: var(--text-muted2); margin-bottom: 18px; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent-orange); }
+    .breadcrumb .sep { margin: 0 6px; color: var(--text-muted2); }
+    .breadcrumb .current { color: var(--text-muted); }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: 1px;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Interactive Tool Module */
+    .tool-module {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 94, 26, 0.25);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      margin-bottom: 3rem;
+    }
+
+    .module-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent-orange);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .tool-module .section-title { margin-bottom: 0.75rem; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .tool-module p.tool-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem; }
+
+    .live-indicator {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.35); color: var(--severity-low);
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 4px 10px; border-radius: 999px;
+    }
+    .live-indicator .dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--severity-low);
+      box-shadow: 0 0 0 0 rgba(16,185,129,0.6); animation: pulse-dot 1.6s infinite;
+    }
+    @keyframes pulse-dot {
+      0%   { box-shadow: 0 0 0 0 rgba(16,185,129,0.55); }
+      70%  { box-shadow: 0 0 0 7px rgba(16,185,129,0); }
+      100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+    }
+
+    /* Embedded analyzer */
+    .streamlit-embed-wrap {
+      position: relative;
+      --streamlit-height: min(1200px, 90vh);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #0F141E;
+      resize: vertical;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-orange) #0F141E;
+    }
+    .streamlit-embed { display: block; width: 100%; height: var(--streamlit-height); min-height: 640px; border: 0; background: var(--bg-dark); }
+    .iframe-brand-mask { position: absolute; bottom: 0; left: 0; right: 0; height: 44px; background: #0F141E; z-index: 99999; pointer-events: auto; border-top: 1px solid var(--card-border); cursor: default; }
+    .iframe-fallback { display: none; padding: 32px 24px; text-align: center; }
+    .iframe-fallback p { margin-bottom: 14px; color: var(--text-muted); }
+
+    @media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
+    @media (max-width: 620px) {
+      .streamlit-embed-wrap { --streamlit-height: min(850px, 80vh); }
+      .streamlit-embed { min-height: 560px; }
+    }
+
+    /* Canvas Visualizer removed with the local simulated engine — no longer needed */
+
+    /* Diagnostic Matrix Table */
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+    }
+
+    .matrix-container {
+      overflow-x: auto;
+      margin-bottom: 3.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: #0F141E;
+      padding: 1rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      border-bottom: 1px solid var(--card-border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--card-border);
+      color: var(--text-main);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-low { background: rgba(16, 185, 129, 0.2); color: var(--severity-low); }
+    .badge-moderate { background: rgba(245, 158, 11, 0.2); color: var(--severity-moderate); }
+    .badge-urgent { background: rgba(239, 68, 68, 0.2); color: var(--severity-urgent); }
+
+    /* How it works */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .step-num {
+      color: var(--accent-orange);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-desc {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* FAQ */
+    .faq-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .faq-question {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-answer {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Crosslink banner */
+    .crosslink-banner {
+      background: linear-gradient(135deg, rgba(255,94,26,0.08), rgba(255,94,26,0.02));
+      border: 1px solid rgba(255,94,26,0.3);
+      border-radius: 12px;
+      padding: 22px 26px; margin-bottom: 3.5rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .crosslink-banner p { margin: 0; color: var(--text-muted); font-size: 13px; }
+    .crosslink-banner strong { color: var(--text-main); display: block; font-size: 15px; margin-bottom: 4px; }
+    .crosslink-btn { background: var(--accent-orange); color: #000; font-weight: 700; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-size: 13px; white-space: nowrap; flex-shrink: 0; }
+    .crosslink-btn:hover { background: var(--accent-orange-hover); color: #fff; }
+
+    @media (max-width: 620px) {
+      .crosslink-banner { padding: 18px 20px; }
+      .crosslink-btn { width: 100%; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+    }
+
+    /* Footer */
+    .site-footer { border-top: 1px solid var(--card-border); padding: 40px 24px 24px; margin-top: 20px; background: var(--card-bg); }
+    .footer-inner { max-width: 1050px; margin: 0 auto; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 18px; }
+    .footer-links a { font-size: 12.5px; color: var(--text-muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--accent-orange); }
+    .footer-bottom { font-size: 11.5px; color: var(--text-muted2); border-top: 1px solid var(--card-border); padding-top: 16px; }
+    @media (max-width: 620px) { .footer-links a { padding: 4px 0; display: inline-block; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="https://carithm.vercel.app/" class="nav-logo">Carithm<span>AI</span></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="https://carithm.vercel.app/">Home</a>
+      <a href="https://carithm.vercel.app/audio">Sound Diagnoser</a>
+      <a href="https://carithm.vercel.app/inspection">Test Drive Check</a>
+      <a href="https://carithm.vercel.app/car-noise-identifier" class="active" aria-current="page">Noise Identifier</a>
+      <a href="https://carithm.vercel.app/research">Research</a>
+      <a href="#try" class="cta-btn">Run It Free</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="https://carithm.vercel.app/">Home</a>
+      <span class="sep">/</span>
+      <span class="current">AI Car Noise Identifier</span>
+    </nav>
+
+    <section class="hero">
+      <h1>Online AI Car Noise Identifier</h1>
+      <p class="hero-subtitle">Record or upload engine, brake, or suspension sounds for immediate browser-based acoustic diagnostics.</p>
+    </section>
+
+    <!-- Interactive Tool Module -->
+    <main class="tool-module" id="try">
+      <div class="module-title">Acoustic Diagnostic Input</div>
+      <h2 class="section-title">
+        Run the Car Noise Identifier
+        <span class="live-indicator"><span class="dot"></span>Live</span>
+      </h2>
+      <p class="tool-desc">
+        Upload an audio file or record live below. No download, no account — works straight from your phone or laptop. You'll get a ranked list of likely mechanical sources with a confidence score.
+      </p>
+
+      <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
+        <iframe
+          id="streamlitFrame"
+          class="streamlit-embed"
+          src="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/?embed=true"
+          title="Carithm AI Car Noise Identifier"
+          loading="lazy"
+          allow="microphone; clipboard-write"
+          onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
+        ></iframe>
+        <div class="iframe-brand-mask"></div>
+        <div class="iframe-fallback" id="iframeFallback">
+          <p>The analyzer tool couldn't load in this view.</p>
+          <a class="crosslink-btn" href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener">Open the Analyzer in a New Tab →</a>
+        </div>
+      </div>
+
+      <noscript>
+        <p class="tool-desc">This tool requires JavaScript to load the embedded app. <a href="https://jhandy-api-fivnlxktdycfxjt8rehjpo.streamlit.app/" target="_blank" rel="noopener" style="color: var(--accent-orange);">Open it directly here.</a></p>
+      </noscript>
+    </main>
+
+    <!-- Acoustic Diagnostic Matrix -->
+    <section>
+      <h2 class="section-title">Acoustic Diagnostic Matrix</h2>
+      <div class="matrix-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Sound Profile</th>
+              <th>Typical Pitch / Rhythm</th>
+              <th>Likely Mechanical Source</th>
+              <th>Action Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>High-Pitched Squeal</strong></td>
+              <td>Continuous / Speed-dependent</td>
+              <td>Worn serpentine belt, misaligned pulley, or brake wear indicators</td>
+              <td><span class="badge badge-moderate">Schedule Inspection</span></td>
+            </tr>
+            <tr>
+              <td><strong>Deep Metallic Knock</strong></td>
+              <td>Rhythmic with engine RPM</td>
+              <td>Rod bearing wear, piston slap, or severe engine detonation</td>
+              <td><span class="badge badge-urgent">Stop Vehicle Immediately</span></td>
+            </tr>
+            <tr>
+              <td><strong>Heavy Low Clunk</strong></td>
+              <td>Occasional / Occurs over bumps</td>
+              <td>Worn suspension strut mount, sway bar link, or control arm bushing</td>
+              <td><span class="badge badge-moderate">Moderate Priority</span></td>
+            </tr>
+            <tr>
+              <td><strong>Humming / Drone</strong></td>
+              <td>Constant / Increases with road speed</td>
+              <td>Failing wheel bearing or differential gear wear</td>
+              <td><span class="badge badge-moderate">Moderate Priority</span></td>
+            </tr>
+            <tr>
+              <td><strong>Metallic Rattle</strong></td>
+              <td>Irregular / Resonant at idle</td>
+              <td>Loose exhaust heat shield or broken catalytic converter mesh</td>
+              <td><span class="badge badge-low">Low to Moderate</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- How the Car Noise Identifier Works -->
+    <section>
+      <h2 class="section-title">How the Car Noise Identifier Works</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-title">Acoustic Sampling</div>
+          <div class="step-desc">Captures frequency spectrums between 20 Hz and 20,000 Hz while filtering out background ambient wind and road noise.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-title">Pattern Matching</div>
+          <div class="step-desc">Cross-references isolated sound waves against categorized mechanical failure signatures in our diagnostic database.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-title">Fault Pinpointing</div>
+          <div class="step-desc">Calculates probability metrics across major sub-systems: belts, valvetrain, wheel end assemblies, braking systems, and exhaust.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-card">
+        <div class="faq-question">How does an online car noise identifier detect vehicle problems?</div>
+        <div class="faq-answer">The tool analyzes the frequency, amplitude, and repetition rate of recorded vehicle audio, matching acoustic signatures against known mechanical component faults.</div>
+      </div>
+    </section>
+
+    <!-- Crosslink to /audio -->
+    <div class="crosslink-banner" aria-label="Related tool">
+      <div>
+        <strong>Want the full diagnostic breakdown?</strong>
+        <p>This page gives you a quick noise identification. Head to our full Sound Diagnoser for deeper severity scoring and next-step guidance — same AI underneath.</p>
+      </div>
+      <a href="https://carithm.vercel.app/audio" class="crosslink-btn">Open the Full Sound Diagnoser →</a>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="https://carithm.vercel.app/">Carithm Home — Repair Quote Checker</a>
+        <a href="https://carithm.vercel.app/audio">AI Car Sound Analyzer</a>
+        <a href="https://carithm.vercel.app/inspection">Pre-Purchase Inspection Check</a>
+        <a href="https://carithm.vercel.app/car-noise-identifier">AI Car Noise Identifier</a>
+        <a href="https://carithm.vercel.app/toyota">Toyota Repair Cost Guide</a>
+        <a href="https://carithm.vercel.app/research">Research & Methodology</a>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Carithm. AI Car Noise Identifier — decision-support tool. Not a substitute for a certified mechanical inspection.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -15,18 +15,13 @@
     setInterval(() => {
       if (!document.hidden) {
         activeSeconds += interval;
-        (typeof requestIdleCallback === 'function'
-          ? requestIdleCallback
-          : (fn) => setTimeout(fn, 0))(() => {
-          if (typeof gtag === 'function') {
-            gtag('event', 'true_dwell_time', {
-              'event_category': 'Engagement',
-              'event_label': activeSeconds + 's_active',
-              'value': activeSeconds,
-              'non_interaction': true
-            });
-          }
-        });
+        if (typeof gtag === 'function') {
+          gtag('event', 'true_dwell_time', {
+            'event_category': 'Engagement',
+            'event_label': activeSeconds + 's_active',
+            'value': activeSeconds
+          });
+        }
       }
     }, interval * 1000);
   })();
@@ -55,7 +50,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -497,9 +492,6 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: none; }
 main p a { color: var(--accent); }
 a:focus-visible, .crosslink-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-
-/* Eliminate 300ms tap delay — INP fix */
-a, button, input, label, [role="button"] { touch-action: manipulation; }
 </style>
 </head>
 

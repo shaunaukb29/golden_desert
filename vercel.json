@@ -6,42 +6,6 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/audio",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "index, follow"
-        }
-      ]
-    },
-    {
-      "source": "/audio/",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "index, follow"
-        }
-      ]
-    },
-    {
-      "source": "/audio/(.*-.*)",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        }
-      ]
-    },
-    {
-      "source": "/audio/(all-models|upload-car-sound-for-diagnosis|can-chatgpt-diagnose-car-sound|ai-that-listens-to-engine-noise|free-ai-car-sound-diagnosis)",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "index, follow"
-        }
-      ]
-    },
-    {
       "source": "/audio/src/cardiag/audio/(.*)",
       "headers": [
         {
@@ -51,37 +15,16 @@
       ]
     },
     {
-      "source": "/(rattling-noise-under|high-pitched-squeal-when-braking|grinding-noise-when-accelerating|ticking-noise-from-the-engine|humming-noise-at-high-speeds|clicking-sound-when-turning|buzzing-noise-from-the-dashboard|squeaking-noise-over-bumps|whining-noise-from-the-transmission|clunking-noise-when-shifting-gears)(.*)",
+      "source": "/audio/(.*)",
       "headers": [
         {
           "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        }
-      ]
-    },
-    {
-      "source": "/(when-cold-starting|over-bumps|under-the-hood|when-accelerating|at-highway-speeds|when-braking|on-first-start-in-the-morning|when-reversing|exhaust-when-accelerating|when-idle)(.*)",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
+          "value": "index, follow"
         }
       ]
     }
   ],
   "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(Bytespider|PetalBot|Baiduspider|Sogou|YisouSpider|SemrushBot|AhrefsBot|DotBot).*"
-        }
-      ],
-      "destination": "https://carithm.vercel.app/404",
-      "statusCode": 403
-    },
     {
       "source": "/car-noise-identifier(.*)",
       "destination": "/audio",
@@ -878,26 +821,6 @@
       "destination": "/audio/src/cardiag/web/static/app"
     },
     {
-      "source": "/audio/ford",
-      "destination": "/audio/src/cardiag/web/static/ford"
-    },
-    {
-      "source": "/audio/toyota",
-      "destination": "/audio/src/cardiag/web/static/toyota"
-    },
-    {
-      "source": "/audio/honda",
-      "destination": "/audio/src/cardiag/web/static/honda"
-    },
-    {
-      "source": "/audio/mazda",
-      "destination": "/audio/src/cardiag/web/static/mazda"
-    },
-    {
-      "source": "/audio/chevrolet",
-      "destination": "/audio/src/cardiag/web/static/chevrolet"
-    },
-    {
       "source": "/audio/ac",
       "destination": "/audio/src/cardiag/web/static/ac"
     },
@@ -908,6 +831,14 @@
     {
       "source": "/audio/",
       "destination": "/audio/src/cardiag/web/static/app"
+    },
+    {
+      "source": "/(rattling-noise-under|high-pitched-squeal-when-braking|grinding-noise-when-accelerating|ticking-noise-from-the-engine|humming-noise-at-high-speeds|clicking-sound-when-turning|buzzing-noise-from-the-dashboard|squeaking-noise-over-bumps|whining-noise-from-the-transmission|clunking-noise-when-shifting-gears)(.*)",
+      "destination": "/seo_pages/$1$2"
+    },
+    {
+      "source": "/(when-cold-starting|over-bumps|under-the-hood|when-accelerating|at-highway-speeds|when-braking|on-first-start-in-the-morning|when-reversing|exhaust-when-accelerating|when-idle)(.*)",
+      "destination": "/seo_pages_us/$1$2"
     },
     {
       "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)",
