@@ -572,11 +572,23 @@ Wondering "<strong>what sound is my car making</strong>?" Upload a recording and
 </p>
 
   <div class="streamlit-embed-wrap" id="streamlitEmbedWrap">
+    <div class="streamlit-facade" id="streamlitFacade" style="position: absolute; inset: 0; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(180deg, #18181b 0%, #111113 100%); border-radius: var(--r-sm); padding: 32px 20px; text-align: center;">
+      <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(47,129,247,0.12); border: 1px solid rgba(47,129,247,0.4); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; color: var(--accent);">
+        <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line><line x1="8" y1="22" x2="16" y2="22"></line></svg>
+      </div>
+      <h3 style="font-size: 1.2rem; font-weight: 700; color: #fff; margin: 0 0 6px; letter-spacing: -0.01em;">Free AI Car Sound Diagnosis App</h3>
+      <p style="color: var(--muted); font-size: 0.9rem; max-width: 440px; margin: 0 0 18px; line-height: 1.45;">Upload or record audio directly in browser for instant AI acoustic diagnosis.</p>
+      <button id="activateStreamlitBtn" type="button" style="background: var(--accent); color: #000; font-weight: 700; font-size: 0.95rem; padding: 12px 26px; border-radius: 8px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(47,129,247,0.35); touch-action: manipulation;">
+        <span>Launch Audio Diagnoser</span>
+        <span aria-hidden="true">→</span>
+      </button>
+      <div style="margin-top: 12px; font-size: 11px; color: var(--muted2);">Universal coverage &bull; 100% Free in Browser &bull; No App Install</div>
+    </div>
     <iframe
       id="streamlitFrame"
       class="streamlit-embed"
-      src="https://heimi34505-3aue9zwjqykkgwxjwnemcy.streamlit.app/?embed=true"
-      title="Carithm AI Car Sound Analyzer"
+      data-src="https://heimi34505-3aue9zwjqykkgwxjwnemcy.streamlit.app/?embed=true"
+      title="Free AI Car Sound Diagnosis App"
       loading="lazy"
       allow="microphone; clipboard-write"
       onerror="document.getElementById('streamlitFrame').style.display='none'; document.getElementById('iframeFallback').style.display='block';"
@@ -763,16 +775,10 @@ Wondering "<strong>what sound is my car making</strong>?" Upload a recording and
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-links">
-      <a href="https://carithm.vercel.app/">Carithm Home — Repair Quote Checker</a>
-      <a href="https://carithm.vercel.app/">AI Car Sound Analyzer</a>
-      <a href="https://carithm.vercel.app/toyota">Toyota Repair Cost Guide</a>
-      <a href="https://carithm.vercel.app/bmw">BMW Repair Cost Guide</a>
-      <a href="https://carithm.vercel.app/mercedes">Mercedes Maintenance Guide</a>
-      <a href="https://carithm.vercel.app/research">Research & Methodology</a>
-      <a href="https://carithm.vercel.app/audio/all-models">All Supported Vehicles & Noises</a>
-      <a href="https://carithm.vercel.app/audio/ac">AI Air Conditioning Sound Analyzer</a>
-      <a href="https://carithm.vercel.app/audio/washer">AI Washing Machine Sound Analyzer</a>
-      <a href="https://carithm.vercel.app/sound-meter">Sound Level Measurement</a>
+      <a href="https://carithm.vercel.app/">Home</a>
+      <a href="https://carithm.vercel.app/audio">AI Car Noise Identifier</a>
+      <a href="https://carithm.vercel.app/app">Diagnostic Web App</a>
+      <a href="https://carithm.vercel.app/about">About Carithm</a>
     </div>
     <div class="footer-bottom">
       © 2026 Carithm. AI Engine Sound Analyzer — decision-support tool. Not a substitute for physical inspection.
@@ -780,5 +786,52 @@ Wondering "<strong>what sound is my car making</strong>?" Upload a recording and
   </div>
 </footer>
 
+
+<script>
+(function() {
+  const frame = document.getElementById('streamlitFrame');
+  const facade = document.getElementById('streamlitFacade');
+  const btn = document.getElementById('activateStreamlitBtn');
+  let isLoaded = false;
+
+  function activateIframe() {
+    if (isLoaded || !frame) return;
+    isLoaded = true;
+    if (frame.dataset.src) {
+      frame.src = frame.dataset.src;
+    }
+    frame.onload = function() {
+      if (facade) {
+        facade.style.opacity = '0';
+        facade.style.pointerEvents = 'none';
+        facade.style.transition = 'opacity 0.25s ease';
+        setTimeout(function() { facade.style.display = 'none'; }, 250);
+      }
+    };
+  }
+
+  if (btn) {
+    btn.addEventListener('click', activateIframe, { passive: true });
+  }
+
+  document.querySelectorAll('a[href="#try"], a.cta-btn').forEach(function(el) {
+    el.addEventListener('click', activateIframe, { passive: true });
+  });
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(function() {
+      setTimeout(activateIframe, 2500);
+    }, { timeout: 4000 });
+  } else {
+    window.addEventListener('load', function() {
+      setTimeout(activateIframe, 2000);
+    });
+  }
+
+  if (window.location.hash === '#try') {
+    activateIframe();
+  }
+})();
+</script>
 </body>
 </html>
