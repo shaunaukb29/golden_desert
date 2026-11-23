@@ -39,28 +39,6 @@
   ],
   "redirects": [
     {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(Bytespider|PetalBot|Baiduspider|Sogou|YisouSpider|SemrushBot|AhrefsBot|DotBot).*"
-        }
-      ],
-      "destination": "https://carithm.vercel.app/404",
-      "statusCode": 403
-    },
-    {
-      "source": "/car-noise-identifier(.*)",
-      "destination": "/audio",
-      "permanent": true
-    },
-    {
-      "source": "/audio/:path*",
-      "destination": "/audio",
-      "permanent": false
-    },
-    {
       "source": "/bmw/:path*",
       "destination": "/",
       "permanent": false
@@ -219,6 +197,23 @@
       "source": "/over-bumps-:path*",
       "destination": "/audio",
       "permanent": false
+    },
+    {
+      "source": "/car-noise-identifier(.*)",
+      "destination": "/audio",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(Bytespider|PetalBot|Baiduspider|Sogou|YisouSpider|SemrushBot|AhrefsBot|DotBot).*"
+        }
+      ],
+      "destination": "https://carithm.vercel.app/404",
+      "statusCode": 403
     }
   ],
   "rewrites": [
