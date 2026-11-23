@@ -1,13 +1,43 @@
 # Allow all search engines to crawl the main site
 User-agent: *
 Allow: /
+Allow: /audio
+Allow: /app
+Allow: /about
 
-# Block sensitive or unnecessary paths
+# Block dead programmatic paths
+Disallow: /audio/
+Disallow: /bmw
+Disallow: /bmw/
+Disallow: /toyota
+Disallow: /toyota/
+Disallow: /mercedes
+Disallow: /mercedes/
+Disallow: /nissan
+Disallow: /nissan/
+Disallow: /honda
+Disallow: /honda/
+Disallow: /ford
+Disallow: /ford/
+Disallow: /hyundai
+Disallow: /hyundai/
+Disallow: /kia
+Disallow: /kia/
+Disallow: /lexus
+Disallow: /lexus/
+Disallow: /land-rover
+Disallow: /land-rover/
+Disallow: /seo_pages/
+Disallow: /seo_pages_us/
+Disallow: /cost-calculator
+Disallow: /vision
+Disallow: /research
+Disallow: /repairs/
+Disallow: /sound-meter
+Disallow: /engine-ticking-noise
 Disallow: /api/
 Disallow: /admin/
 Disallow: /test/
-
-# Block URLs with tracking parameters to prevent duplicate content
 Disallow: /*?utm_*
 Disallow: /*?ref_*
 
