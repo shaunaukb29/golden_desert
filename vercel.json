@@ -910,14 +910,6 @@
       "destination": "/audio/src/cardiag/web/static/app"
     },
     {
-      "source": "/(rattling-noise-under|high-pitched-squeal-when-braking|grinding-noise-when-accelerating|ticking-noise-from-the-engine|humming-noise-at-high-speeds|clicking-sound-when-turning|buzzing-noise-from-the-dashboard|squeaking-noise-over-bumps|whining-noise-from-the-transmission|clunking-noise-when-shifting-gears)(.*)",
-      "destination": "/seo_pages/$1$2"
-    },
-    {
-      "source": "/(when-cold-starting|over-bumps|under-the-hood|when-accelerating|at-highway-speeds|when-braking|on-first-start-in-the-morning|when-reversing|exhaust-when-accelerating|when-idle)(.*)",
-      "destination": "/seo_pages_us/$1$2"
-    },
-    {
       "source": "/(toyota|nissan|honda|bmw|mercedes|audi|volkswagen|hyundai|kia|mazda|ford|chevrolet|lexus|porsche|land-rover|range-rover|tesla|volvo|infiniti|mitsubishi)",
       "destination": "/$1/index"
     },
