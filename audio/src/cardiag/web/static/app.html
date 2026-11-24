@@ -472,20 +472,6 @@ main > section:first-of-type::before {
 .iframe-fallback a.crosslink-btn { display: inline-block; }
 
 @media (max-width: 900px) { .streamlit-embed-wrap { --streamlit-height: min(1000px, 85vh); } }
-@media (max-width: 620px) {
-  .streamlit-embed-wrap { 
-    --streamlit-height: min(850px, 80vh); 
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-  }
-  .streamlit-embed { min-height: 560px; }
-  main { padding: 40px 24px 32px; } /* Increase side padding for narrower text on mobile */
-}
-  .streamlit-embed { min-height: 560px; }
-}
 
 .crosslink-banner {
   background: linear-gradient(135deg, rgba(47,129,247,0.08), rgba(47,129,247,0.03));
@@ -812,9 +798,16 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
   function activateIframe() {
     if (isLoaded || !frame) return;
     isLoaded = true;
-    if (frame.dataset.src) {
-      frame.src = frame.dataset.src;
-    }
+    
+    // Yield to the main thread so click interaction registers immediately (INP < 50ms)
+    requestAnimationFrame(function() {
+      setTimeout(function() {
+        if (frame.dataset.src) {
+          frame.src = frame.dataset.src;
+        }
+      }, 0);
+    });
+
     frame.onload = function() {
       if (facade) {
         facade.style.opacity = '0';
@@ -833,13 +826,14 @@ Asking yourself, "<strong>what is this sound in my car?</strong>" Carithm's <str
     el.addEventListener('click', activateIframe, { passive: true });
   });
 
+  // Wait until user has had ample time to read/interact before auto-loading in background
   if ('requestIdleCallback' in window) {
     requestIdleCallback(function() {
-      setTimeout(activateIframe, 2500);
-    }, { timeout: 4000 });
+      setTimeout(activateIframe, 4500);
+    }, { timeout: 7000 });
   } else {
     window.addEventListener('load', function() {
-      setTimeout(activateIframe, 2000);
+      setTimeout(activateIframe, 4000);
     });
   }
 
